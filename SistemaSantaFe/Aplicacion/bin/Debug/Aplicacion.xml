@@ -6,7 +6,163 @@ Aplicacion
 </name>
 </assembly>
 <members>
-<member name="T:Aplicacion.Empresa_DS.empresaDataTable">
+<member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.TareasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Mantenimiento_progDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Tareas_asignadasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.TareasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Mantenimiento_progRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Tareas_asignadasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.TareasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Mantenimiento_progRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.Tareas_asignadasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Empresa_DS.empresaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -22,83 +178,43 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoDataTable">
+</member><member name="T:Aplicacion.Mov_DS.MovDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoDataTable">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaDataTable">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoRow">
+</member><member name="T:Aplicacion.Mov_DS.MovRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoRow">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaRow">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoRowChangeEvent">
+</member><member name="T:Aplicacion.Mov_DS.MovRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoRowChangeEvent">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaRowChangeEvent">
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Marca_DS">
+</member><member name="T:Aplicacion.Mov_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -190,135 +306,19 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosDataTable">
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRow">
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRowChangeEvent">
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_remito">
+</member><member name="T:Aplicacion.DS_configuraciones">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -362,19 +362,203 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalDataTable">
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalRow">
+</member><member name="T:Aplicacion.Producto_ds.ProductoModificarDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProdxSucDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalRowChangeEvent">
+</member><member name="T:Aplicacion.Producto_ds.ProductoModificarRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProdxSucRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.DS_configuraciones">
+</member><member name="T:Aplicacion.Producto_ds.ProductoModificarRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProdxSucRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Producto_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.empleadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.Empleado_remuDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.empleadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.Empleado_remuRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.empleadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.ds_empleados.Empleado_remuRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.ds_empleados">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Ds_cuadrilla">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -478,87 +662,151 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Stock_DS.StockDataTable">
+</member><member name="T:Aplicacion.Lista_ds.ProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Stock_DS.StockRow">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Stock_DS.StockRowChangeEvent">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Stock_DS">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerDataTable">
+</member><member name="T:Aplicacion.Marca_DS.MarcaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Costo_Ind.DetalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind.GastosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerRow">
+</member><member name="T:Aplicacion.Marca_DS.MarcaRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Costo_Ind.DetalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind.GastosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerRowChangeEvent">
+</member><member name="T:Aplicacion.Marca_DS.MarcaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Costo_Ind.DetalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind.GastosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Costo_Ind">
+</member><member name="T:Aplicacion.Marca_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosDataTable">
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasDataTable">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosRow">
+</member><member name="T:Aplicacion.Mesas_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasRow">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.EmpleadosRowChangeEvent">
+</member><member name="T:Aplicacion.Mesas_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla.CuadrillasRowChangeEvent">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Ds_cuadrilla">
+</member><member name="T:Aplicacion.Mesas_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -650,456 +898,35 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.ResourceManager">
-	<summary>
-  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Culture">
-	<summary>
-  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.add_128x128">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.add_20x20">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.add_26x26">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.alert_26x26">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.arrow_right_26x26">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Borrar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Borrar1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Borrar2">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Buscar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.caja">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.cajas">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.cargaContratos">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.cargaContratos1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.CargarDato">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.cerrar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Cliente">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Cliente1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Configuracion">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.configure">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__1_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__2_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__3_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__4_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__5_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__6_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__7_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__8_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.descarga__9_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.dolly">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.factura">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.factura_30x30">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.floppy_disk">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.floppy_disk30x30">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS2">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS21">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.fondoazul">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.gestion">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_2">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_3">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_4">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Guardar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Guardar1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Guardar2">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.GuardarChico">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.images">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.images__1_">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Informe">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.InformeBanco">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.iniciar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Limpiar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Limpiar1">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.lock30x30">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.logo_1_hamer">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Logo_empresa">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.lOGO_HS">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.logohs___FINAL_copia">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.logohs___fondo2_copia">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.mas30x30">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.menos">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Pasar">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.pay_wallet">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.pedidos">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.persona">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.producto">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.proveedores">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.restBackup">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.search_20x20">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.search_balance">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Servicios">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.silver_3">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.Stock">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.unLock30x30">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.ventas">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:Aplicacion.My.Resources.Resources.winiva">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="T:Aplicacion.My.Resources.Resources">
-	<summary>
-  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosDataTable">
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosRow">
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosRowChangeEvent">
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_usuario">
+</member><member name="T:Aplicacion.TurnoInforme">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosDataTable">
+</member><member name="T:Aplicacion.Stock_DS.StockDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRow">
+</member><member name="T:Aplicacion.Stock_DS.StockRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRowChangeEvent">
+</member><member name="T:Aplicacion.Stock_DS.StockRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Categorias_consultarRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.AtributosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Equipos_cat_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.MovDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.MovRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.MovRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mov_DS">
+</member><member name="T:Aplicacion.Stock_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1443,19 +1270,219 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunDataTable">
+</member><member name="T:Aplicacion.Equipos_ds.EquipoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRow">
+</member><member name="T:Aplicacion.Equipos_ds.EquipoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRowChangeEvent">
+</member><member name="T:Aplicacion.Equipos_ds.EquipoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.TurnoInforme">
+</member><member name="T:Aplicacion.Equipos_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Servicio_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1571,75 +1598,31 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Venta_ds.ProductoDataTable">
+</member><member name="T:Aplicacion.Informe_ds.ClienteDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Venta_ds.ProductoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_ds.ProductoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesDataTable">
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRow">
+</member><member name="T:Aplicacion.Informe_ds.ClienteRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboRow">
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRowChangeEvent">
+</member><member name="T:Aplicacion.Informe_ds.ClienteRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboRowChangeEvent">
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.TareasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.TareasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds.TareasRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.mantenimiento_ds">
+</member><member name="T:Aplicacion.Informe_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1659,143 +1642,380 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesDataTable">
+</member><member name="T:Aplicacion.Venta_ds.ProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesRow">
+</member><member name="T:Aplicacion.Venta_ds.ProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesRowChangeEvent">
+</member><member name="T:Aplicacion.Venta_ds.ProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds">
+</member><member name="T:Aplicacion.Venta_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteDataTable">
+</member><member name="P:Aplicacion.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.add_128x128">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.add_20x20">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.add_26x26">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.alert_26x26">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.arrow_right_26x26">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Borrar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Borrar1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Borrar2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Buscar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.caja">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.cajas">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.cargaContratos">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.cargaContratos1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.CargarDato">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.cerrar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Cliente">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Cliente1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Configuracion">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.configure">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__1_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__2_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__3_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__4_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__5_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__6_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__7_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__8_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.descarga__9_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.dolly">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.factura">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.factura_30x30">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.floppy_disk">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.floppy_disk30x30">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.FONDO_MENU_HS21">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.fondoazul">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.gestion">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_3">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.green_back_2_sec_4">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Guardar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Guardar1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Guardar2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.GuardarChico">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.images">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.images__1_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Informe">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.InformeBanco">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.iniciar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Limpiar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Limpiar1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.lock30x30">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.logo_1_hamer">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Logo_empresa">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.lOGO_HS">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.logohs___FINAL_copia">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.logohs___fondo2_copia">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.mas30x30">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.menos">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Pasar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.pay_wallet">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.pedidos">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.persona">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.producto">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.proveedores">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.restBackup">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.search_20x20">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.search_balance">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Servicios">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.silver_3">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Stock">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.unLock30x30">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.ventas">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.winiva">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="T:Aplicacion.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaDataTable">
+</member><member name="T:Aplicacion.Costo_Ind.DetalleDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.ds_empleados.empleadosDataTable">
+</member><member name="T:Aplicacion.Costo_Ind.GastosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.ds_empleados.Empleado_remuDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.ds_empleados.empleadosRow">
+</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.ds_empleados.Empleado_remuRow">
+</member><member name="T:Aplicacion.Costo_Ind.DetalleRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.ds_empleados.empleadosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.ds_empleados.Empleado_remuRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.ds_empleados">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProductoModificarDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProdxSucDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoRow">
+</member><member name="T:Aplicacion.Costo_Ind.GastosRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Producto_ds.ProductoModificarRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProdxSucRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoRowChangeEvent">
+</member><member name="T:Aplicacion.Costo_Ind.Costo_Indirecto_ObtenerRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Producto_ds.ProductoModificarRowChangeEvent">
+</member><member name="T:Aplicacion.Costo_Ind.DetalleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Producto_ds.ProveedorProducto_auxRowChangeEvent">
+</member><member name="T:Aplicacion.Costo_Ind.GastosRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Producto_ds.ProdxSucRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Producto_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor">
+</member><member name="T:Aplicacion.Costo_Ind">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1839,75 +2059,19 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1DataTable">
+</member><member name="T:Aplicacion.DS_remito.RemitoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1Row">
+</member><member name="T:Aplicacion.DS_remito.RemitoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1RowChangeEvent">
+</member><member name="T:Aplicacion.DS_remito.RemitoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Equipos_ds.EquipoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_ds.EquipoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Equipos_ds.EquipoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Equipos_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Informe_ds">
+</member><member name="T:Aplicacion.DS_remito">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1951,6 +2115,22 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="T:Aplicacion.DS_presupuesto_vta.PresupuestoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -1964,162 +2144,6 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.DS_presupuesto_vta">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_Prod_DSRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Servicio_ObtenerRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.Empleados_x_cuadrillaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS.ordentrabajoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Servicio_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>

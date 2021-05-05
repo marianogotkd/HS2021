@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAC4fAAAuHwF47oFfAAADCUlE
+        QVQ4T42US0iUURTHj6aFudCdr4pWEhO1iIJ5lKkzjr1QGx11fDaWzjiCUL7SoJeWRVRkJFJOppkYEfRY
+        iY9SEFy0CipqU22Kcme2amH//8e98k1Ktfgxc893zv+ec8+5VzacdKxGDHCCAfAaLIAf4B0YAflgPVgR
+        u8IAssFbsAQ+prbaH6Q02y6AztQWGzegKL99Bl4QER+xAB2AzrPAmdxsjU0/nyXZg15xDZWIpTtHYItK
+        a7Pb8f2J8r0BosAKQS3WDaKQmVhv5UnZWG2Mfzp0/MjL0JnKyWB8Rr/H8IcofxtVTA9tRItlAi0mSU1W
+        sfbmC4Skaiq4r2IisEQgWFQz0yCZd4uYqY4NqdgqrmmIBR/AXFqbQ1JabLLtslvKx+ukciooEKrQguBY
+        5WTAsO+4fsDwVZmy/HmQwAWbwB0yWWZGuFCQiQEEiM8k6KeN35A5zrXYyBKJpCuNRhrYuU8oYa21Nw9l
+        NpjFyGGgBSlu2JmpX5Wf2mqjzgSY5Z83yGyI3fSN1a7Bzm4EeACFyDWgBW8qG/FA9GDVVP26rZdyUL79
+        HLS+UXAhGXPGndCEEyrwv0H3r7rul/A866D1k4KLWHQ5B4speHa1oL9R/aI+vH+0jIK1WvA9ziBsuejC
+        2QTjcX6FcKwBbEA16GOgIqxs/FaDkn0QTNh+JZeCp6A1T8FRiqIp0RxazhmczRQALViqbAb+mZC4h0v0
+        6DwDr/iHF30Jrd+JX8ka8Ap2/cfYBARnJ7kjPtnUsZuCaYj9BTooGAe+gOfcCY+A7Oo5ZAgyEALlJsGj
+        FOSGjr4CwWOhswuDRZDEBSkExmDytvDq7cWAq5lcLhkblPNI3MOlxsZKzKgQNIGIx4EXnB8auKbznjse
+        ZBiM42iAfsxoYvY9r2xsN8pkTIGKeQSiGWcWpIFPER0eI1ML7+qWLieer2LJwaxZul36/m6Gz23l+xAs
+        P7ZmQY0ffAV0Hsc5daK8AITqwGnYngI2gK94M4iIj1iYSAR866YBG8YDJ9/BHGgHKeCPOIf8BqYOPUbp
+        HGb1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="TareasasignadasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>410, 17</value>
+  </metadata>
+  <metadata name="Mantenimiento_ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="item.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MantenimientoprogBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>170, 17</value>
+  </metadata>
 </root>

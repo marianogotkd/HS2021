@@ -812,6 +812,12 @@
     <Compile Include="Modulos\Lista\Lista_prod_ADD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.Designer.vb">
+      <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Mantenimiento\Mantenimiento_config_alta.Designer.vb">
       <DependentUpon>Mantenimiento_config_alta.vb</DependentUpon>
     </Compile>
@@ -1643,6 +1649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Lista\Lista_prod_ADD.resx">
       <DependentUpon>Lista_prod_ADD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.resx">
+      <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mantenimiento\Mantenimiento_config_alta.resx">
       <DependentUpon>Mantenimiento_config_alta.vb</DependentUpon>

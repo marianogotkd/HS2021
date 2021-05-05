@@ -82,4 +82,16 @@
     Private Sub cb_sucursal_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_sucursal.SelectedIndexChanged
         recuperar_equipos()
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If DG_clientes.Rows.Count <> 0 Then
+            Mantenimiento_config_alta.Close()
+            Dim equipo_id As Integer = DG_clientes.CurrentRow.Cells("EquipoidDataGridViewTextBoxColumn").Value
+            Mantenimiento_config_alta.Equipo_id = equipo_id
+            Me.WindowState = FormWindowState.Minimized
+            Mantenimiento_config_alta.Show()
+        Else
+            MessageBox.Show("Error, debe seleccionar un equipo para continuar.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 End Class
