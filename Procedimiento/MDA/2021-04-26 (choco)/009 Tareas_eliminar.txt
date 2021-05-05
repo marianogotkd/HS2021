@@ -1,0 +1,7 @@
+create procedure Tareas_eliminar
+
+@Tareas_id int
+as
+delete from Tareas where Tareas.Tareas_id = @Tareas_id
+
+go

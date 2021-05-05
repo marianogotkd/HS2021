@@ -1,0 +1,10 @@
+create procedure Equipo_categorias_recuperartodo
+
+
+as
+
+select Equipo_categoria1.Cat1_equipo_id, Equipo_categoria1.Cat1_equipo_desc  from Equipo_categoria1 order by Equipo_categoria1.Cat1_equipo_desc asc 
+
+select Cat1_equipo_id, Equipo_categoria2.Cat2_equipo_id, Equipo_categoria2.Cat2_equipo_desc from Equipo_categoria2 order by Equipo_categoria2.Cat1_equipo_id asc 
+
+go

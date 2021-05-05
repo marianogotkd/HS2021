@@ -1,0 +1,13 @@
+create procedure Equipo_validar
+@Cliente_suc_sector_id int,
+@Equipo_descripcion varchar(max),
+@Equipo_denominacion varchar(max)
+as
+
+--validar descripcion
+select * from Equipo where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id and Equipo.Equipo_descripcion = @Equipo_descripcion
+
+--validar denominacion
+select * from Equipo where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id and Equipo.Equipo_denominacion = @Equipo_denominacion
+
+go

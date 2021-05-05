@@ -1,0 +1,8 @@
+create procedure Mantenimiento_tipo_alta
+
+@Mant_tipo_descr varchar(max)
+as
+
+insert Mantenimiento_tipo (Mant_tipo_descr ) values (@Mant_tipo_descr )
+select @@IDENTITY as 'Mant_tipo_id' 
+go

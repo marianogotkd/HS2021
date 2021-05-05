@@ -1,0 +1,6 @@
+create procedure Equipo_categoria2_caracteristicas_alta
+@Cat2_equipo_id int,
+@Cat2_caract_atributo varchar(max)
+as
+insert Equipo_categoria2_caracteristicas (Cat2_equipo_id , Cat2_caract_atributo ) values (@Cat2_equipo_id, @Cat2_caract_atributo )
+go

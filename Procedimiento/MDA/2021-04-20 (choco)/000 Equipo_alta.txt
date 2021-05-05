@@ -1,0 +1,15 @@
+create procedure Equipo_alta
+
+@Equipo_descripcion varchar(max), 
+@Equipo_denominacion varchar(max), 
+@Cliente_suc_sector_id int, 
+@Equipo_idcat int, 
+@Equipo_nrocat int
+
+as
+
+insert Equipo (Equipo_descripcion, Equipo_denominacion, Cliente_suc_sector_id, Equipo_idcat , Equipo_nrocat) 
+values 
+(@Equipo_descripcion, @Equipo_denominacion, @Cliente_suc_sector_id, @Equipo_idcat , @Equipo_nrocat  )
+
+go

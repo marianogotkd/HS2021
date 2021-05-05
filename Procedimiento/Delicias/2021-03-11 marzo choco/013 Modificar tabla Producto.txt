@@ -1,0 +1,3 @@
+[prod_precio_vta] [decimal](38, 2) NULL,
+
+[prod_precio_vta_May] [decimal](38, 2) NULL,

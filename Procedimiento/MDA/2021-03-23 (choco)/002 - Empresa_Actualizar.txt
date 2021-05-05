@@ -1,0 +1,26 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Empresa_Actualizar]    Script Date: 03/23/2021 11:47:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Empresa_Actualizar]
+@empresa_Nombre as varchar(50),
+@empresa_dir as varchar(50),
+@empresa_telefono as varchar(50),
+@empresa_eslogan as varchar(50),
+@empresa_mail as varchar(100),
+@empresa_cuit as varchar(50),
+@empresa_foto varbinary(max),
+@empresa_id int
+as
+update Empresa set
+empresa_Nombre=@empresa_Nombre,
+empresa_dir=@empresa_dir,
+empresa_telefono=@empresa_telefono,
+empresa_eslogan=@empresa_eslogan,
+empresa_mail=@empresa_mail,
+empresa_cuit=@empresa_cuit,
+empresa_foto=@empresa_foto
+where empresa_id=@empresa_id

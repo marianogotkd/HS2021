@@ -1,0 +1,4 @@
+tabla Venta_Producto
+agregar este campo
+
+[CAJA_id] [int] NULL,

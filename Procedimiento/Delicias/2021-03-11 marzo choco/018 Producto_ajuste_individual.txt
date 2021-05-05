@@ -1,0 +1,15 @@
+
+create procedure Producto_ajuste_individual
+
+@prod_codinterno int,
+@prod_precio_vta decimal(38,2),
+@prod_precio_vta_May decimal (38,2),
+@ProdxSuc_stock as decimal(38,2),
+@ProdxSuc_ID int,
+@prod_ptorepo int
+as
+
+update Producto set prod_precio_vta = @prod_precio_vta , prod_precio_vta_May= @prod_precio_vta_May, prod_ptorepo=@prod_ptorepo  where Producto.prod_codinterno = @prod_codinterno 
+
+update Producto_x_sucursal set ProdxSuc_stock = @ProdxSuc_stock where Producto_x_sucursal.ProdxSuc_ID = @ProdxSuc_ID 
+go

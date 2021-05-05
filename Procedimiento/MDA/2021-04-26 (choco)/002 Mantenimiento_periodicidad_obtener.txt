@@ -1,0 +1,23 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_periodicidad_obtener]    Script Date: 04/27/2021 13:49:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Mantenimiento_periodicidad_obtener]
+@Mant_tipo_id int
+
+as
+select
+Mant_periodicidad_desc +' ('+ CONVERT(varchar(max) , Mant_periodicidad_dias) +' dias )' as 'descripcion', Mant_periodicidad_id, Mant_tipo_id  
+
+from Mantenimiento_periodicidad where Mantenimiento_periodicidad.Mant_tipo_id = @Mant_tipo_id order by Mant_periodicidad_desc asc 
+
+
+select 
+Mant_tipo_id , Mant_tipo_descr 
+from Mantenimiento_tipo where Mant_tipo_id = @Mant_tipo_id 
+
+select Mant_periodicidad_id, Mant_periodicidad_desc, Mant_periodicidad_dias,  'en_bd' as 'Estado'
+from Mantenimiento_periodicidad where Mant_tipo_id = @Mant_tipo_id 

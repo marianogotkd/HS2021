@@ -1,0 +1,14 @@
+USE [Delicias]
+GO
+/****** Object:  StoredProcedure [dbo].[CtaCte_movimiento_alta]    Script Date: 03/11/2021 04:17:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[CtaCte_movimiento_modificar]
+
+@movimiento_id int,
+@MovimientosCtaCte_concepto varchar(max)
+as
+update MovimientosCtaCte set MovimientosCtaCte_concepto= @MovimientosCtaCte_concepto where MovimientosCtaCte_id = @movimiento_id 
+go

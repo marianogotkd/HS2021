@@ -1,0 +1,11 @@
+
+create procedure Equipo_modificar
+
+@Equipo_denominacion varchar(max),
+@Equipo_descripcion varchar(max),
+@Equipo_idcat int,
+@Equipo_id int
+as
+update Equipo set Equipo_denominacion = @Equipo_denominacion, Equipo_descripcion = @Equipo_descripcion, Equipo_idcat=@Equipo_idcat where Equipo.Equipo_id = @Equipo_id 
+
+go

@@ -1,0 +1,9 @@
+create procedure Cliente_suc_sector_recuperar_todos
+
+@SucxClie_id int
+
+as
+
+select * from Cliente_suc_sector where Cliente_suc_sector.SucxClie_id = @SucxClie_id order by Cliente_suc_sector.Cliente_suc_sector_descripcion asc
+
+go

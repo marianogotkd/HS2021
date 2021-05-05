@@ -1,0 +1,8 @@
+create procedure Mantenimiento_tipo_validar
+
+@Mant_tipo_descr varchar(max)
+as
+
+select * from Mantenimiento_tipo where Mant_tipo_descr = @Mant_tipo_descr 
+
+go

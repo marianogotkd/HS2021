@@ -1,0 +1,14 @@
+USE [Delicias]
+GO
+/****** Object:  StoredProcedure [dbo].[Recibo_alta]    Script Date: 03/11/2021 04:11:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Recibo_alta]
+@MovimientosCtaCte_id int,
+@fecha datetime
+as
+insert Recibo (recibo_fecha, MovimientosCtaCte_id) values (@fecha , @MovimientosCtaCte_id )
+
+select * from Recibo  where Recibo.MovimientosCtaCte_id = @MovimientosCtaCte_id 

@@ -1,0 +1,7 @@
+create procedure Equipo_categoria1_validar
+
+@Cat1_equipo_desc varchar(max)
+as
+select * from Equipo_categoria1 where Equipo_categoria1.Cat1_equipo_desc = @Cat1_equipo_desc 
+
+go

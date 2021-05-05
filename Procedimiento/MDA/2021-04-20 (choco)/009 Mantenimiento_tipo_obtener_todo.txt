@@ -1,0 +1,4 @@
+create procedure Mantenimiento_tipo_obtener_todo
+as
+select * from Mantenimiento_tipo order by Mantenimiento_tipo.Mant_tipo_descr asc
+go

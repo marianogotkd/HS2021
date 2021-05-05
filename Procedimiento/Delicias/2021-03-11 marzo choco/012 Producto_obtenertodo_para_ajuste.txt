@@ -1,0 +1,20 @@
+create procedure Producto_obtenertodo_para_ajuste
+as
+
+select
+Producto.prod_id, 
+prod_descripcion, 
+prod_descrilarga, 
+prod_precio_vta, 
+prod_codinterno, 
+prod_idcat, 
+prod_nrocat, 
+marca_id, 
+prod_precio_vta_May, prod_eliminado,
+ProveedorProducto.Prov_id,
+Proveedor.Prov_nombre 
+from Producto inner join ProveedorProducto on Producto.prod_id = ProveedorProducto.prod_id  
+inner join Proveedor on ProveedorProducto.Prov_id = Proveedor.Prov_id 
+where prod_eliminado = 'no' order by ProveedorProducto.Prov_id asc
+
+go

@@ -1,0 +1,32 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Empresa_Alta]    Script Date: 03/23/2021 11:47:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Empresa_Alta]
+@empresa_Nombre as varchar(50),
+@empresa_dir as varchar(50),
+@empresa_telefono as varchar(50),
+@empresa_eslogan as varchar(50),
+@empresa_mail as varchar(100),
+@empresa_cuit as varchar(50),
+@empresa_foto varbinary(max)
+as
+insert Empresa
+(empresa_Nombre,
+empresa_dir,
+empresa_telefono,
+empresa_eslogan,
+empresa_mail,
+empresa_cuit,
+empresa_foto)
+values
+(@empresa_Nombre,
+@empresa_dir,
+@empresa_telefono,
+@empresa_eslogan,
+@empresa_mail,
+@empresa_cuit,
+@empresa_foto)

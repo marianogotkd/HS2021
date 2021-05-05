@@ -1,0 +1,8 @@
+create procedure Cliente_suc_sector_validar
+@Cliente_suc_sector_descripcion varchar(max),
+@Cliente_suc_sector_denominacion varchar(max),
+@SucxClie_id int --este parametro es la sucursal del cliente.
+as
+select * from Cliente_suc_sector where Cliente_suc_sector.Cliente_suc_sector_descripcion = @Cliente_suc_sector_descripcion and SucxClie_id = @SucxClie_id
+select * from Cliente_suc_sector where Cliente_suc_sector.Cliente_suc_sector_denominacion = @Cliente_suc_sector_denominacion and SucxClie_id = @SucxClie_id
+go

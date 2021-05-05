@@ -1,0 +1,3 @@
+
+agregar ese campo
+[CAJA_id] [int] NULL,

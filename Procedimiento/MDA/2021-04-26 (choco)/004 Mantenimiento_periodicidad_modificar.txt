@@ -1,0 +1,9 @@
+create procedure Mantenimiento_periodicidad_modificar
+@Mant_periodicidad_id int,
+@Mant_periodicidad_desc varchar(max),
+@Mant_periodicidad_dias int
+as
+update Mantenimiento_periodicidad set Mant_periodicidad_desc =@Mant_periodicidad_desc, Mant_periodicidad_dias=@Mant_periodicidad_dias
+where Mant_periodicidad_id = @Mant_periodicidad_id   
+
+go

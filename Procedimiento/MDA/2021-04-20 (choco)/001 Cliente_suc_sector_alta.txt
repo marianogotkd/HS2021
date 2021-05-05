@@ -1,0 +1,13 @@
+create procedure Cliente_suc_sector_alta
+@Cliente_suc_sector_descripcion varchar(max), 
+@Cliente_suc_sector_denominacion varchar(max), 
+@SucxClie_id int
+
+as
+
+insert Cliente_suc_sector (Cliente_suc_sector_descripcion, Cliente_suc_sector_denominacion, SucxClie_id) 
+values 
+(@Cliente_suc_sector_descripcion, @Cliente_suc_sector_denominacion, @SucxClie_id )
+
+
+go

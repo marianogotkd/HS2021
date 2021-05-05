@@ -1,0 +1,8 @@
+create procedure Producto_ajuste_precio_mayorista
+
+@prod_id as integer,
+@prod_precio_vta_May as decimal(38,2)
+as
+update Producto set prod_precio_vta_May = @prod_precio_vta_May where Producto.prod_id = @prod_id   
+
+go

@@ -1,0 +1,7 @@
+create procedure Tareas_modificar
+@Tareas_id int,
+@Tareas_desc varchar(max)
+as
+
+update Tareas set Tareas_desc = @Tareas_desc where Tareas.Tareas_id=@Tareas_id
+go 

@@ -1,0 +1,6 @@
+agregar campo a la tabla Producto
+
+[prod_precio_editable] [varchar](2) NULL,
+
+
+va a tener 2 estados si/no

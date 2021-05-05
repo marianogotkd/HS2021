@@ -1,0 +1,7 @@
+create procedure Tareas_alta
+@Tareas_desc varchar(max), 
+@Cat2_equipo_id int, 
+@Mant_periodicidad_id int
+as
+insert Tareas (Tareas_desc, Cat2_equipo_id, Mant_periodicidad_id) values (@Tareas_desc, @Cat2_equipo_id, @Mant_periodicidad_id)
+go

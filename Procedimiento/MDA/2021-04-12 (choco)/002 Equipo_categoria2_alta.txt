@@ -1,0 +1,11 @@
+create procedure Equipo_categoria2_alta
+@Cat2_equipo_desc varchar(max),
+@Cat1_equipo_id int
+
+as
+
+insert dbo.Equipo_categoria2 (Cat1_equipo_id , Cat2_equipo_desc ) values (@Cat1_equipo_id, @Cat2_equipo_desc )
+
+select Equipo_categoria2.Cat2_equipo_id  from Equipo_categoria2 where Equipo_categoria2.Cat2_equipo_desc = @Cat2_equipo_desc and Equipo_categoria2.Cat1_equipo_id = @Cat1_equipo_id  
+
+go

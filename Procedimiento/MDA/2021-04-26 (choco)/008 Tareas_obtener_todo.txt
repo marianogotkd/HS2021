@@ -1,0 +1,13 @@
+create procedure Tareas_obtener_todo
+as
+select Tareas.Tareas_id, Tareas.Tareas_desc, Mantenimiento_tipo.Mant_tipo_id, Mantenimiento_tipo.Mant_tipo_descr as 'Mantenimiento_tipo', 
+Mantenimiento_periodicidad.Mant_periodicidad_id, Mantenimiento_periodicidad.Mant_periodicidad_desc+ ' ('+ CONVERT (varchar(max),Mantenimiento_periodicidad.Mant_periodicidad_dias)+' dias)' as 'Periodicidad',
+Equipo_categoria1.Cat1_equipo_id , Equipo_categoria1.Cat1_equipo_desc as 'Tipo',
+Equipo_categoria2.Cat2_equipo_id, Equipo_categoria2.Cat2_equipo_desc as 'Subtipo'
+from Tareas 
+inner join Equipo_categoria2 on Tareas.Cat2_equipo_id = Equipo_categoria2.Cat2_equipo_id 
+inner join Equipo_categoria1 on Equipo_categoria2.Cat1_equipo_id = Equipo_categoria1.Cat1_equipo_id 
+inner join Mantenimiento_periodicidad on Tareas.Mant_periodicidad_id = Mantenimiento_periodicidad.Mant_periodicidad_id 
+inner join Mantenimiento_tipo on Mantenimiento_periodicidad.Mant_tipo_id = Mantenimiento_tipo.Mant_tipo_id
+order by Tareas.Tareas_desc asc 
+go

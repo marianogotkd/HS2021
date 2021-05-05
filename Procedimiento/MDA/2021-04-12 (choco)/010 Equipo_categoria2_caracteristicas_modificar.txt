@@ -1,0 +1,10 @@
+create procedure Equipo_categoria2_caracteristicas_modificar
+@Cat2_caract_atributo varchar(max),
+@Cat2_caract_id int
+
+as
+
+
+update Equipo_categoria2_caracteristicas set Cat2_caract_atributo = @Cat2_caract_atributo where Cat2_caract_id = @Cat2_caract_id
+
+go

@@ -1,0 +1,19 @@
+create procedure Producto_ajuste_recuperar_info
+
+@prod_codinterno int
+as
+select
+prod_codinterno,
+prod_descripcion,
+prod_precio_vta as 'precio_minorista',
+prod_precio_vta_May as 'precio_mayorista',
+ProdxSuc_stock ,
+prod_ptorepo, 
+Sucursal.sucursal_id ,
+sucursal_nombre,
+Producto_x_sucursal.ProdxSuc_ID 
+from Producto inner join Producto_x_sucursal on Producto.prod_id = Producto_x_sucursal.prod_id 
+inner join Sucursal on Producto_x_sucursal.sucursal_id = Sucursal.sucursal_id 
+where Producto.prod_codinterno = @prod_codinterno order by Sucursal.sucursal_nombre asc
+
+go

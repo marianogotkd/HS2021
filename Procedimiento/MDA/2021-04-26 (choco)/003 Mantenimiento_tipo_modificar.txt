@@ -1,0 +1,8 @@
+create procedure Mantenimiento_tipo_modificar
+@Mant_tipo_id int,
+@Mant_tipo_descr varchar(max)
+
+as
+
+update Mantenimiento_tipo set Mant_tipo_descr = @Mant_tipo_descr where Mant_tipo_id=@Mant_tipo_id
+go

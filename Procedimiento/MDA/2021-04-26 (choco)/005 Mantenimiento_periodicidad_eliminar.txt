@@ -1,0 +1,6 @@
+create procedure Mantenimiento_periodicidad_eliminar
+@Mant_periodicidad_id int
+as
+delete from Mantenimiento_periodicidad where Mantenimiento_periodicidad.Mant_periodicidad_id = @Mant_periodicidad_id 
+
+go

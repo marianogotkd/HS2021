@@ -1,0 +1,9 @@
+create procedure Mantenimiento_periodicidad_alta
+
+@Mant_periodicidad_desc varchar(max), 
+@Mant_periodicidad_dias int, 
+@Mant_tipo_id int
+as
+
+insert Mantenimiento_periodicidad (Mant_periodicidad_desc, Mant_periodicidad_dias, Mant_tipo_id) values (@Mant_periodicidad_desc, @Mant_periodicidad_dias, @Mant_tipo_id)
+go

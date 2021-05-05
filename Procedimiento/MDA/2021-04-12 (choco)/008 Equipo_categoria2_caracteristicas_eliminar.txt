@@ -1,0 +1,8 @@
+create procedure Equipo_categoria2_caracteristicas_eliminar
+
+@Cat2_caract_id integer
+as
+
+delete from Equipo_categoria2_caracteristicas where Equipo_categoria2_caracteristicas.Cat2_caract_id = @Cat2_caract_id
+
+go

@@ -1,0 +1,43 @@
+
+create procedure [dbo].[Caja_obtener_productos_facturados_X_categoria]
+@caja_id int
+
+as
+select Venta_Producto_detalle.prod_id, 
+Venta_Producto_detalle.codigointerno, 
+Producto.prod_descripcion, 
+Venta_Producto_detalle.ventaprod_subtotal, 
+Producto.prod_idcat, 
+Producto.prod_nrocat,
+Venta_Producto.ventaprod_estado  
+from Caja inner join Factura on Caja.CAJA_id = Factura.CAJA_id 
+inner join Venta_Producto on Factura.ventaprod_id = Venta_Producto.ventaprod_id 
+inner join Venta_Producto_detalle on Venta_Producto.ventaprod_id = Venta_Producto_detalle.ventaprod_id
+inner join Producto on Venta_Producto_detalle.prod_id = Producto.prod_id where Factura.CAJA_id = @caja_id and Venta_Producto.ventaprod_estado = 'Cobrado'
+
+---aqui recupero todas categorias, rubros y subrubros
+SELECT 
+Categoria_1.cat_id as Categoria_cat_id,
+Categoria_1.cat1_nom as Categoria_nombre
+FROM Categoria_1
+
+---categoria y rubro
+SELECT 
+Categoria_1.cat_id as Categoria_cat_id,
+Categoria_1.cat1_nom as Categoria_nombre,
+Categoria_2.cat2_id as Rubro_cat2_id,
+Categoria_2.cat2_nom as Rubro_nombre
+FROM Categoria_1 inner join Categoria_2 ON Categoria_1.cat_id = Categoria_2.cat1_id
+
+---categoria, rubro, subrubro
+SELECT 
+Categoria_1.cat_id as Categoria_cat_id,
+Categoria_1.cat1_nom as Categoria_nombre,
+Categoria_2.cat2_id as Rubro_cat2_id,
+Categoria_2.cat2_nom as Rubro_nombre,
+Categoria_3.cat3_id as Subrubro_cat3_id,
+Categoria_3.cat3_nom as Subrubro_cat3_nombre
+FROM  dbo.Categoria_3 INNER JOIN
+               dbo.Categoria_2 ON dbo.Categoria_3.cat2_id = dbo.Categoria_2.cat2_id INNER JOIN
+               dbo.Categoria_1 ON dbo.Categoria_2.cat1_id = dbo.Categoria_1.cat_id
+go

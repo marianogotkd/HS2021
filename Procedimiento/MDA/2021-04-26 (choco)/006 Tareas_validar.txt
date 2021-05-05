@@ -1,0 +1,9 @@
+create procedure Tareas_validar
+@Tareas_desc varchar(max),
+@Cat2_equipo_id int
+as
+select 
+Tareas.Tareas_id,
+Tareas.Tareas_desc
+from Tareas inner join Equipo_categoria2 on Tareas.Cat2_equipo_id = Equipo_categoria2.Cat2_equipo_id where Tareas.Tareas_desc = @Tareas_desc and Tareas.Cat2_equipo_id =@Cat2_equipo_id 
+go

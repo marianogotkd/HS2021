@@ -1,0 +1,13 @@
+create procedure Equipo_categoria1_y_2_recuperar
+
+@Cat1_equipo_id int
+as
+
+select Equipo_categoria1.Cat1_equipo_id, Equipo_categoria1.Cat1_equipo_desc  from Equipo_categoria1 where Equipo_categoria1.Cat1_equipo_id = @Cat1_equipo_id 
+
+select Equipo_categoria2.Cat2_equipo_id, Equipo_categoria2.Cat2_equipo_desc as 'descripcion', 'en_bd' as 'estado'  from Equipo_categoria2 where Cat1_equipo_id = @Cat1_equipo_id 
+
+select Equipo_categoria2.Cat2_equipo_id, Equipo_categoria2_caracteristicas.Cat2_caract_id, Cat2_caract_atributo, 'en_bd' as 'estado', Equipo_categoria2.Cat2_equipo_desc as 'subtipo'     from Equipo_categoria2 inner join Equipo_categoria2_caracteristicas on Equipo_categoria2.Cat2_equipo_id = Equipo_categoria2_caracteristicas.Cat2_equipo_id where Equipo_categoria2.Cat1_equipo_id = @Cat1_equipo_id 
+
+
+go
