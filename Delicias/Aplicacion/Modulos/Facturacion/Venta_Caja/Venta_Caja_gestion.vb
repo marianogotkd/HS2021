@@ -1809,8 +1809,10 @@
 
                                     'ACTUALIZAR EN TABLA "Venta_Producto_detalle"
                                     For Each row As DataGridViewRow In DataGridView1.Rows
-                                        If row.Cells("columna_prod_id").Value <> 0 Then
-                                            DAventa.VentaProductoDetalle_alta(remito_ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                        If row.Cells("columna_prod_id").Value <> "" Then
+                                            If row.Cells("columna_prod_id").Value <> 0 Then
+                                                DAventa.VentaProductoDetalle_alta(remito_ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                            End If
                                         End If
                                     Next
 
@@ -1882,9 +1884,14 @@
         sucursal_id = ds_rem_prod.Tables(0).Rows(0).Item("sucursal_id")
         While h < DataGridView1.Rows.Count
             Dim prod_codigo As Integer = 0
-            If DataGridView1.Rows(h).Cells("columna_codinterno").Value <> "0" Then
-                prod_codigo = CInt(DataGridView1.Rows(h).Cells("columna_codinterno").Value)
+            If DataGridView1.Rows(h).Cells("columna_codinterno").Value <> "" Then
+                If DataGridView1.Rows(h).Cells("columna_codinterno").Value <> "0" Then
+                    prod_codigo = CInt(DataGridView1.Rows(h).Cells("columna_codinterno").Value)
+                End If
+            Else
+                Exit While 'salgo del ciclo x que la fila esta vacia.
             End If
+            
             Dim ds_stock As DataSet = DAproducto.Producto_x_sucursal_buscarcod(prod_codigo, sucursal_id)
             If ds_stock.Tables(0).Rows.Count <> 0 Then
                 Dim diferencia As Decimal = CDec(ds_stock.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(DataGridView1.Rows(h).Cells("columna_cantidad").Value)
@@ -1943,8 +1950,10 @@
                 '//////////////////////////////////////////////////////////////////////////////////
                 'GUARDAR EN TABLA "Venta_Producto_detalle"
                 For Each row As DataGridViewRow In DataGridView1.Rows
-                    If row.Cells("columna_prod_id").Value <> 0 Then
-                        DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                    If row.Cells("columna_prod_id").Value <> "" Then
+                        If row.Cells("columna_prod_id").Value <> 0 Then
+                            DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                        End If
                     End If
                 Next
                 'aqui hago el descuento de stock...
@@ -1955,9 +1964,14 @@
                 Dim ds_stock As New DataSet
                 While i < DataGridView1.Rows.Count
                     Dim prod_codigo As Integer = 0
-                    If DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
-                        prod_codigo = CInt(DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                    If DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "" Then
+                        If DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
+                            prod_codigo = CInt(DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                        End If
+                    Else
+                        Exit While 'salgo del ciclo x que la fila esta vacia
                     End If
+                    
                     ds_stock = DAproducto.Producto_x_sucursal_buscarcod(prod_codigo, sucursal_id)
                     If ds_stock.Tables(0).Rows.Count <> 0 Then
                         Dim diferencia As Decimal = CDec(ds_stock.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(DataGridView1.Rows(i).Cells("columna_cantidad").Value)
@@ -3212,8 +3226,10 @@
 
                                     'ACTUALIZAR EN TABLA "Venta_Producto_detalle"
                                     For Each row As DataGridViewRow In DataGridView1.Rows
-                                        If row.Cells("columna_prod_id").Value <> 0 Then
-                                            DAventa.VentaProductoDetalle_alta(remito_ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                        If row.Cells("columna_prod_id").Value <> "" Then
+                                            If row.Cells("columna_prod_id").Value <> 0 Then
+                                                DAventa.VentaProductoDetalle_alta(remito_ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                            End If
                                         End If
                                     Next
                                     'MessageBox.Show("El remito se modificó correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)

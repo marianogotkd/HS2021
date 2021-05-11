@@ -6,7 +6,151 @@ Aplicacion
 </name>
 </assembly>
 <members>
-<member name="T:Aplicacion.Producto_ds.ProveedorProductoDataTable">
+<member name="T:Aplicacion.CtaCte_ds.ComprobantesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds.ReciboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.CtaCte_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_consulta_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_usuario">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Producto_ds.ProveedorProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -58,19 +202,199 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesDataTable">
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesRow">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds.TerminalesRowChangeEvent">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Terminales_ds">
+</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mesas_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Ds_ajuste_masivo">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_reporte_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Venta_Caja_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -387,682 +711,6 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Categoria_1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Categorias_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_configuraciones.SucursalRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_configuraciones">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Empresa_DS.empresaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Empresa_DS.empresaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Empresa_DS.empresaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Empresa_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.PagosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.PagosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.PagosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Informe_ds.EmpleadoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Informe_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJADataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLEDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJARow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLERow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJARowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLERowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_reportes_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Venta_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.venta_de_sucursalRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.CajaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Productos_detalle_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_usuariosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds.Resumen_vendedoresRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_consulta_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Proveedores_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_remito.RemitoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_remito">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.dsPedidos">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds.EmpresaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Cliente_reporte_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.TurnoInforme">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ProductoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaProductoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.BusquedaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds.ListProdModifRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Lista_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Marca_DS.MarcaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Marca_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Caja_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Pedidos_reporte_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Stock_DS.StockDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Stock_DS.StockRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Stock_DS.StockRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Stock_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.UsuariosbloqueadosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_usuario.Tipos_UsuarioRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_usuario">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Egresos_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
 </member><member name="T:Aplicacion.Facturacion_ds_report.Producto_agregadoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -1151,43 +799,47 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.MovDataTable">
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaDataTable">
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.TurnoInforme.TurnoReservadoComunRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.TurnoInforme">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJADataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleDataTable">
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLEDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.MovRow">
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJARow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRow">
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLERow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mov_DS.MovRowChangeEvent">
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJARowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRowChangeEvent">
+</member><member name="T:Aplicacion.Caja_reportes_DS.CAJA_DETALLERowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mov_DS">
+</member><member name="T:Aplicacion.Caja_reportes_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1219,175 +871,283 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosDataTable">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasDataTable">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosRow">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasRow">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.Articulos_agregadosRowChangeEvent">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.EmpresaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo.aux_categoriasRowChangeEvent">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.PedidoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Ds_ajuste_masivo">
+</member><member name="T:Aplicacion.Pedidos_reporte_DS.Pedido_detalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Pedidos_reporte_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesDataTable">
+</member><member name="T:Aplicacion.Lista_ds.ProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboDataTable">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRow">
+</member><member name="T:Aplicacion.Lista_ds.ListaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboRow">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ComprobantesRowChangeEvent">
+</member><member name="T:Aplicacion.Lista_ds.ListaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds.ReciboRowChangeEvent">
+</member><member name="T:Aplicacion.Lista_ds.ListaProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.CtaCte_ds">
+</member><member name="T:Aplicacion.Lista_ds.ListaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.BusquedaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds.ListProdModifRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Lista_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteDataTable">
+</member><member name="T:Aplicacion.Marca_DS.MarcaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteRow">
+</member><member name="T:Aplicacion.Marca_DS.MarcaRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.ClienteRowChangeEvent">
+</member><member name="T:Aplicacion.Marca_DS.MarcaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Producto_agregadoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Productos_CombosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PromocionesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Combo_detallesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Promocion_detallesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.PruebaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds.Tipo_vtaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Venta_Caja_ds">
+</member><member name="T:Aplicacion.Marca_DS">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Ajuste_precios_DS.productoDataTable">
+</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.Ajuste_precios_DS.productoRow">
+</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.Ajuste_precios_DS.productoRowChangeEvent">
+</member><member name="T:Aplicacion.Proveedores_DS.Proveedor_obtener_todoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.Ajuste_precios_DS">
+</member><member name="T:Aplicacion.Proveedores_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Informe_ds.EmpleadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Informe_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Egresos_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Caja_solo_ingresos_egresosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS.Consulta_solo_ingresos_egresosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Egresos_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Obtener_PedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.PedidosConsultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedidos_ObtenerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Pedido_DetalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos.Productos_x_ProveedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.dsPedidos">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -1731,6 +1491,198 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
+</member><member name="T:Aplicacion.Mov_DS.MovDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.MovRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.MovRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mov_DS.movimientos_detalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Mov_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Ajuste_precios_DS.productoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Ajuste_precios_DS.productoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Ajuste_precios_DS.productoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Ajuste_precios_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Stock_DS.StockDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Stock_DS.StockRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Stock_DS.StockRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Stock_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_vendedor">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds.TerminalesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Terminales_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_configuraciones.SucursalRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_configuraciones">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Caja_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Cierre_caja_detalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Empresa_DS.empresaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Empresa_DS.empresaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Empresa_DS.empresaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Empresa_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.DS_remito.RemitoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.DS_remito.RemitoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.DS_remito.RemitoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.DS_remito">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="T:Aplicacion.Turno_ds.TurnoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -1843,62 +1795,6 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.MesasAsignadasRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.TotalMozoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds.ClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.Mesas_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor.Vendedor_agregadoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Aplicacion.DS_vendedor">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
 </member><member name="T:Aplicacion.Venta_ds.ProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -1912,6 +1808,110 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.Venta_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Categoria_1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS.Cat_rubro_subrubroRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Categorias_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.PagosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.PagosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.PagosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Cliente_CtaCteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Movimiento_CtaCteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds.Detalle_CtaCteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Cliente_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>

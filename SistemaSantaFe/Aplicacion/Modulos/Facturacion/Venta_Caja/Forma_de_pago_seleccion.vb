@@ -193,9 +193,12 @@
                                     '//////////////////////////////////////////////////////////////////////////////////
                                     'GUARDAR EN TABLA "Venta_Producto_detalle"
                                     For Each row As DataGridViewRow In Venta_Caja_gestion.DataGridView1.Rows
-                                        If row.Cells("columna_prod_id").Value <> 0 Then
-                                            DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                        If row.Cells("columna_prod_id").Value <> "" Then
+                                            If row.Cells("columna_prod_id").Value <> 0 Then
+                                                DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                                            End If
                                         End If
+                                        
                                     Next
                                     'aqui hago el descuento de stock...
                                     'primero de los productos ....luego de los combos...(ya q estan formados por varios productos)
@@ -205,9 +208,14 @@
                                     Dim ds_stock As New DataSet
                                     While i < Venta_Caja_gestion.DataGridView1.Rows.Count
                                         Dim prod_codigo As Integer = 0
-                                        If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
-                                            prod_codigo = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                                        If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "" Then
+                                            If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
+                                                prod_codigo = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                                            End If
+                                        Else
+                                            Exit While
                                         End If
+                                        
                                         ds_stock = DAproducto.Producto_x_sucursal_buscarcod(prod_codigo, sucursal_id)
                                         If ds_stock.Tables(0).Rows.Count <> 0 Then
                                             Dim diferencia As Decimal = CDec(ds_stock.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
