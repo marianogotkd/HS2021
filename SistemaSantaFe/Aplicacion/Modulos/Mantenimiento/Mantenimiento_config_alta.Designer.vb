@@ -27,7 +27,7 @@ Partial Class Mantenimiento_config_alta
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_categoria = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_etiqueta = New System.Windows.Forms.TextBox()
         Me.txt_sector = New System.Windows.Forms.TextBox()
@@ -70,7 +70,7 @@ Partial Class Mantenimiento_config_alta
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txt_categoria)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txt_etiqueta)
         Me.GroupBox1.Controls.Add(Me.txt_sector)
@@ -85,14 +85,14 @@ Partial Class Mantenimiento_config_alta
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INFORMACION DEL EQUIPO"
         '
-        'TextBox1
+        'txt_categoria
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Info
-        Me.TextBox1.Location = New System.Drawing.Point(182, 97)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(276, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.txt_categoria.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_categoria.Location = New System.Drawing.Point(182, 97)
+        Me.txt_categoria.Name = "txt_categoria"
+        Me.txt_categoria.ReadOnly = True
+        Me.txt_categoria.Size = New System.Drawing.Size(276, 20)
+        Me.txt_categoria.TabIndex = 7
         '
         'Label4
         '
@@ -439,7 +439,7 @@ Partial Class Mantenimiento_config_alta
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_categoria As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox

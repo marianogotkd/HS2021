@@ -1,0 +1,12 @@
+create procedure Mantenimiento_alta
+@Equipo_id int,
+@Mant_periodicidad_id int,
+@Mantenimiento_fecha_inicio datetime
+
+as
+
+insert Mantenimiento (Equipo_id, Mant_periodicidad_id, Mantenimiento_fecha_inicio) values (@Equipo_id, @Mant_periodicidad_id, @Mantenimiento_fecha_inicio)
+
+select @@IDENTITY as 'Mantenimiento_id'
+
+go

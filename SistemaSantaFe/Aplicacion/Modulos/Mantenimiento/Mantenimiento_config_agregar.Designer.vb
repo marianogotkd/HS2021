@@ -31,7 +31,12 @@ Partial Class Mantenimiento_config_agregar
         Me.cb_periodicidad = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.dg_atributos = New System.Windows.Forms.DataGridView()
+        Me.dg_tareas = New System.Windows.Forms.DataGridView()
+        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ManttipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,15 +48,10 @@ Partial Class Mantenimiento_config_agregar
         Me.Cat2equipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SubtipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.fecha = New System.Windows.Forms.DateTimePicker()
-        Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_tareas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TareasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Mantenimiento_ds, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -126,7 +126,7 @@ Partial Class Mantenimiento_config_agregar
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.dg_atributos)
+        Me.GroupBox4.Controls.Add(Me.dg_tareas)
         Me.GroupBox4.Location = New System.Drawing.Point(12, 143)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(686, 205)
@@ -134,121 +134,32 @@ Partial Class Mantenimiento_config_agregar
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "3. Seleccione tareas a realizar:"
         '
-        'dg_atributos
+        'dg_tareas
         '
-        Me.dg_atributos.AllowUserToAddRows = False
-        Me.dg_atributos.AllowUserToDeleteRows = False
-        Me.dg_atributos.AllowUserToResizeRows = False
-        Me.dg_atributos.AutoGenerateColumns = False
-        Me.dg_atributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg_atributos.BackgroundColor = System.Drawing.Color.White
-        Me.dg_atributos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dg_atributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_atributos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TareasidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.ManttipoidDataGridViewTextBoxColumn, Me.MantenimientotipoDataGridViewTextBoxColumn, Me.MantperiodicidadidDataGridViewTextBoxColumn, Me.PeriodicidadDataGridViewTextBoxColumn, Me.Cat1equipoidDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.Cat2equipoidDataGridViewTextBoxColumn, Me.SubtipoDataGridViewTextBoxColumn, Me.item})
-        Me.dg_atributos.DataSource = Me.TareasBindingSource
-        Me.dg_atributos.Location = New System.Drawing.Point(9, 20)
-        Me.dg_atributos.Margin = New System.Windows.Forms.Padding(4)
-        Me.dg_atributos.MultiSelect = False
-        Me.dg_atributos.Name = "dg_atributos"
-        Me.dg_atributos.ReadOnly = True
-        Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dg_atributos.RowHeadersVisible = False
+        Me.dg_tareas.AllowUserToAddRows = False
+        Me.dg_tareas.AllowUserToDeleteRows = False
+        Me.dg_tareas.AllowUserToResizeRows = False
+        Me.dg_tareas.AutoGenerateColumns = False
+        Me.dg_tareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dg_tareas.BackgroundColor = System.Drawing.Color.White
+        Me.dg_tareas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dg_tareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_tareas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TareasidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.ManttipoidDataGridViewTextBoxColumn, Me.MantenimientotipoDataGridViewTextBoxColumn, Me.MantperiodicidadidDataGridViewTextBoxColumn, Me.PeriodicidadDataGridViewTextBoxColumn, Me.Cat1equipoidDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.Cat2equipoidDataGridViewTextBoxColumn, Me.SubtipoDataGridViewTextBoxColumn, Me.item})
+        Me.dg_tareas.DataSource = Me.TareasBindingSource
+        Me.dg_tareas.Location = New System.Drawing.Point(9, 20)
+        Me.dg_tareas.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg_tareas.MultiSelect = False
+        Me.dg_tareas.Name = "dg_tareas"
+        Me.dg_tareas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dg_tareas.RowHeadersVisible = False
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_atributos.Size = New System.Drawing.Size(665, 173)
-        Me.dg_atributos.StandardTab = True
-        Me.dg_atributos.TabIndex = 7
-        '
-        'TareasidDataGridViewTextBoxColumn
-        '
-        Me.TareasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_id"
-        Me.TareasidDataGridViewTextBoxColumn.HeaderText = "Tareas_id"
-        Me.TareasidDataGridViewTextBoxColumn.Name = "TareasidDataGridViewTextBoxColumn"
-        Me.TareasidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TareasidDataGridViewTextBoxColumn.Visible = False
-        '
-        'TareasdescDataGridViewTextBoxColumn
-        '
-        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
-        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "TAREA"
-        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
-        Me.TareasdescDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ManttipoidDataGridViewTextBoxColumn
-        '
-        Me.ManttipoidDataGridViewTextBoxColumn.DataPropertyName = "Mant_tipo_id"
-        Me.ManttipoidDataGridViewTextBoxColumn.HeaderText = "Mant_tipo_id"
-        Me.ManttipoidDataGridViewTextBoxColumn.Name = "ManttipoidDataGridViewTextBoxColumn"
-        Me.ManttipoidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ManttipoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantenimientotipoDataGridViewTextBoxColumn
-        '
-        Me.MantenimientotipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.MantenimientotipoDataGridViewTextBoxColumn.DataPropertyName = "Mantenimiento_tipo"
-        Me.MantenimientotipoDataGridViewTextBoxColumn.HeaderText = "MANTENIMIENTO"
-        Me.MantenimientotipoDataGridViewTextBoxColumn.Name = "MantenimientotipoDataGridViewTextBoxColumn"
-        Me.MantenimientotipoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MantperiodicidadidDataGridViewTextBoxColumn
-        '
-        Me.MantperiodicidadidDataGridViewTextBoxColumn.DataPropertyName = "Mant_periodicidad_id"
-        Me.MantperiodicidadidDataGridViewTextBoxColumn.HeaderText = "Mant_periodicidad_id"
-        Me.MantperiodicidadidDataGridViewTextBoxColumn.Name = "MantperiodicidadidDataGridViewTextBoxColumn"
-        Me.MantperiodicidadidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MantperiodicidadidDataGridViewTextBoxColumn.Visible = False
-        '
-        'PeriodicidadDataGridViewTextBoxColumn
-        '
-        Me.PeriodicidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PeriodicidadDataGridViewTextBoxColumn.DataPropertyName = "Periodicidad"
-        Me.PeriodicidadDataGridViewTextBoxColumn.HeaderText = "PERIODICIDAD"
-        Me.PeriodicidadDataGridViewTextBoxColumn.Name = "PeriodicidadDataGridViewTextBoxColumn"
-        Me.PeriodicidadDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Cat1equipoidDataGridViewTextBoxColumn
-        '
-        Me.Cat1equipoidDataGridViewTextBoxColumn.DataPropertyName = "Cat1_equipo_id"
-        Me.Cat1equipoidDataGridViewTextBoxColumn.HeaderText = "Cat1_equipo_id"
-        Me.Cat1equipoidDataGridViewTextBoxColumn.Name = "Cat1equipoidDataGridViewTextBoxColumn"
-        Me.Cat1equipoidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.Cat1equipoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'TipoDataGridViewTextBoxColumn
-        '
-        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
-        Me.TipoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TipoDataGridViewTextBoxColumn.Visible = False
-        '
-        'Cat2equipoidDataGridViewTextBoxColumn
-        '
-        Me.Cat2equipoidDataGridViewTextBoxColumn.DataPropertyName = "Cat2_equipo_id"
-        Me.Cat2equipoidDataGridViewTextBoxColumn.HeaderText = "Cat2_equipo_id"
-        Me.Cat2equipoidDataGridViewTextBoxColumn.Name = "Cat2equipoidDataGridViewTextBoxColumn"
-        Me.Cat2equipoidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.Cat2equipoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'SubtipoDataGridViewTextBoxColumn
-        '
-        Me.SubtipoDataGridViewTextBoxColumn.DataPropertyName = "Subtipo"
-        Me.SubtipoDataGridViewTextBoxColumn.HeaderText = "Subtipo"
-        Me.SubtipoDataGridViewTextBoxColumn.Name = "SubtipoDataGridViewTextBoxColumn"
-        Me.SubtipoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SubtipoDataGridViewTextBoxColumn.Visible = False
-        '
-        'item
-        '
-        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.item.HeaderText = "Item"
-        Me.item.Name = "item"
-        Me.item.ReadOnly = True
-        Me.item.Width = 50
+        Me.dg_tareas.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dg_tareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg_tareas.Size = New System.Drawing.Size(665, 173)
+        Me.dg_tareas.StandardTab = True
+        Me.dg_tareas.TabIndex = 7
         '
         'TareasBindingSource
         '
@@ -292,6 +203,87 @@ Partial Class Mantenimiento_config_agregar
         Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_Aceptar.UseVisualStyleBackColor = True
         '
+        'TareasidDataGridViewTextBoxColumn
+        '
+        Me.TareasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_id"
+        Me.TareasidDataGridViewTextBoxColumn.HeaderText = "Tareas_id"
+        Me.TareasidDataGridViewTextBoxColumn.Name = "TareasidDataGridViewTextBoxColumn"
+        Me.TareasidDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasdescDataGridViewTextBoxColumn
+        '
+        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
+        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "TAREA"
+        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
+        Me.TareasdescDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ManttipoidDataGridViewTextBoxColumn
+        '
+        Me.ManttipoidDataGridViewTextBoxColumn.DataPropertyName = "Mant_tipo_id"
+        Me.ManttipoidDataGridViewTextBoxColumn.HeaderText = "Mant_tipo_id"
+        Me.ManttipoidDataGridViewTextBoxColumn.Name = "ManttipoidDataGridViewTextBoxColumn"
+        Me.ManttipoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantenimientotipoDataGridViewTextBoxColumn
+        '
+        Me.MantenimientotipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.MantenimientotipoDataGridViewTextBoxColumn.DataPropertyName = "Mantenimiento_tipo"
+        Me.MantenimientotipoDataGridViewTextBoxColumn.HeaderText = "MANTENIMIENTO"
+        Me.MantenimientotipoDataGridViewTextBoxColumn.Name = "MantenimientotipoDataGridViewTextBoxColumn"
+        Me.MantenimientotipoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MantperiodicidadidDataGridViewTextBoxColumn
+        '
+        Me.MantperiodicidadidDataGridViewTextBoxColumn.DataPropertyName = "Mant_periodicidad_id"
+        Me.MantperiodicidadidDataGridViewTextBoxColumn.HeaderText = "Mant_periodicidad_id"
+        Me.MantperiodicidadidDataGridViewTextBoxColumn.Name = "MantperiodicidadidDataGridViewTextBoxColumn"
+        Me.MantperiodicidadidDataGridViewTextBoxColumn.Visible = False
+        '
+        'PeriodicidadDataGridViewTextBoxColumn
+        '
+        Me.PeriodicidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PeriodicidadDataGridViewTextBoxColumn.DataPropertyName = "Periodicidad"
+        Me.PeriodicidadDataGridViewTextBoxColumn.HeaderText = "PERIODICIDAD"
+        Me.PeriodicidadDataGridViewTextBoxColumn.Name = "PeriodicidadDataGridViewTextBoxColumn"
+        Me.PeriodicidadDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Cat1equipoidDataGridViewTextBoxColumn
+        '
+        Me.Cat1equipoidDataGridViewTextBoxColumn.DataPropertyName = "Cat1_equipo_id"
+        Me.Cat1equipoidDataGridViewTextBoxColumn.HeaderText = "Cat1_equipo_id"
+        Me.Cat1equipoidDataGridViewTextBoxColumn.Name = "Cat1equipoidDataGridViewTextBoxColumn"
+        Me.Cat1equipoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'TipoDataGridViewTextBoxColumn
+        '
+        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
+        Me.TipoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TipoDataGridViewTextBoxColumn.Visible = False
+        '
+        'Cat2equipoidDataGridViewTextBoxColumn
+        '
+        Me.Cat2equipoidDataGridViewTextBoxColumn.DataPropertyName = "Cat2_equipo_id"
+        Me.Cat2equipoidDataGridViewTextBoxColumn.HeaderText = "Cat2_equipo_id"
+        Me.Cat2equipoidDataGridViewTextBoxColumn.Name = "Cat2equipoidDataGridViewTextBoxColumn"
+        Me.Cat2equipoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'SubtipoDataGridViewTextBoxColumn
+        '
+        Me.SubtipoDataGridViewTextBoxColumn.DataPropertyName = "Subtipo"
+        Me.SubtipoDataGridViewTextBoxColumn.HeaderText = "Subtipo"
+        Me.SubtipoDataGridViewTextBoxColumn.Name = "SubtipoDataGridViewTextBoxColumn"
+        Me.SubtipoDataGridViewTextBoxColumn.Visible = False
+        '
+        'item
+        '
+        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.item.HeaderText = "Item"
+        Me.item.Name = "item"
+        Me.item.Width = 50
+        '
         'Mantenimiento_config_agregar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -314,7 +306,7 @@ Partial Class Mantenimiento_config_agregar
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
-        CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_tareas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TareasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mantenimiento_ds, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -328,7 +320,7 @@ Partial Class Mantenimiento_config_agregar
     Friend WithEvents cb_periodicidad As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents dg_atributos As System.Windows.Forms.DataGridView
+    Friend WithEvents dg_tareas As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents fecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents btn_Aceptar As System.Windows.Forms.Button
