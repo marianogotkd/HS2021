@@ -1,0 +1,8 @@
+create procedure Tareas_asignadas_alta
+@Tareas_id int,
+@Mantenimiento_id int
+
+as
+insert Tareas_asignadas (Tareas_id, Mantenimiento_id ) values (@Tareas_id, @Mantenimiento_id)
+
+go
