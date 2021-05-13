@@ -41,10 +41,6 @@ Partial Class Mantenimiento_config_alta
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TareasasignadasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantenimientoidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TareasasignadasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
@@ -58,6 +54,10 @@ Partial Class Mantenimiento_config_alta
         Me.ManttipodescrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MantenimientoprogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TareasasignadasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantenimientoidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -247,45 +247,13 @@ Partial Class Mantenimiento_config_alta
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGridView1.RowHeadersVisible = False
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(298, 174)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 243
-        '
-        'TareasasignadasidDataGridViewTextBoxColumn
-        '
-        Me.TareasasignadasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_asignadas_id"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.HeaderText = "Tareas_asignadas_id"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.Name = "TareasasignadasidDataGridViewTextBoxColumn"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TareasasignadasidDataGridViewTextBoxColumn.Visible = False
-        '
-        'TareasidDataGridViewTextBoxColumn
-        '
-        Me.TareasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_id"
-        Me.TareasidDataGridViewTextBoxColumn.HeaderText = "Tareas_id"
-        Me.TareasidDataGridViewTextBoxColumn.Name = "TareasidDataGridViewTextBoxColumn"
-        Me.TareasidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TareasidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantenimientoidDataGridViewTextBoxColumn1
-        '
-        Me.MantenimientoidDataGridViewTextBoxColumn1.DataPropertyName = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.HeaderText = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.Name = "MantenimientoidDataGridViewTextBoxColumn1"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.MantenimientoidDataGridViewTextBoxColumn1.Visible = False
-        '
-        'TareasdescDataGridViewTextBoxColumn
-        '
-        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
-        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "Tareas"
-        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
-        Me.TareasdescDataGridViewTextBoxColumn.ReadOnly = True
         '
         'TareasasignadasBindingSource
         '
@@ -407,6 +375,38 @@ Partial Class Mantenimiento_config_alta
         Me.MantenimientoprogBindingSource.DataMember = "Mantenimiento_prog"
         Me.MantenimientoprogBindingSource.DataSource = Me.Mantenimiento_ds
         '
+        'TareasasignadasidDataGridViewTextBoxColumn
+        '
+        Me.TareasasignadasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.HeaderText = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Name = "TareasasignadasidDataGridViewTextBoxColumn"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasidDataGridViewTextBoxColumn
+        '
+        Me.TareasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_id"
+        Me.TareasidDataGridViewTextBoxColumn.HeaderText = "Tareas_id"
+        Me.TareasidDataGridViewTextBoxColumn.Name = "TareasidDataGridViewTextBoxColumn"
+        Me.TareasidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TareasidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantenimientoidDataGridViewTextBoxColumn1
+        '
+        Me.MantenimientoidDataGridViewTextBoxColumn1.DataPropertyName = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn1.HeaderText = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn1.Name = "MantenimientoidDataGridViewTextBoxColumn1"
+        Me.MantenimientoidDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.MantenimientoidDataGridViewTextBoxColumn1.Visible = False
+        '
+        'TareasdescDataGridViewTextBoxColumn
+        '
+        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
+        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "Tareas"
+        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
+        Me.TareasdescDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'Mantenimiento_config_alta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -456,12 +456,12 @@ Partial Class Mantenimiento_config_alta
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents MantenimientoprogBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Mantenimiento_ds As Aplicacion.mantenimiento_ds
-    Friend WithEvents TareasasignadasidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TareasidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MantenimientoidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TareasdescDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TareasasignadasBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TareasasignadasidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TareasidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MantenimientoidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TareasdescDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

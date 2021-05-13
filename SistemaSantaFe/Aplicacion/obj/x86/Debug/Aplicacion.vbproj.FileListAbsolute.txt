@@ -2418,3 +2418,4 @@ C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.US_Pedidos.resources
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.vbproj.GenerateResource.Cache
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mantenimiento_config_agregar.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mant_consulta.resources
