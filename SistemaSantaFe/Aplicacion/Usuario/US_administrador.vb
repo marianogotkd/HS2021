@@ -902,4 +902,8 @@ Public Property EnabledCerrar() As Boolean
         Mantenimiento_tarea_agregar.Close()
         Mantenimiento_tarea_agregar.Show()
     End Sub
+
+    Private Sub CalendarioMantenimeintoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioMantenimeintoToolStripMenuItem.Click
+        Calendario_Mantenimiento.Show()
+    End Sub
 End Class
