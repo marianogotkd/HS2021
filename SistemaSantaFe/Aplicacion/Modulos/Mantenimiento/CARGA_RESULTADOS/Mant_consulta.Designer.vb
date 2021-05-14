@@ -24,9 +24,9 @@ Partial Class Mant_consulta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,27 +38,6 @@ Partial Class Mant_consulta
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_etiqueta = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.DG_clientes = New System.Windows.Forms.DataGridView()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.fecha = New System.Windows.Forms.DateTimePicker()
-        Me.Categorias_DS = New Aplicacion.Categorias_DS()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Mantenimiento_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Mant_realizados_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Equipo_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.MANT_ds = New Aplicacion.MANT_ds()
-        Me.Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sector = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Etiqueta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipomantenimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MantenimientoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadodetalleidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,15 +45,36 @@ Partial Class Mant_consulta
         Me.Cat2caractidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantdetalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MANT_ds = New Aplicacion.MANT_ds()
+        Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_etiqueta = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DG_clientes = New System.Windows.Forms.DataGridView()
+        Me.Equipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Mantenimiento_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Mant_realizados_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Equipo_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sector = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Etiqueta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipomantenimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.Categorias_DS = New Aplicacion.Categorias_DS()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Categorias_DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MANT_ds, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MANT_ds, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Categorias_DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -155,7 +155,7 @@ Partial Class Mant_consulta
         Me.GroupBox2.Controls.Add(Me.DG_clientes)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 134)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(811, 415)
+        Me.GroupBox2.Size = New System.Drawing.Size(811, 395)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "LISTADO DE MANTENIMIENTOS PROGRAMADOS"
@@ -179,7 +179,7 @@ Partial Class Mant_consulta
         '
         Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_Aceptar.Location = New System.Drawing.Point(663, 179)
+        Me.btn_Aceptar.Location = New System.Drawing.Point(644, 179)
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 242
@@ -218,182 +218,6 @@ Partial Class Mant_consulta
         Me.DataGridView1.Size = New System.Drawing.Size(764, 122)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 241
-        '
-        'txt_tipomantenimiento
-        '
-        Me.txt_tipomantenimiento.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_tipomantenimiento.Location = New System.Drawing.Point(525, 23)
-        Me.txt_tipomantenimiento.Name = "txt_tipomantenimiento"
-        Me.txt_tipomantenimiento.ReadOnly = True
-        Me.txt_tipomantenimiento.Size = New System.Drawing.Size(262, 20)
-        Me.txt_tipomantenimiento.TabIndex = 5
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(402, 26)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(117, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Tipo de mantenimiento:"
-        '
-        'txt_etiqueta
-        '
-        Me.txt_etiqueta.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_etiqueta.Location = New System.Drawing.Point(75, 23)
-        Me.txt_etiqueta.Name = "txt_etiqueta"
-        Me.txt_etiqueta.ReadOnly = True
-        Me.txt_etiqueta.Size = New System.Drawing.Size(321, 20)
-        Me.txt_etiqueta.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 26)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 13)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Etiqueta:"
-        '
-        'DG_clientes
-        '
-        Me.DG_clientes.AllowUserToAddRows = False
-        Me.DG_clientes.AllowUserToDeleteRows = False
-        Me.DG_clientes.AllowUserToResizeRows = False
-        Me.DG_clientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DG_clientes.AutoGenerateColumns = False
-        Me.DG_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DG_clientes.BackgroundColor = System.Drawing.Color.White
-        Me.DG_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DG_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Equipo, Me.Mantenimiento_id, Me.Mant_realizados_id, Me.Equipo_id, Me.Sector, Me.Etiqueta, Me.Tipomantenimiento, Me.Estado, Me.item})
-        Me.DG_clientes.DataSource = Me.MantlistadosBindingSource
-        Me.DG_clientes.Location = New System.Drawing.Point(7, 20)
-        Me.DG_clientes.Margin = New System.Windows.Forms.Padding(4)
-        Me.DG_clientes.MultiSelect = False
-        Me.DG_clientes.Name = "DG_clientes"
-        Me.DG_clientes.ReadOnly = True
-        Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_clientes.Size = New System.Drawing.Size(797, 122)
-        Me.DG_clientes.StandardTab = True
-        Me.DG_clientes.TabIndex = 240
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(604, 13)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 25)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "FECHA:"
-        '
-        'fecha
-        '
-        Me.fecha.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder
-        Me.fecha.Enabled = False
-        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(695, 12)
-        Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(128, 30)
-        Me.fecha.TabIndex = 3
-        '
-        'Categorias_DS
-        '
-        Me.Categorias_DS.DataSetName = "Categorias_DS"
-        Me.Categorias_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Mantenimiento_id
-        '
-        Me.Mantenimiento_id.DataPropertyName = "Mantenimiento_id"
-        Me.Mantenimiento_id.HeaderText = "Mantenimiento_id"
-        Me.Mantenimiento_id.Name = "Mantenimiento_id"
-        Me.Mantenimiento_id.ReadOnly = True
-        '
-        'Mant_realizados_id
-        '
-        Me.Mant_realizados_id.DataPropertyName = "Mant_realizados_id"
-        Me.Mant_realizados_id.HeaderText = "Mant_realizados_id"
-        Me.Mant_realizados_id.Name = "Mant_realizados_id"
-        Me.Mant_realizados_id.ReadOnly = True
-        '
-        'Equipo_id
-        '
-        Me.Equipo_id.DataPropertyName = "Equipo_id"
-        Me.Equipo_id.HeaderText = "Equipo_id"
-        Me.Equipo_id.Name = "Equipo_id"
-        Me.Equipo_id.ReadOnly = True
-        '
-        'item
-        '
-        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.item.HeaderText = "item"
-        Me.item.Name = "item"
-        Me.item.ReadOnly = True
-        Me.item.Width = 50
-        '
-        'MANT_ds
-        '
-        Me.MANT_ds.DataSetName = "MANT_ds"
-        Me.MANT_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Equipo
-        '
-        Me.Equipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Equipo.DataPropertyName = "Equipo"
-        Me.Equipo.HeaderText = "Equipo"
-        Me.Equipo.Name = "Equipo"
-        Me.Equipo.ReadOnly = True
-        '
-        'Sector
-        '
-        Me.Sector.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Sector.DataPropertyName = "Sector"
-        Me.Sector.HeaderText = "Sector"
-        Me.Sector.Name = "Sector"
-        Me.Sector.ReadOnly = True
-        '
-        'Etiqueta
-        '
-        Me.Etiqueta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Etiqueta.DataPropertyName = "Etiqueta"
-        Me.Etiqueta.HeaderText = "Etiqueta"
-        Me.Etiqueta.Name = "Etiqueta"
-        Me.Etiqueta.ReadOnly = True
-        '
-        'Tipomantenimiento
-        '
-        Me.Tipomantenimiento.DataPropertyName = "Tipo_mantenimiento"
-        Me.Tipomantenimiento.HeaderText = "Tipo de mantenimiento"
-        Me.Tipomantenimiento.Name = "Tipomantenimiento"
-        Me.Tipomantenimiento.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Estado.DataPropertyName = "estado"
-        Me.Estado.HeaderText = "estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        '
-        'MantlistadosBindingSource
-        '
-        Me.MantlistadosBindingSource.DataMember = "mant_listados"
-        Me.MantlistadosBindingSource.DataSource = Me.MANT_ds
-        '
-        'MantrealizadosdetalleBindingSource
-        '
-        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
-        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_ds
         '
         'MantenimientoidDataGridViewTextBoxColumn
         '
@@ -460,13 +284,189 @@ Partial Class Mant_consulta
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
         Me.EstadoDataGridViewTextBoxColumn.Visible = False
         '
+        'MantrealizadosdetalleBindingSource
+        '
+        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
+        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_ds
+        '
+        'MANT_ds
+        '
+        Me.MANT_ds.DataSetName = "MANT_ds"
+        Me.MANT_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'txt_tipomantenimiento
+        '
+        Me.txt_tipomantenimiento.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_tipomantenimiento.Location = New System.Drawing.Point(525, 23)
+        Me.txt_tipomantenimiento.Name = "txt_tipomantenimiento"
+        Me.txt_tipomantenimiento.ReadOnly = True
+        Me.txt_tipomantenimiento.Size = New System.Drawing.Size(262, 20)
+        Me.txt_tipomantenimiento.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(402, 26)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(117, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Tipo de mantenimiento:"
+        '
+        'txt_etiqueta
+        '
+        Me.txt_etiqueta.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_etiqueta.Location = New System.Drawing.Point(75, 23)
+        Me.txt_etiqueta.Name = "txt_etiqueta"
+        Me.txt_etiqueta.ReadOnly = True
+        Me.txt_etiqueta.Size = New System.Drawing.Size(321, 20)
+        Me.txt_etiqueta.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(20, 26)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Etiqueta:"
+        '
+        'DG_clientes
+        '
+        Me.DG_clientes.AllowUserToAddRows = False
+        Me.DG_clientes.AllowUserToDeleteRows = False
+        Me.DG_clientes.AllowUserToResizeRows = False
+        Me.DG_clientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DG_clientes.AutoGenerateColumns = False
+        Me.DG_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DG_clientes.BackgroundColor = System.Drawing.Color.White
+        Me.DG_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DG_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Equipo, Me.Mantenimiento_id, Me.Mant_realizados_id, Me.Equipo_id, Me.Sector, Me.Etiqueta, Me.Tipomantenimiento, Me.Estado, Me.item})
+        Me.DG_clientes.DataSource = Me.MantlistadosBindingSource
+        Me.DG_clientes.Location = New System.Drawing.Point(7, 20)
+        Me.DG_clientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.DG_clientes.MultiSelect = False
+        Me.DG_clientes.Name = "DG_clientes"
+        Me.DG_clientes.ReadOnly = True
+        Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DG_clientes.RowHeadersVisible = False
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DG_clientes.Size = New System.Drawing.Size(797, 102)
+        Me.DG_clientes.StandardTab = True
+        Me.DG_clientes.TabIndex = 240
+        '
+        'Equipo
+        '
+        Me.Equipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Equipo.DataPropertyName = "Equipo"
+        Me.Equipo.HeaderText = "Equipo"
+        Me.Equipo.Name = "Equipo"
+        Me.Equipo.ReadOnly = True
+        '
+        'Mantenimiento_id
+        '
+        Me.Mantenimiento_id.DataPropertyName = "Mantenimiento_id"
+        Me.Mantenimiento_id.HeaderText = "Mantenimiento_id"
+        Me.Mantenimiento_id.Name = "Mantenimiento_id"
+        Me.Mantenimiento_id.ReadOnly = True
+        '
+        'Mant_realizados_id
+        '
+        Me.Mant_realizados_id.DataPropertyName = "Mant_realizados_id"
+        Me.Mant_realizados_id.HeaderText = "Mant_realizados_id"
+        Me.Mant_realizados_id.Name = "Mant_realizados_id"
+        Me.Mant_realizados_id.ReadOnly = True
+        '
+        'Equipo_id
+        '
+        Me.Equipo_id.DataPropertyName = "Equipo_id"
+        Me.Equipo_id.HeaderText = "Equipo_id"
+        Me.Equipo_id.Name = "Equipo_id"
+        Me.Equipo_id.ReadOnly = True
+        '
+        'Sector
+        '
+        Me.Sector.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Sector.DataPropertyName = "Sector"
+        Me.Sector.HeaderText = "Sector"
+        Me.Sector.Name = "Sector"
+        Me.Sector.ReadOnly = True
+        '
+        'Etiqueta
+        '
+        Me.Etiqueta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Etiqueta.DataPropertyName = "Etiqueta"
+        Me.Etiqueta.HeaderText = "Etiqueta"
+        Me.Etiqueta.Name = "Etiqueta"
+        Me.Etiqueta.ReadOnly = True
+        '
+        'Tipomantenimiento
+        '
+        Me.Tipomantenimiento.DataPropertyName = "Tipo_mantenimiento"
+        Me.Tipomantenimiento.HeaderText = "Tipo de mantenimiento"
+        Me.Tipomantenimiento.Name = "Tipomantenimiento"
+        Me.Tipomantenimiento.ReadOnly = True
+        '
+        'Estado
+        '
+        Me.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Estado.DataPropertyName = "estado"
+        Me.Estado.HeaderText = "estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        '
+        'item
+        '
+        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.item.HeaderText = "item"
+        Me.item.Name = "item"
+        Me.item.ReadOnly = True
+        Me.item.Width = 50
+        '
+        'MantlistadosBindingSource
+        '
+        Me.MantlistadosBindingSource.DataMember = "mant_listados"
+        Me.MantlistadosBindingSource.DataSource = Me.MANT_ds
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(604, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(86, 25)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "FECHA:"
+        '
+        'fecha
+        '
+        Me.fecha.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder
+        Me.fecha.Enabled = False
+        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecha.Location = New System.Drawing.Point(695, 12)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(128, 30)
+        Me.fecha.TabIndex = 3
+        '
+        'Categorias_DS
+        '
+        Me.Categorias_DS.DataSetName = "Categorias_DS"
+        Me.Categorias_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Mant_consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(857, 655)
+        Me.ClientSize = New System.Drawing.Size(857, 554)
         Me.Controls.Add(Me.fecha)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox2)
@@ -481,11 +481,11 @@ Partial Class Mant_consulta
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Categorias_DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MANT_ds, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MANT_ds, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Categorias_DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
