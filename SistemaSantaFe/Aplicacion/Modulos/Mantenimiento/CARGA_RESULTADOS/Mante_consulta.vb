@@ -223,7 +223,6 @@
     End Sub
 
 
-
     Private Sub DG_clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.Click
         Try
             If MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count <> 0 Then

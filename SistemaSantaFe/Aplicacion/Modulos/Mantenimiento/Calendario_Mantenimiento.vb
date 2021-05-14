@@ -1,6 +1,7 @@
 ﻿Public Class Calendario_Mantenimiento
     Private Sub calc_()
-        Dim fecha As Date = Today
+        Dim fecha As Date = Now
+
 
         Dim dias_Sumar As Integer = 30
 

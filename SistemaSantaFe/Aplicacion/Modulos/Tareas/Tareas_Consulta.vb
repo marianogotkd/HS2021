@@ -114,6 +114,17 @@
 
         Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(startDate.ToShortDateString, endDate.ToShortDateString, sucursal_id)
 
+
+        'STARTDATE ES EL PRIMER DIA DEL MES
+        'ENDDATE ES EL ULTIMO DIA DEL MES
+        'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
+        Dim daMantenimiento As New Datos.Mantenimiento
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+
+
+
+
+
         'Dim dt As DataTable = QueryAsDataTable(Sql)
         Dim dt As DataTable = dt_choco.Tables(0)
         Dim i As Integer = 0
