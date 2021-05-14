@@ -41,9 +41,31 @@
             If ds_equipo.Tables(1).Rows.Count <> 0 Then
                 Mantenimiento_ds.Tables("Mantenimiento_prog").Merge(ds_equipo.Tables(1))
                 Mantenimiento_ds.Tables("Tareas_asignadas").Merge(ds_equipo.Tables(2))
+                If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
+                    aplicar_filtro_tareas(Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(0).Item("Mantenimiento_id"))
+                End If
             End If
         Catch ex As Exception
         End Try
     End Sub
 
+    Private Sub aplicar_filtro_tareas(ByVal Mantenimiento_id As Integer)
+        Dim Filtro
+        'Filtro = String.Format("{0} LIKE '%{1}%'", "Mantenimiento_id", CStr(Mantenimiento_id)) 'esto para campos strings, FUNCIONA PERFECTO
+        Filtro = String.Format("CONVERT(Mantenimiento_id, System.String) LIKE '%{0}%'", CStr(Mantenimiento_id)) 'esto para campos strings, FUNCIONA PERFECTO
+
+        TareasasignadasBindingSource.Filter = Filtro
+    End Sub
+
+    Private Sub DG_clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.Click
+        If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
+            aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
+        End If
+    End Sub
+
+    Private Sub DG_clientes_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.SelectionChanged
+        If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
+            aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
+        End If
+    End Sub
 End Class

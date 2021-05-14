@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MANT_ds" targetNamespace="http://tempuri.org/MANT_ds.xsd" xmlns:mstns="http://tempuri.org/MANT_ds.xsd" xmlns="http://tempuri.org/MANT_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MANT_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MANT_ds" msprop:Generator_UserDSName="MANT_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="mant_listados" msprop:Generator_TableClassName="mant_listadosDataTable" msprop:Generator_TableVarName="tablemant_listados" msprop:Generator_TablePropName="mant_listados" msprop:Generator_RowDeletingName="mant_listadosRowDeleting" msprop:Generator_RowChangingName="mant_listadosRowChanging" msprop:Generator_RowEvHandlerName="mant_listadosRowChangeEventHandler" msprop:Generator_RowDeletedName="mant_listadosRowDeleted" msprop:Generator_UserTableName="mant_listados" msprop:Generator_RowChangedName="mant_listadosRowChanged" msprop:Generator_RowEvArgName="mant_listadosRowChangeEvent" msprop:Generator_RowClassName="mant_listadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Equipo" msprop:Generator_ColumnVarNameInTable="columnEquipo" msprop:Generator_ColumnPropNameInRow="Equipo" msprop:Generator_ColumnPropNameInTable="EquipoColumn" msprop:Generator_UserColumnName="Equipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Sector" msprop:Generator_ColumnVarNameInTable="columnSector" msprop:Generator_ColumnPropNameInRow="Sector" msprop:Generator_ColumnPropNameInTable="SectorColumn" msprop:Generator_UserColumnName="Sector" type="xs:string" minOccurs="0" />
+              <xs:element name="Etiqueta" msprop:Generator_ColumnVarNameInTable="columnEtiqueta" msprop:Generator_ColumnPropNameInRow="Etiqueta" msprop:Generator_ColumnPropNameInTable="EtiquetaColumn" msprop:Generator_UserColumnName="Etiqueta" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo_mantenimiento" msprop:Generator_ColumnVarNameInTable="columnTipo_mantenimiento" msprop:Generator_ColumnPropNameInRow="Tipo_mantenimiento" msprop:Generator_ColumnPropNameInTable="Tipo_mantenimientoColumn" msprop:Generator_UserColumnName="Tipo_mantenimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="Mantenimiento_id" msprop:Generator_ColumnVarNameInTable="columnMantenimiento_id" msprop:Generator_ColumnPropNameInRow="Mantenimiento_id" msprop:Generator_ColumnPropNameInTable="Mantenimiento_idColumn" msprop:Generator_UserColumnName="Mantenimiento_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_realizados_id" msprop:Generator_ColumnVarNameInTable="columnMant_realizados_id" msprop:Generator_ColumnPropNameInRow="Mant_realizados_id" msprop:Generator_ColumnPropNameInTable="Mant_realizados_idColumn" msprop:Generator_UserColumnName="Mant_realizados_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Equipo_id" msprop:Generator_ColumnVarNameInTable="columnEquipo_id" msprop:Generator_ColumnPropNameInRow="Equipo_id" msprop:Generator_ColumnPropNameInTable="Equipo_idColumn" msprop:Generator_UserColumnName="Equipo_id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mant_realizados_detalle" msprop:Generator_TableClassName="mant_realizados_detalleDataTable" msprop:Generator_TableVarName="tablemant_realizados_detalle" msprop:Generator_RowChangedName="mant_realizados_detalleRowChanged" msprop:Generator_TablePropName="mant_realizados_detalle" msprop:Generator_RowDeletingName="mant_realizados_detalleRowDeleting" msprop:Generator_RowChangingName="mant_realizados_detalleRowChanging" msprop:Generator_RowEvHandlerName="mant_realizados_detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="mant_realizados_detalleRowDeleted" msprop:Generator_RowClassName="mant_realizados_detalleRow" msprop:Generator_UserTableName="mant_realizados_detalle" msprop:Generator_RowEvArgName="mant_realizados_detalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mantenimiento_id" msprop:Generator_ColumnVarNameInTable="columnMantenimiento_id" msprop:Generator_ColumnPropNameInRow="Mantenimiento_id" msprop:Generator_ColumnPropNameInTable="Mantenimiento_idColumn" msprop:Generator_UserColumnName="Mantenimiento_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_realizados_id" msprop:Generator_ColumnVarNameInTable="columnMant_realizados_id" msprop:Generator_ColumnPropNameInRow="Mant_realizados_id" msprop:Generator_ColumnPropNameInTable="Mant_realizados_idColumn" msprop:Generator_UserColumnName="Mant_realizados_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_realizado_detalle_id" msprop:Generator_ColumnVarNameInTable="columnMant_realizado_detalle_id" msprop:Generator_ColumnPropNameInRow="Mant_realizado_detalle_id" msprop:Generator_ColumnPropNameInTable="Mant_realizado_detalle_idColumn" msprop:Generator_UserColumnName="Mant_realizado_detalle_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Cat2_caract_atributo" msprop:Generator_ColumnVarNameInTable="columnCat2_caract_atributo" msprop:Generator_ColumnPropNameInRow="Cat2_caract_atributo" msprop:Generator_ColumnPropNameInTable="Cat2_caract_atributoColumn" msprop:Generator_UserColumnName="Cat2_caract_atributo" type="xs:string" minOccurs="0" />
+              <xs:element name="Cat2_caract_id" msprop:Generator_ColumnVarNameInTable="columnCat2_caract_id" msprop:Generator_ColumnPropNameInRow="Cat2_caract_id" msprop:Generator_ColumnPropNameInTable="Cat2_caract_idColumn" msprop:Generator_UserColumnName="Cat2_caract_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_detalle" msprop:Generator_ColumnVarNameInTable="columnMant_detalle" msprop:Generator_ColumnPropNameInRow="Mant_detalle" msprop:Generator_ColumnPropNameInTable="Mant_detalleColumn" msprop:Generator_UserColumnName="Mant_detalle" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mant_detalle" msprop:Generator_TableClassName="mant_detalleDataTable" msprop:Generator_TableVarName="tablemant_detalle" msprop:Generator_TablePropName="mant_detalle" msprop:Generator_RowDeletingName="mant_detalleRowDeleting" msprop:Generator_RowChangingName="mant_detalleRowChanging" msprop:Generator_RowEvHandlerName="mant_detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="mant_detalleRowDeleted" msprop:Generator_UserTableName="mant_detalle" msprop:Generator_RowChangedName="mant_detalleRowChanged" msprop:Generator_RowEvArgName="mant_detalleRowChangeEvent" msprop:Generator_RowClassName="mant_detalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mantenimiento_id" msprop:Generator_ColumnVarNameInTable="columnMantenimiento_id" msprop:Generator_ColumnPropNameInRow="Mantenimiento_id" msprop:Generator_ColumnPropNameInTable="Mantenimiento_idColumn" msprop:Generator_UserColumnName="Mantenimiento_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_realizados_id" msprop:Generator_ColumnVarNameInTable="columnMant_realizados_id" msprop:Generator_ColumnPropNameInRow="Mant_realizados_id" msprop:Generator_ColumnPropNameInTable="Mant_realizados_idColumn" msprop:Generator_UserColumnName="Mant_realizados_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_realizado_detalle_id" msprop:Generator_ColumnVarNameInTable="columnMant_realizado_detalle_id" msprop:Generator_ColumnPropNameInRow="Mant_realizado_detalle_id" msprop:Generator_ColumnPropNameInTable="Mant_realizado_detalle_idColumn" msprop:Generator_UserColumnName="Mant_realizado_detalle_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Cat2_caract_atributo" msprop:Generator_ColumnVarNameInTable="columnCat2_caract_atributo" msprop:Generator_ColumnPropNameInRow="Cat2_caract_atributo" msprop:Generator_ColumnPropNameInTable="Cat2_caract_atributoColumn" msprop:Generator_UserColumnName="Cat2_caract_atributo" type="xs:string" minOccurs="0" />
+              <xs:element name="Cat2_caract_id" msprop:Generator_ColumnVarNameInTable="columnCat2_caract_id" msprop:Generator_ColumnPropNameInRow="Cat2_caract_id" msprop:Generator_ColumnPropNameInTable="Cat2_caract_idColumn" msprop:Generator_UserColumnName="Cat2_caract_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Mant_detalle" msprop:Generator_ColumnVarNameInTable="columnMant_detalle" msprop:Generator_ColumnPropNameInRow="Mant_detalle" msprop:Generator_ColumnPropNameInTable="Mant_detalleColumn" msprop:Generator_UserColumnName="Mant_detalle" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
