@@ -2581,3 +2581,6 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.US_Pedidos.resources
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.vbproj.GenerateResource.Cache
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Calendario_Mantenimiento.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Calendario_Mantenimiento.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mant_consulta.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mante_consulta.resources

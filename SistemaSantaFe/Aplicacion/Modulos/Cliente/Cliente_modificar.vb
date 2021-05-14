@@ -398,7 +398,7 @@ Public Class Cliente_modificar
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Mant_consulta.Close()
-        Mant_consulta.Show()
+        Mante_consulta.Close()
+        Mante_consulta.Show()
     End Sub
 End Class

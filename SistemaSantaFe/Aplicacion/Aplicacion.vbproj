@@ -818,6 +818,17 @@
     <Compile Include="Modulos\Mantenimiento\Calendario_Mantenimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Mante_consulta.Designer.vb">
+      <DependentUpon>Mante_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Mante_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\CARGA_RESULTADOS\MANT_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MANT_ds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.Designer.vb">
       <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>
     </Compile>
@@ -1659,6 +1670,9 @@
     <EmbeddedResource Include="Modulos\Mantenimiento\Calendario_Mantenimiento.resx">
       <DependentUpon>Calendario_Mantenimiento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Mante_consulta.resx">
+      <DependentUpon>Mante_consulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.resx">
       <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>
     </EmbeddedResource>
@@ -2091,6 +2105,17 @@
     </None>
     <None Include="Modulos\Lista\Lista_ds.xss">
       <DependentUpon>Lista_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Mantenimiento\CARGA_RESULTADOS\MANT_ds.xsc">
+      <DependentUpon>MANT_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Mantenimiento\CARGA_RESULTADOS\MANT_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MANT_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Mantenimiento\CARGA_RESULTADOS\MANT_ds.xss">
+      <DependentUpon>MANT_ds.xsd</DependentUpon>
     </None>
     <None Include="Modulos\Mantenimiento\mantenimiento_ds.xsc">
       <DependentUpon>mantenimiento_ds.xsd</DependentUpon>
