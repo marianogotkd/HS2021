@@ -201,7 +201,7 @@ Public Class Mantenimiento
         Return ds_JE
     End Function
 
-    Public Function Mantenimiento_realizado_buscar(ByVal fecha As DateTime, ByVal SucxClie_id As Integer) As DataSet
+    Public Function Mantenimiento_realizado_buscar_2(ByVal fecha As DateTime, ByVal SucxClie_id As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -220,6 +220,7 @@ Public Class Mantenimiento
         dbconn.Close()
         Return ds_JE
     End Function
+
 
 #End Region
 

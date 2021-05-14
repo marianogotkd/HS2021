@@ -726,43 +726,43 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_listadosDataTable">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_realizados_detalleDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_realizados_detalleDataTable">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_listadosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_detalleDataTable">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_detalleDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_listadosRow">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_realizados_detalleRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_realizados_detalleRow">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_listadosRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_detalleRow">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_detalleRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_listadosRowChangeEvent">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_realizados_detalleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_realizados_detalleRowChangeEvent">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_listadosRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.MANT_ds.mant_detalleRowChangeEvent">
+</member><member name="T:Aplicacion.MANT_2_ds.mant_detalleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Aplicacion.MANT_ds">
+</member><member name="T:Aplicacion.MANT_2_ds">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
