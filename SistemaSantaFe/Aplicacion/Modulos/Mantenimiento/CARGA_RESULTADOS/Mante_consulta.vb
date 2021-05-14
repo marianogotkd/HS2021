@@ -20,14 +20,14 @@
             If ds_mant.Tables(0).Rows.Count <> 0 Then
 
 
-                MANT_2_ds.Tables("mant_listados").Merge(ds_mant.Tables(1))
+                MANT_2_ds1.Tables("mant_listados").Merge(ds_mant.Tables(1))
             End If
 
 
             'ahora cargo los detalles de los mantenmientos realizados
 
             If ds_mant.Tables(3).Rows.Count <> 0 Then
-                MANT_2_ds.Tables("mant_realizados_detalle").Merge(ds_mant.Tables(3))
+                MANT_2_ds1.Tables("mant_realizados_detalle").Merge(ds_mant.Tables(3))
             End If
 
 
@@ -48,11 +48,12 @@
                             While ii < ds_mant.Tables(4).Rows.Count
                                 If Mantenimiento_id = ds_mant.Tables(4).Rows(ii).Item("Mantenimiento_id") Then
                                     'Dim Mantenimiento_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Mantenimiento_id")
-                                    Dim Cat2_caract_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_id")
+                                    'Dim Cat2_caract_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_id")
+                                    Dim Tareas_asignadas_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Tareas_asignadas_id")
                                     Dim valido As String = "si"
                                     Dim j As Integer = 0
-                                    While j < MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count
-                                        If (Mantenimiento_id = MANT_2_ds.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id")) And (Cat2_caract_id = MANT_2_ds.Tables("mant_realizados_detalle").Rows(j).Item("Cat2_caract_id")) Then
+                                    While j < MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count
+                                        If (Mantenimiento_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id")) And (Tareas_asignadas_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_asignadas_id")) Then
                                             valido = "no"
                                             Exit While
                                         End If
@@ -60,15 +61,15 @@
                                     End While
                                     If valido = "si" Then
                                         'lo agrego
-                                        Dim fila As DataRow = MANT_2_ds.Tables("mant_realizados_detalle").NewRow
+                                        Dim fila As DataRow = MANT_2_ds1.Tables("mant_realizados_detalle").NewRow
                                         fila("Mantenimiento_id") = CInt(Mantenimiento_id)
                                         fila("Mant_realizados_id") = 0
                                         fila("Mant_realizado_detalle_id") = 0
-                                        fila("Cat2_caract_atributo") = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_atributo")
-                                        fila("Cat2_caract_id") = Cat2_caract_id
+                                        fila("Tareas_asignadas_id") = ds_mant.Tables(4).Rows(ii).Item("Tareas_asignadas_id")
+                                        fila("Tareas_desc") = ds_mant.Tables(4).Rows(ii).Item("Tareas_desc")
                                         fila("Mant_detalle") = ""
                                         fila("Estado") = "nuevo"
-                                        MANT_2_ds.Tables("mant_realizados_detalle").Rows.Add(fila)
+                                        MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Add(fila)
                                     End If
                                 End If
                                 ii = ii + 1
@@ -97,11 +98,12 @@
                                         While ii < ds_mant.Tables(4).Rows.Count
                                             If Mantenimiento_id = ds_mant.Tables(4).Rows(ii).Item("Mantenimiento_id") Then
                                                 'Dim Mantenimiento_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Mantenimiento_id")
-                                                Dim Cat2_caract_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_id")
+                                                'Dim Cat2_caract_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_id")
+                                                Dim Tareas_asignadas_id As Integer = ds_mant.Tables(4).Rows(ii).Item("Tareas_asignadas_id")
                                                 Dim valido2 As String = "si"
                                                 Dim j As Integer = 0
-                                                While j < MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count
-                                                    If (Mantenimiento_id = MANT_2_ds.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id")) And (Cat2_caract_id = MANT_2_ds.Tables("mant_realizados_detalle").Rows(j).Item("Cat2_caract_id")) Then
+                                                While j < MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count
+                                                    If (Mantenimiento_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id")) And (Tareas_asignadas_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_asignadas_id")) Then
                                                         valido2 = "no"
                                                         Exit While
                                                     End If
@@ -109,15 +111,17 @@
                                                 End While
                                                 If valido2 = "si" Then
                                                     'lo agrego
-                                                    Dim fila As DataRow = MANT_2_ds.Tables("mant_realizados_detalle").NewRow
+                                                    Dim fila As DataRow = MANT_2_ds1.Tables("mant_realizados_detalle").NewRow
                                                     fila("Mantenimiento_id") = CInt(Mantenimiento_id)
                                                     fila("Mant_realizados_id") = 0
                                                     fila("Mant_realizado_detalle_id") = 0
-                                                    fila("Cat2_caract_atributo") = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_atributo")
-                                                    fila("Cat2_caract_id") = Cat2_caract_id
+                                                    fila("Tareas_asignadas_id") = ds_mant.Tables(4).Rows(ii).Item("Tareas_asignadas_id")
+                                                    fila("Tareas_desc") = ds_mant.Tables(4).Rows(ii).Item("Tareas_desc")
+                                                    'fila("Cat2_caract_atributo") = ds_mant.Tables(4).Rows(ii).Item("Cat2_caract_atributo")
+                                                    'fila("Cat2_caract_id") = Cat2_caract_id
                                                     fila("Mant_detalle") = ""
                                                     fila("Estado") = "nuevo"
-                                                    MANT_2_ds.Tables("mant_realizados_detalle").Rows.Add(fila)
+                                                    MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Add(fila)
                                                 End If
                                             End If
                                             ii = ii + 1
@@ -158,8 +162,8 @@
         'aqui controlo que en dataset mant_listado ya no este el mantenimiento que quiero agregar.
         Dim valido As String = "si"
         Dim i As Integer = 0
-        While i < MANT_2_ds.Tables("mant_listados").Rows.Count
-            If Mantenimiento_id = MANT_2_ds.Tables("mant_listados").Rows(i).Item("Mantenimiento_id") Then
+        While i < MANT_2_ds1.Tables("mant_listados").Rows.Count
+            If Mantenimiento_id = MANT_2_ds1.Tables("mant_listados").Rows(i).Item("Mantenimiento_id") Then
                 valido = "no"
                 Exit While
             End If
@@ -169,7 +173,7 @@
 
         If valido = "si" Then
             'entonces agrego
-            Dim fila As DataRow = MANT_2_ds.Tables("mant_listados").NewRow
+            Dim fila As DataRow = MANT_2_ds1.Tables("mant_listados").NewRow
             fila("Equipo") = datos.Rows(indice).Item(2)
             fila("Sector") = datos.Rows(indice).Item(3)
             fila("Etiqueta") = datos.Rows(indice).Item(4)
@@ -178,7 +182,8 @@
             fila("Mantenimiento_id") = Mantenimiento_id
             fila("Mant_realizados_id") = 0
             fila("Equipo_id") = datos.Rows(indice).Item(1)
-            MANT_2_ds.Tables("mant_listados").Rows.Add(fila)
+            fila("periodicidad") = datos.Rows(indice).Item(10)
+            MANT_2_ds1.Tables("mant_listados").Rows.Add(fila)
         End If
 
 
@@ -200,7 +205,7 @@
         recuperar_mantenimientos()
         'aplicar(filtro)
         If DG_clientes.Rows.Count <> 0 Then
-            If MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
+            If MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
                 aplicarfiltro_mant_realizados_detalle(DG_clientes.Rows(0).Cells("Mantenimientoid").Value,
                                                       DG_clientes.Rows(0).Cells("Etiqueta").Value,
                                                       DG_clientes.Rows(0).Cells("Tipomantenimiento").Value)
@@ -225,7 +230,7 @@
 
     Private Sub DG_clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.Click
         Try
-            If MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
+            If MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
                 aplicarfiltro_mant_realizados_detalle(CInt(DG_clientes.CurrentRow.Cells("Mantenimientoid").Value),
                                                       DG_clientes.CurrentRow.Cells("Etiqueta").Value,
                                                           DG_clientes.CurrentRow.Cells("Tipomantenimiento").Value)
@@ -236,7 +241,7 @@
 
     Private Sub DG_clientes_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.SelectionChanged
         Try
-            If MANT_2_ds.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
+            If MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
                 aplicarfiltro_mant_realizados_detalle(CInt(DG_clientes.CurrentRow.Cells("Mantenimientoid").Value),
                                                       DG_clientes.CurrentRow.Cells("Etiqueta").Value,
                                                           DG_clientes.CurrentRow.Cells("Tipomantenimiento").Value)

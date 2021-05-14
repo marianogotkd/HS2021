@@ -23,29 +23,19 @@ Partial Class Mante_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.fecha = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MantenimientoidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantrealizadosidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cat2caractatributoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cat2caractidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantdetalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MANT_2_ds = New Aplicacion.MANT_2_ds()
         Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_etiqueta = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
-        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -53,23 +43,34 @@ Partial Class Mante_consulta
         Me.txt_dni = New System.Windows.Forms.TextBox()
         Me.txt_fantasia = New System.Windows.Forms.TextBox()
         Me.txt_sucursal = New System.Windows.Forms.TextBox()
+        Me.MantenimientoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantrealizadosidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantdetalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TareasasignadasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MANT_2_ds1 = New Aplicacion.MANT_2_ds()
+        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EquipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Etiqueta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipomantenimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.periodicidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Mantenimientoid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Mantrealizadosid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Equipoid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MantrealizadosidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MANT_2_ds, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MANT_2_ds1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'fecha
@@ -144,7 +145,7 @@ Partial Class Mante_consulta
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MantenimientoidDataGridViewTextBoxColumn1, Me.MantrealizadosidDataGridViewTextBoxColumn1, Me.MantrealizadodetalleidDataGridViewTextBoxColumn, Me.Cat2caractatributoDataGridViewTextBoxColumn, Me.Cat2caractidDataGridViewTextBoxColumn, Me.MantdetalleDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn1})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MantenimientoidDataGridViewTextBoxColumn, Me.MantrealizadosidDataGridViewTextBoxColumn, Me.MantrealizadodetalleidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.MantdetalleDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn, Me.TareasasignadasidDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.MantrealizadosdetalleBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(23, 50)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
@@ -152,74 +153,15 @@ Partial Class Mante_consulta
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(764, 122)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 241
-        '
-        'MantenimientoidDataGridViewTextBoxColumn1
-        '
-        Me.MantenimientoidDataGridViewTextBoxColumn1.DataPropertyName = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.HeaderText = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.Name = "MantenimientoidDataGridViewTextBoxColumn1"
-        Me.MantenimientoidDataGridViewTextBoxColumn1.Visible = False
-        '
-        'MantrealizadosidDataGridViewTextBoxColumn1
-        '
-        Me.MantrealizadosidDataGridViewTextBoxColumn1.DataPropertyName = "Mant_realizados_id"
-        Me.MantrealizadosidDataGridViewTextBoxColumn1.HeaderText = "Mant_realizados_id"
-        Me.MantrealizadosidDataGridViewTextBoxColumn1.Name = "MantrealizadosidDataGridViewTextBoxColumn1"
-        Me.MantrealizadosidDataGridViewTextBoxColumn1.Visible = False
-        '
-        'MantrealizadodetalleidDataGridViewTextBoxColumn
-        '
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizado_detalle_id"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.HeaderText = "Mant_realizado_detalle_id"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Name = "MantrealizadodetalleidDataGridViewTextBoxColumn"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Visible = False
-        '
-        'Cat2caractatributoDataGridViewTextBoxColumn
-        '
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_atributo"
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.HeaderText = "Atributo"
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.Name = "Cat2caractatributoDataGridViewTextBoxColumn"
-        '
-        'Cat2caractidDataGridViewTextBoxColumn
-        '
-        Me.Cat2caractidDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_id"
-        Me.Cat2caractidDataGridViewTextBoxColumn.HeaderText = "Cat2_caract_id"
-        Me.Cat2caractidDataGridViewTextBoxColumn.Name = "Cat2caractidDataGridViewTextBoxColumn"
-        Me.Cat2caractidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantdetalleDataGridViewTextBoxColumn
-        '
-        Me.MantdetalleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.MantdetalleDataGridViewTextBoxColumn.DataPropertyName = "Mant_detalle"
-        Me.MantdetalleDataGridViewTextBoxColumn.HeaderText = "Ingrese resultado"
-        Me.MantdetalleDataGridViewTextBoxColumn.Name = "MantdetalleDataGridViewTextBoxColumn"
-        '
-        'EstadoDataGridViewTextBoxColumn1
-        '
-        Me.EstadoDataGridViewTextBoxColumn1.DataPropertyName = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn1.HeaderText = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn1.Name = "EstadoDataGridViewTextBoxColumn1"
-        Me.EstadoDataGridViewTextBoxColumn1.Visible = False
-        '
-        'MantrealizadosdetalleBindingSource
-        '
-        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
-        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_2_ds
-        '
-        'MANT_2_ds
-        '
-        Me.MANT_2_ds.DataSetName = "MANT_2_ds"
-        Me.MANT_2_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txt_tipomantenimiento
         '
@@ -270,7 +212,7 @@ Partial Class Mante_consulta
         Me.DG_clientes.BackgroundColor = System.Drawing.Color.White
         Me.DG_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DG_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EquipoDataGridViewTextBoxColumn, Me.SectorDataGridViewTextBoxColumn, Me.Etiqueta, Me.Tipomantenimiento, Me.EstadoDataGridViewTextBoxColumn, Me.Mantenimientoid, Me.Mantrealizadosid, Me.Equipoid, Me.item})
+        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EquipoDataGridViewTextBoxColumn, Me.SectorDataGridViewTextBoxColumn, Me.Etiqueta, Me.Tipomantenimiento, Me.periodicidad, Me.EstadoDataGridViewTextBoxColumn1, Me.Mantenimientoid, Me.MantrealizadosidDataGridViewTextBoxColumn1, Me.EquipoidDataGridViewTextBoxColumn, Me.item})
         Me.DG_clientes.DataSource = Me.MantlistadosBindingSource
         Me.DG_clientes.Location = New System.Drawing.Point(7, 20)
         Me.DG_clientes.Margin = New System.Windows.Forms.Padding(4)
@@ -279,19 +221,14 @@ Partial Class Mante_consulta
         Me.DG_clientes.ReadOnly = True
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(797, 102)
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 240
-        '
-        'MantlistadosBindingSource
-        '
-        Me.MantlistadosBindingSource.DataMember = "mant_listados"
-        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds
         '
         'GroupBox1
         '
@@ -365,6 +302,70 @@ Partial Class Mante_consulta
         Me.txt_sucursal.Size = New System.Drawing.Size(319, 20)
         Me.txt_sucursal.TabIndex = 3
         '
+        'MantenimientoidDataGridViewTextBoxColumn
+        '
+        Me.MantenimientoidDataGridViewTextBoxColumn.DataPropertyName = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn.HeaderText = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn.Name = "MantenimientoidDataGridViewTextBoxColumn"
+        Me.MantenimientoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadosidDataGridViewTextBoxColumn
+        '
+        Me.MantrealizadosidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.HeaderText = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.Name = "MantrealizadosidDataGridViewTextBoxColumn"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadodetalleidDataGridViewTextBoxColumn
+        '
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizado_detalle_id"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.HeaderText = "Mant_realizado_detalle_id"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Name = "MantrealizadodetalleidDataGridViewTextBoxColumn"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasdescDataGridViewTextBoxColumn
+        '
+        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
+        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "Tareas"
+        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
+        '
+        'MantdetalleDataGridViewTextBoxColumn
+        '
+        Me.MantdetalleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.MantdetalleDataGridViewTextBoxColumn.DataPropertyName = "Mant_detalle"
+        Me.MantdetalleDataGridViewTextBoxColumn.HeaderText = "Ingrese valor"
+        Me.MantdetalleDataGridViewTextBoxColumn.Name = "MantdetalleDataGridViewTextBoxColumn"
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasasignadasidDataGridViewTextBoxColumn
+        '
+        Me.TareasasignadasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.HeaderText = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Name = "TareasasignadasidDataGridViewTextBoxColumn"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadosdetalleBindingSource
+        '
+        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
+        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_2_ds1
+        '
+        'MANT_2_ds1
+        '
+        Me.MANT_2_ds1.DataSetName = "MANT_2_ds"
+        Me.MANT_2_ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MantlistadosBindingSource
+        '
+        Me.MantlistadosBindingSource.DataMember = "mant_listados"
+        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds1
+        '
         'EquipoDataGridViewTextBoxColumn
         '
         Me.EquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -397,13 +398,21 @@ Partial Class Mante_consulta
         Me.Tipomantenimiento.Name = "Tipomantenimiento"
         Me.Tipomantenimiento.ReadOnly = True
         '
-        'EstadoDataGridViewTextBoxColumn
+        'periodicidad
         '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EstadoDataGridViewTextBoxColumn.Visible = False
+        Me.periodicidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.periodicidad.DataPropertyName = "periodicidad"
+        Me.periodicidad.HeaderText = "Periodicidad"
+        Me.periodicidad.Name = "periodicidad"
+        Me.periodicidad.ReadOnly = True
+        '
+        'EstadoDataGridViewTextBoxColumn1
+        '
+        Me.EstadoDataGridViewTextBoxColumn1.DataPropertyName = "estado"
+        Me.EstadoDataGridViewTextBoxColumn1.HeaderText = "estado"
+        Me.EstadoDataGridViewTextBoxColumn1.Name = "EstadoDataGridViewTextBoxColumn1"
+        Me.EstadoDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.EstadoDataGridViewTextBoxColumn1.Visible = False
         '
         'Mantenimientoid
         '
@@ -413,21 +422,21 @@ Partial Class Mante_consulta
         Me.Mantenimientoid.ReadOnly = True
         Me.Mantenimientoid.Visible = False
         '
-        'Mantrealizadosid
+        'MantrealizadosidDataGridViewTextBoxColumn1
         '
-        Me.Mantrealizadosid.DataPropertyName = "Mant_realizados_id"
-        Me.Mantrealizadosid.HeaderText = "Mant_realizados_id"
-        Me.Mantrealizadosid.Name = "Mantrealizadosid"
-        Me.Mantrealizadosid.ReadOnly = True
-        Me.Mantrealizadosid.Visible = False
+        Me.MantrealizadosidDataGridViewTextBoxColumn1.DataPropertyName = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn1.HeaderText = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn1.Name = "MantrealizadosidDataGridViewTextBoxColumn1"
+        Me.MantrealizadosidDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.MantrealizadosidDataGridViewTextBoxColumn1.Visible = False
         '
-        'Equipoid
+        'EquipoidDataGridViewTextBoxColumn
         '
-        Me.Equipoid.DataPropertyName = "Equipo_id"
-        Me.Equipoid.HeaderText = "Equipo_id"
-        Me.Equipoid.Name = "Equipoid"
-        Me.Equipoid.ReadOnly = True
-        Me.Equipoid.Visible = False
+        Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
+        Me.EquipoidDataGridViewTextBoxColumn.HeaderText = "Equipo_id"
+        Me.EquipoidDataGridViewTextBoxColumn.Name = "EquipoidDataGridViewTextBoxColumn"
+        Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EquipoidDataGridViewTextBoxColumn.Visible = False
         '
         'item
         '
@@ -447,17 +456,18 @@ Partial Class Mante_consulta
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Mante_consulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mante_consulta"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MANT_2_ds, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MANT_2_ds1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -480,23 +490,25 @@ Partial Class Mante_consulta
     Friend WithEvents txt_dni As System.Windows.Forms.TextBox
     Friend WithEvents txt_fantasia As System.Windows.Forms.TextBox
     Friend WithEvents txt_sucursal As System.Windows.Forms.TextBox
-    Friend WithEvents MantlistadosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents MANT_2_ds As Aplicacion.MANT_2_ds
-    Friend WithEvents MantenimientoidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MantrealizadosidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MantrealizadodetalleidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cat2caractatributoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cat2caractidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MantdetalleDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MantrealizadosdetalleBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents MANT_2_ds1 As Aplicacion.MANT_2_ds
+    Friend WithEvents MantlistadosBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents MantenimientoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MantrealizadosidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MantrealizadodetalleidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TareasdescDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MantdetalleDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TareasasignadasidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EquipoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SectorDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Etiqueta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Tipomantenimiento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents periodicidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Mantenimientoid As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Mantrealizadosid As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Equipoid As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MantrealizadosidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EquipoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class
