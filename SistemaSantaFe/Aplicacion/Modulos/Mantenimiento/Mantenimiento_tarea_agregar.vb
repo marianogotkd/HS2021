@@ -168,7 +168,7 @@
 
 
             Dim Filtro
-            Filtro = String.Format("CONVERT(Subtipo, System.String) LIKE '%{0}%'", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
+            Filtro = String.Format("CONVERT(Cat2_equipo_id, System.String) LIKE '%{0}%'", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
 
             'Filtro = String.Format("{0} LIKE '%{1}%'", "CLI_Fan", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
             TareasBindingSource.Filter = Filtro

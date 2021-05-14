@@ -224,6 +224,30 @@ Public Class Mantenimiento
 
 #End Region
 
+#Region "CALENDARIO MANTENIMIENTO"
+    Public Function Mantenimiento_iniciales_obtener(ByVal SucxClie_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
 
+        Dim comando As New OleDbCommand("Mantenimiento_iniciales_obtener", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
+
+
+
+#End Region
 
 End Class
