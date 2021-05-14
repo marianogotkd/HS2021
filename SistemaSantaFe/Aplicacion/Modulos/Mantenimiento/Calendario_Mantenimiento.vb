@@ -2,7 +2,6 @@
     Private Sub calc_()
         Dim fecha As Date = Now
 
-
         Dim dias_Sumar As Integer = 30
 
         Dim fechaResul = DateAdd("d", dias_Sumar, fecha)
@@ -16,6 +15,8 @@
         If Weekday(fechaResul) = 1 Then
             fechaResul = DateAdd("d", 1, fecha)
         End If
+
+
     End Sub
     Dim Daservicio As New Datos.Servicio
     Private listFlDay As New List(Of FlowLayoutPanel)
