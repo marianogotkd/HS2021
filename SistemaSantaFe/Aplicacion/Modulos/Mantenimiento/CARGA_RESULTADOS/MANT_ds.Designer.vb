@@ -359,13 +359,13 @@ Partial Public Class MANT_2_ds
         
         Private columnMant_realizado_detalle_id As Global.System.Data.DataColumn
         
-        Private columnCat2_caract_atributo As Global.System.Data.DataColumn
-        
-        Private columnCat2_caract_id As Global.System.Data.DataColumn
-        
         Private columnMant_detalle As Global.System.Data.DataColumn
         
         Private columnEstado As Global.System.Data.DataColumn
+        
+        Private columnTareas_asignadas_id As Global.System.Data.DataColumn
+        
+        Private columnTareas_desc As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -428,22 +428,6 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Cat2_caract_atributoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCat2_caract_atributo
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Cat2_caract_idColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCat2_caract_id
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Mant_detalleColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnMant_detalle
@@ -455,6 +439,22 @@ Partial Public Class MANT_2_ds
         Public ReadOnly Property EstadoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnEstado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Tareas_asignadas_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTareas_asignadas_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Tareas_descColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTareas_desc
             End Get
         End Property
         
@@ -495,9 +495,9 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addmant_realizados_detalleRow(ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Mant_realizado_detalle_id As Integer, ByVal Cat2_caract_atributo As String, ByVal Cat2_caract_id As Integer, ByVal Mant_detalle As String, ByVal Estado As String) As mant_realizados_detalleRow
+        Public Overloads Function Addmant_realizados_detalleRow(ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Mant_realizado_detalle_id As Integer, ByVal Mant_detalle As String, ByVal Estado As String, ByVal Tareas_asignadas_id As Integer, ByVal Tareas_desc As String) As mant_realizados_detalleRow
             Dim rowmant_realizados_detalleRow As mant_realizados_detalleRow = CType(Me.NewRow,mant_realizados_detalleRow)
-            Dim columnValuesArray() As Object = New Object() {Mantenimiento_id, Mant_realizados_id, Mant_realizado_detalle_id, Cat2_caract_atributo, Cat2_caract_id, Mant_detalle, Estado}
+            Dim columnValuesArray() As Object = New Object() {Mantenimiento_id, Mant_realizados_id, Mant_realizado_detalle_id, Mant_detalle, Estado, Tareas_asignadas_id, Tareas_desc}
             rowmant_realizados_detalleRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowmant_realizados_detalleRow)
             Return rowmant_realizados_detalleRow
@@ -523,10 +523,10 @@ Partial Public Class MANT_2_ds
             Me.columnMantenimiento_id = MyBase.Columns("Mantenimiento_id")
             Me.columnMant_realizados_id = MyBase.Columns("Mant_realizados_id")
             Me.columnMant_realizado_detalle_id = MyBase.Columns("Mant_realizado_detalle_id")
-            Me.columnCat2_caract_atributo = MyBase.Columns("Cat2_caract_atributo")
-            Me.columnCat2_caract_id = MyBase.Columns("Cat2_caract_id")
             Me.columnMant_detalle = MyBase.Columns("Mant_detalle")
             Me.columnEstado = MyBase.Columns("Estado")
+            Me.columnTareas_asignadas_id = MyBase.Columns("Tareas_asignadas_id")
+            Me.columnTareas_desc = MyBase.Columns("Tareas_desc")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -538,14 +538,14 @@ Partial Public Class MANT_2_ds
             MyBase.Columns.Add(Me.columnMant_realizados_id)
             Me.columnMant_realizado_detalle_id = New Global.System.Data.DataColumn("Mant_realizado_detalle_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMant_realizado_detalle_id)
-            Me.columnCat2_caract_atributo = New Global.System.Data.DataColumn("Cat2_caract_atributo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCat2_caract_atributo)
-            Me.columnCat2_caract_id = New Global.System.Data.DataColumn("Cat2_caract_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCat2_caract_id)
             Me.columnMant_detalle = New Global.System.Data.DataColumn("Mant_detalle", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMant_detalle)
             Me.columnEstado = New Global.System.Data.DataColumn("Estado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEstado)
+            Me.columnTareas_asignadas_id = New Global.System.Data.DataColumn("Tareas_asignadas_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTareas_asignadas_id)
+            Me.columnTareas_desc = New Global.System.Data.DataColumn("Tareas_desc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTareas_desc)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -699,6 +699,8 @@ Partial Public Class MANT_2_ds
         
         Private columnEquipo_id As Global.System.Data.DataColumn
         
+        Private columnperiodicidad As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -799,6 +801,14 @@ Partial Public Class MANT_2_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property periodicidadColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnperiodicidad
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -835,9 +845,9 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addmant_listadosRow(ByVal Equipo As String, ByVal Sector As String, ByVal Etiqueta As String, ByVal Tipo_mantenimiento As String, ByVal estado As String, ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Equipo_id As Integer) As mant_listadosRow
+        Public Overloads Function Addmant_listadosRow(ByVal Equipo As String, ByVal Sector As String, ByVal Etiqueta As String, ByVal Tipo_mantenimiento As String, ByVal estado As String, ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Equipo_id As Integer, ByVal periodicidad As String) As mant_listadosRow
             Dim rowmant_listadosRow As mant_listadosRow = CType(Me.NewRow,mant_listadosRow)
-            Dim columnValuesArray() As Object = New Object() {Equipo, Sector, Etiqueta, Tipo_mantenimiento, estado, Mantenimiento_id, Mant_realizados_id, Equipo_id}
+            Dim columnValuesArray() As Object = New Object() {Equipo, Sector, Etiqueta, Tipo_mantenimiento, estado, Mantenimiento_id, Mant_realizados_id, Equipo_id, periodicidad}
             rowmant_listadosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowmant_listadosRow)
             Return rowmant_listadosRow
@@ -868,6 +878,7 @@ Partial Public Class MANT_2_ds
             Me.columnMantenimiento_id = MyBase.Columns("Mantenimiento_id")
             Me.columnMant_realizados_id = MyBase.Columns("Mant_realizados_id")
             Me.columnEquipo_id = MyBase.Columns("Equipo_id")
+            Me.columnperiodicidad = MyBase.Columns("periodicidad")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -889,6 +900,8 @@ Partial Public Class MANT_2_ds
             MyBase.Columns.Add(Me.columnMant_realizados_id)
             Me.columnEquipo_id = New Global.System.Data.DataColumn("Equipo_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEquipo_id)
+            Me.columnperiodicidad = New Global.System.Data.DataColumn("periodicidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnperiodicidad)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1413,38 +1426,6 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Cat2_caract_atributo() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablemant_realizados_detalle.Cat2_caract_atributoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Cat2_caract_atributo' de la tabla 'mant_realizados_detall"& _ 
-                            "e' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablemant_realizados_detalle.Cat2_caract_atributoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Cat2_caract_id() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablemant_realizados_detalle.Cat2_caract_idColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Cat2_caract_id' de la tabla 'mant_realizados_detalle' es "& _ 
-                            "DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablemant_realizados_detalle.Cat2_caract_idColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Mant_detalle() As String
             Get
                 Try 
@@ -1471,6 +1452,38 @@ Partial Public Class MANT_2_ds
             End Get
             Set
                 Me(Me.tablemant_realizados_detalle.EstadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Tareas_asignadas_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_realizados_detalle.Tareas_asignadas_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Tareas_asignadas_id' de la tabla 'mant_realizados_detalle"& _ 
+                            "' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_realizados_detalle.Tareas_asignadas_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Tareas_desc() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_realizados_detalle.Tareas_descColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Tareas_desc' de la tabla 'mant_realizados_detalle' es DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_realizados_detalle.Tareas_descColumn) = value
             End Set
         End Property
         
@@ -1512,30 +1525,6 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCat2_caract_atributoNull() As Boolean
-            Return Me.IsNull(Me.tablemant_realizados_detalle.Cat2_caract_atributoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCat2_caract_atributoNull()
-            Me(Me.tablemant_realizados_detalle.Cat2_caract_atributoColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCat2_caract_idNull() As Boolean
-            Return Me.IsNull(Me.tablemant_realizados_detalle.Cat2_caract_idColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCat2_caract_idNull()
-            Me(Me.tablemant_realizados_detalle.Cat2_caract_idColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsMant_detalleNull() As Boolean
             Return Me.IsNull(Me.tablemant_realizados_detalle.Mant_detalleColumn)
         End Function
@@ -1556,6 +1545,30 @@ Partial Public Class MANT_2_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetEstadoNull()
             Me(Me.tablemant_realizados_detalle.EstadoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTareas_asignadas_idNull() As Boolean
+            Return Me.IsNull(Me.tablemant_realizados_detalle.Tareas_asignadas_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTareas_asignadas_idNull()
+            Me(Me.tablemant_realizados_detalle.Tareas_asignadas_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTareas_descNull() As Boolean
+            Return Me.IsNull(Me.tablemant_realizados_detalle.Tareas_descColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTareas_descNull()
+            Me(Me.tablemant_realizados_detalle.Tareas_descColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1698,6 +1711,21 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property periodicidad() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_listados.periodicidadColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'periodicidad' de la tabla 'mant_listados' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_listados.periodicidadColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsEquipoNull() As Boolean
             Return Me.IsNull(Me.tablemant_listados.EquipoColumn)
         End Function
@@ -1790,6 +1818,18 @@ Partial Public Class MANT_2_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetEquipo_idNull()
             Me(Me.tablemant_listados.Equipo_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsperiodicidadNull() As Boolean
+            Return Me.IsNull(Me.tablemant_listados.periodicidadColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetperiodicidadNull()
+            Me(Me.tablemant_listados.periodicidadColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

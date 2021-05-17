@@ -1,4 +1,4 @@
-alter procedure Mantenimiento_realizado_buscar
+create procedure Mantenimiento_realizado_buscar
 @fecha datetime,
 @SucxClie_id int
 as
@@ -11,7 +11,8 @@ Equipo.Equipo_descripcion as 'Equipo',
 Cliente_suc_sector.Cliente_suc_sector_descripcion as 'Sector',
 Cliente_suc_sector.Cliente_suc_sector_denominacion+'-'+Equipo.Equipo_denominacion  as 'Etiqueta',
 Mantenimiento_tipo.Mant_tipo_descr as 'Tipo_mantenimiento',
-'en bd' as 'estado' 
+'en bd' as 'estado',
+Mantenimiento_periodicidad.Mant_periodicidad_desc +' ('+CONVERT(varchar(max), Mantenimiento_periodicidad.Mant_periodicidad_dias )+')' as 'periodicidad'     
 from Mantenimiento inner join dbo.Mantenimiento_realizado 
 on Mantenimiento.Mantenimiento_id = Mantenimiento_realizado.Mantenimiento_id
 inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
@@ -32,7 +33,8 @@ Mantenimiento_tipo.Mant_tipo_descr,
 'en bd' as 'estado',
 Mantenimiento_periodicidad.Mant_periodicidad_dias,
 Mantenimiento.Mantenimiento_fecha_inicio,
-Cliente_Sucursales.SucxClie_id    
+Cliente_Sucursales.SucxClie_id,
+Mantenimiento_periodicidad.Mant_periodicidad_desc +' ('+CONVERT(varchar(max), Mantenimiento_periodicidad.Mant_periodicidad_dias )+')' as 'periodicidad'    
 from Mantenimiento 
 inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
 inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id 
@@ -49,33 +51,35 @@ Cliente.CLI_Fan,
 Cliente_Sucursales.SucxClie_nombre 
 from Cliente inner join Cliente_Sucursales on Cliente.CLI_id = Cliente_Sucursales.CLI_id where Cliente_Sucursales.SucxClie_id = @SucxClie_id 
 
----4 recupera los detalles de cada mantenmiento realizado
+---3 recupera los detalles de cada mantenmiento realizado
 select
 dbo.Mantenimiento.Mantenimiento_id, 
 dbo.Mantenimiento_realizado.Mant_realizados_id,
 dbo.Mantenimiento_realizado_detalle.Mant_realizado_detalle_id,
-Equipo_categoria2_caracteristicas.Cat2_caract_atributo, 
-dbo.Mantenimiento_realizado_detalle.Cat2_caract_id,
+Tareas_asignadas.Tareas_asignadas_id, 
+Tareas.Tareas_desc, 
 dbo.Mantenimiento_realizado_detalle.Mant_detalle,
 'en_bd' as 'Estado'
 from 
 dbo.Mantenimiento_realizado_detalle inner join dbo.Mantenimiento_realizado on dbo.Mantenimiento_realizado_detalle.Mant_realizados_id =  dbo.Mantenimiento_realizado.Mant_realizados_id
 inner join Mantenimiento on dbo.Mantenimiento_realizado.Mantenimiento_id = Mantenimiento.Mantenimiento_id
-inner join Equipo_categoria2_caracteristicas on dbo.Mantenimiento_realizado_detalle.Cat2_caract_id = Equipo_categoria2_caracteristicas.Cat2_caract_id 
+inner join Tareas_asignadas on dbo.Mantenimiento_realizado_detalle.Tareas_asignadas_id = Tareas_asignadas.Tareas_asignadas_id 
+inner join Tareas on Tareas_asignadas.Tareas_id = Tareas.Tareas_id 
+--inner join Equipo_categoria2_caracteristicas on dbo.Mantenimiento_realizado_detalle.Cat2_caract_id = Equipo_categoria2_caracteristicas.Cat2_caract_id 
 inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
 inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id 
 inner join Cliente_Sucursales on Cliente_suc_sector.SucxClie_id = Cliente_Sucursales.SucxClie_id 
-where Cliente_Sucursales.SucxClie_id =@SucxClie_id order by Equipo_categoria2_caracteristicas.Cat2_caract_atributo asc
+where Cliente_Sucursales.SucxClie_id =@SucxClie_id and Mantenimiento_realizado.Mant_realizados_fecha = @fecha order by dbo.Mantenimiento_realizado.Mant_realizados_id asc
 
---5) este select es un auxiliar para cargar los campos atributos en caso de q no exista registrado un mantenimiento_realizado
+--4) este select es un auxiliar para cargar los campos atributos en caso de q no exista registrado un mantenimiento_realizado
 select
 dbo.Mantenimiento.Mantenimiento_id, 
-Equipo_categoria2_caracteristicas.Cat2_caract_atributo, 
-Equipo_categoria2_caracteristicas.Cat2_caract_id
+Tareas_asignadas.Tareas_asignadas_id,
+Tareas.Tareas_desc  
 from Mantenimiento inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
-inner join Equipo_categoria2 on Equipo.Equipo_idcat = Equipo_categoria2.Cat2_equipo_id 
-inner join Equipo_categoria2_caracteristicas on Equipo_categoria2.Cat2_equipo_id = Equipo_categoria2_caracteristicas.Cat2_equipo_id   
+inner join Tareas_asignadas on Mantenimiento.Mantenimiento_id = Tareas_asignadas.Mantenimiento_id 
+inner join Tareas on Tareas_asignadas.Tareas_id = Tareas.Tareas_id 
 inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id 
 inner join Cliente_Sucursales on Cliente_suc_sector.SucxClie_id = Cliente_Sucursales.SucxClie_id 
-where Cliente_Sucursales.SucxClie_id =@SucxClie_id order by Equipo_categoria2_caracteristicas.Cat2_caract_atributo asc
+where Cliente_Sucursales.SucxClie_id =@SucxClie_id order by Mantenimiento.Mantenimiento_id  asc
 go
