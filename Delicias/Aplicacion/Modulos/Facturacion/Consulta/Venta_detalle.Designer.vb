@@ -24,8 +24,8 @@ Partial Class Venta_detalle
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Venta_detalle))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -78,6 +78,7 @@ Partial Class Venta_detalle
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -105,17 +106,18 @@ Partial Class Venta_detalle
         Me.TabPage1.Controls.Add(Me.GroupBox4)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(825, 528)
+        Me.TabPage1.Size = New System.Drawing.Size(825, 531)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Detalles de Ventas"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Controls.Add(Me.GroupBox_tarjeta)
         Me.GroupBox4.Controls.Add(Me.TextBox_total)
         Me.GroupBox4.Controls.Add(Me.TextBox_impuesto)
@@ -156,7 +158,7 @@ Partial Class Venta_detalle
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(12, 38)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(140, 20)
+        Me.Label13.Size = New System.Drawing.Size(116, 17)
         Me.Label13.TabIndex = 254
         Me.Label13.Text = "Nº DE TARJETA:"
         '
@@ -167,7 +169,7 @@ Partial Class Venta_detalle
         Me.TextBox_nrocomprobante.Location = New System.Drawing.Point(179, 60)
         Me.TextBox_nrocomprobante.Name = "TextBox_nrocomprobante"
         Me.TextBox_nrocomprobante.ReadOnly = True
-        Me.TextBox_nrocomprobante.Size = New System.Drawing.Size(165, 27)
+        Me.TextBox_nrocomprobante.Size = New System.Drawing.Size(165, 23)
         Me.TextBox_nrocomprobante.TabIndex = 257
         '
         'Label14
@@ -176,7 +178,7 @@ Partial Class Venta_detalle
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(12, 67)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(168, 20)
+        Me.Label14.Size = New System.Drawing.Size(138, 17)
         Me.Label14.TabIndex = 255
         Me.Label14.Text = "Nº COMPROBANTE:"
         '
@@ -187,7 +189,7 @@ Partial Class Venta_detalle
         Me.TextBox_nrotarjeta.Location = New System.Drawing.Point(177, 31)
         Me.TextBox_nrotarjeta.Name = "TextBox_nrotarjeta"
         Me.TextBox_nrotarjeta.ReadOnly = True
-        Me.TextBox_nrotarjeta.Size = New System.Drawing.Size(165, 27)
+        Me.TextBox_nrotarjeta.Size = New System.Drawing.Size(165, 23)
         Me.TextBox_nrotarjeta.TabIndex = 256
         '
         'TextBox_total
@@ -197,7 +199,7 @@ Partial Class Venta_detalle
         Me.TextBox_total.Location = New System.Drawing.Point(675, 279)
         Me.TextBox_total.Name = "TextBox_total"
         Me.TextBox_total.ReadOnly = True
-        Me.TextBox_total.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_total.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_total.TabIndex = 253
         '
         'TextBox_impuesto
@@ -207,7 +209,7 @@ Partial Class Venta_detalle
         Me.TextBox_impuesto.Location = New System.Drawing.Point(675, 249)
         Me.TextBox_impuesto.Name = "TextBox_impuesto"
         Me.TextBox_impuesto.ReadOnly = True
-        Me.TextBox_impuesto.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_impuesto.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_impuesto.TabIndex = 252
         '
         'TextBox_descuento
@@ -217,7 +219,7 @@ Partial Class Venta_detalle
         Me.TextBox_descuento.Location = New System.Drawing.Point(675, 220)
         Me.TextBox_descuento.Name = "TextBox_descuento"
         Me.TextBox_descuento.ReadOnly = True
-        Me.TextBox_descuento.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_descuento.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_descuento.TabIndex = 251
         '
         'GroupBox1
@@ -250,7 +252,7 @@ Partial Class Venta_detalle
         Me.lb_porc_iva.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_porc_iva.Location = New System.Drawing.Point(590, 256)
         Me.lb_porc_iva.Name = "lb_porc_iva"
-        Me.lb_porc_iva.Size = New System.Drawing.Size(24, 20)
+        Me.lb_porc_iva.Size = New System.Drawing.Size(20, 17)
         Me.lb_porc_iva.TabIndex = 250
         Me.lb_porc_iva.Text = "%"
         '
@@ -261,7 +263,7 @@ Partial Class Venta_detalle
         Me.TextBox_subtotal.Location = New System.Drawing.Point(675, 191)
         Me.TextBox_subtotal.Name = "TextBox_subtotal"
         Me.TextBox_subtotal.ReadOnly = True
-        Me.TextBox_subtotal.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_subtotal.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_subtotal.TabIndex = 249
         '
         'Lb_porc_descuento
@@ -270,7 +272,7 @@ Partial Class Venta_detalle
         Me.Lb_porc_descuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lb_porc_descuento.Location = New System.Drawing.Point(604, 227)
         Me.Lb_porc_descuento.Name = "Lb_porc_descuento"
-        Me.Lb_porc_descuento.Size = New System.Drawing.Size(24, 20)
+        Me.Lb_porc_descuento.Size = New System.Drawing.Size(20, 17)
         Me.Lb_porc_descuento.TabIndex = 248
         Me.Lb_porc_descuento.Text = "%"
         '
@@ -280,7 +282,7 @@ Partial Class Venta_detalle
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(594, 283)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(74, 20)
+        Me.Label12.Size = New System.Drawing.Size(64, 17)
         Me.Label12.TabIndex = 247
         Me.Label12.Text = "TOTAL:"
         '
@@ -290,7 +292,7 @@ Partial Class Venta_detalle
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(503, 256)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(82, 20)
+        Me.Label11.Size = New System.Drawing.Size(69, 17)
         Me.Label11.TabIndex = 246
         Me.Label11.Text = "Impuesto:"
         '
@@ -300,7 +302,7 @@ Partial Class Venta_detalle
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(503, 227)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 20)
+        Me.Label10.Size = New System.Drawing.Size(80, 17)
         Me.Label10.TabIndex = 245
         Me.Label10.Text = "Descuento:"
         '
@@ -310,7 +312,7 @@ Partial Class Venta_detalle
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(594, 198)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 20)
+        Me.Label9.Size = New System.Drawing.Size(64, 17)
         Me.Label9.TabIndex = 244
         Me.Label9.Text = "Subtotal:"
         '
@@ -376,9 +378,9 @@ Partial Class Venta_detalle
         '
         Me.CantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad"
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.CantidadDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.CantidadDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
         Me.CantidadDataGridViewTextBoxColumn.FillWeight = 152.2843!
         Me.CantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad"
         Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
@@ -389,9 +391,9 @@ Partial Class Venta_detalle
         '
         Me.descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.descuento.DataPropertyName = "descuento"
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.descuento.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.descuento.DefaultCellStyle = DataGridViewCellStyle4
         Me.descuento.FillWeight = 89.54314!
         Me.descuento.HeaderText = "Descuento(%)"
         Me.descuento.Name = "descuento"
@@ -470,7 +472,7 @@ Partial Class Venta_detalle
         Me.TextBox_fecha.Location = New System.Drawing.Point(144, 23)
         Me.TextBox_fecha.Name = "TextBox_fecha"
         Me.TextBox_fecha.ReadOnly = True
-        Me.TextBox_fecha.Size = New System.Drawing.Size(203, 27)
+        Me.TextBox_fecha.Size = New System.Drawing.Size(203, 23)
         Me.TextBox_fecha.TabIndex = 248
         '
         'Label8
@@ -479,7 +481,7 @@ Partial Class Venta_detalle
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(24, 31)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 20)
+        Me.Label8.Size = New System.Drawing.Size(51, 17)
         Me.Label8.TabIndex = 247
         Me.Label8.Text = "Fecha:"
         '
@@ -490,7 +492,7 @@ Partial Class Venta_detalle
         Me.TextBox_tipovta.Location = New System.Drawing.Point(144, 128)
         Me.TextBox_tipovta.Name = "TextBox_tipovta"
         Me.TextBox_tipovta.ReadOnly = True
-        Me.TextBox_tipovta.Size = New System.Drawing.Size(203, 27)
+        Me.TextBox_tipovta.Size = New System.Drawing.Size(203, 23)
         Me.TextBox_tipovta.TabIndex = 246
         '
         'TextBox_vendedor
@@ -500,7 +502,7 @@ Partial Class Venta_detalle
         Me.TextBox_vendedor.Location = New System.Drawing.Point(144, 92)
         Me.TextBox_vendedor.Name = "TextBox_vendedor"
         Me.TextBox_vendedor.ReadOnly = True
-        Me.TextBox_vendedor.Size = New System.Drawing.Size(203, 27)
+        Me.TextBox_vendedor.Size = New System.Drawing.Size(203, 23)
         Me.TextBox_vendedor.TabIndex = 245
         '
         'TextBox_factura
@@ -510,7 +512,7 @@ Partial Class Venta_detalle
         Me.TextBox_factura.Location = New System.Drawing.Point(144, 57)
         Me.TextBox_factura.Name = "TextBox_factura"
         Me.TextBox_factura.ReadOnly = True
-        Me.TextBox_factura.Size = New System.Drawing.Size(203, 27)
+        Me.TextBox_factura.Size = New System.Drawing.Size(203, 23)
         Me.TextBox_factura.TabIndex = 244
         '
         'Label7
@@ -519,7 +521,7 @@ Partial Class Venta_detalle
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(24, 135)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(114, 20)
+        Me.Label7.Size = New System.Drawing.Size(99, 17)
         Me.Label7.TabIndex = 243
         Me.Label7.Text = "Tipo de venta:"
         '
@@ -529,7 +531,7 @@ Partial Class Venta_detalle
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(24, 99)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 20)
+        Me.Label6.Size = New System.Drawing.Size(61, 17)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Usuario:"
         '
@@ -539,7 +541,7 @@ Partial Class Venta_detalle
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(24, 67)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(71, 20)
+        Me.Label5.Size = New System.Drawing.Size(60, 17)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Factura:"
         '
@@ -567,7 +569,7 @@ Partial Class Venta_detalle
         Me.TextBox_mail.Location = New System.Drawing.Point(99, 136)
         Me.TextBox_mail.Name = "TextBox_mail"
         Me.TextBox_mail.ReadOnly = True
-        Me.TextBox_mail.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_mail.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_mail.TabIndex = 7
         '
         'TextBox_telefono
@@ -577,7 +579,7 @@ Partial Class Venta_detalle
         Me.TextBox_telefono.Location = New System.Drawing.Point(99, 98)
         Me.TextBox_telefono.Name = "TextBox_telefono"
         Me.TextBox_telefono.ReadOnly = True
-        Me.TextBox_telefono.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_telefono.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_telefono.TabIndex = 6
         '
         'TextBox_dni
@@ -587,7 +589,7 @@ Partial Class Venta_detalle
         Me.TextBox_dni.Location = New System.Drawing.Point(99, 62)
         Me.TextBox_dni.Name = "TextBox_dni"
         Me.TextBox_dni.ReadOnly = True
-        Me.TextBox_dni.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_dni.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_dni.TabIndex = 5
         '
         'TextBox_fantasia
@@ -597,7 +599,7 @@ Partial Class Venta_detalle
         Me.TextBox_fantasia.Location = New System.Drawing.Point(99, 30)
         Me.TextBox_fantasia.Name = "TextBox_fantasia"
         Me.TextBox_fantasia.ReadOnly = True
-        Me.TextBox_fantasia.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_fantasia.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_fantasia.TabIndex = 4
         '
         'Label4
@@ -606,7 +608,7 @@ Partial Class Venta_detalle
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(15, 139)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(45, 20)
+        Me.Label4.Size = New System.Drawing.Size(37, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Mail:"
         '
@@ -616,7 +618,7 @@ Partial Class Venta_detalle
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(15, 101)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 20)
+        Me.Label3.Size = New System.Drawing.Size(64, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Teléfono"
         '
@@ -626,7 +628,7 @@ Partial Class Venta_detalle
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(15, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 20)
+        Me.Label2.Size = New System.Drawing.Size(35, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "DNI:"
         '
@@ -636,13 +638,25 @@ Partial Class Venta_detalle
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(15, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.Size = New System.Drawing.Size(66, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Fantasia:"
         '
         'ToolTip1
         '
         Me.ToolTip1.ToolTipTitle = "V"
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.iniciar
+        Me.Button1.Location = New System.Drawing.Point(9, 187)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 32)
+        Me.Button1.TabIndex = 259
+        Me.Button1.Text = "Volver"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button1, "Volver a selección de sucursal")
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Venta_detalle
         '
@@ -726,4 +740,5 @@ Partial Class Venta_detalle
     Friend WithEvents PreciosubtotalDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CodbarraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TURNOidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

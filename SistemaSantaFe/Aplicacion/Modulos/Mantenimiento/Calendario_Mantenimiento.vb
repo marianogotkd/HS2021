@@ -1,5 +1,5 @@
 ﻿Public Class Calendario_Mantenimiento
-    Private Sub calc_()
+    Private Sub calc_() 'esto es de mariano supongo
         Dim fecha As Date = Now
 
         Dim dias_Sumar As Integer = 30
@@ -126,58 +126,133 @@
         'Orden_Revision_nueva.Focus()
     End Sub
 
-
+    Dim mantenimiento_ds As New mantenimiento_ds
     Private Sub AddAppointmentToFlDay(ByVal startDayAtFlNumber As Integer)
         Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
         Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
 
         'Dim sql As String = $"select * from appointment where AppDate between #{startDate.ToShortDateString()}# and #{endDate.ToShortDateString()}#"
 
-        Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(startDate.ToShortDateString, endDate.ToShortDateString, sucursal_id)
+        'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(startDate.ToShortDateString, endDate.ToShortDateString, sucursal_id)
 
-        'Dim dt As DataTable = QueryAsDataTable(Sql)
-        Dim dt As DataTable = dt_choco.Tables(0)
-        Dim i As Integer = 0
-        For Each row As DataRow In dt.Rows
-            'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
-            Dim appDay As DateTime = DateTime.Parse(row("Servicio_fecha"))
-            Dim link As New LinkLabel
-            'link.Tag = row("ID")
-            link.Tag = row("Servicio_id")
-            'link.Name = $"link{row("ID")}"
-            'link.Name = row("Servicio_Diagnostico")
-            link.Name = row("Servicio_Estado")
-            'link.Text = row("ContactName")
-            If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
-                link.Text = "Rev: " + CStr(row("Servicio_id"))
+        'STARTDATE ES EL PRIMER DIA DEL MES
+        'ENDDATE ES EL ULTIMO DIA DEL MES
+        'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
+        Dim daMantenimiento As New Datos.Mantenimiento
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Clear()
+        If ds_info.Tables(0).Rows.Count <> 0 Then
+            Dim ii As Integer = 0
+
+            While ii < ds_info.Tables(0).Rows.Count
+                'valido q la fecha del mant inicial esta dentro del intervalo.
+                Dim fecha As Date = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                    'lo agrego
+                    Dim fila As DataRow = mantenimiento_ds.Tables("MANTENIMIENTOS").NewRow
+                    fila("ID") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
+                    fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                    fila("FECHA") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                    mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Add(fila)
+                End If
+                'aqui veo cuantas veces lo voy a agregar, dependiendo el campo "DIA" y siempre y cuando este dentro del rango de fechas indicado.
+                '********************************************************************
+                Dim dias As Integer = ds_info.Tables(0).Rows(ii).Item("Mant_periodicidad_dias")
+                Dim valido As String = "si"
+                If dias <> 0 Then
+                    While valido = "si"
+                        If fecha <= endDate.ToShortDateString Then
+                            'aplico el calculo de los dias
+                            fecha = fecha.AddDays(dias)
+                            'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
+                            If (fecha.DayOfWeek = DayOfWeek.Saturday) Then
+                                If fecha.AddDays(2) <= endDate.ToShortDateString Then
+                                    fecha = fecha.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
+                                Else
+                                    'si es mayor a la fecha limite, entonces no lo agrego
+                                    Exit While
+                                End If
+                            Else
+                                If fecha.DayOfWeek = DayOfWeek.Sunday Then
+                                    If fecha.AddDays(1) <= endDate.ToShortDateString Then
+                                        fecha = fecha.AddDays(1) 'domingo le sumo 1, sumo 1 si y solo si es el fin de semana previ a la fecha q se selecciono en el calendario
+                                    Else
+                                        Exit While 'no lo agrego
+                                    End If
+                                End If
+                            End If
+
+                            'ahora: si la fecha calculada esta dentro del mes actua, lo agrego. sino sigo ciclando
+                            If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                                Dim fila As DataRow = mantenimiento_ds.Tables("MANTENIMIENTOS").NewRow
+                                fila("ID") = 0
+                                fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                                fila("FECHA") = fecha.Date
+                                mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Add(fila)
+                            End If
+                        Else
+                            Exit While 'si es mayor no lo agrego al dataset Calendario_mant_DS.Tables("MANTENIMIENTOS")
+                        End If
+                    End While
+                    '********************************************************************
+                End If
+                ii = ii + 1
+            End While
+
+            Dim dt As DataTable = mantenimiento_ds.Tables("MANTENIMIENTOS")
+            Dim i As Integer = 0
+            For Each row As DataRow In dt.Rows
+                'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
+                Dim appDay As DateTime = DateTime.Parse(row("FECHA"))
+                Dim link As New LinkLabel
+                'link.Tag = row("ID")
+                link.Tag = row("ID")
+                'link.Name = $"link{row("ID")}"
+                'link.Name = row("Servicio_Diagnostico")
+                Dim name As String = CStr(i) + "-" + row("DESCRIPCION")
+                link.Name = name
+                'link.Text = row("ContactName")
+
+                link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
                 link.LinkColor = Color.Orange
-            Else
-                Select Case (CStr(row("Servicio_Estado")))
-                    Case "ASIGNADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Blue
-                    Case "REPARADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Black
-                    Case "FINALIZADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Green
-                End Select
-            End If
 
-            'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+                'If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
+                '    link.Text = "Rev: " + CStr(row("Servicio_id"))
+                '    link.LinkColor = Color.Orange
+                'Else
+                '    Select Case (CStr(row("Servicio_Estado")))
+                '        Case "ASIGNADO"
+                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                '            link.LinkColor = Color.Blue
+                '        Case "REPARADO"
+                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                '            link.LinkColor = Color.Black
+                '        Case "FINALIZADO"
+                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                '            link.LinkColor = Color.Green
+                '    End Select
+                'End If
 
-            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
-            i = i + 1
-            'If dt.Rows.Count > 2 And i = 2 Then
-            '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
-            '    Dim link2 As New LinkLabel
-            '    link2.Text = "Ver mas..."
-            '    link2.LinkColor = Color.Black
-            '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
-            '    Exit For
-            'End If
-        Next
+                'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+
+                listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
+                i = i + 1
+                'If dt.Rows.Count > 2 And i = 2 Then
+                '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
+                '    Dim link2 As New LinkLabel
+                '    link2.Text = "Ver mas..."
+                '    link2.LinkColor = Color.Black
+                '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
+                '    Exit For
+                'End If
+            Next
+
+
+        End If
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     End Sub
 
     Private Function GetFirstDayOfWeekOfCurrentDate() As Integer
@@ -284,90 +359,95 @@
     End Sub
 
     'este uso con el menu contextua, es decir el que se abre cuando le doy boton derecho
-    Private Sub NuevoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
-        'Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
-        If choco_day <> 0 Then
-            Dim result As DialogResult
-            result = MessageBox.Show("¿Desea generar una nueva orden de Revisión?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-            If result = DialogResult.OK Then
-                'Orden_Revision_nueva.Close()
-                'Orden_Revision_nueva.DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, day)
-                'Orden_Revision_nueva.Show()
+    Private Sub NuevoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ''Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
+        'If choco_day <> 0 Then
+        '    Dim result As DialogResult
+        '    result = MessageBox.Show("¿Desea generar una nueva orden de Revisión?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        '    If result = DialogResult.OK Then
+        '        'Orden_Revision_nueva.Close()
+        '        'Orden_Revision_nueva.DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, day)
+        '        'Orden_Revision_nueva.Show()
 
-                With Orden_Revision_nueva
-                    .appID = 0
-                    .DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, choco_day)
-                    .ShowDialog()
-                End With
-
-
-                'With frmManageAppointment
-                '    .AppID = 0
-                '    .txtName.Text = ""
-                '    .txtAddress.Text = ""
-                '    .txtComment.Text = ""
-                '    .dtpDate.Value = New Date(currentDate.Year, currentDate.Month, day)
-                '    .ShowDialog()
-                'End With
-                'DisplayCurrentDate()
-            End If
-
-            DisplayCurrentDate()
+        '        With Orden_Revision_nueva
+        '            .appID = 0
+        '            .DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '            .ShowDialog()
+        '        End With
 
 
-        End If
+        '        'With frmManageAppointment
+        '        '    .AppID = 0
+        '        '    .txtName.Text = ""
+        '        '    .txtAddress.Text = ""
+        '        '    .txtComment.Text = ""
+        '        '    .dtpDate.Value = New Date(currentDate.Year, currentDate.Month, day)
+        '        '    .ShowDialog()
+        '        'End With
+        '        'DisplayCurrentDate()
+        '    End If
+
+        '    DisplayCurrentDate()
+
+
+        'End If
     End Sub
 
     Private Sub VerToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles VerToolStripMenuItem.Click
         If choco_day <> 0 Then
             Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
-            'con la fecha del dia busco los servicios.
-            Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
-            If dt_choco.Tables(0).Rows.Count <> 0 Then
-                'lo muestro en otro formulario, en un gridview bien detallado
-                'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
-                Servicio_Consulta_b.Close()
-                Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
-                Servicio_Consulta_b.Show()
-                Me.Close()
-            Else
-                'no hay citas registradas
-                MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
+            Mante_consulta.Close()
+            Mante_consulta.fecha.Text = fecha
+            Mante_consulta.SucxClie_id = 19
+            Mante_consulta.Show()
+
+            ''con la fecha del dia busco los servicios.
+            'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
+            'If dt_choco.Tables(0).Rows.Count <> 0 Then
+            '    'lo muestro en otro formulario, en un gridview bien detallado
+            '    'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
+            '    Servicio_Consulta_b.Close()
+            '    Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
+            '    Servicio_Consulta_b.Show()
+            '    Me.Close()
+            'Else
+            '    'no hay citas registradas
+            '    MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'End If
         End If
     End Sub
 
-    Private Sub NuevaOrdenTrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevaOrdenTrabajoToolStripMenuItem.Click
-        'Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
-        If choco_day <> 0 Then
-            Dim result As DialogResult
-            result = MessageBox.Show("¿Desea generar una nueva orden de Trabajo?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-            If result = DialogResult.OK Then
-                'Orden_Revision_nueva.Close()
-                'Orden_Revision_nueva.DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, day)
-                'Orden_Revision_nueva.Show()
+    Private Sub NuevaOrdenTrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ''Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
+        'If choco_day <> 0 Then
+        '    Dim result As DialogResult
+        '    result = MessageBox.Show("¿Desea generar una nueva orden de Trabajo?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        '    If result = DialogResult.OK Then
+        '        'Orden_Revision_nueva.Close()
+        '        'Orden_Revision_nueva.DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, day)
+        '        'Orden_Revision_nueva.Show()
 
-                With Orden_trabajo_selec_cliente
-                    .appID = 0
-                    .DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, choco_day)
-                    .ShowDialog()
-                End With
+        '        With Orden_trabajo_selec_cliente
+        '            .appID = 0
+        '            .DateTimePicker1.Value = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '            .ShowDialog()
+        '        End With
 
 
-                'With frmManageAppointment
-                '    .AppID = 0
-                '    .txtName.Text = ""
-                '    .txtAddress.Text = ""
-                '    .txtComment.Text = ""
-                '    .dtpDate.Value = New Date(currentDate.Year, currentDate.Month, day)
-                '    .ShowDialog()
-                'End With
-                'DisplayCurrentDate()
-            End If
+        '        'With frmManageAppointment
+        '        '    .AppID = 0
+        '        '    .txtName.Text = ""
+        '        '    .txtAddress.Text = ""
+        '        '    .txtComment.Text = ""
+        '        '    .dtpDate.Value = New Date(currentDate.Year, currentDate.Month, day)
+        '        '    .ShowDialog()
+        '        'End With
+        '        'DisplayCurrentDate()
+        '    End If
 
-            DisplayCurrentDate()
+        '    DisplayCurrentDate()
 
-        End If
+        'End If
     End Sub
 
 End Class

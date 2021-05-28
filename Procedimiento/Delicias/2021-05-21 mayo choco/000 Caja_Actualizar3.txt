@@ -1,0 +1,49 @@
+USE [Delicias]
+GO
+/****** Object:  StoredProcedure [dbo].[Caja_Actualizar3]    Script Date: 05/21/2021 18:14:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Caja_Actualizar3]
+@CAJA_id int,
+@terminal_id int,
+@TurnoUsuario_id int,
+@descripcion varchar(max),
+@CAJAdetalle_ingreso_efectivo decimal(38,2),
+@CAJAdetalle_egreso decimal(38,2),
+@CajaTipoMov_int int,
+@CAJAdetalle_ingreso_tarjeta decimal(38,2),
+@ingreso decimal(38,2),
+@CAJAdetalle_fechahora datetime
+
+as
+
+
+update Caja set
+CAJA_montoingresosefectivo = CAJA_montoingresosefectivo + @CAJAdetalle_ingreso_efectivo,
+CAJA_montoingresostarjeta = CAJA_montoingresostarjeta + @CAJAdetalle_ingreso_tarjeta,
+CAJA_montoegresos = CAJA_montoegresos + @CAJAdetalle_egreso,
+CAJA_montoneto = CAJA_montoneto + @CAJAdetalle_ingreso_efectivo - @CAJAdetalle_egreso,
+Terminales_id=@terminal_id 
+where Caja.CAJA_id = @CAJA_id 
+--where Caja.CAJA_id = @CAJA_id and Caja.CAJA_estado=1 and Caja.Terminales_id= @terminal_id 
+
+--obtengo el id de la caja abierta en dicha sucursal.
+
+insert dbo.CajaDetalle (CAJA_ID,
+			CAJAdetalle_descripcion,
+			CAJAdetalle_ingreso,
+			CAJAdetalle_egreso,
+			CajaTipoMov_int, 
+			CAJAdetalle_fechahora, 
+			TurnoUsuario_id) 
+			values (@CAJA_ID, 
+					@descripcion, 
+					@ingreso, 
+					@CAJAdetalle_egreso, 
+					@CajaTipoMov_int, 
+					@CAJAdetalle_fechahora, 
+					@TurnoUsuario_id ) ---1 es el tipo de movimiento = Venta, 2 ingresos, 3 egresos, 4 tarjeta
+
+select Caja.CAJA_id  from Caja where Caja.CAJA_id=@CAJA_ID  

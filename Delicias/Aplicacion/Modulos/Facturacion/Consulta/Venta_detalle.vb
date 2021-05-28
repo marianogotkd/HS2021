@@ -279,4 +279,9 @@
             TextBox_nrocomprobante.Text = ds_venta.Tables(5).Rows(0).Item("Venta_x_tarjeta_nrocomprobante")
         End If
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Venta_consulta_sucursal.Show()
+        Me.Close()
+    End Sub
 End Class

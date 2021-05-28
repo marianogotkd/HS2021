@@ -1,0 +1,56 @@
+USE [Delicias]
+GO
+/****** Object:  StoredProcedure [dbo].[Caja_obtener_detalle_x_cajaID]    Script Date: 05/21/2021 15:32:06 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Caja_obtener_detalle_x_cajaID]
+@caja_id int
+
+as
+
+select
+CAJA_id, 
+CAJA_apertura, 
+CAJA_cierre, 
+CAJA_estado, 
+CAJA_montoinicial, 
+CAJA_montoingresosefectivo, 
+CAJA_montoneto, 
+caja.USU_id, 
+Usuario.USU_ape +', '+Usuario.USU_nom as 'Usuario',
+sucursal.sucursal_id,
+Sucursal.sucursal_nombre as 'sucursal',
+CAJA_montoegresos,
+CAJA_montoingresostarjeta
+from Caja inner join Usuario on Caja.USU_id= Usuario.USU_id 
+inner join Sucursal on Caja.sucursal_id = Sucursal.sucursal_id 
+
+
+where Caja.CAJA_id=@caja_id
+
+
+
+
+select 
+CAJAdetalle_id, CajaDetalle.CAJA_ID, CAJAdetalle_descripcion, CAJAdetalle_ingreso, CAJAdetalle_egreso, CajaTipoMov.CajaTipoMov_int,
+CajaTipoMov_descripcion, Usuario.USU_ape +', '+Usuario.USU_nom as 'ApeNom'
+from CajaDetalle inner join CajaTipoMov on dbo.CajaDetalle.CajaTipoMov_int=CajaTipoMov.CajaTipoMov_int
+inner join TurnoUsuario on CajaDetalle.TurnoUsuario_id = TurnoUsuario.TurnoUsuario_id 
+inner join Usuario on TurnoUsuario.USU_id = Usuario.USU_id 
+where  dbo.CajaDetalle.CAJA_ID = @caja_id ORDER BY CajaTipoMov_descripcion asc
+
+
+--------------el siguiente select lo voy a usar en el modulo de ingresos-egresos
+select 
+CAJAdetalle_id, CAJA_ID, CAJAdetalle_descripcion, CAJAdetalle_ingreso, CAJAdetalle_egreso, CajaTipoMov.CajaTipoMov_int,
+CajaTipoMov_descripcion, CAJAdetalle_fechahora
+from CajaDetalle inner join CajaTipoMov on dbo.CajaDetalle.CajaTipoMov_int=CajaTipoMov.CajaTipoMov_int
+where  dbo.CajaDetalle.CAJA_ID = @CAJA_id and CajaTipoMov.CajaTipoMov_int='2'
+
+select 
+CAJAdetalle_id, CAJA_ID, CAJAdetalle_descripcion, CAJAdetalle_ingreso, CAJAdetalle_egreso, CajaTipoMov.CajaTipoMov_int,
+CajaTipoMov_descripcion, CAJAdetalle_fechahora
+from CajaDetalle inner join CajaTipoMov on dbo.CajaDetalle.CajaTipoMov_int=CajaTipoMov.CajaTipoMov_int
+where  dbo.CajaDetalle.CAJA_ID = @CAJA_id and CajaTipoMov.CajaTipoMov_int='3'

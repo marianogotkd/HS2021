@@ -23,7 +23,7 @@ Partial Class Venta_detalle_servicio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Lb_fecha = New System.Windows.Forms.Label()
@@ -66,6 +66,7 @@ Partial Class Venta_detalle_servicio
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -92,10 +93,10 @@ Partial Class Venta_detalle_servicio
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(878, 461)
+        Me.TabPage1.Size = New System.Drawing.Size(878, 464)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Detalle de Servicio"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -106,7 +107,7 @@ Partial Class Venta_detalle_servicio
         Me.Lb_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lb_fecha.Location = New System.Drawing.Point(458, 12)
         Me.Lb_fecha.Name = "Lb_fecha"
-        Me.Lb_fecha.Size = New System.Drawing.Size(60, 20)
+        Me.Lb_fecha.Size = New System.Drawing.Size(51, 17)
         Me.Lb_fecha.TabIndex = 246
         Me.Lb_fecha.Text = "Fecha:"
         '
@@ -116,12 +117,13 @@ Partial Class Venta_detalle_servicio
         Me.lb_servicionro.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_servicionro.Location = New System.Drawing.Point(21, 12)
         Me.lb_servicionro.Name = "lb_servicionro"
-        Me.lb_servicionro.Size = New System.Drawing.Size(97, 20)
+        Me.lb_servicionro.Size = New System.Drawing.Size(81, 17)
         Me.lb_servicionro.TabIndex = 245
         Me.lb_servicionro.Text = "Servicio Nº:"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.TextBox_total)
         Me.GroupBox1.Controls.Add(Me.TextBox_totalrepuesto)
         Me.GroupBox1.Controls.Add(Me.Label12)
@@ -143,7 +145,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_total.Location = New System.Drawing.Point(714, 202)
         Me.TextBox_total.Name = "TextBox_total"
         Me.TextBox_total.ReadOnly = True
-        Me.TextBox_total.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_total.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_total.TabIndex = 255
         '
         'TextBox_totalrepuesto
@@ -153,7 +155,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_totalrepuesto.Location = New System.Drawing.Point(714, 129)
         Me.TextBox_totalrepuesto.Name = "TextBox_totalrepuesto"
         Me.TextBox_totalrepuesto.ReadOnly = True
-        Me.TextBox_totalrepuesto.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_totalrepuesto.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_totalrepuesto.TabIndex = 251
         '
         'Label12
@@ -162,7 +164,7 @@ Partial Class Venta_detalle_servicio
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(633, 206)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(74, 20)
+        Me.Label12.Size = New System.Drawing.Size(64, 17)
         Me.Label12.TabIndex = 254
         Me.Label12.Text = "TOTAL:"
         '
@@ -172,7 +174,7 @@ Partial Class Venta_detalle_servicio
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(593, 136)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 20)
+        Me.Label5.Size = New System.Drawing.Size(104, 17)
         Me.Label5.TabIndex = 250
         Me.Label5.Text = "Total repuesto:"
         '
@@ -183,7 +185,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_manoobra.Location = New System.Drawing.Point(712, 165)
         Me.TextBox_manoobra.Name = "TextBox_manoobra"
         Me.TextBox_manoobra.ReadOnly = True
-        Me.TextBox_manoobra.Size = New System.Drawing.Size(112, 27)
+        Me.TextBox_manoobra.Size = New System.Drawing.Size(112, 23)
         Me.TextBox_manoobra.TabIndex = 253
         '
         'DataGridView1
@@ -201,10 +203,10 @@ Partial Class Venta_detalle_servicio
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Size = New System.Drawing.Size(807, 103)
         Me.DataGridView1.TabIndex = 2
         '
@@ -285,7 +287,7 @@ Partial Class Venta_detalle_servicio
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(591, 172)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(116, 20)
+        Me.Label6.Size = New System.Drawing.Size(100, 17)
         Me.Label6.TabIndex = 252
         Me.Label6.Text = "Mano de obra:"
         '
@@ -315,7 +317,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_bateria.Location = New System.Drawing.Point(326, 26)
         Me.TextBox_bateria.Name = "TextBox_bateria"
         Me.TextBox_bateria.ReadOnly = True
-        Me.TextBox_bateria.Size = New System.Drawing.Size(57, 27)
+        Me.TextBox_bateria.Size = New System.Drawing.Size(57, 23)
         Me.TextBox_bateria.TabIndex = 10
         '
         'Label11
@@ -324,7 +326,7 @@ Partial Class Venta_detalle_servicio
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(254, 33)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(68, 20)
+        Me.Label11.Size = New System.Drawing.Size(57, 17)
         Me.Label11.TabIndex = 9
         Me.Label11.Text = "Bateria:"
         '
@@ -334,7 +336,7 @@ Partial Class Venta_detalle_servicio
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(7, 101)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 20)
+        Me.Label7.Size = New System.Drawing.Size(45, 17)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Color:"
         '
@@ -345,7 +347,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_Modelo.Location = New System.Drawing.Point(85, 60)
         Me.TextBox_Modelo.Name = "TextBox_Modelo"
         Me.TextBox_Modelo.ReadOnly = True
-        Me.TextBox_Modelo.Size = New System.Drawing.Size(162, 27)
+        Me.TextBox_Modelo.Size = New System.Drawing.Size(162, 23)
         Me.TextBox_Modelo.TabIndex = 1
         '
         'Label8
@@ -354,7 +356,7 @@ Partial Class Venta_detalle_servicio
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(9, 33)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(61, 20)
+        Me.Label8.Size = New System.Drawing.Size(51, 17)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Marca:"
         '
@@ -365,7 +367,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_Marca.Location = New System.Drawing.Point(85, 27)
         Me.TextBox_Marca.Name = "TextBox_Marca"
         Me.TextBox_Marca.ReadOnly = True
-        Me.TextBox_Marca.Size = New System.Drawing.Size(162, 27)
+        Me.TextBox_Marca.Size = New System.Drawing.Size(162, 23)
         Me.TextBox_Marca.TabIndex = 0
         '
         'Label9
@@ -374,7 +376,7 @@ Partial Class Venta_detalle_servicio
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(7, 65)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(63, 20)
+        Me.Label9.Size = New System.Drawing.Size(54, 17)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Modelo"
         '
@@ -385,7 +387,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_color.Location = New System.Drawing.Point(85, 96)
         Me.TextBox_color.Name = "TextBox_color"
         Me.TextBox_color.ReadOnly = True
-        Me.TextBox_color.Size = New System.Drawing.Size(164, 27)
+        Me.TextBox_color.Size = New System.Drawing.Size(164, 23)
         Me.TextBox_color.TabIndex = 2
         '
         'Label10
@@ -394,7 +396,7 @@ Partial Class Venta_detalle_servicio
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(7, 139)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(72, 20)
+        Me.Label10.Size = New System.Drawing.Size(60, 17)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "Imei / Id."
         '
@@ -405,7 +407,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_id.Location = New System.Drawing.Point(85, 132)
         Me.TextBox_id.Name = "TextBox_id"
         Me.TextBox_id.ReadOnly = True
-        Me.TextBox_id.Size = New System.Drawing.Size(164, 27)
+        Me.TextBox_id.Size = New System.Drawing.Size(164, 23)
         Me.TextBox_id.TabIndex = 3
         '
         'GroupBox2
@@ -432,7 +434,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_direccion.Location = New System.Drawing.Point(99, 136)
         Me.TextBox_direccion.Name = "TextBox_direccion"
         Me.TextBox_direccion.ReadOnly = True
-        Me.TextBox_direccion.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_direccion.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_direccion.TabIndex = 7
         '
         'TextBox_telefono
@@ -442,7 +444,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_telefono.Location = New System.Drawing.Point(99, 98)
         Me.TextBox_telefono.Name = "TextBox_telefono"
         Me.TextBox_telefono.ReadOnly = True
-        Me.TextBox_telefono.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_telefono.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_telefono.TabIndex = 6
         '
         'TextBox_dni
@@ -452,7 +454,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_dni.Location = New System.Drawing.Point(99, 62)
         Me.TextBox_dni.Name = "TextBox_dni"
         Me.TextBox_dni.ReadOnly = True
-        Me.TextBox_dni.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_dni.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_dni.TabIndex = 5
         '
         'TextBox_nombre
@@ -462,7 +464,7 @@ Partial Class Venta_detalle_servicio
         Me.TextBox_nombre.Location = New System.Drawing.Point(99, 30)
         Me.TextBox_nombre.Name = "TextBox_nombre"
         Me.TextBox_nombre.ReadOnly = True
-        Me.TextBox_nombre.Size = New System.Drawing.Size(319, 27)
+        Me.TextBox_nombre.Size = New System.Drawing.Size(319, 23)
         Me.TextBox_nombre.TabIndex = 4
         '
         'Label4
@@ -471,7 +473,7 @@ Partial Class Venta_detalle_servicio
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(15, 139)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 20)
+        Me.Label4.Size = New System.Drawing.Size(71, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Dirección:"
         '
@@ -481,7 +483,7 @@ Partial Class Venta_detalle_servicio
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(15, 101)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 20)
+        Me.Label3.Size = New System.Drawing.Size(64, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Teléfono"
         '
@@ -491,7 +493,7 @@ Partial Class Venta_detalle_servicio
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(15, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 20)
+        Me.Label2.Size = New System.Drawing.Size(35, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "DNI:"
         '
@@ -501,9 +503,20 @@ Partial Class Venta_detalle_servicio
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(15, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 20)
+        Me.Label1.Size = New System.Drawing.Size(62, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre:"
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.iniciar
+        Me.Button1.Location = New System.Drawing.Point(19, 172)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 32)
+        Me.Button1.TabIndex = 256
+        Me.Button1.Text = "Volver"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Venta_detalle_servicio
         '
@@ -572,4 +585,5 @@ Partial Class Venta_detalle_servicio
     Friend WithEvents StockDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ProdxSucIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents subtotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

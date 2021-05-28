@@ -23,11 +23,12 @@ Partial Class Caja_Consulta_detalle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button_volver = New System.Windows.Forms.Button()
         Me.Lb_fechacierre = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label_suc_2 = New System.Windows.Forms.Label()
@@ -57,6 +58,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboBox_categoria = New System.Windows.Forms.ComboBox()
         Me.DG_categoria = New System.Windows.Forms.DataGridView()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,9 +71,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label6_b = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.LB_fecha_b = New System.Windows.Forms.Label()
-        Me.Button_volver = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -138,9 +138,23 @@ Partial Class Caja_Consulta_detalle
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox1.Size = New System.Drawing.Size(1091, 540)
+        Me.GroupBox1.Size = New System.Drawing.Size(1091, 537)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'Button_volver
+        '
+        Me.Button_volver.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_volver.Image = Global.Aplicacion.My.Resources.Resources.iniciar
+        Me.Button_volver.Location = New System.Drawing.Point(979, 17)
+        Me.Button_volver.Name = "Button_volver"
+        Me.Button_volver.Size = New System.Drawing.Size(103, 36)
+        Me.Button_volver.TabIndex = 261
+        Me.Button_volver.Text = "Volver"
+        Me.Button_volver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button_volver, "Volver a consulta de cajas")
+        Me.Button_volver.UseVisualStyleBackColor = True
         '
         'Lb_fechacierre
         '
@@ -193,7 +207,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_ingresos_tarjeta.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_ingresos_tarjeta.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_ingresos_tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ingresos_tarjeta.Location = New System.Drawing.Point(195, 496)
+        Me.TextBox_ingresos_tarjeta.Location = New System.Drawing.Point(195, 493)
         Me.TextBox_ingresos_tarjeta.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ingresos_tarjeta.Name = "TextBox_ingresos_tarjeta"
         Me.TextBox_ingresos_tarjeta.ReadOnly = True
@@ -207,7 +221,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(25, 502)
+        Me.Label9.Location = New System.Drawing.Point(25, 499)
         Me.Label9.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(148, 17)
@@ -231,7 +245,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_montoinicial.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_montoinicial.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_montoinicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_montoinicial.Location = New System.Drawing.Point(195, 437)
+        Me.TextBox_montoinicial.Location = New System.Drawing.Point(195, 434)
         Me.TextBox_montoinicial.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_montoinicial.Name = "TextBox_montoinicial"
         Me.TextBox_montoinicial.ReadOnly = True
@@ -257,7 +271,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label11.Location = New System.Drawing.Point(25, 443)
+        Me.Label11.Location = New System.Drawing.Point(25, 440)
         Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(127, 17)
@@ -269,7 +283,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_TOTAL.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_TOTAL.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_TOTAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_TOTAL.Location = New System.Drawing.Point(811, 466)
+        Me.TextBox_TOTAL.Location = New System.Drawing.Point(811, 463)
         Me.TextBox_TOTAL.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_TOTAL.Name = "TextBox_TOTAL"
         Me.TextBox_TOTAL.ReadOnly = True
@@ -282,7 +296,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_egresos_subtotal.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_egresos_subtotal.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_egresos_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_egresos_subtotal.Location = New System.Drawing.Point(561, 437)
+        Me.TextBox_egresos_subtotal.Location = New System.Drawing.Point(561, 434)
         Me.TextBox_egresos_subtotal.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_egresos_subtotal.Name = "TextBox_egresos_subtotal"
         Me.TextBox_egresos_subtotal.ReadOnly = True
@@ -312,12 +326,12 @@ Partial Class Caja_Consulta_detalle
         Me.DG_caja.ReadOnly = True
         Me.DG_caja.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_caja.RowHeadersVisible = False
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_caja.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_caja.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DG_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_caja.Size = New System.Drawing.Size(1071, 299)
+        Me.DG_caja.Size = New System.Drawing.Size(1071, 296)
         Me.DG_caja.StandardTab = True
         Me.DG_caja.TabIndex = 240
         '
@@ -395,7 +409,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_ingresos_efectivo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_ingresos_efectivo.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_ingresos_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ingresos_efectivo.Location = New System.Drawing.Point(561, 496)
+        Me.TextBox_ingresos_efectivo.Location = New System.Drawing.Point(561, 493)
         Me.TextBox_ingresos_efectivo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ingresos_efectivo.Name = "TextBox_ingresos_efectivo"
         Me.TextBox_ingresos_efectivo.ReadOnly = True
@@ -409,7 +423,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(393, 502)
+        Me.Label1.Location = New System.Drawing.Point(393, 499)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 17)
@@ -422,7 +436,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Green
-        Me.Label8.Location = New System.Drawing.Point(834, 431)
+        Me.Label8.Location = New System.Drawing.Point(834, 428)
         Me.Label8.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(163, 26)
@@ -435,7 +449,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(393, 440)
+        Me.Label7.Location = New System.Drawing.Point(393, 437)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(144, 17)
@@ -472,9 +486,23 @@ Partial Class Caja_Consulta_detalle
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox2.Size = New System.Drawing.Size(1091, 540)
+        Me.GroupBox2.Size = New System.Drawing.Size(1091, 537)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.iniciar
+        Me.Button1.Location = New System.Drawing.Point(979, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(103, 36)
+        Me.Button1.TabIndex = 262
+        Me.Button1.Text = "Volver"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button1, "Volver a consulta de cajas")
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ComboBox_categoria
         '
@@ -507,12 +535,12 @@ Partial Class Caja_Consulta_detalle
         Me.DG_categoria.ReadOnly = True
         Me.DG_categoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_categoria.RowHeadersVisible = False
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_categoria.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_categoria.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DG_categoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_categoria.Size = New System.Drawing.Size(1068, 360)
+        Me.DG_categoria.Size = New System.Drawing.Size(1068, 357)
         Me.DG_categoria.StandardTab = True
         Me.DG_categoria.TabIndex = 258
         '
@@ -618,34 +646,6 @@ Partial Class Caja_Consulta_detalle
         Me.LB_fecha_b.Size = New System.Drawing.Size(69, 15)
         Me.LB_fecha_b.TabIndex = 1
         Me.LB_fecha_b.Text = "00/00/2014"
-        '
-        'Button_volver
-        '
-        Me.Button_volver.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_volver.Image = Global.Aplicacion.My.Resources.Resources.iniciar
-        Me.Button_volver.Location = New System.Drawing.Point(979, 17)
-        Me.Button_volver.Name = "Button_volver"
-        Me.Button_volver.Size = New System.Drawing.Size(103, 36)
-        Me.Button_volver.TabIndex = 261
-        Me.Button_volver.Text = "Volver"
-        Me.Button_volver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Button_volver, "Volver a consulta de cajas")
-        Me.Button_volver.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.iniciar
-        Me.Button1.Location = New System.Drawing.Point(979, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 36)
-        Me.Button1.TabIndex = 262
-        Me.Button1.Text = "Volver"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Button1, "Volver a consulta de cajas")
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Caja_Consulta_detalle
         '
