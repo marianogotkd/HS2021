@@ -105,7 +105,8 @@
         'Orden_Revision_nueva.Focus()
     End Sub
 
-
+    Dim Calendario_mant_DS As New Calendario_mant_DS
+    Dim procedencia As String = "mantenimientos"
     Private Sub AddAppointmentToFlDay(ByVal startDayAtFlNumber As Integer)
         Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
         Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
@@ -114,60 +115,168 @@
 
         Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(startDate.ToShortDateString, endDate.ToShortDateString, sucursal_id)
 
+        If procedencia = "mantenimientos" Then
+            'STARTDATE ES EL PRIMER DIA DEL MES
+            'ENDDATE ES EL ULTIMO DIA DEL MES
+            'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
+            Dim daMantenimiento As New Datos.Mantenimiento
+            Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+            '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            Calendario_mant_DS.Tables("MANTENIMIENTOS").Rows.Clear()
+            If ds_info.Tables(0).Rows.Count <> 0 Then
+                Dim ii As Integer = 0
 
-        'STARTDATE ES EL PRIMER DIA DEL MES
-        'ENDDATE ES EL ULTIMO DIA DEL MES
-        'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
-        Dim daMantenimiento As New Datos.Mantenimiento
-        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+                While ii < ds_info.Tables(0).Rows.Count
+                    'valido q la fecha del mant inicial esta dentro del intervalo.
+                    Dim fecha As Date = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                    If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                        'lo agrego
+                        Dim fila As DataRow = Calendario_mant_DS.Tables("MANTENIMIENTOS").NewRow
+                        fila("ID") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
+                        fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                        fila("FECHA") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                        Calendario_mant_DS.Tables("MANTENIMIENTOS").Rows.Add(fila)
+                    End If
+                    'aqui veo cuantas veces lo voy a agregar, dependiendo el campo "DIA" y siempre y cuando este dentro del rango de fechas indicado.
+                    '********************************************************************
+                    Dim dias As Integer = ds_info.Tables(0).Rows(ii).Item("Mant_periodicidad_dias")
+                    Dim valido As String = "si"
+                    If dias <> 0 Then
+                        While valido = "si"
+                            If fecha <= endDate.ToShortDateString Then
+                                'aplico el calculo de los dias
+                                fecha = fecha.AddDays(dias)
+                                'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
+                                If (fecha.DayOfWeek = DayOfWeek.Saturday) Then
+                                    If fecha.AddDays(2) <= endDate.ToShortDateString Then
+                                        fecha = fecha.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
+                                    Else
+                                        'si es mayor a la fecha limite, entonces no lo agrego
+                                        Exit While
+                                    End If
+                                Else
+                                    If fecha.DayOfWeek = DayOfWeek.Sunday Then
+                                        If fecha.AddDays(1) <= endDate.ToShortDateString Then
+                                            fecha = fecha.AddDays(1) 'domingo le sumo 1, sumo 1 si y solo si es el fin de semana previ a la fecha q se selecciono en el calendario
+                                        Else
+                                            Exit While 'no lo agrego
+                                        End If
+                                    End If
+                                End If
+
+                                'ahora: si la fecha calculada esta dentro del mes actua, lo agrego. sino sigo ciclando
+                                If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                                    Dim fila As DataRow = Calendario_mant_DS.Tables("MANTENIMIENTOS").NewRow
+                                    fila("ID") = 0
+                                    fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                                    fila("FECHA") = fecha.Date
+                                    Calendario_mant_DS.Tables("MANTENIMIENTOS").Rows.Add(fila)
+                                End If
+                            Else
+                                Exit While 'si es mayor no lo agrego al dataset Calendario_mant_DS.Tables("MANTENIMIENTOS")
+                            End If
+                        End While
+                        '********************************************************************
+                    End If
+                    ii = ii + 1
+                End While
+
+                Dim dt As DataTable = Calendario_mant_DS.Tables("MANTENIMIENTOS")
+                Dim i As Integer = 0
+                For Each row As DataRow In dt.Rows
+                    'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
+                    Dim appDay As DateTime = DateTime.Parse(row("FECHA"))
+                    Dim link As New LinkLabel
+                    'link.Tag = row("ID")
+                    link.Tag = row("ID")
+                    'link.Name = $"link{row("ID")}"
+                    'link.Name = row("Servicio_Diagnostico")
+                    Dim name As String = CStr(i) + "-" + row("DESCRIPCION")
+                    link.Name = name
+                    'link.Text = row("ContactName")
+
+                    link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
+                    link.LinkColor = Color.Orange
+
+                    'If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
+                    '    link.Text = "Rev: " + CStr(row("Servicio_id"))
+                    '    link.LinkColor = Color.Orange
+                    'Else
+                    '    Select Case (CStr(row("Servicio_Estado")))
+                    '        Case "ASIGNADO"
+                    '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                    '            link.LinkColor = Color.Blue
+                    '        Case "REPARADO"
+                    '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                    '            link.LinkColor = Color.Black
+                    '        Case "FINALIZADO"
+                    '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                    '            link.LinkColor = Color.Green
+                    '    End Select
+                    'End If
+
+                    'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+
+                    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
+                    i = i + 1
+                    'If dt.Rows.Count > 2 And i = 2 Then
+                    '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
+                    '    Dim link2 As New LinkLabel
+                    '    link2.Text = "Ver mas..."
+                    '    link2.LinkColor = Color.Black
+                    '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
+                    '    Exit For
+                    'End If
+                Next
 
 
-
-
-
-        'Dim dt As DataTable = QueryAsDataTable(Sql)
-        Dim dt As DataTable = dt_choco.Tables(0)
-        Dim i As Integer = 0
-        For Each row As DataRow In dt.Rows
-            'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
-            Dim appDay As DateTime = DateTime.Parse(row("Servicio_fecha"))
-            Dim link As New LinkLabel
-            'link.Tag = row("ID")
-            link.Tag = row("Servicio_id")
-            'link.Name = $"link{row("ID")}"
-            'link.Name = row("Servicio_Diagnostico")
-            link.Name = row("Servicio_Estado")
-            'link.Text = row("ContactName")
-            If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
-                link.Text = "Rev: " + CStr(row("Servicio_id"))
-                link.LinkColor = Color.Orange
-            Else
-                Select Case (CStr(row("Servicio_Estado")))
-                    Case "ASIGNADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Blue
-                    Case "REPARADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Black
-                    Case "FINALIZADO"
-                        link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                        link.LinkColor = Color.Green
-                End Select
             End If
+            '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Else
+            'Dim dt As DataTable = QueryAsDataTable(Sql)
+            Dim dt As DataTable = dt_choco.Tables(0)
+            Dim i As Integer = 0
+            For Each row As DataRow In dt.Rows
+                'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
+                Dim appDay As DateTime = DateTime.Parse(row("Servicio_fecha"))
+                Dim link As New LinkLabel
+                'link.Tag = row("ID")
+                link.Tag = row("Servicio_id")
+                'link.Name = $"link{row("ID")}"
+                'link.Name = row("Servicio_Diagnostico")
+                link.Name = row("Servicio_Estado")
+                'link.Text = row("ContactName")
+                If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
+                    link.Text = "Rev: " + CStr(row("Servicio_id"))
+                    link.LinkColor = Color.Orange
+                Else
+                    Select Case (CStr(row("Servicio_Estado")))
+                        Case "ASIGNADO"
+                            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                            link.LinkColor = Color.Blue
+                        Case "REPARADO"
+                            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                            link.LinkColor = Color.Black
+                        Case "FINALIZADO"
+                            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+                            link.LinkColor = Color.Green
+                    End Select
+                End If
 
-            'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+                'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
 
-            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
-            i = i + 1
-            'If dt.Rows.Count > 2 And i = 2 Then
-            '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
-            '    Dim link2 As New LinkLabel
-            '    link2.Text = "Ver mas..."
-            '    link2.LinkColor = Color.Black
-            '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
-            '    Exit For
-            'End If
-        Next
+                listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
+                i = i + 1
+                'If dt.Rows.Count > 2 And i = 2 Then
+                '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
+                '    Dim link2 As New LinkLabel
+                '    link2.Text = "Ver mas..."
+                '    link2.LinkColor = Color.Black
+                '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
+                '    Exit For
+                'End If
+            Next
+        End If
     End Sub
 
     Private Function GetFirstDayOfWeekOfCurrentDate() As Integer

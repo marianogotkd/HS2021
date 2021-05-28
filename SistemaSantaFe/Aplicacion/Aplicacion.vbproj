@@ -1086,6 +1086,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Tareas\Calendario_mant_DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calendario_mant_DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Tareas\frmManageAppointment.Designer.vb">
       <DependentUpon>frmManageAppointment.vb</DependentUpon>
     </Compile>
@@ -2237,6 +2242,17 @@
     </None>
     <None Include="Modulos\Stock\Stock_DS.xss">
       <DependentUpon>Stock_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Tareas\Calendario_mant_DS.xsc">
+      <DependentUpon>Calendario_mant_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Tareas\Calendario_mant_DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Calendario_mant_DS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Tareas\Calendario_mant_DS.xss">
+      <DependentUpon>Calendario_mant_DS.xsd</DependentUpon>
     </None>
     <None Include="Modulos\Terminal\Terminales_ds.xsc">
       <DependentUpon>Terminales_ds.xsd</DependentUpon>
