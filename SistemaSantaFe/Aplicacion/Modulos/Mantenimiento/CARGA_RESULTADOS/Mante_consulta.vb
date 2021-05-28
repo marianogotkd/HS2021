@@ -201,7 +201,7 @@
 
 
     Private Sub Mante_consulta_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        fecha.Value = "07/06/2021"
+        'fecha.Value = "07/06/2021"
         recuperar_mantenimientos()
         'aplicar(filtro)
         If DG_clientes.Rows.Count <> 0 Then
@@ -211,6 +211,12 @@
                                                       DG_clientes.Rows(0).Cells("Tipomantenimiento").Value)
             End If
         End If
+
+        If DG_clientes.Rows.Count = 0 Then
+            MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.Close()
+        End If
+
     End Sub
 
     Private Sub aplicarfiltro_mant_realizados_detalle(ByVal Mantenimiento_id As Integer, ByVal etiqueta As String, ByVal tipo_de_mantenimiento As String)

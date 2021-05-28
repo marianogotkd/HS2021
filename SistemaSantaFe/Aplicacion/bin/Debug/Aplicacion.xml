@@ -98,6 +98,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MANTENIMIENTOSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MantDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -114,6 +122,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MANTENIMIENTOSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MantRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Aplicacion.mantenimiento_ds.periodicidadRowChangeEvent">
 	<summary>
 Row event argument class
@@ -127,6 +143,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.mantenimiento_ds.Tareas_asignadasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MANTENIMIENTOSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.mantenimiento_ds.MantRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

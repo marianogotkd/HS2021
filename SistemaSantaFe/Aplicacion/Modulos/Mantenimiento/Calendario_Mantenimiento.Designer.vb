@@ -32,9 +32,7 @@ Partial Class Calendario_Mantenimiento
         Me.Label6 = New System.Windows.Forms.Label()
         Me.flDays = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.NuevaOrdenTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -137,37 +135,21 @@ Partial Class Calendario_Mantenimiento
         Me.Label7.Text = "Jueves"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'NuevaOrdenTrabajoToolStripMenuItem
-        '
-        Me.NuevaOrdenTrabajoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NuevaOrdenTrabajoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.NuevaOrdenTrabajoToolStripMenuItem.Name = "NuevaOrdenTrabajoToolStripMenuItem"
-        Me.NuevaOrdenTrabajoToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.NuevaOrdenTrabajoToolStripMenuItem.Text = "Nueva Orden Trabajo"
-        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.BackColor = System.Drawing.Color.LightYellow
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.NuevaOrdenTrabajoToolStripMenuItem, Me.VerToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(204, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
         Me.ContextMenuStrip1.Text = "MENU"
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.NuevoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.NuevoToolStripMenuItem.Text = "Nueva Orden Revisión"
         '
         'VerToolStripMenuItem
         '
         Me.VerToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.VerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.VerToolStripMenuItem.Name = "VerToolStripMenuItem"
-        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.VerToolStripMenuItem.Text = "Ver Ordenes generadas"
+        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VerToolStripMenuItem.Text = "Ver Citas"
         '
         'Label5
         '
@@ -248,6 +230,7 @@ Partial Class Calendario_Mantenimiento
         Me.Controls.Add(Me.flDays)
         Me.Controls.Add(Me.Panel3)
         Me.Name = "Calendario_Mantenimiento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimientos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -266,9 +249,7 @@ Partial Class Calendario_Mantenimiento
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents flDays As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents NuevaOrdenTrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents NuevoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
