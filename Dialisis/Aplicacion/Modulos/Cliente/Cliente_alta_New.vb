@@ -48,7 +48,7 @@ Public Class Cliente_alta_New
         If form_procedencia = "modificar" Then
             'recuperar_datos_cliente()
             recuperar_datos_paciente()
-            tb_Dni_Cuit.ReadOnly = True
+            '  tb_Dni_Cuit.ReadOnly = True
         End If
         'esto de abajo estaba probando redimensionar el form
         UpR.Visible = False

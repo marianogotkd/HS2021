@@ -23,13 +23,14 @@ Partial Class Cliente_modificar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cliente_modificar))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BO_equipos = New System.Windows.Forms.Button()
         Me.BO_cliente_nuevo = New System.Windows.Forms.Button()
         Me.BO_cliente_modificar = New System.Windows.Forms.Button()
@@ -54,7 +55,6 @@ Partial Class Cliente_modificar
         Me.BO_Eliminar = New System.Windows.Forms.Button()
         Me.DataGrid_cliente = New System.Windows.Forms.DataGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -95,12 +95,28 @@ Partial Class Cliente_modificar
         Me.TabPage1.TabIndex = 1
         Me.TabPage1.Text = "Clientes registrados"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Pasar
+        Me.Button1.Location = New System.Drawing.Point(518, 337)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(59, 43)
+        Me.Button1.TabIndex = 250
+        Me.Button1.Text = "Equipos"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button1, "Editar Cliente seleccionado")
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
         'BO_equipos
         '
         Me.BO_equipos.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipos.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipos.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.BO_equipos.Location = New System.Drawing.Point(386, 338)
+        Me.BO_equipos.Location = New System.Drawing.Point(272, 342)
         Me.BO_equipos.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipos.Name = "BO_equipos"
         Me.BO_equipos.Size = New System.Drawing.Size(124, 43)
@@ -115,7 +131,7 @@ Partial Class Cliente_modificar
         Me.BO_cliente_nuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_cliente_nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_cliente_nuevo.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
-        Me.BO_cliente_nuevo.Location = New System.Drawing.Point(122, 337)
+        Me.BO_cliente_nuevo.Location = New System.Drawing.Point(8, 342)
         Me.BO_cliente_nuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_cliente_nuevo.Name = "BO_cliente_nuevo"
         Me.BO_cliente_nuevo.Size = New System.Drawing.Size(124, 43)
@@ -130,7 +146,7 @@ Partial Class Cliente_modificar
         Me.BO_cliente_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_cliente_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_cliente_modificar.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.BO_cliente_modificar.Location = New System.Drawing.Point(254, 338)
+        Me.BO_cliente_modificar.Location = New System.Drawing.Point(140, 342)
         Me.BO_cliente_modificar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_cliente_modificar.Name = "BO_cliente_modificar"
         Me.BO_cliente_modificar.Size = New System.Drawing.Size(124, 43)
@@ -188,10 +204,10 @@ Partial Class Cliente_modificar
         Me.DG_clientes.ReadOnly = True
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(582, 246)
         Me.DG_clientes.StandardTab = True
@@ -340,53 +356,38 @@ Partial Class Cliente_modificar
         Me.DataGrid_cliente.AllowUserToAddRows = False
         Me.DataGrid_cliente.AllowUserToDeleteRows = False
         Me.DataGrid_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonShadow
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_cliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_cliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_cliente.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkSlateGray
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_cliente.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGrid_cliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid_cliente.Location = New System.Drawing.Point(3, 16)
         Me.DataGrid_cliente.Name = "DataGrid_cliente"
         Me.DataGrid_cliente.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_cliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_cliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGrid_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_cliente.Size = New System.Drawing.Size(623, 236)
         Me.DataGrid_cliente.TabIndex = 7
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button1.Location = New System.Drawing.Point(518, 337)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 43)
-        Me.Button1.TabIndex = 250
-        Me.Button1.Text = "Equipos"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Button1, "Editar Cliente seleccionado")
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Cliente_modificar
         '

@@ -22,16 +22,17 @@ Partial Class Permisos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode131 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
-        Dim TreeNode132 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
-        Dim TreeNode133 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Producto", New System.Windows.Forms.TreeNode() {TreeNode131, TreeNode132})
-        Dim TreeNode134 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
-        Dim TreeNode135 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
-        Dim TreeNode136 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Proveedor", New System.Windows.Forms.TreeNode() {TreeNode134, TreeNode135})
-        Dim TreeNode137 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
-        Dim TreeNode138 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
-        Dim TreeNode139 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Permisos")
-        Dim TreeNode140 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Usuario", New System.Windows.Forms.TreeNode() {TreeNode137, TreeNode138, TreeNode139})
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Producto", New System.Windows.Forms.TreeNode() {TreeNode11, TreeNode12})
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Proveedor", New System.Windows.Forms.TreeNode() {TreeNode14, TreeNode15})
+        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nuevo")
+        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Actualizar")
+        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Permisos")
+        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Usuario", New System.Windows.Forms.TreeNode() {TreeNode17, TreeNode18, TreeNode19})
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Permisos))
         Me.GroupBox_cli = New System.Windows.Forms.GroupBox()
         Me.CheckBox_cte_cte = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cli_Actualizar = New System.Windows.Forms.CheckBox()
@@ -80,6 +81,9 @@ Partial Class Permisos
         Me.CheckBox_caja_cierrecaja = New System.Windows.Forms.CheckBox()
         Me.CheckBox_caja_Todos = New System.Windows.Forms.CheckBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox_mant = New System.Windows.Forms.CheckBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.GroupBox_cli.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox_Stock.SuspendLayout()
@@ -94,6 +98,8 @@ Partial Class Permisos
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox_cli
@@ -214,13 +220,13 @@ Partial Class Permisos
         Me.TreeView_prod.CheckBoxes = True
         Me.TreeView_prod.Location = New System.Drawing.Point(300, 42)
         Me.TreeView_prod.Name = "TreeView_prod"
-        TreeNode131.Name = "Producto_nuevo"
-        TreeNode131.Text = "Nuevo"
-        TreeNode132.Name = "Producto_Actualizar"
-        TreeNode132.Text = "Actualizar"
-        TreeNode133.Name = "Producto"
-        TreeNode133.Text = "Producto"
-        Me.TreeView_prod.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode133})
+        TreeNode11.Name = "Producto_nuevo"
+        TreeNode11.Text = "Nuevo"
+        TreeNode12.Name = "Producto_Actualizar"
+        TreeNode12.Text = "Actualizar"
+        TreeNode13.Name = "Producto"
+        TreeNode13.Text = "Producto"
+        Me.TreeView_prod.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode13})
         Me.TreeView_prod.Size = New System.Drawing.Size(128, 55)
         Me.TreeView_prod.TabIndex = 3
         '
@@ -251,13 +257,13 @@ Partial Class Permisos
         Me.TreeView_Prov.CheckBoxes = True
         Me.TreeView_Prov.Location = New System.Drawing.Point(98, 42)
         Me.TreeView_Prov.Name = "TreeView_Prov"
-        TreeNode134.Name = "Proveedor_nuevo"
-        TreeNode134.Text = "Nuevo"
-        TreeNode135.Name = "Proveedor_Actualizar"
-        TreeNode135.Text = "Actualizar"
-        TreeNode136.Name = "Proveedor"
-        TreeNode136.Text = "Proveedor"
-        Me.TreeView_Prov.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode136})
+        TreeNode14.Name = "Proveedor_nuevo"
+        TreeNode14.Text = "Nuevo"
+        TreeNode15.Name = "Proveedor_Actualizar"
+        TreeNode15.Text = "Actualizar"
+        TreeNode16.Name = "Proveedor"
+        TreeNode16.Text = "Proveedor"
+        Me.TreeView_Prov.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
         Me.TreeView_Prov.Size = New System.Drawing.Size(114, 55)
         Me.TreeView_Prov.TabIndex = 1
         '
@@ -502,15 +508,15 @@ Partial Class Permisos
         Me.TreeView_conf.CheckBoxes = True
         Me.TreeView_conf.Location = New System.Drawing.Point(98, 42)
         Me.TreeView_conf.Name = "TreeView_conf"
-        TreeNode137.Name = "Usuario_nuevo"
-        TreeNode137.Text = "Nuevo"
-        TreeNode138.Name = "Usuario_Actualizar"
-        TreeNode138.Text = "Actualizar"
-        TreeNode139.Name = "Usuario_Permisos"
-        TreeNode139.Text = "Permisos"
-        TreeNode140.Name = "Usuario"
-        TreeNode140.Text = "Usuario"
-        Me.TreeView_conf.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode140})
+        TreeNode17.Name = "Usuario_nuevo"
+        TreeNode17.Text = "Nuevo"
+        TreeNode18.Name = "Usuario_Actualizar"
+        TreeNode18.Text = "Actualizar"
+        TreeNode19.Name = "Usuario_Permisos"
+        TreeNode19.Text = "Permisos"
+        TreeNode20.Name = "Usuario"
+        TreeNode20.Text = "Usuario"
+        Me.TreeView_conf.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode20})
         Me.TreeView_conf.Size = New System.Drawing.Size(144, 77)
         Me.TreeView_conf.TabIndex = 9
         '
@@ -641,7 +647,7 @@ Partial Class Permisos
         '
         'PictureBox7
         '
-        Me.PictureBox7.Image = Global.Aplicacion.My.Resources.Resources.caja
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(6, 19)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(90, 84)
@@ -649,10 +655,42 @@ Partial Class Permisos
         Me.PictureBox7.TabIndex = 0
         Me.PictureBox7.TabStop = False
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.CheckBox_mant)
+        Me.GroupBox3.Controls.Add(Me.PictureBox8)
+        Me.GroupBox3.Location = New System.Drawing.Point(559, 448)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(535, 125)
+        Me.GroupBox3.TabIndex = 15
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Pedidos"
+        '
+        'CheckBox_mant
+        '
+        Me.CheckBox_mant.AutoSize = True
+        Me.CheckBox_mant.Location = New System.Drawing.Point(120, 19)
+        Me.CheckBox_mant.Name = "CheckBox_mant"
+        Me.CheckBox_mant.Size = New System.Drawing.Size(100, 17)
+        Me.CheckBox_mant.TabIndex = 2
+        Me.CheckBox_mant.Text = "Mantenimientos"
+        Me.CheckBox_mant.UseVisualStyleBackColor = True
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.Aplicacion.My.Resources.Resources.Turno
+        Me.PictureBox8.Location = New System.Drawing.Point(6, 19)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(90, 84)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 0
+        Me.PictureBox8.TabStop = False
+        '
         'Permisos
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1170, 633)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_guardar)
@@ -693,6 +731,9 @@ Partial Class Permisos
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -745,4 +786,7 @@ Partial Class Permisos
     Friend WithEvents CheckBox_Caja_Consulta As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox_Stock_Cons_Mov As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox_cte_cte As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox_mant As System.Windows.Forms.CheckBox
+    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
 End Class

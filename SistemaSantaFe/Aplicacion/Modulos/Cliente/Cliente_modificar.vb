@@ -15,6 +15,15 @@ Public Class Cliente_modificar
         Else
             BO_cliente_modificar.Text = "Editar"
         End If
+
+        If procedencia = "Equipo" Then
+            TabPage1.Text = "Seleccione Cliente"
+            Me.Text = "Equipos de Clientes"
+            BO_cliente_modificar.Visible = False
+            BO_cliente_nuevo.Visible = False
+
+        End If
+
         'Me.Show()
         'TX_ape.Focus()
 

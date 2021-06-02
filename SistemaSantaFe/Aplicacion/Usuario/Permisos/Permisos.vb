@@ -68,6 +68,13 @@
         CheckBox_Caja_Consulta.Checked = False
         '____________
 
+
+        '___Mantenimiento______
+        CheckBox_mant.Checked = False
+       
+        '____________
+
+
     End Sub
 
 
@@ -276,6 +283,12 @@
             If CheckBox_caja_cierrecaja.Checked = True And CheckBox_Caja_EgreIngr.Checked = True And CheckBox_Caja_Consulta.Checked = True Then
                 CheckBox_caja_Todos.Checked = True
             End If
+
+            If DS_Modulos.Tables(0).Rows(i).Item("USUModulos_descripcion") = "Mantenimiento" Then
+                CheckBox_mant.Checked = True
+            Else
+            End If
+
         End If
     End Sub
     Public Sub usuario_inicio()
@@ -823,6 +836,12 @@
 
                 End If
                 '___FIN CAJA__________
+
+                If CheckBox_mant.Checked = True Then
+                    dausuario.UsuarioModulos_alta(cb_tipous.SelectedValue, "Mantenimiento")
+                    guardado = 1
+                End If
+
 
                 If guardado = 1 Then
                     MessageBox.Show("Los datos fueron guardados correctamente", "Sistema de Gestión.")
