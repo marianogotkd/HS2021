@@ -43,6 +43,21 @@
         End If
     End Sub
 
+    Private Sub click_izquierdo(ByVal sender As Object, ByVal e As System.EventArgs)
+        choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        If choco_day <> 0 Then
+            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+            Mante_consulta.Close()
+            Mante_consulta.fecha.Text = fecha
+            Mante_consulta.SucxClie_id = 19
+            Mante_consulta.Show()
+        End If
+
+    End Sub
+
+
+
     Private Sub AddNewAppointment(ByVal sender As Object, ByVal e As EventArgs)
         Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
         If day <> 0 Then
@@ -309,6 +324,7 @@
             fl.Cursor = Cursors.Hand
             fl.AutoScroll = True
             'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
+            AddHandler fl.Click, AddressOf click_izquierdo 'choco 
             AddHandler fl.MouseMove, AddressOf click_derecho
             flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
             flDays.Controls.Add(fl)
