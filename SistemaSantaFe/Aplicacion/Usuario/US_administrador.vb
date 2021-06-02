@@ -116,22 +116,21 @@ Public Property EnabledCerrar() As Boolean
         llamar_Form(TurnoFijo_alta)
     End Sub
 
-    Private Sub TurnoConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TurnoConfigurarToolStripMenuItem.Click
+    Private Sub TurnoConfigurarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(Turno_Configurar)
     End Sub
 
-    Private Sub MailConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MailConfigurarToolStripMenuItem.Click
+    Private Sub MailConfigurarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(Turno_ConfigurarMail)
     End Sub
 
-    Private Sub EmailDestinoConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EmailDestinoConfigurarToolStripMenuItem.Click
+    Private Sub EmailDestinoConfigurarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(Turno_ConfigurarMailDestino)
     End Sub
 
     Private Sub TurnoGestionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TurnoGestionToolStripMenuItem.Click
-        'llamar_Form(Turno_Gestion)
-        Turno_Gestion.Show()
-        Turno_Gestion.Turno_ObtenerIniciado()
+        Mantenimiento_tarea_agregar.Close()
+        Mantenimiento_tarea_agregar.Show()
     End Sub
 
 
@@ -544,8 +543,16 @@ Public Property EnabledCerrar() As Boolean
 
             '____________
 
+            If DS_Modulos.Tables(0).Rows(i).Item("USUModulos_descripcion") = "Mantenimiento" Then
+                ToolStripDropDownButton1.Visible = True '- Icono
+            End If
+
 
             i = i + 1
+
+            
+
+
         End While
 
 
@@ -562,19 +569,19 @@ Public Property EnabledCerrar() As Boolean
     End Sub
 
 
-    Private Sub TurnoFijoNuevoToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnoFijoNuevoToolStripMenuItem.Click
+    Private Sub TurnoFijoNuevoToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(TurnoFijo_alta)
     End Sub
 
-    Private Sub TurnoFijoActualizarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnoFijoActualizarToolStripMenuItem.Click
+    Private Sub TurnoFijoActualizarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(TurnoFijo_Modificar)
     End Sub
 
-    Private Sub TurnoComunNuevoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnoComunNuevoToolStripMenuItem.Click
+    Private Sub TurnoComunNuevoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(Turno_alta)
     End Sub
 
-    Private Sub TurnoComunEliminarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnoComunEliminarToolStripMenuItem.Click
+    Private Sub TurnoComunEliminarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         llamar_Form(Turno_Eliminar)
     End Sub
 
@@ -582,7 +589,7 @@ Public Property EnabledCerrar() As Boolean
         llamar_Form(Egresos_registrados_consulta)
     End Sub
 
-    Private Sub SonidoAlarmaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SonidoAlarmaToolStripMenuItem.Click
+    Private Sub SonidoAlarmaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Turno_Alarma.Show()
     End Sub
 
@@ -690,7 +697,7 @@ Public Property EnabledCerrar() As Boolean
         Shell("C:\WINDOWS\system32\calc.exe", AppWinStyle.NormalFocus)
     End Sub
 
-    Private Sub TurnoConsultaToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TurnoConsultaToolStripMenuItem.Click
+    Private Sub TurnoConsultaToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Turno_Consulta.Show()
         Turno_Consulta_ampliada.Show()
     End Sub
@@ -893,17 +900,31 @@ Public Property EnabledCerrar() As Boolean
         Presupuesto_venta.Show()
     End Sub
 
-    Private Sub CategoriasDeEquiposToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CategoriasDeEquiposToolStripMenuItem.Click
+  
+
+    Private Sub MantenimientoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub CalendarioMantenimeintoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+
+
+  
+    Private Sub AsignarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AsignarToolStripMenuItem.Click
+        Cliente_modificar.procedencia = "Equipo"
+        Cliente_modificar.Show()
+        Cliente_modificar.Focus()
+    End Sub
+
+    Private Sub ConfiguracionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConfiguracionToolStripMenuItem.Click
         Equipos_categoria_consultar.Close()
         Equipos_categoria_consultar.Show()
     End Sub
 
-    Private Sub MantenimientoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MantenimientoToolStripMenuItem.Click
-        Mantenimiento_tarea_agregar.Close()
-        Mantenimiento_tarea_agregar.Show()
-    End Sub
-
-    Private Sub CalendarioMantenimeintoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioMantenimeintoToolStripMenuItem.Click
+    Private Sub CalendarioToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioToolStripMenuItem1.Click
         Calendario_Mantenimiento.Show()
     End Sub
 End Class
