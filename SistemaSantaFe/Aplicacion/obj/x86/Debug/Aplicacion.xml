@@ -731,6 +731,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.Turno">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Aplicacion.My.Resources.Resources.unLock30x30">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
