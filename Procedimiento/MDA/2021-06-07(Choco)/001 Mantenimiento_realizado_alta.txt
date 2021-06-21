@@ -1,0 +1,11 @@
+create procedure Mantenimiento_realizado_alta
+@Mantenimiento_id int, 
+@Mant_realizados_fecha datetime
+
+as
+
+insert Mantenimiento_realizado (Mantenimiento_id, Mant_realizados_fecha) values(@Mantenimiento_id, @Mant_realizados_fecha)
+
+select @@IDENTITY as 'Mant_realizados_id'
+
+go

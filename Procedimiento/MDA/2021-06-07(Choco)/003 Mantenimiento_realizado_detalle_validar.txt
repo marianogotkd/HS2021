@@ -1,0 +1,6 @@
+create procedure Mantenimiento_realizado_detalle_validar
+@Tareas_asignadas_id int,
+@Mant_realizados_id int
+as
+select * from Mantenimiento_realizado_detalle where Mantenimiento_realizado_detalle.Tareas_asignadas_id = @Tareas_asignadas_id and Mantenimiento_realizado_detalle.Mant_realizados_id = @Mant_realizados_id
+go

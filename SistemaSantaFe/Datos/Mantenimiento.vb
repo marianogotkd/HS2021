@@ -160,7 +160,7 @@ Public Class Mantenimiento
 #End Region
 
 #Region "MANTENIMIENTO"
-    Public Function Mantenimiento_alta(ByVal Equipo_id As Integer, ByVal Mant_periodicidad_id As Integer, ByVal Mantenimiento_fecha_inicio As DateTime) As DataSet
+    Public Function Mantenimiento_alta(ByVal Equipo_id As Integer, ByVal Mant_periodicidad_id As Integer, ByVal Mantenimiento_fecha_inicio As DateTime, ByVal Mantenimiento_activo As String) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -172,6 +172,7 @@ Public Class Mantenimiento
         comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_periodicidad_id", Mant_periodicidad_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_activo", Mantenimiento_activo))
 
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)
@@ -179,6 +180,28 @@ Public Class Mantenimiento
         dbconn.Close()
         Return ds_JE
     End Function
+
+    Public Function Mantenimiento_quitar(ByVal Mantenimiento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_quitar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_id", Mantenimiento_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_periodicidad_id", Mant_periodicidad_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_activo", Mantenimiento_activo))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
 
 
     Public Function Tareas_asignadas_alta(ByVal Tareas_id As Integer, ByVal Mantenimiento_id As Integer) As DataSet
@@ -220,6 +243,93 @@ Public Class Mantenimiento
         dbconn.Close()
         Return ds_JE
     End Function
+
+
+    'mantenimiento_realizado_Alta
+    Public Function Mantenimiento_realizado_alta(ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_fecha As DateTime) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_id", Mantenimiento_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizados_fecha", Mant_realizados_fecha))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    'mantenimiento_realizado_Detalle alta
+    Public Function Mantenimiento_realizado_detalle_alta(ByVal Mant_realizados_id As Integer, ByVal Mant_detalle As String, ByVal Tareas_asignadas_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_detalle_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizados_id", Mant_realizados_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_detalle", Mant_detalle))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    'mantenimiento_realizado_Detalle modificar
+    Public Function Mantenimiento_realizado_detalle_modificar(ByVal Mant_detalle As String, ByVal Mant_realizado_detalle_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_detalle_modificar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_detalle", Mant_detalle))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizado_detalle_id", Mant_realizado_detalle_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    'mantenimiento_realizados_detalle_validar
+    Public Function Mantenimiento_realizado_detalle_validar(ByVal Tareas_asignadas_id As Integer, ByVal Mant_realizados_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_detalle_validar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizados_id", Mant_realizados_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
 
 
 #End Region

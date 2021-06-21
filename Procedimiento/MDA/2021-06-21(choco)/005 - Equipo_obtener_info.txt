@@ -1,0 +1,51 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Equipo_obtener_info]    Script Date: 06/21/2021 18:29:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Equipo_obtener_info]
+@Equipo_id int
+
+as
+select
+Equipo_id, 
+Equipo_descripcion, 
+Equipo_denominacion, 
+Equipo.Cliente_suc_sector_id,
+Cliente_suc_sector.Cliente_suc_sector_descripcion, 
+Equipo_idcat, 
+Equipo_nrocat,
+Cliente_suc_sector.Cliente_suc_sector_denominacion+'-'+Equipo.Equipo_denominacion  as 'etiqueta',
+Equipo_categoria1.Cat1_equipo_desc + ' / '+Equipo_categoria2.Cat2_equipo_desc as 'categoria'
+from Equipo inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id
+inner join Equipo_categoria2 on Equipo.Equipo_idcat = Equipo_categoria2.Cat2_equipo_id 
+inner join Equipo_categoria1 on Equipo_categoria2.Cat1_equipo_id = Equipo_categoria1.Cat1_equipo_id 
+where Equipo.Equipo_id = @Equipo_id 
+
+select
+Mantenimiento.Mantenimiento_id, 
+Equipo.Equipo_id , 
+Mantenimiento.Mant_periodicidad_id, 
+Mantenimiento_fecha_inicio, 
+Mantenimiento_periodicidad.Mant_periodicidad_desc, 
+Mantenimiento_periodicidad.Mant_periodicidad_dias, 
+Mantenimiento_tipo.Mant_tipo_id, 
+Mantenimiento_tipo.Mant_tipo_descr 
+from Mantenimiento inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+inner join Mantenimiento_periodicidad on Mantenimiento.Mant_periodicidad_id = Mantenimiento_periodicidad.Mant_periodicidad_id 
+inner join Mantenimiento_tipo on Mantenimiento_periodicidad.Mant_tipo_id = Mantenimiento_tipo.Mant_tipo_id
+where Equipo.Equipo_id = @Equipo_id and Mantenimiento.Mantenimiento_activo = 'si' order by Mantenimiento.Mantenimiento_fecha_inicio asc
+
+select
+Tareas_asignadas.Tareas_asignadas_id, 
+Tareas.Tareas_id, 
+Mantenimiento.Mantenimiento_id, 
+Tareas.Tareas_desc 
+from Mantenimiento inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+inner join Mantenimiento_periodicidad on Mantenimiento.Mant_periodicidad_id = Mantenimiento_periodicidad.Mant_periodicidad_id 
+inner join Mantenimiento_tipo on Mantenimiento_periodicidad.Mant_tipo_id = Mantenimiento_tipo.Mant_tipo_id
+inner join Tareas_asignadas on Mantenimiento.Mantenimiento_id = Tareas_asignadas.Mantenimiento_id 
+inner join Tareas on Tareas_asignadas.Tareas_id = Tareas.Tareas_id  
+where Equipo.Equipo_id = @Equipo_id and Mantenimiento.Mantenimiento_activo = 'si' order by Mantenimiento.Mantenimiento_fecha_inicio asc

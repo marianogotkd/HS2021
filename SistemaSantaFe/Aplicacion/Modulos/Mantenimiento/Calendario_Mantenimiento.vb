@@ -25,11 +25,12 @@
     Public sucursal_id As Integer
 
     Private Sub Calendario_Mantenimiento_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'primero me fijo en que sucursal estoy
-        Dim usuario_id As Integer = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
-        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
-        sucursal_id = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
-        Me.Text = "Calendario de Servicios - Sucursal: " + CStr(ds_usuario.Tables(0).Rows(0).Item("sucursal_nombre"))
+        ''primero me fijo en que sucursal estoy
+        'Dim usuario_id As Integer = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        'Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        'sucursal_id = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
+        'Me.Text = "Calendario de Servicios - Sucursal: " + CStr(ds_usuario.Tables(0).Rows(0).Item("sucursal_nombre"))
+
         GenerateDayPanel(42)
         DisplayCurrentDate()
        
@@ -42,6 +43,51 @@
 
         End If
     End Sub
+
+    Private Sub click_izquierdo(ByVal sender As Object, ByVal e As System.EventArgs)
+        choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        If choco_day <> 0 Then
+            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+            Mante_consulta.Close()
+            Mante_consulta.fecha.Text = fecha
+            Mante_consulta.SucxClie_id = sucursal_id
+            Mante_consulta.Show()
+        End If
+
+    End Sub
+
+
+    'pasar_por_sobre_el_panel
+    Private Sub pasar_por_sobre_el_panel(ByVal sender As Object, ByVal e As System.EventArgs)
+        choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        'choco lo que hace esto es que cuando pase x arriba de cada panel, recupere el nro de panel, que vendria a ser el DIA.
+        'lo necesito porque cuando se dispare el evento link_click_izquierdo. necesito un valor distinto a 0 en la variable choco_day
+
+        'If choco_day <> 0 Then
+        '    Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    Mante_consulta.Close()
+        '    Mante_consulta.fecha.Text = fecha
+        '    Mante_consulta.SucxClie_id = sucursal_id
+        '    Mante_consulta.Show()
+        'End If
+
+    End Sub
+
+    Private Sub link_click_izquierdo(ByVal sender As Object, ByVal e As System.EventArgs) 'esto es para que cuando haga click sobre las citas se direccione al formulario que quiero
+        'choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        If choco_day <> 0 Then
+            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+            Mante_consulta.Close()
+            Mante_consulta.fecha.Text = fecha
+            Mante_consulta.SucxClie_id = sucursal_id
+            Mante_consulta.Show()
+        End If
+
+    End Sub
+
 
     Private Sub AddNewAppointment(ByVal sender As Object, ByVal e As EventArgs)
         Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
@@ -139,11 +185,13 @@
         'ENDDATE ES EL ULTIMO DIA DEL MES
         'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
         Dim daMantenimiento As New Datos.Mantenimiento
-        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(sucursal_id) 'usaba para probar el id 19
         '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Clear()
+
+        '**********************************************************************************************************************************
         If ds_info.Tables(0).Rows.Count <> 0 Then
             Dim ii As Integer = 0
 
@@ -156,6 +204,7 @@
                     fila("ID") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
                     fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
                     fila("FECHA") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                    fila("Equipo_id") = ds_info.Tables(0).Rows(ii).Item("Equipo_id")
                     mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Add(fila)
                 End If
                 'aqui veo cuantas veces lo voy a agregar, dependiendo el campo "DIA" y siempre y cuando este dentro del rango de fechas indicado.
@@ -191,6 +240,7 @@
                                 fila("ID") = 0
                                 fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
                                 fila("FECHA") = fecha.Date
+                                fila("Equipo_id") = ds_info.Tables(0).Rows(ii).Item("Equipo_id")
                                 mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Add(fila)
                             End If
                         Else
@@ -202,57 +252,92 @@
                 ii = ii + 1
             End While
 
-            Dim dt As DataTable = mantenimiento_ds.Tables("MANTENIMIENTOS")
-            Dim i As Integer = 0
-            For Each row As DataRow In dt.Rows
-                'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
-                Dim appDay As DateTime = DateTime.Parse(row("FECHA"))
-                Dim link As New LinkLabel
-                'link.Tag = row("ID")
-                link.Tag = row("ID")
-                'link.Name = $"link{row("ID")}"
-                'link.Name = row("Servicio_Diagnostico")
-                Dim name As String = CStr(i) + "-" + row("DESCRIPCION")
-                link.Name = name
-                'link.Text = row("ContactName")
-
-                link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
-                link.LinkColor = Color.Orange
-
-                'If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
-                '    link.Text = "Rev: " + CStr(row("Servicio_id"))
-                '    link.LinkColor = Color.Orange
-                'Else
-                '    Select Case (CStr(row("Servicio_Estado")))
-                '        Case "ASIGNADO"
-                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                '            link.LinkColor = Color.Blue
-                '        Case "REPARADO"
-                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                '            link.LinkColor = Color.Black
-                '        Case "FINALIZADO"
-                '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
-                '            link.LinkColor = Color.Green
-                '    End Select
-                'End If
-
-                'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
-
-                listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
-                i = i + 1
-                'If dt.Rows.Count > 2 And i = 2 Then
-                '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
-                '    Dim link2 As New LinkLabel
-                '    link2.Text = "Ver mas..."
-                '    link2.LinkColor = Color.Black
-                '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
-                '    Exit For
-                'End If
-            Next
-
+            
 
         End If
         '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        'aqui cargo los mantenimientos ya realizados, esos que no se pueden eliminar.
+        If ds_info.Tables(1).Rows.Count <> 0 Then
+            Dim jj As Integer = 0
+            While jj < ds_info.Tables(1).Rows.Count
+                'valido q la fecha del mant inicial esta dentro del intervalo.
+                Dim fecha As Date = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")
+                If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                    'lo agrego si y solo si no esta ya en mantenimiento_ds.Tables("MANTENIMIENTOS")
+                    Dim ee As Integer = 0
+                    Dim esta_en_bd As String = "no"
+                    While ee < mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Count
+                        Dim mantenimiento_id As Integer = ds_info.Tables(1).Rows(jj).Item("Mantenimiento_id")
+                        Dim Equipo_id As Integer = ds_info.Tables(1).Rows(jj).Item("Equipo_id")
+                        If (mantenimiento_ds.Tables("MANTENIMIENTOS").Rows(ee).Item("FECHA") = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")) And (mantenimiento_ds.Tables("MANTENIMIENTOS").Rows(ee).Item("Equipo_id") = Equipo_id) Then
+                            esta_en_bd = "si"
+                            Exit While 'tengo q romper el ciclo, x que si agrego una fila recien agregado no se llega nunca terminar el while.
+                        End If
+                        ee = ee + 1
+                    End While
+                    If esta_en_bd = "no" Then
+                        'lo agrego
+                        Dim fila As DataRow = mantenimiento_ds.Tables("MANTENIMIENTOS").NewRow
+                        fila("ID") = ds_info.Tables(1).Rows(jj).Item("Mantenimiento_id")
+                        fila("DESCRIPCION") = ds_info.Tables(1).Rows(jj).Item("etiqueta")
+                        fila("FECHA") = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")
+                        fila("Equipo_id") = ds_info.Tables(1).Rows(jj).Item("Equipo_id")
+                        mantenimiento_ds.Tables("MANTENIMIENTOS").Rows.Add(fila)
+                    End If
+                End If
+                jj = jj + 1
+            End While
+        End If
+
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Dim dt As DataTable = mantenimiento_ds.Tables("MANTENIMIENTOS")
+        Dim i As Integer = 0
+        For Each row As DataRow In dt.Rows
+            'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
+            Dim appDay As DateTime = DateTime.Parse(row("FECHA"))
+            Dim link As New LinkLabel
+            'link.Tag = row("ID")
+            link.Tag = row("ID")
+            'link.Name = $"link{row("ID")}"
+            'link.Name = row("Servicio_Diagnostico")
+            Dim name As String = CStr(i) + "-" + row("DESCRIPCION")
+            link.Name = name
+            'link.Text = row("ContactName")
+
+            link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
+            link.LinkColor = Color.Orange
+
+            'If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
+            '    link.Text = "Rev: " + CStr(row("Servicio_id"))
+            '    link.LinkColor = Color.Orange
+            'Else
+            '    Select Case (CStr(row("Servicio_Estado")))
+            '        Case "ASIGNADO"
+            '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+            '            link.LinkColor = Color.Blue
+            '        Case "REPARADO"
+            '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+            '            link.LinkColor = Color.Black
+            '        Case "FINALIZADO"
+            '            link.Text = "OdT: " + CStr(row("Orden_trabajo_id"))
+            '            link.LinkColor = Color.Green
+            '    End Select
+            'End If
+
+            'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+            AddHandler link.Click, AddressOf link_click_izquierdo
+
+            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
+            i = i + 1
+            'If dt.Rows.Count > 2 And i = 2 Then
+            '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
+            '    Dim link2 As New LinkLabel
+            '    link2.Text = "Ver mas..."
+            '    link2.LinkColor = Color.Black
+            '    listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link2)
+            '    Exit For
+            'End If
+        Next
     End Sub
 
     Private Function GetFirstDayOfWeekOfCurrentDate() As Integer
@@ -309,10 +394,13 @@
             fl.Cursor = Cursors.Hand
             fl.AutoScroll = True
             'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
+            AddHandler fl.Click, AddressOf click_izquierdo 'choco 
             AddHandler fl.MouseMove, AddressOf click_derecho
+            AddHandler fl.MouseHover, AddressOf pasar_por_sobre_el_panel
             flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
             flDays.Controls.Add(fl)
             listFlDay.Add(fl)
+
         Next
     End Sub
 
@@ -393,28 +481,28 @@
         'End If
     End Sub
 
-    Private Sub VerToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles VerToolStripMenuItem.Click
-        If choco_day <> 0 Then
-            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
-            Mante_consulta.Close()
-            Mante_consulta.fecha.Text = fecha
-            Mante_consulta.SucxClie_id = 19
-            Mante_consulta.Show()
+    Private Sub VerToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        'If choco_day <> 0 Then
+        '    Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    Mante_consulta.Close()
+        '    Mante_consulta.fecha.Text = fecha
+        '    Mante_consulta.SucxClie_id = 19
+        '    Mante_consulta.Show()
 
-            ''con la fecha del dia busco los servicios.
-            'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
-            'If dt_choco.Tables(0).Rows.Count <> 0 Then
-            '    'lo muestro en otro formulario, en un gridview bien detallado
-            '    'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
-            '    Servicio_Consulta_b.Close()
-            '    Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
-            '    Servicio_Consulta_b.Show()
-            '    Me.Close()
-            'Else
-            '    'no hay citas registradas
-            '    MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            'End If
-        End If
+        '    ''con la fecha del dia busco los servicios.
+        '    'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
+        '    'If dt_choco.Tables(0).Rows.Count <> 0 Then
+        '    '    'lo muestro en otro formulario, en un gridview bien detallado
+        '    '    'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
+        '    '    Servicio_Consulta_b.Close()
+        '    '    Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    '    Servicio_Consulta_b.Show()
+        '    '    Me.Close()
+        '    'Else
+        '    '    'no hay citas registradas
+        '    '    MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    'End If
+        'End If
     End Sub
 
     Private Sub NuevaOrdenTrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -450,4 +538,8 @@
         'End If
     End Sub
 
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Me.Close()
+        Calendario_seleccion_cliente.Show()
+    End Sub
 End Class

@@ -1,0 +1,45 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_iniciales_obtener]    Script Date: 06/21/2021 16:30:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Mantenimiento_iniciales_obtener]
+@SucxClie_id int
+as
+--0) este select me trae los mantenimientos iniciales para que a partir de esos: se calcule los que corresponden a la fecha vigente.
+select
+Mantenimiento.Mantenimiento_id,
+Equipo.Equipo_id, 
+Equipo.Equipo_descripcion,
+Cliente_suc_sector.Cliente_suc_sector_descripcion,
+Cliente_suc_sector.Cliente_suc_sector_denominacion+'-'+Equipo.Equipo_denominacion  as 'etiqueta',
+Mantenimiento_tipo.Mant_tipo_descr,
+'en bd' as 'estado',
+Mantenimiento_periodicidad.Mant_periodicidad_dias,
+Mantenimiento.Mantenimiento_fecha_inicio,
+Cliente_Sucursales.SucxClie_id    
+from Mantenimiento 
+inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id 
+inner join Mantenimiento_periodicidad on Mantenimiento.Mant_periodicidad_id = Mantenimiento_periodicidad.Mant_periodicidad_id 
+inner join Mantenimiento_tipo on Mantenimiento_periodicidad.Mant_tipo_id = Mantenimiento_tipo.Mant_tipo_id
+inner join Cliente_Sucursales on Cliente_suc_sector.SucxClie_id = Cliente_Sucursales.SucxClie_id 
+where Cliente_Sucursales.SucxClie_id =@SucxClie_id and Mantenimiento.Mantenimiento_activo='si' order by Cliente_suc_sector.Cliente_suc_sector_descripcion  asc
+
+
+---1 recupera los detalles de cada mantenmiento realizado
+select
+dbo.Mantenimiento.Mantenimiento_id, 
+dbo.Mantenimiento_realizado.Mant_realizados_id,
+Mantenimiento_realizado.Mant_realizados_fecha,
+Cliente_suc_sector.Cliente_suc_sector_denominacion+'-'+Equipo.Equipo_denominacion  as 'etiqueta',
+Equipo.Equipo_id 
+from 
+dbo.Mantenimiento_realizado 
+inner join Mantenimiento on dbo.Mantenimiento_realizado.Mantenimiento_id = Mantenimiento.Mantenimiento_id
+inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+inner join Cliente_suc_sector on Equipo.Cliente_suc_sector_id = Cliente_suc_sector.Cliente_suc_sector_id 
+inner join Cliente_Sucursales on Cliente_suc_sector.SucxClie_id = Cliente_Sucursales.SucxClie_id 
+where Cliente_Sucursales.SucxClie_id =@SucxClie_id order by dbo.Mantenimiento_realizado.Mant_realizados_id asc

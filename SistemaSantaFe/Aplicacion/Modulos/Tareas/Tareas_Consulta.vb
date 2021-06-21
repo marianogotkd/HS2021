@@ -22,6 +22,7 @@
         End If
     End Sub
 
+
     Private Sub AddNewAppointment(ByVal sender As Object, ByVal e As EventArgs)
         Dim day As Integer = CType(sender, FlowLayoutPanel).Tag
         If day <> 0 Then
@@ -100,13 +101,13 @@
             End With
             DisplayCurrentDate()
         End If
-        
+
 
         'Orden_Revision_nueva.Focus()
     End Sub
 
     Dim Calendario_mant_DS As New Calendario_mant_DS
-    Dim procedencia As String = "mantenimientos"
+    Dim procedencia As String = "servicios"
     Private Sub AddAppointmentToFlDay(ByVal startDayAtFlNumber As Integer)
         Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
         Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
@@ -333,14 +334,16 @@
             fl.Cursor = Cursors.Hand
             fl.AutoScroll = True
             'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
+
             AddHandler fl.MouseMove, AddressOf click_derecho
+
+            'AddHandler fl.Click, AddressOf click_izquierdo 'choco 28-05-2021
+
             flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
             flDays.Controls.Add(fl)
             listFlDay.Add(fl)
         Next
     End Sub
-
-
 
     Private Sub AddLabelDayToFlDay(ByVal startDayAtFlNumber As Integer, ByVal totalDaysInMonth As Integer)
         For Each fl As FlowLayoutPanel In listFlDay
@@ -468,4 +471,5 @@
 
         End If
     End Sub
+
 End Class

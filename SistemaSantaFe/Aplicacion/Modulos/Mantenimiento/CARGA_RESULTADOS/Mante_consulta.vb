@@ -2,6 +2,7 @@
     Public SucxClie_id As Integer = 19 'me la envia el formulario que esta haciendo mariano, el calendario
     Dim daMant As New Datos.Mantenimiento
     Dim daMantenimiento As New Datos.Mantenimiento
+    Dim direccion_sucursal As String = ""
 
     Private Sub recuperar_mantenimientos()
         Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_2(fecha.Value.Date, SucxClie_id)
@@ -10,6 +11,7 @@
             txt_dni.Text = ds_mant.Tables(2).Rows(0).Item("CLI_dni")
             txt_fantasia.Text = ds_mant.Tables(2).Rows(0).Item("CLI_Fan")
             txt_sucursal.Text = ds_mant.Tables(2).Rows(0).Item("SucxClie_nombre")
+            direccion_sucursal = ds_mant.Tables(2).Rows(0).Item("SucxClie_dir")
         End If
 
         If fecha.Value.DayOfWeek = DayOfWeek.Saturday Or fecha.Value.DayOfWeek = DayOfWeek.Sunday Then
@@ -20,7 +22,7 @@
             If ds_mant.Tables(0).Rows.Count <> 0 Then
 
 
-                MANT_2_ds1.Tables("mant_listados").Merge(ds_mant.Tables(1))
+                MANT_2_ds1.Tables("mant_listados").Merge(ds_mant.Tables(0))
             End If
 
 
@@ -132,16 +134,22 @@
 
                                     Exit While
                                 Else
-                                    fecha_aux = fecha_aux.AddDays(dias)
-                                    'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
-                                    If (fecha_aux.DayOfWeek = DayOfWeek.Saturday) Then
-                                        If fecha_aux.AddDays(2) = fecha.Value.Date Then
-                                            fecha_aux = fecha_aux.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
-                                        End If
+                                    'si el item tiene los dias = 0 entonces y ya no lo puedo agregar si no coincide con la fecha
+                                    If dias = 0 Then
+                                        'no lo agrego
+                                        Exit While
                                     Else
-                                        If fecha_aux.DayOfWeek = DayOfWeek.Sunday Then
-                                            If fecha_aux.AddDays(1) = fecha.Value.Date Then
+                                        fecha_aux = fecha_aux.AddDays(dias)
+                                        'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
+                                        If (fecha_aux.DayOfWeek = DayOfWeek.Saturday) Then
+                                            'If fecha_aux.AddDays(2) = fecha.Value.Date Then
+                                            fecha_aux = fecha_aux.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
+                                            'End If
+                                        Else
+                                            If fecha_aux.DayOfWeek = DayOfWeek.Sunday Then
+                                                'If fecha_aux.AddDays(1) = fecha.Value.Date Then
                                                 fecha_aux = fecha_aux.AddDays(1) 'domingo le sumo 1, sumo 1 si y solo si es el fin de semana previ a la fecha q se selecciono en el calendario
+                                                'End If
                                             End If
                                         End If
                                     End If
@@ -254,5 +262,136 @@
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub btn_Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Aceptar.Click
+
+        'guardo resultados de las tareas
+
+        Dim result As DialogResult
+        result = MessageBox.Show("¿Desea guardar la información del Equipo: " + txt_etiqueta.Text + "?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If result = DialogResult.OK Then
+            Dim i As Integer = 0
+            Dim mant_realizados_id As Integer = DataGridView1.Rows(i).Cells("MantrealizadosidDataGridViewTextBoxColumn").Value
+            While i < DataGridView1.Rows.Count
+
+                If mant_realizados_id = 0 Then
+                    'quiere decir que todavia no se registro como mantenimiento_realizado en la tabla
+                    'por eso hay q hacer el alta
+                    Dim Mantenimiento_id As Integer = DataGridView1.Rows(i).Cells("MantenimientoidDataGridViewTextBoxColumn").Value
+                    Dim ds_mant As DataSet = daMantenimiento.Mantenimiento_realizado_alta(Mantenimiento_id, fecha.Value.Date)
+                    mant_realizados_id = ds_mant.Tables(0).Rows(0).Item("Mant_realizados_id")
+                End If
+
+                Dim mant_detalle As String = DataGridView1.Rows(i).Cells("MantdetalleDataGridViewTextBoxColumn").Value
+                Dim tareas_asignadas_id As Integer = DataGridView1.Rows(i).Cells("TareasasignadasidDataGridViewTextBoxColumn").Value
+
+                'valido para ver si es un alta o una modificación.
+                Dim ds_validar As DataSet = daMantenimiento.Mantenimiento_realizado_detalle_validar(tareas_asignadas_id, mant_realizados_id)
+                If ds_validar.Tables(0).Rows.Count <> 0 Then
+                    'existe y hay q actualizar
+                    Dim mant_realizado_detalle_id As Integer = DataGridView1.Rows(i).Cells("MantrealizadodetalleidDataGridViewTextBoxColumn").Value
+                    daMantenimiento.Mantenimiento_realizado_detalle_modificar(mant_detalle, mant_realizado_detalle_id)
+                Else
+                    'no existe, hay q hacer un alta
+                    daMantenimiento.Mantenimiento_realizado_detalle_alta(mant_realizados_id, mant_detalle, tareas_asignadas_id)
+                End If
+                i = i + 1
+            End While
+
+            MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            'aqui supongo no hace falta actualizar las grillas.
+        End If
+
+
+
+
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        reporte()
+    End Sub
+
+    Private Sub reporte()
+
+        MANT_2_ds1.Tables("Report_mantenimiento").Rows.Clear()
+        MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
+
+        Dim fila As DataRow = MANT_2_ds1.Tables("Report_mantenimiento").NewRow
+        fila("id_revision") = 0
+        fila("cliente") = txt_fantasia.Text + ", Suc: " + txt_sucursal.Text
+        fila("direccion") = direccion_sucursal
+        fila("Sucursal") = txt_sucursal.Text
+        fila("fecha") = fecha.Value.Date
+        fila("diagnostico_previo") = ""
+        fila("Equipo") = ""
+        MANT_2_ds1.Tables("Report_mantenimiento").Rows.Add(fila)
+
+        MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
+
+        Dim ii As Integer = 0
+        While ii < DG_clientes.Rows.Count
+            If DG_clientes.Rows(ii).Cells("item").Value = True Then 'esta chequeado para generar el reporte
+                Dim Mantenimiento_id As Integer = DG_clientes.Rows(ii).Cells("Mantenimientoid").Value
+                Dim Equipo As String = DG_clientes.Rows(ii).Cells("Etiqueta").Value
+                Dim Tipo_mantenimiento As String = DG_clientes.Rows(ii).Cells("Tipomantenimiento").Value
+                'ahora lo busco en dataset de las tareas...no en el gridview x q el grid esta con un filtro aplicado y puede q no lo encuentre.
+                Dim j As Integer = 0
+                While j < MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count
+                    If Mantenimiento_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id") Then
+                        'ahora lo agrego.
+                        Dim fila2 As DataRow = MANT_2_ds1.Tables("Report_tareas").NewRow
+                        fila2("Tareas") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
+                        fila2("Valor_ingresado") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
+                        fila2("Mantenimiento_id") = Mantenimiento_id
+                        fila2("Equipo") = Equipo
+                        fila2("Tipo_mantenimiento") = Tipo_mantenimiento
+                        'fila2("Tareas") = DataGridView1.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value
+                        'fila2("Valor_ingresado") = DataGridView1.Rows(i).Cells("MantdetalleDataGridViewTextBoxColumn").Value
+                        MANT_2_ds1.Tables("Report_tareas").Rows.Add(fila2)
+                    End If
+
+                    j = j + 1
+                End While
+
+            End If
+            'Dim i As Integer = 0
+            'While i < DataGridView1.Rows.Count
+            '    Dim fila2 As DataRow = MANT_2_ds1.Tables("Report_tareas").NewRow
+            '    fila2("Tareas") = DataGridView1.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value
+            '    fila2("Valor_ingresado") = DataGridView1.Rows(i).Cells("MantdetalleDataGridViewTextBoxColumn").Value
+            '    MANT_2_ds1.Tables("Report_tareas").Rows.Add(fila2)
+            '    i = i + 1
+            'End While
+
+
+
+            ii = ii + 1
+        End While
+
+
+        If MANT_2_ds1.Tables("Report_tareas").Rows.Count <> 0 Then
+            Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+            CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+            CrReport.Load(Application.StartupPath & "\..\..\Modulos\Mantenimiento\CARGA_RESULTADOS\Reportes\CR_mantenimiento.rpt")
+            CrReport.Database.Tables("Revision").SetDataSource(MANT_2_ds1.Tables("Report_mantenimiento"))
+            CrReport.Database.Tables("Report_tareas").SetDataSource(MANT_2_ds1.Tables("Report_tareas"))
+
+
+            Dim visor As New Facturacion_report_show
+            visor.CrystalReportViewer1.ReportSource = CrReport
+
+            visor.Text = "Mantenimiento programado. Imprimir."
+            visor.Show()
+        Else
+            MessageBox.Show("Error, debe seleccionar al menos un item de la LISTA DE MANTENIMIENTOS PROGRAMADOS.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
+        
+
+
+
     End Sub
 End Class

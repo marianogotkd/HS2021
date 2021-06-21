@@ -86,7 +86,7 @@
                 If valido = "si" Then
 
                     'aqui guardo
-                    Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date)
+                    Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date, "si")
                     Dim Mantenimiento_id As Integer = ds_mant.Tables(0).Rows(0).Item(0)
 
                     'ahora guardo las tareas asignadas

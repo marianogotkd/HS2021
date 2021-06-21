@@ -1,0 +1,7 @@
+modificar tabla Mantenimiento
+
+ase agrega campo "estado" que me indica si esta eliminado o no.
+
+
+[Mantenimiento_activo] [varchar](2) NULL,
+

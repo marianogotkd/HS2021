@@ -1,0 +1,10 @@
+create procedure Mantenimiento_realizado_detalle_alta
+
+@Mant_realizados_id int,
+@Mant_detalle varchar(max), 
+@Tareas_asignadas_id int 
+as
+
+insert Mantenimiento_realizado_detalle (Mant_realizados_id, Mant_detalle, Tareas_asignadas_id ) values (@Mant_realizados_id, @Mant_detalle, @Tareas_asignadas_id  )
+
+go
