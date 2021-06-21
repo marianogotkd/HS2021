@@ -1,0 +1,9 @@
+create procedure Mantenimiento_quitar
+---quita el mantenimiento que se vinculo a un equio de un cliente. el borrado el logico x eso se pone en estado_activo = "no"
+@Mantenimiento_id as integer
+as
+
+update Mantenimiento set Mantenimiento.Mantenimiento_activo='no' where Mantenimiento.Mantenimiento_id = @Mantenimiento_id
+
+
+go

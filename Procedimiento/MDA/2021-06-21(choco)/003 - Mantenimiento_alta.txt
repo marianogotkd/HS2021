@@ -1,0 +1,18 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_alta]    Script Date: 06/21/2021 18:04:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Mantenimiento_alta]
+@Equipo_id int,
+@Mant_periodicidad_id int,
+@Mantenimiento_fecha_inicio datetime,
+@Mantenimiento_activo varchar(2)
+as
+
+insert Mantenimiento (Equipo_id, Mant_periodicidad_id, Mantenimiento_fecha_inicio, Mantenimiento_activo ) values (@Equipo_id, @Mant_periodicidad_id, @Mantenimiento_fecha_inicio, @Mantenimiento_activo)
+
+select @@IDENTITY as 'Mantenimiento_id'
+
