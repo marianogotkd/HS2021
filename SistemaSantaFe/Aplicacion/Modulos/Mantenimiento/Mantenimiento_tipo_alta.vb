@@ -51,34 +51,34 @@
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         If txt_periodicidad_desc.Text <> "" Then
             'continuo validando
-            If txt_dias.Text <> 0 Then
-                'validamos que no exista ya con esa descripcion
-                Dim valido As String = "si"
-                Dim i As Integer = 0
-                While i < Mantenimiento_ds.Tables("periodicidad").Rows.Count
-                    If Mantenimiento_ds.Tables("periodicidad").Rows(i).Item("Mant_periodicidad_desc").ToString.ToUpper = txt_periodicidad_desc.Text.ToUpper Then
-                        valido = "no"
-                        Exit While
-                    End If
-                    i = i + 1
-                End While
-
-                If valido = "si" Then
-                    Dim fila As DataRow = Mantenimiento_ds.Tables("periodicidad").NewRow
-                    fila("Mant_periodicidad_id") = 0
-                    fila("Mant_periodicidad_desc") = txt_periodicidad_desc.Text
-                    fila("Mant_periodicidad_dias") = CInt(txt_dias.Text)
-                    fila("Estado") = "nuevo"
-                    Mantenimiento_ds.Tables("periodicidad").Rows.Add(fila)
-                Else
-                    MessageBox.Show("Error, ya existe un item con esa descripción. Debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    txt_periodicidad_desc.SelectAll()
-                    txt_periodicidad_desc.Focus()
+            'If txt_dias.Text <> 0 Then
+            'validamos que no exista ya con esa descripcion
+            Dim valido As String = "si"
+            Dim i As Integer = 0
+            While i < Mantenimiento_ds.Tables("periodicidad").Rows.Count
+                If Mantenimiento_ds.Tables("periodicidad").Rows(i).Item("Mant_periodicidad_desc").ToString.ToUpper = txt_periodicidad_desc.Text.ToUpper Then
+                    valido = "no"
+                    Exit While
                 End If
+                i = i + 1
+            End While
+
+            If valido = "si" Then
+                Dim fila As DataRow = Mantenimiento_ds.Tables("periodicidad").NewRow
+                fila("Mant_periodicidad_id") = 0
+                fila("Mant_periodicidad_desc") = txt_periodicidad_desc.Text
+                fila("Mant_periodicidad_dias") = CInt(txt_dias.Text)
+                fila("Estado") = "nuevo"
+                Mantenimiento_ds.Tables("periodicidad").Rows.Add(fila)
             Else
-                MessageBox.Show("Error, debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                txt_dias.Focus()
+                MessageBox.Show("Error, ya existe un item con esa descripción. Debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                txt_periodicidad_desc.SelectAll()
+                txt_periodicidad_desc.Focus()
             End If
+            'Else
+            '    MessageBox.Show("Error, debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            '    txt_dias.Focus()
+            'End If
 
         Else
             MessageBox.Show("Error, debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

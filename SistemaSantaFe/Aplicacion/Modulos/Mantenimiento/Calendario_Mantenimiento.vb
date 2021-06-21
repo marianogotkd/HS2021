@@ -25,11 +25,12 @@
     Public sucursal_id As Integer
 
     Private Sub Calendario_Mantenimiento_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'primero me fijo en que sucursal estoy
-        Dim usuario_id As Integer = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
-        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
-        sucursal_id = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
-        Me.Text = "Calendario de Servicios - Sucursal: " + CStr(ds_usuario.Tables(0).Rows(0).Item("sucursal_nombre"))
+        ''primero me fijo en que sucursal estoy
+        'Dim usuario_id As Integer = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        'Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        'sucursal_id = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
+        'Me.Text = "Calendario de Servicios - Sucursal: " + CStr(ds_usuario.Tables(0).Rows(0).Item("sucursal_nombre"))
+
         GenerateDayPanel(42)
         DisplayCurrentDate()
        
@@ -50,12 +51,42 @@
             Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
             Mante_consulta.Close()
             Mante_consulta.fecha.Text = fecha
-            Mante_consulta.SucxClie_id = 19
+            Mante_consulta.SucxClie_id = sucursal_id
             Mante_consulta.Show()
         End If
 
     End Sub
 
+
+    'pasar_por_sobre_el_panel
+    Private Sub pasar_por_sobre_el_panel(ByVal sender As Object, ByVal e As System.EventArgs)
+        choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        'choco lo que hace esto es que cuando pase x arriba de cada panel, recupere el nro de panel, que vendria a ser el DIA.
+        'lo necesito porque cuando se dispare el evento link_click_izquierdo. necesito un valor distinto a 0 en la variable choco_day
+
+        'If choco_day <> 0 Then
+        '    Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    Mante_consulta.Close()
+        '    Mante_consulta.fecha.Text = fecha
+        '    Mante_consulta.SucxClie_id = sucursal_id
+        '    Mante_consulta.Show()
+        'End If
+
+    End Sub
+
+    Private Sub link_click_izquierdo(ByVal sender As Object, ByVal e As System.EventArgs) 'esto es para que cuando haga click sobre las citas se direccione al formulario que quiero
+        'choco_day = CType(sender, FlowLayoutPanel).Tag
+
+        If choco_day <> 0 Then
+            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+            Mante_consulta.Close()
+            Mante_consulta.fecha.Text = fecha
+            Mante_consulta.SucxClie_id = sucursal_id
+            Mante_consulta.Show()
+        End If
+
+    End Sub
 
 
     Private Sub AddNewAppointment(ByVal sender As Object, ByVal e As EventArgs)
@@ -154,7 +185,7 @@
         'ENDDATE ES EL ULTIMO DIA DEL MES
         'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
         Dim daMantenimiento As New Datos.Mantenimiento
-        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(19)
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(sucursal_id) 'usaba para probar el id 19
         '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -252,6 +283,7 @@
                 'End If
 
                 'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
+                AddHandler link.Click, AddressOf link_click_izquierdo
 
                 listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
                 i = i + 1
@@ -326,9 +358,11 @@
             'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
             AddHandler fl.Click, AddressOf click_izquierdo 'choco 
             AddHandler fl.MouseMove, AddressOf click_derecho
+            AddHandler fl.MouseHover, AddressOf pasar_por_sobre_el_panel
             flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
             flDays.Controls.Add(fl)
             listFlDay.Add(fl)
+
         Next
     End Sub
 
@@ -409,28 +443,28 @@
         'End If
     End Sub
 
-    Private Sub VerToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles VerToolStripMenuItem.Click
-        If choco_day <> 0 Then
-            Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
-            Mante_consulta.Close()
-            Mante_consulta.fecha.Text = fecha
-            Mante_consulta.SucxClie_id = 19
-            Mante_consulta.Show()
+    Private Sub VerToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        'If choco_day <> 0 Then
+        '    Dim fecha As Date = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    Mante_consulta.Close()
+        '    Mante_consulta.fecha.Text = fecha
+        '    Mante_consulta.SucxClie_id = 19
+        '    Mante_consulta.Show()
 
-            ''con la fecha del dia busco los servicios.
-            'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
-            'If dt_choco.Tables(0).Rows.Count <> 0 Then
-            '    'lo muestro en otro formulario, en un gridview bien detallado
-            '    'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
-            '    Servicio_Consulta_b.Close()
-            '    Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
-            '    Servicio_Consulta_b.Show()
-            '    Me.Close()
-            'Else
-            '    'no hay citas registradas
-            '    MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            'End If
-        End If
+        '    ''con la fecha del dia busco los servicios.
+        '    'Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta(New Date(currentDate.Year, currentDate.Month, choco_day), New Date(currentDate.Year, currentDate.Month, choco_day), sucursal_id)
+        '    'If dt_choco.Tables(0).Rows.Count <> 0 Then
+        '    '    'lo muestro en otro formulario, en un gridview bien detallado
+        '    '    'MessageBox.Show("SE REGISTRARON:" + CStr(dt_choco.Tables(0).Rows.Count))
+        '    '    Servicio_Consulta_b.Close()
+        '    '    Servicio_Consulta_b.fecha = New Date(currentDate.Year, currentDate.Month, choco_day)
+        '    '    Servicio_Consulta_b.Show()
+        '    '    Me.Close()
+        '    'Else
+        '    '    'no hay citas registradas
+        '    '    MessageBox.Show("No hay citas registradas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    'End If
+        'End If
     End Sub
 
     Private Sub NuevaOrdenTrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -466,4 +500,8 @@
         'End If
     End Sub
 
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Me.Close()
+        Calendario_seleccion_cliente.Show()
+    End Sub
 End Class

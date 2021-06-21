@@ -1,0 +1,6 @@
+create procedure Mantenimiento_realizado_detalle_modificar
+@Mant_detalle varchar(max),
+@Mant_realizado_detalle_id int
+as
+update Mantenimiento_realizado_detalle set Mant_detalle = @Mant_detalle where Mantenimiento_realizado_detalle.Mant_realizado_detalle_id = @Mant_realizado_detalle_id 
+go

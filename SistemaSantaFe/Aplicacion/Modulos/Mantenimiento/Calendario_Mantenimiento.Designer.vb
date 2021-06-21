@@ -33,16 +33,15 @@ Partial Class Calendario_Mantenimiento
         Me.flDays = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.VerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,38 +68,42 @@ Partial Class Calendario_Mantenimiento
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.btnToday)
         Me.Panel2.Controls.Add(Me.btnNextMonth)
         Me.Panel2.Controls.Add(Me.btnPrevMonth)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(759, 0)
+        Me.Panel2.Location = New System.Drawing.Point(655, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(181, 72)
+        Me.Panel2.Size = New System.Drawing.Size(285, 72)
         Me.Panel2.TabIndex = 0
         '
         'btnToday
         '
-        Me.btnToday.Location = New System.Drawing.Point(65, 18)
+        Me.btnToday.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnToday.Location = New System.Drawing.Point(65, 14)
         Me.btnToday.Name = "btnToday"
-        Me.btnToday.Size = New System.Drawing.Size(52, 34)
+        Me.btnToday.Size = New System.Drawing.Size(52, 43)
         Me.btnToday.TabIndex = 2
         Me.btnToday.Text = "Hoy"
         Me.btnToday.UseVisualStyleBackColor = True
         '
         'btnNextMonth
         '
-        Me.btnNextMonth.Location = New System.Drawing.Point(120, 18)
+        Me.btnNextMonth.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNextMonth.Location = New System.Drawing.Point(123, 14)
         Me.btnNextMonth.Name = "btnNextMonth"
-        Me.btnNextMonth.Size = New System.Drawing.Size(56, 34)
+        Me.btnNextMonth.Size = New System.Drawing.Size(56, 43)
         Me.btnNextMonth.TabIndex = 1
         Me.btnNextMonth.Text = ">"
         Me.btnNextMonth.UseVisualStyleBackColor = True
         '
         'btnPrevMonth
         '
-        Me.btnPrevMonth.Location = New System.Drawing.Point(3, 18)
+        Me.btnPrevMonth.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrevMonth.Location = New System.Drawing.Point(3, 14)
         Me.btnPrevMonth.Name = "btnPrevMonth"
-        Me.btnPrevMonth.Size = New System.Drawing.Size(56, 34)
+        Me.btnPrevMonth.Size = New System.Drawing.Size(56, 43)
         Me.btnPrevMonth.TabIndex = 0
         Me.btnPrevMonth.Text = "<"
         Me.btnPrevMonth.UseVisualStyleBackColor = True
@@ -138,18 +141,9 @@ Partial Class Calendario_Mantenimiento
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.BackColor = System.Drawing.Color.LightYellow
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         Me.ContextMenuStrip1.Text = "MENU"
-        '
-        'VerToolStripMenuItem
-        '
-        Me.VerToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.VerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.VerToolStripMenuItem.Name = "VerToolStripMenuItem"
-        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.VerToolStripMenuItem.Text = "Ver Citas"
         '
         'Label5
         '
@@ -221,6 +215,18 @@ Partial Class Calendario_Mantenimiento
         Me.Label1.Text = "Domingo"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.CargarDato
+        Me.Button3.Location = New System.Drawing.Point(185, 14)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(93, 43)
+        Me.Button3.TabIndex = 270
+        Me.Button3.Text = "Volver"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Calendario_Mantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -229,13 +235,14 @@ Partial Class Calendario_Mantenimiento
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.flDays)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Calendario_Mantenimiento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimientos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -250,11 +257,11 @@ Partial Class Calendario_Mantenimiento
     Friend WithEvents flDays As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents VerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

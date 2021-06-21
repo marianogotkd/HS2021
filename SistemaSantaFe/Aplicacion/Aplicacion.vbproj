@@ -818,6 +818,12 @@
     <Compile Include="Modulos\Mantenimiento\Calendario_Mantenimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Mantenimiento\Calendario_seleccion_cliente.Designer.vb">
+      <DependentUpon>Calendario_seleccion_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Calendario_seleccion_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Mante_consulta.Designer.vb">
       <DependentUpon>Mante_consulta.vb</DependentUpon>
     </Compile>
@@ -828,6 +834,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MANT_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Reportes\CR_mantenimiento.vb">
+      <DependentUpon>CR_mantenimiento.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.Designer.vb">
       <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>
@@ -1675,8 +1687,15 @@
     <EmbeddedResource Include="Modulos\Mantenimiento\Calendario_Mantenimiento.resx">
       <DependentUpon>Calendario_Mantenimiento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Calendario_seleccion_cliente.resx">
+      <DependentUpon>Calendario_seleccion_cliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Mante_consulta.resx">
       <DependentUpon>Mante_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\CARGA_RESULTADOS\Reportes\CR_mantenimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_mantenimiento.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mantenimiento\Mantenimiento_config_agregar.resx">
       <DependentUpon>Mantenimiento_config_agregar.vb</DependentUpon>

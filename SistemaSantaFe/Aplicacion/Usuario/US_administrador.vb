@@ -925,6 +925,8 @@ Public Property EnabledCerrar() As Boolean
     End Sub
 
     Private Sub CalendarioToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioToolStripMenuItem1.Click
-        Calendario_Mantenimiento.Show()
+        Calendario_seleccion_cliente.Close()
+        Calendario_seleccion_cliente.Show()
+        'Calendario_Mantenimiento.Show()
     End Sub
 End Class

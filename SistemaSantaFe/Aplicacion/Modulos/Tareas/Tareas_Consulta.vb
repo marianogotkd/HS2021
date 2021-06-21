@@ -107,7 +107,7 @@
     End Sub
 
     Dim Calendario_mant_DS As New Calendario_mant_DS
-    Dim procedencia As String = "mantenimientos"
+    Dim procedencia As String = "servicios"
     Private Sub AddAppointmentToFlDay(ByVal startDayAtFlNumber As Integer)
         Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
         Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
