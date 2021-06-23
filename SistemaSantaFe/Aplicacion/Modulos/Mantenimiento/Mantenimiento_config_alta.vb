@@ -7,11 +7,8 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Mantenimiento_config_agregar.Close()
-
         Mantenimiento_config_agregar.Cat2_equipo_id = Cat2_equipo_id
         Mantenimiento_config_agregar.Equipo_id = Equipo_id
-
-
         Mantenimiento_config_agregar.Show()
     End Sub
 
@@ -73,9 +70,14 @@
     End Sub
 
     Private Sub DG_clientes_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.SelectionChanged
-        If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
-            aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
-        End If
+        Try
+            If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
+                aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
+            End If
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
@@ -104,5 +106,43 @@
 
 
         
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If DG_clientes.Rows.Count <> 0 Then
+            'ahora me fijo cual esta tildado
+            Dim i As Integer = 0
+            Dim valido As String = "no"
+            While i < DG_clientes.Rows.Count
+                If DG_clientes.Rows(i).Cells("item").Value = True Then
+                    MessageBox.Show("El mantenimiento seleccionado no sufrirá modificaciones en fechas ya guardadas. Los cambios surtirán efecto a partir de la fecha que se programe a continuación.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'ahora abro el form mantenimiento_config_agregar
+                    Mantenimiento_config_agregar.Close()
+                    Mantenimiento_config_agregar.Cat2_equipo_id = Cat2_equipo_id
+                    Mantenimiento_config_agregar.Equipo_id = Equipo_id
+                    'aqui pongo lo de procedencia.
+                    Mantenimiento_config_agregar.procedencia = "modificar"
+                    Dim mantenimiento_id As Integer = DG_clientes.Rows(i).Cells("MantenimientoidDataGridViewTextBoxColumn").Value
+                    Dim Mant_tipo_id As Integer = DG_clientes.Rows(i).Cells("ManttipoidDataGridViewTextBoxColumn").Value
+                    Dim Mant_periodicidad_id As Integer = DG_clientes.Rows(i).Cells("MantperiodicidadidDataGridViewTextBoxColumn").Value
+                    Mantenimiento_config_agregar.mantenimiento_id = mantenimiento_id
+                    Mantenimiento_config_agregar.modif_Mant_tipo_id = Mant_tipo_id
+                    Mantenimiento_config_agregar.modif_Mant_periodicidad_id = Mant_periodicidad_id
+                    Mantenimiento_config_agregar.fecha.Value = DG_clientes.Rows(i).Cells("MantenimientofechainicioDataGridViewTextBoxColumn").Value
+                    Mantenimiento_config_agregar.Show()
+                    valido = "si"
+                    Exit While
+                End If
+                i = i + 1
+            End While
+            If valido = "no" Then
+                MessageBox.Show("Error, debe seleccionar un item del listado de mantenimientos programados.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        Else
+            MessageBox.Show("Error, debe seleccionar un item del listado de mantenimientos programados.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
+
+
     End Sub
 End Class
