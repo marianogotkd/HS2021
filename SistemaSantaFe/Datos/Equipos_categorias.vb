@@ -200,6 +200,23 @@ Public Class Equipos_categorias
         Return ds_JE
     End Function
 
+    Public Function Cat2_caract_Subtipo_Obtener(ByVal Cat2_equipo_id As Integer) As DataSet 'esta no borra, solo cambia el estado a ELIMINADO
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
 
+        Dim comando As New OleDbCommand("Cat2_caract_Subtipo_Obtener", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_equipo_desc", descripcion))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_equipo_id", Cat2_equipo_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Cat2_caract_Subtipo_Obtener")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 
 End Class

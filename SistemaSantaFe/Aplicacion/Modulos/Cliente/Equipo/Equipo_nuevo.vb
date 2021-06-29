@@ -49,6 +49,8 @@
 
 
     Dim cat1_id As Integer = 0
+    Dim Cat2_equipo_id As Integer = 0
+
 
     Private Sub recuperar_categorias()
         Dim ds_cat As DataSet = Dacategorias.Equipo_categorias_recuperartodo
@@ -69,6 +71,7 @@
                 cb_subtipo.DataSource = ds_subtipo.Tables(1)
                 cb_subtipo.DisplayMember = "descripcion"
                 cb_subtipo.ValueMember = "Cat2_equipo_id"
+                Cat2_equipo_id = cb_subtipo.SelectedValue
             Else
 
             End If
@@ -219,5 +222,16 @@
     Private Sub BO_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BO_cancelar.Click
         Equipo_consulta.Show()
         Me.Close()
+    End Sub
+
+    Private Sub cb_subtipo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cb_subtipo.SelectedIndexChanged
+        If Cat2_equipo_id <> 0 Then
+            Cat2_equipo_id = cb_subtipo.SelectedValue
+        End If
+
+        Dim ds_info As DataSet = Dacategorias.Cat2_caract_Subtipo_Obtener(Cat2_equipo_id)
+        Equipos_cat_DS.Tables("Equipo_atributo_detalle").Rows.Clear()
+        Equipos_cat_DS.Tables("Equipo_atributo_detalle").Merge(ds_info.Tables(0))
+
     End Sub
 End Class
