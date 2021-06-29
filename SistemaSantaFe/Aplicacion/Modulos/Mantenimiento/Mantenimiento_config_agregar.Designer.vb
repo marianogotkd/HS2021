@@ -32,11 +32,6 @@ Partial Class Mantenimiento_config_agregar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dg_tareas = New System.Windows.Forms.DataGridView()
-        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.fecha = New System.Windows.Forms.DateTimePicker()
-        Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ManttipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +43,11 @@ Partial Class Mantenimiento_config_agregar
         Me.Cat2equipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SubtipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -161,48 +161,6 @@ Partial Class Mantenimiento_config_agregar
         Me.dg_tareas.StandardTab = True
         Me.dg_tareas.TabIndex = 7
         '
-        'TareasBindingSource
-        '
-        Me.TareasBindingSource.DataMember = "Tareas"
-        Me.TareasBindingSource.DataSource = Me.Mantenimiento_ds
-        '
-        'Mantenimiento_ds
-        '
-        Me.Mantenimiento_ds.DataSetName = "mantenimiento_ds"
-        Me.Mantenimiento_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.fecha)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 354)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(214, 58)
-        Me.GroupBox2.TabIndex = 15
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "4. Indique fecha de inicio:"
-        '
-        'fecha
-        '
-        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(44, 19)
-        Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(152, 30)
-        Me.fecha.TabIndex = 0
-        '
-        'btn_Aceptar
-        '
-        Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_Aceptar.Location = New System.Drawing.Point(562, 360)
-        Me.btn_Aceptar.Name = "btn_Aceptar"
-        Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
-        Me.btn_Aceptar.TabIndex = 16
-        Me.btn_Aceptar.Text = "Guardar"
-        Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_Aceptar.UseVisualStyleBackColor = True
-        '
         'TareasidDataGridViewTextBoxColumn
         '
         Me.TareasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_id"
@@ -283,6 +241,48 @@ Partial Class Mantenimiento_config_agregar
         Me.item.HeaderText = "Item"
         Me.item.Name = "item"
         Me.item.Width = 50
+        '
+        'TareasBindingSource
+        '
+        Me.TareasBindingSource.DataMember = "Tareas"
+        Me.TareasBindingSource.DataSource = Me.Mantenimiento_ds
+        '
+        'Mantenimiento_ds
+        '
+        Me.Mantenimiento_ds.DataSetName = "mantenimiento_ds"
+        Me.Mantenimiento_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.fecha)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 354)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(214, 58)
+        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "4. Indique fecha de inicio:"
+        '
+        'fecha
+        '
+        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecha.Location = New System.Drawing.Point(44, 19)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(152, 30)
+        Me.fecha.TabIndex = 0
+        '
+        'btn_Aceptar
+        '
+        Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
+        Me.btn_Aceptar.Location = New System.Drawing.Point(561, 360)
+        Me.btn_Aceptar.Name = "btn_Aceptar"
+        Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
+        Me.btn_Aceptar.TabIndex = 16
+        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_Aceptar.UseVisualStyleBackColor = True
         '
         'Mantenimiento_config_agregar
         '

@@ -219,4 +219,25 @@ Public Class Equipos_categorias
         Return ds_JE
     End Function
 
+    'lo uso en el formulario Mantenimiento_config_alta, la idea es traer a partir de un subtipo (categoria 2), el id de la categoria 1 q necesito en un combo
+    Public Function Equipo_categoria1_b(ByVal Cat2_equipo_id As Integer) As DataSet 'esta no borra, solo cambia el estado a ELIMINADO
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_categoria1_b", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_equipo_desc", descripcion))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_equipo_id", Cat2_equipo_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo_categoria2")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
 End Class

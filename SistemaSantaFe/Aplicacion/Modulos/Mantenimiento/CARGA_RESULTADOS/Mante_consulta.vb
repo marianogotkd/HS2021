@@ -26,7 +26,7 @@
             End If
 
 
-            'ahora cargo los detalles de los mantenmientos realizados
+            'ahora cargo los detalles de los mantenimientos realizados
 
             If ds_mant.Tables(3).Rows.Count <> 0 Then
                 MANT_2_ds1.Tables("mant_realizados_detalle").Merge(ds_mant.Tables(3))
