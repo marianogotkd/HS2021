@@ -24,6 +24,8 @@ Partial Class Equipo_nuevo
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Equipo_nuevo))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_sucursal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,13 +46,22 @@ Partial Class Equipo_nuevo
         Me.Bo_nuevosector = New System.Windows.Forms.Button()
         Me.cb_sector = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BO_cancelar = New System.Windows.Forms.Button()
         Me.bo_guardar = New System.Windows.Forms.Button()
+        Me.dg_atributos = New System.Windows.Forms.DataGridView()
+        Me.EquipoatributodetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Equipos_cat_DS = New Aplicacion.Equipos_cat_DS()
+        Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cat2_caract_atributo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cat2_caract_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Atributo_detalle_valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EquipoatributodetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Equipos_cat_DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -199,7 +210,6 @@ Partial Class Equipo_nuevo
         Me.Label6.Size = New System.Drawing.Size(14, 13)
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "?"
-        Me.ToolTip1.SetToolTip(Me.Label6, "Se usará para imprimir las etiquetas")
         '
         'txt_equipo_denominacion
         '
@@ -244,7 +254,6 @@ Partial Class Equipo_nuevo
         Me.Bo_nuevosector.TabIndex = 13
         Me.Bo_nuevosector.TabStop = False
         Me.Bo_nuevosector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Bo_nuevosector, "Nuevo sector")
         Me.Bo_nuevosector.UseVisualStyleBackColor = True
         '
         'cb_sector
@@ -272,7 +281,7 @@ Partial Class Equipo_nuevo
         '
         Me.BO_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar
-        Me.BO_cancelar.Location = New System.Drawing.Point(121, 373)
+        Me.BO_cancelar.Location = New System.Drawing.Point(106, 552)
         Me.BO_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_cancelar.Name = "BO_cancelar"
         Me.BO_cancelar.Size = New System.Drawing.Size(115, 49)
@@ -286,7 +295,7 @@ Partial Class Equipo_nuevo
         Me.bo_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.bo_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bo_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.bo_guardar.Location = New System.Drawing.Point(244, 373)
+        Me.bo_guardar.Location = New System.Drawing.Point(229, 552)
         Me.bo_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.bo_guardar.Name = "bo_guardar"
         Me.bo_guardar.Size = New System.Drawing.Size(115, 49)
@@ -295,13 +304,82 @@ Partial Class Equipo_nuevo
         Me.bo_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.bo_guardar.UseVisualStyleBackColor = True
         '
+        'dg_atributos
+        '
+        Me.dg_atributos.AllowUserToAddRows = False
+        Me.dg_atributos.AllowUserToDeleteRows = False
+        Me.dg_atributos.AllowUserToResizeRows = False
+        Me.dg_atributos.AutoGenerateColumns = False
+        Me.dg_atributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dg_atributos.BackgroundColor = System.Drawing.Color.White
+        Me.dg_atributos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dg_atributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_atributos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EquipoidDataGridViewTextBoxColumn, Me.Cat2_caract_atributo, Me.Cat2_caract_id, Me.Atributo_detalle_valor})
+        Me.dg_atributos.DataSource = Me.EquipoatributodetalleBindingSource
+        Me.dg_atributos.Location = New System.Drawing.Point(12, 376)
+        Me.dg_atributos.Margin = New System.Windows.Forms.Padding(4)
+        Me.dg_atributos.MultiSelect = False
+        Me.dg_atributos.Name = "dg_atributos"
+        Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dg_atributos.RowHeadersVisible = False
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.dg_atributos.Size = New System.Drawing.Size(459, 154)
+        Me.dg_atributos.StandardTab = True
+        Me.dg_atributos.TabIndex = 275
+        '
+        'EquipoatributodetalleBindingSource
+        '
+        Me.EquipoatributodetalleBindingSource.DataMember = "Equipo_atributo_detalle"
+        Me.EquipoatributodetalleBindingSource.DataSource = Me.Equipos_cat_DS
+        '
+        'Equipos_cat_DS
+        '
+        Me.Equipos_cat_DS.DataSetName = "Equipos_cat_DS"
+        Me.Equipos_cat_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EquipoidDataGridViewTextBoxColumn
+        '
+        Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
+        Me.EquipoidDataGridViewTextBoxColumn.HeaderText = "Equipo_id"
+        Me.EquipoidDataGridViewTextBoxColumn.Name = "EquipoidDataGridViewTextBoxColumn"
+        Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EquipoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'Cat2_caract_atributo
+        '
+        Me.Cat2_caract_atributo.DataPropertyName = "Cat2_caract_atributo"
+        Me.Cat2_caract_atributo.HeaderText = "Caracteristicas"
+        Me.Cat2_caract_atributo.Name = "Cat2_caract_atributo"
+        Me.Cat2_caract_atributo.ReadOnly = True
+        '
+        'Cat2_caract_id
+        '
+        Me.Cat2_caract_id.DataPropertyName = "Cat2_caract_id"
+        Me.Cat2_caract_id.HeaderText = "Cat2_caract_id"
+        Me.Cat2_caract_id.Name = "Cat2_caract_id"
+        Me.Cat2_caract_id.ReadOnly = True
+        Me.Cat2_caract_id.Visible = False
+        '
+        'Atributo_detalle_valor
+        '
+        Me.Atributo_detalle_valor.DataPropertyName = "Atributo_detalle_valor"
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Atributo_detalle_valor.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Atributo_detalle_valor.HeaderText = "Valor"
+        Me.Atributo_detalle_valor.Name = "Atributo_detalle_valor"
+        '
         'Equipo_nuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(482, 435)
+        Me.ClientSize = New System.Drawing.Size(505, 625)
+        Me.Controls.Add(Me.dg_atributos)
         Me.Controls.Add(Me.BO_cancelar)
         Me.Controls.Add(Me.bo_guardar)
         Me.Controls.Add(Me.GroupBox2)
@@ -318,6 +396,9 @@ Partial Class Equipo_nuevo
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EquipoatributodetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Equipos_cat_DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -336,7 +417,6 @@ Partial Class Equipo_nuevo
     Friend WithEvents cb_tipo As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents txt_equipo_denominacion As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txt_equipo_descripcion As System.Windows.Forms.TextBox
@@ -344,4 +424,11 @@ Partial Class Equipo_nuevo
     Friend WithEvents Bo_nuevosector As System.Windows.Forms.Button
     Friend WithEvents BO_cancelar As System.Windows.Forms.Button
     Friend WithEvents bo_guardar As System.Windows.Forms.Button
+    Friend WithEvents dg_atributos As System.Windows.Forms.DataGridView
+    Friend WithEvents EquipoatributodetalleBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Equipos_cat_DS As Aplicacion.Equipos_cat_DS
+    Friend WithEvents EquipoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cat2_caract_atributo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cat2_caract_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Atributo_detalle_valor As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

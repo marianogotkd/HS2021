@@ -298,6 +298,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Equipos_cat_DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Cliente\Equipos_categorias\Equipos_cat_DS.vb">
+      <DependentUpon>Equipos_cat_DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Cliente\Equipos_categorias\Equipos_subtipo_editar.Designer.vb">
       <DependentUpon>Equipos_subtipo_editar.vb</DependentUpon>
     </Compile>
