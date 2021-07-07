@@ -929,4 +929,15 @@ Public Property EnabledCerrar() As Boolean
         Calendario_seleccion_cliente.Show()
         'Calendario_Mantenimiento.Show()
     End Sub
+
+    Private Sub MantenimientosRealizadosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MantenimientosRealizadosToolStripMenuItem.Click
+        Dim formulario As New Calendario_seleccion_cliente
+
+        formulario.procedencia = "mantenimientos realizados"
+        formulario.Text = "Mantenimientos Realizados: Selección de Cliente."
+        formulario.Show()
+
+
+
+    End Sub
 End Class

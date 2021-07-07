@@ -882,6 +882,41 @@
     <Compile Include="Modulos\Mantenimiento\Mantenimiento_tipo_editar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\CR_mant_realizado_consulta_b.vb">
+      <DependentUpon>CR_mant_realizado_consulta_b.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\CR_mant_realizado_consulta.vb">
+      <DependentUpon>CR_mant_realizado_consulta.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\ds_mant_realizados.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_mant_realizados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_consulta.Designer.vb">
+      <DependentUpon>Mantenimientos_realizados_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_detalle.Designer.vb">
+      <DependentUpon>Mantenimientos_realizados_detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_detalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Reporte_msj.Designer.vb">
+      <DependentUpon>Reporte_msj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Reporte_msj.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Marca\Marca_alta.Designer.vb">
       <DependentUpon>Marca_alta.vb</DependentUpon>
     </Compile>
@@ -1715,6 +1750,23 @@
     <EmbeddedResource Include="Modulos\Mantenimiento\Mantenimiento_tipo_editar.resx">
       <DependentUpon>Mantenimiento_tipo_editar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\CR_mant_realizado_consulta_b.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_mant_realizado_consulta_b.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\CR_mant_realizado_consulta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_mant_realizado_consulta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_consulta.resx">
+      <DependentUpon>Mantenimientos_realizados_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Mantenimientos_realizados_detalle.resx">
+      <DependentUpon>Mantenimientos_realizados_detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\Reporte_msj.resx">
+      <DependentUpon>Reporte_msj.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Marca\Marca_alta.resx">
       <DependentUpon>Marca_alta.vb</DependentUpon>
     </EmbeddedResource>
@@ -2151,6 +2203,17 @@
     </None>
     <None Include="Modulos\Mantenimiento\mantenimiento_ds.xss">
       <DependentUpon>mantenimiento_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\ds_mant_realizados.xsc">
+      <DependentUpon>ds_mant_realizados.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\ds_mant_realizados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_mant_realizados.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Mantenimiento\Reporte_mantenimientos_realizados\ds_mant_realizados.xss">
+      <DependentUpon>ds_mant_realizados.xsd</DependentUpon>
     </None>
     <None Include="Modulos\Marca\Marca_DS.xsc">
       <DependentUpon>Marca_DS.xsd</DependentUpon>

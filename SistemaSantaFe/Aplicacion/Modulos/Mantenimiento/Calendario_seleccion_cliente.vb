@@ -56,18 +56,34 @@ Public Class Calendario_seleccion_cliente
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If DG_sucursales.Rows.Count <> 0 Then
-            'aqui tendria q ocultar el formulario y abrir el form del calendario que va a mostrar las citas solo de 1 sucursal. la seleccionada.
+        If procedencia = "" Then
+            If DG_sucursales.Rows.Count <> 0 Then
+                'aqui tendria q ocultar el formulario y abrir el form del calendario que va a mostrar las citas solo de 1 sucursal. la seleccionada.
 
-            Dim calendario As New Calendario_Mantenimiento
-            calendario.sucursal_id = DG_sucursales.CurrentRow.Cells("SucxClieidDataGridViewTextBoxColumn").Value
-            calendario.Text = "Calendario de mantenimientos para el cliente: " + CStr(DG_clientes.CurrentRow.Cells("CLIFanDataGridViewTextBoxColumn").Value) +
-                ", sucursal: " + CStr(DG_sucursales.CurrentRow.Cells("SucxClienombreDataGridViewTextBoxColumn").Value)
+                Dim calendario As New Calendario_Mantenimiento
+                calendario.sucursal_id = DG_sucursales.CurrentRow.Cells("SucxClieidDataGridViewTextBoxColumn").Value
+                calendario.Text = "Calendario de mantenimientos para el cliente: " + CStr(DG_clientes.CurrentRow.Cells("CLIFanDataGridViewTextBoxColumn").Value) +
+                    ", sucursal: " + CStr(DG_sucursales.CurrentRow.Cells("SucxClienombreDataGridViewTextBoxColumn").Value)
 
-            calendario.Show()
-            Me.Hide() 'oculto este formulario 
-        Else
-            MessageBox.Show("Error, debe seleccionar una sucursal del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                calendario.Show()
+                Me.Hide() 'oculto este formulario 
+            Else
+                MessageBox.Show("Error, debe seleccionar una sucursal del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
+
+        If procedencia = "mantenimientos realizados" Then
+            If DG_sucursales.Rows.Count <> 0 Then
+                'Dim formulario As New Mantenimientos_realizados_consulta
+                Mantenimientos_realizados_consulta.Close()
+                Mantenimientos_realizados_consulta.txt_cliente.Text = CStr(DG_clientes.CurrentRow.Cells("CLIFanDataGridViewTextBoxColumn").Value)
+                Mantenimientos_realizados_consulta.txt_sucursal.Text = CStr(DG_sucursales.CurrentRow.Cells("SucxClienombreDataGridViewTextBoxColumn").Value)
+                Mantenimientos_realizados_consulta.SucxClie_id = DG_sucursales.CurrentRow.Cells("SucxClieidDataGridViewTextBoxColumn").Value
+                Mantenimientos_realizados_consulta.Show()
+                Me.Close()
+            Else
+                MessageBox.Show("Error, debe seleccionar una sucursal del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
         End If
     End Sub
 

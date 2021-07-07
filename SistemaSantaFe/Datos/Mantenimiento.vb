@@ -202,8 +202,6 @@ Public Class Mantenimiento
         Return ds_JE
     End Function
 
-
-
     Public Function Tareas_asignadas_alta(ByVal Tareas_id As Integer, ByVal Mantenimiento_id As Integer) As DataSet
         Try
             dbconn.Open()
@@ -359,5 +357,50 @@ Public Class Mantenimiento
 
 
 #End Region
+    'trae todos los mantenmientos de una sucursal, 
+    Public Function Mantenimiento_realizado_buscar_todos(ByVal SucxClie_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_buscar_todos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@fecha", fecha))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+    'trae todos los mantenimientos realizados de una sucursal en un rango de fecha determinado
+    Public Function Mantenimiento_realizado_buscar_rango_fecha(ByVal SucxClie_id As Integer, ByVal fecha_desde As DateTime, ByVal fecha_hasta As DateTime) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_buscar_rango_fecha", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@fecha", fecha))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@fecha_desde", fecha_desde))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@fecha_hasta", fecha_hasta))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
+
 
 End Class
