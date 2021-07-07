@@ -23,7 +23,7 @@ Partial Class Equipo_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cb_sucursal = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,6 +44,7 @@ Partial Class Equipo_consulta
         Me.BO_equipo_editar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -151,10 +152,10 @@ Partial Class Equipo_consulta
         Me.DG_clientes.ReadOnly = True
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(1079, 287)
         Me.DG_clientes.StandardTab = True
@@ -260,6 +261,20 @@ Partial Class Equipo_consulta
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.menos
+        Me.Button2.Location = New System.Drawing.Point(624, 451)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(83, 43)
+        Me.Button2.TabIndex = 252
+        Me.Button2.Text = "Quitar"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Equipo_consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,6 +282,7 @@ Partial Class Equipo_consulta
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1130, 512)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BO_equipo_nuevo)
         Me.Controls.Add(Me.BO_equipo_editar)
@@ -306,4 +322,5 @@ Partial Class Equipo_consulta
     Friend WithEvents Cliente_suc_sector_descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EtiquetaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

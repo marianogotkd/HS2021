@@ -23,7 +23,7 @@ Partial Class Mantenimientos_realizados_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimientos_realizados_consulta))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -123,10 +123,10 @@ Partial Class Mantenimientos_realizados_consulta
         Me.DG_clientes.Name = "DG_clientes"
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(839, 244)
         Me.DG_clientes.StandardTab = True
@@ -349,8 +349,9 @@ Partial Class Mantenimientos_realizados_consulta
         '
         'Button3
         '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Informe
+        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.menos
         Me.Button3.Location = New System.Drawing.Point(239, 380)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(124, 43)
@@ -361,8 +362,9 @@ Partial Class Mantenimientos_realizados_consulta
         '
         'Button2
         '
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.Informe
+        Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.Pasar
         Me.Button2.Location = New System.Drawing.Point(369, 380)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(124, 43)
@@ -373,6 +375,7 @@ Partial Class Mantenimientos_realizados_consulta
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Informe
         Me.Button1.Location = New System.Drawing.Point(499, 380)
@@ -397,7 +400,7 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Controls.Add(Me.txt_sucursal)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimumSize = New System.Drawing.Size(916, 474)
         Me.Name = "Mantenimientos_realizados_consulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimientos realizados"

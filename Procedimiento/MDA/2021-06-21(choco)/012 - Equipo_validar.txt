@@ -1,0 +1,27 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Equipo_validar]    Script Date: 07/07/2021 16:07:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Equipo_validar]
+@Cliente_suc_sector_id int,
+@Equipo_descripcion varchar(max),
+@Equipo_denominacion varchar(max),
+@Equipo_id int
+as
+
+--validar descripcion
+select * from Equipo where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id and Equipo.Equipo_descripcion = @Equipo_descripcion
+
+--validar denominacion
+select * from Equipo where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id and Equipo.Equipo_denominacion = @Equipo_denominacion
+
+--veo si tiene mantenimientos programados y realizados
+select * from Mantenimiento inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+where Mantenimiento.Equipo_id = @Equipo_id and Mantenimiento_activo = 'si'
+
+select * from Mantenimiento inner join Equipo on Mantenimiento.Equipo_id = Equipo.Equipo_id 
+inner join Mantenimiento_realizado on Mantenimiento.Mantenimiento_id = Mantenimiento_realizado.Mantenimiento_id 
+where Mantenimiento.Equipo_id = @Equipo_id 

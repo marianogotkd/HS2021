@@ -1,0 +1,20 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Equipo_recuperar_info]    Script Date: 07/07/2021 15:11:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Equipo_recuperar_info]
+
+@Equipo_id int
+as
+
+select Equipo_id, Equipo_descripcion, Equipo_denominacion, Cliente_suc_sector_id, Equipo_idcat, Equipo_nrocat,
+Equipo_categoria2.Cat2_equipo_id , Equipo_categoria2.Cat1_equipo_id 
+from Equipo inner join Equipo_categoria2 on Equipo.Equipo_idcat = Equipo_categoria2.Cat2_equipo_id  where Equipo_id = @Equipo_id   
+
+select * from Equipo_atributo_detalle inner join Equipo_categoria2_caracteristicas on Equipo_atributo_detalle.Cat2_caract_id = Equipo_categoria2_caracteristicas.Cat2_caract_id 
+inner join Equipo_categoria2 on Equipo_categoria2_caracteristicas.Cat2_equipo_id = Equipo_categoria2.Cat2_equipo_id 
+where Equipo_atributo_detalle.Equipo_id = @Equipo_id order by Equipo_categoria2_caracteristicas.Cat2_caract_id asc
+go

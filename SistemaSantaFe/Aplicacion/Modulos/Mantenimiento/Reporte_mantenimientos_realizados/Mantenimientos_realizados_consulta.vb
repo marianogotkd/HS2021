@@ -84,6 +84,7 @@
 
     Private Sub Mantenimientos_realizados_consulta_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         recuperar_mantenimientos_realizados()
+        txt_buscar.Focus()
     End Sub
     Dim ds_mant_todos As DataSet
     Private Sub recuperar_mantenimientos_realizados()
@@ -272,5 +273,60 @@
 
         Reporte_msj.Show()
 
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If DG_clientes.Rows.Count <> 0 Then
+            Dim i As Integer = 0
+            While i < DG_clientes.Rows.Count
+                If DG_clientes.Rows(i).Cells("item").Value = True Then
+                    Dim pregunta As String = "no"
+                    If MsgBox("¿Esta seguro que quiere eliminar definitivamente el item seleccionado con fecha: " + CStr(DG_clientes.Rows(i).Cells("DataGridViewTextBoxColumn1").Value) + "? Los datos se actualizaran directamente en su base de datos.", MsgBoxStyle.YesNo, "Sistema de Gestión.") = MsgBoxResult.Yes Then
+                        daMant.Mantenimiento_realizado_eliminar(CInt(DG_clientes.Rows(i).Cells("MantrealizadosidDataGridViewTextBoxColumn").Value))
+                        'ahora actualizo el formulario.
+                        'para ello modifico el dataset y chau.
+                        Dim j As Integer = 0
+                        Dim Mant_realizados_id As Integer = CInt(DG_clientes.Rows(i).Cells("MantrealizadosidDataGridViewTextBoxColumn").Value)
+                        While j < Ds_mant_realizados.Tables("mant_listados").Rows.Count
+                            If Mant_realizados_id = Ds_mant_realizados.Tables("mant_listados").Rows(j).Item("Mant_realizados_id") Then
+                                Ds_mant_realizados.Tables("mant_listados").Rows.RemoveAt(j) 'lo quito de aqui
+                                Exit While
+                            End If
+                            j = j + 1
+                        End While
+                        j = 0
+                        While j < ds_mant_todos.Tables(0).Rows.Count
+                            If Mant_realizados_id = ds_mant_todos.Tables(0).Rows(j).Item("Mant_realizados_id") Then
+                                ds_mant_todos.Tables(0).Rows.RemoveAt(j) 'lo quito de aqui
+                                Exit While
+                            End If
+                            j = j + 1
+                        End While
+
+                    End If
+                    Exit While
+                End If
+                i = i + 1
+            End While
+
+
+        End If
+    End Sub
+
+    Private Sub DG_clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.Click
+        'NOTA: LO QUE HAGO AQUI ES QUE SOLO SE PERMITA HACER UN CHECK EN UNA SOLA FILA
+        If DG_clientes.Rows.Count <> 0 Then
+
+            Dim i As Integer = 0
+            While i < DG_clientes.Rows.Count
+                If DG_clientes.Rows(i).Cells("item").Value = True Then
+                    DG_clientes.Rows(i).Cells("item").Value = False
+                End If
+                i = i + 1
+            End While
+            'ahora solo tildo el actual
+            DG_clientes.CurrentRow.Cells("item").Value = True
+            'End If
+        End If
     End Sub
 End Class

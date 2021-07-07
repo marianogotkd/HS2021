@@ -506,6 +506,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Equipo_atributo_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -522,6 +526,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Equipo_atributo_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Aplicacion.Equipos_cat_DS.subtipos_agregadosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -535,6 +543,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.Equipos_cat_DS.Atributos_todos_auxRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_cat_DS.Equipo_atributo_detalleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

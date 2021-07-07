@@ -94,4 +94,10 @@
             MessageBox.Show("Error, debe seleccionar un equipo para continuar.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If DG_clientes.Rows.Count <> 0 Then
+
+        End If
+    End Sub
 End Class

@@ -1,0 +1,6 @@
+create procedure Equipo_atributo_detalle_borrar
+@Equipo_id int
+
+as
+delete from Equipo_atributo_detalle where Equipo_atributo_detalle.Equipo_id = @Equipo_id 
+go

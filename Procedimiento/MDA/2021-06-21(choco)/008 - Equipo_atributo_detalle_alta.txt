@@ -1,0 +1,10 @@
+create procedure [dbo].[Equipo_atributo_detalle_alta]
+
+@Equipo_id int,
+@Cat2_caract_id int,
+@Atributo_detalle_valor varchar(max)
+
+as
+insert Equipo_atributo_detalle (Equipo_id, Cat2_caract_id, Atributo_detalle_valor ) values
+(@Equipo_id, @Cat2_caract_id, @Atributo_detalle_valor)
+go

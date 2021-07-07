@@ -264,6 +264,28 @@ Public Class Mantenimiento
         Return ds_JE
     End Function
 
+    'mantenimiento_realizado_eliminar
+    Public Function Mantenimiento_realizado_eliminar(ByVal Mant_realizados_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Mantenimiento_realizado_eliminar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizados_id", Mant_realizados_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mant_realizados_fecha", Mant_realizados_fecha))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Tareas_asignadas_id", Tareas_asignadas_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
     'mantenimiento_realizado_Detalle alta
     Public Function Mantenimiento_realizado_detalle_alta(ByVal Mant_realizados_id As Integer, ByVal Mant_detalle As String, ByVal Tareas_asignadas_id As Integer) As DataSet
         Try

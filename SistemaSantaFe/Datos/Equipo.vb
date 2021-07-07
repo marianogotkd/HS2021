@@ -25,6 +25,29 @@ Public Class Equipo
         dbconn.Close()
         Return ds_JE
     End Function
+
+    Public Function Equipo_atributo_detalle_alta(ByVal Equipo_id As Integer, ByVal Cat2_caract_id As Integer, ByVal Atributo_detalle_valor As String) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_atributo_detalle_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_caract_id", Cat2_caract_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Atributo_detalle_valor", Atributo_detalle_valor))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_idcat", idcat))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_nrocat", nrocat))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
 #End Region
 
 #Region "Equipo modificar"
@@ -68,9 +91,31 @@ Public Class Equipo
         Return ds_JE
     End Function
 
+    Public Function Equipo_atributo_detalle_borrar(ByVal Equipo_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_atributo_detalle_borrar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Cat2_caract_id", Cat2_caract_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Atributo_detalle_valor", Atributo_detalle_valor))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_idcat", idcat))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_nrocat", nrocat))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
 #End Region
 
-    Public Function Equipo_validar(ByVal Cliente_suc_sector_id As Integer, ByVal Equipo_descripcion As String, ByVal Equipo_denominacion As String) As DataSet
+    Public Function Equipo_validar(ByVal Cliente_suc_sector_id As Integer, ByVal Equipo_descripcion As String, ByVal Equipo_denominacion As String, ByVal Equipo_id As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -82,7 +127,8 @@ Public Class Equipo
         comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_id", Cliente_suc_sector_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_descripcion", Equipo_descripcion))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_denominacion", Equipo_denominacion))
-        
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)
         da_JE.Fill(ds_JE, "Equipo")
