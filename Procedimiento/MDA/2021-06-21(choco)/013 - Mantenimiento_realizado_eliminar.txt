@@ -1,0 +1,7 @@
+create procedure Mantenimiento_realizado_eliminar
+@Mant_realizados_id int
+
+as
+
+delete from Mantenimiento_realizado where Mantenimiento_realizado.Mant_realizados_id = @Mant_realizados_id 
+go
