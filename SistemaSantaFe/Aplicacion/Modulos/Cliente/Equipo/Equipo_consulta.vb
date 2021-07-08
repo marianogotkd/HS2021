@@ -68,13 +68,13 @@
         If SucxClie_id <> 0 Then
             SucxClie_id = cb_sucursal.SelectedValue
 
-            'recupera todos los equipos de la sucursal seleccionada
+            'recupera todos los equipos de la sucursal seleccionada cuyo estado Equipo_activo = "si"
             Dim ds_equipos As DataSet = daequipo.Equipo_buscar_x_sucursal(SucxClie_id)
             If ds_equipos.Tables(0).Rows.Count <> 0 Then
                 Equipos_ds.Tables("Equipo").Merge(ds_equipos.Tables(0))
                 'DG_clientes.DataSource = ds_equipos.Tables(0)
             Else
-                MessageBox.Show("no hay equipos para la sucursal:" + cb_sucursal.Text + ".", "Sistema de Gestión.", MessageBoxButtons.OK)
+                MessageBox.Show("no hay equipos para la sucursal: " + cb_sucursal.Text + ".", "Sistema de Gestión.", MessageBoxButtons.OK)
             End If
         End If
     End Sub
@@ -97,7 +97,17 @@
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         If DG_clientes.Rows.Count <> 0 Then
+            'Dim pregunta As String = "no"
+            If MsgBox("¿Esta seguro que quiere eliminar definitivamente el item seleccionado, etiqueta: " + CStr(DG_clientes.CurrentRow.Cells("EtiquetaDataGridViewTextBoxColumn").Value) + "?.", MsgBoxStyle.YesNo, "Sistema de Gestión.") = MsgBoxResult.Yes Then
+                Dim equipo_id As Integer = DG_clientes.CurrentRow.Cells("EquipoidDataGridViewTextBoxColumn").Value
+                'aqui lo borro pero logicamente. por eso necesito un campo estado. como el de la tabla mantenimiento
+                daequipo.Equipo_eliminar(equipo_id)
+                'tengo q reflejar los cambios en el gridview
+                recuperar_equipos()
 
+            End If
+        Else
+            MessageBox.Show("Error, debe seleccionar un equipo del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 End Class

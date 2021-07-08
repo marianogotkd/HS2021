@@ -1,0 +1,7 @@
+create procedure Equipo_eliminar
+@Equipo_id int
+
+as
+update Equipo set Equipo_activo = 'no' where Equipo.Equipo_id = @Equipo_id 
+
+go
