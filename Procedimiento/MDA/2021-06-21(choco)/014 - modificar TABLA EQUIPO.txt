@@ -1,0 +1,3 @@
+agregar este campo
+
+[Equipo_activo] [varchar](2) NULL,

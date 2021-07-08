@@ -1,0 +1,21 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Equipo_alta]    Script Date: 07/08/2021 11:08:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Equipo_alta]
+
+@Equipo_descripcion varchar(max), 
+@Equipo_denominacion varchar(max), 
+@Cliente_suc_sector_id int, 
+@Equipo_idcat int, 
+@Equipo_nrocat int
+
+as
+
+insert Equipo (Equipo_descripcion, Equipo_denominacion, Cliente_suc_sector_id, Equipo_idcat , Equipo_nrocat, Equipo_activo ) 
+values 
+(@Equipo_descripcion, @Equipo_denominacion, @Cliente_suc_sector_id, @Equipo_idcat , @Equipo_nrocat, 'si')
+select @@IDENTITY AS 'Equipo_id'

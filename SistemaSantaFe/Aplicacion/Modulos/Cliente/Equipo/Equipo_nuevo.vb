@@ -3,7 +3,7 @@
     Dim Dacategorias As New Datos.Equipos_categorias
     Public SucxClie_id As Integer ' me lo envia el formulario equipo_consulta
     Public procedencia As String 'me indica si es un alta o modificacion, me lo envia el formulario equipo_consulta
-    Public Equipo_id As Integer 'me lo envia el formulario equipo_consulta si la procedencia es modificar
+    Public Equipo_id As Integer = 0 'me lo envia el formulario equipo_consulta si la procedencia es modificar
     Dim DAequipo As New Datos.Equipo
 
     Public Sub recuperar_sectores()
@@ -33,17 +33,13 @@
     Private Sub recuperar_info_equipo()
         Try
             Dim ds_info As DataSet = DAequipo.Equipo_recuperar_info(Equipo_id)
-
             txt_equipo_descripcion.Text = ds_info.Tables(0).Rows(0).Item("Equipo_descripcion")
             txt_equipo_denominacion.Text = ds_info.Tables(0).Rows(0).Item("Equipo_denominacion")
-
             'carga sector
             cb_sector.SelectedValue = ds_info.Tables(0).Rows(0).Item("Cliente_suc_sector_id")
-
             'cargo tipo y subtipo
             cb_tipo.SelectedValue = ds_info.Tables(0).Rows(0).Item("Cat1_equipo_id")
             cb_subtipo.SelectedValue = ds_info.Tables(0).Rows(0).Item("Cat2_equipo_id")
-
             'AHORA CARGO LOS ATRIBUTOS SI ES QUE LOS HAY.
             If ds_info.Tables(1).Rows.Count <> 0 Then
                 If dg_atributos.Rows.Count <> 0 Then
@@ -66,12 +62,8 @@
         End Try
 
     End Sub
-
-
-
     Dim cat1_id As Integer = 0
     Dim Cat2_equipo_id As Integer = 0
-
 
     Private Sub recuperar_categorias()
         Dim ds_cat As DataSet = Dacategorias.Equipo_categorias_recuperartodo
@@ -104,12 +96,11 @@
         End If
     End Sub
 
-
     Private Sub cb_tipo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_tipo.SelectedIndexChanged
         recuperar_subtipo()
     End Sub
 
-    Private Sub Alta()
+    Private Sub Alta() 'no lo estoy usando, ya que quiero probar el alta COMPLETA usando "transaction de oledbconnection" en la capa de datos.
         If cb_sector.Items.Count <> 0 Then
             If cb_tipo.Items.Count <> 0 Then
                 If txt_equipo_descripcion.Text <> "" Then
@@ -182,9 +173,73 @@
         End If
     End Sub
 
+    Private Sub Alta_todojunto_en_capa_dato()
+        If cb_sector.Items.Count <> 0 Then
+            If cb_tipo.Items.Count <> 0 Then
+                If txt_equipo_descripcion.Text <> "" Then
+                    If txt_equipo_denominacion.Text <> "" Then
+                        'validamos que no exista
+                        Dim ds_validar As DataSet = DAequipo.Equipo_validar(cb_sector.SelectedValue, txt_equipo_descripcion.Text, txt_equipo_denominacion.Text, 0)
+                        If ds_validar.Tables(0).Rows.Count = 0 And ds_validar.Tables(1).Rows.Count = 0 Then
+                            'quiere decir q no existe una descripcion y un nombre igual, se puede guardar.
+                            '*****************************************************************************************************************************************
+                            '***********************SE HACE EL ALTA DEL EQUIPO Y SUS ATRIBUTOS TODO EN UNA SOLA TRANSACCION EN LA CAPA DE DATOS***********************
+                            '*****************************************************************************************************************************************
+                            '*****************************************************************************************************************************************
+                            Dim validar_op As String = DAequipo.Equipo_alta_todo_junto(txt_equipo_descripcion.Text, txt_equipo_denominacion.Text, cb_sector.SelectedValue, cb_subtipo.SelectedValue, 2, Equipos_cat_DS.Tables("Equipo_atributo_detalle"))
+                            '*****************************************************************************************************************************************
+                            '*****************************************************************************************************************************************
+                            '*****************************************************************************************************************************************
+                            '*****************************************************************************************************************************************
+
+                            If validar_op = "GUARDADO" Then
+                                MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                'ahora actualizo la grilla del formulario Equipo_consulta
+                                'tengo q llamar a la rutina publica que debo definir en el formulario equipo_consulta para q me liste los equipos para esa sucursal.
+                                Equipo_consulta.recuperar_equipos()
+                                Equipo_consulta.Show() 'pongo show x que esta hide
+                                Me.Close()
+                            Else
+                                'NO SE GUARDO X UN ERROR, POR ELLO EL FORM QUEDA ABIERTO PARA INTENTAR NUEVAMENTE.
+                                MessageBox.Show("Error, la operación falló. Intente nuevamente. Si el error persiste contactar con el proveedor del servicio.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            End If
+                        Else
+                            'ahora veamos cual es el error.
+                            If ds_validar.Tables(0).Rows.Count <> 0 Then
+                                MessageBox.Show("Error, ya existe un Equipo con esa descripción. Por favor modifique la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                txt_equipo_descripcion.SelectAll()
+                                txt_equipo_descripcion.Focus()
+                            Else
+                                If ds_validar.Tables(1).Rows.Count <> 0 Then
+                                    MessageBox.Show("Error, ya existe un Equipo con esa denominación. Por favor modifique la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                    txt_equipo_denominacion.SelectAll()
+                                    txt_equipo_denominacion.Focus()
+                                End If
+                            End If
+                        End If
+                    Else
+                        MessageBox.Show("Error, debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        txt_equipo_denominacion.SelectAll()
+                        txt_equipo_denominacion.Focus()
+                    End If
+                Else
+                    MessageBox.Show("Error, debe completar la información solicitada.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    txt_equipo_descripcion.SelectAll()
+                    txt_equipo_descripcion.Focus()
+                End If
+            Else
+                MessageBox.Show("Error, asigne un tipo y subtipo al equipo.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            MessageBox.Show("Error, asigne un sector al equipo.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            cb_sector.Focus()
+        End If
+    End Sub
+
     Private Sub bo_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bo_guardar.Click
         If procedencia = "alta" Then
-            Alta()
+            'Alta()
+            Alta_todojunto_en_capa_dato()
         End If
         If procedencia = "modificar" Then
             modificar()
@@ -277,7 +332,7 @@
                                     End If
                                 Else
                                     If ds_validar.Tables(1).Rows.Count <> 0 Then
-                                        Dim equipo_id_bd As Integer = ds_validar.Tables(0).Rows(0).Item("Equipo_id")
+                                        Dim equipo_id_bd As Integer = ds_validar.Tables(1).Rows(0).Item("Equipo_id")
                                         If equipo_id_bd = Equipo_id Then
                                             'si se puede guardar
                                             modificar_b()
