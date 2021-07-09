@@ -2589,3 +2589,7 @@ C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mantenimientos_realizados_consulta.resources
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mantenimientos_realizados_detalle.resources
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Reporte_msj.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Calendario_seleccion_cliente.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mantenimientos_realizados_consulta.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Mantenimientos_realizados_detalle.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Reporte_msj.resources

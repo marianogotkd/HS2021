@@ -35,6 +35,12 @@ Partial Class Equipos_categorias_alta
         Me.txt_subtipo_info = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dg_atributos = New System.Windows.Forms.DataGridView()
+        Me.Cat2equipoidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cat2caractidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cat2caractatributoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado_column = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.AtributosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Equipos_cat_DS = New Aplicacion.Equipos_cat_DS()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -55,12 +61,6 @@ Partial Class Equipos_categorias_alta
         Me.bo_guardar = New System.Windows.Forms.Button()
         Me.BO_cancelar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Cat2equipoidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cat2caractidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cat2caractatributoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado_column = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +82,7 @@ Partial Class Equipos_categorias_alta
         Me.GroupBox1.Controls.Add(Me.txt_tipo)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(923, 406)
+        Me.GroupBox1.Size = New System.Drawing.Size(961, 418)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingrese los datos de la categoría"
@@ -97,9 +97,9 @@ Partial Class Equipos_categorias_alta
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.dg_atributos)
         Me.GroupBox3.Controls.Add(Me.Button4)
-        Me.GroupBox3.Location = New System.Drawing.Point(531, 121)
+        Me.GroupBox3.Location = New System.Drawing.Point(529, 31)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(384, 277)
+        Me.GroupBox3.Size = New System.Drawing.Size(412, 374)
         Me.GroupBox3.TabIndex = 271
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Atributos (características) del Subtipo"
@@ -107,9 +107,10 @@ Partial Class Equipos_categorias_alta
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(199, 237)
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Modificar
+        Me.Button1.Location = New System.Drawing.Point(322, 318)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 27)
+        Me.Button1.Size = New System.Drawing.Size(84, 43)
         Me.Button1.TabIndex = 275
         Me.Button1.Text = "Editar"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -123,7 +124,7 @@ Partial Class Equipos_categorias_alta
         Me.Button5.Location = New System.Drawing.Point(326, 41)
         Me.Button5.Margin = New System.Windows.Forms.Padding(4)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(43, 27)
+        Me.Button5.Size = New System.Drawing.Size(43, 34)
         Me.Button5.TabIndex = 2
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.Button5, "Agregar atributo")
@@ -132,7 +133,7 @@ Partial Class Equipos_categorias_alta
         'txt_atributo
         '
         Me.txt_atributo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_atributo.Location = New System.Drawing.Point(133, 45)
+        Me.txt_atributo.Location = New System.Drawing.Point(133, 49)
         Me.txt_atributo.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_atributo.Name = "txt_atributo"
         Me.txt_atributo.Size = New System.Drawing.Size(185, 20)
@@ -144,7 +145,7 @@ Partial Class Equipos_categorias_alta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label3.Location = New System.Drawing.Point(74, 46)
+        Me.Label3.Location = New System.Drawing.Point(74, 50)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 15)
@@ -187,7 +188,7 @@ Partial Class Equipos_categorias_alta
         Me.dg_atributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_atributos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cat2equipoidDataGridViewTextBoxColumn1, Me.Cat2caractidDataGridViewTextBoxColumn, Me.Cat2caractatributoDataGridViewTextBoxColumn, Me.estado_column, Me.DataGridViewTextBoxColumn1, Me.Column1})
         Me.dg_atributos.DataSource = Me.AtributosBindingSource
-        Me.dg_atributos.Location = New System.Drawing.Point(7, 76)
+        Me.dg_atributos.Location = New System.Drawing.Point(10, 110)
         Me.dg_atributos.Margin = New System.Windows.Forms.Padding(4)
         Me.dg_atributos.MultiSelect = False
         Me.dg_atributos.Name = "dg_atributos"
@@ -199,9 +200,59 @@ Partial Class Equipos_categorias_alta
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_atributos.Size = New System.Drawing.Size(362, 154)
+        Me.dg_atributos.Size = New System.Drawing.Size(398, 202)
         Me.dg_atributos.StandardTab = True
         Me.dg_atributos.TabIndex = 3
+        '
+        'Cat2equipoidDataGridViewTextBoxColumn1
+        '
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.DataPropertyName = "Cat2_equipo_id"
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.HeaderText = "Cat2_equipo_id"
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.Name = "Cat2equipoidDataGridViewTextBoxColumn1"
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.Cat2equipoidDataGridViewTextBoxColumn1.Visible = False
+        '
+        'Cat2caractidDataGridViewTextBoxColumn
+        '
+        Me.Cat2caractidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Cat2caractidDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_id"
+        Me.Cat2caractidDataGridViewTextBoxColumn.HeaderText = "Cat2_caract_id"
+        Me.Cat2caractidDataGridViewTextBoxColumn.Name = "Cat2caractidDataGridViewTextBoxColumn"
+        Me.Cat2caractidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.Cat2caractidDataGridViewTextBoxColumn.Visible = False
+        '
+        'Cat2caractatributoDataGridViewTextBoxColumn
+        '
+        Me.Cat2caractatributoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Cat2caractatributoDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_atributo"
+        Me.Cat2caractatributoDataGridViewTextBoxColumn.HeaderText = "Atributo"
+        Me.Cat2caractatributoDataGridViewTextBoxColumn.Name = "Cat2caractatributoDataGridViewTextBoxColumn"
+        Me.Cat2caractatributoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'estado_column
+        '
+        Me.estado_column.DataPropertyName = "estado"
+        Me.estado_column.HeaderText = "estado"
+        Me.estado_column.Name = "estado_column"
+        Me.estado_column.ReadOnly = True
+        Me.estado_column.Visible = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "subtipo"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "subtipo"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = "Item"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
         '
         'AtributosBindingSource
         '
@@ -217,9 +268,9 @@ Partial Class Equipos_categorias_alta
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button4.Location = New System.Drawing.Point(289, 237)
+        Me.Button4.Location = New System.Drawing.Point(232, 318)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(80, 27)
+        Me.Button4.Size = New System.Drawing.Size(84, 43)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Quitar"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -233,7 +284,7 @@ Partial Class Equipos_categorias_alta
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Location = New System.Drawing.Point(20, 121)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(492, 277)
+        Me.GroupBox2.Size = New System.Drawing.Size(492, 284)
         Me.GroupBox2.TabIndex = 270
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Subtipos agregados"
@@ -241,8 +292,8 @@ Partial Class Equipos_categorias_alta
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.CargarDato
-        Me.Button3.Location = New System.Drawing.Point(395, 229)
+        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Modificar
+        Me.Button3.Location = New System.Drawing.Point(395, 228)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(84, 43)
         Me.Button3.TabIndex = 272
@@ -320,9 +371,9 @@ Partial Class Equipos_categorias_alta
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button2.Location = New System.Drawing.Point(309, 229)
+        Me.Button2.Location = New System.Drawing.Point(305, 228)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 43)
+        Me.Button2.Size = New System.Drawing.Size(84, 43)
         Me.Button2.TabIndex = 271
         Me.Button2.Text = "Quitar"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -390,7 +441,7 @@ Partial Class Equipos_categorias_alta
         Me.bo_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.bo_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bo_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.bo_guardar.Location = New System.Drawing.Point(812, 422)
+        Me.bo_guardar.Location = New System.Drawing.Point(858, 437)
         Me.bo_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.bo_guardar.Name = "bo_guardar"
         Me.bo_guardar.Size = New System.Drawing.Size(115, 49)
@@ -403,7 +454,7 @@ Partial Class Equipos_categorias_alta
         '
         Me.BO_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar
-        Me.BO_cancelar.Location = New System.Drawing.Point(689, 422)
+        Me.BO_cancelar.Location = New System.Drawing.Point(735, 437)
         Me.BO_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_cancelar.Name = "BO_cancelar"
         Me.BO_cancelar.Size = New System.Drawing.Size(115, 49)
@@ -412,63 +463,13 @@ Partial Class Equipos_categorias_alta
         Me.BO_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BO_cancelar.UseVisualStyleBackColor = True
         '
-        'Cat2equipoidDataGridViewTextBoxColumn1
-        '
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.DataPropertyName = "Cat2_equipo_id"
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.HeaderText = "Cat2_equipo_id"
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.Name = "Cat2equipoidDataGridViewTextBoxColumn1"
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.Cat2equipoidDataGridViewTextBoxColumn1.Visible = False
-        '
-        'Cat2caractidDataGridViewTextBoxColumn
-        '
-        Me.Cat2caractidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cat2caractidDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_id"
-        Me.Cat2caractidDataGridViewTextBoxColumn.HeaderText = "Cat2_caract_id"
-        Me.Cat2caractidDataGridViewTextBoxColumn.Name = "Cat2caractidDataGridViewTextBoxColumn"
-        Me.Cat2caractidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.Cat2caractidDataGridViewTextBoxColumn.Visible = False
-        '
-        'Cat2caractatributoDataGridViewTextBoxColumn
-        '
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.DataPropertyName = "Cat2_caract_atributo"
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.HeaderText = "Atributo"
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.Name = "Cat2caractatributoDataGridViewTextBoxColumn"
-        Me.Cat2caractatributoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'estado_column
-        '
-        Me.estado_column.DataPropertyName = "estado"
-        Me.estado_column.HeaderText = "estado"
-        Me.estado_column.Name = "estado_column"
-        Me.estado_column.ReadOnly = True
-        Me.estado_column.Visible = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "subtipo"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "subtipo"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.HeaderText = "Item"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 50
-        '
         'Equipos_categorias_alta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(939, 484)
+        Me.ClientSize = New System.Drawing.Size(1003, 515)
         Me.Controls.Add(Me.BO_cancelar)
         Me.Controls.Add(Me.bo_guardar)
         Me.Controls.Add(Me.GroupBox1)

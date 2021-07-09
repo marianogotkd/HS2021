@@ -350,7 +350,7 @@
                         i = i + 1
                     End While
                     MessageBox.Show("Los Datos se Guardaron Correctamente", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                    Me.Close()
 
                 Else
                     'ESTA ES PARA MODIFICAR
@@ -366,6 +366,7 @@
                     End While
                     MessageBox.Show("Los Datos se Guardaron Correctamente", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                    Me.Close()
 
 
 

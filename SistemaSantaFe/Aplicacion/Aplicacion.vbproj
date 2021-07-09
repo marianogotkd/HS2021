@@ -2453,6 +2453,7 @@
     <None Include="Resources\Borrar1.png" />
     <None Include="Resources\Borrar2.png" />
     <None Include="Resources\Buscar.png" />
+    <None Include="Resources\04 - libro.ico" />
     <Content Include="Resources\Caja.png" />
     <None Include="Resources\caja1.png" />
     <Content Include="Resources\CajaAbierta.png" />
@@ -2506,6 +2507,7 @@
     <None Include="Resources\pedidos.png" />
     <None Include="Resources\lOGO_HS.png" />
     <None Include="Resources\pay wallet.png" />
+    <None Include="Resources\Modificar.png" />
     <Content Include="Resources\persona.png" />
     <None Include="Resources\Pasar.png" />
     <Content Include="Resources\producto.jpg" />
@@ -2523,6 +2525,7 @@
     <None Include="Resources\Turno.png" />
     <Content Include="Resources\ver.png" />
     <None Include="Resources\winiva.bmp" />
+    <None Include="Resources\write.bmp" />
     <Content Include="Sonido\alarma.wav" />
     <Content Include="Sonido\descending_craft-Sonidor-991848481.wav" />
     <Content Include="Sonido\Gallega actualizada.mp3" />
