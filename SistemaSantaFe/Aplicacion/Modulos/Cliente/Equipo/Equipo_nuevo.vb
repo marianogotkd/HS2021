@@ -21,11 +21,13 @@
         recuperar_categorias()
 
         If procedencia = "alta" Then
-
+            cb_sector.Enabled = True
         Else
             If procedencia = "modificar" Then
                 'recupero la info del equipo y selecciono los combos que correspondan.
                 recuperar_info_equipo()
+                cb_sector.Enabled = False
+
             End If
         End If
 

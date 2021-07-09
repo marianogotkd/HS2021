@@ -383,6 +383,7 @@ Partial Class Equipo_nuevo
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimizeBox = False
         Me.Name = "Equipo_nuevo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo equipo del cliente"

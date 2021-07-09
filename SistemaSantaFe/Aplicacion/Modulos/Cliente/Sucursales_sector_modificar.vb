@@ -95,6 +95,7 @@
                     Sucursales_sector_nuevo.SucxClie_id = SucxClie_id
                     Sucursales_sector_nuevo.procedencia = "sucursales_sector_modificar"
                     Sucursales_sector_nuevo.operacion = "modificar"
+                    Sucursales_sector_nuevo.Text = "Editar sucursal."
                     Sucursales_sector_nuevo.txt_denominacion.Text = DG_sector.Rows(i).Cells("ClientesucsectordenominacionDataGridViewTextBoxColumn").Value
                     Sucursales_sector_nuevo.txt_descripcion.Text = DG_sector.Rows(i).Cells("ClientesucsectordescripcionDataGridViewTextBoxColumn").Value
                     Sucursales_sector_nuevo.Cliente_suc_sector_id = DG_sector.Rows(i).Cells("ClientesucsectoridDataGridViewTextBoxColumn").Value

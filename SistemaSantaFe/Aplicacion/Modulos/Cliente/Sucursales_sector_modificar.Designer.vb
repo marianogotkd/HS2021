@@ -23,7 +23,7 @@ Partial Class Sucursales_sector_modificar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_cliente = New System.Windows.Forms.TextBox()
@@ -87,6 +87,9 @@ Partial Class Sucursales_sector_modificar
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.DG_sector)
         Me.GroupBox1.Location = New System.Drawing.Point(27, 68)
         Me.GroupBox1.Name = "GroupBox1"
@@ -114,10 +117,10 @@ Partial Class Sucursales_sector_modificar
         Me.DG_sector.Name = "DG_sector"
         Me.DG_sector.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_sector.RowHeadersVisible = False
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_sector.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_sector.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DG_sector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_sector.Size = New System.Drawing.Size(441, 180)
         Me.DG_sector.StandardTab = True
@@ -187,7 +190,7 @@ Partial Class Sucursales_sector_modificar
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button2.Location = New System.Drawing.Point(86, 279)
+        Me.Button2.Location = New System.Drawing.Point(91, 289)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(95, 43)
@@ -201,7 +204,7 @@ Partial Class Sucursales_sector_modificar
         Me.BO_equipo_nuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_nuevo.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
-        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(292, 278)
+        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(297, 288)
         Me.BO_equipo_nuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_nuevo.Name = "BO_equipo_nuevo"
         Me.BO_equipo_nuevo.Size = New System.Drawing.Size(95, 44)
@@ -215,7 +218,7 @@ Partial Class Sucursales_sector_modificar
         Me.BO_equipo_editar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_editar.Image = Global.Aplicacion.My.Resources.Resources.Modificar
-        Me.BO_equipo_editar.Location = New System.Drawing.Point(189, 278)
+        Me.BO_equipo_editar.Location = New System.Drawing.Point(194, 288)
         Me.BO_equipo_editar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_editar.Name = "BO_equipo_editar"
         Me.BO_equipo_editar.Size = New System.Drawing.Size(95, 44)
@@ -229,7 +232,7 @@ Partial Class Sucursales_sector_modificar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
-        Me.ClientSize = New System.Drawing.Size(498, 333)
+        Me.ClientSize = New System.Drawing.Size(508, 343)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.BO_equipo_nuevo)
         Me.Controls.Add(Me.BO_equipo_editar)
@@ -238,6 +241,8 @@ Partial Class Sucursales_sector_modificar
         Me.Controls.Add(Me.txt_cliente)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MinimumSize = New System.Drawing.Size(514, 372)
         Me.Name = "Sucursales_sector_modificar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar sectores"

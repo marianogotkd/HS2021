@@ -127,7 +127,7 @@
         If txt_descripcion.Text <> "" Then
 
             If txt_denominacion.Text <> "" Then
-                Dim valido As String = "no"
+                Dim valido As String = "si"
                 validar_modificacion(valido)
 
                 If valido = "si" Then
