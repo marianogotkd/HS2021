@@ -117,4 +117,22 @@
         Sucursales_sector_modificar.txt_sucursal.Text = cb_sucursal.Text
         Sucursales_sector_modificar.Show()
     End Sub
+
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+        Dim Filtro
+        Filtro = String.Format("{0} LIKE '%{1}%'", "Categoria", TextBox1.Text) 'esto para campos strings, FUNCIONA PERFECTO
+        EquipoBindingSource.Filter = Filtro
+        If DG_clientes.Rows.Count = 0 Then
+            Filtro = String.Format("CONVERT(etiqueta, System.String) LIKE '%{0}%'", TextBox1.Text) 'esto para campos strings, FUNCIONA PERFECTO
+            EquipoBindingSource.Filter = Filtro
+            If DG_clientes.Rows.Count = 0 Then
+                Filtro = String.Format("CONVERT(Cliente_suc_sector_descripcion, System.String) LIKE '%{0}%'", TextBox1.Text) 'esto para campos strings, FUNCIONA PERFECTO
+                EquipoBindingSource.Filter = Filtro
+                If DG_clientes.Rows.Count = 0 Then
+                    Filtro = String.Format("CONVERT(Equipo_descripcion, System.String) LIKE '%{0}%'", TextBox1.Text) 'esto para campos strings, FUNCIONA PERFECTO
+                    EquipoBindingSource.Filter = Filtro
+                End If
+            End If
+        End If
+    End Sub
 End Class
