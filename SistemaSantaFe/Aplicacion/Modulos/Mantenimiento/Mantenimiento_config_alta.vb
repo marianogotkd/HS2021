@@ -56,17 +56,23 @@
     End Sub
 
     Private Sub DG_clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.Click
-        If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
-            aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
+        If DG_clientes.RowCount <> 0 Then
+
+
+            If Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count <> 0 Then
+                aplicar_filtro_tareas(DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value)
+            End If
+
+            'ademas cuando hago click en una fila la chequeo y quito el chek en todas las filas restantes
+            Dim i As Integer = 0
+            While i < DG_clientes.Rows.Count
+                DG_clientes.Rows(i).Cells("item").Value = False
+                i = i + 1
+            End While
+            DG_clientes.CurrentRow.Cells("item").Value = True
+
         End If
 
-        'ademas cuando hago click en una fila la chequeo y quito el chek en todas las filas restantes
-        Dim i As Integer = 0
-        While i < DG_clientes.Rows.Count
-            DG_clientes.Rows(i).Cells("item").Value = False
-            i = i + 1
-        End While
-        DG_clientes.CurrentRow.Cells("item").Value = True
     End Sub
 
     Private Sub DG_clientes_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DG_clientes.SelectionChanged
