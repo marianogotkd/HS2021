@@ -1,0 +1,10 @@
+create procedure Cliente_suc_sector_eliminar
+
+@Cliente_suc_sector_id int
+as
+--pongo en activo = no el sector
+update Cliente_suc_sector set Cliente_suc_sector_activo = 'no'
+
+--pongo en activo = no a todos los equipos de ese sector.
+update Equipo set Equipo_activo = 'no' where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id 
+go

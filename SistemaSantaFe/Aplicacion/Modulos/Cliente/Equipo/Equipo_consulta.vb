@@ -20,7 +20,6 @@
         If DG_clientes.Rows.Count <> 0 Then
             Equipo_nuevo.Close()
             Dim Equipo_id As Integer = DG_clientes.CurrentRow.Cells("EquipoidDataGridViewTextBoxColumn").Value
-
             Equipo_nuevo.Equipo_id = Equipo_id
             Equipo_nuevo.txt_cliente.Text = txt_cliente.Text
             Equipo_nuevo.txt_sucursal.Text = cb_sucursal.Text
@@ -28,7 +27,7 @@
             Equipo_nuevo.procedencia = "modificar"
             Equipo_nuevo.Text = "Modificar Equipo"
             Equipo_nuevo.Show()
-            Me.Hide()
+
         Else
             MessageBox.Show("Debe seleccionar un equipo para editar.", "Sistema de Gestión.", MessageBoxButtons.OK)
         End If
@@ -109,5 +108,13 @@
         Else
             MessageBox.Show("Error, debe seleccionar un equipo del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Sucursales_sector_modificar.Close()
+        Sucursales_sector_modificar.SucxClie_id = cb_sucursal.SelectedValue
+        Sucursales_sector_modificar.txt_cliente.Text = txt_cliente.Text
+        Sucursales_sector_modificar.txt_sucursal.Text = cb_sucursal.Text
+        Sucursales_sector_modificar.Show()
     End Sub
 End Class

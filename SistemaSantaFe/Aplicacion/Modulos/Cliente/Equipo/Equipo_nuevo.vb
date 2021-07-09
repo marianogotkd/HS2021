@@ -21,12 +21,15 @@
         recuperar_categorias()
 
         If procedencia = "alta" Then
+
         Else
             If procedencia = "modificar" Then
                 'recupero la info del equipo y selecciono los combos que correspondan.
                 recuperar_info_equipo()
             End If
         End If
+
+        
 
     End Sub
 
@@ -390,5 +393,14 @@
 
 
 
+    End Sub
+
+
+    Private Sub Equipo_nuevo_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        If cb_tipo.Items.Count = 0 Then
+            MessageBox.Show("Error, no se encontraron categorías de equipo. Para crear un equipo nuevo es necesario tener configuradas las categorías. Por favor ingrese al módulo correspondiente para dar de alta.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Equipo_consulta.Show()
+            Me.Close()
+        End If
     End Sub
 End Class

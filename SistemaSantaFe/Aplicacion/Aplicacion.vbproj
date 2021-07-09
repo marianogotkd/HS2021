@@ -341,6 +341,12 @@
       <DependentUpon>CR_listadocliente.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modulos\Cliente\Sucursales_sector_modificar.Designer.vb">
+      <DependentUpon>Sucursales_sector_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Sucursales_sector_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Cliente\Sucursales_sector_nuevo.Designer.vb">
       <DependentUpon>Sucursales_sector_nuevo.vb</DependentUpon>
     </Compile>
@@ -1518,6 +1524,9 @@
     <EmbeddedResource Include="Modulos\Cliente\Reporte\CR_listadocliente.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_listadocliente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Sucursales_sector_modificar.resx">
+      <DependentUpon>Sucursales_sector_modificar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\Sucursales_sector_nuevo.resx">
       <DependentUpon>Sucursales_sector_nuevo.vb</DependentUpon>

@@ -1,0 +1,15 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Cliente_suc_sector_recuperar_todos]    Script Date: 07/09/2021 12:33:40 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Cliente_suc_sector_recuperar_todos]
+
+@SucxClie_id int
+
+as
+
+select * from Cliente_suc_sector where Cliente_suc_sector.SucxClie_id = @SucxClie_id and Cliente_suc_sector_activo='si' order by Cliente_suc_sector.Cliente_suc_sector_descripcion asc
+

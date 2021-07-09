@@ -265,4 +265,11 @@
             MessageBox.Show("Debe seleccionar una tarea para editar.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub Mantenimiento_tarea_agregar_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        If cb_tipo.Items.Count = 0 Then
+            MessageBox.Show("Error, no se encontraron categorías de equipo. Para acceder a la configuración de mantenimientos es necesario tener configuradas las categorías de equipo. Por favor ingrese al módulo correspondiente para dar de alta.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.Close()
+        End If
+    End Sub
 End Class
