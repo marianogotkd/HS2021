@@ -1,0 +1,19 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Cliente_suc_sector_alta]    Script Date: 07/09/2021 12:34:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Cliente_suc_sector_alta]
+@Cliente_suc_sector_descripcion varchar(max), 
+@Cliente_suc_sector_denominacion varchar(max), 
+@SucxClie_id int
+
+as
+
+insert Cliente_suc_sector (Cliente_suc_sector_descripcion, Cliente_suc_sector_denominacion, SucxClie_id, Cliente_suc_sector_activo) 
+values 
+(@Cliente_suc_sector_descripcion, @Cliente_suc_sector_denominacion, @SucxClie_id, 'si')
+
+

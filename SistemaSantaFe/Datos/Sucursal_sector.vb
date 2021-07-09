@@ -66,9 +66,54 @@ Public Class Sucursal_sector
         Return ds_JE
     End Function
 
+    Public Function Cliente_suc_sector_eliminar(ByVal Cliente_suc_sector_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Cliente_suc_sector_eliminar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_id", Cliente_suc_sector_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_denominacion", denominacion))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Sector")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 
 
 
+
+
+#End Region
+
+#Region "sector_modificar"
+    Public Function Cliente_suc_sector_modificar(ByVal descripcion As String,
+                                            ByVal denominacion As String,
+                                            ByVal Cliente_suc_sector_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Cliente_suc_sector_modificar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_descripcion", descripcion))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_denominacion", denominacion))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_id", Cliente_suc_sector_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Sector")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 #End Region
 
 End Class

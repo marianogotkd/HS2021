@@ -1,0 +1,4 @@
+TABLA Cliente_suc_sector
+
+AGREGAR ESTE CAMPO
+[Cliente_suc_sector_activo] [varchar](2) NULL,

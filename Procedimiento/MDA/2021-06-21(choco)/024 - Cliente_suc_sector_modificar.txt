@@ -1,0 +1,11 @@
+create procedure Cliente_suc_sector_modificar 
+
+@Cliente_suc_sector_descripcion varchar(max), 
+@Cliente_suc_sector_denominacion varchar(max), 
+@Cliente_suc_sector_id int
+as
+
+update Cliente_suc_sector set Cliente_suc_sector_descripcion = @Cliente_suc_sector_descripcion, 
+Cliente_suc_sector_denominacion = @Cliente_suc_sector_denominacion where Cliente_suc_sector_id = @Cliente_suc_sector_id  
+
+go
