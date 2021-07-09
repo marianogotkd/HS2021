@@ -80,7 +80,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox2.Controls.Add(Me.GroupBox1)
         Me.GroupBox2.Location = New System.Drawing.Point(2, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(465, 304)
+        Me.GroupBox2.Size = New System.Drawing.Size(465, 316)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Agregar tareas de Equipos:"
@@ -89,10 +89,10 @@ Partial Class Mantenimiento_tarea_agregar
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.75!)
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(350, 267)
+        Me.Button1.Location = New System.Drawing.Point(350, 262)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 28)
+        Me.Button1.Size = New System.Drawing.Size(84, 42)
         Me.Button1.TabIndex = 21
         Me.Button1.TabStop = False
         Me.Button1.Text = "Agregar"
@@ -275,7 +275,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox5.Location = New System.Drawing.Point(473, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(712, 304)
+        Me.GroupBox5.Size = New System.Drawing.Size(712, 316)
         Me.GroupBox5.TabIndex = 13
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "TAREAS CREADAS PARA:"
@@ -283,9 +283,10 @@ Partial Class Mantenimiento_tarea_agregar
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(505, 267)
+        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Modificar
+        Me.Button3.Location = New System.Drawing.Point(516, 261)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(84, 27)
+        Me.Button3.Size = New System.Drawing.Size(84, 42)
         Me.Button3.TabIndex = 279
         Me.Button3.Text = "Editar"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -423,9 +424,9 @@ Partial Class Mantenimiento_tarea_agregar
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button4.Location = New System.Drawing.Point(595, 267)
+        Me.Button4.Location = New System.Drawing.Point(606, 261)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(80, 27)
+        Me.Button4.Size = New System.Drawing.Size(84, 42)
         Me.Button4.TabIndex = 278
         Me.Button4.Text = "Quitar"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -437,7 +438,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1193, 313)
+        Me.ClientSize = New System.Drawing.Size(1193, 331)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

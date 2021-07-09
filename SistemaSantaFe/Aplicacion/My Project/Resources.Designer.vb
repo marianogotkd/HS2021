@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _04___libro() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("04 - libro", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property add_128x128() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("add-128x128", resourceCulture)
@@ -683,6 +693,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Modificar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Modificar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Pasar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Pasar", resourceCulture)
@@ -836,6 +856,16 @@ Namespace My.Resources
         Friend ReadOnly Property winiva() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("winiva", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property write() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("write", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
