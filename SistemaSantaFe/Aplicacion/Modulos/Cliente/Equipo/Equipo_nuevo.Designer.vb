@@ -49,12 +49,12 @@ Partial Class Equipo_nuevo
         Me.BO_cancelar = New System.Windows.Forms.Button()
         Me.bo_guardar = New System.Windows.Forms.Button()
         Me.dg_atributos = New System.Windows.Forms.DataGridView()
-        Me.EquipoatributodetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Equipos_cat_DS = New Aplicacion.Equipos_cat_DS()
         Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cat2_caract_atributo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cat2_caract_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Atributo_detalle_valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EquipoatributodetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Equipos_cat_DS = New Aplicacion.Equipos_cat_DS()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -162,7 +162,6 @@ Partial Class Equipo_nuevo
         Me.cb_subtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_subtipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cb_subtipo.FormattingEnabled = True
-        Me.cb_subtipo.Items.AddRange(New Object() {"Fraccionable", "No Fraccionable"})
         Me.cb_subtipo.Location = New System.Drawing.Point(97, 54)
         Me.cb_subtipo.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_subtipo.Name = "cb_subtipo"
@@ -184,7 +183,6 @@ Partial Class Equipo_nuevo
         Me.cb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_tipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cb_tipo.FormattingEnabled = True
-        Me.cb_tipo.Items.AddRange(New Object() {"Fraccionable", "No Fraccionable"})
         Me.cb_tipo.Location = New System.Drawing.Point(44, 25)
         Me.cb_tipo.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_tipo.Name = "cb_tipo"
@@ -331,16 +329,6 @@ Partial Class Equipo_nuevo
         Me.dg_atributos.StandardTab = True
         Me.dg_atributos.TabIndex = 275
         '
-        'EquipoatributodetalleBindingSource
-        '
-        Me.EquipoatributodetalleBindingSource.DataMember = "Equipo_atributo_detalle"
-        Me.EquipoatributodetalleBindingSource.DataSource = Me.Equipos_cat_DS
-        '
-        'Equipos_cat_DS
-        '
-        Me.Equipos_cat_DS.DataSetName = "Equipos_cat_DS"
-        Me.Equipos_cat_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'EquipoidDataGridViewTextBoxColumn
         '
         Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
@@ -371,6 +359,16 @@ Partial Class Equipo_nuevo
         Me.Atributo_detalle_valor.DefaultCellStyle = DataGridViewCellStyle1
         Me.Atributo_detalle_valor.HeaderText = "Valor"
         Me.Atributo_detalle_valor.Name = "Atributo_detalle_valor"
+        '
+        'EquipoatributodetalleBindingSource
+        '
+        Me.EquipoatributodetalleBindingSource.DataMember = "Equipo_atributo_detalle"
+        Me.EquipoatributodetalleBindingSource.DataSource = Me.Equipos_cat_DS
+        '
+        'Equipos_cat_DS
+        '
+        Me.Equipos_cat_DS.DataSetName = "Equipos_cat_DS"
+        Me.Equipos_cat_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Equipo_nuevo
         '

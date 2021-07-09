@@ -138,7 +138,7 @@ Partial Class US_administrador
         Me.ToolStrip1.Location = New System.Drawing.Point(7, 68)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(81, 648)
+        Me.ToolStrip1.Size = New System.Drawing.Size(81, 665)
         Me.ToolStrip1.TabIndex = 54
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -146,6 +146,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator2.Visible = False
         '
         'ToolStripDropDownButton2
         '
@@ -211,6 +212,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator4.Visible = False
         '
         'ToolStripDropDownButton4
         '
@@ -333,6 +335,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator3.Visible = False
         '
         'ToolStripDropDownButton6
         '
@@ -406,6 +409,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator1.Visible = False
         '
         'ToolStripDropDownButton1
         '
@@ -442,6 +446,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
         Me.ToolStripSeparator10.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator10.Visible = False
         '
         'ToolStripDropDownButton7
         '
@@ -481,6 +486,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator6.Visible = False
         '
         'ToolStripDropDownButtonServicios
         '
@@ -525,6 +531,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
         Me.ToolStripSeparator7.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator7.Visible = False
         '
         'ToolStripDropDownButton8
         '
@@ -570,6 +577,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
         Me.ToolStripSeparator8.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator8.Visible = False
         '
         'ToolStripDropDownButtonConfiguracion
         '
@@ -747,6 +755,7 @@ Partial Class US_administrador
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator9.Visible = False
         '
         'PN_Entrada
         '
