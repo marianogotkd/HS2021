@@ -295,6 +295,8 @@ Partial Public Class Equipos_ds
         
         Private columnCliente_suc_sector_descripcion As Global.System.Data.DataColumn
         
+        Private columnCategoria As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -379,6 +381,14 @@ Partial Public Class Equipos_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CategoriaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCategoria
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -415,9 +425,9 @@ Partial Public Class Equipos_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddEquipoRow(ByVal Equipo_id As Integer, ByVal Equipo_descripcion As String, ByVal Equipo_denominacion As String, ByVal Cliente_suc_sector_denominacion As String, ByVal etiqueta As String, ByVal Cliente_suc_sector_descripcion As String) As EquipoRow
+        Public Overloads Function AddEquipoRow(ByVal Equipo_id As Integer, ByVal Equipo_descripcion As String, ByVal Equipo_denominacion As String, ByVal Cliente_suc_sector_denominacion As String, ByVal etiqueta As String, ByVal Cliente_suc_sector_descripcion As String, ByVal Categoria As String) As EquipoRow
             Dim rowEquipoRow As EquipoRow = CType(Me.NewRow,EquipoRow)
-            Dim columnValuesArray() As Object = New Object() {Equipo_id, Equipo_descripcion, Equipo_denominacion, Cliente_suc_sector_denominacion, etiqueta, Cliente_suc_sector_descripcion}
+            Dim columnValuesArray() As Object = New Object() {Equipo_id, Equipo_descripcion, Equipo_denominacion, Cliente_suc_sector_denominacion, etiqueta, Cliente_suc_sector_descripcion, Categoria}
             rowEquipoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowEquipoRow)
             Return rowEquipoRow
@@ -446,6 +456,7 @@ Partial Public Class Equipos_ds
             Me.columnCliente_suc_sector_denominacion = MyBase.Columns("Cliente_suc_sector_denominacion")
             Me.columnetiqueta = MyBase.Columns("etiqueta")
             Me.columnCliente_suc_sector_descripcion = MyBase.Columns("Cliente_suc_sector_descripcion")
+            Me.columnCategoria = MyBase.Columns("Categoria")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -463,6 +474,8 @@ Partial Public Class Equipos_ds
             MyBase.Columns.Add(Me.columnetiqueta)
             Me.columnCliente_suc_sector_descripcion = New Global.System.Data.DataColumn("Cliente_suc_sector_descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCliente_suc_sector_descripcion)
+            Me.columnCategoria = New Global.System.Data.DataColumn("Categoria", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCategoria)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -701,6 +714,21 @@ Partial Public Class Equipos_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Categoria() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEquipo.CategoriaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Categoria' de la tabla 'Equipo' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEquipo.CategoriaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsEquipo_idNull() As Boolean
             Return Me.IsNull(Me.tableEquipo.Equipo_idColumn)
         End Function
@@ -769,6 +797,18 @@ Partial Public Class Equipos_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCliente_suc_sector_descripcionNull()
             Me(Me.tableEquipo.Cliente_suc_sector_descripcionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCategoriaNull() As Boolean
+            Return Me.IsNull(Me.tableEquipo.CategoriaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCategoriaNull()
+            Me(Me.tableEquipo.CategoriaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
