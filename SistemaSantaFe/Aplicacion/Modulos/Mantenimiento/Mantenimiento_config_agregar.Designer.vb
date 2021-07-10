@@ -256,27 +256,27 @@ Partial Class Mantenimiento_config_agregar
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.fecha)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 354)
+        Me.GroupBox2.Location = New System.Drawing.Point(382, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(214, 58)
+        Me.GroupBox2.Size = New System.Drawing.Size(316, 125)
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "4. Indique fecha de inicio:"
         '
         'fecha
         '
-        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(44, 19)
+        Me.fecha.Location = New System.Drawing.Point(91, 44)
         Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(152, 30)
+        Me.fecha.Size = New System.Drawing.Size(152, 38)
         Me.fecha.TabIndex = 0
         '
         'btn_Aceptar
         '
         Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_Aceptar.Location = New System.Drawing.Point(561, 360)
+        Me.btn_Aceptar.Location = New System.Drawing.Point(574, 354)
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 16
