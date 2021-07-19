@@ -2595,3 +2595,5 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Reporte_msj.resources
 C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Sucursales_sector_modificar.resources
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Sucursales_sector_modificar.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Equipo_QR_msj.resources
+C:\Repositorio HS2021\HS2021\SistemaSantaFe\Aplicacion\obj\x86\Debug\Aplicacion.Msj_espere_reporte.resources

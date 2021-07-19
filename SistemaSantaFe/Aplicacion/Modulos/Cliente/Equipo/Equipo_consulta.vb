@@ -1,4 +1,7 @@
-﻿Public Class Equipo_consulta
+﻿Imports ZXing
+Imports System.IO
+
+Public Class Equipo_consulta
     Dim dacliete As New Datos.Cliente
     Dim daequipo As New Datos.Equipo
     Public Cli_id As Integer 'me lo envia el formulario Cliente_modificar
@@ -62,6 +65,25 @@
         End If
     End Sub
 
+    Private Sub etiqueta_grid_generar()
+        If Equipos_ds.Tables("Equipo").Rows.Count <> 0 Then
+            Dim i As Integer = 0
+            While i < Equipos_ds.Tables("Equipo").Rows.Count
+                Dim etiqueta As String = ""
+                etiqueta = etiqueta + CStr(Cli_id) + "-" 'id cliente - cliente
+                etiqueta = etiqueta + CStr(cb_sucursal.SelectedValue) + "-" 'sucursal
+                etiqueta = etiqueta + CStr(Equipos_ds.Tables("Equipo").Rows(i).Item("Cat2_equipo_id")) + "-" 'id del subtipo de equipo (categoria)
+                etiqueta = etiqueta + CStr(Equipos_ds.Tables("Equipo").Rows(i).Item("Cliente_suc_sector_denominacion")) + "-" 'sector
+                etiqueta = etiqueta + CStr(Equipos_ds.Tables("Equipo").Rows(i).Item("Equipo_denominacion")) 'equipo
+                Equipos_ds.Tables("Equipo").Rows(i).Item("etiqueta") = etiqueta
+                i = i + 1
+            End While
+
+
+        End If
+    End Sub
+
+
     Public Sub recuperar_equipos()
         Equipos_ds.Tables("Equipo").Rows.Clear()
         If SucxClie_id <> 0 Then
@@ -72,6 +94,9 @@
             If ds_equipos.Tables(0).Rows.Count <> 0 Then
                 Equipos_ds.Tables("Equipo").Merge(ds_equipos.Tables(0))
                 'DG_clientes.DataSource = ds_equipos.Tables(0)
+
+                'modifico el campo etiqueta: necesito que traiga los id de todas las tablas q se vinculan
+                etiqueta_grid_generar()
             Else
                 MessageBox.Show("no hay equipos para la sucursal: " + cb_sucursal.Text + ".", "Sistema de Gestión.", MessageBoxButtons.OK)
             End If
@@ -135,4 +160,217 @@
             End If
         End If
     End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        If DG_clientes.Rows.Count <> 0 Then
+            Equipo_QR_msj.Close()
+            Equipo_QR_msj.Show()
+        End If
+    End Sub
+    Private Sub crear_qr()
+        ''se crea a partir de una cadena que se toma del TextBox1
+        'If RichTextBox1.Text <> "" Then
+        '    Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
+
+        '    GENERADOR.Format = BarcodeFormat.QR_CODE
+
+        '    Try
+        '        Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(RichTextBox1.Text), PictureBox1.Width, PictureBox1.Height)
+        '        PictureBox1.Image = IMAGEN
+        '    Catch ex As Exception
+        '        MessageBox.Show("Error, el código QR no se generó correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '        Me.Close()
+        '    End Try
+        'End If
+    End Sub
+
+
+
+
+#Region "Generacion QR"
+    Public Sub generar_qr_consulta_Actual() 'es decir toda lo que se este mostrando en el gridview
+        Try
+            If DG_clientes.Rows.Count <> 0 Then
+                Equipos_ds.Tables("Equipo_QR").Rows.Clear()
+                Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
+                GENERADOR.Format = BarcodeFormat.QR_CODE
+
+                Dim j As Integer = 0
+                While j < DG_clientes.Rows.Count
+                    Dim cadena As String = "" 'esta es la cadena que se convierte en QR
+                    cadena = "Cliente: " + txt_cliente.Text + "."
+                    cadena += Environment.NewLine 'esto hace un salto de linea.
+                    cadena = cadena + "Sucursal: " + cb_sucursal.Text + "."
+                    cadena += Environment.NewLine
+                    cadena = cadena + "Sector: " + CStr(DG_clientes.Rows(j).Cells("Cliente_suc_sector_descripcion").Value) + "."
+                    cadena += Environment.NewLine
+                    cadena = cadena + "Equipo: " + CStr(DG_clientes.Rows(j).Cells("EquipodescripcionDataGridViewTextBoxColumn").Value) + "."
+                    'recupero los atributos (caracteristicas del equipo.)
+                    '*****************************************************************************
+                    Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
+                    Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
+                    If ds_info.Tables(1).Rows.Count <> 0 Then
+                        cadena += Environment.NewLine
+                        cadena = cadena + "Atributos:"
+                        'tiene atributos
+                        Dim i As Integer = 0
+                        While i < ds_info.Tables(1).Rows.Count
+                            cadena += Environment.NewLine
+                            cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
+                            i = i + 1
+                        End While
+                    End If
+                    '*****************************************************************************
+                    'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
+                    Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena), 300, 300)
+                    PictureBox1.Image = IMAGEN
+                    Clipboard.SetDataObject(Me.PictureBox1.Image)
+                    Dim data As IDataObject
+                    data = Clipboard.GetDataObject
+                    Dim bmap As Bitmap
+                    If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
+                        bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Bitmap)
+                        Me.PictureBox1.Image = bmap
+                    End If
+
+                    '///////////////////////////////////////////
+                    Dim foto_byte As Byte()
+                    foto_byte = Nothing
+                    Dim ms = New MemoryStream
+                    PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
+                    foto_byte = ms.GetBuffer
+                    ms.Flush()
+                    '//////////////////////////////////////////
+                    Dim fila As DataRow = Equipos_ds.Tables("Equipo_QR").NewRow
+                    fila("etiqueta") = DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value
+                    fila("foto") = foto_byte
+                    'PictureBox1.Image = IMAGEN
+                    Equipos_ds.Tables("Equipo_QR").Rows.Add(fila)
+
+
+
+                    j = j + 1
+                End While
+                Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+                ' Asigno el reporte
+                CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+                CrReport.Load(Application.StartupPath & "\..\..\Modulos\Cliente\Equipo\Equipo_QR\CR_Equipo_QR.rpt")
+                CrReport.Database.Tables("Equipo_QR").SetDataSource(Equipos_ds.Tables("Equipo_QR"))
+                'CrReport.Database.Tables("Sucursal").SetDataSource(Facturacion_ds_report.Tables("Sucursal"))
+                'CrReport.Database.Tables("Empresa").SetDataSource(Facturacion_ds_report.Tables("Empresa"))
+                'CrReport.Database.Tables("venta").SetDataSource(Facturacion_ds_report.Tables("venta"))
+                'CrReport.Database.Tables("Producto_agregado").SetDataSource(Facturacion_ds_report.Tables("Producto_agregado"))
+                'CrReport.Database.Tables("Totales_aplicados").SetDataSource(Facturacion_ds_report.Tables("Totales_aplicados"))
+                Dim visor As New Facturacion_report_show
+                visor.CrystalReportViewer1.ReportSource = CrReport
+                'Facturacion_report_show.Text = "Comprobante Nº: " + CStr(numerofactura) + " - Imprimir."
+                visor.Text = "Etiquetas generadas."
+                visor.Show()
+            Else
+                MessageBox.Show("Error, no hay equipos en la consulta actual.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, el código QR no se generó correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Me.Close()
+        End Try
+        Msj_espere_reporte.Close()
+    End Sub
+    Public Sub generar_qr_solo_seleccionados()
+        Try
+            If DG_clientes.Rows.Count <> 0 Then
+                Equipos_ds.Tables("Equipo_QR").Rows.Clear()
+                Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
+                GENERADOR.Format = BarcodeFormat.QR_CODE
+
+                Dim cont_select As Integer = 0
+                Dim j As Integer = 0
+                While j < DG_clientes.Rows.Count
+
+                    If DG_clientes.Rows(j).Cells("item").Value = True Then
+                        cont_select = cont_select + 1
+                        Dim cadena As String = "" 'esta es la cadena que se convierte en QR
+                        cadena = "Cliente: " + txt_cliente.Text + "."
+                        cadena += Environment.NewLine 'esto hace un salto de linea.
+                        cadena = cadena + "Sucursal: " + cb_sucursal.Text + "."
+                        cadena += Environment.NewLine
+                        cadena = cadena + "Sector: " + CStr(DG_clientes.Rows(j).Cells("Cliente_suc_sector_descripcion").Value) + "."
+                        cadena += Environment.NewLine
+                        cadena = cadena + "Equipo: " + CStr(DG_clientes.Rows(j).Cells("EquipodescripcionDataGridViewTextBoxColumn").Value) + "."
+                        'recupero los atributos (caracteristicas del equipo.)
+                        '*****************************************************************************
+                        Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
+                        Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
+                        If ds_info.Tables(1).Rows.Count <> 0 Then
+                            cadena += Environment.NewLine
+                            cadena = cadena + "Atributos:"
+                            'tiene atributos
+                            Dim i As Integer = 0
+                            While i < ds_info.Tables(1).Rows.Count
+                                cadena += Environment.NewLine
+                                cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
+                                i = i + 1
+                            End While
+                        End If
+                        '*****************************************************************************
+                        'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
+                        Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena), 300, 300)
+                        PictureBox1.Image = IMAGEN
+                        Clipboard.SetDataObject(Me.PictureBox1.Image)
+                        Dim data As IDataObject
+                        data = Clipboard.GetDataObject
+                        Dim bmap As Bitmap
+                        If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
+                            bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Bitmap)
+                            Me.PictureBox1.Image = bmap
+                        End If
+
+                        '///////////////////////////////////////////
+                        Dim foto_byte As Byte()
+                        foto_byte = Nothing
+                        Dim ms = New MemoryStream
+                        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
+                        foto_byte = ms.GetBuffer
+                        ms.Flush()
+                        '//////////////////////////////////////////
+                        Dim fila As DataRow = Equipos_ds.Tables("Equipo_QR").NewRow
+                        fila("etiqueta") = DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value
+                        fila("foto") = foto_byte
+                        'PictureBox1.Image = IMAGEN
+                        Equipos_ds.Tables("Equipo_QR").Rows.Add(fila)
+
+                    End If
+
+                    j = j + 1
+                End While
+                If cont_select > 0 Then
+                    Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+                    ' Asigno el reporte
+                    CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+                    CrReport.Load(Application.StartupPath & "\..\..\Modulos\Cliente\Equipo\Equipo_QR\CR_Equipo_QR.rpt")
+                    CrReport.Database.Tables("Equipo_QR").SetDataSource(Equipos_ds.Tables("Equipo_QR"))
+                    'CrReport.Database.Tables("Sucursal").SetDataSource(Facturacion_ds_report.Tables("Sucursal"))
+                    'CrReport.Database.Tables("Empresa").SetDataSource(Facturacion_ds_report.Tables("Empresa"))
+                    'CrReport.Database.Tables("venta").SetDataSource(Facturacion_ds_report.Tables("venta"))
+                    'CrReport.Database.Tables("Producto_agregado").SetDataSource(Facturacion_ds_report.Tables("Producto_agregado"))
+                    'CrReport.Database.Tables("Totales_aplicados").SetDataSource(Facturacion_ds_report.Tables("Totales_aplicados"))
+                    Dim visor As New Facturacion_report_show
+                    visor.CrystalReportViewer1.ReportSource = CrReport
+                    'Facturacion_report_show.Text = "Comprobante Nº: " + CStr(numerofactura) + " - Imprimir."
+                    visor.Text = "Etiquetas generadas."
+                    visor.Show()
+                Else
+                    MessageBox.Show("Debe seleccionar un item para generar el código.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error, el código QR no se generó correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Me.Close()
+        End Try
+
+        Msj_espere_reporte.Close()
+
+    End Sub
+
+#End Region
+
 End Class

@@ -22,6 +22,16 @@
               <xs:element name="etiqueta" msprop:Generator_ColumnVarNameInTable="columnetiqueta" msprop:Generator_ColumnPropNameInRow="etiqueta" msprop:Generator_ColumnPropNameInTable="etiquetaColumn" msprop:Generator_UserColumnName="etiqueta" type="xs:string" minOccurs="0" />
               <xs:element name="Cliente_suc_sector_descripcion" msprop:Generator_ColumnVarNameInTable="columnCliente_suc_sector_descripcion" msprop:Generator_ColumnPropNameInRow="Cliente_suc_sector_descripcion" msprop:Generator_ColumnPropNameInTable="Cliente_suc_sector_descripcionColumn" msprop:Generator_UserColumnName="Cliente_suc_sector_descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="Cliente_suc_sector_id" msprop:Generator_ColumnVarNameInTable="columnCliente_suc_sector_id" msprop:Generator_ColumnPropNameInRow="Cliente_suc_sector_id" msprop:Generator_ColumnPropNameInTable="Cliente_suc_sector_idColumn" msprop:Generator_UserColumnName="Cliente_suc_sector_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Cat2_equipo_id" msprop:Generator_ColumnVarNameInTable="columnCat2_equipo_id" msprop:Generator_ColumnPropNameInRow="Cat2_equipo_id" msprop:Generator_ColumnPropNameInTable="Cat2_equipo_idColumn" msprop:Generator_UserColumnName="Cat2_equipo_id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Equipo_QR" msprop:Generator_TableClassName="Equipo_QRDataTable" msprop:Generator_TableVarName="tableEquipo_QR" msprop:Generator_RowChangedName="Equipo_QRRowChanged" msprop:Generator_TablePropName="Equipo_QR" msprop:Generator_RowDeletingName="Equipo_QRRowDeleting" msprop:Generator_RowChangingName="Equipo_QRRowChanging" msprop:Generator_RowEvHandlerName="Equipo_QRRowChangeEventHandler" msprop:Generator_RowDeletedName="Equipo_QRRowDeleted" msprop:Generator_RowClassName="Equipo_QRRow" msprop:Generator_UserTableName="Equipo_QR" msprop:Generator_RowEvArgName="Equipo_QRRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="etiqueta" msprop:Generator_ColumnVarNameInTable="columnetiqueta" msprop:Generator_ColumnPropNameInRow="etiqueta" msprop:Generator_ColumnPropNameInTable="etiquetaColumn" msprop:Generator_UserColumnName="etiqueta" type="xs:string" minOccurs="0" />
+              <xs:element name="foto" msprop:Generator_ColumnVarNameInTable="columnfoto" msprop:Generator_ColumnPropNameInRow="foto" msprop:Generator_ColumnPropNameInTable="fotoColumn" msprop:Generator_UserColumnName="foto" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
