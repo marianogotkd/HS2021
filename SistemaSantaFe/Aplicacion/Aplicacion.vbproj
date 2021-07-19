@@ -67,6 +67,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="zxing, Version=0.14.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -322,6 +326,18 @@
       <DependentUpon>Equipo_nuevo.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Cliente\Equipo\Equipo_nuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Equipo\Equipo_QR\CR_Equipo_QR.vb">
+      <DependentUpon>CR_Equipo_QR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Equipo\Equipo_QR\Equipo_QR_msj.Designer.vb">
+      <DependentUpon>Equipo_QR_msj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Equipo\Equipo_QR\Equipo_QR_msj.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Cliente\Reporte\Cliente_reporte_ds.Designer.vb">
@@ -943,6 +959,12 @@
     <Compile Include="Modulos\Marca\Marca_Modificar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Msjes\Msj_espere_reporte.Designer.vb">
+      <DependentUpon>Msj_espere_reporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Msjes\Msj_espere_reporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Pedidos\dsPedidos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1518,6 +1540,13 @@
     <EmbeddedResource Include="Modulos\Cliente\Equipo\Equipo_nuevo.resx">
       <DependentUpon>Equipo_nuevo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Equipo\Equipo_QR\CR_Equipo_QR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Equipo_QR.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Equipo\Equipo_QR\Equipo_QR_msj.resx">
+      <DependentUpon>Equipo_QR_msj.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\Reporte\Cliente_reporte_show.resx">
       <DependentUpon>Cliente_reporte_show.vb</DependentUpon>
     </EmbeddedResource>
@@ -1784,6 +1813,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Marca\Marca_Modificar.resx">
       <DependentUpon>Marca_Modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Msjes\Msj_espere_reporte.resx">
+      <DependentUpon>Msj_espere_reporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Pedidos\Pedidos_Consulta.resx">
       <DependentUpon>Pedidos_Consulta.vb</DependentUpon>
