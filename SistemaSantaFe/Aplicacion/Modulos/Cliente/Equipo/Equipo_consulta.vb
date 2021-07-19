@@ -1,5 +1,6 @@
 ﻿Imports ZXing
 Imports System.IO
+Imports ZXing.QrCode
 
 Public Class Equipo_consulta
     Dim dacliete As New Datos.Cliente
@@ -192,8 +193,19 @@ Public Class Equipo_consulta
         Try
             If DG_clientes.Rows.Count <> 0 Then
                 Equipos_ds.Tables("Equipo_QR").Rows.Clear()
-                Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
-                GENERADOR.Format = BarcodeFormat.QR_CODE
+                'Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
+                Dim GENERADOR As BarcodeWriter = New BarcodeWriter With {
+        .Format = BarcodeFormat.QR_CODE,
+                .Options = New QrCodeEncodingOptions With {
+                    .Width = 1000,
+                    .Height = 1000,
+                    .PureBarcode = True,
+                    .Margin = 0}
+                }
+
+
+
+                'GENERADOR.Format = BarcodeFormat.QR_CODE
 
                 Dim j As Integer = 0
                 While j < DG_clientes.Rows.Count
@@ -222,7 +234,7 @@ Public Class Equipo_consulta
                     End If
                     '*****************************************************************************
                     'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
-                    Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena), 300, 300)
+                    Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena))
                     PictureBox1.Image = IMAGEN
                     Clipboard.SetDataObject(Me.PictureBox1.Image)
                     Dim data As IDataObject
@@ -279,8 +291,19 @@ Public Class Equipo_consulta
         Try
             If DG_clientes.Rows.Count <> 0 Then
                 Equipos_ds.Tables("Equipo_QR").Rows.Clear()
-                Dim GENERADOR As BarcodeWriter = New BarcodeWriter 'inicializa el generador
-                GENERADOR.Format = BarcodeFormat.QR_CODE
+                'inicializa el generador
+                Dim GENERADOR As BarcodeWriter = New BarcodeWriter With {
+        .Format = BarcodeFormat.QR_CODE,
+                .Options = New QrCodeEncodingOptions With {
+                    .Width = 1000,
+                    .Height = 1000,
+                    .PureBarcode = True,
+                    .Margin = 0}
+                }
+
+                'GENERADOR.Format = BarcodeFormat.QR_CODE
+                'GENERADOR.Options = New QrCode.QrCodeEncodingOptions
+
 
                 Dim cont_select As Integer = 0
                 Dim j As Integer = 0
@@ -313,7 +336,7 @@ Public Class Equipo_consulta
                         End If
                         '*****************************************************************************
                         'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
-                        Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena), 300, 300)
+                        Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena))
                         PictureBox1.Image = IMAGEN
                         Clipboard.SetDataObject(Me.PictureBox1.Image)
                         Dim data As IDataObject
