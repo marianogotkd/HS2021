@@ -1761,10 +1761,43 @@
 
     Dim APcaja As New Aplicacion.Caja 'la uso para validar la apertura de caja entre otras cosas
 
+    Private Sub Quitar_filas_vacias_y_agrego_en_dataset()
+        Venta_Caja_ds.Tables("Producto_agregado").Rows.Clear()
+        Dim i As Integer = 0
+        While i < DataGridView1.Rows.Count
+            If CStr(DataGridView1.Rows(i).Cells("columna_codinterno").Value) = "" Or DataGridView1.Rows(i).Cells("columna_codinterno").Value = Nothing Then
+                DataGridView1.Rows.RemoveAt(i)
+                i = 0 'reinicio el indice para q cicle.
+            Else
+                i = i + 1
+            End If
+        End While
+        i = 0
+        While i < DataGridView1.Rows.Count
+            Dim fila As DataRow = Venta_Caja_ds.Tables("Producto_agregado").NewRow
+                fila("PROD_id") = DataGridView1.Rows(i).Cells("columna_prod_id").Value
+                fila("codinterno") = DataGridView1.Rows(i).Cells("columna_codinterno").Value
+                fila("descripcion") = DataGridView1.Rows(i).Cells("columna_descripcion").Value
+                fila("detalle") = DataGridView1.Rows(i).Cells("columna_detalle").Value
+                fila("cantidad") = DataGridView1.Rows(i).Cells("columna_cantidad").Value
+                fila("precio_unitario") = DataGridView1.Rows(i).Cells("columna_precio_unitario").Value
+                fila("precio_subtotal") = DataGridView1.Rows(i).Cells("columna_precio_subtotal").Value
+                fila("codbarra") = DataGridView1.Rows(i).Cells("columna_codbarra").Value
+                fila("TURNO_id") = ""
+                fila("descuento") = DataGridView1.Rows(i).Cells("descuento").Value
+                Venta_Caja_ds.Tables("Producto_agregado").Rows.Add(fila)
+                i = i + 1
+        End While
+    End Sub
+
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Guardar.Click
+        'quito las filas que esten en blanco, para evitar errores mas adelante.
+        Quitar_filas_vacias_y_agrego_en_dataset()
         If txt_total.Text <> "" Then
             If DataG_listaTotal.Rows.Count > 0 And CDec(txt_total.Text) <> CDec(0) Then
                 If procedencia = "Venta_Caja_Gestion" Then
+
+
                     Forma_de_pago_seleccion.Show()
                 Else
                     If procedencia = "Remito nuevo" Then
