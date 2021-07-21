@@ -25,6 +25,7 @@ Partial Class Equipo_consulta
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cb_sucursal = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_cliente = New System.Windows.Forms.TextBox()
@@ -50,13 +51,12 @@ Partial Class Equipo_consulta
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EquipoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Equipos_ds, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -73,6 +73,17 @@ Partial Class Equipo_consulta
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del cliente"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(1045, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 18)
+        Me.PictureBox1.TabIndex = 255
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'cb_sucursal
         '
@@ -120,11 +131,11 @@ Partial Class Equipo_consulta
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.DG_clientes)
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 206)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 101)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(1105, 238)
+        Me.GroupBox2.Size = New System.Drawing.Size(1105, 346)
         Me.GroupBox2.TabIndex = 247
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Equipos disponibles:"
@@ -164,7 +175,7 @@ Partial Class Equipo_consulta
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_clientes.Size = New System.Drawing.Size(1079, 165)
+        Me.DG_clientes.Size = New System.Drawing.Size(1079, 273)
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 239
         '
@@ -256,7 +267,7 @@ Partial Class Equipo_consulta
         Me.BO_equipo_nuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_nuevo.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
-        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(632, 453)
+        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(702, 455)
         Me.BO_equipo_nuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_nuevo.Name = "BO_equipo_nuevo"
         Me.BO_equipo_nuevo.Size = New System.Drawing.Size(124, 44)
@@ -270,7 +281,7 @@ Partial Class Equipo_consulta
         Me.BO_equipo_editar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_editar.Image = Global.Aplicacion.My.Resources.Resources.Modificar
-        Me.BO_equipo_editar.Location = New System.Drawing.Point(500, 453)
+        Me.BO_equipo_editar.Location = New System.Drawing.Point(570, 455)
         Me.BO_equipo_editar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_editar.Name = "BO_equipo_editar"
         Me.BO_equipo_editar.Size = New System.Drawing.Size(124, 44)
@@ -284,7 +295,7 @@ Partial Class Equipo_consulta
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button1.Location = New System.Drawing.Point(368, 453)
+        Me.Button1.Location = New System.Drawing.Point(438, 455)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 44)
@@ -298,7 +309,7 @@ Partial Class Equipo_consulta
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button2.Location = New System.Drawing.Point(236, 453)
+        Me.Button2.Location = New System.Drawing.Point(306, 455)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(124, 43)
@@ -312,7 +323,7 @@ Partial Class Equipo_consulta
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Generar
-        Me.Button3.Location = New System.Drawing.Point(764, 452)
+        Me.Button3.Location = New System.Drawing.Point(834, 454)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(124, 44)
@@ -325,8 +336,8 @@ Partial Class Equipo_consulta
         '
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button4.Location = New System.Drawing.Point(104, 453)
+        Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.Informe
+        Me.Button4.Location = New System.Drawing.Point(174, 455)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(124, 43)
@@ -334,17 +345,6 @@ Partial Class Equipo_consulta
         Me.Button4.Text = "Generar QR"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(1045, 19)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(16, 18)
-        Me.PictureBox1.TabIndex = 255
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
         '
         'Equipo_consulta
         '
@@ -367,12 +367,12 @@ Partial Class Equipo_consulta
         Me.Text = "Equipos disponibles de la sucursal"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EquipoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Equipos_ds, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
