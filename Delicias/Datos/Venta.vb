@@ -405,6 +405,180 @@ Public Class Venta
         dbconn.Close()
         Return ds_JE
     End Function
+    'usado en el pago tarjeta en el modulo de caja
+    Public Function PAGO_CAJA_TARJETA_TRANSACCION(ByVal ventaprod_total As Decimal, ByVal ventaprod_fecha As Date, ByVal usuario_id As Integer, ByVal ventaprod_tipovta As String, ByVal cliente_id As Integer,
+                                       ByVal ventaprod_subtotal As Decimal, ByVal ventaprod_descuento_pesos As Decimal, ByVal ventaprod_descuento_porcentaje As Decimal,
+                                       ByVal ventaprod_iva_porcentaje As Decimal, ByVal ventaprod_iva_pesos As Decimal, ByVal ventaprod_observacion As String,
+                                       ByVal Servicio_id As Integer, ByVal vendedor_id As Integer, ByVal ventaprod_estado As String, ByVal CAJA_id As Integer, ByVal producto_detalle As DataTable, ByVal terminal_id As Integer, ByVal TurnoUsuario_id As Integer,
+                                       ByVal CAJAdetalle_ingreso_tarjeta As Decimal, ByVal ingreso As Decimal, ByVal sucursal_id As Integer,
+                                       ByVal Venta_x_tarjeta_nrotarjeta As String, ByVal Venta_x_tarjeta_nrocomprobante As String) As DataTable
+        Dim validar_op As String = ""
+        Dim factura_id As Integer = 0
+        Using connection As OleDbConnection = dbconn
+            Dim transaccion As OleDbTransaction = Nothing
+            Try
+                connection.Open()
+                transaccion = connection.BeginTransaction
+                Dim comando As New OleDbCommand("VentaProducto_alta", connection)
+                comando.Transaction = transaccion
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_total", ventaprod_total))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_fecha", ventaprod_fecha))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_tipovta", ventaprod_tipovta))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@cliente_id", cliente_id))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_subtotal", ventaprod_subtotal)) 'este parametro trae el total sumado de productos, sin descuento ni iva aplicado
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_descuento_pesos", ventaprod_descuento_pesos))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_descuento_porcentaje", ventaprod_descuento_porcentaje))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_iva_porcentaje", ventaprod_iva_porcentaje))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_iva_pesos", ventaprod_iva_pesos))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_observacion", ventaprod_observacion))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_id", Servicio_id))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@vendedor_id", vendedor_id))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_estado", ventaprod_estado))
+
+                Dim ds_JE As New DataSet()
+                Dim da_JE As New OleDbDataAdapter(comando)
+                da_JE.Fill(ds_JE, "Venta_Producto") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado "Equipo_alta"
+                Dim ventaprod_id As Integer = ds_JE.Tables(0).Rows(0).Item("ventaprod_id")
+                '/////////////////choco: 19-07-2021 - genero la factura en su correspondiente tabla///////////////////
+                Dim comando2 As New OleDbCommand("Factura_alta", connection)
+                comando2.Transaction = transaccion
+                comando2.CommandType = CommandType.StoredProcedure
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_id", ventaprod_id))
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@factura_fecha", Now))
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
+                Dim ds_JE2 As New DataSet()
+                Dim da_JE2 As New OleDbDataAdapter(comando2)
+                da_JE2.Fill(ds_JE2, "Factura") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado "Equipo_alta"
+                factura_id = ds_JE2.Tables(0).Rows(0).Item("factura_id")
+                '//////////////guardo productos///////////////
+                Dim i As Integer = 0
+                While i < producto_detalle.Rows.Count
+                    Dim prod_id As Integer = producto_detalle.Rows(i).Item("PROD_id")
+                    Dim ventaprod_cant As Decimal = producto_detalle.Rows(i).Item("cantidad")
+                    Dim ventaprod_precio As Decimal = producto_detalle.Rows(i).Item("precio_unitario")
+                    Dim ventaprod_subtotal_A As Decimal = producto_detalle.Rows(i).Item("precio_subtotal")
+                    Dim ventaprod_descripcion As String = producto_detalle.Rows(i).Item("descripcion")
+                    Dim codigointerno As String = producto_detalle.Rows(i).Item("codinterno")
+                    Dim TURNO_id As Integer = 0
+                    Dim descuento As Decimal = producto_detalle.Rows(i).Item("descuento")
+                    Dim comando3 As New OleDbCommand("VentaProductoDetalle_alta", connection)
+                    comando3.Transaction = transaccion
+                    comando3.CommandType = CommandType.StoredProcedure
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_id", ventaprod_id))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@prod_id", prod_id))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_cant", ventaprod_cant))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_precio", ventaprod_precio))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_subtotal", ventaprod_subtotal_A))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_descripcion", ventaprod_descripcion))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@codigointerno", codigointerno))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@TURNO_id", TURNO_id))
+                    comando3.Parameters.Add(New OleDb.OleDbParameter("@descuento", descuento))
+                    comando3.ExecuteNonQuery() 'lo uso para que guarde a medida que cicla.
+                    i = i + 1
+                End While
+                Dim descripcion As String = "Factura Nº" + CStr(factura_id)
+                Dim comando4 As New OleDbCommand("Caja_Actualizar3", connection)
+                comando4.Transaction = transaccion
+                comando4.CommandType = CommandType.StoredProcedure
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@terminal_id", terminal_id))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@TurnoUsuario_id", TurnoUsuario_id)) 'para saber quien vende QUE, en cada turno
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@descripcion", descripcion))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_ingreso_efectivo", CDec(0)))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_egreso", CDec(0)))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CajaTipoMov_int", 4)) 'es tarjeta
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_ingreso_tarjeta", CAJAdetalle_ingreso_tarjeta))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@ingreso", ingreso)) 'este es el monto de ingreso, puede ser efectivo/tarjeta
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_fechahora", Now))
+                Dim ds_JE4 As New DataSet()
+                Dim da_JE4 As New OleDbDataAdapter(comando4)
+                da_JE4.Fill(ds_JE4, "Caja") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado "Equipo_alta"
+
+                'REGISTRO VENTA TARJETA EN TABLA PARTIDA "VENTA_X_TARJETA"
+                Dim comando7 As New OleDbCommand("Venta_x_tarjeta_alta", connection)
+                comando7.Transaction = transaccion
+                comando7.CommandType = CommandType.StoredProcedure
+                comando7.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_id", ventaprod_id))
+                comando7.Parameters.Add(New OleDb.OleDbParameter("@Venta_x_tarjeta_montototal", CAJAdetalle_ingreso_tarjeta))
+                comando7.Parameters.Add(New OleDb.OleDbParameter("@Venta_x_tarjeta_nrotarjeta", Venta_x_tarjeta_nrotarjeta))
+                comando7.Parameters.Add(New OleDb.OleDbParameter("@Venta_x_tarjeta_nrocomprobante", Venta_x_tarjeta_nrocomprobante))
+                Dim ds_JE7 As New DataSet()
+                Dim da_JE7 As New OleDbDataAdapter(comando7)
+                da_JE7.Fill(ds_JE7, "Caja") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado "Equipo_alta"
+
+
+                'aqui hago el descuento de stock...
+                Dim j As Integer = 0
+                While j < producto_detalle.Rows.Count
+                    Dim prod_codigo As Integer = 0
+                    If producto_detalle.Rows(j).Item("codinterno") <> "" Then
+                        If producto_detalle.Rows(j).Item("codinterno") <> "0" Then
+                            prod_codigo = CInt(producto_detalle.Rows(j).Item("codinterno"))
+                        End If
+                    Else
+                        Exit While 'salgo del ciclo x que la fila esta vacia
+                    End If
+                    Dim comando5 As New OleDbCommand("Producto_x_sucursal_buscarcod", connection)
+                    comando5.Transaction = transaccion
+                    comando5.CommandType = CommandType.StoredProcedure
+                    comando5.Parameters.Add(New OleDb.OleDbParameter("@prod_codinterno", prod_codigo))
+                    comando5.Parameters.Add(New OleDb.OleDbParameter("@sucursal_id", sucursal_id))
+                    Dim ds_JE3 As New DataSet()
+                    Dim da_JE3 As New OleDbDataAdapter(comando5)
+                    da_JE3.Fill(ds_JE3, "Producto") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado 
+                    If ds_JE3.Tables(0).Rows.Count <> 0 Then
+                        Dim diferencia As Decimal = CDec(ds_JE3.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(producto_detalle.Rows(j).Item("cantidad"))
+                        If diferencia < 0 Then
+                            diferencia = 0
+                        End If
+
+                        Dim diferencia_gondola As Integer = 0
+                        Dim cantidad As Integer = 0
+
+                        Dim comando6 As New OleDbCommand("Venta_actualizar_stock_Caja", connection)
+                        comando6.Transaction = transaccion
+                        comando6.CommandType = CommandType.StoredProcedure
+                        comando6.Parameters.Add(New OleDb.OleDbParameter("@prod_codinterno", prod_codigo))
+                        comando6.Parameters.Add(New OleDb.OleDbParameter("@prod_stock", diferencia))
+                        comando6.Parameters.Add(New OleDb.OleDbParameter("@prod_gondola", diferencia_gondola))
+                        comando6.Parameters.Add(New OleDb.OleDbParameter("@sucursal_id", sucursal_id))
+                        comando6.ExecuteNonQuery() 'lo uso para que guarde a medida que cicla.
+                    End If
+                    j = j + 1
+                End While
+
+                transaccion.Commit() 'esta instruccion recien hace la transaccion en lote de todo lo q estoy insertando.
+                validar_op = "GUARDADO"
+
+            Catch ex As Exception
+                validar_op = "ERROR"
+                'MsgBox("ERROR EN LA TRANSACCION, SE VOLVERA A ATRAS.", vbOK, "Sistema de Gestión.")
+                Try
+                    transaccion.Rollback() 'deshace todos los insert en la bd, en ambas tablas. -------------IMPORTANTEEEEEEEEEEEEEEEEE
+                Catch ex_rollback As Exception
+                    'no muestro nada
+                End Try
+            End Try
+        End Using
+
+        'defino un dataset para devolver a la capa de aplicacion, necesito mandar 2 valores. validar_op y factura_id para generar el reporte.
+        Dim tabla_datos As New DataTable
+        tabla_datos.Clear()
+        tabla_datos.Columns.Add("validar_op")
+        tabla_datos.Columns.Add("factura_id")
+
+        Dim fila As DataRow = tabla_datos.NewRow
+        fila("validar_op") = validar_op
+        fila("factura_id") = factura_id
+
+        tabla_datos.Rows.Add(fila)
+
+        Return tabla_datos
+    End Function
+
+
 
 #End Region
 
@@ -476,13 +650,14 @@ Public Class Venta
     End Sub
 
 
-
+    'usado en el pago en efectivo en el modulo de caja.
     Public Function PAGO_CAJA_TRANSACCION(ByVal ventaprod_total As Decimal, ByVal ventaprod_fecha As Date, ByVal usuario_id As Integer, ByVal ventaprod_tipovta As String, ByVal cliente_id As Integer,
                                        ByVal ventaprod_subtotal As Decimal, ByVal ventaprod_descuento_pesos As Decimal, ByVal ventaprod_descuento_porcentaje As Decimal,
                                        ByVal ventaprod_iva_porcentaje As Decimal, ByVal ventaprod_iva_pesos As Decimal, ByVal ventaprod_observacion As String,
                                        ByVal Servicio_id As Integer, ByVal vendedor_id As Integer, ByVal ventaprod_estado As String, ByVal CAJA_id As Integer, ByVal producto_detalle As DataTable, ByVal terminal_id As Integer, ByVal TurnoUsuario_id As Integer,
-                                       ByVal CAJAdetalle_ingreso_efectivo As Decimal, ByVal ingreso As Decimal, ByVal sucursal_id As Integer) As String
+                                       ByVal CAJAdetalle_ingreso_efectivo As Decimal, ByVal ingreso As Decimal, ByVal sucursal_id As Integer) As DataTable
         Dim validar_op As String = ""
+        Dim factura_id As Integer = 0
         Using connection As OleDbConnection = dbconn
             Dim transaccion As OleDbTransaction = Nothing
             Try
@@ -520,7 +695,7 @@ Public Class Venta
                 Dim ds_JE2 As New DataSet()
                 Dim da_JE2 As New OleDbDataAdapter(comando2)
                 da_JE2.Fill(ds_JE2, "Factura") 'con esta instruccion recupero en un dataset el select del procedimiento almacenado "Equipo_alta"
-                Dim factura_id As Integer = ds_JE2.Tables(0).Rows(0).Item("factura_id")
+                factura_id = ds_JE2.Tables(0).Rows(0).Item("factura_id")
                 '//////////////guardo productos///////////////
                 Dim i As Integer = 0
                 While i < producto_detalle.Rows.Count
@@ -619,9 +794,23 @@ Public Class Venta
                 End Try
             End Try
         End Using
-        Return validar_op
+
+        'defino un dataset para devolver a la capa de aplicacion, necesito mandar 2 valores. validar_op y factura_id para generar el reporte.
+        Dim tabla_datos As New DataTable
+        tabla_datos.Clear()
+        tabla_datos.Columns.Add("validar_op")
+        tabla_datos.Columns.Add("factura_id")
+
+        Dim fila As DataRow = tabla_datos.NewRow
+        fila("validar_op") = validar_op
+        fila("factura_id") = factura_id
+
+        tabla_datos.Rows.Add(fila)
+
+        Return tabla_datos
     End Function
 
+    
     'ventaproducto_alta
     Public Function VentaProducto_alta(ByVal ventaprod_total As Decimal, ByVal ventaprod_fecha As Date, ByVal usuario_id As Integer, ByVal ventaprod_tipovta As String, ByVal cliente_id As Integer,
                                        ByVal ventaprod_subtotal As Decimal, ByVal ventaprod_descuento_pesos As Decimal, ByVal ventaprod_descuento_porcentaje As Decimal,
@@ -719,8 +908,6 @@ Public Class Venta
         dbconn.Close()
 
     End Sub
-
-
 
 
     'ventaturno_alta
@@ -932,9 +1119,6 @@ Public Class Venta
         dbconn.Close()
         Return ds_JE
     End Function
-
-
-
 
     Public Function Producto_x_Sucursal_obtener_todo_marca(ByVal Sucursal_id As Integer, ByVal marca_id As Integer) As DataSet
         Try
@@ -1194,6 +1378,97 @@ Public Class Venta
         Return ds_JE
     End Function
 
+    'remito_generar_factura
+    Public Function remito_generar_factura_TRANSACCION(ByVal ventaprod_id As Integer, ByVal ventaprod_estado As String, ByVal CAJA_id As Integer, ByVal remito_id As Integer, ByVal terminal_id As Integer,
+                                                       ByVal TurnoUsuario_id As Integer,
+                                                       ByVal CAJAdetalle_ingreso_efectivo As Decimal,
+                                ByVal CAJAdetalle_egreso As Decimal,
+                                ByVal CajaTipoMov_int As Integer,
+                                ByVal CAJAdetalle_ingreso_tarjeta As Decimal,
+                                ByVal ingreso As Decimal,
+                                ByVal CAJAdetalle_fechahora As DateTime) As DataTable
+        Dim validar_op As String = ""
+        Dim factura_id As Integer = 0
+        Using connection As OleDbConnection = dbconn
+            Dim transaccion As OleDbTransaction = Nothing
+            Try
+                connection.Open()
+                transaccion = connection.BeginTransaction
+                'MOIFICO EL ESTADO EN VENTA
+                Dim comando As New OleDbCommand("Factura_modificar_estado", connection)
+                comando.Transaction = transaccion
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_id", ventaprod_id))
+                comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_estado", ventaprod_estado))
+                Dim ds_JE As New DataSet()
+                Dim da_JE As New OleDbDataAdapter(comando)
+                da_JE.Fill(ds_JE, "Venta") '
+
+                'GENERO LA FACTURA EN SU CORRESP TABLA
+                Dim comando2 As New OleDbCommand("Factura_alta", connection)
+                comando2.Transaction = transaccion
+                comando2.CommandType = CommandType.StoredProcedure
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_id", ventaprod_id))
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@factura_fecha", Now))
+                comando2.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
+                Dim ds_JE2 As New DataSet()
+                Dim da_JE2 As New OleDbDataAdapter(comando2)
+                da_JE2.Fill(ds_JE2, "Factura")
+                factura_id = ds_JE2.Tables(0).Rows(0).Item("factura_id")
+
+                'MODIFICAR ESTADO DEL REMITO
+                Dim comando3 As New OleDbCommand("Remito_modificar_estado", connection)
+                comando3.Transaction = transaccion
+                comando3.CommandType = CommandType.StoredProcedure
+                comando3.Parameters.Add(New OleDb.OleDbParameter("@remito_id", remito_id))
+                comando3.Parameters.Add(New OleDb.OleDbParameter("@remito_estado", "Facturado"))
+                Dim ds_JE3 As New DataSet()
+                Dim da_JE3 As New OleDbDataAdapter(comando3)
+                da_JE3.Fill(ds_JE3, "Remito")
+
+                'ACTUALIZAR CAJA
+                Dim descripcion As String = "Factura Nº" + CStr(factura_id)
+                Dim comando4 As New OleDbCommand("Caja_Actualizar3", connection)
+                comando4.Transaction = transaccion
+                comando4.CommandType = CommandType.StoredProcedure
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@terminal_id", terminal_id))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@TurnoUsuario_id", TurnoUsuario_id)) 'para saber quien vende QUE, en cada turno
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@descripcion", descripcion))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_ingreso_efectivo", CAJAdetalle_ingreso_efectivo))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_egreso", CAJAdetalle_egreso))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CajaTipoMov_int", CajaTipoMov_int))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_ingreso_tarjeta", CAJAdetalle_ingreso_tarjeta))
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@ingreso", ingreso)) 'este es el monto de ingreso, puede ser efectivo/tarjeta
+                comando4.Parameters.Add(New OleDb.OleDbParameter("@CAJAdetalle_fechahora", CAJAdetalle_fechahora))
+                Dim ds_JE4 As New DataSet()
+                Dim da_JE4 As New OleDbDataAdapter(comando4)
+                da_JE4.Fill(ds_JE4, "CAJA")
+                transaccion.Commit() 'esta instruccion recien hace la transaccion en lote de todo lo q estoy insertando.
+                validar_op = "GUARDADO"
+
+            Catch ex As Exception
+                validar_op = "ERROR"
+                'MsgBox("ERROR EN LA TRANSACCION, SE VOLVERA A ATRAS.", vbOK, "Sistema de Gestión.")
+                Try
+                    transaccion.Rollback() 'deshace todos los insert en la bd, en ambas tablas. -------------IMPORTANTEEEEEEEEEEEEEEEEE
+                Catch ex_rollback As Exception
+                    'no muestro nada
+                End Try
+            End Try
+        End Using
+        'defino un dataset para devolver a la capa de aplicacion, necesito mandar 2 valores. validar_op y factura_id para generar el reporte.
+        Dim tabla_datos As New DataTable
+        tabla_datos.Clear()
+        tabla_datos.Columns.Add("validar_op")
+        tabla_datos.Columns.Add("factura_id")
+        Dim fila As DataRow = tabla_datos.NewRow
+        fila("validar_op") = validar_op
+        fila("factura_id") = factura_id
+        tabla_datos.Rows.Add(fila)
+        Return tabla_datos
+    End Function
+
     Public Function Factura_modificar_estado(ByVal ventaprod_id As Integer, ByVal ventaprod_estado As String) As DataSet
 
         Try
@@ -1359,7 +1634,7 @@ Public Class Venta
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_id", Servicio_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@vendedor_id", vendedor_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@ventaprod_estado", ventaprod_estado))
-        comando.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@CAJA_id", CAJA_id))
 
         'el tipo de venta es cliente o consumidor final
         'el id del cliente es 0 en caso de ser consumidor final

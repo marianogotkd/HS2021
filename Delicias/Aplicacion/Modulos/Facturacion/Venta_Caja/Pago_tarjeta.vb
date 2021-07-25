@@ -84,10 +84,212 @@
         End If
     End Sub
 
-    Private Sub BO_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BO_guardar.Click
-        If Venta_Caja_gestion.procedencia = "Remito modificar" Then
-            remito_gen_factura()
+#Region "VENTA EN CAJA: PAGO TARJETA"
+    Private Sub VENTA_TARJETA()
+        If CDec(tx_total.Text) = 0 Then
+            MessageBox.Show("El monto total es incorrecto.", "Sistema de Gestión.")
         Else
+            'VALICACIONES
+            If tx_tarjeta.Text <> "" And tx_comprobante.Text <> "" Then
+                If Venta_Caja_gestion.DataGridView1.Rows.Count <> 0 Then 'es la grilla de los productos agregados
+                    'If Venta_Caja_gestion.DataG_lista.Rows.Count <> 0 Then
+                    'If RB_Cliente.Checked = True Then
+                    '    If DG_clientes.CurrentRow.Cells(1).Value = True Then
+                    'GUARDAR EN TABLA "Venta_Producto"///////////////////////////////////////////////////////////////////////////////////
+                    Dim usuario_id As String
+                    usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+                    Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+                    Dim sucursal_id As Integer = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
+
+
+                    Dim tipo_vta As String = ""
+                    Dim cliente_id As Integer
+                    If Venta_Caja_gestion.RB_Consumidor.Checked = True Then
+                        tipo_vta = "Consumidor Final"
+                        cliente_id = 0
+                    Else
+                        tipo_vta = "Cliente"
+                        cliente_id = Venta_Caja_gestion.DG_clientes.CurrentRow.Cells(0).Value
+                    End If
+                    Dim venta_tipo_descripcion As String = ""
+                    If Venta_Caja_gestion.tipo_vta = "Minorista" Then
+                        venta_tipo_descripcion = "Venta Minorista-Tarjeta"
+                    Else
+                        venta_tipo_descripcion = "Venta Mayorista-Tarjeta"
+                    End If
+                    '//////CHOCO: 03-12-2019 - se agrega el parametro de "Vendedor", en la tabla ventaproducto_alta////////////
+                    Dim vendedor_id As Integer = CInt(Venta_Caja_gestion.ComboBox_vendedor.SelectedValue)
+                    Dim ds_Venta As DataSet = DAventa.VentaProducto_alta(CDec(tx_total.Text),
+                                                     Now,
+                                                     usuario_id,
+                                                     tipo_vta,
+                                                     cliente_id, CDec(Venta_Caja_gestion.txt_subtotal.Text),
+                                                     CDec(Venta_Caja_gestion.txt_descuento.Text),
+                                                     CDec(Venta_Caja_gestion.txt_desc_porc.Text),
+                                                     CDec(Venta_Caja_gestion.ComboBox_iva.SelectedItem),
+                                                      CDec(Venta_Caja_gestion.txt_impuesto_aplicado.Text), venta_tipo_descripcion, 0, vendedor_id, "Cobrado")
+                    Dim ventaprod_id As Integer = CType(ds_Venta.Tables(0).Rows(0).Item("ventaprod_id"), String)
+                    '/////////////////choco: 04-12-2019 - genero la factura en su correspondiente tabla///////////////////
+
+                    Dim ds_factura As DataSet = DAventa.Factura_alta(ventaprod_id, Now, Inicio.CAJA_id)
+                    Dim factura_id As Integer = ds_factura.Tables(0).Rows(0).Item("factura_id")
+
+
+                    '////////////////aqui cargamos en cuenta corriente, si corresponde - CHOCO: 03-12-2019//////////////////
+                    '///////////lo comento, x q si es pago en efectivo, no se registra en la tabla cuenta corriente//////////
+                    'Dim ds_cuentacorrente As DataSet = DAcuentacorriente.CtaCte_buscar_Cliente(cliente_id)
+                    'If ds_cuentacorrente.Tables(0).Rows.Count <> 0 Then
+                    '    'tiene cuenta y va a pagar en efectivo.
+                    '    Dim CtaCte_id As Integer = ds_cuentacorrente.Tables(0).Rows(0).Item("CtaCte_id")
+                    '    DAcuentacorriente.Venta_CtaCte_alta(ventaprod_id, CtaCte_id)
+                    '    Dim concepto As String = "Cobro comprobante Nº: " + CStr(ventaprod_id)
+                    '    DAcuentacorriente.CtaCte_movimiento_alta(CtaCte_id, "Ingreso", concepto, CDec(tx_total.Text), Now)
+                    'End If
+                    '////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    'GUARDAR EN TABLA "Venta_Producto_detalle"
+                    For Each row As DataGridViewRow In Venta_Caja_gestion.DataGridView1.Rows
+                        If row.Cells("columna_prod_id").Value <> "" Then
+                            If row.Cells("columna_prod_id").Value <> 0 Then
+                                DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
+                            End If
+                        End If
+                    Next
+
+                    'DAcaja.Caja_Actualizar(CDec(tx_total.Text), Inicio.USU_id)
+                    '//////////////////////CAJA///////////////////////////////////
+                    Dim descripcion As String = "Factura Nº" + CStr(factura_id)
+                    'OK
+                    'DAcaja.Caja_Actualizar2(Inicio.USU_id, descripcion, CDec(0), CDec(0), 4, CDec(tx_total.Text), CDec(tx_total.Text), Now, Inicio.terminal_id, US_administrador.TurnoUsuario_id) '4 es tarjeta
+
+                    '//////////////////choco 17-12-2019/////////////////
+                    DAcaja.Caja_Actualizar3(Inicio.CAJA_id, Inicio.terminal_id, US_administrador.TurnoUsuario_id, descripcion, CDec(0), CDec(0), 4, CDec(tx_total.Text), CDec(tx_total.Text), Now) '4 es tarjeta
+                    '///////////////fin//////////////
+
+                    '//////////////////////REGISTRO VENTA TARJETA EN TABLA PARTIDA "VENTA_X_TARJETA"
+                    DAventa.Venta_x_tarjeta_alta(ventaprod_id, CDec(tx_total.Text), tx_tarjeta.Text, tx_comprobante.Text)
+
+
+                    'aqui hago el descuento de stock...
+                    'primero de los productos ....luego de los combos...(ya q estan formados por varios productos)
+
+                    Dim i As Integer = 0
+                    Dim ds_stock As New DataSet
+                    While i < Venta_Caja_gestion.DataGridView1.Rows.Count
+                        Dim prod_codigo As Integer = 0
+                        If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "" Then
+                            If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
+                                prod_codigo = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                            End If
+                        Else
+                            Exit While 'salgo del ciclo x que la fila esta vacia
+                        End If
+
+                        ds_stock = DAproducto.Producto_x_sucursal_buscarcod(prod_codigo, sucursal_id)
+                        If ds_stock.Tables(0).Rows.Count <> 0 Then
+                            Dim diferencia As Decimal = CDec(ds_stock.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
+                            If diferencia < 0 Then
+                                diferencia = 0
+                            End If
+
+                            Dim diferencia_gondola As Integer = 0
+                            Dim cantidad As Integer = 0
+                            'If ds_stock.Tables(1).Rows.Count <> 0 Then
+                            '    If IsDBNull(ds_stock.Tables(1).Rows(0).Item("prod_gondola")) Then
+                            '    Else
+                            '        cantidad = ds_stock.Tables(1).Rows(0).Item("prod_gondola")
+                            '    End If
+                            '    diferencia_gondola = CInt(cantidad) - CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
+                            'End If
+                            DAventa.Venta_actualizar_stock_Caja(prod_codigo, diferencia, diferencia_gondola, sucursal_id)
+                            'MsgBox("actualizo stock de", prod_codigo)
+
+                        Else 'si no lo encuentra significa q es un combo o bien una promocion...asi que tengo q actualizar el stock de varios
+                            If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value <> "0" Then
+                                'primero lo busco como combo.
+
+                                'aqui veo si ponerle el indice _tabla en 2 o 3...dependiendo del procedimiento q tome los recursos el DS_PROD...
+                                'son 2 las rutinas....Venta_obtenerProducto_listaregular y [Venta_obtenerProducto_Combos]
+                                Dim indice_tabla As Integer = 0
+                                If Venta_Caja_gestion.RB_Si.Checked = False Then
+                                    indice_tabla = 3
+                                Else
+                                    indice_tabla = 2
+                                End If
+                                'id del combo
+                                Dim ProdCombo_id As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
+                                Dim cantidad_combos As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
+                                Dim j As Integer = 0
+                                While j < Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows.Count
+                                    If ProdCombo_id = Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("ProdCombo_id") Then
+                                        Dim prod_id As Integer = Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("prod_id")
+                                        Dim cantidad_item As Integer = CInt(Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("ProdComboDet_cantidad"))
+                                        ds_stock = DAproducto.Producto_buscar_id(prod_id)
+
+                                        Dim cantidad_total As Integer = CInt(cantidad_combos * cantidad_item)
+
+                                        Dim diferencia As Integer = CInt(ds_stock.Tables(0).Rows(0).Item("prod_stock")) - cantidad_total
+
+
+                                        Dim diferencia_gondola As Integer = 0
+                                        Dim cantidad As Integer = 0
+                                        If ds_stock.Tables(1).Rows.Count <> 0 Then
+                                            If IsDBNull(ds_stock.Tables(1).Rows(0).Item("prod_gondola")) Then
+                                            Else
+                                                cantidad = ds_stock.Tables(1).Rows(0).Item("prod_gondola")
+                                            End If
+                                            diferencia_gondola = CInt(cantidad) - cantidad_total
+                                        End If
+
+                                        DAventa.Venta_actualizar_stock_Caja_2(prod_id, diferencia, diferencia_gondola)
+                                        'MsgBox("actualizo stock de combo", prod_codigo)
+                                    End If
+                                    j = j + 1
+                                End While
+                            Else
+                                'aqui llamo a la rutina ACTUALIZAR STOCK DE PROMOCION
+                                Dim LISTA_codinterno As String = (Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_prod_id").Value)
+                                Dim cantidad_PROMOS As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
+                                Dim LISTA_ID As Integer = 0
+
+                                'Busco el id de la promocion en el ds_promo
+                                Dim ii As Integer = 0
+                                While ii < Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows.Count
+                                    If LISTA_codinterno = Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows(ii).Item("LISTA_codinterno") Then
+                                        LISTA_ID = Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows(ii).Item("LISTA_id")
+                                    End If
+                                    ii = ii + 1
+                                End While
+                                Venta_Caja_gestion.Actualizar_Stock_Promocion(LISTA_ID, cantidad_PROMOS)
+
+                            End If
+                        End If
+                        i = i + 1
+                    End While
+                    'aqui llamo a la rutina que me muestra el reporte.
+                    crear_reporte(ds_usuario, factura_id)
+                    MessageBox.Show("La venta fue registrada correctamente.", "Sistema de Gestion.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Venta_Caja_gestion.Limpiar()
+
+                    'Dim ruta As String
+                    'ruta = Application.StartupPath & "\..\..\Sonido\Gallega actualizada.wav"
+                    'My.Computer.Audio.Play(ruta, AudioPlayMode.Background)
+                    Me.Close()
+
+                    'Else
+                    '    MessageBox.Show("Error, seleccione cliente", "Sistema de Gestion.")
+                    'End If
+                    '    End If
+                Else
+                    MessageBox.Show("Error, No hay productos agregados", "Sistema de Gestión", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            Else
+                MessageBox.Show("Error, debe ingresar Tarjeta y Nº de Comprobante.", "Sistema de Gestión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
+    End Sub
+
+    Private Sub VENTA_TARJETA_TRANSACCION()
+        Try
             If CDec(tx_total.Text) = 0 Then
                 MessageBox.Show("El monto total es incorrecto.", "Sistema de Gestión.")
             Else
@@ -121,166 +323,35 @@
                         End If
                         '//////CHOCO: 03-12-2019 - se agrega el parametro de "Vendedor", en la tabla ventaproducto_alta////////////
                         Dim vendedor_id As Integer = CInt(Venta_Caja_gestion.ComboBox_vendedor.SelectedValue)
-                        Dim ds_Venta As DataSet = DAventa.VentaProducto_alta(CDec(tx_total.Text),
-                                                         Now,
-                                                         usuario_id,
-                                                         tipo_vta,
-                                                         cliente_id, CDec(Venta_Caja_gestion.txt_subtotal.Text),
-                                                         CDec(Venta_Caja_gestion.txt_descuento.Text),
-                                                         CDec(Venta_Caja_gestion.txt_desc_porc.Text),
-                                                         CDec(Venta_Caja_gestion.ComboBox_iva.SelectedItem),
-                                                          CDec(Venta_Caja_gestion.txt_impuesto_aplicado.Text), venta_tipo_descripcion, 0, vendedor_id, "Cobrado")
-                        Dim ventaprod_id As Integer = CType(ds_Venta.Tables(0).Rows(0).Item("ventaprod_id"), String)
-                        '/////////////////choco: 04-12-2019 - genero la factura en su correspondiente tabla///////////////////
-
-                        Dim ds_factura As DataSet = DAventa.Factura_alta(ventaprod_id, Now, Inicio.CAJA_id)
-                        Dim factura_id As Integer = ds_factura.Tables(0).Rows(0).Item("factura_id")
 
 
-                        '////////////////aqui cargamos en cuenta corriente, si corresponde - CHOCO: 03-12-2019//////////////////
-                        '///////////lo comento, x q si es pago en efectivo, no se registra en la tabla cuenta corriente//////////
-                        'Dim ds_cuentacorrente As DataSet = DAcuentacorriente.CtaCte_buscar_Cliente(cliente_id)
-                        'If ds_cuentacorrente.Tables(0).Rows.Count <> 0 Then
-                        '    'tiene cuenta y va a pagar en efectivo.
-                        '    Dim CtaCte_id As Integer = ds_cuentacorrente.Tables(0).Rows(0).Item("CtaCte_id")
-                        '    DAcuentacorriente.Venta_CtaCte_alta(ventaprod_id, CtaCte_id)
-                        '    Dim concepto As String = "Cobro comprobante Nº: " + CStr(ventaprod_id)
-                        '    DAcuentacorriente.CtaCte_movimiento_alta(CtaCte_id, "Ingreso", concepto, CDec(tx_total.Text), Now)
-                        'End If
-                        '////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        'GUARDAR EN TABLA "Venta_Producto_detalle"
-                        For Each row As DataGridViewRow In Venta_Caja_gestion.DataGridView1.Rows
-                            If row.Cells("columna_prod_id").Value <> "" Then
-                                If row.Cells("columna_prod_id").Value <> 0 Then
-                                    DAventa.VentaProductoDetalle_alta(ventaprod_id, row.Cells(1).Value, row.Cells(5).Value, CDec(row.Cells(7).Value), CDec(row.Cells(8).Value), row.Cells(3).Value, row.Cells(2).Value, 0, CDec(row.Cells(6).Value))
-                                End If
-                            End If
-                        Next
+                        Dim validar_op_tabla As DataTable = DAventa.PAGO_CAJA_TARJETA_TRANSACCION(CDec(tx_total.Text),
+                                                             Now,
+                                                             usuario_id,
+                                                             tipo_vta,
+                                                             cliente_id, CDec(Venta_Caja_gestion.txt_subtotal.Text),
+                                                             CDec(Venta_Caja_gestion.txt_descuento.Text),
+                                                             CDec(Venta_Caja_gestion.txt_desc_porc.Text),
+                                                             CDec(Venta_Caja_gestion.ComboBox_iva.SelectedItem),
+                                                              CDec(Venta_Caja_gestion.txt_impuesto_aplicado.Text), venta_tipo_descripcion, 0, vendedor_id, "Cobrado", Inicio.CAJA_id, Venta_Caja_gestion.Venta_Caja_ds.Tables("Producto_agregado"),
+                                                              Inicio.terminal_id, US_administrador.TurnoUsuario_id, CDec(tx_total.Text), CDec(tx_total.Text), sucursal_id,
+                                                              tx_tarjeta.Text, tx_comprobante.Text)
 
-                        'DAcaja.Caja_Actualizar(CDec(tx_total.Text), Inicio.USU_id)
-                        '//////////////////////CAJA///////////////////////////////////
-                        Dim descripcion As String = "Factura Nº" + CStr(factura_id)
-                        'OK
-                        'DAcaja.Caja_Actualizar2(Inicio.USU_id, descripcion, CDec(0), CDec(0), 4, CDec(tx_total.Text), CDec(tx_total.Text), Now, Inicio.terminal_id, US_administrador.TurnoUsuario_id) '4 es tarjeta
+                        If validar_op_tabla.Rows(0).Item(0) = "GUARDADO" Then
+                            'aqui llamo a la rutina que me muestra el reporte.
+                            Dim factura_id As Integer = CInt(validar_op_tabla.Rows(0).Item(1))
+                            'aqui llamo a la rutina que me muestra el reporte.
+                            crear_reporte(ds_usuario, factura_id)
+                            MessageBox.Show("La venta fue registrada correctamente.", "Sistema de Gestion.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Venta_Caja_gestion.Limpiar()
 
-                        '//////////////////choco 17-12-2019/////////////////
-                        DAcaja.Caja_Actualizar3(Inicio.CAJA_id, Inicio.terminal_id, US_administrador.TurnoUsuario_id, descripcion, CDec(0), CDec(0), 4, CDec(tx_total.Text), CDec(tx_total.Text), Now) '4 es tarjeta
-                        '///////////////fin//////////////
-
-                        '//////////////////////REGISTRO VENTA TARJETA EN TABLA PARTIDA "VENTA_X_TARJETA"
-                        DAventa.Venta_x_tarjeta_alta(ventaprod_id, CDec(tx_total.Text), tx_tarjeta.Text, tx_comprobante.Text)
-
-
-                        'aqui hago el descuento de stock...
-                        'primero de los productos ....luego de los combos...(ya q estan formados por varios productos)
-
-                        Dim i As Integer = 0
-                        Dim ds_stock As New DataSet
-                        While i < Venta_Caja_gestion.DataGridView1.Rows.Count
-                            Dim prod_codigo As Integer = 0
-                            If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "" Then
-                                If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value <> "0" Then
-                                    prod_codigo = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
-                                End If
-                            Else
-                                Exit While 'salgo del ciclo x que la fila esta vacia
-                            End If
-                            
-                            ds_stock = DAproducto.Producto_x_sucursal_buscarcod(prod_codigo, sucursal_id)
-                            If ds_stock.Tables(0).Rows.Count <> 0 Then
-                                Dim diferencia As Decimal = CDec(ds_stock.Tables(0).Rows(0).Item("ProdxSuc_stock")) - CDec(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
-                                If diferencia < 0 Then
-                                    diferencia = 0
-                                End If
-
-                                Dim diferencia_gondola As Integer = 0
-                                Dim cantidad As Integer = 0
-                                'If ds_stock.Tables(1).Rows.Count <> 0 Then
-                                '    If IsDBNull(ds_stock.Tables(1).Rows(0).Item("prod_gondola")) Then
-                                '    Else
-                                '        cantidad = ds_stock.Tables(1).Rows(0).Item("prod_gondola")
-                                '    End If
-                                '    diferencia_gondola = CInt(cantidad) - CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
-                                'End If
-                                DAventa.Venta_actualizar_stock_Caja(prod_codigo, diferencia, diferencia_gondola, sucursal_id)
-                                'MsgBox("actualizo stock de", prod_codigo)
-
-                            Else 'si no lo encuentra significa q es un combo o bien una promocion...asi que tengo q actualizar el stock de varios
-                                If Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value <> "0" Then
-                                    'primero lo busco como combo.
-
-                                    'aqui veo si ponerle el indice _tabla en 2 o 3...dependiendo del procedimiento q tome los recursos el DS_PROD...
-                                    'son 2 las rutinas....Venta_obtenerProducto_listaregular y [Venta_obtenerProducto_Combos]
-                                    Dim indice_tabla As Integer = 0
-                                    If Venta_Caja_gestion.RB_Si.Checked = False Then
-                                        indice_tabla = 3
-                                    Else
-                                        indice_tabla = 2
-                                    End If
-                                    'id del combo
-                                    Dim ProdCombo_id As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_codinterno").Value)
-                                    Dim cantidad_combos As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
-                                    Dim j As Integer = 0
-                                    While j < Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows.Count
-                                        If ProdCombo_id = Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("ProdCombo_id") Then
-                                            Dim prod_id As Integer = Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("prod_id")
-                                            Dim cantidad_item As Integer = CInt(Venta_Caja_gestion.VentaGestion_DS_PROD.Tables(indice_tabla).Rows(j).Item("ProdComboDet_cantidad"))
-                                            ds_stock = DAproducto.Producto_buscar_id(prod_id)
-
-                                            Dim cantidad_total As Integer = CInt(cantidad_combos * cantidad_item)
-
-                                            Dim diferencia As Integer = CInt(ds_stock.Tables(0).Rows(0).Item("prod_stock")) - cantidad_total
-
-
-                                            Dim diferencia_gondola As Integer = 0
-                                            Dim cantidad As Integer = 0
-                                            If ds_stock.Tables(1).Rows.Count <> 0 Then
-                                                If IsDBNull(ds_stock.Tables(1).Rows(0).Item("prod_gondola")) Then
-                                                Else
-                                                    cantidad = ds_stock.Tables(1).Rows(0).Item("prod_gondola")
-                                                End If
-                                                diferencia_gondola = CInt(cantidad) - cantidad_total
-                                            End If
-
-                                            DAventa.Venta_actualizar_stock_Caja_2(prod_id, diferencia, diferencia_gondola)
-                                            'MsgBox("actualizo stock de combo", prod_codigo)
-                                        End If
-                                        j = j + 1
-                                    End While
-                                Else
-                                    'aqui llamo a la rutina ACTUALIZAR STOCK DE PROMOCION
-                                    Dim LISTA_codinterno As String = (Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_prod_id").Value)
-                                    Dim cantidad_PROMOS As Integer = CInt(Venta_Caja_gestion.DataGridView1.Rows(i).Cells("columna_cantidad").Value)
-                                    Dim LISTA_ID As Integer = 0
-
-                                    'Busco el id de la promocion en el ds_promo
-                                    Dim ii As Integer = 0
-                                    While ii < Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows.Count
-                                        If LISTA_codinterno = Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows(ii).Item("LISTA_codinterno") Then
-                                            LISTA_ID = Venta_Caja_gestion.VentaGestion_ds_PROMO.Tables(0).Rows(ii).Item("LISTA_id")
-                                        End If
-                                        ii = ii + 1
-                                    End While
-                                    Venta_Caja_gestion.Actualizar_Stock_Promocion(LISTA_ID, cantidad_PROMOS)
-
-                                End If
-                            End If
-                            i = i + 1
-                        End While
-                        'aqui llamo a la rutina que me muestra el reporte.
-                        crear_reporte(ds_usuario, factura_id)
-                        MessageBox.Show("La venta fue registrada correctamente.", "Sistema de Gestion.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Venta_Caja_gestion.Limpiar()
-
-                        'Dim ruta As String
-                        'ruta = Application.StartupPath & "\..\..\Sonido\Gallega actualizada.wav"
-                        'My.Computer.Audio.Play(ruta, AudioPlayMode.Background)
-                        Me.Close()
-
-                        'Else
-                        '    MessageBox.Show("Error, seleccione cliente", "Sistema de Gestion.")
-                        'End If
-                        '    End If
+                            'Dim ruta As String
+                            'ruta = Application.StartupPath & "\..\..\Sonido\Gallega actualizada.wav"
+                            'My.Computer.Audio.Play(ruta, AudioPlayMode.Background)
+                            Me.Close()
+                        Else
+                            MessageBox.Show("ERROR, la transacción no se pudo realizar correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
                     Else
                         MessageBox.Show("Error, No hay productos agregados", "Sistema de Gestión", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     End If
@@ -288,6 +359,20 @@
                     MessageBox.Show("Error, debe ingresar Tarjeta y Nº de Comprobante.", "Sistema de Gestión", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
+        Catch ex As Exception
+            MessageBox.Show("ERROR, la transacción no se pudo realizar correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+#End Region
+
+
+    Private Sub BO_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BO_guardar.Click
+        If Venta_Caja_gestion.procedencia = "Remito modificar" Then
+            remito_gen_factura()
+        Else
+            'VENTA_TARJETA 'ANDA BIEN PERO NO TIENE ROLL BACK
+            VENTA_TARJETA_TRANSACCION() 'esta tiene el roll back 
         End If
     End Sub
 

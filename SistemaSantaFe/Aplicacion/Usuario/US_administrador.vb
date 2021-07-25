@@ -940,4 +940,8 @@ Public Property EnabledCerrar() As Boolean
 
 
     End Sub
+
+    Private Sub CalendarioPruebaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioPruebaToolStripMenuItem.Click
+        Calendario_b.Show()
+    End Sub
 End Class

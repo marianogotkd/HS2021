@@ -36,6 +36,40 @@
        
     End Sub
 
+    '1) genero el panel con los dias
+    Private Sub GenerateDayPanel(ByVal totalDays As Integer)
+        flDays.Controls.Clear()
+        listFlDay.Clear()
+        For i As Integer = 1 To totalDays
+            Dim fl As New FlowLayoutPanel
+            'fl.Name = $"flDay{i}"
+            'fl.Name = "choco"
+            If i = 1 Then
+                fl.BackColor = Color.Red
+            Else
+                fl.BackColor = Color.White
+            End If
+            fl.Size = New Size(128, 99)
+            'fl.Size = New Size(50, 50)
+
+            fl.BorderStyle = BorderStyle.FixedSingle
+            fl.Cursor = Cursors.Hand
+            fl.AutoScroll = True
+            'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
+            AddHandler fl.Click, AddressOf click_izquierdo 'choco 
+            AddHandler fl.MouseMove, AddressOf click_derecho
+            AddHandler fl.MouseHover, AddressOf pasar_por_sobre_el_panel
+            flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
+            flDays.Controls.Add(fl)
+            listFlDay.Add(fl)
+        Next
+    End Sub
+
+
+
+
+
+
     Public choco_day As Integer
     Private Sub click_derecho(ByVal sender As Object, ByVal e As System.EventArgs)
         choco_day = CType(sender, FlowLayoutPanel).Tag
@@ -173,6 +207,7 @@
     End Sub
 
     Dim mantenimiento_ds As New mantenimiento_ds
+    'agrega los mantenimientos en los paneles de los dias.
     Private Sub AddAppointmentToFlDay(ByVal startDayAtFlNumber As Integer)
         Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
         Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
@@ -185,7 +220,8 @@
         'ENDDATE ES EL ULTIMO DIA DEL MES
         'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
         Dim daMantenimiento As New Datos.Mantenimiento
-        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(sucursal_id) 'usaba para probar el id 19
+        'Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(sucursal_id) 'usaba para probar el id 19
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener_todo
         '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -296,6 +332,7 @@
             'Dim appDay As DateTime = DateTime.Parse(row("AppDate"))
             Dim appDay As DateTime = DateTime.Parse(row("FECHA"))
             Dim link As New LinkLabel
+            'Dim link As New Label
             'link.Tag = row("ID")
             link.Tag = row("ID")
             'link.Name = $"link{row("ID")}"
@@ -304,8 +341,15 @@
             link.Name = name
             'link.Text = row("ContactName")
 
-            link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
+            'link.Text = CStr(row("DESCRIPCION")) + " " + CStr(row("FECHA"))
+            link.Text = CStr(row("DESCRIPCION"))
             link.LinkColor = Color.Orange
+
+            'link.ForeColor = Color.Orange
+            'Dim myfont As New Font(link.Font.FontFamily, 8)
+            'link.Font = myfont
+
+            'link.Visible = False 'choco 23-07-2021 no quiero q se vean. no se para q los agrego.
 
             'If CStr(row("Servicio_Estado")) = "PENDIENTE" Then
             '    link.Text = "Rev: " + CStr(row("Servicio_id"))
@@ -328,6 +372,9 @@
             AddHandler link.Click, AddressOf link_click_izquierdo
 
             listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
+            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackColor = Color.Green  'choco 23-07-2021 quiero que los dias q tienen citas se remarquen en verde
+            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImage = My.Resources.cargaContratos
+            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImageLayout = ImageLayout.Center
             i = i + 1
             'If dt.Rows.Count > 2 And i = 2 Then
             '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."
@@ -375,43 +422,18 @@
         DisplayCurrentDate()
     End Sub
 
-    Private Sub GenerateDayPanel(ByVal totalDays As Integer)
-        flDays.Controls.Clear()
-        listFlDay.Clear()
-        For i As Integer = 1 To totalDays
-            Dim fl As New FlowLayoutPanel
-            'fl.Name = $"flDay{i}"
-            'fl.Name = "choco"
-            If i = 1 Then
-                fl.BackColor = Color.Red
-            Else
-                fl.BackColor = Color.White
-            End If
-            fl.Size = New Size(128, 99)
-            'fl.Size = New Size(50, 50)
-
-            fl.BorderStyle = BorderStyle.FixedSingle
-            fl.Cursor = Cursors.Hand
-            fl.AutoScroll = True
-            'AddHandler fl.Click, AddressOf AddNewAppointment 'choco 16-12-2020 con esto activo el evento click. 
-            AddHandler fl.Click, AddressOf click_izquierdo 'choco 
-            AddHandler fl.MouseMove, AddressOf click_derecho
-            AddHandler fl.MouseHover, AddressOf pasar_por_sobre_el_panel
-            flDays.ContextMenuStrip = ContextMenuStrip1 'agrego menu contextual con 2 item "Nuevo" y "Ver"
-            flDays.Controls.Add(fl)
-            listFlDay.Add(fl)
-
-        Next
-    End Sub
+    
 
 
-
+    'crea los paneles de los dias del calendario.
     Private Sub AddLabelDayToFlDay(ByVal startDayAtFlNumber As Integer, ByVal totalDaysInMonth As Integer)
         For Each fl As FlowLayoutPanel In listFlDay
             fl.Controls.Clear()
             fl.Tag = 0
             fl.BackColor = Color.WhiteSmoke
-
+            'fl.HorizontalScroll.Enabled = True
+            'fl.VerticalScroll.Enabled = True
+            'fl.AutoScroll = True
         Next
 
         For i As Integer = 1 To totalDaysInMonth
@@ -427,12 +449,16 @@
             listFlDay((i - 1) + (startDayAtFlNumber - 1)).Controls.Add(lbl)
 
             If New Date(currentDate.Year, currentDate.Month, i) = Date.Today Then
-                listFlDay((i - 1) + (startDayAtFlNumber - 1)).BackColor = Color.NavajoWhite
+                listFlDay((i - 1) + (startDayAtFlNumber - 1)).BackColor = Color.NavajoWhite 'este es el color de el dia actual.
+                'listFlDay((i - 1) + (startDayAtFlNumber - 1)).BackColor = Color.Blue
 
             End If
 
         Next
     End Sub
+
+
+
 
     Private Sub btnPrevMonth_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnPrevMonth.Click
         PrevMonth()

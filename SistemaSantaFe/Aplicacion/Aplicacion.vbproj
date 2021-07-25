@@ -837,6 +837,12 @@
     <Compile Include="Modulos\Lista\Lista_prod_ADD.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Mantenimiento\Calendario_b.Designer.vb">
+      <DependentUpon>Calendario_b.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mantenimiento\Calendario_b.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Mantenimiento\Calendario_Mantenimiento.Designer.vb">
       <DependentUpon>Calendario_Mantenimiento.vb</DependentUpon>
     </Compile>
@@ -1760,6 +1766,9 @@
     <EmbeddedResource Include="Modulos\Lista\Lista_prod_ADD.resx">
       <DependentUpon>Lista_prod_ADD.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mantenimiento\Calendario_b.resx">
+      <DependentUpon>Calendario_b.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mantenimiento\Calendario_Mantenimiento.resx">
       <DependentUpon>Calendario_Mantenimiento.vb</DependentUpon>
     </EmbeddedResource>
@@ -2552,6 +2561,7 @@
     <None Include="Resources\Modificar.png" />
     <Content Include="Resources\persona.png" />
     <None Include="Resources\Pasar.png" />
+    <Content Include="Resources\notification.png" />
     <Content Include="Resources\producto.jpg" />
     <None Include="Resources\search-20x20.bmp" />
     <None Include="Resources\restBackup.png" />

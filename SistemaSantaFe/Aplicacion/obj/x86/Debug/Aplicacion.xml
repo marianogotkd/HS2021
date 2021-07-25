@@ -2131,6 +2131,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.notification">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Aplicacion.My.Resources.Resources.Pasar">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

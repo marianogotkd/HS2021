@@ -376,7 +376,24 @@ Public Class Mantenimiento
 
 
 
+    Public Function Mantenimiento_iniciales_obtener_todo() As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
 
+        Dim comando As New OleDbCommand("Mantenimiento_iniciales_obtener_todo", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Mantenimiento_fecha_inicio", Mantenimiento_fecha_inicio))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Mantenimiento")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 
 #End Region
     'trae todos los mantenmientos de una sucursal, 
