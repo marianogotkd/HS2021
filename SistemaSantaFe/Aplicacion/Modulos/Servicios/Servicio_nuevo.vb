@@ -629,9 +629,26 @@
 
     Dim ds_revision_reporte As New ds_revision_reporte
     Private Sub reporte(ByVal orden_trabajo_id As Integer)
+
+
+
+        ds_revision_reporte.Tables("Empresa").Rows.Clear()
         ds_revision_reporte.Tables("Revision").Rows.Clear()
         ds_revision_reporte.Tables("repuestos").Rows.Clear()
         ds_revision_reporte.Tables("Cuadrilla").Rows.Clear()
+
+        '//////////DATOS DE LA EMPRESA//////////////
+        Dim usuario_id As String
+        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        If ds_usuario.Tables(1).Rows.Count <> 0 Then
+            ds_revision_reporte.Tables("Empresa").Rows.Clear()
+            ds_revision_reporte.Tables("Empresa").Merge(ds_usuario.Tables(1))
+        End If
+        '//////////////////////////////////////////
+
+
+
 
         Dim fila As DataRow = ds_revision_reporte.Tables("Revision").NewRow
         fila("id_revision") = orden_trabajo_id
@@ -675,6 +692,7 @@
         CrReport.Database.Tables("Revision").SetDataSource(ds_revision_reporte.Tables("Revision"))
         CrReport.Database.Tables("repuestos").SetDataSource(ds_revision_reporte.Tables("repuestos"))
         CrReport.Database.Tables("Cuadrilla").SetDataSource(ds_revision_reporte.Tables("Cuadrilla"))
+        CrReport.Database.Tables("Empresa").SetDataSource(ds_revision_reporte.Tables("Empresa"))
 
         Dim visor As New Facturacion_report_show
         visor.CrystalReportViewer1.ReportSource = CrReport
@@ -1414,11 +1432,6 @@
 
         'Me.Close()
     End Sub
-
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
 
     Private Sub crear_reporte_presupuesto(ByVal ds_usuario As DataSet)
         'pregunto si quiero ver el reporte 

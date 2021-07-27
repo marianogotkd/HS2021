@@ -66,6 +66,7 @@ Partial Class US_administrador
         Me.TurnoGestionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalendarioToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MantenimientosRealizadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CalendarioPruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripDropDownButton7 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -124,7 +125,6 @@ Partial Class US_administrador
         Me.Btn_corte_caja = New System.Windows.Forms.Button()
         Me.Label_Suc = New System.Windows.Forms.Label()
         Me.Lbl_Terminal = New System.Windows.Forms.Label()
-        Me.CalendarioPruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -438,6 +438,13 @@ Partial Class US_administrador
         Me.MantenimientosRealizadosToolStripMenuItem.Name = "MantenimientosRealizadosToolStripMenuItem"
         Me.MantenimientosRealizadosToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
         Me.MantenimientosRealizadosToolStripMenuItem.Text = "Mantenimientos realizados"
+        '
+        'CalendarioPruebaToolStripMenuItem
+        '
+        Me.CalendarioPruebaToolStripMenuItem.Name = "CalendarioPruebaToolStripMenuItem"
+        Me.CalendarioPruebaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
+        Me.CalendarioPruebaToolStripMenuItem.Text = "calendario prueba"
+        Me.CalendarioPruebaToolStripMenuItem.Visible = False
         '
         'ToolStripSeparator10
         '
@@ -935,12 +942,6 @@ Partial Class US_administrador
         Me.Lbl_Terminal.TabIndex = 60
         Me.Lbl_Terminal.Text = "Lbl_Terminal"
         Me.Lbl_Terminal.Visible = False
-        '
-        'CalendarioPruebaToolStripMenuItem
-        '
-        Me.CalendarioPruebaToolStripMenuItem.Name = "CalendarioPruebaToolStripMenuItem"
-        Me.CalendarioPruebaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.CalendarioPruebaToolStripMenuItem.Text = "calendario prueba"
         '
         'US_administrador
         '

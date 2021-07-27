@@ -89,6 +89,7 @@ Partial Class Calendario_Mantenimiento
         Me.Button3.Text = "Volver"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'btnToday
         '

@@ -172,6 +172,7 @@
     Dim ds_revision_reporte As New ds_revision_reporte
     Private Sub reporte(ByVal servicio_id As Integer)
         ds_revision_reporte.Tables("Revision").Rows.Clear()
+        ds_revision_reporte.Tables("Empresa").Rows.Clear()
 
         Dim fila As DataRow = ds_revision_reporte.Tables("Revision").NewRow
         fila("id_revision") = servicio_id
@@ -181,23 +182,28 @@
         fila("direccion") = ds_serv.Tables(0).Rows(0).Item("SucxClie_dir").ToString
         'fila("direccion") = TextBox_dir.Text
         'la direccion la recupero de la tabla cliente sucursales.
-
         fila("Sucursal") = combo_sucursal.Text
         fila("fecha") = DateTimePicker1.Value.Date
         fila("diagnostico_previo") = txt_diag.Text
         ds_revision_reporte.Tables("Revision").Rows.Add(fila)
-
+        '//////////DATOS DE LA EMPRESA//////////////
+        Dim usuario_id As String
+        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        If ds_usuario.Tables(1).Rows.Count <> 0 Then
+            ds_revision_reporte.Tables("Empresa").Rows.Clear()
+            ds_revision_reporte.Tables("Empresa").Merge(ds_usuario.Tables(1))
+        End If
+        '//////////////////////////////////////////
         Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
         CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
         CrReport.Load(Application.StartupPath & "\..\..\Modulos\Servicios\Reportes\CR_orden_revision.rpt")
         CrReport.Database.Tables("Revision").SetDataSource(ds_revision_reporte.Tables("Revision"))
-
+        CrReport.Database.Tables("Empresa").SetDataSource(ds_revision_reporte.Tables("Empresa"))
         Dim visor As New Facturacion_report_show
         visor.CrystalReportViewer1.ReportSource = CrReport
-
         visor.Text = "Orden de revision. Imprimir."
         visor.Show()
-
     End Sub
 
     Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

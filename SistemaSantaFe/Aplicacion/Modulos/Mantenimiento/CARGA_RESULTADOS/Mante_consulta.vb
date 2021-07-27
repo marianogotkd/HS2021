@@ -5,7 +5,9 @@
     Dim direccion_sucursal As String = ""
 
     Private Sub recuperar_mantenimientos()
-        Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_2(fecha.Value.Date, SucxClie_id)
+
+        Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_TODOS_2021_07_27(fecha.Value.Date)
+        'Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_2(fecha.Value.Date, SucxClie_id) choco: este funciona si se discrimna la sucursal en el calendario
 
         If ds_mant.Tables(2).Rows.Count <> 0 Then
             txt_dni.Text = ds_mant.Tables(2).Rows(0).Item("CLI_dni")
@@ -319,21 +321,24 @@
         MANT_2_ds1.Tables("Report_mantenimiento").Rows.Clear()
         MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
 
-        Dim fila As DataRow = MANT_2_ds1.Tables("Report_mantenimiento").NewRow
-        fila("id_revision") = 0
-        fila("cliente") = txt_fantasia.Text + ", Suc: " + txt_sucursal.Text
-        fila("direccion") = direccion_sucursal
-        fila("Sucursal") = txt_sucursal.Text
-        fila("fecha") = fecha.Value.Date
-        fila("diagnostico_previo") = ""
-        fila("Equipo") = ""
-        MANT_2_ds1.Tables("Report_mantenimiento").Rows.Add(fila)
-
         MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
 
         Dim ii As Integer = 0
         While ii < DG_clientes.Rows.Count
             If DG_clientes.Rows(ii).Cells("item").Value = True Then 'esta chequeado para generar el reporte
+                'los datos del cliente los tengo que recuperar de la bd.
+                Dim fila As DataRow = MANT_2_ds1.Tables("Report_mantenimiento").NewRow
+                fila("id_revision") = 0
+                fila("cliente") = DG_clientes.Rows(ii).Cells("CLI_Fan").Value + DG_clientes.Rows(ii).Cells("SucxClie_nombre").Value
+                'fila("cliente") = txt_fantasia.Text + ", Suc: " + txt_sucursal.Text
+                fila("direccion") = DG_clientes.Rows(ii).Cells("SucxClie_dir").Value
+                fila("Sucursal") = DG_clientes.Rows(ii).Cells("SucxClie_nombre").Value
+                fila("fecha") = fecha.Value.Date
+                fila("diagnostico_previo") = ""
+                fila("Equipo") = ""
+                MANT_2_ds1.Tables("Report_mantenimiento").Rows.Add(fila)
+
+
                 Dim Mantenimiento_id As Integer = DG_clientes.Rows(ii).Cells("Mantenimientoid").Value
                 Dim Equipo As String = DG_clientes.Rows(ii).Cells("Etiqueta").Value
                 Dim Tipo_mantenimiento As String = DG_clientes.Rows(ii).Cells("Tipomantenimiento").Value
@@ -355,7 +360,7 @@
 
                     j = j + 1
                 End While
-
+                Exit While 'por ahora...cosa q haga 1 reporte x cada uno q tilda. luego solucionamos esto x el tema de los grupos en el reporte.
             End If
             'Dim i As Integer = 0
             'While i < DataGridView1.Rows.Count
@@ -365,9 +370,6 @@
             '    MANT_2_ds1.Tables("Report_tareas").Rows.Add(fila2)
             '    i = i + 1
             'End While
-
-
-
             ii = ii + 1
         End While
 

@@ -23,13 +23,13 @@ Partial Class Mante_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.fecha = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
@@ -44,6 +44,11 @@ Partial Class Mante_consulta
         Me.txt_dni = New System.Windows.Forms.TextBox()
         Me.txt_fantasia = New System.Windows.Forms.TextBox()
         Me.txt_sucursal = New System.Windows.Forms.TextBox()
+        Me.periodicidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CLI_Fan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SucxClie_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SucxClie_dir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MantenimientoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadodetalleidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,17 +58,15 @@ Partial Class Mante_consulta
         Me.TareasasignadasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MANT_2_ds1 = New Aplicacion.MANT_2_ds()
-        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EquipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Etiqueta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipomantenimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.periodicidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Mantenimientoid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +79,7 @@ Partial Class Mante_consulta
         '
         'fecha
         '
+        Me.fecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fecha.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder
         Me.fecha.Enabled = False
         Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -87,9 +91,10 @@ Partial Class Mante_consulta
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(604, -23)
+        Me.Label4.Location = New System.Drawing.Point(603, 1)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 25)
         Me.Label4.TabIndex = 6
@@ -97,36 +102,26 @@ Partial Class Mante_consulta
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.DG_clientes)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 117)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 37)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(811, 393)
+        Me.GroupBox2.Size = New System.Drawing.Size(811, 473)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "LISTADO DE MANTENIMIENTOS PROGRAMADOS"
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.btn_Aceptar)
-        Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Controls.Add(Me.txt_tipomantenimiento)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Controls.Add(Me.txt_etiqueta)
-        Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 161)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(797, 227)
-        Me.GroupBox3.TabIndex = 241
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Item seleccionado"
-        '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button1.Location = New System.Drawing.Point(651, 119)
+        Me.Button1.Location = New System.Drawing.Point(651, 153)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 43)
         Me.Button1.TabIndex = 243
@@ -134,11 +129,29 @@ Partial Class Mante_consulta
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.btn_Aceptar)
+        Me.GroupBox3.Controls.Add(Me.DataGridView1)
+        Me.GroupBox3.Controls.Add(Me.txt_tipomantenimiento)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.txt_etiqueta)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Location = New System.Drawing.Point(7, 200)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(797, 253)
+        Me.GroupBox3.TabIndex = 241
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Item seleccionado"
+        '
         'btn_Aceptar
         '
+        Me.btn_Aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_Aceptar.Location = New System.Drawing.Point(644, 179)
+        Me.btn_Aceptar.Location = New System.Drawing.Point(644, 195)
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 242
@@ -167,13 +180,13 @@ Partial Class Mante_consulta
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Info
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(764, 111)
+        Me.DataGridView1.Size = New System.Drawing.Size(764, 137)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 241
         '
@@ -218,14 +231,15 @@ Partial Class Mante_consulta
         Me.DG_clientes.AllowUserToAddRows = False
         Me.DG_clientes.AllowUserToDeleteRows = False
         Me.DG_clientes.AllowUserToResizeRows = False
-        Me.DG_clientes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.DG_clientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DG_clientes.AutoGenerateColumns = False
         Me.DG_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DG_clientes.BackgroundColor = System.Drawing.Color.White
         Me.DG_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DG_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EquipoDataGridViewTextBoxColumn, Me.SectorDataGridViewTextBoxColumn, Me.Etiqueta, Me.Tipomantenimiento, Me.periodicidad, Me.EstadoDataGridViewTextBoxColumn1, Me.Mantenimientoid, Me.MantrealizadosidDataGridViewTextBoxColumn1, Me.EquipoidDataGridViewTextBoxColumn, Me.item})
+        Me.DG_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EquipoDataGridViewTextBoxColumn, Me.SectorDataGridViewTextBoxColumn, Me.Etiqueta, Me.Tipomantenimiento, Me.periodicidad, Me.EstadoDataGridViewTextBoxColumn1, Me.Mantenimientoid, Me.MantrealizadosidDataGridViewTextBoxColumn1, Me.EquipoidDataGridViewTextBoxColumn, Me.CLI_Fan, Me.SucxClie_nombre, Me.SucxClie_dir, Me.item})
         Me.DG_clientes.DataSource = Me.MantlistadosBindingSource
         Me.DG_clientes.Location = New System.Drawing.Point(7, 20)
         Me.DG_clientes.Margin = New System.Windows.Forms.Padding(4)
@@ -233,12 +247,12 @@ Partial Class Mante_consulta
         Me.DG_clientes.Name = "DG_clientes"
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_clientes.Size = New System.Drawing.Size(797, 92)
+        Me.DG_clientes.Size = New System.Drawing.Size(797, 126)
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 240
         '
@@ -256,6 +270,7 @@ Partial Class Mante_consulta
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "DATOS DEL CLIENTE"
+        Me.GroupBox1.Visible = False
         '
         'Label3
         '
@@ -313,6 +328,42 @@ Partial Class Mante_consulta
         Me.txt_sucursal.ReadOnly = True
         Me.txt_sucursal.Size = New System.Drawing.Size(319, 20)
         Me.txt_sucursal.TabIndex = 3
+        '
+        'periodicidad
+        '
+        Me.periodicidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.periodicidad.DataPropertyName = "periodicidad"
+        Me.periodicidad.HeaderText = "Periodicidad"
+        Me.periodicidad.Name = "periodicidad"
+        Me.periodicidad.ReadOnly = True
+        '
+        'CLI_Fan
+        '
+        Me.CLI_Fan.DataPropertyName = "CLI_Fan"
+        Me.CLI_Fan.HeaderText = "CLI_Fan"
+        Me.CLI_Fan.Name = "CLI_Fan"
+        Me.CLI_Fan.Visible = False
+        '
+        'SucxClie_nombre
+        '
+        Me.SucxClie_nombre.DataPropertyName = "SucxClie_nombre"
+        Me.SucxClie_nombre.HeaderText = "SucxClie_nombre"
+        Me.SucxClie_nombre.Name = "SucxClie_nombre"
+        Me.SucxClie_nombre.Visible = False
+        '
+        'SucxClie_dir
+        '
+        Me.SucxClie_dir.DataPropertyName = "SucxClie_dir"
+        Me.SucxClie_dir.HeaderText = "SucxClie_dir"
+        Me.SucxClie_dir.Name = "SucxClie_dir"
+        Me.SucxClie_dir.Visible = False
+        '
+        'item
+        '
+        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.item.HeaderText = "item"
+        Me.item.Name = "item"
+        Me.item.Width = 50
         '
         'MantenimientoidDataGridViewTextBoxColumn
         '
@@ -373,11 +424,6 @@ Partial Class Mante_consulta
         Me.MANT_2_ds1.DataSetName = "MANT_2_ds"
         Me.MANT_2_ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MantlistadosBindingSource
-        '
-        Me.MantlistadosBindingSource.DataMember = "mant_listados"
-        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds1
-        '
         'EquipoDataGridViewTextBoxColumn
         '
         Me.EquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -409,14 +455,6 @@ Partial Class Mante_consulta
         Me.Tipomantenimiento.HeaderText = "Mantenimiento"
         Me.Tipomantenimiento.Name = "Tipomantenimiento"
         Me.Tipomantenimiento.ReadOnly = True
-        '
-        'periodicidad
-        '
-        Me.periodicidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.periodicidad.DataPropertyName = "periodicidad"
-        Me.periodicidad.HeaderText = "Periodicidad"
-        Me.periodicidad.Name = "periodicidad"
-        Me.periodicidad.ReadOnly = True
         '
         'EstadoDataGridViewTextBoxColumn1
         '
@@ -450,25 +488,26 @@ Partial Class Mante_consulta
         Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
         Me.EquipoidDataGridViewTextBoxColumn.Visible = False
         '
-        'item
+        'MantlistadosBindingSource
         '
-        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.item.HeaderText = "item"
-        Me.item.Name = "item"
-        Me.item.Width = 50
+        Me.MantlistadosBindingSource.DataMember = "mant_listados"
+        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds1
         '
         'Mante_consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(830, 516)
         Me.Controls.Add(Me.fecha)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MinimumSize = New System.Drawing.Size(846, 555)
         Me.Name = "Mante_consulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mante_consulta"
+        Me.Text = "Consulta Manteniminentos programados"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -522,5 +561,8 @@ Partial Class Mante_consulta
     Friend WithEvents Mantenimientoid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MantrealizadosidDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EquipoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CLI_Fan As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SucxClie_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SucxClie_dir As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class

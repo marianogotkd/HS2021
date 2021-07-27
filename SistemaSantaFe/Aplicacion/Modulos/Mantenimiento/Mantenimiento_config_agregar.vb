@@ -114,44 +114,54 @@
                 'ahora controlo que al menos este seleccionada 1
                 Dim valido As String = "no"
 
-                Dim i As Integer = 0
-                While i < dg_tareas.Rows.Count
-                    If dg_tareas.Rows(i).Cells("item").Value = True Then
-                        valido = "si"
-                        Exit While
-                    End If
-                    i = i + 1
-                End While
-                If valido = "si" Then
+                If fecha.Value.DayOfWeek <> DayOfWeek.Saturday And fecha.Value.DayOfWeek <> DayOfWeek.Sunday Then
 
-                    If procedencia = "modificar" Then
-                        'voy a hacer un borrado lógico. cambiando el estado del campo mantenimiento_activo en la base de datos.
-                        daMant.Mantenimiento_quitar(Mantenimiento_id)
-                    End If
 
-                    'aqui guardo
-                    Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date, "si")
-                    mantenimiento_id = ds_mant.Tables(0).Rows(0).Item(0)
 
-                    'ahora guardo las tareas asignadas
-                    Dim j As Integer = 0
-                    While j < dg_tareas.Rows.Count
-                        If dg_tareas.Rows(j).Cells("item").Value = True Then
-                            Dim Tareas_id As Integer = dg_tareas.Rows(j).Cells("TareasidDataGridViewTextBoxColumn").Value
-                            daMant.Tareas_asignadas_alta(Tareas_id, Mantenimiento_id)
+
+
+                    Dim i As Integer = 0
+                    While i < dg_tareas.Rows.Count
+                        If dg_tareas.Rows(i).Cells("item").Value = True Then
+                            valido = "si"
+                            Exit While
                         End If
-                        j = j + 1
+                        i = i + 1
                     End While
-                    'aqui viene mensaje de confirmacion
+                    If valido = "si" Then
 
-                    MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        If procedencia = "modificar" Then
+                            'voy a hacer un borrado lógico. cambiando el estado del campo mantenimiento_activo en la base de datos.
+                            daMant.Mantenimiento_quitar(mantenimiento_id)
+                        End If
 
-                    'reflejar los cambios en el formulario Mantenimiento_config_alta
-                    Mantenimiento_config_alta.recuperar_info_equipo()
-                    Me.Close()
+                        'aqui guardo
+                        Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date, "si")
+                        mantenimiento_id = ds_mant.Tables(0).Rows(0).Item(0)
+
+                        'ahora guardo las tareas asignadas
+                        Dim j As Integer = 0
+                        While j < dg_tareas.Rows.Count
+                            If dg_tareas.Rows(j).Cells("item").Value = True Then
+                                Dim Tareas_id As Integer = dg_tareas.Rows(j).Cells("TareasidDataGridViewTextBoxColumn").Value
+                                daMant.Tareas_asignadas_alta(Tareas_id, mantenimiento_id)
+                            End If
+                            j = j + 1
+                        End While
+                        'aqui viene mensaje de confirmacion
+
+                        MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        'reflejar los cambios en el formulario Mantenimiento_config_alta
+                        Mantenimiento_config_alta.recuperar_info_equipo()
+                        Me.Close()
+                    Else
+                        'error
+                        MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
                     'error
-                    MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Error, modifique la fecha, no debe ser fin de semana.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Else
                 'error

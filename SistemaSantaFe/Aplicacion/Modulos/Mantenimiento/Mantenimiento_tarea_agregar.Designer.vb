@@ -24,7 +24,7 @@ Partial Class Mantenimiento_tarea_agregar
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimiento_tarea_agregar))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
@@ -43,6 +43,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.cb_tipo_mant = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.LABEL_EQUIPO_CAT = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.dg_atributos = New System.Windows.Forms.DataGridView()
         Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -268,6 +269,7 @@ Partial Class Mantenimiento_tarea_agregar
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox5.Controls.Add(Me.LABEL_EQUIPO_CAT)
         Me.GroupBox5.Controls.Add(Me.Button3)
         Me.GroupBox5.Controls.Add(Me.dg_atributos)
         Me.GroupBox5.Controls.Add(Me.Button4)
@@ -278,7 +280,17 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox5.Size = New System.Drawing.Size(712, 316)
         Me.GroupBox5.TabIndex = 13
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "TAREAS CREADAS PARA:"
+        Me.GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
+        '
+        'LABEL_EQUIPO_CAT
+        '
+        Me.LABEL_EQUIPO_CAT.AutoSize = True
+        Me.LABEL_EQUIPO_CAT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LABEL_EQUIPO_CAT.Location = New System.Drawing.Point(232, 0)
+        Me.LABEL_EQUIPO_CAT.Name = "LABEL_EQUIPO_CAT"
+        Me.LABEL_EQUIPO_CAT.Size = New System.Drawing.Size(111, 13)
+        Me.LABEL_EQUIPO_CAT.TabIndex = 22
+        Me.LABEL_EQUIPO_CAT.Text = ".........................."
         '
         'Button3
         '
@@ -304,19 +316,19 @@ Partial Class Mantenimiento_tarea_agregar
         Me.dg_atributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_atributos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TareasidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.ManttipoidDataGridViewTextBoxColumn, Me.MantenimientotipoDataGridViewTextBoxColumn, Me.MantperiodicidadidDataGridViewTextBoxColumn, Me.PeriodicidadDataGridViewTextBoxColumn, Me.Cat1equipoidDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.Cat2equipoidDataGridViewTextBoxColumn, Me.SubtipoDataGridViewTextBoxColumn, Me.item})
         Me.dg_atributos.DataSource = Me.TareasBindingSource
-        Me.dg_atributos.Location = New System.Drawing.Point(7, 20)
+        Me.dg_atributos.Location = New System.Drawing.Point(7, 30)
         Me.dg_atributos.Margin = New System.Windows.Forms.Padding(4)
         Me.dg_atributos.MultiSelect = False
         Me.dg_atributos.Name = "dg_atributos"
         Me.dg_atributos.ReadOnly = True
         Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dg_atributos.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_atributos.Size = New System.Drawing.Size(683, 237)
+        Me.dg_atributos.Size = New System.Drawing.Size(683, 227)
         Me.dg_atributos.StandardTab = True
         Me.dg_atributos.TabIndex = 4
         '
@@ -456,6 +468,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         CType(Me.dg_atributos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TareasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mantenimiento_ds, System.ComponentModel.ISupportInitialize).EndInit()
@@ -496,4 +509,5 @@ Partial Class Mantenimiento_tarea_agregar
     Friend WithEvents Cat2equipoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubtipoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents LABEL_EQUIPO_CAT As System.Windows.Forms.Label
 End Class

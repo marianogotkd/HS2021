@@ -771,6 +771,12 @@ Partial Public Class MANT_2_ds
         
         Private columnperiodicidad As Global.System.Data.DataColumn
         
+        Private columnCLI_Fan As Global.System.Data.DataColumn
+        
+        Private columnSucxClie_nombre As Global.System.Data.DataColumn
+        
+        Private columnSucxClie_dir As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -879,6 +885,30 @@ Partial Public Class MANT_2_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CLI_FanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCLI_Fan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SucxClie_nombreColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSucxClie_nombre
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SucxClie_dirColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSucxClie_dir
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -915,9 +945,9 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addmant_listadosRow(ByVal Equipo As String, ByVal Sector As String, ByVal Etiqueta As String, ByVal Tipo_mantenimiento As String, ByVal estado As String, ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Equipo_id As Integer, ByVal periodicidad As String) As mant_listadosRow
+        Public Overloads Function Addmant_listadosRow(ByVal Equipo As String, ByVal Sector As String, ByVal Etiqueta As String, ByVal Tipo_mantenimiento As String, ByVal estado As String, ByVal Mantenimiento_id As Integer, ByVal Mant_realizados_id As Integer, ByVal Equipo_id As Integer, ByVal periodicidad As String, ByVal CLI_Fan As String, ByVal SucxClie_nombre As String, ByVal SucxClie_dir As String) As mant_listadosRow
             Dim rowmant_listadosRow As mant_listadosRow = CType(Me.NewRow,mant_listadosRow)
-            Dim columnValuesArray() As Object = New Object() {Equipo, Sector, Etiqueta, Tipo_mantenimiento, estado, Mantenimiento_id, Mant_realizados_id, Equipo_id, periodicidad}
+            Dim columnValuesArray() As Object = New Object() {Equipo, Sector, Etiqueta, Tipo_mantenimiento, estado, Mantenimiento_id, Mant_realizados_id, Equipo_id, periodicidad, CLI_Fan, SucxClie_nombre, SucxClie_dir}
             rowmant_listadosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowmant_listadosRow)
             Return rowmant_listadosRow
@@ -949,6 +979,9 @@ Partial Public Class MANT_2_ds
             Me.columnMant_realizados_id = MyBase.Columns("Mant_realizados_id")
             Me.columnEquipo_id = MyBase.Columns("Equipo_id")
             Me.columnperiodicidad = MyBase.Columns("periodicidad")
+            Me.columnCLI_Fan = MyBase.Columns("CLI_Fan")
+            Me.columnSucxClie_nombre = MyBase.Columns("SucxClie_nombre")
+            Me.columnSucxClie_dir = MyBase.Columns("SucxClie_dir")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -972,6 +1005,12 @@ Partial Public Class MANT_2_ds
             MyBase.Columns.Add(Me.columnEquipo_id)
             Me.columnperiodicidad = New Global.System.Data.DataColumn("periodicidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnperiodicidad)
+            Me.columnCLI_Fan = New Global.System.Data.DataColumn("CLI_Fan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCLI_Fan)
+            Me.columnSucxClie_nombre = New Global.System.Data.DataColumn("SucxClie_nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSucxClie_nombre)
+            Me.columnSucxClie_dir = New Global.System.Data.DataColumn("SucxClie_dir", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSucxClie_dir)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2430,6 +2469,51 @@ Partial Public Class MANT_2_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CLI_Fan() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_listados.CLI_FanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CLI_Fan' de la tabla 'mant_listados' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_listados.CLI_FanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SucxClie_nombre() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_listados.SucxClie_nombreColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SucxClie_nombre' de la tabla 'mant_listados' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_listados.SucxClie_nombreColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SucxClie_dir() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablemant_listados.SucxClie_dirColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SucxClie_dir' de la tabla 'mant_listados' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablemant_listados.SucxClie_dirColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsEquipoNull() As Boolean
             Return Me.IsNull(Me.tablemant_listados.EquipoColumn)
         End Function
@@ -2534,6 +2618,42 @@ Partial Public Class MANT_2_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetperiodicidadNull()
             Me(Me.tablemant_listados.periodicidadColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCLI_FanNull() As Boolean
+            Return Me.IsNull(Me.tablemant_listados.CLI_FanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCLI_FanNull()
+            Me(Me.tablemant_listados.CLI_FanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSucxClie_nombreNull() As Boolean
+            Return Me.IsNull(Me.tablemant_listados.SucxClie_nombreColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSucxClie_nombreNull()
+            Me(Me.tablemant_listados.SucxClie_nombreColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSucxClie_dirNull() As Boolean
+            Return Me.IsNull(Me.tablemant_listados.SucxClie_dirColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSucxClie_dirNull()
+            Me(Me.tablemant_listados.SucxClie_dirColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

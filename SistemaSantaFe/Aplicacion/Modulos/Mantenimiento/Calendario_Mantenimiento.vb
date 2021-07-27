@@ -30,7 +30,7 @@
         'Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
         'sucursal_id = ds_usuario.Tables(0).Rows(0).Item("sucursal_id")
         'Me.Text = "Calendario de Servicios - Sucursal: " + CStr(ds_usuario.Tables(0).Rows(0).Item("sucursal_nombre"))
-
+        Me.Text = "Calendario de Mantenimientos."
         GenerateDayPanel(42)
         DisplayCurrentDate()
        
@@ -371,10 +371,11 @@
             'AddHandler link.Click, AddressOf ShowAppointmentDetail 'este ya no uso, no quiero hacer clic en los item q me muestra el gridview
             AddHandler link.Click, AddressOf link_click_izquierdo
 
-            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link)
-            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackColor = Color.Green  'choco 23-07-2021 quiero que los dias q tienen citas se remarquen en verde
-            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImage = My.Resources.cargaContratos
-            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImageLayout = ImageLayout.Center
+            'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link) 'esta linea es para q se vean los link label con la etiqueta de cada item
+
+            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackColor = Color.AliceBlue     'choco 23-07-2021 quiero que los dias q tienen citas se remarquen en verde
+            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImage = My.Resources.cargaContratos
+            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImageLayout = ImageLayout.Center
             i = i + 1
             'If dt.Rows.Count > 2 And i = 2 Then
             '    'si hay mas de 2 entonces agrego un item mas de esos "link" que diga "ver ..."

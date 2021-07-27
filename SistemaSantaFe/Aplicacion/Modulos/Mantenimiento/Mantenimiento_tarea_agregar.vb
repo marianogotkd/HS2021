@@ -80,17 +80,20 @@
         Mantenimiento_tipo_alta.Show()
 
     End Sub
-
+    Dim listo As String = "no"
     Private Sub Mantenimiento_tarea_agregar_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        LABEL_EQUIPO_CAT.Text = ""
         recuperar_categorias_equipo()
         recuperar_mantenimiento_tipo()
         recuperar_tareas_existentes()
+        listo = "si"
         aplicar_filtro_tareas()
 
     End Sub
 
     Private Sub cb_tipo_mant_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_tipo_mant.SelectedIndexChanged
         recuperar_periodicidad()
+        aplicar_filtro_tareas()
     End Sub
 
     Private Sub cb_tipo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_tipo.SelectedIndexChanged
@@ -159,19 +162,35 @@
 
     Private Sub aplicar_filtro_tareas()
         Try
-            If cb_tipo.Items.Count <> 0 And cb_subtipo.Items.Count <> 0 Then
-                GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: " + CStr(cb_tipo.Text.ToUpper) + ", " + CStr(cb_subtipo.Text.ToUpper) + "."
-            Else
-                GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
+            If listo = "si" Then
+                If cb_tipo.Items.Count <> 0 And cb_subtipo.Items.Count <> 0 Then
+                    GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
+                    LABEL_EQUIPO_CAT.Text = CStr(cb_tipo.Text.ToUpper) + ", " + CStr(cb_subtipo.Text.ToUpper) + "."
+                    LABEL_EQUIPO_CAT.ForeColor = Color.Blue
+                Else
+                    GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
+                    LABEL_EQUIPO_CAT.Text = ""
+                    LABEL_EQUIPO_CAT.ForeColor = Color.Blue
+                End If
+
+                Dim filtro2
+                filtro2 = String.Format("CONVERT(Mant_tipo_id, System.String) LIKE '%{0}%'", cb_tipo_mant.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
+
+
+                Dim Filtro
+                Filtro = String.Format("CONVERT(Cat2_equipo_id, System.String) LIKE '%{0}%'", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
+
+                'Filtro = String.Format("{0} LIKE '%{1}%'", "CLI_Fan", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
+                'TareasBindingSource.Filter = Filtro
+
+                Dim tipo_mant As String = cb_tipo_mant.SelectedValue.ToString
+                Dim tipo As String = cb_subtipo.SelectedValue.ToString
+
+                TareasBindingSource.Filter = "CONVERT(Mant_tipo_id, System.String) = '" & tipo_mant & "' AND CONVERT(Cat2_equipo_id,System.String) = " & tipo
+
+
+
             End If
-
-
-
-            Dim Filtro
-            Filtro = String.Format("CONVERT(Cat2_equipo_id, System.String) LIKE '%{0}%'", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
-
-            'Filtro = String.Format("{0} LIKE '%{1}%'", "CLI_Fan", cb_subtipo.SelectedValue) 'esto para campos strings, FUNCIONA PERFECTO
-            TareasBindingSource.Filter = Filtro
         Catch ex As Exception
 
         End Try
@@ -272,4 +291,6 @@
             Me.Close()
         End If
     End Sub
+
+
 End Class
