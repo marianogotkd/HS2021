@@ -16,3 +16,12 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Matris\Matris\obj\x86\Debug\Matris.Form1.resources
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Matris\Matris\obj\x86\Debug\Matris.Resources.resources
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Matris\Matris\obj\x86\Debug\Matris.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.exe
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.xml
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.pdb
+C:\Repositorio HS2021\HS2021\Matris\Matris\bin\Debug\Matris.exe
+C:\Repositorio HS2021\HS2021\Matris\Matris\bin\Debug\Matris.pdb
+C:\Repositorio HS2021\HS2021\Matris\Matris\bin\Debug\Matris.xml
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.Form1.resources
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.Resources.resources
+C:\Repositorio HS2021\HS2021\Matris\Matris\obj\x86\Debug\Matris.vbproj.GenerateResource.Cache

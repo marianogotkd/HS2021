@@ -28,6 +28,7 @@ Partial Class Form1
         Me.tb_Col = New System.Windows.Forms.TextBox()
         Me.lbl_fila = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dt_matris, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -84,11 +85,21 @@ Partial Class Form1
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Columna"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(818, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(102, 46)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "CAMINO"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1059, 478)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbl_fila)
         Me.Controls.Add(Me.tb_Col)
@@ -108,5 +119,6 @@ Partial Class Form1
     Friend WithEvents tb_Col As System.Windows.Forms.TextBox
     Friend WithEvents lbl_fila As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class
