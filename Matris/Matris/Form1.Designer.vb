@@ -36,6 +36,9 @@ Partial Class Form1
         '
         Me.dt_matris.AllowUserToAddRows = False
         Me.dt_matris.AllowUserToDeleteRows = False
+        Me.dt_matris.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_matris.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_matris.Location = New System.Drawing.Point(12, 72)
         Me.dt_matris.Name = "dt_matris"
@@ -45,6 +48,7 @@ Partial Class Form1
         '
         'btn_Crear
         '
+        Me.btn_Crear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Crear.Location = New System.Drawing.Point(710, 12)
         Me.btn_Crear.Name = "btn_Crear"
         Me.btn_Crear.Size = New System.Drawing.Size(102, 46)
@@ -54,17 +58,16 @@ Partial Class Form1
         '
         'tb_fila
         '
-        Me.tb_fila.Location = New System.Drawing.Point(255, 27)
-        Me.tb_fila.Multiline = True
+        Me.tb_fila.Location = New System.Drawing.Point(255, 33)
         Me.tb_fila.Name = "tb_fila"
-        Me.tb_fila.Size = New System.Drawing.Size(47, 39)
+        Me.tb_fila.Size = New System.Drawing.Size(102, 20)
         Me.tb_fila.TabIndex = 2
         '
         'tb_Col
         '
-        Me.tb_Col.Location = New System.Drawing.Point(517, 37)
+        Me.tb_Col.Location = New System.Drawing.Point(442, 33)
         Me.tb_Col.Name = "tb_Col"
-        Me.tb_Col.Size = New System.Drawing.Size(100, 20)
+        Me.tb_Col.Size = New System.Drawing.Size(102, 20)
         Me.tb_Col.TabIndex = 3
         '
         'lbl_fila
@@ -79,7 +82,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(463, 40)
+        Me.Label2.Location = New System.Drawing.Point(388, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 13)
         Me.Label2.TabIndex = 5
@@ -87,6 +90,7 @@ Partial Class Form1
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(818, 13)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(102, 46)
