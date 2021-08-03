@@ -32,23 +32,6 @@ Partial Class Mante_consulta
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_etiqueta = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.DG_clientes = New System.Windows.Forms.DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_dni = New System.Windows.Forms.TextBox()
-        Me.txt_fantasia = New System.Windows.Forms.TextBox()
-        Me.txt_sucursal = New System.Windows.Forms.TextBox()
-        Me.periodicidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CLI_Fan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SucxClie_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SucxClie_dir = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MantenimientoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadodetalleidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,23 +41,40 @@ Partial Class Mante_consulta
         Me.TareasasignadasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosdetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MANT_2_ds1 = New Aplicacion.MANT_2_ds()
+        Me.txt_tipomantenimiento = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_etiqueta = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DG_clientes = New System.Windows.Forms.DataGridView()
+        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_dni = New System.Windows.Forms.TextBox()
+        Me.txt_fantasia = New System.Windows.Forms.TextBox()
+        Me.txt_sucursal = New System.Windows.Forms.TextBox()
         Me.EquipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Etiqueta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipomantenimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.periodicidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Mantenimientoid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MantrealizadosidDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MantlistadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CLI_Fan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SucxClie_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SucxClie_dir = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MANT_2_ds1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'fecha
@@ -94,7 +94,7 @@ Partial Class Mante_consulta
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(603, 1)
+        Me.Label4.Location = New System.Drawing.Point(603, 3)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 25)
         Me.Label4.TabIndex = 6
@@ -190,6 +190,65 @@ Partial Class Mante_consulta
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 241
         '
+        'MantenimientoidDataGridViewTextBoxColumn
+        '
+        Me.MantenimientoidDataGridViewTextBoxColumn.DataPropertyName = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn.HeaderText = "Mantenimiento_id"
+        Me.MantenimientoidDataGridViewTextBoxColumn.Name = "MantenimientoidDataGridViewTextBoxColumn"
+        Me.MantenimientoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadosidDataGridViewTextBoxColumn
+        '
+        Me.MantrealizadosidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.HeaderText = "Mant_realizados_id"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.Name = "MantrealizadosidDataGridViewTextBoxColumn"
+        Me.MantrealizadosidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadodetalleidDataGridViewTextBoxColumn
+        '
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizado_detalle_id"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.HeaderText = "Mant_realizado_detalle_id"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Name = "MantrealizadodetalleidDataGridViewTextBoxColumn"
+        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasdescDataGridViewTextBoxColumn
+        '
+        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
+        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "Tareas"
+        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
+        '
+        'MantdetalleDataGridViewTextBoxColumn
+        '
+        Me.MantdetalleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.MantdetalleDataGridViewTextBoxColumn.DataPropertyName = "Mant_detalle"
+        Me.MantdetalleDataGridViewTextBoxColumn.HeaderText = "Ingrese valor"
+        Me.MantdetalleDataGridViewTextBoxColumn.Name = "MantdetalleDataGridViewTextBoxColumn"
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.Visible = False
+        '
+        'TareasasignadasidDataGridViewTextBoxColumn
+        '
+        Me.TareasasignadasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.HeaderText = "Tareas_asignadas_id"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Name = "TareasasignadasidDataGridViewTextBoxColumn"
+        Me.TareasasignadasidDataGridViewTextBoxColumn.Visible = False
+        '
+        'MantrealizadosdetalleBindingSource
+        '
+        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
+        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_2_ds1
+        '
+        'MANT_2_ds1
+        '
+        Me.MANT_2_ds1.DataSetName = "MANT_2_ds"
+        Me.MANT_2_ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'txt_tipomantenimiento
         '
         Me.txt_tipomantenimiento.BackColor = System.Drawing.SystemColors.Info
@@ -255,6 +314,11 @@ Partial Class Mante_consulta
         Me.DG_clientes.Size = New System.Drawing.Size(797, 126)
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 240
+        '
+        'MantlistadosBindingSource
+        '
+        Me.MantlistadosBindingSource.DataMember = "mant_listados"
+        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds1
         '
         'GroupBox1
         '
@@ -329,101 +393,6 @@ Partial Class Mante_consulta
         Me.txt_sucursal.Size = New System.Drawing.Size(319, 20)
         Me.txt_sucursal.TabIndex = 3
         '
-        'periodicidad
-        '
-        Me.periodicidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.periodicidad.DataPropertyName = "periodicidad"
-        Me.periodicidad.HeaderText = "Periodicidad"
-        Me.periodicidad.Name = "periodicidad"
-        Me.periodicidad.ReadOnly = True
-        '
-        'CLI_Fan
-        '
-        Me.CLI_Fan.DataPropertyName = "CLI_Fan"
-        Me.CLI_Fan.HeaderText = "CLI_Fan"
-        Me.CLI_Fan.Name = "CLI_Fan"
-        Me.CLI_Fan.Visible = False
-        '
-        'SucxClie_nombre
-        '
-        Me.SucxClie_nombre.DataPropertyName = "SucxClie_nombre"
-        Me.SucxClie_nombre.HeaderText = "SucxClie_nombre"
-        Me.SucxClie_nombre.Name = "SucxClie_nombre"
-        Me.SucxClie_nombre.Visible = False
-        '
-        'SucxClie_dir
-        '
-        Me.SucxClie_dir.DataPropertyName = "SucxClie_dir"
-        Me.SucxClie_dir.HeaderText = "SucxClie_dir"
-        Me.SucxClie_dir.Name = "SucxClie_dir"
-        Me.SucxClie_dir.Visible = False
-        '
-        'item
-        '
-        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.item.HeaderText = "item"
-        Me.item.Name = "item"
-        Me.item.Width = 50
-        '
-        'MantenimientoidDataGridViewTextBoxColumn
-        '
-        Me.MantenimientoidDataGridViewTextBoxColumn.DataPropertyName = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn.HeaderText = "Mantenimiento_id"
-        Me.MantenimientoidDataGridViewTextBoxColumn.Name = "MantenimientoidDataGridViewTextBoxColumn"
-        Me.MantenimientoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantrealizadosidDataGridViewTextBoxColumn
-        '
-        Me.MantrealizadosidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizados_id"
-        Me.MantrealizadosidDataGridViewTextBoxColumn.HeaderText = "Mant_realizados_id"
-        Me.MantrealizadosidDataGridViewTextBoxColumn.Name = "MantrealizadosidDataGridViewTextBoxColumn"
-        Me.MantrealizadosidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantrealizadodetalleidDataGridViewTextBoxColumn
-        '
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.DataPropertyName = "Mant_realizado_detalle_id"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.HeaderText = "Mant_realizado_detalle_id"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Name = "MantrealizadodetalleidDataGridViewTextBoxColumn"
-        Me.MantrealizadodetalleidDataGridViewTextBoxColumn.Visible = False
-        '
-        'TareasdescDataGridViewTextBoxColumn
-        '
-        Me.TareasdescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.TareasdescDataGridViewTextBoxColumn.DataPropertyName = "Tareas_desc"
-        Me.TareasdescDataGridViewTextBoxColumn.HeaderText = "Tareas"
-        Me.TareasdescDataGridViewTextBoxColumn.Name = "TareasdescDataGridViewTextBoxColumn"
-        '
-        'MantdetalleDataGridViewTextBoxColumn
-        '
-        Me.MantdetalleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.MantdetalleDataGridViewTextBoxColumn.DataPropertyName = "Mant_detalle"
-        Me.MantdetalleDataGridViewTextBoxColumn.HeaderText = "Ingrese valor"
-        Me.MantdetalleDataGridViewTextBoxColumn.Name = "MantdetalleDataGridViewTextBoxColumn"
-        '
-        'EstadoDataGridViewTextBoxColumn
-        '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.Visible = False
-        '
-        'TareasasignadasidDataGridViewTextBoxColumn
-        '
-        Me.TareasasignadasidDataGridViewTextBoxColumn.DataPropertyName = "Tareas_asignadas_id"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.HeaderText = "Tareas_asignadas_id"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.Name = "TareasasignadasidDataGridViewTextBoxColumn"
-        Me.TareasasignadasidDataGridViewTextBoxColumn.Visible = False
-        '
-        'MantrealizadosdetalleBindingSource
-        '
-        Me.MantrealizadosdetalleBindingSource.DataMember = "mant_realizados_detalle"
-        Me.MantrealizadosdetalleBindingSource.DataSource = Me.MANT_2_ds1
-        '
-        'MANT_2_ds1
-        '
-        Me.MANT_2_ds1.DataSetName = "MANT_2_ds"
-        Me.MANT_2_ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'EquipoDataGridViewTextBoxColumn
         '
         Me.EquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -455,6 +424,14 @@ Partial Class Mante_consulta
         Me.Tipomantenimiento.HeaderText = "Mantenimiento"
         Me.Tipomantenimiento.Name = "Tipomantenimiento"
         Me.Tipomantenimiento.ReadOnly = True
+        '
+        'periodicidad
+        '
+        Me.periodicidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.periodicidad.DataPropertyName = "periodicidad"
+        Me.periodicidad.HeaderText = "Periodicidad"
+        Me.periodicidad.Name = "periodicidad"
+        Me.periodicidad.ReadOnly = True
         '
         'EstadoDataGridViewTextBoxColumn1
         '
@@ -488,10 +465,34 @@ Partial Class Mante_consulta
         Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
         Me.EquipoidDataGridViewTextBoxColumn.Visible = False
         '
-        'MantlistadosBindingSource
+        'CLI_Fan
         '
-        Me.MantlistadosBindingSource.DataMember = "mant_listados"
-        Me.MantlistadosBindingSource.DataSource = Me.MANT_2_ds1
+        Me.CLI_Fan.DataPropertyName = "CLI_Fan"
+        Me.CLI_Fan.HeaderText = "Cliente"
+        Me.CLI_Fan.Name = "CLI_Fan"
+        Me.CLI_Fan.ReadOnly = True
+        '
+        'SucxClie_nombre
+        '
+        Me.SucxClie_nombre.DataPropertyName = "SucxClie_nombre"
+        Me.SucxClie_nombre.HeaderText = "Sucursal"
+        Me.SucxClie_nombre.Name = "SucxClie_nombre"
+        Me.SucxClie_nombre.ReadOnly = True
+        Me.SucxClie_nombre.Visible = False
+        '
+        'SucxClie_dir
+        '
+        Me.SucxClie_dir.DataPropertyName = "SucxClie_dir"
+        Me.SucxClie_dir.HeaderText = "SucxClie_dir"
+        Me.SucxClie_dir.Name = "SucxClie_dir"
+        Me.SucxClie_dir.Visible = False
+        '
+        'item
+        '
+        Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.item.HeaderText = "item"
+        Me.item.Name = "item"
+        Me.item.Width = 50
         '
         'Mante_consulta
         '
@@ -512,12 +513,12 @@ Partial Class Mante_consulta
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.MantrealizadosdetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MANT_2_ds1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -444,6 +444,25 @@ Public Class Servicio
         Return ds_JE
     End Function
 
+    Public Function Servicio_calendario_consulta_todo(ByVal desde As Date, ByVal hasta As Date)
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Servicio_calendario_consulta_todo", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@desde", desde))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@hasta", hasta))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@sucursal_id", sucursal_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Servicio")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 
 #End Region
 

@@ -4,9 +4,17 @@
     Dim daMantenimiento As New Datos.Mantenimiento
     Dim direccion_sucursal As String = ""
 
-    Private Sub recuperar_mantenimientos()
+    Public procedencia As String = "calendario_todos_X_fecha" 'este parametro puede cambiar segun lo que se envie en el form "Calendario_b.vb"
+    Public mantenimiento_id As Integer
 
-        Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_TODOS_2021_07_27(fecha.Value.Date)
+    Private Sub recuperar_mantenimientos()
+        Dim ds_mant As DataSet
+        If procedencia = "calendario_todos_X_fecha" Then
+            ds_mant = daMant.Mantenimiento_realizado_buscar_TODOS_2021_07_27(fecha.Value.Date)
+        Else 'calendario_b
+            ds_mant = daMant.Mantenimiento_obtener_calendario_B(fecha.Value.Date, mantenimiento_id)
+        End If
+
         'Dim ds_mant As DataSet = daMant.Mantenimiento_realizado_buscar_2(fecha.Value.Date, SucxClie_id) choco: este funciona si se discrimna la sucursal en el calendario
 
         If ds_mant.Tables(2).Rows.Count <> 0 Then
@@ -193,6 +201,10 @@
             fila("Mant_realizados_id") = 0
             fila("Equipo_id") = datos.Rows(indice).Item(1)
             fila("periodicidad") = datos.Rows(indice).Item(10)
+            fila("CLI_Fan") = datos.Rows(indice).Item(11)
+            fila("SucxClie_nombre") = datos.Rows(indice).Item(12)
+            fila("SucxClie_dir") = datos.Rows(indice).Item(13)
+
             MANT_2_ds1.Tables("mant_listados").Rows.Add(fila)
         End If
 
@@ -320,7 +332,6 @@
 
         MANT_2_ds1.Tables("Report_mantenimiento").Rows.Clear()
         MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
-
         MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
 
         Dim ii As Integer = 0

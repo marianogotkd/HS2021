@@ -5,11 +5,33 @@
 
     Private Sub Calendario_b_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         limpiar_nro_dias()
-        currentDate = CDate("31/08/2021")
+        'currentDate = CDate("31/08/2021") 'esto es para pruebas de fechas concretas
         DisplayCurrentDate()
+
+        'recupero las citas para el mes y de ahi ciclo y solo muestro los de la semana.
+        cargar_citas() 'lleno el datatable con el mes completo
+        cargar_gridview() 'solo la semana
+
+        rellenar_gridview() 'agrego filas en blanco
+    End Sub
+
+    Private Sub rellenar_gridview()
+        'x cosas de diseño quiero tener filas, no importa si estan vacias
+        If Mantenimiento_ds.Tables("Calendario_b").Rows.Count = 0 Then
+            Dim contador = 0
+            While Mantenimiento_ds.Tables("Calendario_b").Rows.Count < 20
+                Mantenimiento_ds.Tables("Calendario_b").Rows.Add()
+                'contador = contador + 1
+            End While
+        Else
+            While Mantenimiento_ds.Tables("Calendario_b").Rows.Count < 20
+                Mantenimiento_ds.Tables("Calendario_b").Rows.Add()
+            End While
+        End If
     End Sub
 
     Private Sub DisplayCurrentDate()
+
         lblMonthAndYear.Text = currentDate.ToString("MMMM, yyyy")
         Dim firstDayAtFlNumber As Integer = GetFirstDayOfWeekOfCurrentDate()
         'Dim firstDayAtFlNumber As Integer = 1
@@ -159,11 +181,12 @@
         'Next
     End Sub
 
-
-
-
     Private Sub btnToday_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnToday.Click
         hoy()
+        'recupero las citas para el mes y de ahi ciclo y solo muestro los de la semana.
+        cargar_citas() 'lleno el datatable con el mes completo
+        cargar_gridview() 'solo la semana
+        rellenar_gridview() 'agrego filas en blanco
     End Sub
 
     Private Sub limpiar_nro_dias()
@@ -188,11 +211,17 @@
         limpiar_nro_dias()
         currentDate = DateTime.Today
         DisplayCurrentDate()
+
+
     End Sub
 
     Private Sub btnPrevMonth_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrevMonth.Click
         limpiar_nro_dias()
         PrevMonth()
+        'recupero las citas para el mes y de ahi ciclo y solo muestro los de la semana.
+        cargar_citas() 'lleno el datatable con el mes completo
+        cargar_gridview() 'solo la semana
+        rellenar_gridview() 'agrego filas en blanco
     End Sub
 
     Private Sub PrevMonth()
@@ -286,6 +315,11 @@
         dia_viernes_nro.ForeColor = Color.Black
         dia_sabado_nro.ForeColor = Color.Black
         NextMonth()
+        'recupero las citas para el mes y de ahi ciclo y solo muestro los de la semana.
+        cargar_citas() 'lleno el datatable con el mes completo
+        cargar_gridview() 'solo la semana
+        rellenar_gridview() 'agrego filas en blanco
+
     End Sub
     Private Sub NextMonth()
         Dim fecha_calculada As DateTime
@@ -364,4 +398,408 @@
 
     End Sub
 
+
+
+    Private Sub cargar_citas()
+        Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
+        Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
+        'STARTDATE ES EL PRIMER DIA DEL MES
+        'ENDDATE ES EL ULTIMO DIA DEL MES
+        'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
+        Dim daMantenimiento As New Datos.Mantenimiento
+        'Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener(sucursal_id) 'usaba para probar el id 19
+        Dim ds_info As DataSet = daMantenimiento.Mantenimiento_iniciales_obtener_todo
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Clear()
+        '**********************************************************************************************************************************
+        If ds_info.Tables(0).Rows.Count <> 0 Then
+            Dim ii As Integer = 0
+            While ii < ds_info.Tables(0).Rows.Count
+                'valido q la fecha del mant inicial esta dentro del intervalo.
+                Dim fecha As Date = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                    'lo agrego
+                    Dim fila As DataRow = Mantenimiento_ds.Tables("MANTENIMIENTOS1").NewRow
+                    fila("ID") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
+                    Dim Mantenimiento_id As Integer = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
+                    fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                    fila("FECHA") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_fecha_inicio")
+                    fila("Equipo_id") = ds_info.Tables(0).Rows(ii).Item("Equipo_id")
+                    fila("TIPO_OP") = "mantenimiento inicial"
+                    Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Add(fila)
+                End If
+                'aqui veo cuantas veces lo voy a agregar, dependiendo el campo "DIA" y siempre y cuando este dentro del rango de fechas indicado.
+                '********************************************************************
+                Dim dias As Integer = ds_info.Tables(0).Rows(ii).Item("Mant_periodicidad_dias")
+                Dim valido As String = "si"
+                If dias <> 0 Then
+                    While valido = "si"
+                        If fecha <= endDate.ToShortDateString Then
+                            'aplico el calculo de los dias
+                            fecha = fecha.AddDays(dias)
+                            'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
+                            If (fecha.DayOfWeek = DayOfWeek.Saturday) Then
+                                If fecha.AddDays(2) <= endDate.ToShortDateString Then
+                                    fecha = fecha.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
+                                Else
+                                    'si es mayor a la fecha limite, entonces no lo agrego
+                                    Exit While
+                                End If
+                            Else
+                                If fecha.DayOfWeek = DayOfWeek.Sunday Then
+                                    If fecha.AddDays(1) <= endDate.ToShortDateString Then
+                                        fecha = fecha.AddDays(1) 'domingo le sumo 1, sumo 1 si y solo si es el fin de semana previ a la fecha q se selecciono en el calendario
+                                    Else
+                                        Exit While 'no lo agrego
+                                    End If
+                                End If
+                            End If
+                            'ahora: si la fecha calculada esta dentro del mes actua, lo agrego. sino sigo ciclando
+                            If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                                Dim fila As DataRow = Mantenimiento_ds.Tables("MANTENIMIENTOS1").NewRow
+                                'fila("ID") = 0
+                                fila("ID") = ds_info.Tables(0).Rows(ii).Item("Mantenimiento_id")
+                                fila("DESCRIPCION") = ds_info.Tables(0).Rows(ii).Item("etiqueta")
+                                fila("FECHA") = fecha.Date
+                                fila("Equipo_id") = ds_info.Tables(0).Rows(ii).Item("Equipo_id")
+                                fila("TIPO_OP") = "mantenimientos programados"
+                                Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Add(fila)
+                            End If
+                        Else
+                            Exit While 'si es mayor no lo agrego al dataset Calendario_mant_DS.Tables("MANTENIMIENTOS")
+                        End If
+                    End While
+                    '********************************************************************
+                End If
+                ii = ii + 1
+            End While
+        End If
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        'aqui cargo los mantenimientos ya realizados, esos que no se pueden eliminar.
+        If ds_info.Tables(1).Rows.Count <> 0 Then
+            Dim jj As Integer = 0
+            While jj < ds_info.Tables(1).Rows.Count
+                'valido q la fecha del mant inicial esta dentro del intervalo.
+                Dim fecha As Date = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")
+                If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
+                    'lo agrego si y solo si no esta ya en mantenimiento_ds.Tables("MANTENIMIENTOS")
+                    Dim ee As Integer = 0
+                    Dim esta_en_bd As String = "no"
+                    While ee < Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Count
+                        Dim mantenimiento_id As Integer = ds_info.Tables(1).Rows(jj).Item("Mantenimiento_id")
+                        Dim Equipo_id As Integer = ds_info.Tables(1).Rows(jj).Item("Equipo_id")
+                        If (Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("FECHA") = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")) And (Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("Equipo_id") = Equipo_id) And (Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("ID") = ds_info.Tables(1).Rows(jj).Item("Mantenimiento_id")) Then
+                            esta_en_bd = "si"
+                            Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("TIPO_OP") = "mantenimiento realizado"
+                            Exit While 'tengo q romper el ciclo, x que si agrego una fila recien agregado no se llega nunca terminar el while.
+                        End If
+                        ee = ee + 1
+                    End While
+                    If esta_en_bd = "no" Then
+                        'lo agrego
+                        Dim fila As DataRow = Mantenimiento_ds.Tables("MANTENIMIENTOS1").NewRow
+                        fila("ID") = ds_info.Tables(1).Rows(jj).Item("Mantenimiento_id")
+                        fila("DESCRIPCION") = ds_info.Tables(1).Rows(jj).Item("etiqueta")
+                        fila("FECHA") = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")
+                        fila("Equipo_id") = ds_info.Tables(1).Rows(jj).Item("Equipo_id")
+                        Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("TIPO_OP") = "mantenimiento realizado"
+                        Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Add(fila)
+                    End If
+                End If
+                jj = jj + 1
+            End While
+        End If
+        '//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        'ahora agrego lo de servicios, es decir lo que mostraba en un principio en el calendario viejo.
+
+        Dim dt_choco As DataSet = Daservicio.Servicio_calendario_consulta_todo(startDate.ToShortDateString, endDate.ToShortDateString)
+
+        If dt_choco.Tables(0).Rows.Count <> 0 Then
+            Dim i As Integer = 0
+            While i < dt_choco.Tables(0).Rows.Count
+                Dim fila As DataRow = Mantenimiento_ds.Tables("MANTENIMIENTOS1").NewRow
+                fila("ID") = dt_choco.Tables(0).Rows(i).Item("Servicio_id")
+                If dt_choco.Tables(0).Rows(i).Item("Servicio_Estado") = "PENDIENTE" Then
+                    fila("DESCRIPCION") = "Rev: " + CStr(dt_choco.Tables(0).Rows(i).Item("Servicio_id"))
+                    fila("TIPO_OP") = "orden de revision"
+                Else
+                    fila("DESCRIPCION") = "OdT: " + CStr(dt_choco.Tables(0).Rows(i).Item("Orden_trabajo_id"))
+                    fila("TIPO_OP") = "orden de trabajo"
+                End If
+                fila("FECHA") = dt_choco.Tables(0).Rows(i).Item("Servicio_fecha")
+                fila("Equipo_id") = 0
+
+                Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Add(fila)
+                i = i + 1
+            End While
+
+        End If
+
+
+    End Sub
+    Dim Daservicio As New Datos.Servicio
+
+    Private Sub cargar_gridview() 'solo cargo la semana
+        Mantenimiento_ds.Tables("Calendario_b").Rows.Clear()
+        Mantenimiento_ds.Tables("Calendario_b_detalle").Rows.Clear()
+        If Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Count <> 0 Then
+            'si el domingo esta en blanco, tengo que recuperar el primer dia del mes.
+            Dim primer_dia_semana As Date
+            If dia_domingo_nro.Text = "" Then
+                primer_dia_semana = New Date(currentDate.Year, currentDate.Month, 1) 'primer dia del mes vigente
+            Else
+                primer_dia_semana = New Date(currentDate.Year, currentDate.Month, CInt(dia_domingo_nro.Text))
+            End If
+
+            Dim ultimo_dia_semana As Date
+            'si el sabado esta en vacio, tengo que recuperar el ultimo dia del mes.
+            If dia_sabado_nro.Text = "" Then
+                Dim ultimo_dia As Integer = currentDate.AddDays(-1).Day
+                ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, ultimo_dia) 'ultimo dia del mes vigente.
+            Else
+                ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, CInt(dia_sabado_nro.Text))
+            End If
+
+            Dim i As Integer = 0
+            While i < Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Count
+                Dim fecha As Date = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("FECHA")
+
+                If (fecha >= primer_dia_semana) And (fecha <= ultimo_dia_semana) Then
+                    ''lo agrego al datatable del gridview
+                    'Dim fila As DataRow = Mantenimiento_ds.Tables("Calendario_b").NewRow
+                    'Select Case fecha.DayOfWeek
+                    '    Case DayOfWeek.Sunday  'es domingo
+                    '        fila("domingo") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Monday  'es lunes
+                    '        fila("lunes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Tuesday   'es martes
+                    '        fila("martes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Wednesday    'es miercoles
+                    '        fila("miercoles") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Thursday     'es jueves
+                    '        fila("jueves") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Friday      'es viernes
+                    '        fila("viernes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    '    Case DayOfWeek.Saturday       'es sabado
+                    '        fila("sabado") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                    'End Select
+                    'Mantenimiento_ds.Tables("Calendario_b").Rows.Add(fila)
+
+                    If Mantenimiento_ds.Tables("Calendario_b").Rows.Count = 0 Then
+                        'como esta vacia la ingreso donde corresponda
+                        Dim fila As DataRow = Mantenimiento_ds.Tables("Calendario_b").NewRow
+                        fila("id_item") = Mantenimiento_ds.Tables("Calendario_b").Rows.Count
+                        Select Case fecha.DayOfWeek
+                            Case DayOfWeek.Sunday  'es domingo
+                                fila("domingo") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "domingo", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Monday  'es lunes
+                                fila("lunes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "lunes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Tuesday   'es martes
+                                fila("martes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "martes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Wednesday    'es miercoles
+                                fila("miercoles") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "miercoles", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Thursday     'es jueves
+                                fila("jueves") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "jueves", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Friday      'es viernes
+                                fila("viernes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "viernes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                            Case DayOfWeek.Saturday       'es sabado
+                                fila("sabado") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                agregar_detalle(0, "sabado", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                        End Select
+                        Mantenimiento_ds.Tables("Calendario_b").Rows.Add(fila)
+                    Else
+                        Dim k As Integer = 0
+                        Dim agregado As String = "no"
+                        While k < Mantenimiento_ds.Tables("Calendario_b").Rows.Count
+                            Select Case fecha.DayOfWeek
+                                Case DayOfWeek.Sunday  'es domingo
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("domingo").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("domingo") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "domingo", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+
+                                Case DayOfWeek.Monday  'es lunes
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("lunes").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("lunes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "lunes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                                Case DayOfWeek.Tuesday   'es martes
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("martes").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("martes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "martes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                                Case DayOfWeek.Wednesday    'es miercoles
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("miercoles").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("miercoles") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "miercoles", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                                Case DayOfWeek.Thursday     'es jueves
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("jueves").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("jueves") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "jueves", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                                Case DayOfWeek.Friday      'es viernes
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("viernes").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("viernes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "viernes", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                                Case DayOfWeek.Saturday       'es sabado
+                                    If Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("sabado").ToString = "" Then
+                                        Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("sabado") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION") 'aqui va la etiqueta
+                                        agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows(k).Item("id_item"), "sabado", Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                                        agregado = "si"
+                                        Exit While
+                                    End If
+                            End Select
+
+                            k = k + 1
+                        End While
+                        If agregado = "no" Then
+                            'lo agrego al final
+                            Dim fila As DataRow = Mantenimiento_ds.Tables("Calendario_b").NewRow
+                            fila("id_item") = Mantenimiento_ds.Tables("Calendario_b").Rows.Count
+                            Dim dia As String = ""
+                            Select Case fecha.DayOfWeek
+                                Case DayOfWeek.Sunday  'es domingo
+                                    fila("domingo") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "domingo"
+                                Case DayOfWeek.Monday  'es lunes
+                                    fila("lunes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "lunes"
+                                Case DayOfWeek.Tuesday   'es martes
+                                    fila("martes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "martes"
+                                Case DayOfWeek.Wednesday    'es miercoles
+                                    fila("miercoles") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "miercoles"
+                                Case DayOfWeek.Thursday     'es jueves
+                                    fila("jueves") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "jueves"
+                                Case DayOfWeek.Friday      'es viernes
+                                    fila("viernes") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "viernes"
+                                Case DayOfWeek.Saturday       'es sabado
+                                    fila("sabado") = Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("DESCRIPCION")
+                                    dia = "sabado"
+                            End Select
+                            Mantenimiento_ds.Tables("Calendario_b").Rows.Add(fila)
+                            agregar_detalle(Mantenimiento_ds.Tables("Calendario_b").Rows.Count - 1, dia, Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("TIPO_OP"), Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(i).Item("ID"), fecha)
+                        End If
+                    End If
+                End If
+                i = i + 1
+            End While
+        End If
+    End Sub
+
+    Private Sub agregar_detalle(ByVal id_item As String, ByVal dia As String, ByVal tipo_op As String, ByVal id_tabla As String, ByVal fecha As Date)
+        Dim fila_det As DataRow = Mantenimiento_ds.Tables("Calendario_b_detalle").NewRow
+        fila_det("id_item") = id_item
+        fila_det("DIA") = dia
+        fila_det("TIPO_OP") = tipo_op
+        fila_det("id_tabla") = id_tabla
+        fila_det("fecha") = fecha
+        Mantenimiento_ds.Tables("Calendario_b_detalle").Rows.Add(fila_det)
+    End Sub
+
+
+    Private Sub DG_clientes_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DG_clientes.CellClick
+        Try
+            If DG_clientes.CurrentCell.Value <> "" Then
+                'lo busco en el table mantenimiento_ds.tables("Calendario_b_detalle")
+                Dim id_item As String = DG_clientes.CurrentRow.Cells("id_item").Value
+                Dim indice_columna As Integer = e.ColumnIndex
+
+                Dim DIA As String = ""
+                Select Case e.ColumnIndex
+                    Case 0
+                        DIA = "domingo"
+                    Case 1
+                        DIA = "lunes"
+                    Case 2
+                        DIA = "martes"
+                    Case 3
+                        DIA = "miercoles"
+                    Case 4
+                        DIA = "jueves"
+                    Case 5
+                        DIA = "viernes"
+                    Case 6
+                        DIA = "sabado"
+                End Select
+
+                'lo busco 
+                Dim i As Integer = 0
+                While i < Mantenimiento_ds.Tables("Calendario_b_detalle").Rows.Count
+                    If (id_item = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("id_item")) And (DIA = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("DIA")) Then
+                        Dim TIPO_OP As String = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("TIPO_OP").ToString
+                        If TIPO_OP = "orden de revision" Then
+                            Dim serv_id As Integer = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("id_tabla")
+                            Orden_Revision_nueva.Close()
+                            Orden_Revision_nueva.appID = serv_id
+                            Orden_Revision_nueva.Show()
+                        Else
+                            If TIPO_OP = "orden de trabajo" Then
+                                Dim serv_id As Integer = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("id_tabla")
+                                'con el serv_id recupero el cliente_id 
+                                Dim ds_info As DataSet = Daservicio.Servicio_Obterner_Con_Detalle_X_Servicio_id_MDA(serv_id)
+                                Dim cliente_id As Integer = 0
+                                If ds_info.Tables(0).Rows.Count <> 0 Then
+                                    cliente_id = CInt(ds_info.Tables(0).Rows(0).Item("CLI_id"))
+                                End If
+                                Servicio_nuevo.Close()
+                                Servicio_nuevo.Cliente_ID = cliente_id
+                                Servicio_nuevo.serv_id = serv_id
+                                Servicio_nuevo.Show()
+
+                            Else
+                                'ES MANTENIMIENTO PROGRAMADO
+                                Mante_consulta.Close()
+                                Dim mantenimiento_id As Integer = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("id_tabla")
+                                Mante_consulta.procedencia = "calendario_b"
+                                Mante_consulta.mantenimiento_id = mantenimiento_id
+                                Mante_consulta.fecha.Text = Mantenimiento_ds.Tables("Calendario_b_detalle").Rows(i).Item("fecha")
+                                Mante_consulta.Show()
+                            End If
+
+                        End If
+
+
+                        Exit While
+                    End If
+                    i = i + 1
+                End While
+
+                'MessageBox.Show("hoy es:" + DIA)
+
+
+            Else
+                MessageBox.Show("no hay nada")
+
+            End If
+        Catch ex As Exception
+
+        End Try
+        
+    End Sub
 End Class

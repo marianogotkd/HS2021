@@ -443,7 +443,7 @@ Partial Class US_administrador
         '
         Me.CalendarioPruebaToolStripMenuItem.Name = "CalendarioPruebaToolStripMenuItem"
         Me.CalendarioPruebaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.CalendarioPruebaToolStripMenuItem.Text = "calendario prueba"
+        Me.CalendarioPruebaToolStripMenuItem.Text = "Calendario TODO"
         '
         'ToolStripSeparator10
         '
