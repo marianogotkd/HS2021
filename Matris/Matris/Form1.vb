@@ -198,7 +198,7 @@
             'End If
         End While
         If existe = "no" Then
-            MessageBox.Show("no hay camino")
+            MessageBox.Show("La Matriz generada no tiene Solucion. Por favor genere una nueva matriz")
         End If
     End Sub
 
@@ -254,4 +254,20 @@
         nodos.Columns.Add("movimiento")
         nodos.Columns.Add("en_camino")
     End Sub
+
+    Private Sub tb_fila_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles tb_fila.KeyPress
+        If Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    
+    Private Sub tb_Col_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles tb_Col.KeyPress
+        If Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+   
 End Class
