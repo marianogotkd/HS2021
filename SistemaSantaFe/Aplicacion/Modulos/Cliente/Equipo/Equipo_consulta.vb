@@ -51,6 +51,7 @@ Public Class Equipo_consulta
 
         If ds_clie.Tables(0).Rows.Count <> 0 Then
             txt_cliente.Text = ds_clie.Tables(0).Rows(0).Item("CLI_Fan")
+            tb_idcli.Text = ds_clie.Tables(0).Rows(0).Item("CLI_id")
             txt_cliente.ReadOnly = True
         End If
 

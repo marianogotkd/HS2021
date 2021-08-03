@@ -374,7 +374,7 @@
             'listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).Controls.Add(link) 'esta linea es para q se vean los link label con la etiqueta de cada item
 
             listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackColor = Color.AliceBlue     'choco 23-07-2021 quiero que los dias q tienen citas se remarquen en verde
-            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImage = My.Resources.cargaContratos
+            listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImage = My.Resources.GuardarChico
             listFlDay((appDay.Day - 1) + (startDayAtFlNumber - 1)).BackgroundImageLayout = ImageLayout.Center
             i = i + 1
             'If dt.Rows.Count > 2 And i = 2 Then
