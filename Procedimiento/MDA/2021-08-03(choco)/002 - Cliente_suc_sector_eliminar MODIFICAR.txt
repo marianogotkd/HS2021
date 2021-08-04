@@ -1,0 +1,16 @@
+USE [SantaFe]
+GO
+/****** Object:  StoredProcedure [dbo].[Cliente_suc_sector_eliminar]    Script Date: 08/04/2021 18:48:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Cliente_suc_sector_eliminar]
+
+@Cliente_suc_sector_id int
+as
+--pongo en activo = no el sector
+update Cliente_suc_sector set Cliente_suc_sector_activo = 'no' where Cliente_suc_sector.Cliente_suc_sector_id = @Cliente_suc_sector_id 
+
+--pongo en activo = no a todos los equipos de ese sector.
+update Equipo set Equipo_activo = 'no' where Equipo.Cliente_suc_sector_id = @Cliente_suc_sector_id 

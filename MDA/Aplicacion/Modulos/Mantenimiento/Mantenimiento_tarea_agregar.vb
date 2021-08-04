@@ -113,22 +113,22 @@
             If txt_descripcion.Text <> "" Then
                 If cb_tipo.Items.Count <> 0 And cb_tipo_mant.Items.Count <> 0 Then
                     'ahora valido que no exista una tarea con ese nombre, para esa categoria y para ese tipo de mantenimiento.
-                    Dim ds_validar As DataSet = DAtareas.Tareas_validar(txt_descripcion.Text, cb_subtipo.SelectedValue)
-                    If ds_validar.Tables(0).Rows.Count = 0 Then
+                    'Dim ds_validar As DataSet = DAtareas.Tareas_validar(txt_descripcion.Text, cb_subtipo.SelectedValue)
+                    'If ds_validar.Tables(0).Rows.Count = 0 Then
 
-                        DAtareas.Tareas_alta(txt_descripcion.Text, cb_subtipo.SelectedValue, cb_periodicidad.SelectedValue)
-                        txt_descripcion.Clear()
-                        'aqui tengo q actualizar la grilla de la derecha.
-                        recuperar_tareas_existentes()
-                        aplicar_filtro_tareas()
-                        MessageBox.Show("Se agregó correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    DAtareas.Tareas_alta(txt_descripcion.Text, cb_subtipo.SelectedValue, cb_periodicidad.SelectedValue)
+                    txt_descripcion.Clear()
+                    'aqui tengo q actualizar la grilla de la derecha.
+                    recuperar_tareas_existentes()
+                    aplicar_filtro_tareas()
+                    MessageBox.Show("Se agregó correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
-                    Else
-                        MessageBox.Show("Error, ya existe una tarea definida para el tipo: " + cb_tipo.Text + ", subtipo: " + cb_subtipo.Text + ". Por favor modifique la descripción.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                        txt_descripcion.SelectAll()
-                        txt_descripcion.Focus()
-                    End If
+                    'Else
+                    '    MessageBox.Show("Error, ya existe una tarea definida para el tipo: " + cb_tipo.Text + ", subtipo: " + cb_subtipo.Text + ". Por favor modifique la descripción.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    '    txt_descripcion.SelectAll()
+                    '    txt_descripcion.Focus()
+                    'End If
                 Else
                     If cb_tipo.Items.Count = 0 Then
                         MessageBox.Show("Error, debe definir el tipo de mantenimiento.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -186,8 +186,13 @@
                 Dim tipo_mant As String = cb_tipo_mant.SelectedValue.ToString
                 Dim tipo As String = cb_subtipo.SelectedValue.ToString
 
-                TareasBindingSource.Filter = "CONVERT(Mant_tipo_id, System.String) = '" & tipo_mant & "' AND CONVERT(Cat2_equipo_id,System.String) = " & tipo
+                Dim periodicidad As String = cb_periodicidad.SelectedValue.ToString
 
+                Dim filtro_choco As String = "Mant_tipo_id ='" & tipo_mant & "'" & " and Cat2_equipo_id ='" & tipo & "'" & " and Mant_periodicidad_id ='" & periodicidad & "'"
+
+
+                'TareasBindingSource.Filter = "CONVERT(Mant_tipo_id, System.String) = '" & tipo_mant & "' AND CONVERT(Cat2_equipo_id,System.String) = " & tipo 'este anda y filtra por tipo mant y tipo de categoria
+                TareasBindingSource.Filter = filtro_choco
 
 
             End If
@@ -293,4 +298,7 @@
     End Sub
 
 
+    Private Sub cb_periodicidad_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_periodicidad.SelectedIndexChanged
+        aplicar_filtro_tareas()
+    End Sub
 End Class

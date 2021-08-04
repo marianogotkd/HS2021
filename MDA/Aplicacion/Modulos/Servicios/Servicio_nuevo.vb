@@ -1633,11 +1633,11 @@
                     estado_de_orden = "REPARADO"
 
 
-                    Dim result2 As Integer = MessageBox.Show("¿Desea ir al calendario de servicios?", "Sistema de Gestión", MessageBoxButtons.YesNo)
-                    If result2 = DialogResult.Yes Then
-                        Tareas_Consulta.Close()
-                        Tareas_Consulta.Show()
-                    End If
+                    'Dim result2 As Integer = MessageBox.Show("¿Desea ir al calendario de servicios?", "Sistema de Gestión", MessageBoxButtons.YesNo)
+                    'If result2 = DialogResult.Yes Then
+                    '    Tareas_Consulta.Close()
+                    '    Tareas_Consulta.Show()
+                    'End If
 
                     Servicio_Consulta.LOAD_FORM()
 
@@ -1654,62 +1654,61 @@
                 End If
             End If
         Else
-            MessageBox.Show("Error, no se puede realizar la operación.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+            If estado_de_orden = "REPARADO" Then
+                Dim result As Integer = MessageBox.Show("¿Desea guardar los datos de la orden?", "Sistema de Gestión", MessageBoxButtons.YesNo)
+                If result = DialogResult.Yes Then
+                    If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
+                        'solo actualizo el estado a reparado
+                        ''Actualizacion Servicio'''''
+                        Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
+                                                                                        sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
+                                                                                       txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
+                                                                                      0,
+                                                                                    serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+
+                        'primero elimino el detalle
+                        DAservicio.Servicio_eliminar_Detalle(serv_id)
+                        ''Actualizo Detalle''''
+                        If DataGridView1.Rows.Count <> 0 Then
+                            Dim i As Integer = 0
+                            While i < DataGridView1.Rows.Count
+                                DAservicio.Servicio_Producto_Alta_DetalleServicio(serv_id,
+                                                                                 DataGridView1.Rows(i).Cells("ProdxSuc_ID").Value,
+                                                                                   DataGridView1.Rows(i).Cells("Costo").Value,
+                                                                                  DataGridView1.Rows(i).Cells("Cantidad").Value,
+                                                                                  DataGridView1.Rows(i).Cells("subtotal").Value)
+                                i = i + 1
+                            End While
+
+                        End If
+                        'DAservicio.Orden_trabajo_alta(serv_id, Combo_cuadrilla.SelectedValue)
+                        DAservicio.Actividad_Servicio_alta(usuario_id, sucursal_id, Label_Cod.Text, Now, "ORDEN DE TRABAJO, actualización de estado a REPARADO.")
+                        MessageBox.Show("Orden de trabajo actualizada correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        estado_de_orden = "REPARADO"
 
 
-        If estado_de_orden = "REPARADO" Then
-            Dim result As Integer = MessageBox.Show("¿Desea guardar los datos de la orden?", "Sistema de Gestión", MessageBoxButtons.YesNo)
-            If result = DialogResult.Yes Then
-                If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
-                    'solo actualizo el estado a reparado
-                    ''Actualizacion Servicio'''''
-                    Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
-                                                                                    sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
-                                                                                   txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
-                                                                                  0,
-                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
-
-                    'primero elimino el detalle
-                    DAservicio.Servicio_eliminar_Detalle(serv_id)
-                    ''Actualizo Detalle''''
-                    If DataGridView1.Rows.Count <> 0 Then
-                        Dim i As Integer = 0
-                        While i < DataGridView1.Rows.Count
-                            DAservicio.Servicio_Producto_Alta_DetalleServicio(serv_id,
-                                                                             DataGridView1.Rows(i).Cells("ProdxSuc_ID").Value,
-                                                                               DataGridView1.Rows(i).Cells("Costo").Value,
-                                                                              DataGridView1.Rows(i).Cells("Cantidad").Value,
-                                                                              DataGridView1.Rows(i).Cells("subtotal").Value)
-                            i = i + 1
-                        End While
-
+                        'Dim result2 As Integer = MessageBox.Show("¿Desea ir al calendario de servicios?", "Sistema de Gestión", MessageBoxButtons.YesNo)
+                        'If result2 = DialogResult.Yes Then
+                        '    Tareas_Consulta.Close()
+                        '    Tareas_Consulta.Show()
+                        'End If
+                        Servicio_Consulta.LOAD_FORM()
+                        Me.Close()
+                    Else
+                        MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
+                        lbl_errNOM.Visible = True
+                        lb_error_marca.Visible = True
+                        lb_error_modelo.Visible = True
+                        lb_error_nombre.Visible = True
                     End If
-                    'DAservicio.Orden_trabajo_alta(serv_id, Combo_cuadrilla.SelectedValue)
-                    DAservicio.Actividad_Servicio_alta(usuario_id, sucursal_id, Label_Cod.Text, Now, "ORDEN DE TRABAJO, actualización de estado a REPARADO.")
-                    MessageBox.Show("Orden de trabajo actualizada correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    estado_de_orden = "REPARADO"
-
-
-                    Dim result2 As Integer = MessageBox.Show("¿Desea ir al calendario de servicios?", "Sistema de Gestión", MessageBoxButtons.YesNo)
-                    If result2 = DialogResult.Yes Then
-                        Tareas_Consulta.Close()
-                        Tareas_Consulta.Show()
-                    End If
-                    Servicio_Consulta.LOAD_FORM()
-                    Me.Close()
-                Else
-                    MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-                    lbl_errNOM.Visible = True
-                    lb_error_marca.Visible = True
-                    lb_error_modelo.Visible = True
-                    lb_error_nombre.Visible = True
                 End If
+            Else
+                MessageBox.Show("Error, no se puede realizar la operación.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
-        Else
-            MessageBox.Show("Error, no se puede realizar la operación.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
+
+        
 
 
     End Sub

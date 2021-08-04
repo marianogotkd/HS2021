@@ -49,14 +49,11 @@
                         Dim cliente_suc_sector_id As Integer = DG_sector.CurrentRow.Cells("ClientesucsectoridDataGridViewTextBoxColumn").Value
                         DAsector.Cliente_suc_sector_eliminar(cliente_suc_sector_id)
                         'y actualizo la grilla.
+                            recuperar_sectores()
+                            MessageBox.Show("Sector eliminado correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
-
-
-                    End If
-
-
-                    Exit While
+                        End If
+                        Exit While
                 End If
                 i = i + 1
             End While
