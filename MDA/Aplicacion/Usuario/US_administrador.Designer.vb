@@ -432,6 +432,7 @@ Partial Class US_administrador
         Me.CalendarioToolStripMenuItem1.Name = "CalendarioToolStripMenuItem1"
         Me.CalendarioToolStripMenuItem1.Size = New System.Drawing.Size(251, 22)
         Me.CalendarioToolStripMenuItem1.Text = "Calendario"
+        Me.CalendarioToolStripMenuItem1.Visible = False
         '
         'MantenimientosRealizadosToolStripMenuItem
         '
@@ -443,7 +444,7 @@ Partial Class US_administrador
         '
         Me.CalendarioPruebaToolStripMenuItem.Name = "CalendarioPruebaToolStripMenuItem"
         Me.CalendarioPruebaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.CalendarioPruebaToolStripMenuItem.Text = "Calendario TODO"
+        Me.CalendarioPruebaToolStripMenuItem.Text = "Calendario"
         '
         'ToolStripSeparator10
         '
@@ -521,6 +522,7 @@ Partial Class US_administrador
         Me.CalendarioToolStripMenuItem.Name = "CalendarioToolStripMenuItem"
         Me.CalendarioToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.CalendarioToolStripMenuItem.Text = "Calendario"
+        Me.CalendarioToolStripMenuItem.Visible = False
         '
         'ToolStripMenuItem3
         '
