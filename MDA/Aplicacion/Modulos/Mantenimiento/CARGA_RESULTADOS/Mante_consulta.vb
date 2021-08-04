@@ -8,6 +8,9 @@
     Public mantenimiento_id As Integer
 
     Private Sub recuperar_mantenimientos()
+        MANT_2_ds1.Tables("mant_listados").Rows.Clear()
+        MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Clear()
+
         Dim ds_mant As DataSet
         If procedencia = "calendario_todos_X_fecha" Then
             ds_mant = daMant.Mantenimiento_realizado_buscar_TODOS_2021_07_27(fecha.Value.Date)
@@ -312,6 +315,20 @@
                 End If
                 i = i + 1
             End While
+
+            'recupero y actualizo las grillas, es fundamental para el algoritmo./////////////////////////////////
+            recuperar_mantenimientos()
+            'aplicar(filtro)
+            If DG_clientes.Rows.Count <> 0 Then
+                If MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count <> 0 Then
+                    aplicarfiltro_mant_realizados_detalle(DG_clientes.Rows(0).Cells("Mantenimientoid").Value,
+                                                          DG_clientes.Rows(0).Cells("Etiqueta").Value,
+                                                          DG_clientes.Rows(0).Cells("Tipomantenimiento").Value)
+                End If
+            End If
+            '//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
             MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

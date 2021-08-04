@@ -222,16 +222,18 @@
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If DG_OrdenTrabajo.CurrentRow.Cells("ServicioEstado").Value <> "FINALIZADO" Then
-            Dim result As Integer = MessageBox.Show("¿Está seguro que desea Anular el Servicio?", "Sistema de Gestión", MessageBoxButtons.YesNo)
-            If result = DialogResult.Yes Then
-                DAservicio.Servicio_ActualizarEstado(DG_OrdenTrabajo.CurrentRow.Cells("ServicioidDataGridViewTextBoxColumn1").Value, "ANULADO")
-                DAservicio.Actividad_Servicio_alta(usuario_id, sucursal_id, DG_OrdenTrabajo.CurrentRow.Cells("ServicioidDataGridViewTextBoxColumn1").Value, Now, "ANULADO")
+        If DG_OrdenTrabajo.Rows.Count <> 0 Then
+            If DG_OrdenTrabajo.CurrentRow.Cells("ServicioEstado").Value <> "FINALIZADO" Then
+                Dim result As Integer = MessageBox.Show("¿Está seguro que desea Anular el Servicio?", "Sistema de Gestión", MessageBoxButtons.YesNo)
+                If result = DialogResult.Yes Then
+                    DAservicio.Servicio_ActualizarEstado(DG_OrdenTrabajo.CurrentRow.Cells("ServicioidDataGridViewTextBoxColumn1").Value, "ANULADO")
+                    DAservicio.Actividad_Servicio_alta(usuario_id, sucursal_id, DG_OrdenTrabajo.CurrentRow.Cells("ServicioidDataGridViewTextBoxColumn1").Value, Now, "ANULADO")
+                End If
+            Else
+                MessageBox.Show("No se puede cambiar el estado del Servicio seleccionado", "Sistema de Gestión", MessageBoxButtons.OK)
             End If
-        Else
-            MessageBox.Show("No se puede cambiar el estado del Servicio seleccionado", "Sistema de Gestión", MessageBoxButtons.OK)
+            obtener_Servicio(ComboBox_suc.SelectedValue)
         End If
-        obtener_Servicio(ComboBox_suc.SelectedValue)
     End Sub
 
     Private Sub DG_OrdenTrabajo_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles DG_OrdenTrabajo.CellFormatting
