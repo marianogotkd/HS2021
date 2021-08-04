@@ -23,14 +23,14 @@ Partial Class Calendario_b
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
         Me.CalendariobBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -106,7 +106,7 @@ Partial Class Calendario_b
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DG_clientes.AutoGenerateColumns = False
         Me.DG_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DG_clientes.BackgroundColor = System.Drawing.Color.DimGray
+        Me.DG_clientes.BackgroundColor = System.Drawing.Color.White
         Me.DG_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DG_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DG_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -120,11 +120,11 @@ Partial Class Calendario_b
         Me.DG_clientes.ReadOnly = True
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DG_clientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DG_clientes.Size = New System.Drawing.Size(1254, 498)
@@ -376,107 +376,114 @@ Partial Class Calendario_b
         '
         'Domingo_a
         '
+        Me.Domingo_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Domingo_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Domingo_a.DataPropertyName = "domingo"
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Domingo_a.DefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Domingo_a.DefaultCellStyle = DataGridViewCellStyle9
         Me.Domingo_a.HeaderText = "domingo"
-        Me.Domingo_a.LinkColor = System.Drawing.Color.White
+        Me.Domingo_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Domingo_a.Name = "Domingo_a"
         Me.Domingo_a.ReadOnly = True
         Me.Domingo_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Domingo_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Domingo_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Domingo_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Domingo_a.Width = 176
         '
         'Lunes_a
         '
+        Me.Lunes_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Lunes_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Lunes_a.DataPropertyName = "lunes"
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lunes_a.DefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lunes_a.DefaultCellStyle = DataGridViewCellStyle10
         Me.Lunes_a.HeaderText = "lunes"
-        Me.Lunes_a.LinkColor = System.Drawing.Color.White
+        Me.Lunes_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Lunes_a.Name = "Lunes_a"
         Me.Lunes_a.ReadOnly = True
         Me.Lunes_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Lunes_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Lunes_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Lunes_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Lunes_a.Width = 176
         '
         'Martes_a
         '
+        Me.Martes_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Martes_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Martes_a.DataPropertyName = "martes"
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Martes_a.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Martes_a.DefaultCellStyle = DataGridViewCellStyle11
         Me.Martes_a.HeaderText = "martes"
-        Me.Martes_a.LinkColor = System.Drawing.Color.White
+        Me.Martes_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Martes_a.Name = "Martes_a"
         Me.Martes_a.ReadOnly = True
         Me.Martes_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Martes_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Martes_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Martes_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Martes_a.Width = 176
         '
         'Miercoles_a
         '
+        Me.Miercoles_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Miercoles_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Miercoles_a.DataPropertyName = "miercoles"
-        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Miercoles_a.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Miercoles_a.DefaultCellStyle = DataGridViewCellStyle12
         Me.Miercoles_a.HeaderText = "miercoles"
-        Me.Miercoles_a.LinkColor = System.Drawing.Color.White
+        Me.Miercoles_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Miercoles_a.Name = "Miercoles_a"
         Me.Miercoles_a.ReadOnly = True
         Me.Miercoles_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Miercoles_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Miercoles_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Miercoles_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Miercoles_a.Width = 176
         '
         'Jueves_a
         '
+        Me.Jueves_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Jueves_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Jueves_a.DataPropertyName = "jueves"
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Jueves_a.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Jueves_a.DefaultCellStyle = DataGridViewCellStyle13
         Me.Jueves_a.HeaderText = "jueves"
-        Me.Jueves_a.LinkColor = System.Drawing.Color.White
+        Me.Jueves_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Jueves_a.Name = "Jueves_a"
         Me.Jueves_a.ReadOnly = True
         Me.Jueves_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Jueves_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Jueves_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Jueves_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Jueves_a.Width = 176
         '
         'Viernes_a
         '
+        Me.Viernes_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Viernes_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Viernes_a.DataPropertyName = "viernes"
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Viernes_a.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Viernes_a.DefaultCellStyle = DataGridViewCellStyle14
         Me.Viernes_a.HeaderText = "viernes"
-        Me.Viernes_a.LinkColor = System.Drawing.Color.White
+        Me.Viernes_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Viernes_a.Name = "Viernes_a"
         Me.Viernes_a.ReadOnly = True
         Me.Viernes_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Viernes_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Viernes_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Viernes_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Viernes_a.Width = 176
         '
         'Sabado_a
         '
+        Me.Sabado_a.ActiveLinkColor = System.Drawing.Color.GhostWhite
         Me.Sabado_a.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Sabado_a.DataPropertyName = "sabado"
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sabado_a.DefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sabado_a.DefaultCellStyle = DataGridViewCellStyle15
         Me.Sabado_a.HeaderText = "sabado"
-        Me.Sabado_a.LinkColor = System.Drawing.Color.White
+        Me.Sabado_a.LinkColor = System.Drawing.Color.MediumBlue
         Me.Sabado_a.Name = "Sabado_a"
         Me.Sabado_a.ReadOnly = True
         Me.Sabado_a.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Sabado_a.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Sabado_a.VisitedLinkColor = System.Drawing.Color.White
+        Me.Sabado_a.VisitedLinkColor = System.Drawing.Color.MediumBlue
         Me.Sabado_a.Width = 176
         '
         'id_item
