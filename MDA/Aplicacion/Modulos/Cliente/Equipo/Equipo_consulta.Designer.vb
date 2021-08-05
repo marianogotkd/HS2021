@@ -23,8 +23,10 @@ Partial Class Equipo_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tb_idcli = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cb_sucursal = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -42,8 +44,6 @@ Partial Class Equipo_consulta
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tb_idcli = New System.Windows.Forms.TextBox()
         Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EquipodescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EquipodenominacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,6 +77,23 @@ Partial Class Equipo_consulta
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del cliente"
+        '
+        'tb_idcli
+        '
+        Me.tb_idcli.Location = New System.Drawing.Point(82, 16)
+        Me.tb_idcli.Name = "tb_idcli"
+        Me.tb_idcli.ReadOnly = True
+        Me.tb_idcli.Size = New System.Drawing.Size(102, 20)
+        Me.tb_idcli.TabIndex = 257
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 19)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.TabIndex = 256
+        Me.Label3.Text = "ID de Cliente"
         '
         'PictureBox1
         '
@@ -174,10 +191,10 @@ Partial Class Equipo_consulta
         Me.DG_clientes.Name = "DG_clientes"
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(1079, 273)
         Me.DG_clientes.StandardTab = True
@@ -277,29 +294,13 @@ Partial Class Equipo_consulta
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 19)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 13)
-        Me.Label3.TabIndex = 256
-        Me.Label3.Text = "ID de Cliente"
-        '
-        'tb_idcli
-        '
-        Me.tb_idcli.Location = New System.Drawing.Point(82, 16)
-        Me.tb_idcli.Name = "tb_idcli"
-        Me.tb_idcli.ReadOnly = True
-        Me.tb_idcli.Size = New System.Drawing.Size(102, 20)
-        Me.tb_idcli.TabIndex = 257
-        '
         'EquipoidDataGridViewTextBoxColumn
         '
         Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
         Me.EquipoidDataGridViewTextBoxColumn.HeaderText = "ID del Equipo"
         Me.EquipoidDataGridViewTextBoxColumn.Name = "EquipoidDataGridViewTextBoxColumn"
         Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EquipoidDataGridViewTextBoxColumn.Visible = False
         '
         'EquipodescripcionDataGridViewTextBoxColumn
         '
