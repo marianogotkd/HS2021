@@ -1683,6 +1683,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Aplicacion.My.Resources.Resources.facturacionElectronica">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Aplicacion.My.Resources.Resources.floppy_disk">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

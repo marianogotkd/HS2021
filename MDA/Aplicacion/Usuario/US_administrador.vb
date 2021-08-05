@@ -128,9 +128,8 @@ Public Property EnabledCerrar() As Boolean
         llamar_Form(Turno_ConfigurarMailDestino)
     End Sub
 
-    Private Sub TurnoGestionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TurnoGestionToolStripMenuItem.Click
-        Mantenimiento_tarea_agregar.Close()
-        Mantenimiento_tarea_agregar.Show()
+    Private Sub TurnoGestionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
 
@@ -707,7 +706,9 @@ Public Property EnabledCerrar() As Boolean
     End Sub
 
     Private Sub HeladeraGondolaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HeladeraGondolaToolStripMenuItem.Click
-        llamar_Form(Gondola)
+        Cliente_modificar.procedencia = "Equipo"
+        Cliente_modificar.Show()
+        Cliente_modificar.Focus()
     End Sub
 
 
@@ -913,36 +914,51 @@ Public Property EnabledCerrar() As Boolean
 
 
   
-    Private Sub AsignarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AsignarToolStripMenuItem.Click
-        Cliente_modificar.procedencia = "Equipo"
-        Cliente_modificar.Show()
-        Cliente_modificar.Focus()
+    Private Sub AsignarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
-    Private Sub ConfiguracionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConfiguracionToolStripMenuItem.Click
-        Equipos_categoria_consultar.Close()
-        Equipos_categoria_consultar.Show()
+    Private Sub ConfiguracionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
-    Private Sub CalendarioToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioToolStripMenuItem1.Click
+    Private Sub CalendarioToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Calendario_seleccion_cliente.Close()
         'Calendario_seleccion_cliente.Show()
         Calendario_Mantenimiento.Close()
         Calendario_Mantenimiento.Show()
     End Sub
 
-    Private Sub MantenimientosRealizadosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MantenimientosRealizadosToolStripMenuItem.Click
+    Private Sub MantenimientosRealizadosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+
+
+    End Sub
+
+    Private Sub CalendarioPruebaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Calendario_b.Show()
+    End Sub
+
+    Private Sub CategoriasDeEquiposToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CategoriasDeEquiposToolStripMenuItem.Click
+        Equipos_categoria_consultar.Close()
+        Equipos_categoria_consultar.Show()
+    End Sub
+
+    Private Sub ConfiguracionDeMantenimientoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConfiguracionDeMantenimientoToolStripMenuItem.Click
+        Mantenimiento_tarea_agregar.Close()
+        Mantenimiento_tarea_agregar.Show()
+    End Sub
+
+    Private Sub MantenimientosRealizadosToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MantenimientosRealizadosToolStripMenuItem1.Click
         Dim formulario As New Calendario_seleccion_cliente
 
         formulario.procedencia = "mantenimientos realizados"
         formulario.Text = "Mantenimientos Realizados: Selección de Cliente."
         formulario.Show()
 
-
-
     End Sub
 
-    Private Sub CalendarioPruebaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalendarioPruebaToolStripMenuItem.Click
+    Private Sub ToolStripDropDownButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripDropDownButton1.Click
         Calendario_b.Show()
     End Sub
 End Class
