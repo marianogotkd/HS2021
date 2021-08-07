@@ -109,126 +109,126 @@
     End Sub
 
     Private Sub btn_Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Aceptar.Click
-        Try
-            If dg_tareas.Rows.Count <> 0 Then
-                'ahora controlo que al menos este seleccionada 1
-                Dim valido As String = "no"
+        'Try
+        If dg_tareas.Rows.Count <> 0 Then
+            'ahora controlo que al menos este seleccionada 1
+            Dim valido As String = "no"
 
-                If fecha.Value.DayOfWeek <> DayOfWeek.Saturday And fecha.Value.DayOfWeek <> DayOfWeek.Sunday Then
-
-
+            If fecha.Value.DayOfWeek <> DayOfWeek.Saturday And fecha.Value.DayOfWeek <> DayOfWeek.Sunday Then
 
 
 
-                    Dim i As Integer = 0
-                    While i < dg_tareas.Rows.Count
-                        If dg_tareas.Rows(i).Cells("item").Value = True Then
-                            valido = "si"
-                            Exit While
-                        End If
-                        i = i + 1
-                    End While
 
-                    'por ultimo validar que no exista un mantenimiento programado.
-                    Dim validar_mant_programado As String = "no existe"
-                    Dim periodicidad_id As Integer = CInt(cb_periodicidad.SelectedValue)
-                    Dim tipo_mantenimiento_id As Integer = CInt(cb_tipo_mant.SelectedValue)
-                    'Equipo_id 'este es el equipo que voy a validar
-                    Dim j As Integer = 0
-                    While j < dg_tareas.Rows.Count
-                        j = j + 1
-                        Dim tareas_id As Integer = dg_tareas.Rows(j).Cells("TareasidDataGridViewTextBoxColumn").Value
-                        Dim k As Integer = 0
-                        While k < Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows.Count
-                            'busco la tarea
-                            If tareas_id = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows(k).Item("Tareas_id") Then
-                                'lo encontre, ahora controlo.
-                                Dim mantenimiento_id_ss As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows(k).Item("Mantenimiento_id")
-                                'ahora lo busco en el otro gridview. el de la izquierda
-                                Dim h As Integer = 0
-                                While h < Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count
-                                    If mantenimiento_id_ss = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mantenimiento_id") Then
-                                        Dim fecha_a As Date = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mantenimiento_fecha_inicio")
-                                        Dim tipo_mant_id_a As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mant_tipo_id")
-                                        Dim periodicidad_id_a As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mant_periodicidad_id")
-                                        If (fecha.Value.Date = fecha_a) And (tipo_mant_id_a = tipo_mantenimiento_id) And (periodicidad_id = periodicidad_id_a) Then
-                                            If procedencia = "modificar" Then
-                                                If mantenimiento_id = mantenimiento_id_ss Then
-                                                    'si estoy modificando no me importa que exista.
-                                                Else
-                                                    validar_mant_programado = "existe, encontrado"
-                                                    valido = "no"
-                                                End If
 
+                Dim i As Integer = 0
+                While i < dg_tareas.Rows.Count
+                    If dg_tareas.Rows(i).Cells("item").Value = True Then
+                        valido = "si"
+                        Exit While
+                    End If
+                    i = i + 1
+                End While
+
+                'por ultimo validar que no exista un mantenimiento programado.
+                Dim validar_mant_programado As String = "no existe"
+                Dim periodicidad_id As Integer = CInt(cb_periodicidad.SelectedValue)
+                Dim tipo_mantenimiento_id As Integer = CInt(cb_tipo_mant.SelectedValue)
+                'Equipo_id 'este es el equipo que voy a validar
+                Dim j As Integer = 0
+                While j < dg_tareas.Rows.Count
+                    'j = j + 1
+                    Dim tareas_id As Integer = dg_tareas.Rows(j).Cells("TareasidDataGridViewTextBoxColumn").Value
+                    Dim k As Integer = 0
+                    While k < Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows.Count
+                        'busco la tarea
+                        If tareas_id = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows(k).Item("Tareas_id") Then
+                            'lo encontre, ahora controlo.
+                            Dim mantenimiento_id_ss As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Tareas_asignadas").Rows(k).Item("Mantenimiento_id")
+                            'ahora lo busco en el otro gridview. el de la izquierda
+                            Dim h As Integer = 0
+                            While h < Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows.Count
+                                If mantenimiento_id_ss = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mantenimiento_id") Then
+                                    Dim fecha_a As Date = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mantenimiento_fecha_inicio")
+                                    Dim tipo_mant_id_a As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mant_tipo_id")
+                                    Dim periodicidad_id_a As Integer = Mantenimiento_config_alta.Mantenimiento_ds.Tables("Mantenimiento_prog").Rows(h).Item("Mant_periodicidad_id")
+                                    If (fecha.Value.Date = fecha_a) And (tipo_mant_id_a = tipo_mantenimiento_id) And (periodicidad_id = periodicidad_id_a) Then
+                                        If procedencia = "modificar" Then
+                                            If mantenimiento_id = mantenimiento_id_ss Then
+                                                'si estoy modificando no me importa que exista.
                                             Else
                                                 validar_mant_programado = "existe, encontrado"
                                                 valido = "no"
                                             End If
 
-                                            Exit While
+                                        Else
+                                            validar_mant_programado = "existe, encontrado"
+                                            valido = "no"
                                         End If
+
+                                        Exit While
                                     End If
-                                    h = h + 1
-                                End While
-                            End If
-                            If validar_mant_programado = "no existe" Then
-                                k = k + 1
-                            Else
-                                Exit While
-                            End If
-                        End While
+                                End If
+                                h = h + 1
+                            End While
+                        End If
                         If validar_mant_programado = "no existe" Then
-                            j = j + 1
+                            k = k + 1
                         Else
                             Exit While
                         End If
                     End While
-                    If valido = "si" Then
-
-                        If procedencia = "modificar" Then
-                            'voy a hacer un borrado lógico. cambiando el estado del campo mantenimiento_activo en la base de datos.
-                            daMant.Mantenimiento_quitar(mantenimiento_id)
-                        End If
-
-                        'aqui guardo
-                        Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date, "si")
-                        mantenimiento_id = ds_mant.Tables(0).Rows(0).Item(0)
-
-                        'ahora guardo las tareas asignadas
-                        Dim jj As Integer = 0
-                        While jj < dg_tareas.Rows.Count
-                            If dg_tareas.Rows(jj).Cells("item").Value = True Then
-                                Dim Tareas_id As Integer = dg_tareas.Rows(jj).Cells("TareasidDataGridViewTextBoxColumn").Value
-                                daMant.Tareas_asignadas_alta(Tareas_id, mantenimiento_id)
-                            End If
-                            jj = jj + 1
-                        End While
-                        'aqui viene mensaje de confirmacion
-
-                        MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                        'reflejar los cambios en el formulario Mantenimiento_config_alta
-                        Mantenimiento_config_alta.recuperar_info_equipo()
-                        Me.Close()
+                    If validar_mant_programado = "no existe" Then
+                        j = j + 1
                     Else
-                        'error
-                        If validar_mant_programado = "existe, encontrado" Then
-                            MessageBox.Show("Error, ya se encuentra programado un mantenimiento con las mismas caracteristicas. Las tareas no seran guardadas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        Else
-                            MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
+                        Exit While
                     End If
+                End While
+                If valido = "si" Then
+
+                    If procedencia = "modificar" Then
+                        'voy a hacer un borrado lógico. cambiando el estado del campo mantenimiento_activo en la base de datos.
+                        daMant.Mantenimiento_quitar(mantenimiento_id)
+                    End If
+
+                    'aqui guardo
+                    Dim ds_mant As DataSet = daMant.Mantenimiento_alta(Equipo_id, cb_periodicidad.SelectedValue, fecha.Value.Date, "si")
+                    mantenimiento_id = ds_mant.Tables(0).Rows(0).Item(0)
+
+                    'ahora guardo las tareas asignadas
+                    Dim jj As Integer = 0
+                    While jj < dg_tareas.Rows.Count
+                        If dg_tareas.Rows(jj).Cells("item").Value = True Then
+                            Dim Tareas_id As Integer = dg_tareas.Rows(jj).Cells("TareasidDataGridViewTextBoxColumn").Value
+                            daMant.Tareas_asignadas_alta(Tareas_id, mantenimiento_id)
+                        End If
+                        jj = jj + 1
+                    End While
+                    'aqui viene mensaje de confirmacion
+
+                    MessageBox.Show("Los datos se guardaron correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    'reflejar los cambios en el formulario Mantenimiento_config_alta
+                    Mantenimiento_config_alta.recuperar_info_equipo()
+                    Me.Close()
                 Else
                     'error
-                    MessageBox.Show("Error, modifique la fecha, no debe ser fin de semana.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    If validar_mant_programado = "existe, encontrado" Then
+                        MessageBox.Show("Error, ya se encuentra programado un mantenimiento con las mismas caracteristicas. Las tareas no seran guardadas.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 End If
             Else
                 'error
-                MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error, modifique la fecha, no debe ser fin de semana.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
-        Catch ex As Exception
+        Else
+            'error
+            MessageBox.Show("Error, debe seleccionar al menos una tarea.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
     End Sub
 End Class
