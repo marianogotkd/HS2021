@@ -65,6 +65,7 @@ Partial Class Mantenimiento_tipo_editar
         Me.txt_dias.BackColor = System.Drawing.SystemColors.Info
         Me.txt_dias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.txt_dias.Location = New System.Drawing.Point(56, 62)
+        Me.txt_dias.Maximum = New Decimal(New Integer() {365, 0, 0, 0})
         Me.txt_dias.Name = "txt_dias"
         Me.txt_dias.ReadOnly = True
         Me.txt_dias.Size = New System.Drawing.Size(56, 26)

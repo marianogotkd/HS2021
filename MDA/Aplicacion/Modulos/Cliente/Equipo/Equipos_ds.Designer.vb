@@ -678,6 +678,8 @@ Partial Public Class Equipos_ds
         
         Private columnfoto As Global.System.Data.DataColumn
         
+        Private columnlogo_empresa As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -730,6 +732,14 @@ Partial Public Class Equipos_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property logo_empresaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlogo_empresa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -766,9 +776,9 @@ Partial Public Class Equipos_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddEquipo_QRRow(ByVal etiqueta As String, ByVal foto() As Byte) As Equipo_QRRow
+        Public Overloads Function AddEquipo_QRRow(ByVal etiqueta As String, ByVal foto() As Byte, ByVal logo_empresa() As Byte) As Equipo_QRRow
             Dim rowEquipo_QRRow As Equipo_QRRow = CType(Me.NewRow,Equipo_QRRow)
-            Dim columnValuesArray() As Object = New Object() {etiqueta, foto}
+            Dim columnValuesArray() As Object = New Object() {etiqueta, foto, logo_empresa}
             rowEquipo_QRRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowEquipo_QRRow)
             Return rowEquipo_QRRow
@@ -793,6 +803,7 @@ Partial Public Class Equipos_ds
         Friend Sub InitVars()
             Me.columnetiqueta = MyBase.Columns("etiqueta")
             Me.columnfoto = MyBase.Columns("foto")
+            Me.columnlogo_empresa = MyBase.Columns("logo_empresa")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -802,6 +813,8 @@ Partial Public Class Equipos_ds
             MyBase.Columns.Add(Me.columnetiqueta)
             Me.columnfoto = New Global.System.Data.DataColumn("foto", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnfoto)
+            Me.columnlogo_empresa = New Global.System.Data.DataColumn("logo_empresa", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlogo_empresa)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1239,6 +1252,21 @@ Partial Public Class Equipos_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property logo_empresa() As Byte()
+            Get
+                Try 
+                    Return CType(Me(Me.tableEquipo_QR.logo_empresaColumn),Byte())
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'logo_empresa' de la tabla 'Equipo_QR' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEquipo_QR.logo_empresaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsetiquetaNull() As Boolean
             Return Me.IsNull(Me.tableEquipo_QR.etiquetaColumn)
         End Function
@@ -1259,6 +1287,18 @@ Partial Public Class Equipos_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetfotoNull()
             Me(Me.tableEquipo_QR.fotoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Islogo_empresaNull() As Boolean
+            Return Me.IsNull(Me.tableEquipo_QR.logo_empresaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setlogo_empresaNull()
+            Me(Me.tableEquipo_QR.logo_empresaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

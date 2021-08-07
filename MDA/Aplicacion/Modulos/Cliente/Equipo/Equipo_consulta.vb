@@ -258,6 +258,14 @@ Public Class Equipo_consulta
                     fila("etiqueta") = DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value
                     fila("foto") = foto_byte
                     'PictureBox1.Image = IMAGEN
+
+                    'colocamos el logo de la empresa
+                    Dim usuario_id As String
+                    usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+                    Dim DAventa As New Datos.Venta
+                    Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+                    fila("logo_empresa") = ds_usuario.Tables(1).Rows(0).Item("empresa_foto")
+
                     Equipos_ds.Tables("Equipo_QR").Rows.Add(fila)
 
 
@@ -359,6 +367,14 @@ Public Class Equipo_consulta
                         Dim fila As DataRow = Equipos_ds.Tables("Equipo_QR").NewRow
                         fila("etiqueta") = DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value
                         fila("foto") = foto_byte
+
+                        'colocamos el logo de la empresa
+                        Dim usuario_id As String
+                        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+                        Dim DAventa As New Datos.Venta
+                        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+                        fila("logo_empresa") = ds_usuario.Tables(1).Rows(0).Item("empresa_foto")
+
                         'PictureBox1.Image = IMAGEN
                         Equipos_ds.Tables("Equipo_QR").Rows.Add(fila)
 
