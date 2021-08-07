@@ -25,7 +25,7 @@ Partial Class US_administrador
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(US_administrador))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.NuevoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClienteInformeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,7 +48,7 @@ Partial Class US_administrador
         Me.ActualizarProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeMercaderiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimientosDeMercaderiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripDropDownButton6 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.VentaEnCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentaEnMesas2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,6 +58,12 @@ Partial Class US_administrador
         Me.CierreDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemitoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PresupuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripDropDownButton_Equipo = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.HeladeraGondolaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientosRealizadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriasDeEquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguracionDeMantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
@@ -99,9 +105,6 @@ Partial Class US_administrador
         Me.TerminalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TerminalNuevoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TerminalModificarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripDropDownButton_Equipo = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.HeladeraGondolaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.PN_Entrada = New System.Windows.Forms.Panel()
         Me.BO_USU_cerrar = New System.Windows.Forms.Button()
@@ -118,9 +121,6 @@ Partial Class US_administrador
         Me.Btn_corte_caja = New System.Windows.Forms.Button()
         Me.Label_Suc = New System.Windows.Forms.Label()
         Me.Lbl_Terminal = New System.Windows.Forms.Label()
-        Me.CategoriasDeEquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguracionDeMantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientosRealizadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -130,7 +130,7 @@ Partial Class US_administrador
         Me.ToolStrip1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator3, Me.ToolStripDropDownButton2, Me.ToolStripSeparator4, Me.ToolStripDropDownButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton6, Me.ToolStripSeparator2, Me.ToolStripDropDownButton_Equipo, Me.ToolStripSeparator1, Me.ToolStripDropDownButton1, Me.ToolStripSeparator10, Me.ToolStripDropDownButton7, Me.ToolStripSeparator6, Me.ToolStripDropDownButtonServicios, Me.ToolStripSeparator7, Me.ToolStripDropDownButton8, Me.ToolStripSeparator8, Me.ToolStripDropDownButtonConfiguracion, Me.ToolStripSeparator9})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator3, Me.ToolStripDropDownButton2, Me.ToolStripSeparator4, Me.ToolStripDropDownButton4, Me.ToolStripSeparator5, Me.ToolStripDropDownButton6, Me.ToolStripSeparator2, Me.ToolStripDropDownButtonServicios, Me.ToolStripSeparator7, Me.ToolStripDropDownButton_Equipo, Me.ToolStripSeparator1, Me.ToolStripDropDownButton1, Me.ToolStripSeparator10, Me.ToolStripDropDownButton7, Me.ToolStripSeparator6, Me.ToolStripDropDownButton8, Me.ToolStripSeparator8, Me.ToolStripDropDownButtonConfiguracion, Me.ToolStripSeparator9})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.ToolStrip1.Location = New System.Drawing.Point(17, 71)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -139,10 +139,10 @@ Partial Class US_administrador
         Me.ToolStrip1.TabIndex = 54
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripSeparator2
+        'ToolStripSeparator3
         '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(79, 6)
         '
         'ToolStripDropDownButton2
         '
@@ -307,10 +307,10 @@ Partial Class US_administrador
         Me.MovimientosDeMercaderiaToolStripMenuItem.Text = "Consulta de Movimientos"
         Me.MovimientosDeMercaderiaToolStripMenuItem.Visible = False
         '
-        'ToolStripSeparator3
+        'ToolStripSeparator5
         '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(79, 6)
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(79, 6)
         '
         'ToolStripDropDownButton6
         '
@@ -379,6 +379,48 @@ Partial Class US_administrador
         Me.PresupuestoToolStripMenuItem.Name = "PresupuestoToolStripMenuItem"
         Me.PresupuestoToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.PresupuestoToolStripMenuItem.Text = "Presupuesto"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(79, 6)
+        '
+        'ToolStripDropDownButton_Equipo
+        '
+        Me.ToolStripDropDownButton_Equipo.AutoSize = False
+        Me.ToolStripDropDownButton_Equipo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripDropDownButton_Equipo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HeladeraGondolaToolStripMenuItem, Me.MantenimientosRealizadosToolStripMenuItem1, Me.CategoriasDeEquiposToolStripMenuItem, Me.ConfiguracionDeMantenimientoToolStripMenuItem})
+        Me.ToolStripDropDownButton_Equipo.Image = Global.Aplicacion.My.Resources.Resources.facturacionElectronica
+        Me.ToolStripDropDownButton_Equipo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripDropDownButton_Equipo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton_Equipo.Name = "ToolStripDropDownButton_Equipo"
+        Me.ToolStripDropDownButton_Equipo.Size = New System.Drawing.Size(80, 60)
+        Me.ToolStripDropDownButton_Equipo.Text = "Bar"
+        Me.ToolStripDropDownButton_Equipo.ToolTipText = "Equipos"
+        '
+        'HeladeraGondolaToolStripMenuItem
+        '
+        Me.HeladeraGondolaToolStripMenuItem.Name = "HeladeraGondolaToolStripMenuItem"
+        Me.HeladeraGondolaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
+        Me.HeladeraGondolaToolStripMenuItem.Text = "Asignar / Consultar"
+        '
+        'MantenimientosRealizadosToolStripMenuItem1
+        '
+        Me.MantenimientosRealizadosToolStripMenuItem1.Name = "MantenimientosRealizadosToolStripMenuItem1"
+        Me.MantenimientosRealizadosToolStripMenuItem1.Size = New System.Drawing.Size(251, 22)
+        Me.MantenimientosRealizadosToolStripMenuItem1.Text = "Mantenimientos realizados"
+        '
+        'CategoriasDeEquiposToolStripMenuItem
+        '
+        Me.CategoriasDeEquiposToolStripMenuItem.Name = "CategoriasDeEquiposToolStripMenuItem"
+        Me.CategoriasDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
+        Me.CategoriasDeEquiposToolStripMenuItem.Text = "Categorias de Equipos"
+        '
+        'ConfiguracionDeMantenimientoToolStripMenuItem
+        '
+        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Name = "ConfiguracionDeMantenimientoToolStripMenuItem"
+        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
+        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Text = "Configuracion de Mantenimiento"
         '
         'ToolStripSeparator1
         '
@@ -680,30 +722,6 @@ Partial Class US_administrador
         Me.TerminalModificarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
         Me.TerminalModificarToolStripMenuItem2.Text = "Modificar"
         '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(79, 6)
-        '
-        'ToolStripDropDownButton_Equipo
-        '
-        Me.ToolStripDropDownButton_Equipo.AutoSize = False
-        Me.ToolStripDropDownButton_Equipo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripDropDownButton_Equipo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HeladeraGondolaToolStripMenuItem, Me.MantenimientosRealizadosToolStripMenuItem1, Me.CategoriasDeEquiposToolStripMenuItem, Me.ConfiguracionDeMantenimientoToolStripMenuItem})
-        Me.ToolStripDropDownButton_Equipo.Image = Global.Aplicacion.My.Resources.Resources.facturacionElectronica
-        Me.ToolStripDropDownButton_Equipo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripDropDownButton_Equipo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton_Equipo.Name = "ToolStripDropDownButton_Equipo"
-        Me.ToolStripDropDownButton_Equipo.Size = New System.Drawing.Size(80, 60)
-        Me.ToolStripDropDownButton_Equipo.Text = "Bar"
-        Me.ToolStripDropDownButton_Equipo.ToolTipText = "Equipos"
-        '
-        'HeladeraGondolaToolStripMenuItem
-        '
-        Me.HeladeraGondolaToolStripMenuItem.Name = "HeladeraGondolaToolStripMenuItem"
-        Me.HeladeraGondolaToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.HeladeraGondolaToolStripMenuItem.Text = "Asignar / Consultar"
-        '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
@@ -895,24 +913,6 @@ Partial Class US_administrador
         Me.Lbl_Terminal.TabIndex = 60
         Me.Lbl_Terminal.Text = "Lbl_Terminal"
         Me.Lbl_Terminal.Visible = False
-        '
-        'CategoriasDeEquiposToolStripMenuItem
-        '
-        Me.CategoriasDeEquiposToolStripMenuItem.Name = "CategoriasDeEquiposToolStripMenuItem"
-        Me.CategoriasDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.CategoriasDeEquiposToolStripMenuItem.Text = "Categorias de Equipos"
-        '
-        'ConfiguracionDeMantenimientoToolStripMenuItem
-        '
-        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Name = "ConfiguracionDeMantenimientoToolStripMenuItem"
-        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Size = New System.Drawing.Size(251, 22)
-        Me.ConfiguracionDeMantenimientoToolStripMenuItem.Text = "Configuracion de Mantenimiento"
-        '
-        'MantenimientosRealizadosToolStripMenuItem1
-        '
-        Me.MantenimientosRealizadosToolStripMenuItem1.Name = "MantenimientosRealizadosToolStripMenuItem1"
-        Me.MantenimientosRealizadosToolStripMenuItem1.Size = New System.Drawing.Size(251, 22)
-        Me.MantenimientosRealizadosToolStripMenuItem1.Text = "Mantenimientos realizados"
         '
         'US_administrador
         '
