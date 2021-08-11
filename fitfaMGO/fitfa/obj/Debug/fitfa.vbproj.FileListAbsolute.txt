@@ -1,0 +1,112 @@
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\fitfa.dll
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\fitfa.pdb
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\fitfa.xml
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\Capa_de_datos.dll
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\Capa_de_datos.pdb
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\bin\Capa_de_datos.xml
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.Resources.resources
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.dll
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.xml
+c:\users\hamernotei7\documents\visual studio 2010\Projects\fitfa\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Hamersoft Nuevos Proyectos\fitfa\fitfa\obj\Debug\fitfa.pdb
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\fitfa.dll
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\fitfa.pdb
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\fitfa.xml
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\Capa_de_datos.dll
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\Capa_de_datos.pdb
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\bin\Capa_de_datos.xml
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\fitfa.dll
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\fitfa.xml
+C:\Documents and Settings\Pablo\Mis documentos\FITFA CHOCO\fitfa\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfa\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Desktop\fitfa\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Desktop\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\fitfa.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\fitfa.xml
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\itextsharp.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\itextsharp.pdfa.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\itextsharp.xtra.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\RdlCompile.cache
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\RdlCompile.compiled
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\Users\choco\Documents\HAMERSOFT\FITFA CHOCO\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+<<<<<<< .mine
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\RdlCompile.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\RdlCompile.compiled
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+=======
+>>>>>>> .r240
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\itextsharp.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\itextsharp.pdfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\HamerSoft_Repo\fitfaMGO\fitfa\bin\itextsharp.xtra.dll
