@@ -455,4 +455,23 @@ ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usua
     End Function
 
 
+    Public Function Usuario_validar_DNI(ByVal dni As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Usuario_validar_DNI", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Usuario_doc", dni))
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "Usuario_validar_DNI")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
 End Class
