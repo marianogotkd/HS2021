@@ -1250,6 +1250,34 @@
     <Content Include="bootstrap-fileinput-master\js\fileinput.min.js" />
     <Content Include="Carga Competidores\Carga_Manual_Competidores.aspx" />
     <Content Include="Contraseña\contraseña_cambiar.aspx" />
+    <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="LoginDNI\assets\bootstrap\css\bootstrap.css" />
+    <Content Include="LoginDNI\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="LoginDNI\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="LoginDNI\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="LoginDNI\assets\bootstrap\js\npm.js" />
+    <Content Include="LoginDNI\assets\css\form-elements.css" />
+    <Content Include="LoginDNI\assets\css\style.css" />
+    <Content Include="LoginDNI\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="LoginDNI\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="LoginDNI\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="LoginDNI\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="LoginDNI\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="LoginDNI\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="LoginDNI\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="LoginDNI\assets\ico\favicon.png" />
+    <Content Include="LoginDNI\assets\img\backgrounds\1%402x-1.jpg" />
+    <Content Include="LoginDNI\assets\img\backgrounds\1%402x.jpg" />
+    <Content Include="LoginDNI\assets\img\backgrounds\1-1.jpg" />
+    <Content Include="LoginDNI\assets\img\backgrounds\1.jpg" />
+    <Content Include="LoginDNI\assets\js\jquery-1.11.1.js" />
+    <Content Include="LoginDNI\assets\js\jquery-1.11.1.min.js" />
+    <Content Include="LoginDNI\assets\js\jquery.backstretch.js" />
+    <Content Include="LoginDNI\assets\js\jquery.backstretch.min.js" />
+    <Content Include="LoginDNI\assets\js\placeholder.js" />
+    <Content Include="LoginDNI\assets\js\scripts.js" />
     <Content Include="Credenciales\Credenciales_generar.aspx" />
     <Content Include="Credenciales\Credenciales_visor.aspx" />
     <Content Include="css\creative.css" />
@@ -1264,16 +1292,21 @@
     <Content Include="img\26492775-boxing-gloves-hit-red-and-blue.jpg" />
     <Content Include="img\4.jpg" />
     <Content Include="img\500x500.jpg" />
+    <Content Include="img\Calendar.jpg" />
     <Content Include="img\delete.jpg" />
     <Content Include="img\fighter 2.jpg" />
     <Content Include="img\fighter.jpg" />
     <Content Include="img\foto_blanco.jpg" />
     <Content Include="img\Guardando.gif" />
-    <Content Include="img\header.jpg" />
+    <Content Include="img\header22.jpg" />
     <Content Include="img\header1.jpg" />
     <Content Include="img\FitfaLogo.png" />
+    <Content Include="img\header.jpg" />
     <Content Include="img\icon-edit.jpg" />
     <Content Include="img\icono_alumnos.gif" />
+    <Content Include="img\LOGOANT.jpg" />
+    <Content Include="img\Master-Class-03.jpg" />
+    <Content Include="img\TORNEO.jpg" />
     <Content Include="Instituciones\Imagen\logo_institucion.jpg" />
     <Content Include="Instituciones\Institucion_alta.aspx" />
     <Content Include="Instituciones\Institucion_modificar.aspx" />
@@ -1478,6 +1511,7 @@
     <Content Include="Llaves\Llave_disponibles.aspx" />
     <Content Include="Llaves\Reporte_llaves\LLAVE 16b.jpg" />
     <Content Include="Llaves\Reporte_llaves\Visor_llaves_report.aspx" />
+    <Content Include="LoginDNI\LoginDNI.aspx" />
     <Content Include="MasterPage\dist\img\itflogo.gif" />
     <Content Include="img\ITF-Choi-Jung-Hwa.jpg" />
     <Content Include="img\llaves\2x5.jpg" />
@@ -2450,6 +2484,43 @@
     <Content Include="Reportes\inscripcion_persona.aspx" />
     <Content Include="MasterPage\plugins\jspdf\jspdf.min.js" />
     <Content Include="Reportes\Llaves\Visor_ejemplo.aspx" />
+    <None Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="LoginDNI\assets\bootstrap\css\bootstrap.css.map" />
+    <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="LoginDNI\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="LoginDNI\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="LoginDNI\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="LoginDNI\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="LoginDNI\assets\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="LoginDNI\assets\font-awesome\less\animated.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\bordered-pulled.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\core.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\fixed-width.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\font-awesome.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\icons.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\larger.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\list.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\mixins.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\path.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\rotated-flipped.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\stacked.less" />
+    <None Include="LoginDNI\assets\font-awesome\less\variables.less" />
+    <None Include="LoginDNI\assets\font-awesome\scss\font-awesome.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_animated.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_core.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_fixed-width.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_icons.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_larger.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_list.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_mixins.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_path.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_stacked.scss" />
+    <None Include="LoginDNI\assets\font-awesome\scss\_variables.scss" />
     <None Include="Credenciales\reportes\Credenciales_ds.xsc">
       <DependentUpon>Credenciales_ds.xsd</DependentUpon>
     </None>
@@ -2887,6 +2958,13 @@
     <Compile Include="Login2\login2.aspx.vb">
       <DependentUpon>login2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LoginDNI\LoginDNI.aspx.designer.vb">
+      <DependentUpon>LoginDNI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDNI\LoginDNI.aspx.vb">
+      <DependentUpon>LoginDNI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login\login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
