@@ -59,6 +59,15 @@ Partial Public Class Evento_Crear
     Protected WithEvents tb_nombre As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control tb_direccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_direccion As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
     '''Control lbl_errfechaini.
     '''</summary>
     '''<remarks>
@@ -165,6 +174,33 @@ Partial Public Class Evento_Crear
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_quitar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Panel_examenes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Panel_examenes As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control tb_capacidad_max.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_capacidad_max As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control GridView1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Control btn_guardar.

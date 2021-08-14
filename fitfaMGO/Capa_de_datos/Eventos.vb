@@ -8,7 +8,8 @@ Public Class Eventos
                                  ByVal evento_fecha As Date,
                                  ByVal evento_fechacierre As Date,
                                  ByVal evento_tipoevento As String,
-                                 ByVal evento_costo As Decimal) As DataSet
+                                 ByVal evento_costo As Decimal,
+                                 ByVal evento_direccion As String) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -23,6 +24,7 @@ Public Class Eventos
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_fechacierre", evento_fechacierre))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_tipoevento", evento_tipoevento))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_costo", evento_costo))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_direccion", evento_direccion))
 
         Dim ds_usu As New DataSet()
         Dim da_usu As New OleDbDataAdapter(comando)

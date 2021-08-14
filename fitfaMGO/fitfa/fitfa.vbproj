@@ -1250,6 +1250,7 @@
     <Content Include="bootstrap-fileinput-master\js\fileinput.min.js" />
     <Content Include="Carga Competidores\Carga_Manual_Competidores.aspx" />
     <Content Include="Contraseña\contraseña_cambiar.aspx" />
+    <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap.css" />
@@ -2484,6 +2485,17 @@
     <Content Include="Reportes\inscripcion_persona.aspx" />
     <Content Include="MasterPage\plugins\jspdf\jspdf.min.js" />
     <Content Include="Reportes\Llaves\Visor_ejemplo.aspx" />
+    <None Include="Eventos\ds_eventos.xsc">
+      <DependentUpon>ds_eventos.xsd</DependentUpon>
+    </None>
+    <None Include="Eventos\ds_eventos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_eventos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Eventos\ds_eventos.xss">
+      <DependentUpon>ds_eventos.xsd</DependentUpon>
+    </None>
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css.map" />
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap.css.map" />
     <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -2707,11 +2719,23 @@
       <DependentUpon>Crear_Evento.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Eventos\ds_eventos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_eventos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Eventos\Evento_Crear.aspx.designer.vb">
       <DependentUpon>Evento_Crear.aspx</DependentUpon>
     </Compile>
     <Compile Include="Eventos\Evento_Crear.aspx.vb">
       <DependentUpon>Evento_Crear.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Examenes_turnos_agregar.aspx.designer.vb">
+      <DependentUpon>Examenes_turnos_agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Examenes_turnos_agregar.aspx.vb">
+      <DependentUpon>Examenes_turnos_agregar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Eventos\Modificar_Evento.aspx.designer.vb">

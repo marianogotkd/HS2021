@@ -22,9 +22,31 @@ Public Class Evento_Crear
             textbox_Costo.Text = 0
             Page.Form.Attributes.Add("enctype", "multipart/form-data")
             div_modal_msjOK.Visible = False
-
+            crear_tabla_turnos()
         End If
+
+
     End Sub
+
+    Private Sub crear_tabla_turnos()
+        GridView1.DataSource = Nothing
+        Dim ds_eventos As New ds_eventos
+        ds_eventos.Tables("Turnos").Rows.Clear()
+        Dim cont = 0
+        Dim horas As Integer = 8
+        While cont < 14
+            Dim row As DataRow = ds_eventos.Tables("Turnos").NewRow()
+            row("Turno") = CStr(horas) + " hrs."
+
+            ds_eventos.Tables("Turnos").Rows.Add(row)
+            cont = cont + 1
+            horas = horas + 1
+        End While
+        GridView1.DataSource = ds_eventos.Tables("Turnos")
+        GridView1.DataBind()
+    End Sub
+
+
 
 #Region "manejo de foto"
     Public Function ImageControlToByteArray(ByVal foto)
@@ -64,15 +86,24 @@ Public Class Evento_Crear
         Dim FechaHoraCierre = tb_fechaCierre.Value + " " + tb_horaCierre.Value
         If Vacio = False Then
 
+            If combo_TipoEvento.SelectedValue = "Examen" Then
+                'aqui paso a otra web page para cargar los turnos de los examenes.
 
-            If costo = "" Then
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0))
+                Response.Redirect("~/Eventos/Examenes_turnos_agregar.aspx")
+
             Else
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo))
+                'es un torneo o un curso
+                If costo = "" Then
+                    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value)
+                Else
+                    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value)
+                End If
+
+                div_modal_msjOK.Visible = True
+                Modal_msjOK.Show()
             End If
 
-            div_modal_msjOK.Visible = True
-            Modal_msjOK.Show()
+            
 
             'Response.Redirect("~/Eventos/Evento_Crear.aspx")
 
@@ -89,6 +120,16 @@ Public Class Evento_Crear
         End If
 
 
+
+    End Sub
+
+    Private Sub combo_TipoEvento_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_TipoEvento.SelectedIndexChanged
+
+        If combo_TipoEvento.SelectedValue = "Examen" Then
+            Panel_examenes.Visible = True
+        Else
+            Panel_examenes.Visible = False
+        End If
 
     End Sub
 End Class

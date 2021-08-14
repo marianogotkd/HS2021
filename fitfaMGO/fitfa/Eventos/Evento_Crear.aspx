@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MasterPage.Master" CodeBehind="Evento_Crear.aspx.vb" Inherits="fitfa.Evento_Crear" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script language="javascript" type="text/javascript">
+// <![CDATA[
+
+        function btn_Examinar_onclick() {
+
+        }
+
+// ]]>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" 
@@ -18,7 +27,7 @@
   <div class="col-md-4 col-center">
   <div class="form-group">
   <label>Tipo de Evento</label>
-  <asp:DropDownList ID="combo_TipoEvento" runat="server" class="form-control">
+  <asp:DropDownList ID="combo_TipoEvento" runat="server" class="form-control" AutoPostBack="True" Font-Bold="True">
                       <asp:ListItem Value="Torneo" Selected="True">Torneo</asp:ListItem>
                       <asp:ListItem Value="Curso">Curso</asp:ListItem>
                       <asp:ListItem Value="Examen">Examen</asp:ListItem>
@@ -30,6 +39,10 @@
   <input type="text" class="form-control" id="tb_nombre" runat="server" causesvalidation="False" required="" placeholder="Ingrese nombre..." maxlength="50"/>
   </div>
   <div class="form-group">
+   <label>Dirección </label>
+   <input type="text" class="form-control" id="tb_direccion" runat="server" causesvalidation="False" required="" placeholder="Ingrese dirección..." maxlength="50"/> 
+  </div> 
+    <div class="form-group">
   <label>Fecha del Evento</label>
   <label id="lbl_errfechaini" class="label label-danger" runat="server">Debe Completar El Campo</label>
   <div class="input-group">
@@ -76,10 +89,36 @@
   </div>
   <div class="form-group">
   <label>Foto del Evento</label>
+      <br />
   <asp:Image ID="Image1" runat="server" Height="286px" ImageUrl="~/Eventos/imagen/logo_evento.jpg" Width="286px" BorderStyle="Solid" />
-  <button type="button" class="btn btn-primary" runat="server" id="btn_Examinar">Examinar</button>
-  <button type="button" class="btn btn-danger" id="btn_quitar" runat="server" visible="True">Quitar</button>
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <button type="button" class="btn btn-primary" runat="server" id="btn_Examinar" onclick="return btn_Examinar_onclick()">Examinar</button>
+      &nbsp;
+  <button type="button" class="btn btn-danger" id="btn_quitar" runat="server" visible="True">
+      &nbsp; &nbsp;Quitar&nbsp;</button>
   </div>
+  
+  <asp:Panel ID="Panel_examenes" runat="server" Visible=false >
+  <div class="form-group">
+        <label>Capacidad máxima de inscriptos por turno: </label>
+        <asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
+        <label>Seleccione los turnos para el examen: </label>
+  </div>
+  <div class="card-body table-responsive p-0">
+      <asp:GridView ID="GridView1" class="table table-hover" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+                           BorderColor="Black" GridLines="None" 
+                          EnableSortingAndPagingCallbacks="True" PageSize="20">
+          <Columns>
+              <asp:CheckBoxField HeaderText="Item" />
+              <asp:BoundField DataField="Turno" HeaderText="Turno" />
+          </Columns>
+      </asp:GridView>
+  
+  </div>
+  </asp:Panel>
+  
+  
   </div>  
   </div>
 
@@ -89,7 +128,7 @@
   
   </div>
   <div class="card-footer">
-  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_guardar">Guarda Cambios</button>
+  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_guardar">Continuar</button>
   </div>
   </span>
   <div id= "div_modal_msjOK" runat="server">

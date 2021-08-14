@@ -1,0 +1,3 @@
+EN LA TABLA EVENTO AGREGAR ESTE CAMPO:
+
+[evento_direccion] [varchar](max) NULL
