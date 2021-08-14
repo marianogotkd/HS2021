@@ -407,6 +407,7 @@
     Dim fila_mover As Integer = 0
     Dim listo As String = "no"
 
+
     Private Sub DataGridView1_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         'NOTA: cuando hago click sobre las celdas q no son editables se cambia el foco a las celdas cod_interno y cantidad 
         Dim celda_actual As Integer = DataGridView1.CurrentCell.ColumnIndex
@@ -500,7 +501,7 @@
     End Sub
 
     Private Sub DataGridView1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles DataGridView1.KeyDown
-
+        
         If DataGridView1.CurrentCell.ColumnIndex = 0 Then 'es item
             If e.KeyCode = Keys.Enter Then
                 e.SuppressKeyPress = True
@@ -743,6 +744,12 @@
             Busqueda_CodBarra.Show()
             'Ver_promocion.form_procedencia = "Venta_Caja_gestion"
             'Ver_promocion.Show()
+        End If
+
+        If e.KeyCode = Keys.Delete Then
+
+            e.Handled = True 'anulo el boton delete
+
         End If
 
         'If e.KeyCode = Keys.Right Then
@@ -3353,6 +3360,7 @@
         End If
 
     End Sub
+
 
 
 End Class
