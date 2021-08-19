@@ -9,7 +9,8 @@ Public Class Eventos
                                  ByVal evento_fechacierre As Date,
                                  ByVal evento_tipoevento As String,
                                  ByVal evento_costo As Decimal,
-                                 ByVal evento_direccion As String) As DataSet
+                                 ByVal evento_direccion As String,
+                                 ByVal evento_cap_max_insc As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -25,6 +26,7 @@ Public Class Eventos
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_tipoevento", evento_tipoevento))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_costo", evento_costo))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_direccion", evento_direccion))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_cap_max_insc", evento_cap_max_insc))
 
         Dim ds_usu As New DataSet()
         Dim da_usu As New OleDbDataAdapter(comando)
@@ -32,6 +34,28 @@ Public Class Eventos
         dbconn.Close()
         Return ds_usu
     End Function
+
+    Public Function ExamenTurno_alta(ByVal evento_id As Integer,
+                                     ByVal ExamenTurno_desc As String
+                                     ) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("ExamenTurno_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@ExamenTurno_desc", ExamenTurno_desc))
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "ExamenTurno")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
 
     'trae todos los eventos donde aun no se haya cumplido la fecha de cierre de inscripcion
     Public Function Evento_ObetenerEventos() As DataSet

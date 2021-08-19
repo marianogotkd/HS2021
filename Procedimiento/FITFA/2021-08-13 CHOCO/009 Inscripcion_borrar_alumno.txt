@@ -1,0 +1,18 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_borrar_alumno]    Script Date: 08/19/2021 15:03:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_borrar_alumno]
+--Chocolonea Pablo:
+--esta rutina borra la inscripcion realizada por el alumno
+@usuario_id int,
+@evento_id int
+as
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion_id from inscripcion where inscripcion.usuario_id=@usuario_id and inscripcion.evento_id=@evento_id 
+delete from inscripcion where inscripcion.usuario_id=@usuario_id and inscripcion.evento_id=@evento_id 
+delete from inscripciones_x_torneo where inscripcion_id = @inscripcion_id 
+delete from inscripciones_x_examen where inscripcion_id = @inscripcion_id 

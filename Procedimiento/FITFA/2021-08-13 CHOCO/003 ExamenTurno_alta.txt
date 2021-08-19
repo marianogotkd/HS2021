@@ -1,0 +1,14 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenTurno_alta]    Script Date: 08/18/2021 14:53:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[ExamenTurno_alta]
+
+@evento_id int,
+@ExamenTurno_desc varchar(max)
+as
+insert ExamenTurno ( evento_id, ExamenTurno_desc ) values (@evento_id, @ExamenTurno_desc)
+

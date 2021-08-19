@@ -18,6 +18,7 @@ Public Class Evento_datos
         If Not IsPostBack Then
             popupMsjError.Visible = False
             popupMsjGuardado.Visible = False
+            popupMsjError_turno.Visible = False 'choco 19-08-2021
             obtener_usuario()
 
             Dim ds_evento As DataSet = DAinscripciones.Inscripcion_consultar_evento(Session("evento_id"))
@@ -27,8 +28,28 @@ Public Class Evento_datos
                 seccion_competencia.Visible = False
                 Label1.Text = ""
                 DropDownList_graduacion.Enabled = False
+            End If
+
+            If tipo_evento = "Examen" Then
+                seccion_examen.Visible = True
+                Label_nombre_examen.Text = ds_evento.Tables(1).Rows(0).Item("evento_descripcion").ToString
+                Label_fecha_examen.Text = ds_evento.Tables(1).Rows(0).Item("evento_fecha")
+                Label_direccion_examen.Text = ds_evento.Tables(1).Rows(0).Item("evento_direccion").ToString
+                'recupero los turnos para este examen puntual
+                Try
+                    DropDownList_examen_turno.DataSource = ds_evento.Tables(2)
+                    DropDownList_examen_turno.DataTextField = "ExamenTurno_desc"
+                    DropDownList_examen_turno.DataValueField = "ExamenTurno_id"
+                    DropDownList_examen_turno.DataBind()
+                Catch ex As Exception
+
+                End Try
+
+                'Session("evento_id") con este parametro obtengo los turnos del examen.
 
             End If
+
+
 
         End If
     End Sub
@@ -106,6 +127,31 @@ Public Class Evento_datos
             popupMsjGuardado.Visible = True
             ModalPopupExtender_guardado.Show()
         End If
+
+        If tipo_evento = "Examen" Then
+            Try
+                'si es un examen debo validar que no supere el maximo de inscriptos para ese turno
+                Dim ds_validar As DataSet = DAinscripciones.inscripciones_x_examen_validar(Session("evento_id"), DropDownList_examen_turno.SelectedValue)
+                Dim cant_max_inscriptos_x_turno As Integer = ds_validar.Tables(0).Rows(0).Item("evento_cap_max_insc")
+                Dim cant_real_inscriptos As Integer = ds_validar.Tables(1).Rows.Count
+                If cant_real_inscriptos < cant_max_inscriptos_x_turno Then 'si hay cupo lo inscribo
+                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Now, 0)
+                    Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue)
+                    popupMsjGuardado.Visible = True
+                    ModalPopupExtender_guardado.Show()
+                Else
+                    popupMsjError_turno.Visible = True 'choco 19-08-2021
+                    ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
+                End If
+                
+            Catch ex As Exception
+
+            End Try
+            
+
+        End If
+
     End Sub
     Private Sub CodigoQR(ByVal inscripcion_id As Integer)
 

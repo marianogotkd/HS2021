@@ -150,6 +150,55 @@
               </div>
 
 
+              <div id="seccion_examen" runat="server" visible=false >
+              <div align="center" style="background-color: #C0C0C0">
+              <asp:Label ID="Label_datos_competencia" runat="server" Text="DATOS DEL EXAMEN" Font-Bold="True"></asp:Label>      
+              </div>
+              <div align="left">
+                    <table class="w-100">
+                        <tr>
+                            <td class="style2">
+                                <asp:Label ID="Label24" runat="server" Font-Bold="True" Text="Examen:"></asp:Label>
+                                &nbsp;<asp:Label ID="Label_nombre_examen" runat="server" Font-Bold="True" Text=""></asp:Label>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style2">
+                                <asp:Label ID="Label10" runat="server" Font-Bold="True" Text="Dirección:"></asp:Label>
+                                &nbsp;<asp:Label ID="Label_direccion_examen" runat="server" Font-Bold="True" Text=""></asp:Label>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="style2">
+                                <asp:Label ID="Label25" runat="server" Font-Bold="True" Text="Fecha del examen:"></asp:Label>
+                                &nbsp;<asp:Label ID="Label_fecha_examen" runat="server" Font-Bold="True" Text=""></asp:Label>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td class="style2">
+                                <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="Seleccione turno para el examen:"></asp:Label>
+                                &nbsp;<asp:DropDownList ID="DropDownList_examen_turno" runat="server" Enabled="True">
+                                </asp:DropDownList>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        
+                    </table>
+                    
+              </div>
+              
+              </div>
+              
+              
               <div align="left">
               <%--<button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Confirmar</button>--%>
                   <br />
@@ -264,6 +313,39 @@
             </Triggers>
                 </asp:UpdatePanel>--%>
      
+    </div>
+
+
+    <div id="popupMsjError_turno" runat="server"> 
+    <asp:HiddenField ID="HiddenField_msj_no_turno" runat="server" />
+    <asp:Panel ID="Panel_msj_no_turno" runat="server">
+    <div class="card card-danger">
+            <div class="card-header">
+                <h3 class="card-title">Inscripciones</h3>
+            </div>
+            <form role="form">
+              <div class="card-body"> 
+                <div class="row">
+                    <div align="center">
+                        <asp:Label ID="lbl_Modal_err_turno" runat="server" Text="Error, no hay cupo para inscribirse en ese turno. Por favor seleccione otra opción."></asp:Label>
+                        &nbsp;
+                    </div>
+                </div>
+              </div>
+            </form>  
+            <div align="center">
+                    <asp:Button ID="Btn_Modal_err_turno" runat="server" Text="OK" CssClass="btn btn-danger"  />
+              </div> 
+              <div>
+                 &nbsp;
+              </div>             
+            </div>
+    </asp:Panel>
+
+    <asp:ModalPopupExtender ID="ModalPopupExtender_error_turno" runat="server" CancelControlID="Btn_Modal_err_turno" TargetControlID="HiddenField_msj_no_turno" 
+            PopupControlID="Panel_msj_no_turno" BackgroundCssClass="modalBackground">
+    </asp:ModalPopupExtender>
+
     </div>
 
 

@@ -1,0 +1,6 @@
+create procedure Usuario_validar_DNI
+
+@Usuario_doc int
+as
+select * from usuario where usuario.usuario_doc = @Usuario_doc 
+go

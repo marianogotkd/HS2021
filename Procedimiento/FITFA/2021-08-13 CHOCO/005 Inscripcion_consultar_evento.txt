@@ -1,0 +1,26 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_consultar_evento]    Script Date: 08/18/2021 17:45:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_consultar_evento]
+--consulto que tipo de evento es
+@evento_id int
+as
+select evento.evento_tipoevento as 'tipo_evento' from evento where evento.evento_id=@evento_id
+select evento_id, 
+evento_descripcion, 
+evento_foto, 
+evento_fecha, 
+evento_fechacierre, 
+evento_tipoevento, 
+evento_costo, 
+evento_estado, 
+evento_direccion, 
+evento_cap_max_insc
+from evento where evento.evento_id = @evento_id 
+
+select * from ExamenTurno where ExamenTurno.evento_id = @evento_id  
+

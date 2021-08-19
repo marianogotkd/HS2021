@@ -1,0 +1,38 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Eventos_Alta]    Script Date: 08/18/2021 12:10:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Eventos_Alta]
+@evento_descripcion varchar(50),
+@evento_foto image,
+@evento_fecha date,
+@evento_fechacierre datetime,
+@evento_tipoevento varchar(50),
+@evento_costo decimal,
+@evento_direccion varchar(max),
+@evento_cap_max_insc int
+as
+insert dbo.evento(
+evento_descripcion,
+evento_foto,
+evento_fecha,
+evento_fechacierre,
+evento_tipoevento,
+evento_costo,
+evento_direccion,
+evento_cap_max_insc)
+values
+(@evento_descripcion,
+@evento_foto,
+@evento_fecha,
+@evento_fechacierre,
+@evento_tipoevento,
+@evento_costo,
+@evento_direccion,
+@evento_cap_max_insc )
+
+---recupero el ID del evento nuevo que acabo de insertar
+select @@IDENTITY as 'evento_id'

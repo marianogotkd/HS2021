@@ -1,0 +1,10 @@
+create procedure inscripciones_x_examen_validar
+@evento_id int,
+@ExamenTurno_id int
+as
+--recupero para consultar cant max x turno
+select * from evento where evento.evento_id = @evento_id 
+--recupero para obtener la cantidad de inscriptos a q un turno en particular
+select * from inscripciones_x_examen where ExamenTurno_id = @ExamenTurno_id
+
+go

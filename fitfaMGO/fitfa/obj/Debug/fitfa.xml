@@ -6,55 +6,7 @@ fitfa
 </name>
 </assembly>
 <members>
-<member name="T:fitfa.ds_eventos.TurnosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:fitfa.ds_eventos.TurnosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:fitfa.ds_eventos.TurnosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:fitfa.ds_eventos">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:fitfa.Examenes_turnos_agregar.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examenes_turnos_agregar.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examenes_turnos_agregar.tb_capacidad_max">
-	<summary>
-Control tb_capacidad_max.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examenes_turnos_agregar.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Institucion_alta.ScriptManager1">
+<member name="F:fitfa.Institucion_alta.ScriptManager1">
 	<summary>
 Control ScriptManager1.
 </summary>
@@ -1006,6 +958,86 @@ Control RadioButton_tecnica_no.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Evento_datos.seccion_examen">
+	<summary>
+Control seccion_examen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label_datos_competencia">
+	<summary>
+Control Label_datos_competencia.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label24">
+	<summary>
+Control Label24.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label_nombre_examen">
+	<summary>
+Control Label_nombre_examen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label10">
+	<summary>
+Control Label10.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label_direccion_examen">
+	<summary>
+Control Label_direccion_examen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label25">
+	<summary>
+Control Label25.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label_fecha_examen">
+	<summary>
+Control Label_fecha_examen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Label5">
+	<summary>
+Control Label5.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.DropDownList_examen_turno">
+	<summary>
+Control DropDownList_examen_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Evento_datos.Btn_confirmar">
 	<summary>
 Control Btn_confirmar.
@@ -1121,6 +1153,54 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Evento_datos.ModalPopupExtender_guardado">
 	<summary>
 Control ModalPopupExtender_guardado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.popupMsjError_turno">
+	<summary>
+Control popupMsjError_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.HiddenField_msj_no_turno">
+	<summary>
+Control HiddenField_msj_no_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Panel_msj_no_turno">
+	<summary>
+Control Panel_msj_no_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.lbl_Modal_err_turno">
+	<summary>
+Control lbl_Modal_err_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.Btn_Modal_err_turno">
+	<summary>
+Control Btn_Modal_err_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.ModalPopupExtender_error_turno">
+	<summary>
+Control ModalPopupExtender_error_turno.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -6362,6 +6442,22 @@ Control Modal_error.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:fitfa.ds_eventos.TurnosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.ds_eventos.TurnosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.ds_eventos.TurnosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.ds_eventos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:fitfa.Inicio_Blanco.div_area">
 	<summary>
 Control div_area.
@@ -8563,6 +8659,38 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
  Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
  </summary>
 	<remarks></remarks>
+</member><member name="F:fitfa.Examenes_turnos_agregar.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examenes_turnos_agregar.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examenes_turnos_agregar.tb_capacidad_max">
+	<summary>
+Control tb_capacidad_max.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examenes_turnos_agregar.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.LoginDNI.form1">
 	<summary>
 Control form1.
@@ -10508,9 +10636,25 @@ Control Panel_examenes.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Evento_Crear.lbl_error_cap_max_inscr">
+	<summary>
+Control lbl_error_cap_max_inscr.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Evento_Crear.tb_capacidad_max">
 	<summary>
 Control tb_capacidad_max.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Crear.lbl_turnos_error0">
+	<summary>
+Control lbl_turnos_error0.
 </summary>
 	<remarks>
 Campo generado automáticamente.

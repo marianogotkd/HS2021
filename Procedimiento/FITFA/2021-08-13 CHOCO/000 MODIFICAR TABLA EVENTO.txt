@@ -1,3 +1,4 @@
 EN LA TABLA EVENTO AGREGAR ESTE CAMPO:
 
-[evento_direccion] [varchar](max) NULL
+[evento_direccion] [varchar](max) NULL,
+	[evento_cap_max_insc] [int] NULL
