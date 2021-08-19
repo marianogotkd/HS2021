@@ -10,6 +10,7 @@ Public Class Conexion
 
     'Conexion CHOCO-RYZEN
 
+
     Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=Delicias;Data Source=25.112.197.145\SQLEXPRESS_CHOK")
 
     'Conexion local NoteMariano
