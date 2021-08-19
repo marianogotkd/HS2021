@@ -33,6 +33,23 @@ Public Class Eventos
         Return ds_usu
     End Function
 
+
+    Public Function Evento_Seleccionar_Examen() As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand(" Evento_Seleccionar_Examen", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "  Evento_Seleccionar_Examen")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
     'trae todos los eventos donde aun no se haya cumplido la fecha de cierre de inscripcion
     Public Function Evento_ObetenerEventos() As DataSet
         Try
