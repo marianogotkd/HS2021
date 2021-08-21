@@ -20,6 +20,7 @@ Public Class Datos_Personales
         lbl_errNom.Visible = False
         lbl_errTel.Visible = False
         lbl_errMail.Visible = False
+        lbl_err_libreta.Visible = False
         If Not IsPostBack Then
             Cargar_Datos()
             div_modalmsjOK.Visible = False
@@ -51,8 +52,22 @@ Public Class Datos_Personales
             combo_ciudad.SelectedValue = ds_Usuarios.Tables(0).Rows(0).Item(16)
             tb_tel.Value = ds_Usuarios.Tables(0).Rows(0).Item(11)
             tb_Email.Value = ds_Usuarios.Tables(0).Rows(0).Item(12)
+            tb_nrolibreta.Value = ds_Usuarios.Tables(0).Rows(0).Item("usuario_nrolibreta").ToString
 
+            Dim graduacion_id As Integer = ds_Usuarios.Tables(0).Rows(0).Item("graduacion_id")
+            'como en el evento init recupero la graduacion, solo tengo que seleccionarla
+            Combo_graduacion.SelectedValue = graduacion_id
+            tb_graduacion.Value = Combo_graduacion.SelectedItem.Text
 
+        End If
+    End Sub
+    Private Sub obtener_graduaciones()
+        Dim ds_graduaciones As DataSet = DAusuario.Usuario_ObtenerGraduaciones()
+        If ds_graduaciones.Tables(0).Rows.Count <> 0 Then
+            Combo_graduacion.DataSource = ds_graduaciones.Tables(0)
+            Combo_graduacion.DataTextField = "graduacion_desc"
+            Combo_graduacion.DataValueField = "graduacion_id"
+            Combo_graduacion.DataBind()
         End If
     End Sub
     Private Sub obtener_estadocivil()
@@ -92,6 +107,8 @@ Public Class Datos_Personales
     Private Sub Combo_provincia_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.Init
         Obtener_provincias()
         Obtener_ciudad()
+        'recuperar las graduaciones
+        obtener_graduaciones()
     End Sub
     Private Sub combo_EstCivil_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_EstCivil.Init
         obtener_estadocivil()
@@ -159,8 +176,14 @@ Public Class Datos_Personales
             Vacio = True
         End If
 
+        If tb_nrolibreta.Value <> "" Then
+        Else
+            lbl_err_libreta.Visible = True
+            Vacio = True
+        End If
+
         If Vacio <> True Then
-            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value)
+            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
             'div_registro_guardado.Visible = True
 
             '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++

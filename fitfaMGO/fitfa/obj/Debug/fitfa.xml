@@ -5074,6 +5074,38 @@ Control tb_Email.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Datos_Personales.lbl_err_libreta">
+	<summary>
+Control lbl_err_libreta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Datos_Personales.tb_nrolibreta">
+	<summary>
+Control tb_nrolibreta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Datos_Personales.tb_graduacion">
+	<summary>
+Control tb_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Datos_Personales.Combo_graduacion">
+	<summary>
+Control Combo_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Datos_Personales.btn_guardar">
 	<summary>
 Control btn_guardar.
@@ -7226,6 +7258,14 @@ Control CheckBox_posee_alumnos.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.registro.seccion_oculta_provincia_e_institucion">
+	<summary>
+Control seccion_oculta_provincia_e_institucion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.registro.Label9">
 	<summary>
 Control Label9.
@@ -7293,6 +7333,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.registro.DropDownList_instructor">
 	<summary>
 Control DropDownList_instructor.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.registro.txt_nrolibreta">
+	<summary>
+Control txt_nrolibreta.
 </summary>
 	<remarks>
 Campo generado automáticamente.

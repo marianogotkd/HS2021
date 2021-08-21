@@ -24,6 +24,18 @@ Public Class registro
             Session("imagen_registro") = ""
             Session("foto_subido_registro") = "no"
 
+
+            'seleccionamos siempre en el combo de provincia = "santiago del estero" e institucion "ANT"
+            Try
+                DropDown_prov_con_institucion.SelectedValue = 14
+                obtener_instituciones_x_provincia()
+                obtener_instructores_x_institucion()
+                DropDownList_instituciones.SelectedValue = 23
+                obtener_instructores_x_institucion()
+            Catch ex As Exception
+
+            End Try
+
         End If
         If (IsPostBack = False) Then 'o es true
             'txt_fechanacimiento.ForeColor = Drawing.Color.LightGoldenrodYellow
@@ -411,7 +423,8 @@ Public Class registro
                       CInt(DropDownList_ciudad.SelectedValue),
                       txt_telefono.Text,
                       txt_email.Text,
-                      DropDownList_graduacion.SelectedValue, txt_contraseña1.Text, Today, DropDownList_instructor.SelectedValue, usuario_tipo, txt_usuario.Text, DropDownList_instituciones.SelectedValue
+                      DropDownList_graduacion.SelectedValue, txt_contraseña1.Text, Today, DropDownList_instructor.SelectedValue, usuario_tipo, txt_usuario.Text, DropDownList_instituciones.SelectedValue,
+                      txt_nrolibreta.Text
 )
             ' End Using
             'div_registroexitoso.Visible = True
@@ -485,6 +498,7 @@ Public Class registro
         txt_usuario.Text = ""
         txt_contraseña1.Text = ""
         txt_contraseña2.Text = ""
+        txt_nrolibreta.Text = ""
         'div_registroexitoso.Visible=false
         Image1.ImageUrl = "~/Registro/imagen/usuario-registrado.jpg"
         Session("imagen") = ""

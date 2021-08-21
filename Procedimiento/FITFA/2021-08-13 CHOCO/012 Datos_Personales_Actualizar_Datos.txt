@@ -1,0 +1,45 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Datos_Personales_Actualizar_Datos]    Script Date: 08/20/2021 23:54:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Datos_Personales_Actualizar_Datos]
+
+@usuario_id int,
+@usuario_nombre varchar(50),
+@usuario_apellido varchar(50),
+@usuario_fechanac date,
+@usuario_nacionalidad varchar(50),
+@usuario_sexo varchar(50),
+@estadocivil_id int,
+@usuario_profesion varchar(50),
+@usuario_domicilio varchar(50),
+@usuario_codigopostal int,
+@provincia_id int,
+@ciudad_id int,
+@usuario_telefono varchar(50),
+@usuario_mail varchar(50),
+@usuario_nrolibreta varchar(50),
+@graduacion_id int
+as
+
+update Usuario set
+usuario_nombre = @usuario_nombre,
+usuario_apellido = @usuario_apellido,
+usuario_fechanac = @usuario_fechanac,
+usuario_nacionalidad = @usuario_nacionalidad,
+usuario_sexo = @usuario_sexo,
+estadocivil_id = @estadocivil_id,
+usuario_profesion = @usuario_profesion,
+usuario_domicilio = @usuario_domicilio,
+usuario_codigopostal = @usuario_codigopostal,
+provincia_id = @provincia_id,
+ciudad_id = @ciudad_id,
+usuario_telefono = @usuario_telefono,
+usuario_mail = @usuario_mail,
+usuario_nrolibreta = @usuario_nrolibreta,
+graduacion_id = @graduacion_id  
+where usuario_id=@Usuario_id
+

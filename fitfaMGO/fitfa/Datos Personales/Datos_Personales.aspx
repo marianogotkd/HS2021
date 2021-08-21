@@ -84,10 +84,8 @@
                     <%--<label for="exampleInputEmail1">Profesion</label>--%>
                     <label>Profesión:</label>
                     <input type="text" class="form-control" id="tb_profesion" runat="server" required="" placeholder="Ingrese profesión..." maxlength="50" />
-                     </div></div>
-                    
-                    <div class="col-md-4 col-center">
-                                       
+                     </div>
+
                      <div class="form-group">
                   <%--  <label for="exampleInputEmail1">Domicilio</label>--%>
                     <label>Domicilio:</label>
@@ -95,7 +93,11 @@
                     <input type="text" class="form-control" id="tb_dir" runat="server" required="" 
                              placeholder="Ingrese domicilio..." maxlength="50">
                      </div>
-
+                     
+                     </div> <%--cierra el col-md-4 col-center--%>
+                    
+                    <div class="col-md-4 col-center">
+                     
                       <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Codigo Postal</label>--%>
                     <label>Código Postal (CP):</label>
@@ -135,8 +137,25 @@
                     <label id="lbl_errMail" class="label label-danger" runat="server">Debe Completar El Campo</label>
                     <input type="text" class="form-control" id="tb_Email" runat="server" required="" placeholder="Ingrese email..." maxlength="50"/>
                   </div>
-                    </div>
-                  <div class="col-md-4 col-center"></div> 
+
+                  <div class="form-group">
+                  <label>Nro. Libreta:</label>
+                    <label id="lbl_err_libreta" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                    <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50"/>
+                  </div>
+
+                  <div class="form-group">
+                  <label>Graduación:</label>
+                  <input type="text" class="form-control" id="tb_graduacion" runat="server" required="" placeholder="" maxlength="50" readonly="readonly"/>
+                  
+                  <asp:DropDownList ID="Combo_graduacion" runat="server" class="form-control" 
+                          Visible="False">
+                   </asp:DropDownList>
+                   </div>
+
+                    </div> <%--cierra el col-md-4 col-center--%>
+                  
+                  
                   </div>
                   
                   

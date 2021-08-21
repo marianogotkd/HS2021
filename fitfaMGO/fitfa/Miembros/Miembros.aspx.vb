@@ -202,7 +202,7 @@
     End Sub
 
     Private Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
-        If (e.CommandName = "ID") Then
+        If (e.CommandName = "ID") Then 'es mostrar info de alumnos
             ' Retrieve the row index stored in the CommandArgument property.
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
@@ -227,6 +227,19 @@
                 ModalPopupExtender_msj_no_alumnos.Show()
             End If
         End If
+        If (e.CommandName = "ID_b") Then 'es mostrar info de alumnos
+            ' Retrieve the row index stored in the CommandArgument property.
+            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+            Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
+            'me voy al formulario con los datos del alumno.
+
+            'Session("usuario_id") = id
+            'Response.Redirect("Mensaje_Datos_Personales.aspx")
+            'obtener_datos_alumno(id)
+            'popupdatospersonales.Visible = True
+            'ModalPopupExtender_DApersonales.Show()
+        End If
+
         'If (e.CommandName = "ID") Then
         ' Retrieve the row index stored in the CommandArgument property.
         'Dim index As Integer = Convert.ToInt32(e.CommandArgument)

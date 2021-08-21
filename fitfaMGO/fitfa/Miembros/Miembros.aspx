@@ -145,6 +145,14 @@
                               </asp:BoundField>
                               <asp:TemplateField ShowHeader="False">
                                   <ItemTemplate>
+                                      <asp:ImageButton ID="ImageButton_editar" runat="server" CausesValidation="False" 
+                                          CommandArgument='<%# Eval("ID") %>' CommandName="ID_b" Height="30px" 
+                                          ImageAlign="AbsMiddle" ImageUrl="~/img/icon-edit.jpg" 
+                                          ToolTip="Editar datos personales" Width="30px" />
+                                  </ItemTemplate>
+                              </asp:TemplateField>
+                              <asp:TemplateField ShowHeader="False">
+                                  <ItemTemplate>
                                       <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="false" 
                                           CommandName='ID' ImageUrl="~/img/lupa.png" CommandArgument='<%# Eval("ID") %>' Text="" ToolTip="Ver datos" />
                                   </ItemTemplate>

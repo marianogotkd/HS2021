@@ -1,0 +1,4 @@
+modificar tabla usuario
+agregar esta campo
+
+[usuario_nrolibreta] [varchar](50) NULL
