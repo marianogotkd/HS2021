@@ -351,6 +351,8 @@ div {
                             
                             </div>
 
+                            <div id="seccion_oculta_provincia_e_institucion" runat="server" visible="false">
+                                                
 
                             <div class="form-group">
                             <asp:Label ID="Label9" runat="server" Text="Provincia:"></asp:Label>
@@ -365,7 +367,7 @@ div {
                                 <asp:DropDownList ID="DropDownList_instituciones" runat="server" placeholder="Instituciones..." AutoPostBack="True" ToolTip="Instituciones" class="r-form-1-first-name form-control">
                                 </asp:DropDownList>
                             </div>
-
+                            </div>
                             
                             
                             <div class="form-group">
@@ -374,6 +376,13 @@ div {
                                 <asp:DropDownList ID="DropDownList_instructor" runat="server" placeholder="Instructores..." AutoPostBack="True" ToolTip="Instructores" class="r-form-1-first-name form-control">
                                 </asp:DropDownList>
                             </div>
+
+                            <div class="form-group">
+                                <asp:TextBox ID="txt_nrolibreta" runat="server" 
+                                    CssClass="r-form-1-first-name form-control" placeholder="Nro. Libreta..." 
+                                    MaxLength="50"></asp:TextBox>
+                            </div>
+
 
                             <div class="r-form-1-top-left">
                                 <h3>

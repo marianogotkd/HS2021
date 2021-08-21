@@ -482,6 +482,15 @@ Partial Public Class registro
     Protected WithEvents CheckBox_posee_alumnos As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''Control seccion_oculta_provincia_e_institucion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents seccion_oculta_provincia_e_institucion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control Label9.
     '''</summary>
     '''<remarks>
@@ -561,6 +570,15 @@ Partial Public Class registro
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents DropDownList_instructor As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control txt_nrolibreta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_nrolibreta As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Image1.

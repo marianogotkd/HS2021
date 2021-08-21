@@ -142,7 +142,8 @@ ByVal usuario_mail As String,
 ByVal graduacion_id As Integer,
 ByVal usuario_password As String,
 ByVal usuario_fecha_registro As DateTime,
-ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usuario As String, ByVal institucion_id As Integer) As DataSet
+ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usuario As String, ByVal institucion_id As Integer,
+ByVal usuario_nrolibreta As String) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -174,6 +175,7 @@ ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usua
         comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_tipo", usuario_tipo))
         comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_usuario", usuario_usuario))
         comando.Parameters.Add(New OleDb.OleDbParameter("@institucion_id", institucion_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_nrolibreta", usuario_nrolibreta))
 
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)
@@ -338,7 +340,9 @@ ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usua
         ByVal provincia_id As Integer,
         ByVal ciudad_id As Integer,
         ByVal usuario_telefono As String,
-        ByVal usuario_mail As String) As DataSet
+        ByVal usuario_mail As String,
+        ByVal usuario_nrolibreta As String,
+        ByVal graduacion_id As Integer) As DataSet
 
         Try
             dbconn.Open()
@@ -362,6 +366,8 @@ ByVal instructor_id As Integer, ByVal usuario_tipo As String, ByVal usuario_usua
         comando.Parameters.Add(New OleDb.OleDbParameter("@ciudad_id", ciudad_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_telefono", usuario_telefono))
         comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_mail", usuario_mail))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_nrolibreta", usuario_nrolibreta))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@graduacion_id", graduacion_id))
 
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)

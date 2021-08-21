@@ -1,0 +1,88 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_alta]    Script Date: 08/21/2021 00:48:49 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_alta]
+@usuario_foto image,
+@usuario_apellido varchar(50),
+@usuario_nombre varchar(50),
+@tipodoc_id int,
+@usuario_doc int,
+@usuario_sexo varchar(50),
+@usuario_nacionalidad varchar(50),
+@estadocivil_id int,
+@usuario_profesion varchar(50),
+@usuario_fechanac date,
+@usuario_domicilio varchar(50),
+@usuario_codigopostal int,
+@provincia_id int,
+@ciudad_id int,
+@usuario_telefono varchar(50),
+@usuario_mail varchar(50),
+@graduacion_id int,
+@usuario_password varchar(50),
+@usuario_fecha_registro datetime,
+@instructor_id int,
+@usuario_tipo varchar(50),
+@usuario_usuario varchar(50),
+@institucion_id int,
+@usuario_nrolibreta varchar(50)
+
+
+as
+
+declare @usuario_id int
+
+--insertar usuario, el estado va a estar en inactivo hasta que se apruebe la peticion.
+insert dbo.usuario (usuario_foto,
+usuario_apellido,
+usuario_nombre,
+tipodoc_id,
+usuario_doc,
+usuario_sexo,
+usuario_nacionalidad,
+estadocivil_id,
+usuario_profesion,
+usuario_fechanac,
+usuario_domicilio,
+usuario_codigopostal,
+provincia_id,
+ciudad_id,
+usuario_telefono,
+usuario_mail,
+graduacion_id,
+usuario_password,
+usuario_estado,
+usuario_fecha_registro, usuario_tipo, usuario_usuario, usuario_nrolibreta 
+
+)
+
+values (@usuario_foto,
+@usuario_apellido,
+@usuario_nombre,
+@tipodoc_id,
+@usuario_doc,
+@usuario_sexo,
+@usuario_nacionalidad,
+@estadocivil_id,
+@usuario_profesion,
+@usuario_fechanac,
+@usuario_domicilio,
+@usuario_codigopostal,
+@provincia_id,
+@ciudad_id,
+@usuario_telefono,
+@usuario_mail,
+@graduacion_id,
+@usuario_password,
+'pendiente',
+@usuario_fecha_registro, @usuario_tipo, @usuario_usuario, @usuario_nrolibreta)
+
+select @usuario_id = @@IDENTITY
+--insertar alumno x instructor
+
+insert dbo.alumnos_x_instructor (usuario_id, instructor_id, alumno_x_instructor_estado, institucion_id) values (@usuario_id, @instructor_id, 'pendiente', @institucion_id)
+

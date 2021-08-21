@@ -2441,6 +2441,7 @@
     <Content Include="MasterPage\starter.html" />
     <Content Include="Miembros\Miembros.aspx" />
     <Content Include="Miembros\Miembros_datos_diseño.aspx" />
+    <Content Include="Miembros\Miembros_editar_datospersonales.aspx" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap.css" />
@@ -3063,6 +3064,13 @@
     </Compile>
     <Compile Include="Miembros\Miembros_datos_diseño.aspx.vb">
       <DependentUpon>Miembros_datos_diseño.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Miembros\Miembros_editar_datospersonales.aspx.designer.vb">
+      <DependentUpon>Miembros_editar_datospersonales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Miembros\Miembros_editar_datospersonales.aspx.vb">
+      <DependentUpon>Miembros_editar_datospersonales.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

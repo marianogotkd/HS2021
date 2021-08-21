@@ -239,6 +239,42 @@ Partial Public Class Datos_Personales
     Protected WithEvents tb_Email As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control lbl_err_libreta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_err_libreta As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control tb_nrolibreta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_nrolibreta As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control tb_graduacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_graduacion As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''Control Combo_graduacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Combo_graduacion As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''Control btn_guardar.
     '''</summary>
     '''<remarks>
