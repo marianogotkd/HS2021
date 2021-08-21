@@ -23,8 +23,14 @@
   </div>
   <form role="form">
   <div class="card-body">
-  <div class="row">
-  <div class="col-md-4 col-center">
+  
+
+  <div class="container-fluid">
+<div class="row">
+  <div class="col-lg-6">
+
+  <div class="card">
+  <div class="card-body">
   <div class="form-group">
   <label>Tipo de Evento</label>
   <asp:DropDownList ID="combo_TipoEvento" runat="server" class="form-control" AutoPostBack="True" Font-Bold="True">
@@ -42,6 +48,14 @@
    <label>Dirección </label>
    <input type="text" class="form-control" id="tb_direccion" runat="server" causesvalidation="False" required="" placeholder="Ingrese dirección..." maxlength="50"/> 
   </div> 
+
+  
+  
+   </div>
+  </div>  
+
+  <div class="card">
+    <div class="card-body">
     <div class="form-group">
   <label>Fecha del Evento</label>
   <label id="lbl_errfechaini" class="label label-danger" runat="server">Debe Completar El Campo</label>
@@ -53,7 +67,7 @@
   </div>
   </div>
   <div class="form-group">
-  <label>Fecha de Cierre </label>
+  <label>Fecha de cierre de inscripción </label>
   <label id="lbl_errFecCier" class="label label-danger" runat="server">Debe Completar El Campo</label>
   <div class="input-group">
         <div class="input-group-prepend">
@@ -63,8 +77,8 @@
   </div>
   </div>
   <asp:CompareValidator ID="cmpEndDate" runat="server" 
-                        ErrorMessage="La fecha de cierre no puede ser anterior a la del evento" class="label label-danger" 
-                        ControlToCompare="tb_fechainicio" ControlToValidate="tb_fechaCierre" 
+                        ErrorMessage="La fecha de cierre no puede ser mayor a la del evento" class="label label-danger" 
+                        ControlToCompare="tb_fechaCierre" ControlToValidate="tb_fechainicio" 
                         Operator="GreaterThanEqual" Type="Date">
   </asp:CompareValidator>
   <div class="bootstrap-timepicker">
@@ -87,41 +101,80 @@
   <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
   <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>  
   </div>
-  <div class="form-group">
+    
+    </div> <%--fin del card-body--%>
+    </div> <%--fin del card--%>
+
+  </div>
+
+
+  
+  <div class="col-lg-6">
+    <div class="card">
+    <div class="card-body">
+      <div class="form-group">
   <label>Foto del Evento</label>
       <br />
   <asp:Image ID="Image1" runat="server" Height="286px" ImageUrl="~/Eventos/imagen/logo_evento.jpg" Width="286px" BorderStyle="Solid" />
       <br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          &nbsp;
   <button type="button" class="btn btn-primary" runat="server" id="btn_Examinar" onclick="return btn_Examinar_onclick()">Examinar</button>
-      &nbsp;
+          &nbsp;
   <button type="button" class="btn btn-danger" id="btn_quitar" runat="server" visible="True">
       &nbsp; &nbsp;Quitar&nbsp;</button>
   </div>
+          
   
+  </div> <%--fin del card-body--%>
+  </div> <%--fin del card--%>
+    
+  </div>  <%--fin del col-lg-6--%>
+
+  <div class="col-lg-6">
   <asp:Panel ID="Panel_examenes" runat="server" Visible=false >
-  <div class="form-group">
-        <label>Capacidad máxima de inscriptos por turno: </label>
-        <asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
+  
+  <div class="card">
+  <div class="card-body">
+    <div class="form-group">
+        <label>Capacidad máxima de inscriptos por turno: 
+        <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
+        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
         <label>Seleccione los turnos para el examen: </label>
-  </div>
-  <div class="card-body table-responsive p-0">
+        &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
+        seleccionar al menos un turno</label></div>
+ <div class="card-body table-responsive p-0">
       <asp:GridView ID="GridView1" class="table table-hover" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
                            BorderColor="Black" GridLines="None" 
                           EnableSortingAndPagingCallbacks="True" PageSize="20">
           <Columns>
-              <asp:CheckBoxField HeaderText="Item" />
+              <asp:TemplateField HeaderText="Item">
+                  <ItemTemplate>
+                      <asp:CheckBox ID="chk_turno" runat="server" />
+                  </ItemTemplate>
+                  <EditItemTemplate>
+                      <asp:CheckBox ID="CheckBox1" runat="server" />
+                  </EditItemTemplate>
+              </asp:TemplateField>
               <asp:BoundField DataField="Turno" HeaderText="Turno" />
           </Columns>
       </asp:GridView>
   
-  </div>
+  </div> 
+ 
+  
+  
+  
+  
+  </div> <%--fin del card-body--%> 
+  </div> <%--fin del card--%>
   </asp:Panel>
+  </div> <%--fin del col-lg-6--%>
   
   
-  </div>  
   </div>
 
+  </div>
 
   </div>
   </form>

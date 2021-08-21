@@ -82,24 +82,24 @@ Public Class Crear_Evento
 
 
         If Vacio = False Then
-            If costo = "" Then
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), "")
-            Else
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), "")
-            End If
-            div_modalOK.Visible = True
-            Modal_OK.Show()
+            'If costo = "" Then
+            '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), "")
+            'Else
+            '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), "")
+            'End If
+            'div_modalOK.Visible = True
+            'Modal_OK.Show()
 
-            'lbl_ok.Visible = True
-            tb_nombre.Value = ""
-            tb_fechainicio.Value = ""
-            tb_fechaCierre.Value = ""
-            tb_horaCierre.Value = ""
-            textbox_Costo.Text = ""
-            FileUpload1.Attributes.Clear()
-            Image1.Visible = False
-            btn_quitar.Visible = False
-            btn_Examinar.Visible = True
+            ''lbl_ok.Visible = True
+            'tb_nombre.Value = ""
+            'tb_fechainicio.Value = ""
+            'tb_fechaCierre.Value = ""
+            'tb_horaCierre.Value = ""
+            'textbox_Costo.Text = ""
+            'FileUpload1.Attributes.Clear()
+            'Image1.Visible = False
+            'btn_quitar.Visible = False
+            'btn_Examinar.Visible = True
 
         End If
 
@@ -207,24 +207,24 @@ Public Class Crear_Evento
 
 
         If Vacio = False Then
-            If costo = "" Then
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, IsDBNull(costo), "")
-            Else
-                DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, costo, "")
-            End If
-            div_modalOK.Visible = True
-            Modal_OK.Show()
+            'If costo = "" Then
+            '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, IsDBNull(costo), "")
+            'Else
+            '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, costo, "")
+            'End If
+            'div_modalOK.Visible = True
+            'Modal_OK.Show()
 
-            'lbl_ok.Visible = True
-            tb_nombre.Value = ""
-            tb_fechainicio.Value = ""
-            tb_fechaCierre.Value = ""
-            tb_horaCierre.Value = ""
-            textbox_Costo.Text = ""
-            FileUpload1.Attributes.Clear()
-            Image1.Visible = False
-            btn_quitar.Visible = False
-            btn_Examinar.Visible = True
+            ''lbl_ok.Visible = True
+            'tb_nombre.Value = ""
+            'tb_fechainicio.Value = ""
+            'tb_fechaCierre.Value = ""
+            'tb_horaCierre.Value = ""
+            'textbox_Costo.Text = ""
+            'FileUpload1.Attributes.Clear()
+            'Image1.Visible = False
+            'btn_quitar.Visible = False
+            'btn_Examinar.Visible = True
 
         End If
     End Sub

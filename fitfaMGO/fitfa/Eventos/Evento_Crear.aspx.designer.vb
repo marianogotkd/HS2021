@@ -185,6 +185,15 @@ Partial Public Class Evento_Crear
     Protected WithEvents Panel_examenes As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''Control lbl_error_cap_max_inscr.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_error_cap_max_inscr As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control tb_capacidad_max.
     '''</summary>
     '''<remarks>
@@ -192,6 +201,15 @@ Partial Public Class Evento_Crear
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_capacidad_max As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lbl_turnos_error0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_turnos_error0 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''Control GridView1.
