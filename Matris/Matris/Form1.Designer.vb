@@ -99,7 +99,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(526, 13)
+        Me.Button1.Location = New System.Drawing.Point(599, 13)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(175, 40)
         Me.Button1.TabIndex = 6
