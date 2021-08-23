@@ -1,0 +1,3 @@
+AGREGAR CAMPO EN TABLA inscripciones_x_examen
+[inscexamen_resultado] [varchar](50) NULL,
+

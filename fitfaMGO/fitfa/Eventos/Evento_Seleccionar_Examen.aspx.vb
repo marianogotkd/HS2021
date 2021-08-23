@@ -31,7 +31,8 @@
             Session("evento_id") = DropDownList_eventos.SelectedValue
             Session("evento_desc") = DropDownList_eventos.SelectedItem.Text
 
-            Response.Redirect("Inscripcion _varios.aspx")
+            'Response.Redirect("Inscripcion _varios.aspx")
+            Response.Redirect("Examen.aspx")
         Else
             'aqui llamo al cartel q muestra q no hay eventos disponibles
             popup = "no" 'si es no...no lo pongo en visible=false
