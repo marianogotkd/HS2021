@@ -329,6 +329,15 @@ Partial Public Class Miembros_editar_datospersonales
     Protected WithEvents boton_ok As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control Modal_msjOK.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Modal_msjOK As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
     '''Control UpdateProgress1.
     '''</summary>
     '''<remarks>

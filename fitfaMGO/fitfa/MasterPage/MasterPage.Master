@@ -371,7 +371,8 @@
               </li>
 
                   <li class="nav-item">
-                <a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">
+                <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
+                <a href="../Eventos/Evento_Seleccionar_Examen.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Examen</p>
                 </a>

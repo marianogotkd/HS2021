@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MasterPage.Master" CodeBehind="Miembros_editar_datospersonales.aspx.vb" Inherits="fitfa.Miembros_editar_datospersonales" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -198,7 +200,8 @@
                                           </div>             
                                         </div> 
                                     </asp:Panel>
-        
+            <asp:ModalPopupExtender ID="Modal_msjOK" runat="server" TargetControlID="HiddenField_msj" PopupControlID="Panel1" CancelControlID="boton_ok" BackgroundCssClass="modalBackground">
+            </asp:ModalPopupExtender>
            
         </div>
 

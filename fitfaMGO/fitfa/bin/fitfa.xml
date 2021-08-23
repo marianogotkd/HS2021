@@ -6490,6 +6490,46 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
+</member><member name="F:fitfa.Examen.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Button1">
+	<summary>
+Control Button1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.TextBox1">
+	<summary>
+Control TextBox1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Inicio_Blanco.div_area">
 	<summary>
 Control div_area.
@@ -9248,6 +9288,302 @@ Control CrystalReportViewer1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.upp">
+	<summary>
+Control upp.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errNom">
+	<summary>
+Control lbl_errNom.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_nombre">
+	<summary>
+Control tb_nombre.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errApe">
+	<summary>
+Control lbl_errApe.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_apellido">
+	<summary>
+Control tb_apellido.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errFecNac">
+	<summary>
+Control lbl_errFecNac.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_fechnacc">
+	<summary>
+Control tb_fechnacc.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errNac">
+	<summary>
+Control lbl_errNac.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_nacionalidad">
+	<summary>
+Control tb_nacionalidad.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.combo_Sexo">
+	<summary>
+Control combo_Sexo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.combo_EstCivil">
+	<summary>
+Control combo_EstCivil.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_profesion">
+	<summary>
+Control tb_profesion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errDir">
+	<summary>
+Control lbl_errDir.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_dir">
+	<summary>
+Control tb_dir.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errCP">
+	<summary>
+Control lbl_errCP.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_CP">
+	<summary>
+Control tb_CP.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.textbox_CP">
+	<summary>
+Control textbox_CP.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Combo_provincia">
+	<summary>
+Control Combo_provincia.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.combo_ciudad">
+	<summary>
+Control combo_ciudad.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errTel">
+	<summary>
+Control lbl_errTel.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_tel">
+	<summary>
+Control tb_tel.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errMail">
+	<summary>
+Control lbl_errMail.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_Email">
+	<summary>
+Control tb_Email.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_err_libreta">
+	<summary>
+Control lbl_err_libreta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_nrolibreta">
+	<summary>
+Control tb_nrolibreta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_graduacion">
+	<summary>
+Control tb_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Combo_graduacion">
+	<summary>
+Control Combo_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.btn_guardar">
+	<summary>
+Control btn_guardar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.div_registro_guardado">
+	<summary>
+Control div_registro_guardado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.div_modalmsjOK">
+	<summary>
+Control div_modalmsjOK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.HiddenField_msj">
+	<summary>
+Control HiddenField_msj.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.boton_ok">
+	<summary>
+Control boton_ok.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Modal_msjOK">
+	<summary>
+Control Modal_msjOK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.UpdateProgress1">
+	<summary>
+Control UpdateProgress1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Visor_reporte_llave2.form1">
 	<summary>
 Control form1.
@@ -9483,6 +9819,102 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Credenciales_visor.CrystalReportViewer1">
 	<summary>
 Control CrystalReportViewer1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.DropDownList_eventos">
+	<summary>
+Control DropDownList_eventos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.Btn_siguiente">
+	<summary>
+Control Btn_siguiente.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.choco">
+	<summary>
+Control choco.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.HiddenField_msj">
+	<summary>
+Control HiddenField_msj.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.Label12">
+	<summary>
+Control Label12.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.Btb_msj_no_eventos">
+	<summary>
+Control Btb_msj_no_eventos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.ModalPopupExtender1">
+	<summary>
+Control ModalPopupExtender1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Seleccionar_Examen.UpdateProgress1">
+	<summary>
+Control UpdateProgress1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
