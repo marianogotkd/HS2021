@@ -1,0 +1,8 @@
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\bin\Debug\Capa_Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.pdb
