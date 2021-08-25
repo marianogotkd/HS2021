@@ -101,10 +101,8 @@
                       <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Codigo Postal</label>--%>
                     <label>Código Postal (CP):</label>
-                    <label id="lbl_errCP" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <input type="text" class="form-control" id="tb_CP" runat="server" visible="false" 
-                              required="" placeholder="Codigo Postal" maxlength="10">
-                    <asp:TextBox ID="textbox_CP" class="form-control" runat="server" MaxLength="50"></asp:TextBox>
+                    <label id="lbl_errCP" class="label label-danger" runat="server">Debe Completar El 
+                          Campo</label><asp:TextBox ID="textbox_CP" class="form-control" runat="server" MaxLength="50" AutoPostBack="True"></asp:TextBox>
                           <cc1:FilteredTextBoxExtender ID="Filteredtextbox_CPExtender1" Enabled="True" TargetControlID="textbox_CP" ValidChars="0123456789" runat="server">
                           </cc1:FilteredTextBoxExtender>
 
@@ -141,7 +139,7 @@
                   <div class="form-group">
                   <label>Nro. Libreta:</label>
                     <label id="lbl_err_libreta" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50"/>
+                    <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50" readonly="readonly"/>
                   </div>
 
                   <div class="form-group">

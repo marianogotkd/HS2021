@@ -158,15 +158,6 @@ Partial Public Class Datos_Personales
     Protected WithEvents lbl_errCP As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control tb_CP.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_CP As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control textbox_CP.
     '''</summary>
     '''<remarks>

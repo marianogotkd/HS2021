@@ -1,0 +1,9 @@
+create procedure Datos_Personales_Validar_libreta
+@usuario_nrolibreta varchar(max)
+
+as
+select
+usuario.usuario_id
+from usuario where usuario.usuario_nrolibreta = @usuario_nrolibreta 
+
+go

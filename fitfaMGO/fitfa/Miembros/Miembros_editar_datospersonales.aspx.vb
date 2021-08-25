@@ -20,6 +20,7 @@ Public Class Miembros_editar_datospersonales
         lbl_errTel.Visible = False
         lbl_errMail.Visible = False
         lbl_err_libreta.Visible = False
+        lbl_err_libreta_validar.Visible = False
         If Not IsPostBack Then
             Cargar_Datos()
             div_modalmsjOK.Visible = False
@@ -29,7 +30,7 @@ Public Class Miembros_editar_datospersonales
     End Sub
 
     Private Sub Cargar_Datos()
-        Dim ds_Usuarios As DataSet = DAusuario.Datos_Personales_Obtener_Datos_Usuarios(Session("Us_id"))
+        Dim ds_Usuarios As DataSet = DAusuario.Datos_Personales_Obtener_Datos_Usuarios(Session("Alumno_Us_id"))
         If ds_Usuarios.Tables(0).Rows.Count <> 0 Then
             tb_nombre.Value = ds_Usuarios.Tables(0).Rows(0).Item(0)
             tb_apellido.Value = ds_Usuarios.Tables(0).Rows(0).Item(1)
@@ -121,4 +122,123 @@ Public Class Miembros_editar_datospersonales
     Private Sub Combo_provincia_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.SelectedIndexChanged
         Obtener_ciudad()
     End Sub
+
+    Private Sub btn_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_guardar.ServerClick
+        Dim Vacio As Boolean
+        If tb_apellido.Value <> "" Then
+
+        Else
+            lbl_errApe.Visible = True
+            Vacio = True
+        End If
+
+        Dim asfg As String = textbox_CP.Text
+
+        If textbox_CP.Text <> "" Then
+
+            For i = 0 To textbox_CP.Text.Length - 1
+                If Not (Char.IsNumber(textbox_CP.Text.Chars(i))) Then
+                    lbl_errCP.Visible = True
+                    Vacio = True
+                End If
+            Next
+
+
+        Else
+            lbl_errCP.Visible = True
+            Vacio = True
+        End If
+        If tb_dir.Value <> "" Then
+
+        Else
+            lbl_errDir.Visible = True
+            Vacio = True
+        End If
+
+        If tb_Email.Value <> "" Then
+
+        Else
+            lbl_errMail.Visible = True
+            Vacio = True
+        End If
+
+        If tb_fechnacc.Value <> "" Then
+
+        Else
+            lbl_errFecNac.Visible = True
+            Vacio = True
+        End If
+
+        If tb_nacionalidad.Value <> "" Then
+
+        Else
+            lbl_errNac.Visible = True
+            Vacio = True
+        End If
+
+        If tb_nombre.Value <> "" Then
+
+        Else
+            lbl_errNom.Visible = True
+            Vacio = True
+        End If
+
+        If tb_tel.Value <> "" Then
+
+        Else
+            lbl_errTel.Visible = True
+            Vacio = True
+        End If
+
+        'If tb_nrolibreta.Value <> "" Then
+        'Else
+        '    lbl_err_libreta.Visible = True
+        '    Vacio = True
+        'End If
+
+        If Vacio <> True Then
+            'valido que el numero de libreta ya no exista en la bd para otro alumno.
+            Dim valido As String = "si"
+            If tb_nrolibreta.Value <> "" Then 'validamos
+                Dim ds_validar As DataSet = DAusuario.Datos_Personales_Validar_libreta(tb_nrolibreta.Value)
+                If ds_validar.Tables(0).Rows.Count <> 0 Then
+                    Dim i As Integer = 0
+                    While i < ds_validar.Tables(0).Rows.Count
+                        If ds_validar.Tables(0).Rows(i).Item("usuario_id") <> CInt(Session("Alumno_Us_id")) Then
+                            valido = "no"
+                            Exit While
+                        End If
+                        i = i + 1
+                    End While
+                Else
+                    valido = "si"
+                End If
+            End If
+
+            If valido = "si" Then
+                DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Alumno_Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
+                'div_registro_guardado.Visible = True
+
+                '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++
+                div_modalmsjOK.Visible = True
+                Modal_msjOK.Show()
+                '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            Else
+                lbl_err_libreta_validar.Visible = True
+                Vacio = True
+            End If
+
+            
+
+        Else
+            div_registro_guardado.Visible = False
+
+        End If
+
+    End Sub
+
+    Dim nom1 As Integer = 1111
+    Dim nom2 As Integer = 2222
+    Dim nom3 As Integer = 3333
+    Dim nom4 As Integer = 4444
 End Class

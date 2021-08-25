@@ -128,6 +128,7 @@
                               <asp:BoundField HeaderText="Apellido y Nombre" DataField="Apellido y Nombre" >
                               <HeaderStyle ForeColor="#0099FF" />
                               </asp:BoundField>
+                              <asp:BoundField DataField="NroLibreta" HeaderText="Libreta" />
                               <asp:BoundField HeaderText="Edad" DataField="Edad">
                               <HeaderStyle ForeColor="#0099FF" />
                               </asp:BoundField>

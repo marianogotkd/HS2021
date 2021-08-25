@@ -61,6 +61,7 @@
                     row("Graduación") = ds_alumn.Tables(0).Rows(i).Item("Graduación")
                     row("Tipo") = ds_alumn.Tables(0).Rows(i).Item("Tipo")
                     row("Instructor") = ds_alumn.Tables(0).Rows(i).Item("Instructor")
+                    row("NroLibreta") = ds_alumn.Tables(0).Rows(i).Item("NroLibreta")
                     ds_a.Tables("Tabla_alumnos").Rows.Add(row)
                     valido = "si"
                 End If
@@ -232,6 +233,8 @@
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
             'me voy al formulario con los datos del alumno.
+            Session("Alumno_Us_id") = id
+            Response.Redirect("Miembros_editar_datospersonales.aspx")
 
             'Session("usuario_id") = id
             'Response.Redirect("Mensaje_Datos_Personales.aspx")

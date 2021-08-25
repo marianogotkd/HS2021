@@ -10,7 +10,8 @@
     <ContentTemplate>
     <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Datos Personales</h3>
+                <h3 class="card-title">Editar datos personales de:</h3>
+              
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -90,10 +91,12 @@
                       <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Codigo Postal</label>--%>
                     <label>Código Postal (CP):</label>
-                    <label id="lbl_errCP" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <input type="text" class="form-control" id="tb_CP" runat="server" visible="false" 
-                              required="" placeholder="Codigo Postal" maxlength="10">
-                    <asp:TextBox ID="textbox_CP" class="form-control" runat="server" MaxLength="50" TextMode="Number"></asp:TextBox>
+                    <label id="lbl_errCP" class="label label-danger" runat="server">El Campo debe ser 
+                          numerico o vacia</label>
+                    <%--<input type="text" class="form-control" id="tb_CP" runat="server" visible="false" 
+                              required="" placeholder="Codigo Postal" maxlength="10">--%>
+                    <asp:TextBox ID="textbox_CP" class="form-control" runat="server" MaxLength="50" 
+                              AutoCompleteType="None" AutoPostBack="True" ></asp:TextBox>
                           
                           
 
@@ -132,6 +135,7 @@
                   <div class="form-group">
                   <label>Nro. Libreta:</label>
                     <label id="lbl_err_libreta" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                    <label id="lbl_err_libreta_validar" class="label label-danger" runat="server">El nro de libreta ya se encuentra registrado.</label>
                     <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50"/>
                   </div>
 
@@ -158,6 +162,7 @@
             
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Guarda Cambios</button>
+                    &nbsp;&nbsp;&nbsp;
                     <br />
                    
                 

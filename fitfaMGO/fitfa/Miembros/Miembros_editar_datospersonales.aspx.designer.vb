@@ -158,15 +158,6 @@ Partial Public Class Miembros_editar_datospersonales
     Protected WithEvents lbl_errCP As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control tb_CP.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_CP As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control textbox_CP.
     '''</summary>
     '''<remarks>
@@ -237,6 +228,15 @@ Partial Public Class Miembros_editar_datospersonales
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_err_libreta As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control lbl_err_libreta_validar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_err_libreta_validar As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''Control tb_nrolibreta.
