@@ -1,0 +1,53 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_buscar_alumno_recursivo]    Script Date: 08/24/2021 21:10:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_buscar_alumno_recursivo]
+@usuario_id int
+
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+declare @instructor_nombre as varchar(max)
+select @instructor_nombre = usuario.usuario_apellido+' '+usuario.usuario_nombre from usuario where usuario.usuario_id = @usuario_id  
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', 
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación',
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_sexo as 'Sexo',
+dbo.usuario.usuario_foto as 'foto',
+@instructor_nombre as 'Instructor',
+graduacion.graduacion_id AS 'graduacion_id',
+dbo.usuario.usuario_nrolibreta as 'NroLibreta'
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado='activo' order by usuario.usuario_doc  asc 
+ 
+select usuario.usuario_apellido+', '+usuario_nombre as 'ApellidoyNombre' from usuario where usuario.usuario_id=@usuario_id               
+
+--esto si quiero traer todo sin importar el estado
+--SELECT dbo.usuario.usuario_id as 'ID', 
+--dbo.usuario.usuario_doc as 'Documento', 
+--dbo.usuario.usuario_apellido +', '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+--dbo.usuario.usuario_telefono as 'Teléfono', 
+--dbo.graduacion.graduacion_desc as 'Graduación', 
+--dbo.usuario.usuario_tipo as 'Tipo'
+--FROM  dbo.instructor INNER JOIN
+--               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+--               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+--               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+--               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+--               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado<>'pendiente' and usuario.usuario_doc = @alumno_dni order by usuario.usuario_doc  asc
+               

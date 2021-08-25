@@ -176,11 +176,11 @@ Public Class Datos_Personales
             Vacio = True
         End If
 
-        If tb_nrolibreta.Value <> "" Then
-        Else
-            lbl_err_libreta.Visible = True
-            Vacio = True
-        End If
+        'If tb_nrolibreta.Value <> "" Then
+        'Else
+        '    lbl_err_libreta.Visible = True
+        '    Vacio = True
+        'End If
 
         If Vacio <> True Then
             DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)

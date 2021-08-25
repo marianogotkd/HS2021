@@ -325,6 +325,25 @@ ByVal usuario_nrolibreta As String) As DataSet
         Return ds_usu
     End Function
 
+    Public Function Datos_Personales_Validar_libreta(ByVal usuario_nrolibreta As String) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Datos_Personales_Validar_libreta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_nrolibreta ", usuario_nrolibreta))
+
+        da_usu.Fill(ds_usu, "Usuario")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
+
     'Actualizo los campos en tabla usuarios
     Public Function Datos_Personales_Actualizar_Datos(
         ByVal usuario_id As Integer,
