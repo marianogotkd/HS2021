@@ -202,20 +202,20 @@ div {
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="txt_nacionalidad" runat="server" 
+                                <asp:TextBox ID="txt_nacionalidad" runat="server" visible="false" 
                                     class="r-form-1-email form-control" placeholder="Nacionalidad..." 
                                     MaxLength="50"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:Label ID="Label3" runat="server" Text="Estado civil:"></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text="Estado civil:" Visible="false"></asp:Label>
                                 <asp:Label ID="label_error_estadocivil" runat="server" Text="error!" ForeColor="#FF3300" Visible="False"></asp:Label>
 
-                                <asp:DropDownList ID="DropDownList_estadocivil" runat="server" 
+                                <asp:DropDownList ID="DropDownList_estadocivil" runat="server"  Visible="false"
                                     CssClass="r-form-1-first-name form-control">
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="txt_profesion" runat="server" 
+                                <asp:TextBox ID="txt_profesion" runat="server"  Visible="false" 
                                     class="r-form-1-email form-control" placeholder="Profesión..." 
                                     MaxLength="50"></asp:TextBox>
                             </div>
@@ -379,7 +379,7 @@ div {
 
                             <div class="form-group">
                                 <asp:TextBox ID="txt_nrolibreta" runat="server" 
-                                    CssClass="r-form-1-first-name form-control" placeholder="Nro. Libreta..." 
+                                    CssClass="r-form-1-first-name form-control" placeholder="Nro. Libreta...(Dejar en blanco si no posee)" 
                                     MaxLength="50"></asp:TextBox>
                             </div>
 

@@ -4459,14 +4459,6 @@ Control lbl_errCP.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Datos_Personales.tb_CP">
-	<summary>
-Control tb_CP.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Datos_Personales.textbox_CP">
 	<summary>
 Control textbox_CP.
@@ -7248,14 +7240,6 @@ Control lbl_errCP.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_CP">
-	<summary>
-Control tb_CP.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Miembros_editar_datospersonales.textbox_CP">
 	<summary>
 Control textbox_CP.
@@ -7315,6 +7299,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_err_libreta">
 	<summary>
 Control lbl_err_libreta.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_err_libreta_validar">
+	<summary>
+Control lbl_err_libreta_validar.
 </summary>
 	<remarks>
 Campo generado automáticamente.
