@@ -21,7 +21,68 @@
               <div class="card-body">
                 <div class="tab-content">
                   <div class="active tab-pane" id="activity">
-                      <asp:Button ID="Button1" runat="server" Text="Button" />
+                  
+                  <%--aqui va el codigo para la primer pestaña--%>
+                      <asp:Label ID="Label_evento" runat="server" Text="Evento:" 
+                          forecolor = "#3399FF" Font-Bold="True"></asp:Label>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <asp:Label ID="Label_evento_fecha" runat="server" Text="Fecha:"></asp:Label>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <asp:Label ID="Label_evento_direccion" runat="server" Text="Direccion:"></asp:Label>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <asp:Label ID="Label_evento_cant_inscriptos" runat="server" Text="Cantidad de inscriptos:"></asp:Label>
+                      <br />
+                      
+                  
+                  <div class="card-body table-responsive p-0">
+                      <asp:GridView ID="GridView1" class="table table-hover" runat="server" 
+                AllowSorting="True" AutoGenerateColumns="False" 
+                           BorderColor="Black" GridLines="None" 
+                          EnableSortingAndPagingCallbacks="True">
+                          <Columns>
+                              <asp:BoundField DataField="Nro." HeaderText="Nro." >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="ApeyNom" HeaderText="Alumno" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Dni" HeaderText="Dni" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Libreta" HeaderText="Libreta" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Grad.Rendir" HeaderText="Grad.Rendir" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Edad" HeaderText="Edad" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Exam.Anterior" HeaderText="Exam.Anterior" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="Instructor" HeaderText="Instructor" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="usuario_id" HeaderText="usuario_id" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="Graduacion" HeaderText="Graduacion" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="graduacion_id" HeaderText="graduacion_id" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="instructor_id" HeaderText="instructor_id" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="evento_id" HeaderText="evento_id" Visible="False" />
+                              <asp:BoundField DataField="Turno" HeaderText="Turno" Visible="False" />
+                              <asp:BoundField DataField="Inscexamen_id" HeaderText="Inscexamen_id" 
+                                  Visible="False" />
+                          </Columns>
+                      </asp:GridView>
+                  
+                  </div>
+                  
+                  
+                  
                   </div>
                   <!-- /.tab-pane -->
                   <div class="tab-pane" id="timeline">

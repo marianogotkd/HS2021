@@ -1,0 +1,15 @@
+create procedure Examen_recuperar_fecha
+@usuario_id int
+
+as
+select
+usuario.usuario_id,
+usuario.usuario_doc,
+evento.evento_fecha, 
+evento.evento_tipoevento,
+evento.evento_id  
+from usuario inner join inscripcion on usuario.usuario_id = inscripcion.usuario_id 
+inner join evento on inscripcion.evento_id = evento.evento_id
+where evento.evento_tipoevento = 'Examen' and inscripcion.usuario_id = @usuario_id order by evento.evento_fecha desc  
+
+go

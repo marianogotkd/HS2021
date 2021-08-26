@@ -6,7 +6,23 @@ fitfa
 </name>
 </assembly>
 <members>
-<member name="F:fitfa.Institucion_alta.ScriptManager1">
+<member name="T:fitfa.Examen_ds.inscriptosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.inscriptosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.inscriptosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="F:fitfa.Institucion_alta.ScriptManager1">
 	<summary>
 Control ScriptManager1.
 </summary>
@@ -6498,9 +6514,41 @@ Control UpdatePanel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen.Button1">
+</member><member name="F:fitfa.Examen.Label_evento">
 	<summary>
-Control Button1.
+Control Label_evento.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_fecha">
+	<summary>
+Control Label_evento_fecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_direccion">
+	<summary>
+Control Label_evento_direccion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_cant_inscriptos">
+	<summary>
+Control Label_evento_cant_inscriptos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.GridView1">
+	<summary>
+Control GridView1.
 </summary>
 	<remarks>
 Campo generado automáticamente.

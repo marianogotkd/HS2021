@@ -296,4 +296,39 @@ Public Class Eventos
 
 #End Region
 
+#Region "Examen"
+    'consultar todos los incriptos a un examen ordenados por instructor.
+    Public Function Examen_recuperar_inscriptos(ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Examen_recuperar_inscriptos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Inscriptos")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    Public Function Examen_recuperar_fecha(ByVal usuario_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Examen_recuperar_fecha", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "usuario")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
+#End Region
+
 End Class

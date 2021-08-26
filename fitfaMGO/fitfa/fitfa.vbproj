@@ -2499,6 +2499,17 @@
     <None Include="Eventos\ds_eventos.xss">
       <DependentUpon>ds_eventos.xsd</DependentUpon>
     </None>
+    <None Include="Eventos\Examen_ds.xsc">
+      <DependentUpon>Examen_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Eventos\Examen_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Examen_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Eventos\Examen_ds.xss">
+      <DependentUpon>Examen_ds.xsd</DependentUpon>
+    </None>
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css.map" />
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap.css.map" />
     <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -2754,6 +2765,11 @@
     <Compile Include="Eventos\Examenes_turnos_agregar.aspx.vb">
       <DependentUpon>Examenes_turnos_agregar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Examen_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Examen_ds.xsd</DependentUpon>
     </Compile>
     <Compile Include="Eventos\Modificar_Evento.aspx.designer.vb">
       <DependentUpon>Modificar_Evento.aspx</DependentUpon>
