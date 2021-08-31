@@ -24,7 +24,7 @@ Partial Class Mantenimiento_tarea_agregar
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimiento_tarea_agregar))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
@@ -81,7 +81,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox2.Controls.Add(Me.GroupBox1)
         Me.GroupBox2.Location = New System.Drawing.Point(2, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(465, 316)
+        Me.GroupBox2.Size = New System.Drawing.Size(465, 318)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Agregar tareas de Equipos:"
@@ -277,7 +277,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox5.Location = New System.Drawing.Point(473, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(712, 316)
+        Me.GroupBox5.Size = New System.Drawing.Size(781, 318)
         Me.GroupBox5.TabIndex = 13
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
@@ -323,12 +323,12 @@ Partial Class Mantenimiento_tarea_agregar
         Me.dg_atributos.ReadOnly = True
         Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dg_atributos.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_atributos.Size = New System.Drawing.Size(683, 227)
+        Me.dg_atributos.Size = New System.Drawing.Size(754, 224)
         Me.dg_atributos.StandardTab = True
         Me.dg_atributos.TabIndex = 4
         '
@@ -450,7 +450,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1193, 331)
+        Me.ClientSize = New System.Drawing.Size(1267, 339)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

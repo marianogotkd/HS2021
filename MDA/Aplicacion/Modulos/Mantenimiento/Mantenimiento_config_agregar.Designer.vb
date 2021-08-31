@@ -23,7 +23,7 @@ Partial Class Mantenimiento_config_agregar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cb_tipo_mant = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,6 +32,11 @@ Partial Class Mantenimiento_config_agregar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dg_tareas = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.btn_Aceptar = New System.Windows.Forms.Button()
+        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
         Me.TareasidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TareasdescDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ManttipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,18 +48,14 @@ Partial Class Mantenimiento_config_agregar
         Me.Cat2equipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SubtipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.fecha = New System.Windows.Forms.DateTimePicker()
-        Me.btn_Aceptar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dg_tareas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.TareasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Mantenimiento_ds, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -125,7 +126,11 @@ Partial Class Mantenimiento_config_agregar
         '
         'GroupBox4
         '
+        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Controls.Add(Me.dg_tareas)
         Me.GroupBox4.Location = New System.Drawing.Point(12, 143)
         Me.GroupBox4.Name = "GroupBox4"
@@ -139,6 +144,9 @@ Partial Class Mantenimiento_config_agregar
         Me.dg_tareas.AllowUserToAddRows = False
         Me.dg_tareas.AllowUserToDeleteRows = False
         Me.dg_tareas.AllowUserToResizeRows = False
+        Me.dg_tareas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dg_tareas.AutoGenerateColumns = False
         Me.dg_tareas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_tareas.BackgroundColor = System.Drawing.Color.White
@@ -146,20 +154,64 @@ Partial Class Mantenimiento_config_agregar
         Me.dg_tareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_tareas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TareasidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.ManttipoidDataGridViewTextBoxColumn, Me.MantenimientotipoDataGridViewTextBoxColumn, Me.MantperiodicidadidDataGridViewTextBoxColumn, Me.PeriodicidadDataGridViewTextBoxColumn, Me.Cat1equipoidDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.Cat2equipoidDataGridViewTextBoxColumn, Me.SubtipoDataGridViewTextBoxColumn, Me.item})
         Me.dg_tareas.DataSource = Me.TareasBindingSource
-        Me.dg_tareas.Location = New System.Drawing.Point(9, 20)
+        Me.dg_tareas.Location = New System.Drawing.Point(9, 39)
         Me.dg_tareas.Margin = New System.Windows.Forms.Padding(4)
         Me.dg_tareas.MultiSelect = False
         Me.dg_tareas.Name = "dg_tareas"
         Me.dg_tareas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dg_tareas.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_tareas.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_tareas.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dg_tareas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dg_tareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_tareas.Size = New System.Drawing.Size(665, 173)
+        Me.dg_tareas.Size = New System.Drawing.Size(665, 154)
         Me.dg_tareas.StandardTab = True
         Me.dg_tareas.TabIndex = 7
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.fecha)
+        Me.GroupBox2.Location = New System.Drawing.Point(382, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(316, 125)
+        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "4. Indique fecha de inicio:"
+        '
+        'fecha
+        '
+        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecha.Location = New System.Drawing.Point(91, 44)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(152, 38)
+        Me.fecha.TabIndex = 0
+        '
+        'btn_Aceptar
+        '
+        Me.btn_Aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
+        Me.btn_Aceptar.Location = New System.Drawing.Point(574, 354)
+        Me.btn_Aceptar.Name = "btn_Aceptar"
+        Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
+        Me.btn_Aceptar.TabIndex = 16
+        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_Aceptar.UseVisualStyleBackColor = True
+        '
+        'TareasBindingSource
+        '
+        Me.TareasBindingSource.DataMember = "Tareas"
+        Me.TareasBindingSource.DataSource = Me.Mantenimiento_ds
+        '
+        'Mantenimiento_ds
+        '
+        Me.Mantenimiento_ds.DataSetName = "mantenimiento_ds"
+        Me.Mantenimiento_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TareasidDataGridViewTextBoxColumn
         '
@@ -240,49 +292,18 @@ Partial Class Mantenimiento_config_agregar
         Me.item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.item.HeaderText = "Item"
         Me.item.Name = "item"
+        Me.item.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.item.Width = 50
         '
-        'TareasBindingSource
+        'Button1
         '
-        Me.TareasBindingSource.DataMember = "Tareas"
-        Me.TareasBindingSource.DataSource = Me.Mantenimiento_ds
-        '
-        'Mantenimiento_ds
-        '
-        Me.Mantenimiento_ds.DataSetName = "mantenimiento_ds"
-        Me.Mantenimiento_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.fecha)
-        Me.GroupBox2.Location = New System.Drawing.Point(382, 12)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(316, 125)
-        Me.GroupBox2.TabIndex = 15
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "4. Indique fecha de inicio:"
-        '
-        'fecha
-        '
-        Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecha.Location = New System.Drawing.Point(91, 44)
-        Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(152, 38)
-        Me.fecha.TabIndex = 0
-        '
-        'btn_Aceptar
-        '
-        Me.btn_Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Aceptar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_Aceptar.Location = New System.Drawing.Point(574, 354)
-        Me.btn_Aceptar.Name = "btn_Aceptar"
-        Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
-        Me.btn_Aceptar.TabIndex = 16
-        Me.btn_Aceptar.Text = "Guardar"
-        Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_Aceptar.UseVisualStyleBackColor = True
+        Me.Button1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Button1.Location = New System.Drawing.Point(599, 9)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Selec.Todo"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Mantenimiento_config_agregar
         '
@@ -295,9 +316,8 @@ Partial Class Mantenimiento_config_agregar
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(713, 449)
         Me.Name = "Mantenimiento_config_agregar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar nuevo mantenimiento de equipo"
@@ -307,9 +327,9 @@ Partial Class Mantenimiento_config_agregar
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.dg_tareas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         CType(Me.TareasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mantenimiento_ds, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -337,4 +357,5 @@ Partial Class Mantenimiento_config_agregar
     Friend WithEvents Cat2equipoidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubtipoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

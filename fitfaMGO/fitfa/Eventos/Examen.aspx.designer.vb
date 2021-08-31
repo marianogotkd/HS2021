@@ -77,6 +77,24 @@ Partial Public Class Examen
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''Control btn_exportar_excel1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_exportar_excel1 As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Boton_exportar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Boton_exportar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control Label1.
     '''</summary>
     '''<remarks>

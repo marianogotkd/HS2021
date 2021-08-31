@@ -1,5 +1,19 @@
-﻿Public Class Examen
+﻿
+'////////todo esto para que funcione las exportaciones a pdf,word,pdf//////
+Imports System.IO
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports iTextSharp.text.html
+Imports iTextSharp.text.html.simpleparser
+'nota: si no tiene el dll de itextsharp, debe agregar en referencias, previamente con archivo descargado de internet. 
+'////////////////////////////////////////////////////////////////////////////
+
+Public Class Examen
+
     Inherits System.Web.UI.Page
+
+
+
 
     Dim DAeventos As New Capa_de_datos.Eventos
     Dim dataset_examen As New Examen_ds
@@ -136,6 +150,38 @@
 
         Return usuario_id
     End Function
+
+
+    Private Sub btn_exportar_excel1_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_exportar_excel1.ServerClick
+        'Response.Clear()
+        'Response.Buffer = True
+        'Response.Charset = ""
+        'Response.AddHeader("content-disposition", "attachment, filename=Examen_inscriptos.xls")
+        'Response.ContentType = "application/ms-excel "
+        'Dim sw As StringWriter = New StringWriter()
+        'Dim hw As HtmlTextWriter = New HtmlTextWriter(sw)
+        'GridView1.AllowPaging = False
+        'GridView1.DataBind()
+        'GridView1.RenderControl(hw)
+        'Response.Output.Write(sw.ToString())
+        'Response.Flush()
+        'Response.End()
+
+    End Sub
+
+  
+    Private Sub Boton_exportar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Boton_exportar.Click
+        
+
+    End Sub
+
+    Public Overloads Overrides Sub VerifyRenderingInServerForm(ByVal control As Control)
+
+    End Sub
+
+    'Public Overrides Sub VerifyRenderingInServerForm(ByVal control As System.Web.UI.Control)
+    '    ' Do NOT call MyBase.VerifyRenderingInServerForm
+    'End Sub
 
 
 End Class

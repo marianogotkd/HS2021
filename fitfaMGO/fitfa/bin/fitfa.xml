@@ -6,23 +6,7 @@ fitfa
 </name>
 </assembly>
 <members>
-<member name="T:fitfa.Examen_ds.inscriptosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:fitfa.Examen_ds.inscriptosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:fitfa.Examen_ds.inscriptosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:fitfa.Examen_ds">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:fitfa.Institucion_alta.ScriptManager1">
+<member name="F:fitfa.Institucion_alta.ScriptManager1">
 	<summary>
 Control ScriptManager1.
 </summary>
@@ -6554,6 +6538,22 @@ Control GridView1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Examen.btn_exportar_excel1">
+	<summary>
+Control btn_exportar_excel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Boton_exportar">
+	<summary>
+Control Boton_exportar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Examen.Label1">
 	<summary>
 Control Label1.
@@ -11252,6 +11252,22 @@ Control UpdateProgress1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:fitfa.Examen_ds.inscriptosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.inscriptosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.inscriptosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="T:fitfa.inscripciones_DS.Tabla_alumnosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
