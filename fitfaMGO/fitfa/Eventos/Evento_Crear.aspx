@@ -102,13 +102,15 @@
   <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>  
   </div>
     
+
     </div> <%--fin del card-body--%>
     </div> <%--fin del card--%>
 
+
+
   </div>
 
-
-  
+    
   <div class="col-lg-6">
     <div class="card">
     <div class="card-body">
@@ -125,11 +127,32 @@
       &nbsp; &nbsp;Quitar&nbsp;</button>
   </div>
           
+
+
   
   </div> <%--fin del card-body--%>
   </div> <%--fin del card--%>
+        
+ <div runat="server" id="Div_Costos" visible="false"> 
+     <div class="card">
+     
+    <div class="card-body">
     
+      <div class="form-group">
+   
+    <asp:Button ID="btn_Costos" runat="server" Text="Configurar Costos de Examenes" class="btn btn-alert-heading"  />
+
+</div>
+    </div> 
+  </div> <%--fin del card-body--%>
+  
+  </div>
+
+
   </div>  <%--fin del col-lg-6--%>
+   
+
+  
 
   <div class="col-lg-6">
   <asp:Panel ID="Panel_examenes" runat="server" Visible=false >
@@ -170,6 +193,10 @@
   </div> <%--fin del card--%>
   </asp:Panel>
   </div> <%--fin del col-lg-6--%>
+
+    
+
+    
   
   
   </div>
