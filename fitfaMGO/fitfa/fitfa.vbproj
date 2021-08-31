@@ -2758,7 +2758,7 @@
     </Compile>
     <Compile Include="Eventos\Examen.aspx.vb">
       <DependentUpon>Examen.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Eventos\Examenes_turnos_agregar.aspx.designer.vb">
       <DependentUpon>Examenes_turnos_agregar.aspx</DependentUpon>

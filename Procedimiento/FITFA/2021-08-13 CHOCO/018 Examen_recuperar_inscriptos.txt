@@ -1,4 +1,11 @@
-create procedure Examen_recuperar_inscriptos
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Examen_recuperar_inscriptos]    Script Date: 08/26/2021 14:58:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[Examen_recuperar_inscriptos]
 @evento_id int
 
 as
@@ -31,7 +38,7 @@ FROM  dbo.instructor INNER JOIN
                dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  
                
                
-               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' order by usuario.usuario_doc  asc 
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' order by usuario.usuario_apellido asc 
 
 ---1) recupero las graduaciones
 select * from graduacion order by graduacion.graduacion_id asc
@@ -48,4 +55,3 @@ evento_fechacierre,
 evento_direccion, 
 evento_cap_max_insc  
 from evento where evento.evento_id = @evento_id 
-go

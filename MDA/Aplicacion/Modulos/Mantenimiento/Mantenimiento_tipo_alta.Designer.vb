@@ -24,7 +24,7 @@ Partial Class Mantenimiento_tipo_alta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimiento_tipo_alta))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -100,9 +100,8 @@ Partial Class Mantenimiento_tipo_alta
         Me.txt_dias.BackColor = System.Drawing.SystemColors.Info
         Me.txt_dias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.txt_dias.Location = New System.Drawing.Point(321, 21)
-        Me.txt_dias.Maximum = New Decimal(New Integer() {365, 0, 0, 0})
+        Me.txt_dias.Maximum = New Decimal(New Integer() {3500, 0, 0, 0})
         Me.txt_dias.Name = "txt_dias"
-        Me.txt_dias.ReadOnly = True
         Me.txt_dias.Size = New System.Drawing.Size(56, 26)
         Me.txt_dias.TabIndex = 1
         Me.txt_dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -213,10 +212,10 @@ Partial Class Mantenimiento_tipo_alta
         Me.DG_PERIODICIDAD.ReadOnly = True
         Me.DG_PERIODICIDAD.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_PERIODICIDAD.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_PERIODICIDAD.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_PERIODICIDAD.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DG_PERIODICIDAD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_PERIODICIDAD.Size = New System.Drawing.Size(457, 135)
         Me.DG_PERIODICIDAD.StandardTab = True

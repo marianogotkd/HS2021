@@ -150,15 +150,32 @@
 
     End Sub
 
+    Dim column1 As New AutoCompleteStringCollection
     Private Sub recuperar_tareas_existentes()
         Mantenimiento_ds.Tables("Tareas").Rows.Clear()
         Dim ds_tareas As DataSet = DAtareas.Tareas_obtener_todo()
 
         If ds_tareas.Tables(0).Rows.Count <> 0 Then
             Mantenimiento_ds.Tables("Tareas").Merge(ds_tareas.Tables(0))
-        End If
 
+            Mantenimiento_ds.Tables("Tareas_autocomplete").Rows.Clear()
+            'tambien voy a llenar la tabla "Tareas_autcomplete" para q pueda sugerir tareas en el textbox
+            Dim i As Integer = 0
+
+            While i < ds_tareas.Tables(0).Rows.Count
+                Dim fila As DataRow = Mantenimiento_ds.Tables("Tareas_autocomplete").NewRow
+                fila("Tareas") = ds_tareas.Tables(0).Rows(i).Item("Tareas_desc").ToString
+                Mantenimiento_ds.Tables("Tareas_autocomplete").Rows.Add(fila)
+                column1.Add(ds_tareas.Tables(0).Rows(i).Item("Tareas_desc").ToString())
+                i = i + 1
+            End While
+            txt_descripcion.AutoCompleteSource = AutoCompleteSource.CustomSource
+            txt_descripcion.AutoCompleteCustomSource = column1
+            txt_descripcion.AutoCompleteMode = AutoCompleteMode.Suggest
+        End If
     End Sub
+
+
 
     Private Sub aplicar_filtro_tareas()
         Try
@@ -252,6 +269,12 @@
                             Dim tareas_id As Integer = dg_atributos.Rows(i).Cells("TareasidDataGridViewTextBoxColumn").Value
                             DAtareas.Tareas_eliminar(tareas_id)
                             dg_atributos.Rows.RemoveAt(i)
+
+                            'aqui tengo q actualizar la grilla de la derecha.
+                            recuperar_tareas_existentes()
+                            aplicar_filtro_tareas()
+
+
                             i = 0 'lo reinicio, x q al quitar un ite, se reordenan los indices
                         End If
                     Else

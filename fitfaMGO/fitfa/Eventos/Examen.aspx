@@ -34,7 +34,7 @@
                       <br />
                       
                   
-                  <div class="card-body table-responsive p-0">
+                  <div class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView1" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
                            BorderColor="Black" GridLines="None" 
@@ -80,10 +80,12 @@
                       </asp:GridView>
                   
                   </div>
+                  <button type="submit" class="btn btn-primary" runat="server" id="btn_exportar_excel1">Exportar excel</button>
                   
                   
                   
-                  </div>
+                      &nbsp;</div>
+                    <asp:Button ID="Boton_exportar" runat="server" Text="Excel"/>
                   <!-- /.tab-pane -->
                   <div class="tab-pane" id="timeline">
                     <!-- The timeline -->

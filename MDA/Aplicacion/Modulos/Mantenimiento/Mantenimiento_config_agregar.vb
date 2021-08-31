@@ -231,4 +231,14 @@
         'End Try
 
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If dg_tareas.Rows.Count <> 0 Then
+            Dim i As Integer = 0
+            While i < dg_tareas.Rows.Count
+                dg_tareas.Rows(i).Cells("item").Value = True
+                i = i + 1
+            End While
+        End If
+    End Sub
 End Class

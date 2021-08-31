@@ -1,0 +1,81 @@
+delete from Actividad_Servicio 
+delete from Caja
+delete from CajaDetalle
+---CajaTipoMov 
+--select * from Categoria_1 
+--select * from Categoria_2 
+--select * from Categoria_3 
+delete from Cliente
+delete from Cliente_Fijos_Pagos 
+delete from Cliente_suc_sector 
+delete from Cliente_Sucursales 
+delete from Costo_Indirecto 
+delete from Costo_Indirecto_Detalle 
+delete from Cuadrilla 
+delete from CuentaCorriente 
+---select * from Dia 
+delete from Egresos 
+--select * from EgresoTipo 
+delete from Empleado 
+delete from Empleado_x_Cuadrilla 
+---select * from Empresa --------------------cambiar datos en el form
+delete from Equipo
+delete from Equipo_atributo_detalle 
+delete from Equipo_categoria1
+delete from Equipo_categoria2
+delete from Equipo_categoria2_caracteristicas
+delete from Factura
+delete from Gastos
+---select * from iva
+---select * from Lista 
+delete from Mantenimiento 
+delete from Mantenimiento_periodicidad 
+delete from Mantenimiento_realizado
+delete from Mantenimiento_realizado_detalle
+delete from Mantenimiento_tipo
+---select * from Marca 
+delete from Movimiento_Mercaderia
+delete from Movimiento_Mercaderia_Detalle
+delete from MovimientosCtaCte
+delete from Orden_trabajo
+--delete from PedidoEstado 
+delete from Pedidos
+delete from Pedidos_Detalle 
+delete from Predefinido 
+delete from Presupuesto 
+delete from Producto 
+delete from Producto_x_sucursal 
+delete from ProductoCombo
+delete from ProductoCombo_x_Sucursal
+delete from ProductoCombo_x_Sucursal_Detalle
+delete from ProductoComboDetalle
+--select * from Proveedor 
+delete from ProveedorProducto 
+delete from ProveedorProductoCompra
+delete from Recibo 
+delete from Remito 
+delete from Sector
+delete from Servicio
+delete from Servicio_Producto
+delete from Servicios 
+--select * from Sucursal 
+delete from Tareas 
+delete from Tareas_asignadas 
+---select * from Terminal -----esto lo cierro a mano.------------------
+select * from Terminal -----esto lo cierro a mano.------------------
+---delete from Turno 
+--delete from Turno_a 
+--select * from Usuario 
+--select * from Usuario_x_Terminal 
+delete from UsuarioActividad 
+---select * from UsuarioEstado 
+--select * from Vendedor 
+delete from Venta
+delete from Venta_CtaCte 
+delete from Venta_Producto 
+delete from Venta_Producto_detalle
+delete from Venta_x_tarjeta
+--select * from VentaConfig 
+---select * from VentaTurno 
+
+
