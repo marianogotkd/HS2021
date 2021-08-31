@@ -898,6 +898,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Aplicacion.MANT_2_ds.Report_tareas_doblecolumnaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.MANT_2_ds.EmpresaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Aplicacion.MANT_2_ds.mant_realizados_detalleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -918,6 +926,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Aplicacion.MANT_2_ds.Report_tareas_doblecolumnaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.MANT_2_ds.EmpresaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Aplicacion.MANT_2_ds.mant_realizados_detalleRowChangeEvent">
 	<summary>
 Row event argument class
@@ -935,6 +951,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.MANT_2_ds.Report_tareasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.MANT_2_ds.Report_tareas_doblecolumnaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.MANT_2_ds.EmpresaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
