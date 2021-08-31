@@ -14,7 +14,10 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=(local)")
 
     'Conexion MDA Electricidad
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=DESKTOP-CK4O564\SQLEXPRESS")
+    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=DESKTOP-CK4O564\SQLEXPRESS")
+
+    'Conexion Agustin
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;ID=sa;Persist Security Info=False;User ID=sa;Initial Catalog=SantaFe;Data Source=DESKTOP-442DHLU")
 
 
 End Class

@@ -176,6 +176,24 @@ Partial Public Class Evento_Crear
     Protected WithEvents btn_quitar As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control Div_Costos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Div_Costos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control btn_Costos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Costos As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control Panel_examenes.
     '''</summary>
     '''<remarks>
