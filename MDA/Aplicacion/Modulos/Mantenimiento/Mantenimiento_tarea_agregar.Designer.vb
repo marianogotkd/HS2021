@@ -24,7 +24,7 @@ Partial Class Mantenimiento_tarea_agregar
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimiento_tarea_agregar))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
@@ -43,6 +43,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.cb_tipo_mant = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txt_buscar = New System.Windows.Forms.TextBox()
         Me.LABEL_EQUIPO_CAT = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.dg_atributos = New System.Windows.Forms.DataGridView()
@@ -60,6 +61,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.TareasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Mantenimiento_ds = New Aplicacion.mantenimiento_ds()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -102,6 +104,8 @@ Partial Class Mantenimiento_tarea_agregar
         '
         'txt_descripcion
         '
+        Me.txt_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_descripcion.ForeColor = System.Drawing.Color.SteelBlue
         Me.txt_descripcion.Location = New System.Drawing.Point(54, 273)
         Me.txt_descripcion.Name = "txt_descripcion"
         Me.txt_descripcion.Size = New System.Drawing.Size(289, 20)
@@ -268,7 +272,12 @@ Partial Class Mantenimiento_tarea_agregar
         '
         'GroupBox5
         '
+        Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox5.Controls.Add(Me.Label3)
+        Me.GroupBox5.Controls.Add(Me.txt_buscar)
         Me.GroupBox5.Controls.Add(Me.LABEL_EQUIPO_CAT)
         Me.GroupBox5.Controls.Add(Me.Button3)
         Me.GroupBox5.Controls.Add(Me.dg_atributos)
@@ -282,6 +291,14 @@ Partial Class Mantenimiento_tarea_agregar
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "TAREAS CREADAS PARA LA CATEGORÍA: "
         '
+        'txt_buscar
+        '
+        Me.txt_buscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_buscar.Location = New System.Drawing.Point(474, 25)
+        Me.txt_buscar.Name = "txt_buscar"
+        Me.txt_buscar.Size = New System.Drawing.Size(287, 20)
+        Me.txt_buscar.TabIndex = 280
+        '
         'LABEL_EQUIPO_CAT
         '
         Me.LABEL_EQUIPO_CAT.AutoSize = True
@@ -294,9 +311,10 @@ Partial Class Mantenimiento_tarea_agregar
         '
         'Button3
         '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Modificar
-        Me.Button3.Location = New System.Drawing.Point(516, 261)
+        Me.Button3.Location = New System.Drawing.Point(587, 261)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(84, 42)
         Me.Button3.TabIndex = 279
@@ -309,6 +327,9 @@ Partial Class Mantenimiento_tarea_agregar
         Me.dg_atributos.AllowUserToAddRows = False
         Me.dg_atributos.AllowUserToDeleteRows = False
         Me.dg_atributos.AllowUserToResizeRows = False
+        Me.dg_atributos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dg_atributos.AutoGenerateColumns = False
         Me.dg_atributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_atributos.BackgroundColor = System.Drawing.Color.White
@@ -316,19 +337,19 @@ Partial Class Mantenimiento_tarea_agregar
         Me.dg_atributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_atributos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TareasidDataGridViewTextBoxColumn, Me.TareasdescDataGridViewTextBoxColumn, Me.ManttipoidDataGridViewTextBoxColumn, Me.MantenimientotipoDataGridViewTextBoxColumn, Me.MantperiodicidadidDataGridViewTextBoxColumn, Me.PeriodicidadDataGridViewTextBoxColumn, Me.Cat1equipoidDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.Cat2equipoidDataGridViewTextBoxColumn, Me.SubtipoDataGridViewTextBoxColumn, Me.item})
         Me.dg_atributos.DataSource = Me.TareasBindingSource
-        Me.dg_atributos.Location = New System.Drawing.Point(7, 30)
+        Me.dg_atributos.Location = New System.Drawing.Point(7, 52)
         Me.dg_atributos.Margin = New System.Windows.Forms.Padding(4)
         Me.dg_atributos.MultiSelect = False
         Me.dg_atributos.Name = "dg_atributos"
         Me.dg_atributos.ReadOnly = True
         Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dg_atributos.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_atributos.Size = New System.Drawing.Size(754, 224)
+        Me.dg_atributos.Size = New System.Drawing.Size(754, 202)
         Me.dg_atributos.StandardTab = True
         Me.dg_atributos.TabIndex = 4
         '
@@ -434,15 +455,28 @@ Partial Class Mantenimiento_tarea_agregar
         '
         'Button4
         '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button4.Location = New System.Drawing.Point(606, 261)
+        Me.Button4.Location = New System.Drawing.Point(677, 261)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(84, 42)
         Me.Button4.TabIndex = 278
         Me.Button4.Text = "Quitar"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label3.Location = New System.Drawing.Point(418, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 13)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "Buscar:"
         '
         'Mantenimiento_tarea_agregar
         '
@@ -453,9 +487,7 @@ Partial Class Mantenimiento_tarea_agregar
         Me.ClientSize = New System.Drawing.Size(1267, 339)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(1283, 378)
         Me.Name = "Mantenimiento_tarea_agregar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mantenimiento - Agregar tareas"
@@ -510,4 +542,6 @@ Partial Class Mantenimiento_tarea_agregar
     Friend WithEvents SubtipoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents LABEL_EQUIPO_CAT As System.Windows.Forms.Label
+    Friend WithEvents txt_buscar As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
