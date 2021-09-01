@@ -1,6 +1,19 @@
 ﻿Public Class Mantenimientos_realizados_consulta
-
+    Dim DAventa As New Datos.Venta
     Public Sub generar_reporte(ByVal op As String)
+        '//////////EMPRESA/////////////////////////////
+        Dim usuario_id As String
+        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        If ds_usuario.Tables(1).Rows.Count <> 0 Then
+            MANT_2_ds.Tables("Empresa").Rows.Clear()
+            MANT_2_ds.Tables("Empresa").Merge(ds_usuario.Tables(1))
+        End If
+        '/////////////////////////////////////////////
+
+
+
+
         MANT_2_ds.Tables("Report_mantenimiento").Rows.Clear()
         'MANT_2_ds1.Tables("Report_mantenimiento").Rows.Clear()
         Dim filass As DataRow = MANT_2_ds.Tables("Report_mantenimiento").NewRow
@@ -61,7 +74,7 @@
             Else
                 CrReport.Load(Application.StartupPath & "\..\..\Modulos\Mantenimiento\Reporte_mantenimientos_realizados\CR_mant_realizado_consulta_b.rpt")
             End If
-
+            CrReport.Database.Tables("Empresa").SetDataSource(MANT_2_ds.Tables("Empresa"))
             CrReport.Database.Tables("Revision").SetDataSource(MANT_2_ds.Tables("Report_mantenimiento"))
             CrReport.Database.Tables("reporte_mant_listados").SetDataSource(Ds_mant_realizados.Tables("reporte_mant_listados"))
             CrReport.Database.Tables("reporte_tares").SetDataSource(Ds_mant_realizados.Tables("reporte_tares"))
@@ -166,6 +179,14 @@
             form_detalle.txt_fecha.Text = DG_clientes.CurrentRow.Cells("DataGridViewTextBoxColumn1").Value
             form_detalle.txt_mantenimiento.Text = DG_clientes.CurrentRow.Cells("TipomantenimientoDataGridViewTextBoxColumn").Value
             form_detalle.txt_periodicidad.Text = DG_clientes.CurrentRow.Cells("PeriodicidadDataGridViewTextBoxColumn").Value
+
+            'mando los parametros
+            form_detalle.Mantenimiento_id = DG_clientes.CurrentRow.Cells("MantenimientoidDataGridViewTextBoxColumn").Value
+            form_detalle.Mant_realizados_id = DG_clientes.CurrentRow.Cells("MantrealizadosidDataGridViewTextBoxColumn").Value
+            form_detalle.Equipo_id = DG_clientes.CurrentRow.Cells("EquipoidDataGridViewTextBoxColumn").Value
+
+
+
             'ahora agregamos los detalles.
             Dim mant_realizados_id As Integer = CInt(DG_clientes.CurrentRow.Cells("MantrealizadosidDataGridViewTextBoxColumn").Value)
             Ds_mant_realizados.Tables("tareas").Rows.Clear() 'borro siempre el contenido

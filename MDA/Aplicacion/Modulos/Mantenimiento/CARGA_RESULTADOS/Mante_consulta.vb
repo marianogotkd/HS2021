@@ -344,12 +344,26 @@
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         reporte()
     End Sub
-
+    Dim DAventa As New Datos.Venta
     Private Sub reporte()
 
         MANT_2_ds1.Tables("Report_mantenimiento").Rows.Clear()
         MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
-        MANT_2_ds1.Tables("Report_tareas").Rows.Clear()
+        MANT_2_ds1.Tables("Report_tareas_doblecolumna").Rows.Clear()
+
+        '////////EMPRESA///////////
+        Dim usuario_id As String
+        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        If ds_usuario.Tables(1).Rows.Count <> 0 Then
+            MANT_2_ds1.Tables("Empresa").Rows.Clear()
+            MANT_2_ds1.Tables("Empresa").Merge(ds_usuario.Tables(1))
+        End If
+
+
+        '////////////////////////////////////////////////////////
+
+
 
         Dim ii As Integer = 0
         While ii < DG_clientes.Rows.Count
@@ -368,22 +382,64 @@
 
 
                 Dim Mantenimiento_id As Integer = DG_clientes.Rows(ii).Cells("Mantenimientoid").Value
-                Dim Equipo As String = DG_clientes.Rows(ii).Cells("Etiqueta").Value
+                Dim etiqueta As String = DG_clientes.Rows(ii).Cells("Etiqueta").Value
+                Dim equipo As String = DG_clientes.Rows(ii).Cells("EquipoDataGridViewTextBoxColumn").Value
+                Dim sector As String = DG_clientes.Rows(ii).Cells("SectorDataGridViewTextBoxColumn").Value
                 Dim Tipo_mantenimiento As String = DG_clientes.Rows(ii).Cells("Tipomantenimiento").Value
                 'ahora lo busco en dataset de las tareas...no en el gridview x q el grid esta con un filtro aplicado y puede q no lo encuentre.
                 Dim j As Integer = 0
+                '//////////////////////////
+                Dim dos_columnas As String = "vacia"
+                '////////////////////////
+
                 While j < MANT_2_ds1.Tables("mant_realizados_detalle").Rows.Count
                     If Mantenimiento_id = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mantenimiento_id") Then
-                        'ahora lo agrego.
-                        Dim fila2 As DataRow = MANT_2_ds1.Tables("Report_tareas").NewRow
-                        fila2("Tareas") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
-                        fila2("Valor_ingresado") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
-                        fila2("Mantenimiento_id") = Mantenimiento_id
-                        fila2("Equipo") = Equipo
-                        fila2("Tipo_mantenimiento") = Tipo_mantenimiento
-                        'fila2("Tareas") = DataGridView1.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value
-                        'fila2("Valor_ingresado") = DataGridView1.Rows(i).Cells("MantdetalleDataGridViewTextBoxColumn").Value
-                        MANT_2_ds1.Tables("Report_tareas").Rows.Add(fila2)
+                        If dos_columnas = "vacia" Then
+                            'ahora lo agrego.
+                            Dim fila2 As DataRow = MANT_2_ds1.Tables("Report_tareas").NewRow
+                            fila2("Tareas") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
+                            fila2("Valor_ingresado") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
+                            fila2("Mantenimiento_id") = Mantenimiento_id
+                            fila2("Equipo") = equipo
+                            fila2("Sector") = sector
+                            fila2("Etiqueta") = etiqueta
+                            fila2("Tipo_mantenimiento") = Tipo_mantenimiento
+                            fila2("Tareas_b") = ""
+                            fila2("Valor_ingresado_b") = ""
+                            'fila2("Tareas") = DataGridView1.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value
+                            'fila2("Valor_ingresado") = DataGridView1.Rows(i).Cells("MantdetalleDataGridViewTextBoxColumn").Value
+                            MANT_2_ds1.Tables("Report_tareas").Rows.Add(fila2)
+                            dos_columnas = "llena_izquierda" 'notifico q la tarea de la izquierda está cargada
+                        Else
+                            Dim indice_fila As Integer = MANT_2_ds1.Tables("Report_tareas").Rows.Count - 1
+                            MANT_2_ds1.Tables("Report_tareas").Rows(indice_fila).Item("Tareas_b") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
+                            MANT_2_ds1.Tables("Report_tareas").Rows(indice_fila).Item("Valor_ingresado_b") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
+                            dos_columnas = "vacia"
+                        End If
+
+                        'If dos_columnas = "vacia" Then
+                        '    'creo columna y agrego la primer tarea de la izquierda
+                        '    Dim fila_nueva As DataRow = MANT_2_ds1.Tables("Report_tareas_doblecolumna").NewRow
+                        '    fila_nueva("Tareas_a") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
+                        '    fila_nueva("Valor_ingresado_a") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
+                        '    fila_nueva("Mantenimiento_id_a") = Mantenimiento_id
+                        '    fila_nueva("Equipo_a") = equipo
+                        '    fila_nueva("Tipo_mantenimiento_a") = Tipo_mantenimiento
+                        '    fila_nueva("Etiqueta_a") = etiqueta
+                        '    fila_nueva("Sector_a") = sector
+                        '    fila_nueva("Tareas_b") = ""
+                        '    fila_nueva("Valor_ingresado_b") = ""
+                        '    MANT_2_ds1.Tables("Report_tareas_doblecolumna").Rows.Add(fila_nueva)
+                        '    dos_columnas = "llena_izquierda" 'notifico q la tarea de la izquierda está cargada
+                        'Else
+                        '    If dos_columnas = "llena_izquierda" Then
+                        '        'entonces solo lleno la de la izquierda
+                        '        Dim indice_fila As Integer = MANT_2_ds1.Tables("Report_tareas_doblecolumna").Rows.Count - 1
+                        '        MANT_2_ds1.Tables("Report_tareas_doblecolumna").Rows(indice_fila).Item("Tareas_b") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Tareas_desc")
+                        '        MANT_2_ds1.Tables("Report_tareas_doblecolumna").Rows(indice_fila).Item("Valor_ingresado_b") = MANT_2_ds1.Tables("mant_realizados_detalle").Rows(j).Item("Mant_detalle")
+                        '        dos_columnas = "vacia"
+                        '    End If
+                        'End If
                     End If
 
                     j = j + 1
@@ -406,8 +462,10 @@
             Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
             CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
             CrReport.Load(Application.StartupPath & "\..\..\Modulos\Mantenimiento\CARGA_RESULTADOS\Reportes\CR_mantenimiento.rpt")
+            CrReport.Database.Tables("Empresa").SetDataSource(MANT_2_ds1.Tables("Empresa"))
             CrReport.Database.Tables("Revision").SetDataSource(MANT_2_ds1.Tables("Report_mantenimiento"))
             CrReport.Database.Tables("Report_tareas").SetDataSource(MANT_2_ds1.Tables("Report_tareas"))
+            'CrReport.Database.Tables("Report_tareas_doblecolumna").SetDataSource(MANT_2_ds1.Tables("Report_tareas_doblecolumna"))
 
 
             Dim visor As New Facturacion_report_show

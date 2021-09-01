@@ -502,7 +502,8 @@
                         fila("DESCRIPCION") = ds_info.Tables(1).Rows(jj).Item("etiqueta")
                         fila("FECHA") = ds_info.Tables(1).Rows(jj).Item("Mant_realizados_fecha")
                         fila("Equipo_id") = ds_info.Tables(1).Rows(jj).Item("Equipo_id")
-                        Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("TIPO_OP") = "mantenimiento realizado"
+                        fila("TIPO_OP") = "mantenimiento realizado"
+                        'Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows(ee).Item("TIPO_OP") = "mantenimiento realizado"
                         Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Add(fila)
                     End If
                 End If
