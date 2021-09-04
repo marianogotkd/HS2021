@@ -274,6 +274,25 @@ Public Class Usuario
         dbconn.Close()
     End Sub
 
+    Public Function UsuarioActividad_consultar_sesion(ByVal Sesiones_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("UsuarioActividad_consultar_sesion", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Sesiones_id", Sesiones_id))
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "Usuario")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
+
 #Region "Configuracion de Tipos de Usuario"
     Public Function UsuarioModulos_alta(ByVal UT_id As Integer, ByVal USUModulos_descripcion As String) As DataSet
         Try

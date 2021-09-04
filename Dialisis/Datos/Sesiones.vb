@@ -3,6 +3,28 @@ Imports System.Data.DataRow
 Public Class Sesiones
     Inherits Datos.Conexion
 
+
+
+    'anular sesion ausente
+    Public Function Sesiones_anular(ByVal Sesiones_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Sesiones_anular", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Sesiones_id", Sesiones_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Sesiones")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
     'alta ausente
     Public Function sesiones_alta(ByVal PAC_id As Integer, ByVal Sesiones_fecha As Date, ByVal Sesiones_asistencia As String, ByVal Sesiones_estado As String, ByVal sucursal_id As Integer) As DataSet
         Try

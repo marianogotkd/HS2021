@@ -1217,13 +1217,29 @@
 
 
     Private Sub btn_finalizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_finalizar.Click
-        If cb_filtro.Items.Count <> 0 And tb_AV.Text <> "No Tiene Acceso Vascular" Then
+        Dim valido_peso As String = "no"
+        Dim vPesoI As Decimal = (Math.Round(CDec(tb_PesoI.Text), 2).ToString("N2"))
+        Dim vPesoE As Decimal = (Math.Round(CDec(tb_PesoE.Text), 2).ToString("N2"))
+
+        If vPesoI > CDec(0) And vPesoE > CDec(0) Then
+            valido_peso = "si"
+        End If
+
+        Dim valido_tension As String = "no"
+        Dim vTAI As Decimal = (Math.Round(CDec(tb_TAI.Text), 2).ToString("N2"))
+        Dim vTAE As Decimal = (Math.Round(CDec(tb_TAE.Text), 2).ToString("N2"))
+
+        If vTAI > CDec(0) And vTAE > CDec(0) Then
+            valido_tension = "si"
+        End If
+
+        If cb_filtro.Items.Count <> 0 And tb_AV.Text <> "No Tiene Acceso Vascular" And valido_peso = "si" And valido_tension = "si" Then
 
             'Dim concepto As String
             'concepto = "Insumo consumido en Enfermeria"
             ''''Alta en tabla Movimiento_Mercaderia''''''''''
             tb_Filtro.Text = 0
-            Dim result As Integer = MessageBox.Show("¿Esta seguro que desea modificar la sesión?.", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim result As Integer = MessageBox.Show("¿Esta seguro que desea Finalizar la sesión?. Los datos no podrán modificarse posteriormente.", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
 
                 '///////////////////////////le doy el formado correcto a los textbox q deben ser si o si decimales con 2 digitos despues de la coma
@@ -1421,10 +1437,13 @@
             'lbl_err1.Visible = True 'talla
             lbl_err2.Visible = True 'tipo filtro
             'lbl_err3.Visible = True 'horarios
-            'lbl_err4.Visible = True 'peso
-            'lbl_err5.Visible = True 'tension arterial
+            lbl_err4.Visible = True 'peso
+            lbl_err5.Visible = True 'tension arterial
             'lbl_err6.Visible = True 'observacion
             lbl_err7.Visible = True 'tipo acceso vascular
+
+
+
             MessageBox.Show("Complete los Campos Obligatorios. ", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
