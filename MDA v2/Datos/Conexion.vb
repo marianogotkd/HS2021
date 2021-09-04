@@ -10,7 +10,7 @@ Public Class Conexion
     'Conexion CHOCO-RYZEN
     Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.112.197.145\SQLEXPRESS_CHOK")
 
-    'Conexion local NoteMariano
+    'Conexion local Cualquier PC
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=(local)")
 
     'Conexion MDA Electricidad
@@ -18,6 +18,15 @@ Public Class Conexion
 
     'Conexion Agustin
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;ID=sa;Persist Security Info=False;User ID=sa;Initial Catalog=SantaFe;Data Source=DESKTOP-442DHLU")
+
+    ' Conexion ServerMDA
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.112.29.113")
+
+
+    'mail de hamachi
+    'hamersoftmda@gmail.com
+    'pass: Cho..1..
+    'Red ServerMDA
 
 
 End Class
