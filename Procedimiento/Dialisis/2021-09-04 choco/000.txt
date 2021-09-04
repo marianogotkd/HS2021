@@ -1,0 +1,14 @@
+create procedure Sesiones_anular
+
+@Sesiones_id int
+as
+delete from Sesiones where Sesiones.Sesiones_id = @Sesiones_id
+go
+
+
+create procedure UsuarioActividad_consultar_sesion
+@Sesiones_id int
+
+as
+select * from UsuarioActividad where UsuarioActividad.Sesiones_id = @Sesiones_id and UsuarioActividad.ACT_sesion = 'consumo ausente'
+go

@@ -346,7 +346,7 @@
                     'registro actividad usuario
                     Dim usuario_id As String
                     usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
-                    DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, sesiones_id, Now, "")
+                    DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, sesiones_id, Now, "consumo ausente")
 
                 Else
                     MessageBox.Show("Error, Debe cargar un filtro.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -368,7 +368,7 @@
                         'registro actividad usuario
                         Dim usuario_id As String
                         usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
-                        DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, sesiones_id, Now, "")
+                        DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, sesiones_id, Now, "consumo ausente")
                         ''''''''''''''''''''''''''''''''''
 
 

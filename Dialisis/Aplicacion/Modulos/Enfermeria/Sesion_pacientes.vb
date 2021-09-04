@@ -86,6 +86,11 @@
 
                     Dim ds_sesiones As DataSet = DAsesiones.sesiones_alta(PAC_id, fecha_registrar, "Ausente", "Ausente", sucursal_id) 'mando el parametro fecha_registrar porque es la que tiene el resultado de la busqueda, es decir lo que se esta mostrando en la grilla
                     Dim sesiones_id = ds_sesiones.Tables(0).Rows(0).Item(0)
+                    Dim usuario_id As String
+                    usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+
+                    Dim daUsuario As New Datos.Usuario
+                    daUsuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, sesiones_id, fecha_registrar, "registro ausente")
 
                     'Dim result2 As Integer = MessageBox.Show("¿El Filtro del paciente fue utilizado?", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     'If result2 = DialogResult.Yes Then
@@ -268,5 +273,40 @@
                 End If
             End If
         End If
+    End Sub
+
+    Dim daUsuario As New Datos.Usuario
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        If datagridview1.Rows.Count <> 0 Then
+            Dim PAC_id As Integer = CInt(datagridview1.CurrentRow.Cells("PACidDataGridViewTextBoxColumn").Value)
+            'aqui va pregunta para registrar como ausente.
+            '
+            'hay q hacer un alta alta en la tabla sesiones
+            Dim result As Integer = MessageBox.Show("¿Desea anular la sesion AUSENTE del paciente: " + datagridview1.CurrentRow.Cells("PacienteDataGridViewTextBoxColumn").Value + " para la sesion del dia " + fecha_registrar + "?.", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = DialogResult.Yes Then
+                If CStr(datagridview1.CurrentRow.Cells("SesionesasistenciaDataGridViewTextBoxColumn").Value) = "Ausente" Then
+
+                    'validar que esta sesion no tenga consumos vinculados.
+                    Dim Sesiones_id As Integer = datagridview1.CurrentRow.Cells("SesionesidDataGridViewTextBoxColumn").Value
+                    Dim ds_sesion_ausente_datos As DataSet = daUsuario.UsuarioActividad_consultar_sesion(Sesiones_id)
+                    If ds_sesion_ausente_datos.Tables(0).Rows.Count = 0 Then
+                        'entonces puedo anular el ausente
+                        DAsesiones.Sesiones_anular(Sesiones_id)
+                        recuperar_pacientes_fecha_del_dia(fecha_registrar)
+                        MessageBox.Show("Datos actualizados correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        'no se puede anular el ausente x que tiene consumos vinculados q ya se descontaron de stock
+                        MessageBox.Show("No se puede anular la sesion seleccionada ya que posee consumos registrados que no se pueden deshacer.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+
+                Else
+                    'ya esta registrado
+                    MessageBox.Show("El paciente seleccionado no esta registrado como AUSENTE para la sesion actual.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End If
+
+
+
     End Sub
 End Class
