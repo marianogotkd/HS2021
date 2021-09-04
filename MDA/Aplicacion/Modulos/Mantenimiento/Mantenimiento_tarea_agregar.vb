@@ -324,4 +324,63 @@
     Private Sub cb_periodicidad_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cb_periodicidad.SelectedIndexChanged
         aplicar_filtro_tareas()
     End Sub
+
+    Private Sub txt_descripcion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_descripcion.KeyPress
+        'Dim cadena_tipeada As String = txt_descripcion.Text
+
+        'Dim i As Integer = 0
+
+        'While i < dg_atributos.Rows.Count
+
+        '    Dim x = InStr(1, dg_atributos.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value.ToString.ToUpper, cadena_tipeada.ToUpper)
+
+
+        '    If x = 1 Then
+        '        dg_atributos.Rows(i).Selected = True
+        '        Exit While
+
+        '    End If
+
+        '    'If dg_atributos.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value.ToString.ToUpper = cadena_tipeada.ToUpper Then
+        '    '    dg_atributos.Rows(i).Selected = True
+        '    '    Exit While
+        '    'End If
+        '    i = i + 1
+        'End While
+    End Sub
+
+    Private Sub txt_descripcion_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_descripcion.LostFocus
+        Button1.Focus()
+    End Sub
+
+    Private Sub txt_buscar_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_buscar.KeyPress
+        Dim cadena_tipeada As String = txt_buscar.Text
+
+        Dim i As Integer = 0
+
+        While i < dg_atributos.Rows.Count
+
+            Dim x = InStr(1, dg_atributos.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value.ToString.ToUpper, cadena_tipeada.ToUpper)
+
+
+            If x = 1 Then
+                dg_atributos.Rows(i).Selected = True
+                Exit While
+
+            End If
+
+            'If dg_atributos.Rows(i).Cells("TareasdescDataGridViewTextBoxColumn").Value.ToString.ToUpper = cadena_tipeada.ToUpper Then
+            '    dg_atributos.Rows(i).Selected = True
+
+
+
+
+
+
+            '    Exit While
+            'End If
+            i = i + 1
+        End While
+
+    End Sub
 End Class
