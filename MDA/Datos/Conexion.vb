@@ -8,7 +8,7 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=HAMER-HOME-PC")
 
     'Conexion CHOCO-RYZEN
-    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.112.197.145\SQLEXPRESS_CHOK")
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.112.197.145\SQLEXPRESS_CHOK")
 
     'Conexion local NoteMariano
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=(local)")
@@ -17,7 +17,7 @@ Public Class Conexion
     ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SantaFe;Data Source=DESKTOP-CK4O564\SQLEXPRESS")
 
     'Conexion Agustin
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;ID=sa;Persist Security Info=False;User ID=sa;Initial Catalog=SantaFe;Data Source=DESKTOP-442DHLU")
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;ID=sa;Persist Security Info=False;User ID=sa;Initial Catalog=SantaFe;Data Source=DESKTOP-442DHLU")
 
 
 End Class
