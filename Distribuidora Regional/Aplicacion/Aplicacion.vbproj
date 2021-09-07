@@ -1,0 +1,1500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDC5B64E-1656-44B2-9D31-A28D48CF6A19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Aplicacion.My.MyApplication</StartupObject>
+    <RootNamespace>Aplicacion</RootNamespace>
+    <AssemblyName>Aplicacion</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Aplicacion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Aplicacion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Informe Regional\CR_Informe_devolucion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Informe_devolucion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe Regional\CR_Informe_retiro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Informe_retiro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe Regional\CR_Informe_venta_detalle.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Informe_venta_detalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe Regional\CR_recepcion_detalle.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_recepcion_detalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe Regional\InformeR_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformeR_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informe Regional\InformeR_ds.vb">
+      <DependentUpon>InformeR_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informe\CR_Informe_Pedidos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Informe_Pedidos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\CR_InformeCliente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_InformeCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\CR_InformeEmpleado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_InformeEmpleado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\CR_InformeEmpleDP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_InformeEmpleDP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\CR_InformeTurnoReservadoComun.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_InformeTurnoReservadoComun.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\CR_Informe_Venta_detalle_prod.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Informe_Venta_detalle_prod.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informe\Informe_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Informe_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informe Regional\Informe_Mostrar.Designer.vb">
+      <DependentUpon>Informe_Mostrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informe Regional\Informe_Mostrar.vb" />
+    <Compile Include="Modulos\Caja\Caja.vb" />
+    <Compile Include="Modulos\Caja\Caja_consulta.Designer.vb">
+      <DependentUpon>Caja_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Caja_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Caja\Caja_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Caja_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_cierre_caja.Designer.vb">
+      <DependentUpon>Registro_cierre_caja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_cierre_caja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_inicio_cierre.Designer.vb">
+      <DependentUpon>Registro_inicio_cierre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_inicio_cierre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_monto_inicial.Designer.vb">
+      <DependentUpon>Registro_monto_inicial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Caja\Registro_monto_inicial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Categorias\Categorias.Designer.vb">
+      <DependentUpon>Categorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Categorias\Categorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Categorias\Categorias_DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Categorias_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Categorias\Categorias_DS.vb">
+      <DependentUpon>Categorias_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_alta.Designer.vb">
+      <DependentUpon>Cliente_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cliente_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_ds.vb">
+      <DependentUpon>Cliente_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_modificar.Designer.vb">
+      <DependentUpon>Cliente_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Cliente_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Consultas\ConsultaGeneral.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultaGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consultas\ConsultaGeneral.vb">
+      <DependentUpon>ConsultaGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consultas\Consultar_General.Designer.vb">
+      <DependentUpon>Consultar_General.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consultas\Consultar_General.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Consultas\Consulta_estados.Designer.vb">
+      <DependentUpon>Consulta_estados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consultas\Consulta_estados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Consultas\ds_consultas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_consultas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolucion_cliente.Designer.vb">
+      <DependentUpon>Devolucion_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolucion_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolucion_consulta.Designer.vb">
+      <DependentUpon>Devolucion_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolucion_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolucion_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Devolucion_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolución_gestión.Designer.vb">
+      <DependentUpon>Devolución_gestión.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Devolución\Devolución_gestión.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_Alta.Designer.vb">
+      <DependentUpon>Egresos_Alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_Alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Egresos_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_registrados_consulta.Designer.vb">
+      <DependentUpon>Egresos_registrados_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_registrados_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_registrados_consulta_usuario.Designer.vb">
+      <DependentUpon>Egresos_registrados_consulta_usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Egresos_registrados_consulta_usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Pago.Designer.vb">
+      <DependentUpon>Pago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Pago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Servicios_Alta.Designer.vb">
+      <DependentUpon>Servicios_Alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Egresos\Servicios_Alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Empleado\Empleado_alta.Designer.vb">
+      <DependentUpon>Empleado_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Empleado\Empleado_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Empleado\Empleado_modificar.Designer.vb">
+      <DependentUpon>Empleado_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Empleado\Empleado_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Busqueda_Productos.Designer.vb">
+      <DependentUpon>Busqueda_Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Busqueda_Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_consulta_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Venta_consulta_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_consulta_ds.vb">
+      <DependentUpon>Venta_consulta_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_consulta_emple.Designer.vb">
+      <DependentUpon>Venta_consulta_emple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_consulta_emple.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_detalle.Designer.vb">
+      <DependentUpon>Venta_detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Consulta\Venta_detalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_agregar.Designer.vb">
+      <DependentUpon>Mesas_agregar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_agregar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_cambiar.Designer.vb">
+      <DependentUpon>Mesas_cambiar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_cambiar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_consulta_gestion.Designer.vb">
+      <DependentUpon>Mesas_consulta_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_consulta_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mesas_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_ds.vb">
+      <DependentUpon>Mesas_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_gestion.Designer.vb">
+      <DependentUpon>Mesas_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_gestion_2.Designer.vb">
+      <DependentUpon>Mesas_gestion_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesas_gestion_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_asignar.Designer.vb">
+      <DependentUpon>Mesa_asignar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_asignar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_cargar.Designer.vb">
+      <DependentUpon>Mesa_cargar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_cargar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_cliente_nuevo.Designer.vb">
+      <DependentUpon>Mesa_cliente_nuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_cliente_nuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_eliminar.Designer.vb">
+      <DependentUpon>Mesa_eliminar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_eliminar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_nueva.Designer.vb">
+      <DependentUpon>Mesa_nueva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Mesa_nueva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Sector_modificar.Designer.vb">
+      <DependentUpon>Sector_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Mesas\Sector_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Busqueda_Promocion.Designer.vb">
+      <DependentUpon>Busqueda_Promocion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Busqueda_Promocion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Pago_caja.Designer.vb">
+      <DependentUpon>Pago_caja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Pago_caja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Venta_Caja_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_ds.vb">
+      <DependentUpon>Venta_Caja_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_gestion.Designer.vb">
+      <DependentUpon>Venta_Caja_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Ver_promocion.Designer.vb">
+      <DependentUpon>Ver_promocion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Facturacion\Venta_Caja\Ver_promocion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_alta.Designer.vb">
+      <DependentUpon>Lista_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lista_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_ds.vb">
+      <DependentUpon>Lista_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_modificar.Designer.vb">
+      <DependentUpon>Lista_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_producto_gestion.Designer.vb">
+      <DependentUpon>Lista_producto_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_producto_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_prod_ADD.Designer.vb">
+      <DependentUpon>Lista_prod_ADD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Lista\Lista_prod_ADD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Marca\DS_marca.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_marca.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Marca\DS_marca.vb">
+      <DependentUpon>DS_marca.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Marca\Marca_alta.Designer.vb">
+      <DependentUpon>Marca_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Marca\Marca_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Marca\Marca_gestion.Designer.vb">
+      <DependentUpon>Marca_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Marca\Marca_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\dsPedidos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPedidos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\dsPedidos.vb">
+      <DependentUpon>dsPedidos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\Pedidos_Consulta.Designer.vb">
+      <DependentUpon>Pedidos_Consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\Pedidos_Consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\Pedidos_Nuevo.Designer.vb">
+      <DependentUpon>Pedidos_Nuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedidos\Pedidos_Nuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_alta.Designer.vb">
+      <DependentUpon>Proveedor_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_gestion.Designer.vb">
+      <DependentUpon>Proveedor_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_modificar.Designer.vb">
+      <DependentUpon>Proveedor_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Proveedores\Proveedor_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_consulta.Designer.vb">
+      <DependentUpon>Recepcion_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recepcion_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_gestion.Designer.vb">
+      <DependentUpon>Recepcion_gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_gestion.vb" />
+    <Compile Include="Modulos\Recepcion\Recepcion_nuevo_diseño.Designer.vb">
+      <DependentUpon>Recepcion_nuevo_diseño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recepcion\Recepcion_nuevo_diseño.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Ds_retiro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_retiro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Ds_retiro.vb">
+      <DependentUpon>Ds_retiro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Retiro_cliente.Designer.vb">
+      <DependentUpon>Retiro_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Retiro_cliente.vb" />
+    <Compile Include="Modulos\Retiro de Producto\Retiro_consulta.Designer.vb">
+      <DependentUpon>Retiro_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Retiro_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Retiro_Producto.Designer.vb">
+      <DependentUpon>Retiro_Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Retiro de Producto\Retiro_Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\DS_Stock.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Stock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\DS_Stock.vb">
+      <DependentUpon>DS_Stock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\Sock_Alta.Designer.vb">
+      <DependentUpon>Sock_Alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\Sock_Alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\Stock_DS%28este%29.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stock_DS%28este%29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock Regional\Stock_DS%28este%29.vb">
+      <DependentUpon>Stock_DS%28este%29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_alta.Designer.vb">
+      <DependentUpon>Producto_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Producto_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_ds.vb">
+      <DependentUpon>Producto_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_modificar.Designer.vb">
+      <DependentUpon>Producto_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Stock\Producto_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno.vb" />
+    <Compile Include="Modulos\Turno\TurnoConsulta_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnoConsulta_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoConsulta_ds.vb">
+      <DependentUpon>TurnoConsulta_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_alta.Designer.vb">
+      <DependentUpon>TurnoFijo_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_Modificar.Designer.vb">
+      <DependentUpon>TurnoFijo_Modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_Modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_Reservado.Designer.vb">
+      <DependentUpon>TurnoFijo_Reservado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoFijo_Reservado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\TurnoInforme.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnoInforme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Alarma.Designer.vb">
+      <DependentUpon>Turno_Alarma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Alarma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_alta.Designer.vb">
+      <DependentUpon>Turno_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Configurar.Designer.vb">
+      <DependentUpon>Turno_Configurar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Configurar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ConfigurarMail.Designer.vb">
+      <DependentUpon>Turno_ConfigurarMail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ConfigurarMail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ConfigurarMailDestino.Designer.vb">
+      <DependentUpon>Turno_ConfigurarMailDestino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ConfigurarMailDestino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Consulta.Designer.vb">
+      <DependentUpon>Turno_Consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Consulta_ampliada.Designer.vb">
+      <DependentUpon>Turno_Consulta_ampliada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Consulta_ampliada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Turno_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_ds.vb">
+      <DependentUpon>Turno_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Eliminar.Designer.vb">
+      <DependentUpon>Turno_Eliminar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Eliminar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Gestion.Designer.vb">
+      <DependentUpon>Turno_Gestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Gestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Informe.Designer.vb">
+      <DependentUpon>Turno_Informe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Turno\Turno_Informe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\DS_venta_regional.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_venta_regional.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\DS_venta_regional.vb">
+      <DependentUpon>DS_venta_regional.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_lotesvendidos.Designer.vb">
+      <DependentUpon>VentaRegional_lotesvendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_lotesvendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_nuevodiseño.Designer.vb">
+      <DependentUpon>VentaRegional_nuevodiseño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_nuevodiseño.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegiona_busqueda.Designer.vb">
+      <DependentUpon>VentaRegiona_busqueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegiona_busqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_consulta.Designer.vb">
+      <DependentUpon>VentaRegional_consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\VentaRegional_consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\Venta_regional.Designer.vb">
+      <DependentUpon>Venta_regional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta regional\Venta_regional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta\VentaProd_alta.Designer.vb">
+      <DependentUpon>VentaProd_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta\VentaProd_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta\Venta_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Venta_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Usuario\DS_usuario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_usuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Inicio.Designer.vb">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Sesion\PN_Inicio.Designer.vb">
+      <DependentUpon>PN_Inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Sesion\PN_Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Sesion\USU_contrasena.Designer.vb">
+      <DependentUpon>USU_contrasena.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Sesion\USU_contrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Usuario_alta.Designer.vb">
+      <DependentUpon>Usuario_alta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Usuario_alta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Usuario_modificar.Designer.vb">
+      <DependentUpon>Usuario_modificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Usuario_modificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\US_administrador.Designer.vb">
+      <DependentUpon>US_administrador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\US_administrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\US_Empleado.Designer.vb">
+      <DependentUpon>US_Empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\US_Empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\US_Empleado_stock.Designer.vb">
+      <DependentUpon>US_Empleado_stock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\US_Empleado_stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Informe Regional\CR_Informe_devolucion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Informe_devolucion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe Regional\CR_Informe_retiro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Informe_retiro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe Regional\CR_Informe_venta_detalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Informe_venta_detalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe Regional\CR_recepcion_detalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_recepcion_detalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_Informe_Pedidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Informe_Pedidos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_InformeCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_InformeCliente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_InformeEmpleado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_InformeEmpleado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_InformeEmpleDP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_InformeEmpleDP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_InformeTurnoReservadoComun.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_InformeTurnoReservadoComun.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\CR_Informe_Venta_detalle_prod.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Informe_Venta_detalle_prod.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe Regional\Informe_Mostrar.resx">
+      <DependentUpon>Informe_Mostrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\Caja_consulta.resx">
+      <DependentUpon>Caja_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\Registro_cierre_caja.resx">
+      <DependentUpon>Registro_cierre_caja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\Registro_inicio_cierre.resx">
+      <DependentUpon>Registro_inicio_cierre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Caja\Registro_monto_inicial.resx">
+      <DependentUpon>Registro_monto_inicial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Categorias\Categorias.resx">
+      <DependentUpon>Categorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Cliente_alta.resx">
+      <DependentUpon>Cliente_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Cliente_modificar.resx">
+      <DependentUpon>Cliente_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Consultas\Consultar_General.resx">
+      <DependentUpon>Consultar_General.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Consultas\Consulta_estados.resx">
+      <DependentUpon>Consulta_estados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Devolución\Devolucion_cliente.resx">
+      <DependentUpon>Devolucion_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Devolución\Devolucion_consulta.resx">
+      <DependentUpon>Devolucion_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Devolución\Devolución_gestión.resx">
+      <DependentUpon>Devolución_gestión.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Egresos\Egresos_Alta.resx">
+      <DependentUpon>Egresos_Alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Egresos\Egresos_registrados_consulta.resx">
+      <DependentUpon>Egresos_registrados_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Egresos\Egresos_registrados_consulta_usuario.resx">
+      <DependentUpon>Egresos_registrados_consulta_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Egresos\Pago.resx">
+      <DependentUpon>Pago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Egresos\Servicios_Alta.resx">
+      <DependentUpon>Servicios_Alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Empleado\Empleado_alta.resx">
+      <DependentUpon>Empleado_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Empleado\Empleado_modificar.resx">
+      <DependentUpon>Empleado_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Busqueda_Productos.resx">
+      <DependentUpon>Busqueda_Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Consulta\Venta_consulta_emple.resx">
+      <DependentUpon>Venta_consulta_emple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Consulta\Venta_detalle.resx">
+      <DependentUpon>Venta_detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesas_agregar.resx">
+      <DependentUpon>Mesas_agregar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesas_cambiar.resx">
+      <DependentUpon>Mesas_cambiar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesas_consulta_gestion.resx">
+      <DependentUpon>Mesas_consulta_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesas_gestion.resx">
+      <DependentUpon>Mesas_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesas_gestion_2.resx">
+      <DependentUpon>Mesas_gestion_2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesa_asignar.resx">
+      <DependentUpon>Mesa_asignar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesa_cargar.resx">
+      <DependentUpon>Mesa_cargar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesa_cliente_nuevo.resx">
+      <DependentUpon>Mesa_cliente_nuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesa_eliminar.resx">
+      <DependentUpon>Mesa_eliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Mesa_nueva.resx">
+      <DependentUpon>Mesa_nueva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Mesas\Sector_modificar.resx">
+      <DependentUpon>Sector_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Venta_Caja\Busqueda_Promocion.resx">
+      <DependentUpon>Busqueda_Promocion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Venta_Caja\Pago_caja.resx">
+      <DependentUpon>Pago_caja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_gestion.resx">
+      <DependentUpon>Venta_Caja_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Facturacion\Venta_Caja\Ver_promocion.resx">
+      <DependentUpon>Ver_promocion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Lista\Lista_alta.resx">
+      <DependentUpon>Lista_alta.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Lista\Lista_modificar.resx">
+      <DependentUpon>Lista_modificar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Lista\Lista_producto_gestion.resx">
+      <DependentUpon>Lista_producto_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Lista\Lista_prod_ADD.resx">
+      <DependentUpon>Lista_prod_ADD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Marca\Marca_alta.resx">
+      <DependentUpon>Marca_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Marca\Marca_gestion.resx">
+      <DependentUpon>Marca_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Pedidos\Pedidos_Consulta.resx">
+      <DependentUpon>Pedidos_Consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Pedidos\Pedidos_Nuevo.resx">
+      <DependentUpon>Pedidos_Nuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Proveedores\Proveedor_alta.resx">
+      <DependentUpon>Proveedor_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Proveedores\Proveedor_gestion.resx">
+      <DependentUpon>Proveedor_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Proveedores\Proveedor_modificar.resx">
+      <DependentUpon>Proveedor_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Recepcion\Recepcion_consulta.resx">
+      <DependentUpon>Recepcion_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Recepcion\Recepcion_gestion.resx">
+      <DependentUpon>Recepcion_gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Recepcion\Recepcion_nuevo_diseño.resx">
+      <DependentUpon>Recepcion_nuevo_diseño.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Retiro de Producto\Retiro_cliente.resx">
+      <DependentUpon>Retiro_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Retiro de Producto\Retiro_consulta.resx">
+      <DependentUpon>Retiro_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Retiro de Producto\Retiro_Producto.resx">
+      <DependentUpon>Retiro_Producto.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Stock Regional\Sock_Alta.resx">
+      <DependentUpon>Sock_Alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Stock\Producto_alta.resx">
+      <DependentUpon>Producto_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Stock\Producto_modificar.resx">
+      <DependentUpon>Producto_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\TurnoFijo_alta.resx">
+      <DependentUpon>TurnoFijo_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\TurnoFijo_Modificar.resx">
+      <DependentUpon>TurnoFijo_Modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\TurnoFijo_Reservado.resx">
+      <DependentUpon>TurnoFijo_Reservado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Alarma.resx">
+      <DependentUpon>Turno_Alarma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_alta.resx">
+      <DependentUpon>Turno_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Configurar.resx">
+      <DependentUpon>Turno_Configurar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_ConfigurarMail.resx">
+      <DependentUpon>Turno_ConfigurarMail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_ConfigurarMailDestino.resx">
+      <DependentUpon>Turno_ConfigurarMailDestino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Consulta.resx">
+      <DependentUpon>Turno_Consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Consulta_ampliada.resx">
+      <DependentUpon>Turno_Consulta_ampliada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Eliminar.resx">
+      <DependentUpon>Turno_Eliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Gestion.resx">
+      <DependentUpon>Turno_Gestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Turno\Turno_Informe.resx">
+      <DependentUpon>Turno_Informe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta regional\VentaRegional_lotesvendidos.resx">
+      <DependentUpon>VentaRegional_lotesvendidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta regional\VentaRegional_nuevodiseño.resx">
+      <DependentUpon>VentaRegional_nuevodiseño.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta regional\VentaRegiona_busqueda.resx">
+      <DependentUpon>VentaRegiona_busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta regional\VentaRegional_consulta.resx">
+      <DependentUpon>VentaRegional_consulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta regional\Venta_regional.resx">
+      <DependentUpon>Venta_regional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Venta\VentaProd_alta.resx">
+      <DependentUpon>VentaProd_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Inicio.resx">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Sesion\PN_Inicio.resx">
+      <DependentUpon>PN_Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Sesion\USU_contrasena.resx">
+      <DependentUpon>USU_contrasena.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Usuario_alta.resx">
+      <DependentUpon>Usuario_alta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Usuario_modificar.resx">
+      <DependentUpon>Usuario_modificar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\US_administrador.resx">
+      <DependentUpon>US_administrador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\US_Empleado.resx">
+      <DependentUpon>US_Empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\US_Empleado_stock.resx">
+      <DependentUpon>US_Empleado_stock.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Informe Regional\InformeR_ds.xsc">
+      <DependentUpon>InformeR_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Informe Regional\InformeR_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InformeR_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Informe Regional\InformeR_ds.xss">
+      <DependentUpon>InformeR_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Informe\Informe_ds.xsc">
+      <DependentUpon>Informe_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Informe\Informe_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Informe_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Informe\Informe_ds.xss">
+      <DependentUpon>Informe_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Caja\Caja_ds.xsc">
+      <DependentUpon>Caja_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Caja\Caja_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Caja_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Caja\Caja_ds.xss">
+      <DependentUpon>Caja_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Categorias\Categorias_DS.xsc">
+      <DependentUpon>Categorias_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Categorias\Categorias_DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Categorias_DS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Categorias\Categorias_DS.xss">
+      <DependentUpon>Categorias_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Cliente\Cliente_ds.xsc">
+      <DependentUpon>Cliente_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Cliente\Cliente_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cliente_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Cliente\Cliente_ds.xss">
+      <DependentUpon>Cliente_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Consultas\ConsultaGeneral.xsc">
+      <DependentUpon>ConsultaGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Consultas\ConsultaGeneral.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsultaGeneral.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Consultas\ConsultaGeneral.xss">
+      <DependentUpon>ConsultaGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Consultas\ds_consultas.xsc">
+      <DependentUpon>ds_consultas.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Consultas\ds_consultas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_consultas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Consultas\ds_consultas.xss">
+      <DependentUpon>ds_consultas.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Devolución\Devolucion_ds.xsc">
+      <DependentUpon>Devolucion_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Devolución\Devolucion_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Devolucion_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Devolución\Devolucion_ds.xss">
+      <DependentUpon>Devolucion_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Egresos\Egresos_DS.xsc">
+      <DependentUpon>Egresos_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Egresos\Egresos_DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Egresos_DS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Egresos\Egresos_DS.xss">
+      <DependentUpon>Egresos_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Consulta\Venta_consulta_ds.xsc">
+      <DependentUpon>Venta_consulta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Consulta\Venta_consulta_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Venta_consulta_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Facturacion\Consulta\Venta_consulta_ds.xss">
+      <DependentUpon>Venta_consulta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Mesas\Mesas_ds.xsc">
+      <DependentUpon>Mesas_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Mesas\Mesas_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mesas_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Facturacion\Mesas\Mesas_ds.xss">
+      <DependentUpon>Mesas_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_ds.xsc">
+      <DependentUpon>Venta_Caja_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Venta_Caja_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Facturacion\Venta_Caja\Venta_Caja_ds.xss">
+      <DependentUpon>Venta_Caja_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Lista\Lista_ds.xsc">
+      <DependentUpon>Lista_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Lista\Lista_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Lista_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Lista\Lista_ds.xss">
+      <DependentUpon>Lista_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Marca\DS_marca.xsc">
+      <DependentUpon>DS_marca.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Marca\DS_marca.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_marca.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Marca\DS_marca.xss">
+      <DependentUpon>DS_marca.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Pedidos\dsPedidos.xsc">
+      <DependentUpon>dsPedidos.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Pedidos\dsPedidos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPedidos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Pedidos\dsPedidos.xss">
+      <DependentUpon>dsPedidos.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Recepcion\Recepcion_ds.xsc">
+      <DependentUpon>Recepcion_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Recepcion\Recepcion_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Recepcion_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Recepcion\Recepcion_ds.xss">
+      <DependentUpon>Recepcion_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Retiro de Producto\Ds_retiro.xsc">
+      <DependentUpon>Ds_retiro.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Retiro de Producto\Ds_retiro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_retiro.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Retiro de Producto\Ds_retiro.xss">
+      <DependentUpon>Ds_retiro.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock Regional\DS_Stock.xsc">
+      <DependentUpon>DS_Stock.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock Regional\DS_Stock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Stock.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Stock Regional\DS_Stock.xss">
+      <DependentUpon>DS_Stock.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock Regional\Stock_DS%28este%29.xsc">
+      <DependentUpon>Stock_DS%28este%29.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock Regional\Stock_DS%28este%29.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stock_DS%28este%29.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Stock Regional\Stock_DS%28este%29.xss">
+      <DependentUpon>Stock_DS%28este%29.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock\Producto_ds.xsc">
+      <DependentUpon>Producto_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Stock\Producto_ds.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Producto_ds.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Modulos\Stock\Producto_ds.xss">
+      <DependentUpon>Producto_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\TurnoConsulta_ds.xsc">
+      <DependentUpon>TurnoConsulta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\TurnoConsulta_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TurnoConsulta_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Turno\TurnoConsulta_ds.xss">
+      <DependentUpon>TurnoConsulta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\TurnoInforme.xsc">
+      <DependentUpon>TurnoInforme.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\TurnoInforme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TurnoInforme.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Turno\TurnoInforme.xss">
+      <DependentUpon>TurnoInforme.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\Turno_ds.xsc">
+      <DependentUpon>Turno_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Turno\Turno_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Turno_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Turno\Turno_ds.xss">
+      <DependentUpon>Turno_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Venta regional\DS_venta_regional.xsc">
+      <DependentUpon>DS_venta_regional.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Venta regional\DS_venta_regional.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_venta_regional.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Venta regional\DS_venta_regional.xss">
+      <DependentUpon>DS_venta_regional.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Venta\Venta_ds.xsc">
+      <DependentUpon>Venta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Venta\Venta_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Venta_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Modulos\Venta\Venta_ds.xss">
+      <DependentUpon>Venta_ds.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Usuario\DS_usuario.xsc">
+      <DependentUpon>DS_usuario.xsd</DependentUpon>
+    </None>
+    <None Include="Usuario\DS_usuario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_usuario.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Usuario\DS_usuario.xss">
+      <DependentUpon>DS_usuario.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.vbproj">
+      <Project>{AF7E8F3B-45D9-45D3-910A-737C31012473}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Caja.png" />
+    <Content Include="Resources\CajaAbierta.png" />
+    <Content Include="Resources\CajaCerrada.png" />
+    <None Include="Resources\green back 2-sec 1.jpg" />
+    <None Include="Resources\green back 2-sec 2.jpg" />
+    <None Include="Resources\green back 2-sec 3.jpg" />
+    <None Include="Resources\green back 2-sec 4.jpg" />
+    <None Include="Resources\clipboard_48.png" />
+    <None Include="Resources\clipboard_32.png" />
+    <Content Include="Resources\silver 3.PNG" />
+    <None Include="Resources\silver 31.PNG" />
+    <Content Include="Resources\SonidoNo.png" />
+    <Content Include="Resources\SonidoSi.png" />
+    <Content Include="Sonido\alarma.wav" />
+    <Content Include="Sonido\descending_craft-Sonidor-991848481.wav" />
+    <Content Include="Sonido\Gallega actualizada.mp3" />
+    <Content Include="Sonido\Gallega actualizada.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

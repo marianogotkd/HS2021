@@ -1,0 +1,5 @@
+DEVOLUCION-------------
+cuando registro la devolucion de una venta, hay q ver q pasa con el detalle de venta,
+capaz q hay q ponerle un estado y la cant
+q se ha devuelto del lote...
+x q OJO, capaz q necesitemos saber el estado de ese lote vendido para su uso en en el modulo RETIRO

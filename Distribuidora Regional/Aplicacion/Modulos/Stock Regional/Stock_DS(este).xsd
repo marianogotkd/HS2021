@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Stock_DS_x0028_este_x0029_" targetNamespace="http://tempuri.org/Stock_DS(este).xsd" xmlns:mstns="http://tempuri.org/Stock_DS(este).xsd" xmlns="http://tempuri.org/Stock_DS(este).xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Stock_DS_x0028_este_x0029_" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_Stock_DS_este_" msprop:Generator_UserDSName="Stock_DS(este)">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProductosStock" msprop:Generator_TableClassName="ProductosStockDataTable" msprop:Generator_TableVarName="tableProductosStock" msprop:Generator_TablePropName="ProductosStock" msprop:Generator_RowDeletingName="ProductosStockRowDeleting" msprop:Generator_UserTableName="ProductosStock" msprop:Generator_RowChangingName="ProductosStockRowChanging" msprop:Generator_RowEvHandlerName="ProductosStockRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosStockRowDeleted" msprop:Generator_RowEvArgName="ProductosStockRowChangeEvent" msprop:Generator_RowChangedName="ProductosStockRowChanged" msprop:Generator_RowClassName="ProductosStockRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECEPCION_id" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_id" msprop:Generator_ColumnPropNameInRow="RECEPCION_id" msprop:Generator_ColumnPropNameInTable="RECEPCION_idColumn" msprop:Generator_UserColumnName="RECEPCION_id" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_codigo" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_codigo" msprop:Generator_ColumnPropNameInRow="RECEPCION_codigo" msprop:Generator_ColumnPropNameInTable="RECEPCION_codigoColumn" msprop:Generator_UserColumnName="RECEPCION_codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_fecha_sistema" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_fecha_sistema" msprop:Generator_ColumnPropNameInRow="RECEPCION_fecha_sistema" msprop:Generator_ColumnPropNameInTable="RECEPCION_fecha_sistemaColumn" msprop:Generator_UserColumnName="RECEPCION_fecha_sistema" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RECEPCION_codigoproducto" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_codigoproducto" msprop:Generator_ColumnPropNameInRow="RECEPCION_codigoproducto" msprop:Generator_ColumnPropNameInTable="RECEPCION_codigoproductoColumn" msprop:Generator_UserColumnName="RECEPCION_codigoproducto" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_nombreproducto" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_nombreproducto" msprop:Generator_ColumnPropNameInRow="RECEPCION_nombreproducto" msprop:Generator_ColumnPropNameInTable="RECEPCION_nombreproductoColumn" msprop:Generator_UserColumnName="RECEPCION_nombreproducto" type="xs:string" minOccurs="0" />
+              <xs:element name="PROD_T_nom" msprop:Generator_ColumnVarNameInTable="columnPROD_T_nom" msprop:Generator_ColumnPropNameInRow="PROD_T_nom" msprop:Generator_ColumnPropNameInTable="PROD_T_nomColumn" msprop:Generator_UserColumnName="PROD_T_nom" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_nrolote" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_nrolote" msprop:Generator_ColumnPropNameInRow="RECEPCION_nrolote" msprop:Generator_ColumnPropNameInTable="RECEPCION_nroloteColumn" msprop:Generator_UserColumnName="RECEPCION_nrolote" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_condi_alm" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_condi_alm" msprop:Generator_ColumnPropNameInRow="RECEPCION_condi_alm" msprop:Generator_ColumnPropNameInTable="RECEPCION_condi_almColumn" msprop:Generator_UserColumnName="RECEPCION_condi_alm" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_cantidad" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_cantidad" msprop:Generator_ColumnPropNameInRow="RECEPCION_cantidad" msprop:Generator_ColumnPropNameInTable="RECEPCION_cantidadColumn" msprop:Generator_UserColumnName="RECEPCION_cantidad" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_fechavencimiento" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_fechavencimiento" msprop:Generator_ColumnPropNameInRow="RECEPCION_fechavencimiento" msprop:Generator_ColumnPropNameInTable="RECEPCION_fechavencimientoColumn" msprop:Generator_UserColumnName="RECEPCION_fechavencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Marca_nom" msprop:Generator_ColumnVarNameInTable="columnMarca_nom" msprop:Generator_ColumnPropNameInRow="Marca_nom" msprop:Generator_ColumnPropNameInTable="Marca_nomColumn" msprop:Generator_UserColumnName="Marca_nom" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_nrofactura" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_nrofactura" msprop:Generator_ColumnPropNameInRow="RECEPCION_nrofactura" msprop:Generator_ColumnPropNameInTable="RECEPCION_nrofacturaColumn" msprop:Generator_UserColumnName="RECEPCION_nrofactura" type="xs:string" minOccurs="0" />
+              <xs:element name="RECEPCION_fechafactura" msprop:Generator_ColumnVarNameInTable="columnRECEPCION_fechafactura" msprop:Generator_ColumnPropNameInRow="RECEPCION_fechafactura" msprop:Generator_ColumnPropNameInTable="RECEPCION_fechafacturaColumn" msprop:Generator_UserColumnName="RECEPCION_fechafactura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Prov_nombre" msprop:Generator_ColumnVarNameInTable="columnProv_nombre" msprop:Generator_ColumnPropNameInRow="Prov_nombre" msprop:Generator_ColumnPropNameInTable="Prov_nombreColumn" msprop:Generator_UserColumnName="Prov_nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

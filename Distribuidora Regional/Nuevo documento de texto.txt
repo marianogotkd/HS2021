@@ -1,0 +1,14 @@
+ALTER Procedure [dbo].[Consulta_General_Obtener_Ventas]
+@PROD_codigo varchar(max)
+as
+SELECT     dbo.Producto.PROD_codigo, dbo.Producto.PROD_nombre, dbo.Producto.PROD_presentacion, dbo.Venta_detalle.Cantidad, dbo.Venta.Venta_fecha,Venta_detalle.Venta_Lote,  
+                      dbo.Venta.Venta_codigo, CLI_nom
+FROM         dbo.Producto INNER JOIN
+                      dbo.Venta_detalle ON dbo.Producto.PROD_id = dbo.Venta_detalle.PROD_id 
+                      INNER JOIN
+                      dbo.Venta ON dbo.Venta_detalle.Venta_id = dbo.Venta.Venta_id
+                      inner join
+                      Cliente on Cliente.CLI_id = Venta.CLI_id
+                     
+                      
+                      where Producto.PROD_codigo=@PROD_codigo
