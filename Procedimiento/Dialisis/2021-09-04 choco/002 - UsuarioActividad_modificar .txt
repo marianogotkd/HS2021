@@ -1,0 +1,10 @@
+
+create procedure UsuarioActividad_modificar
+@ACT_id int,
+@ACT_sesion varchar(max)
+
+as
+update UsuarioActividad set ACT_sesion = @ACT_sesion where UsuarioActividad.ACT_id = @ACT_id
+
+
+go

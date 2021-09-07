@@ -1,0 +1,5 @@
+create procedure UsuarioActividad_consultar_ausentes_todo
+
+as
+select * from UsuarioActividad inner join Sesiones on UsuarioActividad.Sesiones_id = Sesiones.Sesiones_id  where Sesiones.Sesiones_estado = 'ausente'
+go
