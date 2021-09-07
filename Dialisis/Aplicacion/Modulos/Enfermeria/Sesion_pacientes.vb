@@ -309,4 +309,18 @@
 
 
     End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        'traer todas las actividades ausentes
+        Dim ds_info As DataSet = daUsuario.UsuarioActividad_consultar_ausentes_todo
+        If ds_info.Tables(0).Rows.Count Then
+            'aqui recorro cada uno, tomo el id de la actividad y en descr pongo "consumo ausente", cosa q no me deje modificar los ausentes
+            Dim i As Integer = 0
+            While ds_info.Tables(0).Rows.Count
+                Dim ACT_id As Integer = ds_info.Tables(0).Rows(i).Item("ACT_id")
+                daUsuario.UsuarioActividad_modificar(ACT_id, "consumo ausente")
+                i = i + 1
+            End While
+        End If
+    End Sub
 End Class

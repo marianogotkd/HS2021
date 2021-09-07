@@ -100,8 +100,8 @@
                 ff = ff + 1
             End While
 
-
-            btn_cambio.Enabled = False 'no puedo modificar un filtro consumido, ya tiene contado reuso y todo.
+            '07-09-2021 --a pedido del cliente ahora si se puede modificar un filtro.
+            'btn_cambio.Enabled = False 'no puedo modificar un filtro consumido, ya tiene contado reuso y todo.
 
         Else
             'hago el alta normal o bien si es ausente
@@ -409,7 +409,8 @@
             cb_filtro.Enabled = False
             cb_filtro.SelectedValue = FiltroDS.Tables(0).Rows(0).Item("ProdxSuc_ID")
 
-            'deshabilito el boton de nuevo, no puedo modificar un filtro ya consumido.
+            '---YA NO ES ASI:deshabilito el boton de nuevo, no puedo modificar un filtro ya consumido.
+            '07-09-2021: por pedido del cliente ahora si se puede cambiar un filtro ya que se puede romper a medida q transcurre la sesion
             btn_cambio.Enabled = True
         Else
             btn_cambio.Enabled = True
@@ -595,6 +596,51 @@
         lbl_err6.Visible = False
 
     End Sub
+
+    Private Sub Guardar_datos_filtro_solo_si_es_nuevo()
+        ''''' filtros y rehusos''''''''''''''24/9/20 MAriano'''''
+        If Filtro_var = "Nuevo" Then
+            Dim ProdxSuc_id As Integer = cb_filtro.SelectedValue
+
+
+            DaEnfermeria.Filtro_Nuevo(PAC_id, fecha_registrar, tb_CantRe.Text, sesiones_id, cb_filtro.Text, ProdxSuc_id)
+            'siempre que sea un nuevo filtro, tengo q hacer una actualización de stock.
+
+
+            Dim ds_prodxsuc As DataSet = DAprod.Producto_x_sucursal_obtener_info_ProdxSuc_ID(cb_filtro.SelectedValue)
+            Dim prod_id As Integer = ds_prodxsuc.Tables(0).Rows(0).Item("prod_id")
+
+            Dim Ds_Suc As DataSet = DAsucursal.Sucursal_obtener_producto(prod_id, sucursal_id, sucursal_id) 'sucursal 3 es dialisis y 5 es dialisis de calle
+
+            Dim TotalReal As Decimal = CDec(Ds_Suc.Tables(0).Rows(0).Item("ProdxSuc_stock_real")) 'de la tabla PRODUCTO_X_SUCURSAL
+            TotalReal = TotalReal - CDec(1)
+            Dim TotalReal_lote As Decimal = CDec(1) 'este es el tock real del lote solamente, creo q lo mando asi nomas ya que en proc alm se lo resta al valor q tengo en el lote
+
+
+            Dim VarA As Decimal = CDec(1) / CDec(Ds_Suc.Tables(1).Rows(0).Item("prod_contenido"))
+            Dim VarB As Decimal = VarA + CDec(ds_prodxsuc.Tables(1).Rows(0).Item("lote_aux"))
+
+            Dim TOTAL As Decimal = CDec(Ds_Suc.Tables(0).Rows(0).Item("Stock_Origen")) - Int(VarB)
+
+            Dim AUX = VarB - Int(VarB)
+
+
+
+            DAprod.Producto_x_sucursal_Actualizar_Stock(prod_id, sucursal_id, TOTAL, TotalReal) 'mov envia la diferencia entre el stock en la sucursal y la cant a quitar.
+
+
+            'ahora actualizo el lote
+
+            Dim lote_nro As String = ds_prodxsuc.Tables(1).Rows(0).Item("lote_nro")
+
+            Dim Prov_id As Integer = ds_prodxsuc.Tables(1).Rows(0).Item("Prov_id")
+            Dim dslote As DataSet = DAlote.Producto_x_sucursal_lote_actualizar_resto(lote_nro, prod_id, sucursal_id, Int(VarB), Prov_id, TotalReal_lote, AUX)  ' el ID 3 es La Sucursal Sala de Dialisis 7/9/20 Mariano
+
+            '//////////////////////////////////////////////////////
+        End If
+    End Sub
+
+
     Private Sub Guardar_Datos_Filtro()
 
         ''''' filtros y rehusos''''''''''''''24/9/20 MAriano'''''
@@ -638,6 +684,7 @@
 
             '//////////////////////////////////////////////////////
 
+        Else
 
 
         End If
@@ -693,8 +740,8 @@
 
 
 
-
-                Guardar_Datos_Filtro()
+                Guardar_datos_filtro_solo_si_es_nuevo()
+                'Guardar_Datos_Filtro()
 
                 Dim borrado_todo_item_recuperado As String = "no"
                 '1) si se sacaron productos de la grilla de consumos que ya estaban registrados, actualizo el stock.
@@ -1263,8 +1310,8 @@
                 DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, modificar_sesiones_id, Now, "")
                 '//////////////////////////////////////////////////////////////////////////////////
 
-
-                Guardar_Datos_Filtro()
+                Guardar_datos_filtro_solo_si_es_nuevo()
+                'Guardar_Datos_Filtro()
 
                 Dim borrado_todo_item_recuperado As String = "no"
 

@@ -23,7 +23,7 @@ Partial Class Sesion_pacientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sesion_pacientes))
         Me.lb_sesionfecha = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,6 +31,7 @@ Partial Class Sesion_pacientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tb_horario = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -58,7 +59,7 @@ Partial Class Sesion_pacientes
         Me.fecha = New System.Windows.Forms.DateTimePicker()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.datagridview1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SesionactualtodospacientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +131,21 @@ Partial Class Sesion_pacientes
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Inscriptos"
+        '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Image = Global.Aplicacion.My.Resources.Resources.icono_reporte_medico_30x30
+        Me.Button5.Location = New System.Drawing.Point(345, 320)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(144, 44)
+        Me.Button5.TabIndex = 264
+        Me.Button5.Text = "Anular ausente"
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button5, "Ver todas las sesiones del paciente")
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -253,10 +269,10 @@ Partial Class Sesion_pacientes
         Me.datagridview1.ReadOnly = True
         Me.datagridview1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.datagridview1.RowHeadersVisible = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.datagridview1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.datagridview1.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.datagridview1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datagridview1.Size = New System.Drawing.Size(924, 188)
         Me.datagridview1.StandardTab = True
@@ -410,20 +426,19 @@ Partial Class Sesion_pacientes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Busqueda avanzada de sesiones"
         '
-        'Button5
+        'Button6
         '
-        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Image = Global.Aplicacion.My.Resources.Resources.icono_reporte_medico_30x30
-        Me.Button5.Location = New System.Drawing.Point(345, 320)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(144, 44)
-        Me.Button5.TabIndex = 264
-        Me.Button5.Text = "Anular ausente"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Button5, "Ver todas las sesiones del paciente")
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Image = Global.Aplicacion.My.Resources.Resources.iniciar
+        Me.Button6.Location = New System.Drawing.Point(154, 498)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(212, 43)
+        Me.Button6.TabIndex = 262
+        Me.Button6.Text = "correccion_actividad"
+        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.Visible = False
         '
         'Sesion_pacientes
         '
@@ -432,6 +447,7 @@ Partial Class Sesion_pacientes
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(986, 554)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.GroupBox1)
@@ -490,4 +506,5 @@ Partial Class Sesion_pacientes
     Friend WithEvents SesionesasistenciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Estado_sesion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class
