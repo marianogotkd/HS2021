@@ -340,6 +340,18 @@
     <Compile Include="Modulos\Cliente\Equipo\Equipo_QR\Equipo_QR_msj.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Cliente\Equipo\Reporte\CR_equipo_info_subA.vb">
+      <DependentUpon>CR_equipo_info_subA.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Equipo\Reporte\CR_equipo_info.vb">
+      <DependentUpon>CR_equipo_info.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Modulos\Cliente\Reporte\Cliente_reporte_ds.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1552,6 +1564,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\Equipo\Equipo_QR\Equipo_QR_msj.resx">
       <DependentUpon>Equipo_QR_msj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Equipo\Reporte\CR_equipo_info_subA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_equipo_info_subA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\Equipo\Reporte\CR_equipo_info.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_equipo_info.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\Reporte\Cliente_reporte_show.resx">
       <DependentUpon>Cliente_reporte_show.vb</DependentUpon>
