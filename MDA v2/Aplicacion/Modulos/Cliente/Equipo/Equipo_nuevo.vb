@@ -405,4 +405,73 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+
+        If Equipo_id <> 0 Then
+            reporte()
+        End If
+
+    End Sub
+
+    Dim Equipos_ds As New Equipos_ds
+    Dim DAventa As New Datos.Venta
+    Private Sub reporte()
+        Try
+
+        
+        Equipos_ds.Tables("Equipo").Rows.Clear()
+        Equipos_ds.Tables("CR_equipo_info").Rows.Clear()
+        Equipos_ds.Tables("CR_equipo_info_caracteristicas").Rows.Clear()
+
+        '////////EMPRESA///////////
+        Dim usuario_id As String
+        usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+        Dim ds_usuario As DataSet = DAventa.Obtener_usuario_y_sucursal(usuario_id)
+        If ds_usuario.Tables(1).Rows.Count <> 0 Then
+            Equipos_ds.Tables("Empresa").Rows.Clear()
+            Equipos_ds.Tables("Empresa").Merge(ds_usuario.Tables(1))
+        End If
+        '////////////////////////////////////////////////////////
+
+        Dim fila1 As DataRow = Equipos_ds.Tables("CR_equipo_info").NewRow
+        fila1("Cliente") = txt_cliente.Text
+        fila1("Sucursal") = txt_sucursal.Text
+        fila1("Sector") = cb_sector.Text
+        fila1("Equipo_descripcion") = txt_equipo_descripcion.Text
+        fila1("Equipo_Denominacion") = txt_equipo_denominacion.Text
+        fila1("Categoria_tipo") = cb_tipo.Text
+        fila1("Categoria_subtipo") = cb_subtipo.Text
+        fila1("Equipo_id") = Equipo_id
+        Equipos_ds.Tables("CR_equipo_info").Rows.Add(fila1)
+
+        Dim i As Integer = 0
+        While i < dg_atributos.Rows.Count
+            Dim fila2 As DataRow = Equipos_ds.Tables("CR_equipo_info_caracteristicas").NewRow
+            fila2("Caracteristicas") = dg_atributos.Rows(i).Cells("Cat2_caract_atributo").Value
+            fila2("Valor") = dg_atributos.Rows(i).Cells("Atributo_detalle_valor").Value
+            fila2("Equipo_id") = Equipo_id
+            Equipos_ds.Tables("CR_equipo_info_caracteristicas").Rows.Add(fila2)
+            i = i + 1
+        End While
+
+        Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+        CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+        CrReport.Load(Application.StartupPath & "\..\..\Modulos\Cliente\Equipo\Reporte\CR_equipo_info.rpt")
+        CrReport.Database.Tables("Empresa").SetDataSource(Equipos_ds.Tables("Empresa"))
+        CrReport.Database.Tables("CR_equipo_info").SetDataSource(Equipos_ds.Tables("CR_equipo_info"))
+        CrReport.Database.Tables("CR_equipo_info_caracteristicas").SetDataSource(Equipos_ds.Tables("CR_equipo_info_caracteristicas"))
+        'CrReport.Database.Tables("Report_tareas_doblecolumna").SetDataSource(MANT_2_ds1.Tables("Report_tareas_doblecolumna"))
+
+        Dim visor As New Facturacion_report_show
+        visor.CrystalReportViewer1.ReportSource = CrReport
+
+        visor.Text = "Reporte Equipo. Imprimir."
+        visor.Show()
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
