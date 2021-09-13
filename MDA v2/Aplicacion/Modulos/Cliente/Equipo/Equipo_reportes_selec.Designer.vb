@@ -34,11 +34,12 @@ Partial Class Equipo_reportes_selec
         Me.rb_todos_suc = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cb_sucursal = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_cliente_id = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_cliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.rb_1_select = New System.Windows.Forms.RadioButton()
+        Me.rb_1_todo = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -58,7 +59,7 @@ Partial Class Equipo_reportes_selec
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(531, 418)
+        Me.GroupBox1.Size = New System.Drawing.Size(531, 433)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -67,7 +68,7 @@ Partial Class Equipo_reportes_selec
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button4.Location = New System.Drawing.Point(197, 368)
+        Me.Button4.Location = New System.Drawing.Point(197, 386)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(124, 43)
@@ -80,7 +81,7 @@ Partial Class Equipo_reportes_selec
         '
         Me.GroupBox4.Controls.Add(Me.rb_detalles_no)
         Me.GroupBox4.Controls.Add(Me.rb_detalles_si)
-        Me.GroupBox4.Location = New System.Drawing.Point(17, 276)
+        Me.GroupBox4.Location = New System.Drawing.Point(17, 294)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(499, 89)
         Me.GroupBox4.TabIndex = 6
@@ -115,7 +116,7 @@ Partial Class Equipo_reportes_selec
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.rb_solo_sector)
         Me.GroupBox3.Controls.Add(Me.rb_todos_suc)
-        Me.GroupBox3.Location = New System.Drawing.Point(17, 143)
+        Me.GroupBox3.Location = New System.Drawing.Point(17, 161)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(499, 127)
         Me.GroupBox3.TabIndex = 5
@@ -167,11 +168,12 @@ Partial Class Equipo_reportes_selec
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.rb_1_select)
+        Me.GroupBox2.Controls.Add(Me.rb_1_todo)
         Me.GroupBox2.Controls.Add(Me.cb_sucursal)
-        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Location = New System.Drawing.Point(17, 78)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(499, 59)
+        Me.GroupBox2.Size = New System.Drawing.Size(499, 77)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "1. Seleccione una sucursal."
@@ -182,20 +184,11 @@ Partial Class Equipo_reportes_selec
         Me.cb_sucursal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cb_sucursal.FormattingEnabled = True
         Me.cb_sucursal.Items.AddRange(New Object() {"Fraccionable", "No Fraccionable"})
-        Me.cb_sucursal.Location = New System.Drawing.Point(143, 24)
+        Me.cb_sucursal.Location = New System.Drawing.Point(162, 23)
         Me.cb_sucursal.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_sucursal.Name = "cb_sucursal"
-        Me.cb_sucursal.Size = New System.Drawing.Size(337, 21)
+        Me.cb_sucursal.Size = New System.Drawing.Size(263, 21)
         Me.cb_sucursal.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(117, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Sucursales disponibles:"
         '
         'txt_cliente_id
         '
@@ -233,13 +226,35 @@ Partial Class Equipo_reportes_selec
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "CLIENTE:"
         '
+        'rb_1_select
+        '
+        Me.rb_1_select.AutoSize = True
+        Me.rb_1_select.Checked = True
+        Me.rb_1_select.Location = New System.Drawing.Point(22, 24)
+        Me.rb_1_select.Name = "rb_1_select"
+        Me.rb_1_select.Size = New System.Drawing.Size(135, 17)
+        Me.rb_1_select.TabIndex = 1
+        Me.rb_1_select.TabStop = True
+        Me.rb_1_select.Text = "Sucursales disponibles:"
+        Me.rb_1_select.UseVisualStyleBackColor = True
+        '
+        'rb_1_todo
+        '
+        Me.rb_1_todo.AutoSize = True
+        Me.rb_1_todo.Location = New System.Drawing.Point(22, 48)
+        Me.rb_1_todo.Name = "rb_1_todo"
+        Me.rb_1_todo.Size = New System.Drawing.Size(127, 17)
+        Me.rb_1_todo.TabIndex = 2
+        Me.rb_1_todo.Text = "Todas las sucursales."
+        Me.rb_1_todo.UseVisualStyleBackColor = True
+        '
         'Equipo_reportes_selec
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(542, 431)
+        Me.ClientSize = New System.Drawing.Size(542, 445)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -273,6 +288,7 @@ Partial Class Equipo_reportes_selec
     Friend WithEvents rb_solo_sector As System.Windows.Forms.RadioButton
     Friend WithEvents rb_todos_suc As System.Windows.Forms.RadioButton
     Friend WithEvents cb_sucursal As System.Windows.Forms.ComboBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents rb_1_select As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_1_todo As System.Windows.Forms.RadioButton
 End Class
