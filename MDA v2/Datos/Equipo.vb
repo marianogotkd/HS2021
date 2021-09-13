@@ -258,6 +258,62 @@ Public Class Equipo
         Return ds_JE
     End Function
 
+    Public Function Equipo_obtener_todos_de_sucursal(ByVal SucxClie_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_obtener_todos_de_sucursal", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    Public Function Equipo_buscar_x_sector(ByVal Cliente_suc_sector_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_buscar_x_sector", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente_suc_sector_id", Cliente_suc_sector_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
+    Public Function Equipo_atributo_buscar(ByVal Equipo_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_atributo_buscar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+
 
 
 End Class

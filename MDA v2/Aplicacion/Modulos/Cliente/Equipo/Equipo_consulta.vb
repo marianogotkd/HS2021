@@ -413,4 +413,10 @@ Public Class Equipo_consulta
 
 #End Region
 
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Equipo_reportes_selec.Close()
+        Equipo_reportes_selec.Cli_id = Cli_id
+
+        Equipo_reportes_selec.Show()
+    End Sub
 End Class
