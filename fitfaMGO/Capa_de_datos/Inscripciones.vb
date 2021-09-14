@@ -270,6 +270,27 @@ Public Class Inscripciones
         Return ds
     End Function
 
+    Public Function inscripciones_x_examen_modificar(ByVal Inscexamen_id As Integer, ByVal ExamenTurno_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("inscripciones_x_examen_modificar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Inscexamen_id", Inscexamen_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@ExamenTurno_id", ExamenTurno_id))
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "INSCRIPCIONES_EXAMENES")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
     Public Function inscripciones_x_examen_validar(ByVal evento_id As Integer, ByVal ExamenTurno_id As Integer) As DataSet
         Try
             dbconn.Open()

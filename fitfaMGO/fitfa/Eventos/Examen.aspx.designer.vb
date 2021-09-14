@@ -86,22 +86,85 @@ Partial Public Class Examen
     Protected WithEvents btn_exportar_excel1 As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control Boton_exportar.
+    '''Control Div1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Boton_exportar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Label1.
+    '''Control GridView2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control Label_sel.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_sel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control DropDownList_turnos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents DropDownList_turnos As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control Btn_confirmar_cambio_turno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_confirmar_cambio_turno As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control Label_evento_b.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_evento_b As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label_evento_fecha_b.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_evento_fecha_b As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label_evento_direccion_b.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_evento_direccion_b As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label_evento_cant_inscriptos_b.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_evento_cant_inscriptos_b As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control TextBox1.

@@ -6546,17 +6546,73 @@ Control btn_exportar_excel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen.Boton_exportar">
+</member><member name="F:fitfa.Examen.Div1">
 	<summary>
-Control Boton_exportar.
+Control Div1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen.Label1">
+</member><member name="F:fitfa.Examen.GridView2">
 	<summary>
-Control Label1.
+Control GridView2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_sel">
+	<summary>
+Control Label_sel.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.DropDownList_turnos">
+	<summary>
+Control DropDownList_turnos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Btn_confirmar_cambio_turno">
+	<summary>
+Control Btn_confirmar_cambio_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_b">
+	<summary>
+Control Label_evento_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_fecha_b">
+	<summary>
+Control Label_evento_fecha_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_direccion_b">
+	<summary>
+Control Label_evento_direccion_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_cant_inscriptos_b">
+	<summary>
+Control Label_evento_cant_inscriptos_b.
 </summary>
 	<remarks>
 Campo generado automáticamente.

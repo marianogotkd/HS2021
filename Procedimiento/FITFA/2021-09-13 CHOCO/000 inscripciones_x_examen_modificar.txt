@@ -1,0 +1,6 @@
+create procedure [dbo].[inscripciones_x_examen_modificar]
+@Inscexamen_id int, 
+@ExamenTurno_id int
+as
+update inscripciones_x_examen set ExamenTurno_id = @ExamenTurno_id where Inscexamen_id= @Inscexamen_id 
+go
