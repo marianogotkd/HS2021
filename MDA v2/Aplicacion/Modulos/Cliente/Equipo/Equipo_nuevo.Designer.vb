@@ -24,8 +24,8 @@ Partial Class Equipo_nuevo
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Equipo_nuevo))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_sucursal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -280,7 +280,7 @@ Partial Class Equipo_nuevo
         '
         Me.BO_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar
-        Me.BO_cancelar.Location = New System.Drawing.Point(143, 551)
+        Me.BO_cancelar.Location = New System.Drawing.Point(48, 551)
         Me.BO_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_cancelar.Name = "BO_cancelar"
         Me.BO_cancelar.Size = New System.Drawing.Size(115, 49)
@@ -294,7 +294,7 @@ Partial Class Equipo_nuevo
         Me.bo_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.bo_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bo_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.bo_guardar.Location = New System.Drawing.Point(266, 551)
+        Me.bo_guardar.Location = New System.Drawing.Point(336, 551)
         Me.bo_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.bo_guardar.Name = "bo_guardar"
         Me.bo_guardar.Size = New System.Drawing.Size(115, 49)
@@ -321,10 +321,10 @@ Partial Class Equipo_nuevo
         Me.dg_atributos.Name = "dg_atributos"
         Me.dg_atributos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dg_atributos.RowHeadersVisible = False
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.dg_atributos.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_atributos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dg_atributos.Size = New System.Drawing.Size(459, 154)
         Me.dg_atributos.StandardTab = True
@@ -356,8 +356,8 @@ Partial Class Equipo_nuevo
         'Atributo_detalle_valor
         '
         Me.Atributo_detalle_valor.DataPropertyName = "Atributo_detalle_valor"
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Atributo_detalle_valor.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Atributo_detalle_valor.DefaultCellStyle = DataGridViewCellStyle1
         Me.Atributo_detalle_valor.HeaderText = "Valor"
         Me.Atributo_detalle_valor.Name = "Atributo_detalle_valor"
         '
@@ -376,11 +376,12 @@ Partial Class Equipo_nuevo
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button4.Location = New System.Drawing.Point(86, 551)
+        Me.Button4.Location = New System.Drawing.Point(171, 551)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(49, 49)
+        Me.Button4.Size = New System.Drawing.Size(157, 49)
         Me.Button4.TabIndex = 276
+        Me.Button4.Text = "Reporte Informacion Actual"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = True
         '
