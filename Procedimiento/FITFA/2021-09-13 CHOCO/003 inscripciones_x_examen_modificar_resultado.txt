@@ -1,0 +1,18 @@
+USE [fitfaBD]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter procedure [dbo].[inscripciones_x_examen_modificar_resultado]
+@Inscexamen_id int, 
+@ExamenTurno_id int,
+@resultado varchar(50),
+@graduacion_obtenida_id int
+as
+
+update inscripciones_x_examen set inscexamen_resultado = @resultado, graduacion_obtenida_id = @graduacion_obtenida_id   where Inscexamen_id= @Inscexamen_id 
+--faltaria cambiarlo de graduacion al inscripto.
+
+go

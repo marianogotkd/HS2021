@@ -291,6 +291,31 @@ Public Class Inscripciones
         Return ds
     End Function
 
+    Public Function inscripciones_x_examen_modificar_resultado(ByVal Inscexamen_id As Integer, ByVal ExamenTurno_id As Integer, ByVal resultado As String, ByVal graduacion_obtenida_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("inscripciones_x_examen_modificar_resultado", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Inscexamen_id", Inscexamen_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@ExamenTurno_id", ExamenTurno_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@resultado", resultado))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@graduacion_obtenida_id", graduacion_obtenida_id))
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "INSCRIPCIONES_EXAMENES")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
+
+
     Public Function inscripciones_x_examen_validar(ByVal evento_id As Integer, ByVal ExamenTurno_id As Integer) As DataSet
         Try
             dbconn.Open()
@@ -312,6 +337,29 @@ Public Class Inscripciones
         Return ds
     End Function
 
+
+
+    Public Function ExamenCertificacion_alta(ByVal usuario_id As Integer, ByVal graduacion_id As Integer, ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("ExamenCertificacion_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@graduacion_id", graduacion_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "certificacion")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
 
 #End Region
 

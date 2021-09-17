@@ -34,6 +34,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="info_turnos" msprop:Generator_TableClassName="info_turnosDataTable" msprop:Generator_TableVarName="tableinfo_turnos" msprop:Generator_RowChangedName="info_turnosRowChanged" msprop:Generator_TablePropName="info_turnos" msprop:Generator_RowDeletingName="info_turnosRowDeleting" msprop:Generator_RowChangingName="info_turnosRowChanging" msprop:Generator_RowEvHandlerName="info_turnosRowChangeEventHandler" msprop:Generator_RowDeletedName="info_turnosRowDeleted" msprop:Generator_RowClassName="info_turnosRow" msprop:Generator_UserTableName="info_turnos" msprop:Generator_RowEvArgName="info_turnosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Info" msprop:Generator_ColumnVarNameInTable="columninfo" msprop:Generator_ColumnPropNameInRow="info" msprop:Generator_ColumnPropNameInTable="infoColumn" msprop:Generator_UserColumnName="Info" type="xs:string" minOccurs="0" />
+              <xs:element name="contador" msprop:Generator_ColumnVarNameInTable="columncontador" msprop:Generator_ColumnPropNameInRow="contador" msprop:Generator_ColumnPropNameInTable="contadorColumn" msprop:Generator_UserColumnName="contador" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
