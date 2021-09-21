@@ -378,6 +378,15 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
+                <a href="../Eventos/Examen_costos.aspx" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Costos de Examen</p>
+                </a>
+              </li>
+
+
             </ul>
 
             </li>

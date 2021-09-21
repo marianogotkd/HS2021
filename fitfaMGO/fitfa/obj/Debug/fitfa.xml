@@ -11580,17 +11580,25 @@ Control UpdatePanel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen_costos.lbl_costo">
+</member><member name="F:fitfa.Examen_costos.Label_examenes">
 	<summary>
-Control lbl_costo.
+Control Label_examenes.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen_costos.textbox_Costo">
+</member><member name="F:fitfa.Examen_costos.Div3">
 	<summary>
-Control textbox_Costo.
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.GridView_examenes">
+	<summary>
+Control GridView_examenes.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -11604,25 +11612,81 @@ Control Label1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen_costos.textbox1">
+</member><member name="F:fitfa.Examen_costos.txt_montoexamen">
 	<summary>
-Control textbox1.
+Control txt_montoexamen.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen_costos.btn_guardar">
+</member><member name="F:fitfa.Examen_costos.Btn_confirmar_montoexamen">
 	<summary>
-Control btn_guardar.
+Control Btn_confirmar_montoexamen.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen_costos.btn_save">
+</member><member name="F:fitfa.Examen_costos.Label_error_monto1">
 	<summary>
-Control btn_save.
+Control Label_error_monto1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.Label2">
+	<summary>
+Control Label2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.Div1">
+	<summary>
+Control Div1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.GridView_OTROS">
+	<summary>
+Control GridView_OTROS.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.Label3">
+	<summary>
+Control Label3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.txt_monto_otro">
+	<summary>
+Control txt_monto_otro.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.Btn_confirmar_montootros">
+	<summary>
+Control Btn_confirmar_montootros.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen_costos.Label_error_monto2">
+	<summary>
+Control Label_error_monto2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -11700,6 +11764,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:fitfa.Examen_ds.Costos_examenesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.Costos_otrosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:fitfa.Examen_ds.inscriptosRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -11708,11 +11780,27 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:fitfa.Examen_ds.Costos_examenesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.Costos_otrosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:fitfa.Examen_ds.inscriptosRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:fitfa.Examen_ds.info_turnosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds.Costos_examenesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds.Costos_otrosRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

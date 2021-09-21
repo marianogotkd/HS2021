@@ -1,0 +1,10 @@
+Costos_id	Costos_descripcion	Costos_tipo	Costos_monto	graduacion_id
+1	Blanco Punta Amarilla	Examen	0.00	3
+2	Amarillo	Examen	0.00	4
+3	Amarillo Punta Verde	Examen	0.00	5
+4	Verde	Examen	0.00	6
+5	Verde Punta Azul	Examen	0.00	7
+6	Azul	Examen	0.00	8
+7	Azul Punta Roja	Examen	0.00	9
+8	Rojo	Examen	0.00	10
+14	Libreta	Otro	0.00	NULL

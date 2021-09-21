@@ -249,7 +249,7 @@ Public Class Inscripciones
 
 
 #Region "EXAMENES"
-    Public Function inscripciones_x_examen_alta(ByVal inscripcion_id As Integer, ByVal ExamenTurno_id As Integer) As DataSet
+    Public Function inscripciones_x_examen_alta(ByVal inscripcion_id As Integer, ByVal ExamenTurno_id As Integer, ByVal graduacion_actual_id As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -258,6 +258,7 @@ Public Class Inscripciones
         comando.CommandType = CommandType.StoredProcedure
         comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_id", inscripcion_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@ExamenTurno_id", ExamenTurno_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@graduacion_actual_id", graduacion_actual_id))
         ' crear dataset que sirve de contenedor para todos los datatables
         ''el dataset es un contenedor, repositorio
         Dim ds As New DataSet() 'System.Data.DataSet()

@@ -24,29 +24,92 @@
 
                 <div class="row">
                   <div class="col-md-4 col-center">
-                  
-                
+                                  
                   <div class="form-group" >
-                    <label>Costo</label>
-                    <label id="lbl_costo" class="label label-danger" runat="server" visible="false">Debe Completar El Campo</label>
-                    <%--  <input type="text"  visible="false" class="form-control" id="tb_Costo" runat="server" causesvalidation="False" required="" placeholder="Costo"/>--%>
-                         <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" onkeypress="return justNumbers(event);"></asp:TextBox>                   
-                   <%-- <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server"  Enabled="True" TargetControlID="textbox_Costo" ValidChars="0123456789," >
-                    </asp:FilteredTextBoxExtender>
-                  --%>
+                     <asp:Label ID="Label_examenes" runat="server" Text="EXAMENES:" ForeColor="#CC00FF"></asp:Label>
+                      <div id="Div3" class="card-body table-responsive p-0" runat ="server">
+                      <asp:GridView ID="GridView_examenes" class="table table-hover" runat="server" 
+                AllowSorting="True" AutoGenerateColumns="False" 
+                           BorderColor="Black" GridLines="None" 
+                          EnableSortingAndPagingCallbacks="True">
+                          <Columns>
+                              <asp:BoundField DataField="Costos_id" HeaderText="ID" />
+                              <asp:BoundField DataField="Costos_descripcion" HeaderText="Graduación" />
+                              <asp:BoundField DataField="Costos_monto" HeaderText="Monto ($)" />
+                              <asp:BoundField DataField="Costos_tipo" HeaderText="Costos_tipo" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="graduacion_id" HeaderText="graduacion_id" 
+                                  Visible="False" />
+                              <asp:TemplateField HeaderText="Check">
+                                  <EditItemTemplate>
+                                      <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                  </EditItemTemplate>
+                                  <ItemTemplate>
+                                      <asp:CheckBox ID="chk_select" runat="server" />
+                                  </ItemTemplate>
+                              </asp:TemplateField>
+                          </Columns>
+                      </asp:GridView>
+                  
+                  </div>
+                      <asp:Label ID="Label1" runat="server" Text="Ingrese monto:"></asp:Label>
+                      &nbsp;<asp:TextBox ID="txt_montoexamen" runat="server">0,00</asp:TextBox>
+                      &nbsp;<asp:Button ID="Btn_confirmar_montoexamen" runat="server" 
+                          Text="Guardar cambios" BackColor="#99CCFF" BorderColor="#3399FF" 
+                          ForeColor="White" Width="131px" />
+                          
+                      <br />
+                      <asp:Label ID="Label_error_monto1" runat="server" ForeColor="Red" 
+                          Text="* ingrese un valor válido" Visible="False"></asp:Label>
+                      <br />
+                                   
+                  </div>
+                                                         
+                    </div>
+                    <div class="col-md-4 col-center">
+                  <div class="form-group" >
+                  <asp:Label ID="Label2" runat="server" Text="OTROS COSTOS:" ForeColor="#CC00FF"></asp:Label>
+                  <div id="Div1" class="card-body table-responsive p-0" runat ="server">
+                      <asp:GridView ID="GridView_OTROS" class="table table-hover" runat="server" 
+                AllowSorting="True" AutoGenerateColumns="False" 
+                           BorderColor="Black" GridLines="None" 
+                          EnableSortingAndPagingCallbacks="True">
+                          <Columns>
+                              <asp:BoundField DataField="Costos_id" HeaderText="ID" />
+                              <asp:BoundField DataField="Costos_descripcion" HeaderText="Descripción" />
+                              <asp:BoundField DataField="Costos_monto" HeaderText="Monto ($)" />
+                              <asp:BoundField DataField="Costos_tipo" HeaderText="Costos_tipo" 
+                                  Visible="False" />
+                              <asp:BoundField DataField="graduacion_id" HeaderText="graduacion_id" 
+                                  Visible="False" />
+                              <asp:TemplateField HeaderText="Check">
+                                  <EditItemTemplate>
+                                      <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                  </EditItemTemplate>
+                                  <ItemTemplate>
+                                      <asp:CheckBox ID="chk_select" runat="server" />
+                                  </ItemTemplate>
+                              </asp:TemplateField>
+                          </Columns>
+                      </asp:GridView>
+                  
+                  </div>
+                  <asp:Label ID="Label3" runat="server" Text="Ingrese monto:"></asp:Label>
+                      &nbsp;<asp:TextBox ID="txt_monto_otro" runat="server">0,00</asp:TextBox>
+                      &nbsp;<asp:Button ID="Btn_confirmar_montootros" runat="server" 
+                          Text="Guardar cambios" BackColor="#99CCFF" BorderColor="#3399FF" 
+                          ForeColor="White" Width="131px" />
+                          
+                      <br />
+                      <asp:Label ID="Label_error_monto2" runat="server" ForeColor="Red" 
+                          Text="* ingrese un valor válido" Visible="False"></asp:Label>
+                      <br />    
+                  </div>
+                  
+                  
                   </div>
 
-                     <label>Costo</label>
-                    <label id="Label1" class="label label-danger" runat="server" visible="false">Debe Completar El Campo</label>
-                    <%--  <input type="text"  visible="false" class="form-control" id="tb_Costo" runat="server" causesvalidation="False" required="" placeholder="Costo"/>--%>
-                         <asp:TextBox ID="textbox1" CssClass="form-control" runat="server" onkeypress="return justNumbers(event);"></asp:TextBox>                   
-                   <%-- <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server"  Enabled="True" TargetControlID="textbox_Costo" ValidChars="0123456789," >
-                    </asp:FilteredTextBoxExtender>
-                  --%>
-                  </div>
-                    
-                    
-                    </div>
+
 
                 </div>
 
@@ -55,8 +118,6 @@
               
                     
           <div class="card-footer">
-                  <button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Guardar Cambios</button>
-              <asp:Button ID="btn_save" runat="server" Text="Guardar ASP" class="btn btn-primary" />
                 </div>
                 <label id="lbl_ok" class="label label-warning" visible="False" runat="server" >Evento Creado  </label>
                 <div id="div_registro_guardado" runat="server" visible="false" 
@@ -78,7 +139,7 @@
                                           <div class="card-body"> 
                                             <div class="row">
                                                 <div align="center">
-                                                    <asp:Label ID="Label16" runat="server" Text="El evento se generó exitosamente"></asp:Label>
+                                                    <asp:Label ID="Label16" runat="server" Text="Cambios realizados correctamente."></asp:Label>
                                                     &nbsp;
                                                 </div>
                                             </div>

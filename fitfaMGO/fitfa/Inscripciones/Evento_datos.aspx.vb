@@ -137,7 +137,7 @@ Public Class Evento_datos
                 If cant_real_inscriptos < cant_max_inscriptos_x_turno Then 'si hay cupo lo inscribo
                     Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Now, 0)
                     Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
-                    DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue)
+                    DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue, DropDownList_graduacion.SelectedValue)
                     popupMsjGuardado.Visible = True
                     ModalPopupExtender_guardado.Show()
                 Else

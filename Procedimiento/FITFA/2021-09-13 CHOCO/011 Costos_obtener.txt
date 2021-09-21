@@ -1,0 +1,12 @@
+create procedure Costos_obtener
+
+
+as
+--0) recupero los costos solo de examenes.
+select Costos_id, Costos_descripcion, Costos_tipo, Costos_monto, graduacion_id
+from Costos where Costos.Costos_tipo = 'Examen' order by Costos.Costos_id asc
+
+--1) recupero los otros costos
+select Costos_id, Costos_descripcion, Costos_tipo, Costos_monto, graduacion_id
+from Costos where Costos.Costos_tipo = 'Otro' order by Costos.Costos_descripcion  asc
+go
