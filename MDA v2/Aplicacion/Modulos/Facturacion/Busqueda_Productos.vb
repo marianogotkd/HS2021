@@ -450,6 +450,15 @@ Public Class Busqueda_Productos
         cargar_combos_categoria()
         evento_load_completo = "si"
         'TextBox111.SetWaterMark("Descripcion o Codigo")
+
+        'OCULTA LOS COSTOS PARA LOS OPERADORES
+        If Inicio.UT_id <> 1 Then
+            Me.DataGridView1.Columns(4).Visible = False
+            Me.DataGridView1.Columns(5).Visible = False
+
+        End If
+
+
     End Sub
 
     Private Sub BO_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BO_salir.Click

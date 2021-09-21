@@ -120,6 +120,20 @@
 
         txt_sucursal.ReadOnly = True 'esto no se puede cambiar x q se recupera
 
+        'OCULTA LOS COSTOS PARA LOS OPERADORES
+        If Inicio.UT_id <> 1 Then
+            Me.DataGridView1.Columns(5).Visible = False
+            Me.DataGridView1.Columns(6).Visible = False
+            Label20.Visible = False
+            TextBox_Repuesto.Visible = False
+
+            GroupBox_descuentos.Visible = False
+            GroupBox_iva.Visible = False
+            GroupBox_totales.Visible = False
+            Panel_costos.Visible = False
+        End If
+
+
 
     End Sub
     Public anticipo_recuperado As Decimal = 0
