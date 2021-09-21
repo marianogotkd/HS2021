@@ -1,0 +1,24 @@
+USE [fitfaBD]
+GO
+
+/****** Object:  Table [dbo].[ExamenCertificacion]    Script Date: 09/16/2021 15:54:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ExamenCertificacion](
+	[ExamenCertificacion_id] [int] IDENTITY(1,1) NOT NULL,
+	[usuario_id] [int] NULL,
+	[graduacion_id] [int] NULL,
+	[evento_id] [int] NULL,
+ CONSTRAINT [PK_ExamenCertificacion] PRIMARY KEY CLUSTERED 
+(
+	[ExamenCertificacion_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

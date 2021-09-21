@@ -1,0 +1,184 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Examen_recuperar_inscriptos]    Script Date: 09/16/2021 15:09:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Examen_recuperar_inscriptos]
+@evento_id int
+
+as
+
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+' ' as 'Graduacion',
+inscripciones_x_examen.graduacion_actual_id as 'graduacion_id', ---esta es la graduacion es la que va a obtener o tiene en primera instancia, ya que (rinde y obtenida) son iguales
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  
+               
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc 
+
+---1) recupero las graduaciones
+select * from graduacion order by graduacion.graduacion_id asc
+
+--2) recupero turnos de un evento puntual
+select * from dbo.ExamenTurno where ExamenTurno.evento_id = @evento_id order by ExamenTurno.ExamenTurno_desc asc
+
+--3) recupero info de examen
+select
+evento_id,
+evento_descripcion,
+evento_fecha,
+evento_fechacierre,
+evento_direccion, 
+evento_cap_max_insc  
+from evento where evento.evento_id = @evento_id 
+
+
+--4) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+inscripciones_x_examen.graduacion_actual_id as 'graduacion_id', ---esta es la graduacion actual del alumno
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  
+               
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Sin Evaluar' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc
+
+--5) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id', ---esta es la graduacion actual del alumno
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Desaprobado' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc
+
+--6) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+--dbo.usuario.graduacion_id, ---esta es la graduacion actual del alumno
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id',
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Aprobado' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc               
+
+--7) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+--dbo.usuario.graduacion_id, ---esta es la graduacion actual del alumno
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id',
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Doble Promoción' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc

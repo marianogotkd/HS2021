@@ -142,7 +142,7 @@ Partial Class Sesion_pacientes
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(144, 44)
         Me.Button5.TabIndex = 264
-        Me.Button5.Text = "Anular ausente"
+        Me.Button5.Text = "Anular sesion"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.Button5, "Ver todas las sesiones del paciente")
         Me.Button5.UseVisualStyleBackColor = True

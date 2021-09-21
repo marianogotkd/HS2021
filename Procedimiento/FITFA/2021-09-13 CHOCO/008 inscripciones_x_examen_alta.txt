@@ -1,0 +1,15 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_alta]    Script Date: 09/17/2021 16:06:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[inscripciones_x_examen_alta]
+@inscripcion_id int, 
+@ExamenTurno_id int,
+@graduacion_actual_id int
+as
+insert inscripciones_x_examen (inscripcion_id, ExamenTurno_id, inscexamen_resultado, graduacion_actual_id , graduacion_obtenida_id  ) 
+values
+(@inscripcion_id, @ExamenTurno_id, 'Sin Evaluar', @graduacion_actual_id , @graduacion_actual_id )

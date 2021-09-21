@@ -32,22 +32,31 @@ Partial Public Class Examen_costos
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control lbl_costo.
+    '''Control Label_examenes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_costo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label_examenes As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control textbox_Costo.
+    '''Control Div3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents textbox_Costo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Div3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control GridView_examenes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView_examenes As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Control Label1.
@@ -56,34 +65,97 @@ Partial Public Class Examen_costos
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control textbox1.
+    '''Control txt_montoexamen.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents textbox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_montoexamen As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btn_guardar.
+    '''Control Btn_confirmar_montoexamen.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents Btn_confirmar_montoexamen As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btn_save.
+    '''Control Label_error_monto1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label_error_monto1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Div1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control GridView_OTROS.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView_OTROS As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control Label3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txt_monto_otro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_monto_otro As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Btn_confirmar_montootros.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_confirmar_montootros As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control Label_error_monto2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label_error_monto2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control lbl_ok.

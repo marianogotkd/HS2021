@@ -499,4 +499,27 @@ ByVal usuario_nrolibreta As String) As DataSet
         Return ds_usu
     End Function
 
+
+#Region "EXAMENES"
+    Public Function Usuario_modificar_graduacion(ByVal usuario_id As Integer, ByVal graduacion_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Usuario_modificar_graduacion", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@graduacion_id", graduacion_id))
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "Usuario")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+#End Region
+
 End Class

@@ -1,0 +1,17 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenCertificacion_alta]    Script Date: 09/16/2021 15:55:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[ExamenCertificacion_alta]
+
+@usuario_id int,
+@graduacion_id int,
+@evento_id int
+
+as
+insert ExamenCertificacion (usuario_id , graduacion_id, evento_id)values(@usuario_id, @graduacion_id,@evento_id  )
+
+go

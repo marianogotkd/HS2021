@@ -68,6 +68,7 @@
     <Compile Include="Cargar_Competidores.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="Conexion.vb" />
+    <Compile Include="Costos.vb" />
     <Compile Include="Eventos.vb" />
     <Compile Include="Inscripciones.vb" />
     <Compile Include="Instituciones.vb" />

@@ -1,0 +1,31 @@
+USE [fitfaBD]
+GO
+
+/****** Object:  Table [dbo].[Costos]    Script Date: 09/17/2021 17:05:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Costos](
+	[Costos_id] [int] IDENTITY(1,1) NOT NULL,
+	[Costos_descripcion] [varchar](max) NULL,
+	[Costos_tipo] [varchar](50) NULL,
+	[Costos_monto] [decimal](38, 2) NULL,
+	[graduacion_id] [int] NULL,
+ CONSTRAINT [PK_Costos] PRIMARY KEY CLUSTERED 
+(
+	[Costos_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

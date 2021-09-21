@@ -220,19 +220,20 @@ Public Class Equipo_consulta
                     cadena = cadena + "Equipo: " + CStr(DG_clientes.Rows(j).Cells("EquipodescripcionDataGridViewTextBoxColumn").Value) + "."
                     'recupero los atributos (caracteristicas del equipo.)
                     '*****************************************************************************
-                    Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
-                    Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
-                    If ds_info.Tables(1).Rows.Count <> 0 Then
-                        cadena += Environment.NewLine
-                        cadena = cadena + "Atributos:"
-                        'tiene atributos
-                        Dim i As Integer = 0
-                        While i < ds_info.Tables(1).Rows.Count
-                            cadena += Environment.NewLine
-                            cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
-                            i = i + 1
-                        End While
-                    End If
+                    '17-09-2021: a pedido del cliente se anula los atributos.
+                    'Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
+                    'Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
+                    'If ds_info.Tables(1).Rows.Count <> 0 Then
+                    '    cadena += Environment.NewLine
+                    '    cadena = cadena + "Atributos:"
+                    '    'tiene atributos
+                    '    Dim i As Integer = 0
+                    '    While i < ds_info.Tables(1).Rows.Count
+                    '        cadena += Environment.NewLine
+                    '        cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
+                    '        i = i + 1
+                    '    End While
+                    'End If
                     '*****************************************************************************
                     'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
                     Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena))
@@ -330,19 +331,20 @@ Public Class Equipo_consulta
                         cadena = cadena + "Equipo: " + CStr(DG_clientes.Rows(j).Cells("EquipodescripcionDataGridViewTextBoxColumn").Value) + "."
                         'recupero los atributos (caracteristicas del equipo.)
                         '*****************************************************************************
-                        Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
-                        Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
-                        If ds_info.Tables(1).Rows.Count <> 0 Then
-                            cadena += Environment.NewLine
-                            cadena = cadena + "Atributos:"
-                            'tiene atributos
-                            Dim i As Integer = 0
-                            While i < ds_info.Tables(1).Rows.Count
-                                cadena += Environment.NewLine
-                                cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
-                                i = i + 1
-                            End While
-                        End If
+                        '17-09-2021: a pedido del cliente se anula los atributos.
+                        'Dim equipo_id As Integer = DG_clientes.Rows(j).Cells("EquipoidDataGridViewTextBoxColumn").Value
+                        'Dim ds_info As DataSet = daequipo.Equipo_recuperar_info(equipo_id)
+                        'If ds_info.Tables(1).Rows.Count <> 0 Then
+                        '    cadena += Environment.NewLine
+                        '    cadena = cadena + "Atributos:"
+                        '    'tiene atributos
+                        '    Dim i As Integer = 0
+                        '    While i < ds_info.Tables(1).Rows.Count
+                        '        cadena += Environment.NewLine
+                        '        cadena = cadena + "  -" + CStr(ds_info.Tables(1).Rows(i).Item("Cat2_caract_atributo")) + ": " + CStr(ds_info.Tables(1).Rows(i).Item("Atributo_detalle_valor")) + "."
+                        '        i = i + 1
+                        '    End While
+                        'End If
                         '*****************************************************************************
                         'Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(DG_clientes.Rows(j).Cells("EtiquetaDataGridViewTextBoxColumn").Value), 300, 300)
                         Dim IMAGEN As Bitmap = New Bitmap(GENERADOR.Write(cadena))

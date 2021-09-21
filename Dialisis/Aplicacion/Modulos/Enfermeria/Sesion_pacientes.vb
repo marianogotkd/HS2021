@@ -282,26 +282,26 @@
             'aqui va pregunta para registrar como ausente.
             '
             'hay q hacer un alta alta en la tabla sesiones
-            Dim result As Integer = MessageBox.Show("¿Desea anular la sesion AUSENTE del paciente: " + datagridview1.CurrentRow.Cells("PacienteDataGridViewTextBoxColumn").Value + " para la sesion del dia " + fecha_registrar + "?.", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim result As Integer = MessageBox.Show("¿Desea anular la sesion del paciente: " + datagridview1.CurrentRow.Cells("PacienteDataGridViewTextBoxColumn").Value + " para la sesion del dia " + fecha_registrar + "?.", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
-                If CStr(datagridview1.CurrentRow.Cells("SesionesasistenciaDataGridViewTextBoxColumn").Value) = "Ausente" Then
+                If CStr(datagridview1.CurrentRow.Cells("SesionesasistenciaDataGridViewTextBoxColumn").Value) <> "" Then 'Ausente
 
                     'validar que esta sesion no tenga consumos vinculados.
                     Dim Sesiones_id As Integer = datagridview1.CurrentRow.Cells("SesionesidDataGridViewTextBoxColumn").Value
-                    Dim ds_sesion_ausente_datos As DataSet = daUsuario.UsuarioActividad_consultar_sesion(Sesiones_id)
-                    If ds_sesion_ausente_datos.Tables(0).Rows.Count = 0 Then
-                        'entonces puedo anular el ausente
-                        DAsesiones.Sesiones_anular(Sesiones_id)
-                        recuperar_pacientes_fecha_del_dia(fecha_registrar)
-                        MessageBox.Show("Datos actualizados correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        'no se puede anular el ausente x que tiene consumos vinculados q ya se descontaron de stock
-                        MessageBox.Show("No se puede anular la sesion seleccionada ya que posee consumos registrados que no se pueden deshacer.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
+                    'Dim ds_sesion_ausente_datos As DataSet = daUsuario.UsuarioActividad_consultar_sesion(Sesiones_id)
+                    'If ds_sesion_ausente_datos.Tables(0).Rows.Count = 0 Then
+                    'entonces puedo anular el ausente
+                    DAsesiones.Sesiones_anular(Sesiones_id)
+                    recuperar_pacientes_fecha_del_dia(fecha_registrar)
+                    MessageBox.Show("Datos actualizados correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'Else
+                    '    'no se puede anular el ausente x que tiene consumos vinculados q ya se descontaron de stock
+                    '    MessageBox.Show("No se puede anular la sesion seleccionada ya que posee consumos registrados que no se pueden deshacer.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'End If
 
                 Else
                     'ya esta registrado
-                    MessageBox.Show("El paciente seleccionado no esta registrado como AUSENTE para la sesion actual.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("El paciente seleccionado no registra una sesion.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
         End If

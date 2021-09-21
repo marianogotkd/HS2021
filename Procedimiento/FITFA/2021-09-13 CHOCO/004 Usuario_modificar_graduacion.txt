@@ -1,0 +1,8 @@
+create procedure Usuario_modificar_graduacion
+
+@usuario_id int,
+@graduacion_id int
+as
+
+update usuario set graduacion_id = @graduacion_id 
+go

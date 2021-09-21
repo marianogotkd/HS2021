@@ -1,0 +1,7 @@
+create procedure Costos_modificar
+@Costos_id int,
+@Costos_monto decimal(38,2)
+as
+
+update Costos set Costos_monto = @Costos_monto where Costos.Costos_id = @Costos_id 
+go
