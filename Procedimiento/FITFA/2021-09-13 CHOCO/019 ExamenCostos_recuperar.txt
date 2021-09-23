@@ -1,0 +1,9 @@
+create procedure ExamenCostos_recuperar
+
+@evento_id int
+
+as
+
+select * from ExamenCostos where ExamenCostos.evento_id = @evento_id order by ExamenCostos.ExamenCostos_id asc
+
+go

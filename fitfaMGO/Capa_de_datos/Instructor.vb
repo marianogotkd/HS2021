@@ -40,6 +40,24 @@ Public Class Instructor
         Return ds_usu
     End Function
 
+    Public Function Instructor_obtener_solo_alumnos_INSTRUCTORES(ByVal usuario_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Instructor_obtener_solo_alumnos_INSTRUCTORES", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+
+        da_usu.Fill(ds_usu, "Usuario")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
     Public Function Instructor_buscar_alumno(ByVal usuario_id As Integer, ByVal alumno_dni As Integer) As DataSet
         Try
             dbconn.Open()
@@ -146,6 +164,25 @@ Public Class Instructor
         Dim ds_usu As New DataSet()
         Dim da_usu As New OleDbDataAdapter(comando)
         comando.Parameters.Add(New OleDb.OleDbParameter("@usuario_id", usuario_id))
+
+        da_usu.Fill(ds_usu, "instructor")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
+    Public Function instructor_modificar_porcentaje(ByVal instructor_id As Integer, ByVal instructor_porcentaje As Decimal) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("instructor_modificar_porcentaje", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        comando.Parameters.Add(New OleDb.OleDbParameter("@instructor_id", instructor_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@instructor_porcentaje", instructor_porcentaje))
 
         da_usu.Fill(ds_usu, "instructor")
         dbconn.Close()

@@ -11,18 +11,19 @@ Public Class Modificar_Evento
     Dim ImagenDataURL64 As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-        lbl_errFecCier.Visible = False
-        lbl_errNom.Visible = False
-        lbl_costo.Visible = False
-        lbl_errfechaini.Visible = False
-        lbl_horaCierre.Visible = False
-        lbl_errImg.Visible = False
-
-
         Page.Form.Attributes.Add("enctype", "multipart/form-data")
 
         If Not IsPostBack Then
+            lbl_errFecCier.Visible = False
+            lbl_errNom.Visible = False
+            lbl_costo.Visible = False
+            lbl_errfechaini.Visible = False
+            lbl_horaCierre.Visible = False
+            lbl_errImg.Visible = False
+            lbl_turnos_error0.Visible = False
+            lbl_error_cap_max_inscr.Visible = False
+
+            combo_TipoEvento.Enabled = False
             Ocultar.Visible = False
             Session("imagen") = ""
             Session("foto_subido") = "no"
@@ -31,6 +32,29 @@ Public Class Modificar_Evento
             Cargar_Evento()
 
         End If
+
+    End Sub
+
+    Private Sub crear_tabla_turnos()
+        GridView1.DataSource = Nothing
+        GridView1.DataBind()
+        Dim ds_eventos As New ds_eventos
+        ds_eventos.Tables("Turnos").Rows.Clear()
+        Dim cont = 0
+        Dim horas As Integer = 8
+        While cont < 14
+            Dim row As DataRow = ds_eventos.Tables("Turnos").NewRow()
+            row("Turno") = CStr(horas) + " hrs."
+
+            ds_eventos.Tables("Turnos").Rows.Add(row)
+            cont = cont + 1
+            horas = horas + 1
+        End While
+        GridView1.DataSource = ds_eventos.Tables("Turnos")
+        GridView1.DataBind()
+
+        GridView1.Enabled = False
+
 
     End Sub
 
@@ -50,7 +74,7 @@ Public Class Modificar_Evento
     Public Function ImageControlToByteArray(ByVal foto)
         Return File.ReadAllBytes(Server.MapPath(foto.ImageUrl))
     End Function
-
+    Dim ChkTurno As CheckBox
     Private Sub btn_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_guardar.ServerClick
 
         System.Threading.Thread.Sleep(5000)
@@ -104,24 +128,76 @@ Public Class Modificar_Evento
 
 
         If Vacio = False Then
-            If costo = "" Then
-                DAevento.Evento_Actualizar(drop_evento.SelectedValue, tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, IsDBNull(costo))
+            If combo_TipoEvento.SelectedValue = "Examen" Then
+                Dim valido_cap_max As String = "no"
+                If tb_capacidad_max.Text = "" Then
+                    tb_capacidad_max.Text = "0"
+                    valido_cap_max = "no"
+                Else
+                    If CInt(tb_capacidad_max.Text) > 0 Then
+                        valido_cap_max = "si"
+                    Else
+                        valido_cap_max = "no"
+                    End If
+                End If
+                'controlo que al menos haya seleccionado 1 turno.
+                Dim valido As String = "no"
+                Dim i As Integer = 0
+                While i < GridView1.Rows.Count
+                    ChkTurno = CType(Me.GridView1.Rows(i).FindControl("chk_turno"), CheckBox)
+                    If ChkTurno.Checked = True Then
+                        valido = "si"
+                        Exit While
+                    End If
+                    i = i + 1
+                End While
+                If (valido = "si") And (valido_cap_max = "si") Then
+                    Try
+                        textbox_Costo.Text = CDec(textbox_Costo.Text)
+                    Catch ex As Exception
+                        textbox_Costo.Text = 0
+                    End Try
+                    DAevento.Evento_Actualizar(drop_evento.SelectedValue, tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, textbox_Costo.Text, tb_capacidad_max.Text, tb_direccion.Value)
+
+                    Ocultar.Visible = True
+                    ModalPopupExtender1.Show()
+
+                Else
+                    If valido = "no" Then
+                        lbl_turnos_error0.Visible = True
+                        Vacio = True
+                    End If
+                    If valido_cap_max = "no" Then
+                        lbl_error_cap_max_inscr.Visible = True
+                        Vacio = True
+                    End If
+                End If
+
+
             Else
-                DAevento.Evento_Actualizar(drop_evento.SelectedValue, tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, costo)
+                'es un torneo o curso
+                If costo = "" Then
+                    DAevento.Evento_Actualizar(drop_evento.SelectedValue, tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, IsDBNull(costo), CDec(0), tb_direccion.Value)
+                Else
+                    DAevento.Evento_Actualizar(drop_evento.SelectedValue, tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, costo, CDec(0), tb_direccion.Value)
+                End If
+                Ocultar.Visible = True
+                ModalPopupExtender1.Show()
             End If
-            Ocultar.Visible = True
-            ModalPopupExtender1.Show()
+
 
             'lbl_ok.Visible = True
-            tb_nombre.Value = ""
-            tb_fechainicio.Value = ""
-            tb_fechaCierre.Value = ""
-            tb_horaCierre.Value = ""
-            textbox_Costo.Text = ""
+            'tb_nombre.Value = ""
+            'tb_fechainicio.Value = ""
+            'tb_fechaCierre.Value = ""
+            'tb_horaCierre.Value = ""
+            'textbox_Costo.Text = ""
             FileUpload1.Attributes.Clear()
             Image1.Visible = False
             btn_quitar.Visible = False
             btn_Examinar.Visible = True
+
+
         End If
     End Sub
 
@@ -182,14 +258,23 @@ Public Class Modificar_Evento
     End Sub
 
     Public Sub Cargar_Evento()
+        crear_tabla_turnos()
 
         Dim ds_Eventos As DataSet = DAevento.Evento_ObetenerEvento_ID(drop_evento.SelectedValue)
         If ds_Eventos.Tables(0).Rows.Count <> 0 Then
+            combo_TipoEvento.SelectedValue = ds_Eventos.Tables(0).Rows(0).Item("evento_tipoevento")
             tb_nombre.Value = ds_Eventos.Tables(0).Rows(0).Item("evento_descripcion")
             tb_fechainicio.Value = ds_Eventos.Tables(0).Rows(0).Item("evento_fecha")
             tb_fechaCierre.Value = ds_Eventos.Tables(0).Rows(0).Item("fechacierre")
             tb_horaCierre.Value = ds_Eventos.Tables(0).Rows(0).Item("horacierre")
             textbox_Costo.Text = ds_Eventos.Tables(0).Rows(0).Item("evento_costo")
+            Try
+                tb_direccion.Value = ds_Eventos.Tables(0).Rows(0).Item("evento_direccion")
+            Catch ex As Exception
+                tb_direccion.Value = ""
+            End Try
+
+
             Dim ImagenBD As Byte() = ds_Eventos.Tables(0).Rows(0).Item("evento_foto")
             Dim ImagenDataURL64 As String = "data:image/jpg;base64," + Convert.ToBase64String(ImagenBD)
             'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
@@ -203,7 +288,41 @@ Public Class Modificar_Evento
             'btn_quitar.Visible = True
             Session("imagen_ModEvnt") = ImagenBD 'esta variable tiene la foto de la bd
             Session("foto_subido") = "img_recuperadaBD"
+
+
+            If combo_TipoEvento.SelectedValue = "Examen" Then
+                Panel_examenes.Visible = True
+                tb_capacidad_max.Text = ds_Eventos.Tables(0).Rows(0).Item("evento_cap_max_insc")
+                'Div_Costos.Visible = True
+            Else
+                Panel_examenes.Visible = False
+                tb_capacidad_max.Text = 0
+                'Div_Costos.Visible = False
+            End If
+
+            If ds_Eventos.Tables(1).Rows.Count <> 0 Then
+                'Dim chk_turno As CheckBox
+                Dim i As Integer = 0
+                While i < ds_Eventos.Tables(1).Rows.Count
+                    Dim ExamenTurno_desc As String = ds_Eventos.Tables(1).Rows(i).Item("ExamenTurno_desc")
+                    Dim j As Integer = 0
+                    While j < GridView1.Rows.Count
+                        If ExamenTurno_desc = GridView1.Rows(j).Cells(1).Text Then
+                            CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox).Checked = True
+                            Exit While
+                        End If
+                        j = j + 1
+                    End While
+                    i = i + 1
+                End While
+
+
+            End If
+
+
         End If
+
+
 
     End Sub
 
@@ -211,6 +330,14 @@ Public Class Modificar_Evento
        
         Cargar_Evento()
 
+
+        If combo_TipoEvento.SelectedValue = "Examen" Then
+            Panel_examenes.Visible = True
+            'Div_Costos.Visible = True
+        Else
+            Panel_examenes.Visible = False
+            'Div_Costos.Visible = False
+        End If
 
     End Sub
 
@@ -231,6 +358,7 @@ Public Class Modificar_Evento
     Private Sub btn_Cerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Cerrar.Click
         Response.Redirect("~/Inicio_Blanco.aspx")
     End Sub
+
 End Class
 
 

@@ -9,6 +9,8 @@ Public Class Evento_Crear
     Dim ImagenDataURL64 As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            Session("evento_id") = 0 'inicio en 0 para validar el guardado. sino inserta 2 veces.
+
             Session("imagen") = ""
             Session("foto_subido") = "no"
             lbl_errFecCier.Visible = False
@@ -57,6 +59,8 @@ Public Class Evento_Crear
 
 #End Region
     Dim ChkTurno As CheckBox
+
+
     Private Sub btn_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_guardar.ServerClick
 
         Dim Vacio As Boolean
@@ -88,109 +92,135 @@ Public Class Evento_Crear
         Dim FechaHoraCierre = tb_fechaCierre.Value + " " + tb_horaCierre.Value
         If Vacio = False Then
 
-            If combo_TipoEvento.SelectedValue = "Examen" Then
-
-                Dim valido_cap_max As String = "no"
-                If tb_capacidad_max.Text = "" Then
-                    tb_capacidad_max.Text = "0"
-                    valido_cap_max = "no"
-                Else
-                    If CInt(tb_capacidad_max.Text) > 0 Then
-                        valido_cap_max = "si"
-                    Else
-                        valido_cap_max = "no"
-                    End If
+            Dim server_validar As String = "no"
+            If Session("evento_id") = 0 Then
+                server_validar = "valido"
+            Else
+                Try
+                    Session("evento_id") = CInt(Session("evento_id"))
+                Catch ex As Exception
+                    Session("evento_id") = 0
+                End Try
+                'verifico si en la bd no hay un evento con ese id
+                Dim validar As DataSet = DAevento.Eventos_validar(Session("evento_id"))
+                If validar.Tables(0).Rows.Count = 0 Then
+                    server_validar = "valido"
                 End If
-                'controlo que al menos haya seleccionado 1 turno.
-                Dim valido As String = "no"
-                Dim i As Integer = 0
-                While i < GridView1.Rows.Count
-                    ChkTurno = CType(Me.GridView1.Rows(i).FindControl("chk_turno"), CheckBox)
-                    If ChkTurno.Checked = True Then
-                        valido = "si"
-                        Exit While
-                    End If
-                    i = i + 1
-                End While
+            End If
 
-                If (valido = "si") And (valido_cap_max = "si") Then
-                    'Dim copia_ds_evento As New ds_eventos
-                    'copia_ds_evento.Tables("Turnos").Rows.Clear()
-                    ''ahora guardo los turnos
-                    'Dim j As Integer = 0
-                    'While j < GridView1.Rows.Count
-                    '    ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
-                    '    If ChkTurno.Checked = True Then
-                    '        Dim fila As DataRow = copia_ds_evento.Tables("Turnos").NewRow
-                    '        fila("Turnos") = Me.GridView1.Rows(j).Cells("Turno").ToString
-                    '        copia_ds_evento.Tables("Turnos").Rows.Add(fila)
-                    '    End If
-                    '    j = j + 1
-                    'End While
+            If server_validar = "valido" Then
+                If combo_TipoEvento.SelectedValue = "Examen" Then
 
-                    'es un torneo o un curso
-                    If costo = "" Then
-                        costo = "0"
-                    End If
-                    Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(tb_capacidad_max.Text))
-                    Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
-                    'If costo = "" Then
-                    '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value)
-                    'Else
-                    '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value)
-                    'End If
-                    Dim j As Integer = 0
-                    While j < GridView1.Rows.Count
-                        ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
-                        If ChkTurno.Checked = True Then
-                            'aqui guardo en bd cada turno.
-                            Dim Turno = Me.GridView1.Rows(j).Cells(1).Text
-                            DAevento.ExamenTurno_alta(evento_id, Turno)
+                    Dim valido_cap_max As String = "no"
+                    If tb_capacidad_max.Text = "" Then
+                        tb_capacidad_max.Text = "0"
+                        valido_cap_max = "no"
+                    Else
+                        If CInt(tb_capacidad_max.Text) > 0 Then
+                            valido_cap_max = "si"
+                        Else
+                            valido_cap_max = "no"
                         End If
-                        j = j + 1
+                    End If
+                    'controlo que al menos haya seleccionado 1 turno.
+                    Dim valido As String = "no"
+                    Dim i As Integer = 0
+                    While i < GridView1.Rows.Count
+                        ChkTurno = CType(Me.GridView1.Rows(i).FindControl("chk_turno"), CheckBox)
+                        If ChkTurno.Checked = True Then
+                            valido = "si"
+                            Exit While
+                        End If
+                        i = i + 1
                     End While
 
+                    If (valido = "si") And (valido_cap_max = "si") Then
+                        'Dim copia_ds_evento As New ds_eventos
+                        'copia_ds_evento.Tables("Turnos").Rows.Clear()
+                        ''ahora guardo los turnos
+                        'Dim j As Integer = 0
+                        'While j < GridView1.Rows.Count
+                        '    ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
+                        '    If ChkTurno.Checked = True Then
+                        '        Dim fila As DataRow = copia_ds_evento.Tables("Turnos").NewRow
+                        '        fila("Turnos") = Me.GridView1.Rows(j).Cells("Turno").ToString
+                        '        copia_ds_evento.Tables("Turnos").Rows.Add(fila)
+                        '    End If
+                        '    j = j + 1
+                        'End While
+
+                        'es un torneo o un curso
+                        If costo = "" Then
+                            costo = "0"
+                        End If
+                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(tb_capacidad_max.Text))
+                        Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
+                        Session("evento_id") = evento_id
+                        'If costo = "" Then
+                        '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value)
+                        'Else
+                        '    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value)
+                        'End If
+                        Dim j As Integer = 0
+                        While j < GridView1.Rows.Count
+                            ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
+                            If ChkTurno.Checked = True Then
+                                'aqui guardo en bd cada turno.
+                                Dim Turno = Me.GridView1.Rows(j).Cells(1).Text
+                                DAevento.ExamenTurno_alta(evento_id, Turno)
+                            End If
+                            j = j + 1
+                        End While
+
+                        limpiar_textbox_etc()
+                        div_modal_msjOK.Visible = True
+                        Modal_msjOK.Show()
+
+                    Else
+                        If valido = "no" Then
+                            lbl_turnos_error0.Visible = True
+                            Vacio = True
+                        End If
+                        If valido_cap_max = "no" Then
+                            lbl_error_cap_max_inscr.Visible = True
+                            Vacio = True
+                        End If
+                    End If
+                    ''aqui paso a otra web page para cargar los turnos de los examenes.
+                    'Response.Redirect("~/Eventos/Examenes_turnos_agregar.aspx")
+                Else
+                    'es un torneo o un curso
+                    If costo = "" Then
+                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value, CInt(0))
+                        Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
+                        Session("evento_id") = evento_id
+                    Else
+                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(0))
+                        Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
+                        Session("evento_id") = evento_id
+                    End If
+
+
+
                     limpiar_textbox_etc()
+
                     div_modal_msjOK.Visible = True
                     Modal_msjOK.Show()
-
-                Else
-                    If valido = "no" Then
-                        lbl_turnos_error0.Visible = True
-                        Vacio = True
-                    End If
-                    If valido_cap_max = "no" Then
-                        lbl_error_cap_max_inscr.Visible = True
-                        Vacio = True
-                    End If
                 End If
-                ''aqui paso a otra web page para cargar los turnos de los examenes.
-                'Response.Redirect("~/Eventos/Examenes_turnos_agregar.aspx")
-            Else
-                'es un torneo o un curso
-                If costo = "" Then
-                    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value, CInt(0))
-                Else
-                    DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(0))
-                End If
+                'Response.Redirect("~/Eventos/Evento_Crear.aspx")
 
-                limpiar_textbox_etc()
-
-                div_modal_msjOK.Visible = True
-                Modal_msjOK.Show()
+                'lbl_ok.Visible = True
+                'tb_nombre.Value = ""
+                'tb_fechainicio.Value = Today
+                'tb_fechaCierre.Value = Today
+                'tb_horaCierre.Value = ""
+                'textbox_Costo.Text = 0
+                'FileUpload1.Attributes.Clear()
+                'Image1.Visible = False
+                'btn_quitar.Visible = False
+                'btn_Examinar.Visible = True
             End If
-            'Response.Redirect("~/Eventos/Evento_Crear.aspx")
-
-            'lbl_ok.Visible = True
-            'tb_nombre.Value = ""
-            'tb_fechainicio.Value = Today
-            'tb_fechaCierre.Value = Today
-            'tb_horaCierre.Value = ""
-            'textbox_Costo.Text = 0
-            'FileUpload1.Attributes.Clear()
-            'Image1.Visible = False
-            'btn_quitar.Visible = False
-            'btn_Examinar.Visible = True
+           
         End If
 
 

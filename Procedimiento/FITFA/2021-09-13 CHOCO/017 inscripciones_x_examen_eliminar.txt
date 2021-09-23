@@ -1,0 +1,12 @@
+create procedure inscripciones_x_examen_eliminar
+@Inscexamen_id int
+
+as
+--se elimina en "inscripciones x examen" y en "inscripciones"
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion_id from inscripciones_x_examen where inscripciones_x_examen.Inscexamen_id = @Inscexamen_id 
+
+delete from inscripcion where inscripcion.inscripcion_id = @inscripcion_id 
+delete from inscripciones_x_examen where inscripciones_x_examen.Inscexamen_id = @Inscexamen_id 
+
+go

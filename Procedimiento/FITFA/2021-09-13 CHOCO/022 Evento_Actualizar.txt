@@ -1,0 +1,29 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_Actualizar]    Script Date: 09/23/2021 06:43:48 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Evento_Actualizar]
+@evento_id int,
+@evento_descripcion varchar(50),
+@evento_foto image,
+@evento_fecha date,
+@evento_fechacierre datetime,
+@evento_tipoevento varchar(50),
+@evento_costo decimal,
+@evento_cap_max_insc int,
+@evento_direccion varchar(max)
+as
+
+update evento set
+evento_descripcion=@evento_descripcion,
+evento_foto =@evento_foto,
+evento_fecha =@evento_fecha,
+evento_fechacierre =@evento_fechacierre,
+evento_tipoevento =@evento_tipoevento,
+evento_costo =@evento_costo,
+evento_cap_max_insc = @evento_cap_max_insc,
+evento_direccion = @evento_direccion 
+where evento_id=@evento_id

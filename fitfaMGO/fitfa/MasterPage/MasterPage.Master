@@ -281,7 +281,14 @@
                   <p>Inscribir Alumnos</p>
                 </a>
               </li>
-             
+
+              <li class="nav-item" runat="server" id="Li_config_costos">
+                <a href="../Miembros/Config_liquidacion.aspx" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Configurar liquidacion.</p>
+                </a>
+              </li>
+                           
               <li class="nav-item" runat="server" id="Li_reporte_inscripts">
                 <a href="../Reportes/Reportes.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
@@ -386,6 +393,7 @@
                 </a>
               </li>
 
+              
 
             </ul>
 
@@ -1052,4 +1060,3 @@
 
 
     
-<

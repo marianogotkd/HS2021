@@ -1,0 +1,9 @@
+create procedure instructor_modificar_porcentaje
+@instructor_id int,
+@instructor_porcentaje decimal(38,2)
+
+as
+
+update instructor set instructor_porcentaje = @instructor_porcentaje where instructor_id = @instructor_id 
+
+go

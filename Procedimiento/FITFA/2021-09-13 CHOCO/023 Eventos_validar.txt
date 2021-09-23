@@ -1,0 +1,6 @@
+create procedure Eventos_validar
+
+@evento_id int
+as
+select * from evento where evento.evento_id = @evento_id 
+go

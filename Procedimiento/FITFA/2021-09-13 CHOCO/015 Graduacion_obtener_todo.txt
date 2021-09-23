@@ -1,0 +1,8 @@
+create procedure Graduacion_obtener_todo
+
+
+as
+
+select * from graduacion order by graduacion.graduacion_id asc
+
+go

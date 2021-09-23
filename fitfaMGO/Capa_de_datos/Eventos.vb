@@ -3,6 +3,25 @@ Imports System.Data.DataRow
 Public Class Eventos
     Inherits Capa_de_datos.Conexion
 
+    Public Function Eventos_validar(ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Eventos_validar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "Evento")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
     Public Function Eventos_Alta(ByVal evento_descripcion As String,
                                  ByVal evento_foto As Byte(),
                                  ByVal evento_fecha As Date,
@@ -136,7 +155,9 @@ Public Class Eventos
                                  ByVal evento_fecha As Date,
                                  ByVal evento_fechacierre As Date,
                                  ByVal evento_tipoevento As String,
-                                 ByVal evento_costo As Decimal) As DataSet
+                                 ByVal evento_costo As Decimal,
+                                 ByVal evento_cap_max_insc As Decimal,
+                                 ByVal evento_direccion As String) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -152,6 +173,8 @@ Public Class Eventos
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_fechacierre", evento_fechacierre))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_tipoevento", evento_tipoevento))
         comando.Parameters.Add(New OleDb.OleDbParameter("@evento_costo", evento_costo))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_cap_max_insc", evento_cap_max_insc))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_direccion", evento_direccion))
 
         Dim ds_usu As New DataSet()
         Dim da_usu As New OleDbDataAdapter(comando)
@@ -324,6 +347,42 @@ Public Class Eventos
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)
         da_JE.Fill(ds_JE, "usuario")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    Public Function ExamenCostos_recuperar(ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("ExamenCostos_recuperar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@ExamenTurno_id", ExamenTurno_id))
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "COSTOS")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
+    Public Function Examen_liquidacion_obtener_inscriptos(ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Examen_liquidacion_obtener_inscriptos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Inscriptos")
         dbconn.Close()
         Return ds_JE
     End Function

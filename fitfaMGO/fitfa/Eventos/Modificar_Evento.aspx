@@ -33,6 +33,11 @@
               <form role="form">
                 <div class="card-body">
 
+                <div class="container-fluid">
+                <div class="row">
+                <div class="col-lg-6">
+                <div class="card">
+                <div class="card-body">
                 <div class="form-group">
                   <label>Seleccione El Evento a Modificar</label>
                   <asp:DropDownList ID="drop_evento" runat="server" class="form-control" 
@@ -40,9 +45,7 @@
                      
                    </asp:DropDownList>
                 </div>
-
-
-                  <div class="form-group">
+                <div class="form-group">
                   <label>Tipo de Evento</label>
                   <asp:DropDownList ID="combo_TipoEvento" runat="server" class="form-control">
                       <asp:ListItem Value="Torneo" Selected="True">Torneo</asp:ListItem>
@@ -50,17 +53,84 @@
                       <asp:ListItem Value="Examen">Examen</asp:ListItem>
                    </asp:DropDownList>
                 </div>
-
-                  <div class="form-group" >
+                <div class="form-group" >
                     <label>Nombre </label>
                     <label id="lbl_errNom" class="label label-danger" runat="server">Debe Completar El Campo</label>
                       <input type="text" class="form-control" id="tb_nombre" runat="server" causesvalidation="False" required="" placeholder="Nombre del Evento"/>
                       
                   </div>
+                  <div class="form-group">
+                        <label>Dirección </label>
+                        <input type="text" class="form-control" id="tb_direccion" runat="server" causesvalidation="False" required="" placeholder="Ingrese dirección..." maxlength="50"/> 
+                  </div>
+                </div>
+                </div>
 
+                <div class="card">
+                <div class="card-body">
+                <div class="form-group">
+                  <label>Fecha del Evento</label>
+                  <label id="lbl_errfechaini" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input type="text" class="form-control" required="" runat="server" id="tb_fechainicio" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                                  
+                 <div class="form-group">
+                  <label>Fecha de Cierre </label>
+                  <label id="lbl_errFecCier" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input type="text" required="" class="form-control" runat="server" id="tb_fechaCierre" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                
+                  <asp:CompareValidator ID="cmpEndDate" runat="server" 
+                        ErrorMessage="La fecha de cierre no puede ser mayor a la del evento" class="label label-danger" 
+                        ControlToCompare="tb_fechaCierre" ControlToValidate="tb_fechainicio" 
+                        Operator="GreaterThanEqual" Type="Date">
+                        </asp:CompareValidator>
+                  <!-- Hora -->
+                <div class="bootstrap-timepicker">
+                  <div class="form-group">
+                    <label>Hora Limite:</label>
+                     <label id="lbl_horaCierre" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control timepicker" required="" id="tb_horaCierre" runat="server">
 
+                      <div class="input-group-append">
+                        <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                      </div>
+                    </div>
+                    <!-- /.input group -->
+                  </div>
+                  <!-- /.form group -->
+                </div>
+                <!-- Hora -->
 
-    <div class="form-group" > 
+                  <div class="form-group" >
+                    <label>Costo</label>
+                    <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
+                    <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>                   
+                   
+                  </div>
+                
+                </div>
+                </div>
+                </div> <%--fin del col-lg-6--%>
+                
+
+                <div class="col-lg-6">
+                <div class="card">
+                <div class="card-body">
+                <div class="form-group" > 
                  <div>   
                <label>Foto del Evento</label>  
                </div> 
@@ -68,10 +138,14 @@
          ImageUrl="~/Eventos/imagen/logo_evento.jpg" Width="286px" Visible="true" 
                      BorderStyle="solid" />
                  <br />
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          &nbsp;
         <button type="button" class="btn btn-primary" data-toggle="modal" runat="server" id="btn_Examinar" data-target="#exampleModal">Examinar</button>
         &nbsp;
         <button type="button" class="btn btn-danger" id="btn_quitar" runat="server" 
-                     visible="True">Quitar</button>
+                     visible="True">
+      &nbsp; &nbsp;Quitar&nbsp;</button>
+        &nbsp;
         <label id="lbl_errImg" class="label label-danger" runat="server">Solo imagenes</label>
        
  
@@ -105,53 +179,66 @@
  </div>
 
 
+                </div>
+                </div>
+                </div> <%--fin del col-lg-6--%>
+                
+                <div class="col-lg-6">
+                         <asp:Panel ID="Panel_examenes" runat="server" Visible=false >
+  
+  <div class="card">
+  <div class="card-body">
+    <div class="form-group">
+        <label>Capacidad máxima de inscriptos por turno: 
+        <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
+        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
+        <label>Seleccione los turnos para el examen: </label>
+        &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
+        seleccionar al menos un turno</label></div>
+ <div class="card-body table-responsive p-0">
+      <asp:GridView ID="GridView1" class="table table-hover" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+                           BorderColor="Black" GridLines="None" 
+                          EnableSortingAndPagingCallbacks="True" PageSize="20">
+          <Columns>
+              <asp:TemplateField HeaderText="Item">
+                  <ItemTemplate>
+                      <asp:CheckBox ID="chk_turno" runat="server" />
+                  </ItemTemplate>
+                  <EditItemTemplate>
+                      <asp:CheckBox ID="CheckBox1" runat="server" />
+                  </EditItemTemplate>
+              </asp:TemplateField>
+              <asp:BoundField DataField="Turno" HeaderText="Turno" />
+          </Columns>
+      </asp:GridView>
+  
+  </div> 
+ 
+  
+  
+  
+  
+  </div> <%--fin del card-body--%> 
+  </div> <%--fin del card--%>
+  </asp:Panel>
+                
+                
+                </div> <%--fin del col-lg-6--%>
+
+
+                </div>
+
+                </div>
+
+                          
+
+
+
+    
+
+
  
 
-
-                  
-
-<%--           <div class="container">
-            <h1>Bootstrap File Input Example</h1>
-            <form enctype="multipart/form-data">
-                <div class="form-group">
-                    <input id="file-1" type="file" class="file" multiple=true data-preview-file-type="any">
-                </div>
-                <div class="form-group">
-                    <input id="file-2" type="file" class="file" readonly=true>
-                </div> 
-                <div class="form-group">
-                    <input id="file-3" type="file" multiple=true>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary">Submit</button>
-                    <button class="btn btn-default" type="reset">Reset</button>
-                </div>
-            </form>
-        </div>
-    </body>
-	<script>
-	    $("#file-3").fileinput({
-	        showCaption: false,
-	        browseClass: "btn btn-primary btn-lg",
-	        fileType: "any"
-	    });
-	</script>
-                 --%>
-
-
-              <%--    <div class="form-group">
-                    <label for="exampleInputFile">Subir Foto </label>
-                    <div class="input-group">
-
-                                   
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile"></label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Subir</span>
-                      </div>
-                    </div>--%>
 
                     
 
@@ -159,63 +246,7 @@
 
                  
 
-                    <div class="form-group">
-                  <label>Fecha del Evento</label>
-                  <label id="lbl_errfechaini" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                    </div>
-                    <input type="text" class="form-control" required="" runat="server" id="tb_fechainicio" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                  </div>
-                  <!-- /.input group -->
-                </div>
-
-                  
-                 <div class="form-group">
-                  <label>Fecha de Cierre </label>
-                  <label id="lbl_errFecCier" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                    </div>
-                    <input type="text" required="" class="form-control" runat="server" id="tb_fechaCierre" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                  </div>
-                  <!-- /.input group -->
-                </div>
-                
-                  <asp:CompareValidator ID="cmpEndDate" runat="server" 
-                        ErrorMessage="La fecha de cierre no puede ser anterior a la del evento" class="label label-danger" 
-                        ControlToCompare="tb_fechainicio" ControlToValidate="tb_fechaCierre" 
-                        Operator="GreaterThanEqual" Type="Date">
-                        </asp:CompareValidator>
-                  <!-- Hora -->
-                <div class="bootstrap-timepicker">
-                  <div class="form-group">
-                    <label>Hora Limite:</label>
-                     <label id="lbl_horaCierre" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control timepicker" required="" id="tb_horaCierre" runat="server">
-
-                      <div class="input-group-append">
-                        <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
-                      </div>
-                    </div>
-                    <!-- /.input group -->
-                  </div>
-                  <!-- /.form group -->
-                </div>
-                <!-- Hora -->
-
-                  <div class="form-group" >
-                    <label>Costo</label>
-                    <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <%--  <input type="text"  visible="false" class="form-control" id="tb_Costo" runat="server" causesvalidation="False" required="" placeholder="Costo"/>--%>
-                         <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>                   
-                   <%-- <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server"  Enabled="True" TargetControlID="textbox_Costo" ValidChars="0123456789," >
-                    </asp:FilteredTextBoxExtender>
-                  --%>
-                  </div>
+                    
 
      <div id="Ocultar" runat="server" visible="false">
                   <asp:button id="hButton" runat="server" style="display:none;" />
