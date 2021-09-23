@@ -20,13 +20,21 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;ID=sa;Persist Security Info=False;User ID=sa;Initial Catalog=SantaFe;Data Source=DESKTOP-442DHLU")
 
     ' Conexion al ServerMDA
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.82.201.38")
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.82.201.38")
+
+    ' Conexion al ServerOlmedo
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.8.229.91")
 
 
     'mail de hamachi
     'hamersoftmda@gmail.com
     'pass: Cho..1..
     'Red ServerMDA
+
+    'hamersoftmdaolmedo@gmail.com
+    'pass Cho..1..
+    'Red: ServerOlmedo
+
 
 
 End Class
