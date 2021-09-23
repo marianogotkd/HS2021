@@ -1,8 +1,14 @@
-create procedure Usuario_modificar_graduacion
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_modificar_graduacion]    Script Date: 09/21/2021 18:17:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_modificar_graduacion]
 
 @usuario_id int,
 @graduacion_id int
 as
 
-update usuario set graduacion_id = @graduacion_id 
-go
+update usuario set graduacion_id = @graduacion_id where usuario.usuario_id = @usuario_id 

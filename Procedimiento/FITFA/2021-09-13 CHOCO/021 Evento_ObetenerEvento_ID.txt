@@ -1,0 +1,26 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_ObetenerEvento_ID]    Script Date: 09/23/2021 05:39:46 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Evento_ObetenerEvento_ID]
+@ID int
+as
+set dateformat dmy
+
+select evento_id,
+evento_descripcion,
+evento_foto,
+evento_fecha,
+CONVERT(VARCHAR(10),evento.evento_fechacierre,103) AS fechacierre,
+RIGHT(evento.evento_fechacierre, 7) AS horacierre, 
+evento.evento_tipoevento,
+evento.evento_costo,
+evento.evento_direccion,
+evento.evento_cap_max_insc  
+  from evento where evento.evento_id=@ID
+  
+  
+select * from ExamenTurno where ExamenTurno.evento_id = @ID 

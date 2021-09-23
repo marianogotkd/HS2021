@@ -25,6 +25,14 @@ Public Class Examen
     Dim DAinstructor As New Capa_de_datos.Instructor
 
     Private Sub CARGA_INICIAL_TABLA_PESTAÑA_TURNOS(ByVal ds_inscriptos As DataSet)
+        dataset_examen_b.inscriptos.Rows.Clear()
+        GridView2.DataSource = ""
+        GridView2.DataBind()
+        dataset_examen_b.info_turnos.Rows.Clear()
+        GridView3.DataSource = ""
+        GridView3.DataBind()
+
+
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
         If ds_inscriptos.Tables(0).Rows.Count <> 0 Then
@@ -136,6 +144,10 @@ Public Class Examen
     End Sub
 
     Private Sub Carga_inicial_LOAD()
+        dataset_examen.inscriptos.Rows.Clear()
+        GridView1.DataSource = ""
+        GridView1.DataBind()
+
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
         'recupero inscriptos
@@ -245,6 +257,10 @@ Public Class Examen
     End Sub
 
     Private Sub CARGA_INICIAL_TABLA_PESTAÑA_RESULTADOS_desaprobados(ByVal ds_inscriptos As DataSet)
+        dataset_examen_c_desaprobados.inscriptos.Rows.Clear()
+        GridView_desaprobados.DataSource = ""
+        GridView_desaprobados.DataBind()
+
         'cargo primero los alumnos sin calificar.
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
@@ -316,6 +332,9 @@ Public Class Examen
     End Sub
 
     Private Sub CARGA_INICIAL_TABLA_PESTAÑA_RESULTADOS_aprobado(ByVal ds_inscriptos As DataSet)
+        dataset_examen_c_aprobados.inscriptos.Rows.Clear()
+        GridView_aprobados.DataSource = ""
+        GridView_aprobados.DataBind()
         'cargo primero los alumnos sin calificar.
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
@@ -387,6 +406,9 @@ Public Class Examen
     End Sub
 
     Private Sub CARGA_INICIAL_TABLA_PESTAÑA_RESULTADOS_doblepromo(ByVal ds_inscriptos As DataSet)
+        dataset_examen_c_sinevaluar.inscriptos.Rows.Clear()
+        GridView_doblepromo.DataSource = ""
+        GridView_doblepromo.DataBind()
         'cargo primero los alumnos sin calificar.
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
@@ -458,6 +480,9 @@ Public Class Examen
     End Sub
 
     Private Sub CARGA_INICIAL_TABLA_PESTAÑA_RESULTADOS_sinevaluar(ByVal ds_inscriptos As DataSet)
+        dataset_examen_c_sinevaluar.inscriptos.Rows.Clear()
+        GridView_sinevaluar.DataSource = ""
+        GridView_sinevaluar.DataBind()
         'cargo primero los alumnos sin calificar.
         Dim evento_id As Integer = CInt(Session("evento_id"))
 
@@ -535,14 +560,222 @@ Public Class Examen
         'Session("evento_id")
         If Not IsPostBack Then
             Carga_inicial_LOAD()
+            div_Modal_ELIMINAR_inscripto.Visible = False
 
             'div_msj_error_eliminar.Visible = False
+
+            'voy a recuperar la tabla examencostos, si tiene algo para el evento, significa que ya se hizo la liquidacion, por lo tanto los precios y porc q manejo son de esa tabla.
+            recuperar_costos_examen()
 
 
         End If
 
 
     End Sub
+
+    Private Sub recuperar_costos_examen()
+        GridView_COSTOS_EXAMENES.DataSource = ""
+        GridView_COSTOS_EXAMENES.DataBind()
+
+        GridView_LIQUIDACION_INSTRUCTORES.DataSource = ""
+        GridView_LIQUIDACION_INSTRUCTORES.DataBind()
+
+        GridView_PAGAR_INSTRUCTOR.DataSource = ""
+        GridView_PAGAR_INSTRUCTOR.DataBind()
+        dataset_examen.Pagar_instructor.Rows.Clear()
+
+
+        Dim evento_id As Integer = CInt(Session("evento_id"))
+
+        Dim ds_costos As DataSet = DAeventos.ExamenCostos_recuperar(evento_id)
+
+        If ds_costos.Tables(0).Rows.Count <> 0 Then
+            'la liquidacion ya esta cerrada.
+        Else
+            'como esta tabla esta vacia voy a proceder a cargar el resumen de liquidacion con los precios actuales para los examenes
+            'para ello los recupero de la tabla "Costos"
+
+
+            'recupero los inscriptos ordenados por instructor.
+            Dim DAcostos As New Capa_de_datos.Costos
+            Dim dataset_costos As DataSet = DAcostos.Costos_obtener
+
+            '--------------cargo el gridview con las referencias de costos de examenes
+            GridView_COSTOS_EXAMENES.DataSource = dataset_costos.Tables(0)
+            GridView_COSTOS_EXAMENES.DataBind()
+
+
+
+            dataset_examen.liquidacion_instructores.Rows.Clear() 'limpio la tabla
+
+            Dim ds_inscriptos As DataSet = DAeventos.Examen_liquidacion_obtener_inscriptos(evento_id)
+            If ds_inscriptos.Tables(0).Rows.Count <> 0 Then
+                Dim i As Integer = 0
+                While i < ds_inscriptos.Tables(0).Rows.Count
+                    Dim dni = ds_inscriptos.Tables(0).Rows(i).Item("Dni") 'dni
+                    Dim graduacion_id_actual As Integer = 0
+                    obtener_graduacion(dni, graduacion_id_actual)
+                    '---------------------------------------------------------------------------------------------------------------------------------------
+                    'veo en la tabla recuperada de la bd, cual es la graduacion siguiente.
+                    graduacion_id_actual = graduacion_id_actual + 1 'al sumarle 1 voy a buscar la graduacion siguiente, es decir la que esta x rendir.
+                    Dim j As Integer = 0
+                    While j < ds_inscriptos.Tables(1).Rows.Count
+                        If graduacion_id_actual = ds_inscriptos.Tables(1).Rows(j).Item("graduacion_id") Then
+                            ds_inscriptos.Tables(0).Rows(i).Item("Grad.Rendir") = ds_inscriptos.Tables(1).Rows(j).Item("graduacion_desc") 'columna 4 es graduacion a rendir 
+                            Exit While
+                        End If
+                        j = j + 1
+                    End While
+                    '---------------------------------------------------------------------------------------------------------------------------------------
+                    '---------------------------------------------------------------------------------------------------------------------------------------
+                    'recupero info del instructor
+                    Dim instructor_id As Integer = ds_inscriptos.Tables(0).Rows(i).Item("instructor_id")
+                    'obtener_instructor_id(dni, instructor_id)
+
+                    Dim ds_info_instructor As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                    Try
+                        'columna 7 es el instructor
+                        Dim instructor As String = ds_info_instructor.Tables(0).Rows(0).Item("ApellidoyNombre").ToString '+ "(dni:" + ds_info_instructor.Tables(0).Rows(0).Item("usuario_doc").ToString + ")"
+                        ds_inscriptos.Tables(0).Rows(i).Item("Instructor") = instructor
+                    Catch ex As Exception
+
+                    End Try
+                    '---------------------------------------------------------------------------------------------------------------------------------------
+                    i = i + 1
+                End While
+
+                '2) ahora que tengo la tabla con instructor y graduacion a rendir, puedo hacer el conteo y cargar en la grilla que corresponde.
+                i = 0
+                While i < ds_inscriptos.Tables(0).Rows.Count
+                    'busco primero al instructor x id
+                    Dim instructor_id As Integer = CInt(ds_inscriptos.Tables(0).Rows(i).Item("instructor_id"))
+                    Dim j As Integer = 0
+                    Dim existe As String = "no"
+                    Dim conteo As String = "no"
+                    While j < dataset_examen.liquidacion_instructores.Rows.Count
+                        If instructor_id = dataset_examen.liquidacion_instructores.Rows(j).Item("instructor_id") Then
+                            'existe, entonces controlo que la graduacion a rendir exista.
+                            existe = "si"
+                            Dim Grad_rendir As String = ds_inscriptos.Tables(0).Rows(i).Item("Grad.Rendir").ToString
+                            If Grad_rendir = dataset_examen.liquidacion_instructores.Rows(j).Item("Grad.Rendir") Then
+                                'si existe, incremento el contador en 1.
+                                dataset_examen.liquidacion_instructores.Rows(j).Item("cantidad") = CInt(dataset_examen.liquidacion_instructores.Rows(j).Item("cantidad")) + 1
+                                conteo = "si"
+                            End If
+                        End If
+                        j = j + 1
+                    End While
+
+                    If existe = "no" Then
+                        'lo agrego
+                        Dim fila As DataRow = dataset_examen.liquidacion_instructores.NewRow
+                        fila("instructor") = ds_inscriptos.Tables(0).Rows(i).Item("Instructor").ToString
+                        fila("Grad.Rendir") = ds_inscriptos.Tables(0).Rows(i).Item("Grad.Rendir").ToString
+                        fila("cantidad") = 1
+                        fila("precio_examen") = 0 'esto lo voy a llenar al final
+                        fila("instructor_id") = instructor_id
+                        Dim ds_info_instructor As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                        fila("dni") = CInt(ds_info_instructor.Tables(0).Rows(0).Item("usuario_doc")) 'tengo q recuperarlo de alguna manera u ocultar.
+                        dataset_examen.liquidacion_instructores.Rows.Add(fila)
+                    Else
+                        If conteo = "no" Then
+                            'lo agrego
+                            Dim fila As DataRow = dataset_examen.liquidacion_instructores.NewRow
+                            fila("instructor") = ds_inscriptos.Tables(0).Rows(i).Item("Instructor").ToString
+                            fila("Grad.Rendir") = ds_inscriptos.Tables(0).Rows(i).Item("Grad.Rendir").ToString
+                            fila("cantidad") = 1
+                            fila("precio_examen") = 0 'esto lo voy a llenar al final
+                            fila("instructor_id") = instructor_id
+                            Dim ds_info_instructor As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                            fila("dni") = CInt(ds_info_instructor.Tables(0).Rows(0).Item("usuario_doc")) 'tengo q recuperarlo de alguna manera u ocultar.
+                            dataset_examen.liquidacion_instructores.Rows.Add(fila)
+                        End If
+                    End If
+                    i = i + 1
+                End While
+
+                'ahora cargo los costos.
+                i = 0
+                Dim contador_inscriptos As Integer = 0
+                Dim subtotales As Decimal = 0
+                While i < dataset_examen.liquidacion_instructores.Rows.Count
+                    Dim j As Integer = 0
+                    While j < dataset_costos.Tables(0).Rows.Count
+                        If dataset_examen.liquidacion_instructores.Rows(i).Item("Grad.Rendir").ToString = dataset_costos.Tables(0).Rows(j).Item("Costos_descripcion").ToString Then
+                            Try
+                                dataset_examen.liquidacion_instructores.Rows(i).Item("precio_examen") = CDec(dataset_costos.Tables(0).Rows(j).Item("Costos_monto")) * CDec(dataset_examen.liquidacion_instructores.Rows(i).Item("cantidad"))
+                            Catch ex As Exception
+                                dataset_examen.liquidacion_instructores.Rows(i).Item("precio_examen") = CDec(0)
+                            End Try
+                            subtotales = subtotales + CDec(dataset_examen.liquidacion_instructores.Rows(i).Item("precio_examen"))
+                            contador_inscriptos = contador_inscriptos + CInt(dataset_examen.liquidacion_instructores.Rows(i).Item("cantidad"))
+                        End If
+                        j = j + 1
+                    End While
+                    i = i + 1
+                End While
+
+                'ahora hago los calculos para el gridview pagar_instructor
+                i = 0
+                While i < dataset_examen.liquidacion_instructores.Rows.Count
+                    Dim agregar = "si"
+                    Dim instructor_id As Integer = dataset_examen.liquidacion_instructores.Rows(i).Item("instructor_id")
+
+                    '///////verifico que no este ya en pagar_instructor/////////
+                    Dim e As Integer = 0
+                    While e < dataset_examen.Pagar_instructor.Rows.Count
+                        If instructor_id = dataset_examen.Pagar_instructor.Rows(e).Item("instructor_id") Then
+                            agregar = "no"
+                            Exit While
+                        End If
+                        e = e + 1
+                    End While
+                    '//////////////////////////////////////////////////////////
+                    If agregar = "si" Then
+                        Dim j As Integer = 0
+                        Dim monto_sin_descuento As Decimal = 0
+                        While j < dataset_examen.liquidacion_instructores.Rows.Count
+                            If instructor_id = dataset_examen.liquidacion_instructores.Rows(j).Item("instructor_id") Then
+                                monto_sin_descuento = monto_sin_descuento + CDec(dataset_examen.liquidacion_instructores.Rows(j).Item("precio_examen"))
+                            End If
+                            j = j + 1
+                        End While
+
+                        Dim ds_info_instructor As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                        Dim instructor_porcentaje As Decimal = ds_info_instructor.Tables(0).Rows(0).Item("instructor_porcentaje")
+                        Dim calculo As Decimal = (monto_sin_descuento * instructor_porcentaje) / 100
+                        Dim fila As DataRow = dataset_examen.Pagar_instructor.NewRow
+                        fila("instructor") = dataset_examen.liquidacion_instructores.Rows(i).Item("instructor")
+                        fila("dni") = dataset_examen.liquidacion_instructores.Rows(i).Item("dni")
+                        fila("monto") = calculo
+                        fila("instructor_id") = instructor_id
+                        dataset_examen.Pagar_instructor.Rows.Add(fila)
+                    End If
+                    i = i + 1
+                End While
+
+                GridView_PAGAR_INSTRUCTOR.DataSource = dataset_examen.Pagar_instructor
+                GridView_PAGAR_INSTRUCTOR.DataBind()
+
+                Dim filaa As DataRow = dataset_examen.liquidacion_instructores.NewRow
+                filaa("instructor") = "SUBTOTALES"
+                filaa("Grad.Rendir") = ""
+                filaa("cantidad") = contador_inscriptos
+                filaa("precio_examen") = subtotales
+                filaa("instructor_id") = 0
+                dataset_examen.liquidacion_instructores.Rows.Add(filaa)
+
+                GridView_LIQUIDACION_INSTRUCTORES.DataSource = dataset_examen.liquidacion_instructores
+                GridView_LIQUIDACION_INSTRUCTORES.DataBind()
+
+            End If
+
+
+
+        End If
+
+    End Sub
+
 
     Private Function obtener_graduacion(ByVal dni As Integer, ByRef graduacion_id As Integer)
         Dim i As Integer = 0
@@ -587,22 +820,7 @@ Public Class Examen
     End Function
 
 
-    Private Sub btn_exportar_excel1_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_exportar_excel1.ServerClick
-        'Response.Clear()
-        'Response.Buffer = True
-        'Response.Charset = ""
-        'Response.AddHeader("content-disposition", "attachment, filename=Examen_inscriptos.xls")
-        'Response.ContentType = "application/ms-excel "
-        'Dim sw As StringWriter = New StringWriter()
-        'Dim hw As HtmlTextWriter = New HtmlTextWriter(sw)
-        'GridView1.AllowPaging = False
-        'GridView1.DataBind()
-        'GridView1.RenderControl(hw)
-        'Response.Output.Write(sw.ToString())
-        'Response.Flush()
-        'Response.End()
 
-    End Sub
 
   
     
@@ -621,9 +839,13 @@ Public Class Examen
             ' Retrieve the row index stored in the CommandArgument property.
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim id As Integer = Integer.Parse(e.CommandArgument.ToString()) 'este es el id de la inscripcion = Inscexamen_id
+            Session("Inscexamen_id") = id
             'solo se elimina si aun no está calificado.
             'luego de eliminar debo volver a cargar todas las grillas.
-            div_msj_error_eliminar.Visible = True
+            div_Modal_ELIMINAR_inscripto.Visible = True
+            'div_Modal_error_inscripto.Visible = True
+            Modal_ELIMINAR_inscripto.Show()
+            'div_msj_error_eliminar.Visible = True
 
         End If
     End Sub
@@ -777,4 +999,10 @@ Public Class Examen
         DAinscripciones.ExamenCertificacion_alta(usuario_id, graduacion_id, evento_id)
     End Sub
 
+    Private Sub Btn_Modal_si_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_Modal_si.Click
+        'este boton se ejecuta cuando confirmo la eliminacion de una inscripcion.
+        DAinscripciones.inscripciones_x_examen_eliminar(CInt(Session("Inscexamen_id")))
+        Carga_inicial_LOAD()
+
+    End Sub
 End Class

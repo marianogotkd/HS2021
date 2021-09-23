@@ -2440,6 +2440,8 @@
     <Content Include="MasterPage\prueba.aspx" />
     <Content Include="MasterPage\rollup.config.js" />
     <Content Include="MasterPage\starter.html" />
+    <Content Include="Miembros\Config_costos\Config_costos.aspx" />
+    <Content Include="Miembros\Config_liquidacion.aspx" />
     <Content Include="Miembros\Miembros.aspx" />
     <Content Include="Miembros\Miembros_datos_diseño.aspx" />
     <Content Include="Miembros\Miembros_editar_datospersonales.aspx" />
@@ -2617,6 +2619,17 @@
     </None>
     <None Include="Llaves\Reporte_llaves\Llaves_reporte_DS.xss">
       <DependentUpon>Llaves_reporte_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Miembros\Config_costos\DS_configcostos.xsc">
+      <DependentUpon>DS_configcostos.xsd</DependentUpon>
+    </None>
+    <None Include="Miembros\Config_costos\DS_configcostos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_configcostos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Miembros\Config_costos\DS_configcostos.xss">
+      <DependentUpon>DS_configcostos.xsd</DependentUpon>
     </None>
     <None Include="Resources\itextsharp.dll" />
     <None Include="Resources\itextsharp.pdfa.dll" />
@@ -3069,6 +3082,25 @@
     </Compile>
     <Compile Include="MasterPage\prueba.aspx.vb">
       <DependentUpon>prueba.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Miembros\Config_costos\Config_costos.aspx.designer.vb">
+      <DependentUpon>Config_costos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Miembros\Config_costos\Config_costos.aspx.vb">
+      <DependentUpon>Config_costos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Miembros\Config_costos\DS_configcostos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_configcostos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Miembros\Config_liquidacion.aspx.designer.vb">
+      <DependentUpon>Config_liquidacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Miembros\Config_liquidacion.aspx.vb">
+      <DependentUpon>Config_liquidacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Miembros\DataSet_miembros.Designer.vb">

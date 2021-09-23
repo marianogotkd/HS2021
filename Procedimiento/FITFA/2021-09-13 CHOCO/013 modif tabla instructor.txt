@@ -1,0 +1,20 @@
+USE [fitfaBD]
+GO
+
+/****** Object:  Table [dbo].[instructor]    Script Date: 09/21/2021 17:03:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[instructor](
+	[instructor_id] [int] IDENTITY(1,1) NOT NULL,
+	[usuario_id] [int] NULL,
+	[centro_id] [int] NULL,
+	[instructor_porcentaje] [decimal](38, 2) NULL
+) ON [PRIMARY]
+
+GO
+
+

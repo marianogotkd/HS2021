@@ -1,0 +1,23 @@
+alter procedure [dbo].[Instructor_obtener_solo_alumnos_INSTRUCTORES]
+---lo uso para traer alumnos instructores.
+
+@usuario_id int
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+
+
+select instructor.instructor_id as 'ID',
+usuario.usuario_doc as 'Documento',
+usuario.usuario_apellido +', '+usuario.usuario_nombre as 'ApeNomb',
+usuario.usuario_nrolibreta as 'Libreta',
+graduacion.graduacion_desc as 'Graduacion',
+instructor.instructor_porcentaje as 'Porcentaje',
+usuario.usuario_id,
+usuario.graduacion_id  
+from alumnos_x_instructor inner join instructor on alumnos_x_instructor.usuario_id = instructor.usuario_id 
+inner join usuario on alumnos_x_instructor.usuario_id = usuario.usuario_id
+inner join graduacion on usuario.graduacion_id = graduacion.graduacion_id 
+ where alumnos_x_instructor.instructor_id = @id_instructor order by graduacion.graduacion_id, usuario.usuario_apellido+', '+usuario.usuario_nombre asc 
+ 

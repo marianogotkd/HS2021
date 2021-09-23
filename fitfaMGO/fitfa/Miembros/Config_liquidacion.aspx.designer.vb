@@ -11,176 +11,185 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class MasterPage
+Partial Public Class Config_liquidacion
 
     '''<summary>
-    '''Control head.
+    '''Control ScriptManager1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''Control form1.
+    '''Control UpdatePanel1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control lbl_torneo.
+    '''Control Label17.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_torneo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control imgusu.
+    '''Control Rb_instructor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents imgusu As Global.System.Web.UI.HtmlControls.HtmlImage
+    Protected WithEvents Rb_instructor As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''Control Label_usu_nombre.
+    '''Control Rb_graduacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label_usu_nombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Rb_graduacion As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''Control li_DatosPersonales.
+    '''Control DropDownList_graduacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_DatosPersonales As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents DropDownList_graduacion As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control li_MiEscuela.
+    '''Control Label1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_MiEscuela As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Li_Insc.
+    '''Control txt_montoexamen.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Li_Insc As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents txt_montoexamen As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Li_config_costos.
+    '''Control Btn_confirmar_porcentaje.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Li_config_costos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Btn_confirmar_porcentaje As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Li_reporte_inscripts.
+    '''Control Label_error_monto1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Li_reporte_inscripts As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label_error_monto1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control li_Eventos.
+    '''Control Div3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Eventos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Div3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control li_ImpComp.
+    '''Control GridView_examenes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_ImpComp As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents GridView_examenes As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control li_Adm.
+    '''Control lbl_ok.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Adm As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents lbl_ok As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control li_Calendar.
+    '''Control div_registro_guardado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Calendar As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents div_registro_guardado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control li_Msje_mailbox.
+    '''Control div_modalOK.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Msje_mailbox As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents div_modalOK As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control msje.
+    '''Control HiddenField_msj.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents msje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents HiddenField_msj As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''Control li_Gen_llaves.
+    '''Control Panel1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Gen_llaves As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Control li_Ver_llav_Gen.
+    '''Control Label16.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents li_Ver_llav_Gen As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control ContentPlaceHolder1.
+    '''Control Btb_msj_no_eventos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents Btb_msj_no_eventos As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control Modal_OK.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Modal_OK As Global.AjaxControlToolkit.ModalPopupExtender
 End Class

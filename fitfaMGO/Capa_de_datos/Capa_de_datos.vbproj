@@ -70,6 +70,7 @@
     <Compile Include="Conexion.vb" />
     <Compile Include="Costos.vb" />
     <Compile Include="Eventos.vb" />
+    <Compile Include="Graduacion.vb" />
     <Compile Include="Inscripciones.vb" />
     <Compile Include="Instituciones.vb" />
     <Compile Include="Instructor.vb" />

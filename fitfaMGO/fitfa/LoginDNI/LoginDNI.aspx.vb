@@ -21,6 +21,7 @@ Public Class LoginDNI
             Estado = ds.Tables(0).Rows(0).Item("usuario_estado").ToString
             If Estado = "activo" Then
                 Session("Us_id") = ds.Tables(0).Rows(0).Item(0).ToString
+                Session("Tipo") = ds.Tables(0).Rows(0).Item("usuario_tipo").ToString
                 Response.Redirect("../Inscripciones/Evento_seleccionar.aspx")
             Else
                 lbl_error.Text = "Su estado es inactivo consulte con su instructor"

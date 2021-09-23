@@ -1,0 +1,17 @@
+USE [fitfaBD]
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_INFO]    Script Date: 09/23/2021 08:32:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_obtener_INFO]
+@instructor_id int
+as
+--recupera la informacion del instructor
+select 
+usuario.usuario_apellido+', '+usuario.usuario_nombre as 'ApellidoyNombre',
+usuario.usuario_doc, instructor.instructor_porcentaje 
+from instructor inner join usuario on instructor.usuario_id = usuario.usuario_id 
+where instructor.instructor_id= @instructor_id 
+
