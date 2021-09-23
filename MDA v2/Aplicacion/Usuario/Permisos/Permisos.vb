@@ -284,10 +284,10 @@
                 CheckBox_caja_Todos.Checked = True
             End If
 
-            If DS_Modulos.Tables(0).Rows(i).Item("USUModulos_descripcion") = "Mantenimiento" Then
-                CheckBox_mant.Checked = True
-            Else
-            End If
+            'If DS_Modulos.Tables(0).Rows(i).Item("USUModulos_descripcion") = "Mantenimiento" Then
+            '    CheckBox_mant.Checked = True
+            'Else
+            'End If
 
         End If
     End Sub
@@ -880,5 +880,8 @@
    
  
 
-    
+   
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
 End Class

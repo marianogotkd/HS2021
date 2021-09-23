@@ -25,7 +25,6 @@ Partial Class Equipo_consulta
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.tb_idcli = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -33,6 +32,7 @@ Partial Class Equipo_consulta
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_cliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
@@ -65,7 +65,6 @@ Partial Class Equipo_consulta
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.Button5)
         Me.GroupBox1.Controls.Add(Me.tb_idcli)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -79,20 +78,6 @@ Partial Class Equipo_consulta
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del cliente"
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Button5.Location = New System.Drawing.Point(939, 38)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(65, 33)
-        Me.Button5.TabIndex = 255
-        Me.Button5.Text = "Reportes"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'tb_idcli
         '
@@ -115,7 +100,7 @@ Partial Class Equipo_consulta
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(1045, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(798, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(16, 18)
         Me.PictureBox1.TabIndex = 255
@@ -158,6 +143,21 @@ Partial Class Equipo_consulta
         Me.Label1.Size = New System.Drawing.Size(42, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Cliente:"
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Button5.Image = Global.Aplicacion.My.Resources.Resources.facturacion1
+        Me.Button5.Location = New System.Drawing.Point(34, 456)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(132, 50)
+        Me.Button5.TabIndex = 255
+        Me.Button5.Text = "Reportes de Equipos"
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -304,10 +304,10 @@ Partial Class Equipo_consulta
         Me.BO_equipo_nuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_nuevo.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
-        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(702, 455)
+        Me.BO_equipo_nuevo.Location = New System.Drawing.Point(979, 455)
         Me.BO_equipo_nuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_nuevo.Name = "BO_equipo_nuevo"
-        Me.BO_equipo_nuevo.Size = New System.Drawing.Size(124, 44)
+        Me.BO_equipo_nuevo.Size = New System.Drawing.Size(124, 50)
         Me.BO_equipo_nuevo.TabIndex = 250
         Me.BO_equipo_nuevo.Text = "Nuevo equipo"
         Me.BO_equipo_nuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -318,10 +318,10 @@ Partial Class Equipo_consulta
         Me.BO_equipo_editar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.BO_equipo_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BO_equipo_editar.Image = Global.Aplicacion.My.Resources.Resources.Modificar
-        Me.BO_equipo_editar.Location = New System.Drawing.Point(570, 455)
+        Me.BO_equipo_editar.Location = New System.Drawing.Point(847, 456)
         Me.BO_equipo_editar.Margin = New System.Windows.Forms.Padding(4)
         Me.BO_equipo_editar.Name = "BO_equipo_editar"
-        Me.BO_equipo_editar.Size = New System.Drawing.Size(124, 44)
+        Me.BO_equipo_editar.Size = New System.Drawing.Size(124, 49)
         Me.BO_equipo_editar.TabIndex = 249
         Me.BO_equipo_editar.Text = "Editar equipo"
         Me.BO_equipo_editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -332,10 +332,10 @@ Partial Class Equipo_consulta
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button1.Location = New System.Drawing.Point(438, 455)
+        Me.Button1.Location = New System.Drawing.Point(438, 456)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 44)
+        Me.Button1.Size = New System.Drawing.Size(124, 49)
         Me.Button1.TabIndex = 251
         Me.Button1.Text = "Prog Mant"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -346,10 +346,10 @@ Partial Class Equipo_consulta
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button2.Location = New System.Drawing.Point(306, 455)
+        Me.Button2.Location = New System.Drawing.Point(715, 455)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(124, 43)
+        Me.Button2.Size = New System.Drawing.Size(124, 50)
         Me.Button2.TabIndex = 252
         Me.Button2.Text = "Quitar"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -360,10 +360,10 @@ Partial Class Equipo_consulta
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Generar
-        Me.Button3.Location = New System.Drawing.Point(834, 454)
+        Me.Button3.Location = New System.Drawing.Point(306, 456)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(124, 44)
+        Me.Button3.Size = New System.Drawing.Size(124, 49)
         Me.Button3.TabIndex = 253
         Me.Button3.Text = "Sectores"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -373,11 +373,11 @@ Partial Class Equipo_consulta
         '
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.Informe
+        Me.Button4.Image = Global.Aplicacion.My.Resources.Resources.codigo_qr1
         Me.Button4.Location = New System.Drawing.Point(174, 455)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(124, 43)
+        Me.Button4.Size = New System.Drawing.Size(124, 50)
         Me.Button4.TabIndex = 254
         Me.Button4.Text = "Generar QR"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -390,6 +390,7 @@ Partial Class Equipo_consulta
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1130, 512)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)

@@ -549,10 +549,20 @@ Public Property EnabledCerrar() As Boolean
 
             i = i + 1
 
-            
-
 
         End While
+
+        'Oculto Algunas cosas solo MDA..Aplicable en cualquiera''' 1 es administrador 
+        If Inicio.UT_id <> 1 Then
+            ToolStripDropDownButton8.Visible = False
+            ToolStripDropDownButtonConfiguracion.Visible = False
+            BusquedaToolStripMenuItem.Visible = False
+            CuentaCorrienteToolStripMenuItem.Visible = False
+            ToolStripDropDownButton6.Visible = False
+
+        End If
+
+
 
 
 

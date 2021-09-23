@@ -34,6 +34,7 @@ Partial Class Permisos
         Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Usuario", New System.Windows.Forms.TreeNode() {TreeNode17, TreeNode18, TreeNode19})
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Permisos))
         Me.GroupBox_cli = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cte_cte = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cli_Actualizar = New System.Windows.Forms.CheckBox()
         Me.CheckBox_cli_informe = New System.Windows.Forms.CheckBox()
@@ -104,6 +105,7 @@ Partial Class Permisos
         '
         'GroupBox_cli
         '
+        Me.GroupBox_cli.Controls.Add(Me.CheckBox1)
         Me.GroupBox_cli.Controls.Add(Me.CheckBox_cte_cte)
         Me.GroupBox_cli.Controls.Add(Me.CheckBox_cli_Actualizar)
         Me.GroupBox_cli.Controls.Add(Me.CheckBox_cli_informe)
@@ -112,15 +114,25 @@ Partial Class Permisos
         Me.GroupBox_cli.Controls.Add(Me.PictureBox1)
         Me.GroupBox_cli.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox_cli.Name = "GroupBox_cli"
-        Me.GroupBox_cli.Size = New System.Drawing.Size(535, 125)
+        Me.GroupBox_cli.Size = New System.Drawing.Size(519, 125)
         Me.GroupBox_cli.TabIndex = 0
         Me.GroupBox_cli.TabStop = False
         Me.GroupBox_cli.Text = "Clientes"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(121, 19)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(64, 17)
+        Me.CheckBox1.TabIndex = 6
+        Me.CheckBox1.Text = "Habilitar"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'CheckBox_cte_cte
         '
         Me.CheckBox_cte_cte.AutoSize = True
-        Me.CheckBox_cte_cte.Location = New System.Drawing.Point(329, 42)
+        Me.CheckBox_cte_cte.Location = New System.Drawing.Point(330, 86)
         Me.CheckBox_cte_cte.Name = "CheckBox_cte_cte"
         Me.CheckBox_cte_cte.Size = New System.Drawing.Size(67, 17)
         Me.CheckBox_cte_cte.TabIndex = 5
@@ -130,7 +142,7 @@ Partial Class Permisos
         'CheckBox_cli_Actualizar
         '
         Me.CheckBox_cli_Actualizar.AutoSize = True
-        Me.CheckBox_cli_Actualizar.Location = New System.Drawing.Point(251, 42)
+        Me.CheckBox_cli_Actualizar.Location = New System.Drawing.Point(252, 86)
         Me.CheckBox_cli_Actualizar.Name = "CheckBox_cli_Actualizar"
         Me.CheckBox_cli_Actualizar.Size = New System.Drawing.Size(72, 17)
         Me.CheckBox_cli_Actualizar.TabIndex = 4
@@ -140,7 +152,7 @@ Partial Class Permisos
         'CheckBox_cli_informe
         '
         Me.CheckBox_cli_informe.AutoSize = True
-        Me.CheckBox_cli_informe.Location = New System.Drawing.Point(184, 42)
+        Me.CheckBox_cli_informe.Location = New System.Drawing.Point(185, 86)
         Me.CheckBox_cli_informe.Name = "CheckBox_cli_informe"
         Me.CheckBox_cli_informe.Size = New System.Drawing.Size(61, 17)
         Me.CheckBox_cli_informe.TabIndex = 3
@@ -150,7 +162,7 @@ Partial Class Permisos
         'CheckBox_cli_nuevo
         '
         Me.CheckBox_cli_nuevo.AutoSize = True
-        Me.CheckBox_cli_nuevo.Location = New System.Drawing.Point(120, 42)
+        Me.CheckBox_cli_nuevo.Location = New System.Drawing.Point(121, 86)
         Me.CheckBox_cli_nuevo.Name = "CheckBox_cli_nuevo"
         Me.CheckBox_cli_nuevo.Size = New System.Drawing.Size(58, 17)
         Me.CheckBox_cli_nuevo.TabIndex = 2
@@ -160,7 +172,7 @@ Partial Class Permisos
         'CheckBox_Cli_todos
         '
         Me.CheckBox_Cli_todos.AutoSize = True
-        Me.CheckBox_Cli_todos.Location = New System.Drawing.Point(120, 19)
+        Me.CheckBox_Cli_todos.Location = New System.Drawing.Point(121, 63)
         Me.CheckBox_Cli_todos.Name = "CheckBox_Cli_todos"
         Me.CheckBox_Cli_todos.Size = New System.Drawing.Size(56, 17)
         Me.CheckBox_Cli_todos.TabIndex = 1
@@ -789,4 +801,5 @@ Partial Class Permisos
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox_mant As System.Windows.Forms.CheckBox
     Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class

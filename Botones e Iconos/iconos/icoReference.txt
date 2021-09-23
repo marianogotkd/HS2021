@@ -1,0 +1,5 @@
+16x16 - Iconos para formularios (dependen de apps)
+20x20 - Iconos para menu (dependen de 48x48)
+24x24 - Iconos para botones
+48x48 - Iconos para accesos directos (en formato png)
+apps  - Iconos para exe y lista de aplicaciones launcher

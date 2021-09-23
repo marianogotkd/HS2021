@@ -23,30 +23,49 @@ Partial Class Servicio_nuevo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButton_generar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton_reparar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton_finalizar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton_presupuesto = New System.Windows.Forms.ToolStripButton()
+        Me.Panel_costos = New System.Windows.Forms.Panel()
         Me.txt_impuesto_aplicado = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txt_subtotal = New System.Windows.Forms.TextBox()
         Me.txt_descuento = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label_error_grilla = New System.Windows.Forms.Label()
+        Me.btn_eliminar_seleccion = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ServicioProdDSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Servicio_DS = New Aplicacion.Servicio_DS()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox_codprod = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.TextBox_Repuesto = New System.Windows.Forms.TextBox()
+        Me.GroupBox_iva = New System.Windows.Forms.GroupBox()
         Me.ComboBox_iva = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox_descuentos = New System.Windows.Forms.GroupBox()
         Me.txt_desc_pesos = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txt_desc_porc = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DateTimePicker_Rev = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox_totales = New System.Windows.Forms.GroupBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txt_total = New System.Windows.Forms.TextBox()
         Me.DateTimePicker_REP = New System.Windows.Forms.DateTimePicker()
@@ -59,14 +78,16 @@ Partial Class Servicio_nuevo
         Me.ApellidoynombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpleadoxCuadrillaidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpleadosxcuadrillaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Servicio_DS = New Aplicacion.Servicio_DS()
         Me.Combo_cuadrilla = New System.Windows.Forms.ComboBox()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.Label_Estado = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label_Cod = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button_imprimir = New System.Windows.Forms.Button()
         Me.lbl_errNOM = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_sucursal = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox_tel = New System.Windows.Forms.TextBox()
@@ -85,9 +106,7 @@ Partial Class Servicio_nuevo
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_equipo = New System.Windows.Forms.TextBox()
         Me.lb_error_nombre = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label_error_grilla = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Cod_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProdxSuc_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -97,40 +116,21 @@ Partial Class Servicio_nuevo
         Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.prod_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ServicioProdDSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox_codprod = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.TextBox_Repuesto = New System.Windows.Forms.TextBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton_generar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton_reparar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton_finalizar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton_presupuesto = New System.Windows.Forms.ToolStripButton()
-        Me.btn_eliminar_seleccion = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.Button_imprimir = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.GroupBox15.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        CType(Me.DG_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpleadosxcuadrillaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Servicio_DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
+        Me.Panel_costos.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServicioProdDSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
+        CType(Me.Servicio_DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox_iva.SuspendLayout()
+        Me.GroupBox_descuentos.SuspendLayout()
+        Me.GroupBox_totales.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        CType(Me.DG_empleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpleadosxcuadrillaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -139,12 +139,12 @@ Partial Class Servicio_nuevo
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.ToolStrip1)
-        Me.GroupBox1.Controls.Add(Me.Panel1)
+        Me.GroupBox1.Controls.Add(Me.Panel_costos)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
-        Me.GroupBox1.Controls.Add(Me.GroupBox15)
-        Me.GroupBox1.Controls.Add(Me.GroupBox9)
+        Me.GroupBox1.Controls.Add(Me.GroupBox_iva)
+        Me.GroupBox1.Controls.Add(Me.GroupBox_descuentos)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker_Rev)
-        Me.GroupBox1.Controls.Add(Me.GroupBox5)
+        Me.GroupBox1.Controls.Add(Me.GroupBox_totales)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker_REP)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label10)
@@ -164,21 +164,86 @@ Partial Class Servicio_nuevo
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Servicios de Ventas"
         '
-        'Panel1
+        'ToolStrip1
         '
-        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.txt_impuesto_aplicado)
-        Me.Panel1.Controls.Add(Me.Label24)
-        Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Controls.Add(Me.txt_subtotal)
-        Me.Panel1.Controls.Add(Me.txt_descuento)
-        Me.Panel1.Controls.Add(Me.Label23)
-        Me.Panel1.ForeColor = System.Drawing.Color.Black
-        Me.Panel1.Location = New System.Drawing.Point(380, 517)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(332, 91)
-        Me.Panel1.TabIndex = 261
+        Me.ToolStrip1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ToolStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton_generar, Me.ToolStripSeparator1, Me.ToolStripButton_reparar, Me.ToolStripSeparator2, Me.ToolStripButton_finalizar, Me.ToolStripSeparator3, Me.ToolStripButton_presupuesto})
+        Me.ToolStrip1.Location = New System.Drawing.Point(716, 545)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(436, 55)
+        Me.ToolStrip1.TabIndex = 5
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButton_generar
+        '
+        Me.ToolStripButton_generar.Image = Global.Aplicacion.My.Resources.Resources.floppy_disk30x30
+        Me.ToolStripButton_generar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton_generar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton_generar.Name = "ToolStripButton_generar"
+        Me.ToolStripButton_generar.Size = New System.Drawing.Size(116, 52)
+        Me.ToolStripButton_generar.Text = "Generar orden"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 55)
+        '
+        'ToolStripButton_reparar
+        '
+        Me.ToolStripButton_reparar.Image = Global.Aplicacion.My.Resources.Resources.floppy_disk30x30
+        Me.ToolStripButton_reparar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton_reparar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton_reparar.Name = "ToolStripButton_reparar"
+        Me.ToolStripButton_reparar.Size = New System.Drawing.Size(91, 52)
+        Me.ToolStripButton_reparar.Text = "Reparado"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 55)
+        '
+        'ToolStripButton_finalizar
+        '
+        Me.ToolStripButton_finalizar.Image = Global.Aplicacion.My.Resources.Resources.Guardar2
+        Me.ToolStripButton_finalizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton_finalizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton_finalizar.Name = "ToolStripButton_finalizar"
+        Me.ToolStripButton_finalizar.Size = New System.Drawing.Size(84, 52)
+        Me.ToolStripButton_finalizar.Text = "Finalizar"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 55)
+        '
+        'ToolStripButton_presupuesto
+        '
+        Me.ToolStripButton_presupuesto.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ToolStripButton_presupuesto.Image = Global.Aplicacion.My.Resources.Resources.caja
+        Me.ToolStripButton_presupuesto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton_presupuesto.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton_presupuesto.Name = "ToolStripButton_presupuesto"
+        Me.ToolStripButton_presupuesto.Size = New System.Drawing.Size(124, 52)
+        Me.ToolStripButton_presupuesto.Text = "Presupuesto"
+        '
+        'Panel_costos
+        '
+        Me.Panel_costos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel_costos.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel_costos.Controls.Add(Me.txt_impuesto_aplicado)
+        Me.Panel_costos.Controls.Add(Me.Label24)
+        Me.Panel_costos.Controls.Add(Me.Label15)
+        Me.Panel_costos.Controls.Add(Me.txt_subtotal)
+        Me.Panel_costos.Controls.Add(Me.txt_descuento)
+        Me.Panel_costos.Controls.Add(Me.Label23)
+        Me.Panel_costos.ForeColor = System.Drawing.Color.Black
+        Me.Panel_costos.Location = New System.Drawing.Point(380, 517)
+        Me.Panel_costos.Name = "Panel_costos"
+        Me.Panel_costos.Size = New System.Drawing.Size(332, 91)
+        Me.Panel_costos.TabIndex = 261
         '
         'txt_impuesto_aplicado
         '
@@ -249,20 +314,163 @@ Partial Class Servicio_nuevo
         Me.Label23.TabIndex = 271
         Me.Label23.Text = "DESCUENTO:"
         '
-        'GroupBox15
+        'GroupBox4
         '
-        Me.GroupBox15.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox15.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox15.Controls.Add(Me.ComboBox_iva)
-        Me.GroupBox15.Controls.Add(Me.Label19)
-        Me.GroupBox15.Location = New System.Drawing.Point(218, 521)
-        Me.GroupBox15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox15.Name = "GroupBox15"
-        Me.GroupBox15.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox15.Size = New System.Drawing.Size(143, 79)
-        Me.GroupBox15.TabIndex = 260
-        Me.GroupBox15.TabStop = False
-        Me.GroupBox15.Text = "IVA aplicado"
+        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.Label_error_grilla)
+        Me.GroupBox4.Controls.Add(Me.btn_eliminar_seleccion)
+        Me.GroupBox4.Controls.Add(Me.Button3)
+        Me.GroupBox4.Controls.Add(Me.DataGridView1)
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.TextBox_codprod)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.TextBox_Repuesto)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 212)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(760, 258)
+        Me.GroupBox4.TabIndex = 4
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "REPUESTOS / Ingrese codigo interno para buscar (F1 busqueda avanzada)"
+        '
+        'Label_error_grilla
+        '
+        Me.Label_error_grilla.AutoSize = True
+        Me.Label_error_grilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_error_grilla.ForeColor = System.Drawing.Color.Red
+        Me.Label_error_grilla.Location = New System.Drawing.Point(192, 25)
+        Me.Label_error_grilla.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label_error_grilla.Name = "Label_error_grilla"
+        Me.Label_error_grilla.Size = New System.Drawing.Size(26, 31)
+        Me.Label_error_grilla.TabIndex = 272
+        Me.Label_error_grilla.Text = "*"
+        Me.Label_error_grilla.Visible = False
+        '
+        'btn_eliminar_seleccion
+        '
+        Me.btn_eliminar_seleccion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_eliminar_seleccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminar_seleccion.Image = Global.Aplicacion.My.Resources.Resources.menos
+        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(120, 209)
+        Me.btn_eliminar_seleccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_eliminar_seleccion.Name = "btn_eliminar_seleccion"
+        Me.btn_eliminar_seleccion.Size = New System.Drawing.Size(104, 41)
+        Me.btn_eliminar_seleccion.TabIndex = 271
+        Me.btn_eliminar_seleccion.Text = "Eliminar"
+        Me.btn_eliminar_seleccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.btn_eliminar_seleccion, "Eliminar productos seleccionados")
+        Me.btn_eliminar_seleccion.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Borrar
+        Me.Button3.Location = New System.Drawing.Point(9, 208)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(104, 41)
+        Me.Button3.TabIndex = 5
+        Me.Button3.TabStop = False
+        Me.Button3.Text = "Limpiar"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Button3, "Limpiar listado de Repuestos")
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod_prod, Me.ProdxSuc_ID, Me.Descripcion, Me.Stock, Me.Cantidad, Me.Costo, Me.subtotal, Me.prod_id, Me.Column1})
+        Me.DataGridView1.DataSource = Me.ServicioProdDSBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 59)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle11
+        Me.DataGridView1.Size = New System.Drawing.Size(736, 143)
+        Me.DataGridView1.TabIndex = 1
+        '
+        'ServicioProdDSBindingSource
+        '
+        Me.ServicioProdDSBindingSource.DataMember = "Servicio_Prod_DS"
+        Me.ServicioProdDSBindingSource.DataSource = Me.Servicio_DS
+        '
+        'Servicio_DS
+        '
+        Me.Servicio_DS.DataSetName = "Servicio_DS"
+        Me.Servicio_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 28)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(60, 18)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Codigo:"
+        '
+        'TextBox_codprod
+        '
+        Me.TextBox_codprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_codprod.Location = New System.Drawing.Point(85, 25)
+        Me.TextBox_codprod.Name = "TextBox_codprod"
+        Me.TextBox_codprod.Size = New System.Drawing.Size(100, 19)
+        Me.TextBox_codprod.TabIndex = 0
+        Me.TextBox_codprod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label20
+        '
+        Me.Label20.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(360, 206)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(153, 17)
+        Me.Label20.TabIndex = 269
+        Me.Label20.Text = "TOTAL REPUESTO:"
+        '
+        'TextBox_Repuesto
+        '
+        Me.TextBox_Repuesto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox_Repuesto.BackColor = System.Drawing.SystemColors.Info
+        Me.TextBox_Repuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Repuesto.Location = New System.Drawing.Point(547, 207)
+        Me.TextBox_Repuesto.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox_Repuesto.Name = "TextBox_Repuesto"
+        Me.TextBox_Repuesto.ReadOnly = True
+        Me.TextBox_Repuesto.Size = New System.Drawing.Size(198, 23)
+        Me.TextBox_Repuesto.TabIndex = 270
+        Me.TextBox_Repuesto.TabStop = False
+        Me.TextBox_Repuesto.Text = "0"
+        Me.TextBox_Repuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GroupBox_iva
+        '
+        Me.GroupBox_iva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox_iva.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox_iva.Controls.Add(Me.ComboBox_iva)
+        Me.GroupBox_iva.Controls.Add(Me.Label19)
+        Me.GroupBox_iva.Location = New System.Drawing.Point(218, 521)
+        Me.GroupBox_iva.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox_iva.Name = "GroupBox_iva"
+        Me.GroupBox_iva.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox_iva.Size = New System.Drawing.Size(143, 79)
+        Me.GroupBox_iva.TabIndex = 260
+        Me.GroupBox_iva.TabStop = False
+        Me.GroupBox_iva.Text = "IVA aplicado"
         '
         'ComboBox_iva
         '
@@ -285,23 +493,23 @@ Partial Class Servicio_nuevo
         Me.Label19.TabIndex = 11
         Me.Label19.Text = "IVA (%):"
         '
-        'GroupBox9
+        'GroupBox_descuentos
         '
-        Me.GroupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox9.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox9.Controls.Add(Me.txt_desc_pesos)
-        Me.GroupBox9.Controls.Add(Me.Label11)
-        Me.GroupBox9.Controls.Add(Me.txt_desc_porc)
-        Me.GroupBox9.Controls.Add(Me.Label12)
-        Me.GroupBox9.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox9.Location = New System.Drawing.Point(10, 521)
-        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox9.Size = New System.Drawing.Size(202, 79)
-        Me.GroupBox9.TabIndex = 22
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Aplicar descuento"
+        Me.GroupBox_descuentos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox_descuentos.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox_descuentos.Controls.Add(Me.txt_desc_pesos)
+        Me.GroupBox_descuentos.Controls.Add(Me.Label11)
+        Me.GroupBox_descuentos.Controls.Add(Me.txt_desc_porc)
+        Me.GroupBox_descuentos.Controls.Add(Me.Label12)
+        Me.GroupBox_descuentos.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox_descuentos.Location = New System.Drawing.Point(10, 521)
+        Me.GroupBox_descuentos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox_descuentos.Name = "GroupBox_descuentos"
+        Me.GroupBox_descuentos.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox_descuentos.Size = New System.Drawing.Size(202, 79)
+        Me.GroupBox_descuentos.TabIndex = 22
+        Me.GroupBox_descuentos.TabStop = False
+        Me.GroupBox_descuentos.Text = "Aplicar descuento"
         '
         'txt_desc_pesos
         '
@@ -357,17 +565,17 @@ Partial Class Servicio_nuevo
         Me.DateTimePicker_Rev.Size = New System.Drawing.Size(121, 22)
         Me.DateTimePicker_Rev.TabIndex = 21
         '
-        'GroupBox5
+        'GroupBox_totales
         '
-        Me.GroupBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Controls.Add(Me.txt_total)
-        Me.GroupBox5.Location = New System.Drawing.Point(779, 478)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(347, 64)
-        Me.GroupBox5.TabIndex = 5
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Totales"
+        Me.GroupBox_totales.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox_totales.Controls.Add(Me.Label14)
+        Me.GroupBox_totales.Controls.Add(Me.txt_total)
+        Me.GroupBox_totales.Location = New System.Drawing.Point(779, 478)
+        Me.GroupBox_totales.Name = "GroupBox_totales"
+        Me.GroupBox_totales.Size = New System.Drawing.Size(347, 64)
+        Me.GroupBox_totales.TabIndex = 5
+        Me.GroupBox_totales.TabStop = False
+        Me.GroupBox_totales.Text = "Totales"
         '
         'Label14
         '
@@ -459,10 +667,10 @@ Partial Class Servicio_nuevo
         Me.DG_empleados.ReadOnly = True
         Me.DG_empleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_empleados.RowHeadersVisible = False
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_empleados.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_empleados.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DG_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DG_empleados.Size = New System.Drawing.Size(330, 190)
         Me.DG_empleados.StandardTab = True
@@ -505,11 +713,6 @@ Partial Class Servicio_nuevo
         Me.EmpleadosxcuadrillaBindingSource.DataMember = "Empleados_x_cuadrilla"
         Me.EmpleadosxcuadrillaBindingSource.DataSource = Me.Servicio_DS
         '
-        'Servicio_DS
-        '
-        Me.Servicio_DS.DataSetName = "Servicio_DS"
-        Me.Servicio_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'Combo_cuadrilla
         '
         Me.Combo_cuadrilla.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -521,6 +724,21 @@ Partial Class Servicio_nuevo
         Me.Combo_cuadrilla.Name = "Combo_cuadrilla"
         Me.Combo_cuadrilla.Size = New System.Drawing.Size(330, 24)
         Me.Combo_cuadrilla.TabIndex = 244
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar1
+        Me.btn_cancelar.Location = New System.Drawing.Point(841, 13)
+        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 43)
+        Me.btn_cancelar.TabIndex = 8
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.btn_cancelar, "Cancelar")
+        Me.btn_cancelar.UseVisualStyleBackColor = True
+        Me.btn_cancelar.Visible = False
         '
         'Label_Estado
         '
@@ -590,6 +808,21 @@ Partial Class Servicio_nuevo
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos del Cliente "
         '
+        'Button_imprimir
+        '
+        Me.Button_imprimir.BackColor = System.Drawing.SystemColors.Info
+        Me.Button_imprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_imprimir.Image = Global.Aplicacion.My.Resources.Resources.Informe
+        Me.Button_imprimir.Location = New System.Drawing.Point(942, 26)
+        Me.Button_imprimir.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button_imprimir.Name = "Button_imprimir"
+        Me.Button_imprimir.Size = New System.Drawing.Size(116, 43)
+        Me.Button_imprimir.TabIndex = 315
+        Me.Button_imprimir.Text = "Imprimir orden"
+        Me.Button_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button_imprimir.UseVisualStyleBackColor = False
+        Me.Button_imprimir.Visible = False
+        '
         'lbl_errNOM
         '
         Me.lbl_errNOM.AutoSize = True
@@ -602,6 +835,19 @@ Partial Class Servicio_nuevo
         Me.lbl_errNOM.TabIndex = 22
         Me.lbl_errNOM.Text = "*"
         Me.lbl_errNOM.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Buscar
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(915, 21)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(123, 53)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Buscar Cliente"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'txt_sucursal
         '
@@ -787,68 +1033,11 @@ Partial Class Servicio_nuevo
         Me.lb_error_nombre.Text = "*"
         Me.lb_error_nombre.Visible = False
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.Controls.Add(Me.Label_error_grilla)
-        Me.GroupBox4.Controls.Add(Me.btn_eliminar_seleccion)
-        Me.GroupBox4.Controls.Add(Me.Button3)
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
-        Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Controls.Add(Me.TextBox_codprod)
-        Me.GroupBox4.Controls.Add(Me.Label20)
-        Me.GroupBox4.Controls.Add(Me.TextBox_Repuesto)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 212)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(760, 258)
-        Me.GroupBox4.TabIndex = 4
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "REPUESTOS / Ingrese codigo interno para buscar (F1 busqueda avanzada)"
-        '
-        'Label_error_grilla
-        '
-        Me.Label_error_grilla.AutoSize = True
-        Me.Label_error_grilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_error_grilla.ForeColor = System.Drawing.Color.Red
-        Me.Label_error_grilla.Location = New System.Drawing.Point(192, 25)
-        Me.Label_error_grilla.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label_error_grilla.Name = "Label_error_grilla"
-        Me.Label_error_grilla.Size = New System.Drawing.Size(26, 31)
-        Me.Label_error_grilla.TabIndex = 272
-        Me.Label_error_grilla.Text = "*"
-        Me.Label_error_grilla.Visible = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod_prod, Me.ProdxSuc_ID, Me.Descripcion, Me.Stock, Me.Cantidad, Me.Costo, Me.subtotal, Me.prod_id, Me.Column1})
-        Me.DataGridView1.DataSource = Me.ServicioProdDSBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(9, 59)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
-        Me.DataGridView1.Size = New System.Drawing.Size(736, 143)
-        Me.DataGridView1.TabIndex = 1
-        '
         'Cod_prod
         '
         Me.Cod_prod.DataPropertyName = "Cod_prod"
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info
-        Me.Cod_prod.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Info
+        Me.Cod_prod.DefaultCellStyle = DataGridViewCellStyle7
         Me.Cod_prod.FillWeight = 76.39836!
         Me.Cod_prod.HeaderText = "Codigo"
         Me.Cod_prod.Name = "Cod_prod"
@@ -866,8 +1055,8 @@ Partial Class Servicio_nuevo
         'Descripcion
         '
         Me.Descripcion.DataPropertyName = "Descripcion"
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info
-        Me.Descripcion.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info
+        Me.Descripcion.DefaultCellStyle = DataGridViewCellStyle8
         Me.Descripcion.FillWeight = 194.224!
         Me.Descripcion.HeaderText = "Descripcion"
         Me.Descripcion.Name = "Descripcion"
@@ -877,8 +1066,8 @@ Partial Class Servicio_nuevo
         'Stock
         '
         Me.Stock.DataPropertyName = "Stock"
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info
-        Me.Stock.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info
+        Me.Stock.DefaultCellStyle = DataGridViewCellStyle9
         Me.Stock.FillWeight = 83.94859!
         Me.Stock.HeaderText = "Stock"
         Me.Stock.Name = "Stock"
@@ -887,11 +1076,11 @@ Partial Class Servicio_nuevo
         '
         'Cantidad
         '
+        Me.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Cantidad.DataPropertyName = "Cantidad"
         Me.Cantidad.FillWeight = 78.17754!
         Me.Cantidad.HeaderText = "Cant."
         Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 50
         '
         'Costo
         '
@@ -905,8 +1094,8 @@ Partial Class Servicio_nuevo
         '
         Me.subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.subtotal.DataPropertyName = "subtotal"
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Info
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle10
         Me.subtotal.FillWeight = 139.8219!
         Me.subtotal.HeaderText = "SubTotal"
         Me.subtotal.Name = "subtotal"
@@ -927,194 +1116,6 @@ Partial Class Servicio_nuevo
         Me.Column1.Name = "Column1"
         Me.Column1.Width = 50
         '
-        'ServicioProdDSBindingSource
-        '
-        Me.ServicioProdDSBindingSource.DataMember = "Servicio_Prod_DS"
-        Me.ServicioProdDSBindingSource.DataSource = Me.Servicio_DS
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 28)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(70, 20)
-        Me.Label13.TabIndex = 3
-        Me.Label13.Text = "Codigo:"
-        '
-        'TextBox_codprod
-        '
-        Me.TextBox_codprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_codprod.Location = New System.Drawing.Point(85, 25)
-        Me.TextBox_codprod.Name = "TextBox_codprod"
-        Me.TextBox_codprod.Size = New System.Drawing.Size(100, 19)
-        Me.TextBox_codprod.TabIndex = 0
-        Me.TextBox_codprod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label20
-        '
-        Me.Label20.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(360, 206)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(153, 17)
-        Me.Label20.TabIndex = 269
-        Me.Label20.Text = "TOTAL REPUESTO:"
-        '
-        'TextBox_Repuesto
-        '
-        Me.TextBox_Repuesto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Repuesto.BackColor = System.Drawing.SystemColors.Info
-        Me.TextBox_Repuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Repuesto.Location = New System.Drawing.Point(547, 207)
-        Me.TextBox_Repuesto.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox_Repuesto.Name = "TextBox_Repuesto"
-        Me.TextBox_Repuesto.ReadOnly = True
-        Me.TextBox_Repuesto.Size = New System.Drawing.Size(198, 23)
-        Me.TextBox_Repuesto.TabIndex = 270
-        Me.TextBox_Repuesto.TabStop = False
-        Me.TextBox_Repuesto.Text = "0"
-        Me.TextBox_Repuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ToolStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton_generar, Me.ToolStripSeparator1, Me.ToolStripButton_reparar, Me.ToolStripSeparator2, Me.ToolStripButton_finalizar, Me.ToolStripSeparator3, Me.ToolStripButton_presupuesto})
-        Me.ToolStrip1.Location = New System.Drawing.Point(716, 545)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(436, 55)
-        Me.ToolStrip1.TabIndex = 5
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 55)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 55)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 55)
-        '
-        'ToolStripButton_generar
-        '
-        Me.ToolStripButton_generar.Image = Global.Aplicacion.My.Resources.Resources.floppy_disk30x30
-        Me.ToolStripButton_generar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton_generar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton_generar.Name = "ToolStripButton_generar"
-        Me.ToolStripButton_generar.Size = New System.Drawing.Size(116, 52)
-        Me.ToolStripButton_generar.Text = "Generar orden"
-        '
-        'ToolStripButton_reparar
-        '
-        Me.ToolStripButton_reparar.Image = Global.Aplicacion.My.Resources.Resources.floppy_disk30x30
-        Me.ToolStripButton_reparar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton_reparar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton_reparar.Name = "ToolStripButton_reparar"
-        Me.ToolStripButton_reparar.Size = New System.Drawing.Size(91, 52)
-        Me.ToolStripButton_reparar.Text = "Reparado"
-        '
-        'ToolStripButton_finalizar
-        '
-        Me.ToolStripButton_finalizar.Image = Global.Aplicacion.My.Resources.Resources.Guardar2
-        Me.ToolStripButton_finalizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton_finalizar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton_finalizar.Name = "ToolStripButton_finalizar"
-        Me.ToolStripButton_finalizar.Size = New System.Drawing.Size(84, 52)
-        Me.ToolStripButton_finalizar.Text = "Finalizar"
-        '
-        'ToolStripButton_presupuesto
-        '
-        Me.ToolStripButton_presupuesto.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ToolStripButton_presupuesto.Image = Global.Aplicacion.My.Resources.Resources.caja
-        Me.ToolStripButton_presupuesto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton_presupuesto.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton_presupuesto.Name = "ToolStripButton_presupuesto"
-        Me.ToolStripButton_presupuesto.Size = New System.Drawing.Size(124, 52)
-        Me.ToolStripButton_presupuesto.Text = "Presupuesto"
-        '
-        'btn_eliminar_seleccion
-        '
-        Me.btn_eliminar_seleccion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_eliminar_seleccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar_seleccion.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(120, 209)
-        Me.btn_eliminar_seleccion.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_eliminar_seleccion.Name = "btn_eliminar_seleccion"
-        Me.btn_eliminar_seleccion.Size = New System.Drawing.Size(104, 41)
-        Me.btn_eliminar_seleccion.TabIndex = 271
-        Me.btn_eliminar_seleccion.Text = "Eliminar"
-        Me.btn_eliminar_seleccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_eliminar_seleccion, "Eliminar productos seleccionados")
-        Me.btn_eliminar_seleccion.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.Borrar
-        Me.Button3.Location = New System.Drawing.Point(9, 208)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(104, 41)
-        Me.Button3.TabIndex = 5
-        Me.Button3.TabStop = False
-        Me.Button3.Text = "Limpiar"
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Button3, "Limpiar listado de Repuestos")
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'btn_cancelar
-        '
-        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar1
-        Me.btn_cancelar.Location = New System.Drawing.Point(841, 13)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(75, 43)
-        Me.btn_cancelar.TabIndex = 8
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_cancelar, "Cancelar")
-        Me.btn_cancelar.UseVisualStyleBackColor = True
-        Me.btn_cancelar.Visible = False
-        '
-        'Button_imprimir
-        '
-        Me.Button_imprimir.BackColor = System.Drawing.SystemColors.Info
-        Me.Button_imprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_imprimir.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button_imprimir.Location = New System.Drawing.Point(942, 26)
-        Me.Button_imprimir.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button_imprimir.Name = "Button_imprimir"
-        Me.Button_imprimir.Size = New System.Drawing.Size(116, 43)
-        Me.Button_imprimir.TabIndex = 315
-        Me.Button_imprimir.Text = "Imprimir orden"
-        Me.Button_imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button_imprimir.UseVisualStyleBackColor = False
-        Me.Button_imprimir.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Buscar
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(915, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 53)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Buscar Cliente"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
         'Servicio_nuevo
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1127,28 +1128,28 @@ Partial Class Servicio_nuevo
         Me.Text = "Nuevo Servicio"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.GroupBox15.ResumeLayout(False)
-        Me.GroupBox15.PerformLayout()
-        Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox7.ResumeLayout(False)
-        CType(Me.DG_empleados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpleadosxcuadrillaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Servicio_DS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
+        Me.Panel_costos.ResumeLayout(False)
+        Me.Panel_costos.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ServicioProdDSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        CType(Me.Servicio_DS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox_iva.ResumeLayout(False)
+        Me.GroupBox_iva.PerformLayout()
+        Me.GroupBox_descuentos.ResumeLayout(False)
+        Me.GroupBox_descuentos.PerformLayout()
+        Me.GroupBox_totales.ResumeLayout(False)
+        Me.GroupBox_totales.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        CType(Me.DG_empleados, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpleadosxcuadrillaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1177,7 +1178,7 @@ Partial Class Servicio_nuevo
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents TextBox_codprod As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox_totales As System.Windows.Forms.GroupBox
     Friend WithEvents TextBox_Repuesto As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
@@ -1204,32 +1205,23 @@ Partial Class Servicio_nuevo
     Friend WithEvents ApellidoynombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EmpleadoxCuadrillaidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EmpleadosxcuadrillaBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Cod_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ProdxSuc_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Costo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents subtotal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents prod_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button_imprimir As System.Windows.Forms.Button
     Friend WithEvents Label_error_grilla As System.Windows.Forms.Label
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox_descuentos As System.Windows.Forms.GroupBox
     Friend WithEvents txt_desc_pesos As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txt_desc_porc As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel_costos As System.Windows.Forms.Panel
     Friend WithEvents txt_impuesto_aplicado As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents txt_subtotal As System.Windows.Forms.TextBox
     Friend WithEvents txt_descuento As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox15 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox_iva As System.Windows.Forms.GroupBox
     Friend WithEvents ComboBox_iva As System.Windows.Forms.ComboBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
@@ -1240,4 +1232,13 @@ Partial Class Servicio_nuevo
     Friend WithEvents ToolStripButton_finalizar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripButton_presupuesto As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Cod_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ProdxSuc_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Costo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents subtotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents prod_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class
