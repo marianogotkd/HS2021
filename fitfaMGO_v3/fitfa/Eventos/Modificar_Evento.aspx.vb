@@ -106,7 +106,7 @@ Public Class Modificar_Evento
         If Image1.Visible = False Then
             lbl_errImg.Visible = True
             lbl_errImg.InnerText = "Debe Seleccionar una Foto"
-            Vacio = True
+            'Vacio = True
         End If
 
         Dim FechaHoraCierre = tb_fechaCierre.Value + " " + tb_horaCierre.Value
