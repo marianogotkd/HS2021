@@ -54,49 +54,9 @@ Control tb_nombre.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Modificar_Evento.Image1">
+</member><member name="F:fitfa.Modificar_Evento.tb_direccion">
 	<summary>
-Control Image1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Modificar_Evento.btn_Examinar">
-	<summary>
-Control btn_Examinar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Modificar_Evento.btn_quitar">
-	<summary>
-Control btn_quitar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Modificar_Evento.lbl_errImg">
-	<summary>
-Control lbl_errImg.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Modificar_Evento.FileUpload1">
-	<summary>
-Control FileUpload1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Modificar_Evento.Subir_Foto">
-	<summary>
-Control Subir_Foto.
+Control tb_direccion.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -169,6 +129,94 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Modificar_Evento.textbox_Costo">
 	<summary>
 Control textbox_Costo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.Image1">
+	<summary>
+Control Image1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.btn_Examinar">
+	<summary>
+Control btn_Examinar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.btn_quitar">
+	<summary>
+Control btn_quitar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.lbl_errImg">
+	<summary>
+Control lbl_errImg.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.FileUpload1">
+	<summary>
+Control FileUpload1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.Subir_Foto">
+	<summary>
+Control Subir_Foto.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.Panel_examenes">
+	<summary>
+Control Panel_examenes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.lbl_error_cap_max_inscr">
+	<summary>
+Control lbl_error_cap_max_inscr.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.tb_capacidad_max">
+	<summary>
+Control tb_capacidad_max.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.lbl_turnos_error0">
+	<summary>
+Control lbl_turnos_error0.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.GridView1">
+	<summary>
+Control GridView1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -626,6 +674,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:fitfa.Examen_ds.liquidacion_instructoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.Pagar_instructorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:fitfa.Examen_ds.inscriptosRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -642,6 +698,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:fitfa.Examen_ds.liquidacion_instructoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.Examen_ds.Pagar_instructorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:fitfa.Examen_ds.inscriptosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -655,6 +719,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:fitfa.Examen_ds.Costos_otrosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds.liquidacion_instructoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Examen_ds.Pagar_instructorRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -3251,6 +3323,14 @@ Control Li_Insc.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.MasterPage.Li_config_costos">
+	<summary>
+Control Li_config_costos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.MasterPage.Li_reporte_inscripts">
 	<summary>
 Control Li_reporte_inscripts.
@@ -3331,6 +3411,22 @@ Control ContentPlaceHolder1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:fitfa.DS_configcostos.MiembrosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.DS_configcostos.MiembrosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.DS_configcostos.MiembrosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.DS_configcostos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:fitfa.Examen.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -3387,9 +3483,89 @@ Control GridView1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen.btn_exportar_excel1">
+</member><member name="F:fitfa.Examen.div_Modal_ELIMINAR_inscripto">
 	<summary>
-Control btn_exportar_excel1.
+Control div_Modal_ELIMINAR_inscripto.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.HiddenField_Err">
+	<summary>
+Control HiddenField_Err.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Panel_Modal_Eliminar">
+	<summary>
+Control Panel_Modal_Eliminar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label5">
+	<summary>
+Control Label5.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Btn_Modal_si">
+	<summary>
+Control Btn_Modal_si.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Btn_Modal_no">
+	<summary>
+Control Btn_Modal_no.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Modal_ELIMINAR_inscripto">
+	<summary>
+Control Modal_ELIMINAR_inscripto.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_b">
+	<summary>
+Control Label_evento_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_fecha_b">
+	<summary>
+Control Label_evento_fecha_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_direccion_b">
+	<summary>
+Control Label_evento_direccion_b.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label_evento_cant_inscriptos_b">
+	<summary>
+Control Label_evento_cant_inscriptos_b.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -3430,38 +3606,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Examen.Btn_confirmar_cambio_turno">
 	<summary>
 Control Btn_confirmar_cambio_turno.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examen.Label_evento_b">
-	<summary>
-Control Label_evento_b.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examen.Label_evento_fecha_b">
-	<summary>
-Control Label_evento_fecha_b.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examen.Label_evento_direccion_b">
-	<summary>
-Control Label_evento_direccion_b.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Examen.Label_evento_cant_inscriptos_b">
-	<summary>
-Control Label_evento_cant_inscriptos_b.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -3659,9 +3803,81 @@ Control GridView_doblepromo.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Examen.TextBox1">
+</member><member name="F:fitfa.Examen.Label6">
 	<summary>
-Control TextBox1.
+Control Label6.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label7">
+	<summary>
+Control Label7.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Div7">
+	<summary>
+Control Div7.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.GridView_LIQUIDACION_INSTRUCTORES">
+	<summary>
+Control GridView_LIQUIDACION_INSTRUCTORES.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label8">
+	<summary>
+Control Label8.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Div8">
+	<summary>
+Control Div8.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.GridView_PAGAR_INSTRUCTOR">
+	<summary>
+Control GridView_PAGAR_INSTRUCTOR.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Label9">
+	<summary>
+Control Label9.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.Div9">
+	<summary>
+Control Div9.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Examen.GridView_COSTOS_EXAMENES">
+	<summary>
+Control GridView_COSTOS_EXAMENES.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -4390,6 +4606,166 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.contraseña_cambiar.div_registro_guardado">
 	<summary>
 Control div_registro_guardado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Label17">
+	<summary>
+Control Label17.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Rb_instructor">
+	<summary>
+Control Rb_instructor.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Rb_graduacion">
+	<summary>
+Control Rb_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.DropDownList_graduacion">
+	<summary>
+Control DropDownList_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.txt_montoexamen">
+	<summary>
+Control txt_montoexamen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Btn_confirmar_porcentaje">
+	<summary>
+Control Btn_confirmar_porcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Label_error_monto1">
+	<summary>
+Control Label_error_monto1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Div3">
+	<summary>
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.GridView_examenes">
+	<summary>
+Control GridView_examenes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.lbl_ok">
+	<summary>
+Control lbl_ok.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.div_registro_guardado">
+	<summary>
+Control div_registro_guardado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.div_modalOK">
+	<summary>
+Control div_modalOK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.HiddenField_msj">
+	<summary>
+Control HiddenField_msj.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Label16">
+	<summary>
+Control Label16.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Btb_msj_no_eventos">
+	<summary>
+Control Btb_msj_no_eventos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_costos.Modal_OK">
+	<summary>
+Control Modal_OK.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -5327,6 +5703,166 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
+</member><member name="F:fitfa.Config_liquidacion.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Label17">
+	<summary>
+Control Label17.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Rb_instructor">
+	<summary>
+Control Rb_instructor.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Rb_graduacion">
+	<summary>
+Control Rb_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.DropDownList_graduacion">
+	<summary>
+Control DropDownList_graduacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.txt_montoexamen">
+	<summary>
+Control txt_montoexamen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Btn_confirmar_porcentaje">
+	<summary>
+Control Btn_confirmar_porcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Label_error_monto1">
+	<summary>
+Control Label_error_monto1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Div3">
+	<summary>
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.GridView_examenes">
+	<summary>
+Control GridView_examenes.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.lbl_ok">
+	<summary>
+Control lbl_ok.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.div_registro_guardado">
+	<summary>
+Control div_registro_guardado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.div_modalOK">
+	<summary>
+Control div_modalOK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.HiddenField_msj">
+	<summary>
+Control HiddenField_msj.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Label16">
+	<summary>
+Control Label16.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Btb_msj_no_eventos">
+	<summary>
+Control Btb_msj_no_eventos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Config_liquidacion.Modal_OK">
+	<summary>
+Control Modal_OK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Prueba_popup.ToolkitScriptManager1">
 	<summary>
 Control ToolkitScriptManager1.
