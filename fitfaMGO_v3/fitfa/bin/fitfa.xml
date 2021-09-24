@@ -3830,6 +3830,14 @@ Control Btn_confirmar.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Evento_datos.Btn_confirmar_submit">
+	<summary>
+Control Btn_confirmar_submit.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Evento_datos.QrImagen">
 	<summary>
 Control QrImagen.
@@ -3985,6 +3993,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Evento_datos.ModalPopupExtender_error_turno">
 	<summary>
 Control ModalPopupExtender_error_turno.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_datos.UpdateProgress1">
+	<summary>
+Control UpdateProgress1.
 </summary>
 	<remarks>
 Campo generado automáticamente.

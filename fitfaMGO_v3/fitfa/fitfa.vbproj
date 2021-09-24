@@ -1243,6 +1243,17 @@
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\prompting\js\promptengine_strings_zh_TW.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\activexviewer.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\appletviewer.js" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\Capa_de_datos.dll" />
+    <Content Include="bin\Capa_de_datos.pdb" />
+    <Content Include="bin\Capa_de_datos.xml" />
+    <Content Include="bin\fitfa.dll" />
+    <Content Include="bin\fitfa.pdb" />
+    <Content Include="bin\fitfa.xml" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\itextsharp.pdfa.dll" />
+    <Content Include="bin\itextsharp.xtra.dll" />
+    <Content Include="bin\MessagingToolkit.QRCode.dll" />
     <Content Include="bootstrap-fileinput-master\css\fileinput.css" />
     <Content Include="bootstrap-fileinput-master\css\fileinput.min.css" />
     <Content Include="bootstrap-fileinput-master\examples\index.html" />
@@ -2446,6 +2457,39 @@
     <Content Include="Miembros\Miembros.aspx" />
     <Content Include="Miembros\Miembros_datos_diseño.aspx" />
     <Content Include="Miembros\Miembros_editar_datospersonales.aspx" />
+    <Content Include="obj\Debug\fitfa.dll" />
+    <Content Include="obj\Debug\fitfa.pdb" />
+    <Content Include="obj\Debug\fitfa.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\fitfa.xml" />
+    <Content Include="obj\Debug\TempPE\Carga Competidores.Categorias.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Credenciales.reportes.Credenciales_1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Credenciales.reportes.Credenciales_2.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Credenciales.reportes.Credenciales_ds.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Eventos.ds_eventos.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Eventos.evento_ds.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Eventos.Examen_ds.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Inscripciones.evento_ds.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Inscripciones.inscripciones_DS.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Instituciones.DS_instituciones.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Llaves_ds.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Reporte_llaves.CR_llave16.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Reporte_llaves.CR_llave2.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Reporte_llaves.CR_llave4.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Reporte_llaves.CR_llave8.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Llaves.Reporte_llaves.Llaves_reporte_DS.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Mailbox.Dataset.DataSet1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Miembros.Config_costos.DS_configcostos.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Miembros.DataSet_miembros.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.CrystalReport1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Inscripciones.CRprueba.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Inscripciones.CR_prueba.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Inscripciones.Ds_Reporte_inscripciones.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Inscripciones.Instructor_alum_inscriptos.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Llaves.DS_reporte_llaves.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Llaves.Llave_2.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Llaves.Reporte_llave_2.vb.dll" />
+    <Content Include="obj\Debug\TempPE\Reportes.Reportes.Designer.vb.dll" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Registro\assets\bootstrap\css\bootstrap.css" />
@@ -2491,6 +2535,7 @@
     <Content Include="Registro\registro.aspx" />
     <Content Include="Reportes\inscripcion_persona.aspx" />
     <Content Include="Reportes\Llaves\Visor_ejemplo.aspx" />
+    <None Include="bin\vs30FE.tmp" />
     <None Include="Eventos\ds_eventos.xsc">
       <DependentUpon>ds_eventos.xsd</DependentUpon>
     </None>
@@ -2773,6 +2818,17 @@
     <None Include="Miembros\Config_costos\DS_configcostos.xss">
       <DependentUpon>DS_configcostos.xsd</DependentUpon>
     </None>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\fitfa.vbproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\fitfa.vbprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\GenerateResource.read.1.tlog" />
+    <None Include="obj\Debug\GenerateResource.write.1.tlog" />
+    <None Include="obj\Debug\RdlCompile.cache" />
+    <None Include="obj\Debug\RdlCompile.compiled" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Resources\itextsharp.dll" />
     <None Include="Resources\itextsharp.pdfa.dll" />
     <None Include="Resources\itextsharp.xtra.dll" />
@@ -3426,6 +3482,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\fitfa.Resources.resources" />
     <EmbeddedResource Include="Reportes\Inscripciones\CRprueba.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRprueba.vb</LastGenOutput>
