@@ -1,0 +1,7 @@
+create procedure [dbo].[ExamenTurno_eliminar]
+
+@evento_id int
+
+as
+delete from ExamenTurno where ExamenTurno.evento_id = @evento_id 
+go

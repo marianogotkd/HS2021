@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="evento_ds" targetNamespace="http://tempuri.org/evento_ds.xsd" xmlns:mstns="http://tempuri.org/evento_ds.xsd" xmlns="http://tempuri.org/evento_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="evento_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="evento_ds" msprop:Generator_UserDSName="evento_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="eventos_disponibles" msprop:Generator_TableClassName="eventos_disponiblesDataTable" msprop:Generator_TableVarName="tableeventos_disponibles" msprop:Generator_RowChangedName="eventos_disponiblesRowChanged" msprop:Generator_TablePropName="eventos_disponibles" msprop:Generator_RowDeletingName="eventos_disponiblesRowDeleting" msprop:Generator_RowChangingName="eventos_disponiblesRowChanging" msprop:Generator_RowEvHandlerName="eventos_disponiblesRowChangeEventHandler" msprop:Generator_RowDeletedName="eventos_disponiblesRowDeleted" msprop:Generator_RowClassName="eventos_disponiblesRow" msprop:Generator_UserTableName="eventos_disponibles" msprop:Generator_RowEvArgName="eventos_disponiblesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_UserColumnName="Descripción" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Cierre_x0020_de_x0020_inscripción" msprop:Generator_ColumnVarNameInTable="columnCierre_de_inscripción" msprop:Generator_ColumnPropNameInRow="Cierre_de_inscripción" msprop:Generator_ColumnPropNameInTable="Cierre_de_inscripciónColumn" msprop:Generator_UserColumnName="Cierre de inscripción" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

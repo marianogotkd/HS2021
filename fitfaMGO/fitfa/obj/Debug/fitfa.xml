@@ -11304,6 +11304,14 @@ Control lbl_turnos_error0.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Modificar_Evento.lbl_no_turnos">
+	<summary>
+Control lbl_no_turnos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Modificar_Evento.GridView1">
 	<summary>
 Control GridView1.
