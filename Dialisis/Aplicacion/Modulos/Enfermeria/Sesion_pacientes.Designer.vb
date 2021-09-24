@@ -136,7 +136,7 @@ Partial Class Sesion_pacientes
         '
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Image = Global.Aplicacion.My.Resources.Resources.icono_reporte_medico_30x30
+        Me.Button5.Image = Global.Aplicacion.My.Resources.Resources.cerrar
         Me.Button5.Location = New System.Drawing.Point(345, 320)
         Me.Button5.Margin = New System.Windows.Forms.Padding(4)
         Me.Button5.Name = "Button5"

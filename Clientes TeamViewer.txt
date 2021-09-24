@@ -1,0 +1,5 @@
+MDA 
+	Server 1503795168 pass choco2312	
+	Notebook 934203893 pass fr
+Dialisis
+	Server 401737721 pass Choco2312				
