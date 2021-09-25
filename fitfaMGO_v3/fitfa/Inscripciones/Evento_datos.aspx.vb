@@ -355,4 +355,6 @@ Public Class Evento_datos
     Private Sub Btb_ok_inscripcion_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btb_ok_inscripcion.Click
         Response.Redirect("Evento_seleccionar.aspx")
     End Sub
+
+    
 End Class

@@ -842,10 +842,12 @@ Public Class Examen
             Session("Inscexamen_id") = id
             'solo se elimina si aun no está calificado.
             'luego de eliminar debo volver a cargar todas las grillas.
-            div_Modal_ELIMINAR_inscripto.Visible = True
-            'div_Modal_error_inscripto.Visible = True
-            Modal_ELIMINAR_inscripto.Show()
-            'div_msj_error_eliminar.Visible = True
+            DAinscripciones.inscripciones_x_examen_eliminar(CInt(Session("Inscexamen_id")))
+            Carga_inicial_LOAD()
+            '---deshabilito el modal para confirmar eliminacion
+            'div_Modal_ELIMINAR_inscripto.Visible = True
+            'Modal_ELIMINAR_inscripto.Show()
+
 
         End If
     End Sub
@@ -1001,8 +1003,10 @@ Public Class Examen
 
     Private Sub Btn_Modal_si_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_Modal_si.Click
         'este boton se ejecuta cuando confirmo la eliminacion de una inscripcion.
-        DAinscripciones.inscripciones_x_examen_eliminar(CInt(Session("Inscexamen_id")))
-        Carga_inicial_LOAD()
+
+
+        'DAinscripciones.inscripciones_x_examen_eliminar(CInt(Session("Inscexamen_id")))
+        'Carga_inicial_LOAD()
 
     End Sub
 End Class

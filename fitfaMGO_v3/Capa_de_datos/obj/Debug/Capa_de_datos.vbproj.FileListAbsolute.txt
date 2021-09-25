@@ -104,3 +104,11 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.dll
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.xml
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\bin\Debug\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\bin\Debug\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\bin\Debug\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.Resources.resources
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\Capa_de_datos\obj\Debug\Capa_de_datos.pdb

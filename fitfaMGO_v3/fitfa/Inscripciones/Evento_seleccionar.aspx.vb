@@ -127,6 +127,7 @@
                     Dim id_evento As Integer = CInt(GridView1.Rows(i).Cells(0).Text)
                     If id_evento = index Then
                         Session("evento_desc") = GridView1.Rows(i).Cells(1).Text
+                        Session("SERVER_inscripcion_id") = 0
                         i = GridView1.Rows.Count
                         Response.Redirect("Evento_datos.aspx")
                     Else

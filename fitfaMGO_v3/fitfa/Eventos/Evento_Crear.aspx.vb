@@ -219,6 +219,9 @@ Public Class Evento_Crear
                 'Image1.Visible = False
                 'btn_quitar.Visible = False
                 'btn_Examinar.Visible = True
+            Else
+                'blanqueo la variable de sesion para poder inscribir otro
+                Session("evento_id") = 0
             End If
            
         End If
