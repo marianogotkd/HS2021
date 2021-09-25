@@ -3830,14 +3830,6 @@ Control Btn_confirmar.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Evento_datos.Btn_confirmar_submit">
-	<summary>
-Control Btn_confirmar_submit.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Evento_datos.QrImagen">
 	<summary>
 Control QrImagen.

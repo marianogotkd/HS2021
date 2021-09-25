@@ -203,8 +203,6 @@
               <%--<button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Confirmar</button>--%>
                   <br />
                   <asp:Button ID="Btn_confirmar" runat="server" Text="Confirmar" class="btn btn-primary" />
-                  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="Btn_confirmar_submit">Confirmar submit</button>
-              <%--<asp:Label ID="Label5" runat="server" Text="DATOS DE COMPETENCIA" Font-Bold="True"></asp:Label>      --%>
               </div>
 
               <div>

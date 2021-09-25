@@ -455,15 +455,6 @@ Partial Public Class Evento_datos
     Protected WithEvents Btn_confirmar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control Btn_confirmar_submit.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Btn_confirmar_submit As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
     '''Control QrImagen.
     '''</summary>
     '''<remarks>
