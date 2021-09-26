@@ -172,7 +172,7 @@ Public Class Evento_Crear
                             j = j + 1
                         End While
 
-                        limpiar_textbox_etc()
+                        'limpiar_textbox_etc()
                         div_modal_msjOK.Visible = True
                         Modal_msjOK.Show()
 
@@ -202,7 +202,7 @@ Public Class Evento_Crear
 
 
 
-                    limpiar_textbox_etc()
+                    'limpiar_textbox_etc()
 
                     div_modal_msjOK.Visible = True
                     Modal_msjOK.Show()
@@ -222,6 +222,9 @@ Public Class Evento_Crear
             Else
                 'blanqueo la variable de sesion para poder inscribir otro
                 Session("evento_id") = 0
+                div_modal_msjOK.Visible = True
+                Modal_msjOK.Show()
+
             End If
            
         End If
@@ -275,5 +278,9 @@ Public Class Evento_Crear
    
     Private Sub btn_Costos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Costos.Click
 
+    End Sub
+
+    Private Sub boton_ok_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles boton_ok.Click
+        limpiar_textbox_etc()
     End Sub
 End Class

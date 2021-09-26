@@ -9,10 +9,10 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=FitfaBD;Data Source=CHOCO-PC")
 
     ''LOCAL
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=fitfaBD;Data Source=(local)")
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=fitfaBD;Data Source=(local)")
 
 
-    ''local sin seguridad
+    ''local sin seguridad CHOCO RYZEN
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=fitfaBD;Data Source=DESKTOP-IPJ62B9\SQLEXPRESS_CHOK")
 
     'hamer conexion
@@ -22,7 +22,7 @@ Public Class Conexion
     ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;workstation id=fitfaBD.mssql.somee.com;packet size=4096;user id=hamerbd;pwd=choco1218;data source=fitfaBD.mssql.somee.com;persist security info=False;initial catalog=fitfaBD")
 
     'Conexion web Donweb
-    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
 
     'Conexion DON WEB SQL 2012
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=sql2012;User Id=wi181976_fitfabd2;Password=lish5aengeiH;Database=wi181976_fitfabd2; Trusted_Connection=yes")
