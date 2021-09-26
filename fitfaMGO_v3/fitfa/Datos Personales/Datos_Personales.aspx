@@ -260,6 +260,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Guarda Cambios</button>
+                    <asp:Label ID="lb_prueba" runat="server" Text="lb_prueba"></asp:Label>
                     <br />
                    
                 

@@ -455,6 +455,15 @@ Partial Public Class Evento_datos
     Protected WithEvents Btn_confirmar_submit As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control lb_guardado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_guardado As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control QrImagen.
     '''</summary>
     '''<remarks>
@@ -471,60 +480,6 @@ Partial Public Class Evento_datos
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control popupMsjError.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents popupMsjError As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control HiddenField_msj_no_categorias.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents HiddenField_msj_no_categorias As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control Panel_msj_no_categorias.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Panel_msj_no_categorias As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''Control lbl_Modal_err.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_Modal_err As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control Btn_Modal_err.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Btn_Modal_err As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control ModalPopupExtender_error_cat.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender_error_cat As Global.AjaxControlToolkit.ModalPopupExtender
 
     '''<summary>
     '''Control popupMsjGuardado.
@@ -579,6 +534,60 @@ Partial Public Class Evento_datos
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ModalPopupExtender_guardado As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Control popupMsjError.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents popupMsjError As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control HiddenField_msj_no_categorias.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HiddenField_msj_no_categorias As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control Panel_msj_no_categorias.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Panel_msj_no_categorias As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control lbl_Modal_err.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Modal_err As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Btn_Modal_err.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_Modal_err As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control ModalPopupExtender_error_cat.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender_error_cat As Global.AjaxControlToolkit.ModalPopupExtender
 
     '''<summary>
     '''Control popupMsjError_turno.

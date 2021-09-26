@@ -1265,6 +1265,7 @@
     <Content Include="Eventos\Examen.aspx" />
     <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
     <Content Include="Eventos\Examen_costos.aspx" />
+    <Content Include="Inscripciones\Evento_datos_b.aspx" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap.css" />
@@ -3010,6 +3011,13 @@
     <Compile Include="Inscripciones\Evento_datos.aspx.vb">
       <DependentUpon>Evento_datos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inscripciones\Evento_datos_b.aspx.designer.vb">
+      <DependentUpon>Evento_datos_b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inscripciones\Evento_datos_b.aspx.vb">
+      <DependentUpon>Evento_datos_b.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Inscripciones\evento_ds.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
+    <%--<style type="text/css">
         .style2
         {
             width: 413px;
@@ -14,11 +14,12 @@
             opacity:0.6 ! important;
             z-index:20;
             }
-    </style>
+    </style>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server">
-</asp:ScriptManager>
+<asp:ScriptManager ID="ScriptManager1" runat="server" 
+        EnableScriptGlobalization="True">
+  </asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 <ContentTemplate>
 <div class="card card-primary">
@@ -204,8 +205,10 @@
                   <br />
                   
               <button type="submit" class="btn btn-primary" runat="server" id="Btn_confirmar_submit">Confirmar submit</button>
+                 <asp:Label ID="lb_guardado" runat="server" Text="no click"></asp:Label>
               
               </div>
+
 
               <div>
               <asp:Image ID="QrImagen" runat="server" />
@@ -222,8 +225,41 @@
               </div>
 
     </div>
+
+    <%--MODAL GUARDADO--%>
+<div id="popupMsjGuardado" runat="server"> 
+                    <asp:HiddenField ID="HiddenField_msj_guardado" runat="server"/>
+                  <asp:Panel ID="Panel_guardado" runat="server" CssClass="panel panel-primary">
+                  <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Inscripciones</h3>
+                        </div>
+                        <form role="form">
+                          <div class="card-body"> 
+                            <div class="row">
+                                <div align="center">
+                                    <asp:Label ID="Label8" runat="server" Text="Inscripción registrada!"></asp:Label>
+                                    &nbsp;
+                                </div>
+                            </div>
+                          </div>
+                        </form>  
+                        <div align="center">
+                                <asp:Button ID="Btb_ok_inscripcion" runat="server" Text="OK" CssClass="btn btn-success"  />
+                          </div> 
+                          <div>
+                             &nbsp;
+                          </div>             
+                        </div> 
+                  </asp:Panel>
+                    <asp:ModalPopupExtender ID="ModalPopupExtender_guardado" runat="server" TargetControlID="HiddenField_msj_guardado" 
+                        PopupControlID="Panel_guardado" BackgroundCssClass="modalBackground" Drag="true">
+                    </asp:ModalPopupExtender>    
+  
+</div>
+
         
-    <div id="popupMsjError" runat="server"> 
+<div id="popupMsjError" runat="server"> 
     <asp:HiddenField ID="HiddenField_msj_no_categorias" runat="server" />
         <asp:Panel ID="Panel_msj_no_categorias" runat="server">
         
@@ -255,68 +291,9 @@
             PopupControlID="Panel_msj_no_categorias" BackgroundCssClass="modalBackground">
     </asp:ModalPopupExtender>
 
-    </div>
-    
-  <div id="popupMsjGuardado" runat="server"> 
-        <asp:HiddenField ID="HiddenField_msj_guardado" runat="server"/>
-      <asp:Panel ID="Panel_guardado" runat="server" CssClass="panel panel-primary">
-      <div class="card card-success">
-            <div class="card-header">
-                <h3 class="card-title">Inscripciones</h3>
-            </div>
-            <form role="form">
-              <div class="card-body"> 
-                <div class="row">
-                    <div align="center">
-                        <asp:Label ID="Label8" runat="server" Text="Inscripción registrada!"></asp:Label>
-                        &nbsp;
-                    </div>
-                </div>
-              </div>
-            </form>  
-            <div align="center">
-                    <asp:Button ID="Btb_ok_inscripcion" runat="server" Text="OK" CssClass="btn btn-success"  />
-              </div> 
-              <div>
-                 &nbsp;
-              </div>             
-            </div> 
-      </asp:Panel>
-        <asp:ModalPopupExtender ID="ModalPopupExtender_guardado" runat="server" TargetControlID="HiddenField_msj_guardado" 
-            PopupControlID="Panel_guardado" BackgroundCssClass="modalBackground" Drag="true">
-        </asp:ModalPopupExtender>    
-        
-        
-        <%--<asp:UpdatePanel ID="UPanel_msj_guardado" runat="server">
-        <ContentTemplate>
-            <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Inscripcion!</h3>
-                    </div>
-                    <form role="form">
-                      <div class="card-body"> 
-                      <div class="row">
-                      <div align="center">
-                            <asp:Label ID="Label8" runat="server" Text="Registro exitoso!"></asp:Label>
-                            &nbsp;
-                      </div>
-                      <div align="center">
-                            <asp:Button ID="Btn_ok_guardado" runat="server" Text="OK" />
-                          <asp:Button ID="BTN_MIAMI" runat="server" Text="MIAMEEEEE" />
-                      </div>  
-                      </div>
-                      </div>
-                    </form>
-            </div>
-         </ContentTemplate>
-                    <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="BTN_MIAMI" EventName="Click" />
-            </Triggers>
-                </asp:UpdatePanel>--%>
-     
-    </div>
-
-
+</div>
+  
+  
     <div id="popupMsjError_turno" runat="server"> 
     <asp:HiddenField ID="HiddenField_msj_no_turno" runat="server" />
     <asp:Panel ID="Panel_msj_no_turno" runat="server">

@@ -184,6 +184,10 @@ Public Class Datos_Personales
 
         If Vacio <> True Then
             DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
+
+            'esto es lo que estaba probando, en el form donde modifico los datos personales
+            'en un label muestro el error
+
             'div_registro_guardado.Visible = True
 
             '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++

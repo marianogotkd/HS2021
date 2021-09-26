@@ -92,15 +92,19 @@ Public Class Evento_datos
     
     Private Sub CodigoQR(ByVal inscripcion_id As Integer)
 
+        Try
+            Dim Encoder As New QRCodeEncoder
 
-        Dim Encoder As New QRCodeEncoder
+            Dim img As Bitmap = Encoder.Encode(inscripcion_id)
+            Dim ms As System.IO.MemoryStream = New System.IO.MemoryStream()
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg) ' Use appropriate format here
+            Dim byteImage As Byte() = ms.ToArray()
 
-        Dim img As Bitmap = Encoder.Encode(inscripcion_id)
-        Dim ms As System.IO.MemoryStream = New System.IO.MemoryStream()
-        img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg) ' Use appropriate format here
-        Dim byteImage As Byte() = ms.ToArray()
+            DAinscripciones.inscripcion_imagenQR_Alta(inscripcion_id, byteImage)
+        Catch ex As Exception
 
-        DAinscripciones.inscripcion_imagenQR_Alta(inscripcion_id, byteImage)
+        End Try
+        
 
     End Sub
 
@@ -281,21 +285,14 @@ Public Class Evento_datos
 
     
     Private Sub Btn_confirmar_submit_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_confirmar_submit.ServerClick
-        Dim validar_server As String = "no"
-        Try
-            Session("SERVER_inscripcion_id") = CInt(Session("SERVER_inscripcion_id"))
-        Catch ex As Exception
-            Session("SERVER_inscripcion_id") = 0
-        End Try
-        Dim ds_serv_vali As DataSet = DAinscripciones.Inscripcion_validar_alta(Session("SERVER_inscripcion_id"))
-        If ds_serv_vali.Tables(0).Rows.Count = 0 Then
-            'consulto tipo de evento
-            Dim ds_evento As DataSet = DAinscripciones.Inscripcion_consultar_evento(Session("evento_id"))
-            Dim tipo_evento As String = ds_evento.Tables(0).Rows(0).Item("tipo_evento")
-            If tipo_evento = "Torneo" Then
-                'valido q se haya seleccionado al menos una de las 4 opciones de inscripcion
-                If (RadioButton_lucha_si.Checked = True Or RadioButton_formas_si.Checked = True Or RadioButton_tecnica_si.Checked = True Or RadioButton_poder_si.Checked = True) And txt_peso.Text <> "" Then
-                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Now, CDec(txt_peso.Text))
+        'consulto tipo de evento
+        Dim ds_evento As DataSet = DAinscripciones.Inscripcion_consultar_evento(Session("evento_id"))
+        Dim tipo_evento As String = ds_evento.Tables(0).Rows(0).Item("tipo_evento")
+        If tipo_evento = "Torneo" Then
+            'valido q se haya seleccionado al menos una de las 4 opciones de inscripcion
+            If (RadioButton_lucha_si.Checked = True Or RadioButton_formas_si.Checked = True Or RadioButton_tecnica_si.Checked = True Or RadioButton_poder_si.Checked = True) And txt_peso.Text <> "" Then
+                Try
+                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, CDec(txt_peso.Text))
                     'ahora veo que tipo de evento es.
                     Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
                     Session("SERVER_inscripcion_id") = inscripcion_id
@@ -303,58 +300,147 @@ Public Class Evento_datos
                     forma(inscripcion_id)
                     Rotura_Poder(inscripcion_id)
                     Rotura_especial(inscripcion_id)
+                    lb_guardado.Text = "guardado examen"
                     CodigoQR(inscripcion_id)
                     'deberia mostrar un cartel y salir del form
                     popupMsjGuardado.Visible = True
                     ModalPopupExtender_guardado.Show()
+                    'aksjdhkasd
+                Catch ex As Exception
+                    lb_guardado.Text = "fallo try catch de torneo"
+                End Try
 
+                
+
+            Else
+                'mensaje seleccione al menos 1 categoria
+                If txt_peso.Text = "" Then
+                    lbl_Modal_err.Text = "Debe Ingresar el Pesos"
                 Else
-                    'mensaje seleccione al menos 1 categoria
-                    If txt_peso.Text = "" Then
-                        lbl_Modal_err.Text = "Debe Ingresar el Pesos"
-                    Else
-                        lbl_Modal_err.Text = "mensaje seleccione al menos 1 categoria"
-                    End If
-
-                    popupMsjError.Visible = True
-                    ModalPopupExtender_error_cat.Show()
+                    lbl_Modal_err.Text = "mensaje seleccione al menos 1 categoria"
                 End If
-            End If
-            If tipo_evento = "Curso" Then
-                'si es un curso, solo doy de alta en inscripcion
-                Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Now, 0)
-                Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
 
+                popupMsjError.Visible = True
+                ModalPopupExtender_error_cat.Show()
+            End If
+        End If
+        If tipo_evento = "Curso" Then
+            Try
+                'si es un curso, solo doy de alta en inscripcion
+                Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, 0)
+                Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                lb_guardado.Text = "guardado curso"
                 'deberia mostrar un cartel y salir del form
                 popupMsjGuardado.Visible = True
                 ModalPopupExtender_guardado.Show()
-            End If
+            Catch ex As Exception
+                lb_guardado.Text = "fallo try catch de curso"
+            End Try
+            
+        End If
 
-            If tipo_evento = "Examen" Then
+        If tipo_evento = "Examen" Then
+            Try
+                'si es un examen debo validar que no supere el maximo de inscriptos para ese turno
+                Dim ds_validar As DataSet = DAinscripciones.inscripciones_x_examen_validar(Session("evento_id"), DropDownList_examen_turno.SelectedValue)
+                Dim cant_max_inscriptos_x_turno As Integer = ds_validar.Tables(0).Rows(0).Item("evento_cap_max_insc")
+                Dim cant_real_inscriptos As Integer = ds_validar.Tables(1).Rows.Count
+                If cant_real_inscriptos < cant_max_inscriptos_x_turno Then 'si hay cupo lo inscribo
+                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, 0)
+                    Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue, DropDownList_graduacion.SelectedValue)
+                    lb_guardado.Text = "guardado examen"
+                    popupMsjGuardado.Visible = True
+                    ModalPopupExtender_guardado.Show()
+                Else
+                    popupMsjError_turno.Visible = True 'choco 19-08-2021
+                    ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
+                End If
+
+            Catch ex As Exception
+                lb_guardado.Text = "fallo try catch de examen"
+            End Try
+        End If
+    End Sub
+
+    Private Sub Btn_confirmar_submit2_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_confirmar_submit2.ServerClick
+        'consulto tipo de evento
+        Dim ds_evento As DataSet = DAinscripciones.Inscripcion_consultar_evento(Session("evento_id"))
+        Dim tipo_evento As String = ds_evento.Tables(0).Rows(0).Item("tipo_evento")
+        If tipo_evento = "Torneo" Then
+            'valido q se haya seleccionado al menos una de las 4 opciones de inscripcion
+            If (RadioButton_lucha_si.Checked = True Or RadioButton_formas_si.Checked = True Or RadioButton_tecnica_si.Checked = True Or RadioButton_poder_si.Checked = True) And txt_peso.Text <> "" Then
                 Try
-                    'si es un examen debo validar que no supere el maximo de inscriptos para ese turno
-                    Dim ds_validar As DataSet = DAinscripciones.inscripciones_x_examen_validar(Session("evento_id"), DropDownList_examen_turno.SelectedValue)
-                    Dim cant_max_inscriptos_x_turno As Integer = ds_validar.Tables(0).Rows(0).Item("evento_cap_max_insc")
-                    Dim cant_real_inscriptos As Integer = ds_validar.Tables(1).Rows.Count
-                    If cant_real_inscriptos < cant_max_inscriptos_x_turno Then 'si hay cupo lo inscribo
-                        Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Now, 0)
-                        Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
-                        Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
-                        DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue, DropDownList_graduacion.SelectedValue)
-                        popupMsjGuardado.Visible = True
-                        ModalPopupExtender_guardado.Show()
-                    Else
-                        popupMsjError_turno.Visible = True 'choco 19-08-2021
-                        ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
-                    End If
-
+                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, CDec(txt_peso.Text))
+                    'ahora veo que tipo de evento es.
+                    Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    Session("SERVER_inscripcion_id") = inscripcion_id
+                    Lucha(inscripcion_id)
+                    forma(inscripcion_id)
+                    Rotura_Poder(inscripcion_id)
+                    Rotura_especial(inscripcion_id)
+                    lb_guardado.Text = "guardado examen"
+                    CodigoQR(inscripcion_id)
+                    'deberia mostrar un cartel y salir del form
+                    popupMsjGuardado.Visible = True
+                    ModalPopupExtender_guardado.Show()
+                    'aksjdhkasd
                 Catch ex As Exception
-
+                    lb_guardado.Text = "fallo try catch de torneo"
                 End Try
 
 
-            End If
 
+            Else
+                'mensaje seleccione al menos 1 categoria
+                If txt_peso.Text = "" Then
+                    lbl_Modal_err.Text = "Debe Ingresar el Pesos"
+                Else
+                    lbl_Modal_err.Text = "mensaje seleccione al menos 1 categoria"
+                End If
+
+                popupMsjError.Visible = True
+                ModalPopupExtender_error_cat.Show()
+            End If
+        End If
+        If tipo_evento = "Curso" Then
+            Try
+                'si es un curso, solo doy de alta en inscripcion
+                Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, 0)
+                Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                lb_guardado.Text = "guardado curso"
+                'deberia mostrar un cartel y salir del form
+                popupMsjGuardado.Visible = True
+                ModalPopupExtender_guardado.Show()
+            Catch ex As Exception
+                lb_guardado.Text = "fallo try catch de curso"
+            End Try
+
+        End If
+
+        If tipo_evento = "Examen" Then
+            Try
+                'si es un examen debo validar que no supere el maximo de inscriptos para ese turno
+                Dim ds_validar As DataSet = DAinscripciones.inscripciones_x_examen_validar(Session("evento_id"), DropDownList_examen_turno.SelectedValue)
+                Dim cant_max_inscriptos_x_turno As Integer = ds_validar.Tables(0).Rows(0).Item("evento_cap_max_insc")
+                Dim cant_real_inscriptos As Integer = ds_validar.Tables(1).Rows.Count
+                If cant_real_inscriptos < cant_max_inscriptos_x_turno Then 'si hay cupo lo inscribo
+                    Dim ds_tipoevento As DataSet = DAinscripciones.Inscripcion_alta_usuario(Session("Us_id"), Session("evento_id"), Today, 0)
+                    Dim inscripcion_id As Integer = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    Session("SERVER_inscripcion_id") = ds_tipoevento.Tables(0).Rows(0).Item("inscripcion_id")
+                    DAinscripciones.inscripciones_x_examen_alta(inscripcion_id, DropDownList_examen_turno.SelectedValue, DropDownList_graduacion.SelectedValue)
+                    lb_guardado.Text = "guardado examen"
+                    popupMsjGuardado.Visible = True
+                    ModalPopupExtender_guardado.Show()
+                Else
+                    popupMsjError_turno.Visible = True 'choco 19-08-2021
+                    ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
+                End If
+
+            Catch ex As Exception
+                lb_guardado.Text = "fallo try catch de examen"
+            End Try
         End If
     End Sub
 End Class
