@@ -12,7 +12,7 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=fitfaBD;Data Source=(local)")
 
 
-    ''local sin seguridad
+    ''local sin seguridad CHOCO RYZEN
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=fitfaBD;Data Source=DESKTOP-IPJ62B9\SQLEXPRESS_CHOK")
 
     'hamer conexion
