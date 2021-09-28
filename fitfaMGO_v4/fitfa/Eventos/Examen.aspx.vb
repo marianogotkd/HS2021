@@ -567,7 +567,6 @@ Public Class Examen
             'voy a recuperar la tabla examencostos, si tiene algo para el evento, significa que ya se hizo la liquidacion, por lo tanto los precios y porc q manejo son de esa tabla.
             recuperar_costos_examen()
 
-
         End If
 
 
@@ -836,6 +835,7 @@ Public Class Examen
 
     Private Sub GridView2_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView2.RowCommand
         If (e.CommandName = "op_eliminar") Then
+            'If Not IsPostBack Then
             ' Retrieve the row index stored in the CommandArgument property.
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim id As Integer = Integer.Parse(e.CommandArgument.ToString()) 'este es el id de la inscripcion = Inscexamen_id
@@ -847,8 +847,7 @@ Public Class Examen
             '---deshabilito el modal para confirmar eliminacion
             'div_Modal_ELIMINAR_inscripto.Visible = True
             'Modal_ELIMINAR_inscripto.Show()
-
-
+            'End If
         End If
     End Sub
     Dim ChkMover As CheckBox
