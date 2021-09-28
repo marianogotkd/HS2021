@@ -16,7 +16,7 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=fitfaBD;Data Source=DESKTOP-IPJ62B9\SQLEXPRESS_CHOK")
 
     'hamer conexion
-    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Persist Security Info=False;User ID=choco; password=123choco;Initial Catalog=fitfaBD;Data Source=HAMER")
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Persist Security Info=False;User ID=choco; password=123choco;Initial Catalog=fitfaBD;Data Source=HAMER")
 
     'Conexion WEB
     ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;workstation id=fitfaBD.mssql.somee.com;packet size=4096;user id=hamerbd;pwd=choco1218;data source=fitfaBD.mssql.somee.com;persist security info=False;initial catalog=fitfaBD")

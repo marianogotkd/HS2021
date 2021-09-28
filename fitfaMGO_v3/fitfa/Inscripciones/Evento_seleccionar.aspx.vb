@@ -129,7 +129,8 @@
                         Session("evento_desc") = GridView1.Rows(i).Cells(1).Text
                         Session("SERVER_inscripcion_id") = 0
                         i = GridView1.Rows.Count
-                        Response.Redirect("Evento_datos.aspx")
+                        'Response.Redirect("Evento_datos.aspx")
+                        Response.Redirect("Evento_datos_b.aspx")
                     Else
                         i = i + 1
                     End If

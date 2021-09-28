@@ -275,6 +275,15 @@ Partial Public Class Datos_Personales
     Protected WithEvents btn_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control Label2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_prueba As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control div_registro_guardado.
     '''</summary>
     '''<remarks>
