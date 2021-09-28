@@ -267,18 +267,16 @@ Public Class Evento_Crear
 
         If combo_TipoEvento.SelectedValue = "Examen" Then
             Panel_examenes.Visible = True
-            Div_Costos.Visible = True
+            'Div_Costos.Visible = True
         Else
             Panel_examenes.Visible = False
-            Div_Costos.Visible = False
+            'Div_Costos.Visible = False
         End If
 
     End Sub
 
    
-    Private Sub btn_Costos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Costos.Click
-
-    End Sub
+ 
 
     Private Sub boton_ok_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles boton_ok.Click
         limpiar_textbox_etc()

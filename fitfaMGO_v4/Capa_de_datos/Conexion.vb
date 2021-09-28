@@ -9,7 +9,7 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=FitfaBD;Data Source=CHOCO-PC")
 
     ''LOCAL
-    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=fitfaBD;Data Source=(local)")
+    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=fitfaBD;Data Source=(local)")
 
 
     ''local sin seguridad CHOCO RYZEN

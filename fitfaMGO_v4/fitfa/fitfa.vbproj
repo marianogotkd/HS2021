@@ -1265,6 +1265,8 @@
     <Content Include="Eventos\Examen.aspx" />
     <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
     <Content Include="Eventos\Examen_costos.aspx" />
+    <Content Include="img\LOGOANT400x400.png" />
+    <Content Include="js\table2excel.js" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap.css" />
@@ -1319,7 +1321,6 @@
     <Content Include="img\header.jpg" />
     <Content Include="img\icon-edit.jpg" />
     <Content Include="img\icono_alumnos.gif" />
-    <Content Include="img\LOGOANT.jpg" />
     <Content Include="img\Master-Class-03.jpg" />
     <Content Include="img\TORNEO.jpg" />
     <Content Include="Instituciones\Imagen\logo_institucion.jpg" />

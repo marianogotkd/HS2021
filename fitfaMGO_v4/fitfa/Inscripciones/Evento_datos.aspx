@@ -203,7 +203,7 @@
               <%--<button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Confirmar</button>--%>
                   <br />
                   
-              <button type="submit" class="btn btn-primary" runat="server" id="Btn_confirmar_submit">Confirmar submit</button>
+              <button type="submit" class="btn btn-primary" runat="server" id="Btn_confirmar_submit">Confirmar Inscripcion</button>
               
               </div>
 

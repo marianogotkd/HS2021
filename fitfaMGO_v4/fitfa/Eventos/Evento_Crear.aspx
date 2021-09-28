@@ -98,8 +98,8 @@
   </div>
   <div class="form-group" >
   <label>Costo</label>
-  <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
-  <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>  
+  <label id="lbl_costo" class="label label-danger"  runat="server">Debe Completar El Campo</label>
+  <asp:TextBox ID="textbox_Costo" CssClass="form-control"  type="number" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
   </div>
     
 
@@ -133,20 +133,7 @@
   </div> <%--fin del card-body--%>
   </div> <%--fin del card--%>
         
- <div runat="server" id="Div_Costos" visible="false"> 
-     <div class="card">
-     
-    <div class="card-body">
-    
-      <div class="form-group">
-   
-    <asp:Button ID="btn_Costos" runat="server" Text="Configurar Costos de Examenes" class="btn btn-alert-heading"  />
-
-</div>
-    </div> 
-  </div> <%--fin del card-body--%>
-  
-  </div>
+ 
 
 
   </div>  <%--fin del col-lg-6--%>
@@ -155,14 +142,14 @@
   
 
   <div class="col-lg-6">
-  <asp:Panel ID="Panel_examenes" runat="server" Visible=false >
+  <asp:Panel ID="Panel_examenes" runat="server" Visible="false" >
   
   <div class="card">
   <div class="card-body">
     <div class="form-group">
         <label>Capacidad máxima de inscriptos por turno: 
         <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
-        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
+        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max"  type="number" CssClass="form-control" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
         <label>Seleccione los turnos para el examen: </label>
         &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
         seleccionar al menos un turno</label></div>
@@ -208,7 +195,7 @@
   
   </div>
   <div class="card-footer">
-  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_guardar">Continuar</button>
+  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_guardar">Guardar</button>
   </div>
   </span>
   <div id= "div_modal_msjOK" runat="server">
