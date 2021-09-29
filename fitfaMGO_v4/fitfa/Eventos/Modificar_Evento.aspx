@@ -118,7 +118,7 @@
                   <div class="form-group" >
                     <label>Costo</label>
                     <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server" ></asp:TextBox>                   
+                    <asp:TextBox ID="textbox_Costo" CssClass="form-control"  type="number" onkeypress="return justNumbers(event);" runat="server" ></asp:TextBox>                   
                    
                   </div>
                 
@@ -191,7 +191,7 @@
     <div class="form-group">
         <label>Capacidad máxima de inscriptos por turno: 
         <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
-        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" CssClass="form-control" runat="server" ></asp:TextBox>  
+        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max"  type="number" onkeypress="return justNumbers(event);" CssClass="form-control" runat="server" ></asp:TextBox>  
         <label>Seleccione los turnos para el examen: </label>
         &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
         seleccionar al menos un turno</label><br />

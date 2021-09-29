@@ -41,12 +41,13 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <asp:Label ID="Label_evento_cant_inscriptos" runat="server" Text="Cantidad de inscriptos:"></asp:Label>
                       <br />
+                       <br />
                       
                   
                   <div class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView1" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black"  
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -87,7 +88,15 @@
                                   Visible="False" />
                           </Columns>
                       </asp:GridView>
+
+                      <br />
+
                   
+                           <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
+
+                             
+                       
+
                   </div>
                   
                   
@@ -170,7 +179,7 @@
                   <div id="Div1" class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView2" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black" 
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -283,6 +292,7 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <asp:Label ID="Label_evento_cant_inscriptos_c" runat="server" Text="Cantidad de inscriptos:"></asp:Label>
                       <br />  
+                      <br />  
                       
                      <div id="grupo_sin_evaluar" runat="server" visible ="false">
                      
@@ -291,7 +301,7 @@
                       <div id="Div3" class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView_sinevaluar" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black" 
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -366,7 +376,7 @@
                      </div>
                      </div>
 
-                     
+                     <br />  
 
                       
                       <div id="grupo_desaprobados" runat="server" visible ="false">
@@ -377,7 +387,7 @@
                       <div id="Div4" class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView_desaprobados" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black" 
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -433,7 +443,8 @@
                   
                   </div>
                       </div>
-                      
+                     
+                      <br />  
                       
                       <div id="grupo_aprobados" runat="server" visible ="false">
                       <%--EXAMENES APROBADOS--%>
@@ -442,7 +453,7 @@
                       <div id="Div5" class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView_aprobados" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black" 
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -501,6 +512,7 @@
 
                       </div>
                       
+                      <br />  
 
                       <div id="grupo_doblepromo" runat="server" visible ="false">
                       <%--EXAMENES DOBLE PROMOCION--%>
@@ -509,7 +521,7 @@
                           <div id="Div6" class="card-body table-responsive p-0" runat ="server">
                       <asp:GridView ID="GridView_doblepromo" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
-                           BorderColor="Black" GridLines="None" 
+                           BorderColor="Black" 
                           EnableSortingAndPagingCallbacks="True">
                           <Columns>
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
@@ -671,7 +683,7 @@
                       </asp:GridView>
                       
                   
-                  </div
+                  </div>
                      
                      </div>
                      </div>
@@ -726,10 +738,13 @@
             <%--AQUI PONGO EL MODAL PARA EL MENSAJE DE ADVERTENCIA CUANDO ELIMINO UN INSCRIPTO.--%>
 
 
-
+         
 
      </ContentTemplate>
 
     </asp:UpdatePanel>
 
+          
+
     </asp:Content>
+
