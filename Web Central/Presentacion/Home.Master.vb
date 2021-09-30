@@ -12,7 +12,7 @@
             Dim Grupos As HtmlGenericControl = CType(HideDiv.FindControl("GRUPOS"), HtmlGenericControl)
 
 
-            If Session("Us") = "admin" And Session("Pass") = "123" Then
+            If Session("Us").ToString.ToUpper = "ADMINISTRADOR" And Session("Pass") = "a123456" Then
 
 
                 Obra.Visible = True

@@ -14,14 +14,6 @@ C:\Users\Pablo\Documents\WEB CENTRAL\Solution_Martin\Capa_Datos\obj\Debug\Capa_D
 C:\Users\Pablo\Documents\WEB CENTRAL\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\Pablo\Documents\WEB CENTRAL\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.xml
 C:\Users\Pablo\Documents\WEB CENTRAL\Solution_Martin\Capa_Datos\obj\Debug\Capa_Datos.pdb
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.dll
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.pdb
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.xml
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.Resources.resources
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.vbproj.GenerateResource.Cache
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.dll
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.xml
-C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.pdb
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.dll
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.pdb
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.xml
@@ -30,3 +22,11 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.xml
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.pdb
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\bin\Debug\Capa_Datos.xml
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.Resources.resources
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.xml
+C:\Repositorio HS2021\HS2021\Web Central\Capa_Datos\obj\Debug\Capa_Datos.pdb

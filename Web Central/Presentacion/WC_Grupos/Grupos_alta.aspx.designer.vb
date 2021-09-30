@@ -32,6 +32,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
+    '''Control Panel1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''Control Label_grupo_id.
     '''</summary>
     '''<remarks>
@@ -86,6 +95,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_tipo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control RegularExpressionValidator1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
     '''Control Label_tipo1.
     '''</summary>
     '''<remarks>
@@ -138,6 +156,15 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Txt_porcentaje As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control RegularExpressionValidator2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator2 As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
     '''Control Label_clieporcentaje.
@@ -221,13 +248,13 @@ Partial Public Class Grupos_alta
     Protected WithEvents Label_fechaproc As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_fechaprocc.
+    '''Control Txt_fechaproc.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_fechaprocc As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_fechaproc As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btn_retroceder.

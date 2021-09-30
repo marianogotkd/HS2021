@@ -14,6 +14,13 @@
 
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
+
+
+    <asp:Panel ID="Panel1" runat="server">
+    </asp:Panel>
+
+
+
 <div class="card card-primary">
 <div class="card-header">
                 <h3 class="card-title">A.B.M. GRUPOS</h3>
@@ -28,7 +35,7 @@
 <div class="form-group">
 
     <asp:Label ID="Label_grupo_id" runat="server" Text="Grupo:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_grupo_id" runat="server"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_grupo_id" runat="server" ReadOnly="True"></asp:TextBox>
     &nbsp;<asp:Label ID="Label_grupo_nomb" runat="server" Text="Nombre:"></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_grupo_nomb" runat="server"></asp:TextBox>
 
@@ -41,7 +48,21 @@
         <tr>
             <td>
                 <asp:Label ID="Label_tipo" runat="server" Text="Tipo:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_tipo" runat="server" Width="62px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_tipo" runat="server" Width="62px" MaxLength="1" 
+                    validationgroup="check" xmlns:asp="#unknown" 
+                    ToolTip="Ingrese tipo (1,2,3,4)" onkeypress="return justNumbers(event);" 
+                    CausesValidation="True"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    controltovalidate="Txt_tipo" xmlns:asp="#unknown"
+                    ErrorMessage="Error!" ValidationExpression="[1234]" 
+                    ValidationGroup="check" ForeColor="Red" SetFocusOnError="True" 
+                    Font-Size="X-Small"></asp:RegularExpressionValidator>
+                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="Txt_tipo" ErrorMessage="Campo requerido"  
+                    SetFocusOnError="True" InitialValue=" "></asp:RequiredFieldValidator>--%>
+                    
+                    
+
             </td>
             <td>
                 <asp:Label ID="Label_tipo1" runat="server" Text="1= % del grupo y descuento de los pagados por prestamos."></asp:Label>
@@ -75,14 +96,22 @@
 <div class="form-group">
 
     <asp:Label ID="Label_porcentaje" runat="server" Text="Porcentaje:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_porcentaje" runat="server" Width="62px"></asp:TextBox>
-
+    &nbsp;<asp:TextBox ID="Txt_porcentaje" runat="server" Width="62px" 
+        CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
+        MaxLength="6"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+        ControlToValidate="Txt_porcentaje" xmlns:asp="#unknown2" ErrorMessage="Error!" ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" Font-Size="X-Small" 
+        ForeColor="Red" ValidationGroup="check_2" SetFocusOnError="True"></asp:RegularExpressionValidator>
+        <%--uso una expresion regular(enteros/enteros2decimales con punto/entero2decimales con coma)--%>
 </div>
 
 <div class="form-group">
 
     <asp:Label ID="Label_clieporcentaje" runat="server" Text="Cliente Porcentaje:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_clieporcentaje" runat="server" Width="62px"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_clieporcentaje" runat="server" Width="62px" 
+        MaxLength="6"></asp:TextBox>
+
+        
 
 </div>
 
@@ -94,7 +123,7 @@
         <tr>
             <td class="style1">
                 <asp:Label ID="Label_codcobro" runat="server" Text="Código de Cobro:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_codcobro" runat="server" Width="62px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_codcobro" runat="server" Width="62px" MaxLength="1"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label_cobro1" runat="server" Text="1= todo."></asp:Label>
@@ -128,7 +157,7 @@
 <div class="form-group">
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_fechaprocc" runat="server" type="Date"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date"></asp:TextBox>
 </div>
 
 

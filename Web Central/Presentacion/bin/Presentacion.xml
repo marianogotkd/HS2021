@@ -6,999 +6,34 @@ Presentacion
 </name>
 </assembly>
 <members>
-<member name="F:Presentacion.Home.head">
+<member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
 	<summary>
-Control head.
+Represents the strongly named DataTable class.
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.form1">
+</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtDataTable">
 	<summary>
-Control form1.
+Represents the strongly named DataTable class.
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.Obra">
+</member><member name="T:Presentacion.DS_Articulos.ArticulosRow">
 	<summary>
-Control Obra.
+Represents strongly named DataRow class.
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.Vehiculo">
+</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtRow">
 	<summary>
-Control Vehiculo.
+Represents strongly named DataRow class.
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.Articulo">
+</member><member name="T:Presentacion.DS_Articulos.ArticulosRowChangeEvent">
 	<summary>
-Control Articulo.
+Row event argument class
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.GRUPOS">
+</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtRowChangeEvent">
 	<summary>
-Control GRUPOS.
+Row event argument class
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.CLIENTES">
+</member><member name="T:Presentacion.DS_Articulos">
 	<summary>
-Control CLIENTES.
+Represents a strongly typed in-memory cache of data.
 </summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.Pedido">
-	<summary>
-Control Pedido.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.Usuario">
-	<summary>
-Control Usuario.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Home.ContentPlaceHolder1">
-	<summary>
-Control ContentPlaceHolder1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.form1">
-	<summary>
-Control form1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.tb_us">
-	<summary>
-Control tb_us.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.tb_pass">
-	<summary>
-Control tb_pass.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.lbl_Err2">
-	<summary>
-Control lbl_Err2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.Campos">
-	<summary>
-Control Campos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Index.Button1">
-	<summary>
-Control Button1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.btn_Agregar">
-	<summary>
-Control btn_Agregar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.tb_Buscar">
-	<summary>
-Control tb_Buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Btn_buscar">
-	<summary>
-Control Btn_buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.DropDownList1">
-	<summary>
-Control DropDownList1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.card_OK">
-	<summary>
-Control card_OK.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div2">
-	<summary>
-Control Div2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Titulo_Obra">
-	<summary>
-Control Titulo_Obra.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.div_BuscarO">
-	<summary>
-Control div_BuscarO.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Tb_BuscarObra">
-	<summary>
-Control Tb_BuscarObra.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.btn_BuscarObra">
-	<summary>
-Control btn_BuscarObra.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.GridView2">
-	<summary>
-Control GridView2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div1">
-	<summary>
-Control Div1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div3">
-	<summary>
-Control Div3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.lbl_Err">
-	<summary>
-Control lbl_Err.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Campos">
-	<summary>
-Control Campos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div_ErrVehi">
-	<summary>
-Control Div_ErrVehi.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div_Div_ErrVehi_text">
-	<summary>
-Control Div_Div_ErrVehi_text.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.Div_Elim">
-	<summary>
-Control Div_Elim.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.asd">
-	<summary>
-Control asd.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Consulta.btn_Agregar2">
-	<summary>
-Control btn_Agregar2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.tb_nombre">
-	<summary>
-Control tb_nombre.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.tb_Domicilio">
-	<summary>
-Control tb_Domicilio.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.tb_fecha">
-	<summary>
-Control tb_fecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.GridView2">
-	<summary>
-Control GridView2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.btn_guardar">
-	<summary>
-Control btn_guardar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Articulos_x_Obra.btn_Volver">
-	<summary>
-Control btn_Volver.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_grupo_id">
-	<summary>
-Control Label_grupo_id.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_id">
-	<summary>
-Control Txt_grupo_id.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_grupo_nomb">
-	<summary>
-Control Label_grupo_nomb.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_nomb">
-	<summary>
-Control Txt_grupo_nomb.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_tipo">
-	<summary>
-Control Label_tipo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_tipo">
-	<summary>
-Control Txt_tipo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_tipo1">
-	<summary>
-Control Label_tipo1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_tipo2">
-	<summary>
-Control Label_tipo2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_tipo3">
-	<summary>
-Control Label_tipo3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Labeltipo4">
-	<summary>
-Control Labeltipo4.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_porcentaje">
-	<summary>
-Control Label_porcentaje.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_porcentaje">
-	<summary>
-Control Txt_porcentaje.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_clieporcentaje">
-	<summary>
-Control Label_clieporcentaje.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_clieporcentaje">
-	<summary>
-Control Txt_clieporcentaje.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_codcobro">
-	<summary>
-Control Label_codcobro.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_codcobro">
-	<summary>
-Control Txt_codcobro.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_cobro1">
-	<summary>
-Control Label_cobro1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_cobro2">
-	<summary>
-Control Label_cobro2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_cobro3">
-	<summary>
-Control Label_cobro3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_cobro4">
-	<summary>
-Control Label_cobro4.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Label_fechaproc">
-	<summary>
-Control Label_fechaproc.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_fechaprocc">
-	<summary>
-Control Txt_fechaprocc.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.btn_retroceder">
-	<summary>
-Control btn_retroceder.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.btn_baja">
-	<summary>
-Control btn_baja.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Grupos_alta.btn">
-	<summary>
-Control btn.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.DropDown_Usuario">
-	<summary>
-Control DropDown_Usuario.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos._btn_AgrUsuario">
-	<summary>
-Control _btn_AgrUsuario.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.DropDownList_Rol">
-	<summary>
-Control DropDownList_Rol.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.div_titulo">
-	<summary>
-Control div_titulo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.lbl_nom">
-	<summary>
-Control lbl_nom.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.card_OK">
-	<summary>
-Control card_OK.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div2">
-	<summary>
-Control Div2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.btn_Guardar">
-	<summary>
-Control btn_Guardar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div1">
-	<summary>
-Control Div1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div3">
-	<summary>
-Control Div3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.lbl_Err">
-	<summary>
-Control lbl_Err.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Campos">
-	<summary>
-Control Campos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div_Err">
-	<summary>
-Control Div_Err.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div_Div_ErrVehi_text">
-	<summary>
-Control Div_Div_ErrVehi_text.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.Div_Elim">
-	<summary>
-Control Div_Elim.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Permisos.asd">
-	<summary>
-Control asd.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="P:Presentacion.My.MyWebExtension.Application">
-	<summary>
- Devuelve información sobre la aplicación actual.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.Computer">
-	<summary>
- Devuelve información sobre el equipo host.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.User">
-	<summary>
- Devuelve información del usuario web actual.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.Request">
-	<summary>
- Devuelve un objeto Request.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.Response">
-	<summary>
- Devuelve un objeto Response.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.Log">
-	<summary>
- Devuelve el objeto de registro Asp.
- </summary>
-</member><member name="P:Presentacion.My.MyWebExtension.WebServices">
-	<summary>
- Proporciona acceso a los servicios Web agregados a este proyecto.
- </summary>
-</member><member name="T:Presentacion.My.MyWebExtension">
-	<summary>
- Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
- </summary>
-	<remarks></remarks>
-</member><member name="F:Presentacion.Obra_Consulta.btn_Agregar">
-	<summary>
-Control btn_Agregar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.tb_Buscar">
-	<summary>
-Control tb_Buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.Btn_buscar">
-	<summary>
-Control Btn_buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.DropDownList_obra">
-	<summary>
-Control DropDownList_obra.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.Div_Elim">
-	<summary>
-Control Div_Elim.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.asd">
-	<summary>
-Control asd.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Obra_Consulta.Agregar2">
-	<summary>
-Control Agregar2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.tb_nombre">
-	<summary>
-Control tb_nombre.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Tb_Apellido">
-	<summary>
-Control Tb_Apellido.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.tb_usu">
-	<summary>
-Control tb_usu.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.tb_pass">
-	<summary>
-Control tb_pass.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.btn_Agregar">
-	<summary>
-Control btn_Agregar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.card_OK">
-	<summary>
-Control card_OK.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div2">
-	<summary>
-Control Div2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div1">
-	<summary>
-Control Div1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div3">
-	<summary>
-Control Div3.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.lbl_Err">
-	<summary>
-Control lbl_Err.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Campos">
-	<summary>
-Control Campos.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div_ErrVehi">
-	<summary>
-Control Div_ErrVehi.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div_Div_ErrVehi_text">
-	<summary>
-Control Div_Div_ErrVehi_text.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.Div_Elim">
-	<summary>
-Control Div_Elim.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Usuario_Nuevo.asd">
-	<summary>
-Control asd.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:Presentacion.Cliente_alta.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -1543,22 +578,230 @@ Control btn_volver.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="T:Presentacion.Ds_Obra.Obtener_todoDataTable">
+</member><member name="F:Presentacion.Pedido_Consulta.ScriptManager1">
 	<summary>
-Represents the strongly named DataTable class.
+Control ScriptManager1.
 </summary>
-</member><member name="T:Presentacion.Ds_Obra.Obtener_todoRow">
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.UpdatePanel1">
 	<summary>
-Represents strongly named DataRow class.
+Control UpdatePanel1.
 </summary>
-</member><member name="T:Presentacion.Ds_Obra.Obtener_todoRowChangeEvent">
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.btn_Agregar">
 	<summary>
-Row event argument class
+Control btn_Agregar.
 </summary>
-</member><member name="T:Presentacion.Ds_Obra">
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.tb_Buscar">
 	<summary>
-Represents a strongly typed in-memory cache of data.
+Control tb_Buscar.
 </summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Btn_buscar">
+	<summary>
+Control Btn_buscar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.DropDownList1">
+	<summary>
+Control DropDownList1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div_Fecha">
+	<summary>
+Control Div_Fecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Tb_fecha">
+	<summary>
+Control Tb_fecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Btn_guardarFecha">
+	<summary>
+Control Btn_guardarFecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.card_OK">
+	<summary>
+Control card_OK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div2">
+	<summary>
+Control Div2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div1">
+	<summary>
+Control Div1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div3">
+	<summary>
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.lbl_Err">
+	<summary>
+Control lbl_Err.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Campos">
+	<summary>
+Control Campos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div_ErrVehi">
+	<summary>
+Control Div_ErrVehi.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div_Div_ErrVehi_text">
+	<summary>
+Control Div_Div_ErrVehi_text.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.Div_Elim">
+	<summary>
+Control Div_Elim.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.asd">
+	<summary>
+Control asd.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Pedido_Consulta.btn_Agregar2">
+	<summary>
+Control btn_Agregar2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.form1">
+	<summary>
+Control form1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.tb_us">
+	<summary>
+Control tb_us.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.tb_pass">
+	<summary>
+Control tb_pass.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.lbl_Err2">
+	<summary>
+Control lbl_Err2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.Campos">
+	<summary>
+Control Campos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Index.Button1">
+	<summary>
+Control Button1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.Image1">
+	<summary>
+Control Image1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Obra_Consulta_Vehiculos.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -1610,6 +853,86 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Presentacion.Obra_Consulta_Vehiculos.btn_Volver">
 	<summary>
 Control btn_Volver.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.head">
+	<summary>
+Control head.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.form1">
+	<summary>
+Control form1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.Obra">
+	<summary>
+Control Obra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.Vehiculo">
+	<summary>
+Control Vehiculo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.Articulo">
+	<summary>
+Control Articulo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.GRUPOS">
+	<summary>
+Control GRUPOS.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.CLIENTES">
+	<summary>
+Control CLIENTES.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.Pedido">
+	<summary>
+Control Pedido.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.Usuario">
+	<summary>
+Control Usuario.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Home.ContentPlaceHolder1">
+	<summary>
+Control ContentPlaceHolder1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1827,90 +1150,6 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Presentacion.DS_Articulos.ArticulosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Presentacion.DS_Articulos.ArticulosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Presentacion.DS_Articulos.Pedido_ArtRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Presentacion.DS_Articulos">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:Presentacion.Vehiculo_Historico.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.tb_marca">
-	<summary>
-Control tb_marca.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.tb_modelo">
-	<summary>
-Control tb_modelo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.tb_patente">
-	<summary>
-Control tb_patente.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Vehiculo_Historico.Volver">
-	<summary>
-Control Volver.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:Presentacion.Obra_Nueva.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -2047,6 +1286,414 @@ Control btn_volver.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.btn_Agregar">
+	<summary>
+Control btn_Agregar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.tb_Buscar">
+	<summary>
+Control tb_Buscar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Btn_buscar">
+	<summary>
+Control Btn_buscar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.DropDownList1">
+	<summary>
+Control DropDownList1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.card_OK">
+	<summary>
+Control card_OK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div2">
+	<summary>
+Control Div2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Titulo_Obra">
+	<summary>
+Control Titulo_Obra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.div_BuscarO">
+	<summary>
+Control div_BuscarO.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Tb_BuscarObra">
+	<summary>
+Control Tb_BuscarObra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.btn_BuscarObra">
+	<summary>
+Control btn_BuscarObra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.GridView2">
+	<summary>
+Control GridView2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div1">
+	<summary>
+Control Div1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div3">
+	<summary>
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.lbl_Err">
+	<summary>
+Control lbl_Err.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Campos">
+	<summary>
+Control Campos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div_ErrVehi">
+	<summary>
+Control Div_ErrVehi.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div_Div_ErrVehi_text">
+	<summary>
+Control Div_Div_ErrVehi_text.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.Div_Elim">
+	<summary>
+Control Div_Elim.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.asd">
+	<summary>
+Control asd.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Consulta.btn_Agregar2">
+	<summary>
+Control btn_Agregar2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.tb_nombre">
+	<summary>
+Control tb_nombre.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.tb_Domicilio">
+	<summary>
+Control tb_Domicilio.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.tb_fecha">
+	<summary>
+Control tb_fecha.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.GridView2">
+	<summary>
+Control GridView2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.btn_guardar">
+	<summary>
+Control btn_guardar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Articulos_x_Obra.btn_Volver">
+	<summary>
+Control btn_Volver.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.DropDown_Usuario">
+	<summary>
+Control DropDown_Usuario.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos._btn_AgrUsuario">
+	<summary>
+Control _btn_AgrUsuario.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.DropDownList_Rol">
+	<summary>
+Control DropDownList_Rol.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.div_titulo">
+	<summary>
+Control div_titulo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.lbl_nom">
+	<summary>
+Control lbl_nom.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.card_OK">
+	<summary>
+Control card_OK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div2">
+	<summary>
+Control Div2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.btn_Guardar">
+	<summary>
+Control btn_Guardar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div1">
+	<summary>
+Control Div1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div3">
+	<summary>
+Control Div3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.lbl_Err">
+	<summary>
+Control lbl_Err.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Campos">
+	<summary>
+Control Campos.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div_Err">
+	<summary>
+Control Div_Err.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div_Div_ErrVehi_text">
+	<summary>
+Control Div_Div_ErrVehi_text.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.Div_Elim">
+	<summary>
+Control Div_Elim.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Permisos.asd">
+	<summary>
+Control asd.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Articulos.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -2175,7 +1822,7 @@ Control asd.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.ScriptManager1">
+</member><member name="F:Presentacion.Usuario_Nuevo.ScriptManager1">
 	<summary>
 Control ScriptManager1.
 </summary>
@@ -2183,7 +1830,7 @@ Control ScriptManager1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.UpdatePanel1">
+</member><member name="F:Presentacion.Usuario_Nuevo.UpdatePanel1">
 	<summary>
 Control UpdatePanel1.
 </summary>
@@ -2191,7 +1838,39 @@ Control UpdatePanel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.btn_Agregar">
+</member><member name="F:Presentacion.Usuario_Nuevo.tb_nombre">
+	<summary>
+Control tb_nombre.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Usuario_Nuevo.Tb_Apellido">
+	<summary>
+Control Tb_Apellido.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Usuario_Nuevo.tb_usu">
+	<summary>
+Control tb_usu.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Usuario_Nuevo.tb_pass">
+	<summary>
+Control tb_pass.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Usuario_Nuevo.btn_Agregar">
 	<summary>
 Control btn_Agregar.
 </summary>
@@ -2199,55 +1878,7 @@ Control btn_Agregar.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.tb_Buscar">
-	<summary>
-Control tb_Buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Btn_buscar">
-	<summary>
-Control Btn_buscar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.DropDownList1">
-	<summary>
-Control DropDownList1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div_Fecha">
-	<summary>
-Control Div_Fecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Tb_fecha">
-	<summary>
-Control Tb_fecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Btn_guardarFecha">
-	<summary>
-Control Btn_guardarFecha.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.card_OK">
+</member><member name="F:Presentacion.Usuario_Nuevo.card_OK">
 	<summary>
 Control card_OK.
 </summary>
@@ -2255,7 +1886,7 @@ Control card_OK.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div2">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div2">
 	<summary>
 Control Div2.
 </summary>
@@ -2263,7 +1894,7 @@ Control Div2.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.GridView1">
+</member><member name="F:Presentacion.Usuario_Nuevo.GridView1">
 	<summary>
 Control GridView1.
 </summary>
@@ -2271,7 +1902,7 @@ Control GridView1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div1">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div1">
 	<summary>
 Control Div1.
 </summary>
@@ -2279,7 +1910,7 @@ Control Div1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div3">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div3">
 	<summary>
 Control Div3.
 </summary>
@@ -2287,7 +1918,7 @@ Control Div3.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.lbl_Err">
+</member><member name="F:Presentacion.Usuario_Nuevo.lbl_Err">
 	<summary>
 Control lbl_Err.
 </summary>
@@ -2295,7 +1926,7 @@ Control lbl_Err.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Campos">
+</member><member name="F:Presentacion.Usuario_Nuevo.Campos">
 	<summary>
 Control Campos.
 </summary>
@@ -2303,7 +1934,7 @@ Control Campos.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div_ErrVehi">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div_ErrVehi">
 	<summary>
 Control Div_ErrVehi.
 </summary>
@@ -2311,7 +1942,7 @@ Control Div_ErrVehi.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div_Div_ErrVehi_text">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div_Div_ErrVehi_text">
 	<summary>
 Control Div_Div_ErrVehi_text.
 </summary>
@@ -2319,7 +1950,7 @@ Control Div_Div_ErrVehi_text.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.Div_Elim">
+</member><member name="F:Presentacion.Usuario_Nuevo.Div_Elim">
 	<summary>
 Control Div_Elim.
 </summary>
@@ -2327,7 +1958,7 @@ Control Div_Elim.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.asd">
+</member><member name="F:Presentacion.Usuario_Nuevo.asd">
 	<summary>
 Control asd.
 </summary>
@@ -2335,14 +1966,78 @@ Control asd.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pedido_Consulta.btn_Agregar2">
+</member><member name="F:Presentacion.Vehiculo_Historico.ScriptManager1">
 	<summary>
-Control btn_Agregar2.
+Control ScriptManager1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.tb_marca">
+	<summary>
+Control tb_marca.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.tb_modelo">
+	<summary>
+Control tb_modelo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.tb_patente">
+	<summary>
+Control tb_patente.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Vehiculo_Historico.Volver">
+	<summary>
+Control Volver.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Presentacion.DS_Usuario.RolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Presentacion.DS_Usuario.RolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Presentacion.DS_Usuario.RolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Presentacion.DS_Usuario">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:Presentacion.Roles.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -2479,27 +2174,348 @@ Control asd.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Inicio.Image1">
+</member><member name="F:Presentacion.Obra_Consulta.btn_Agregar">
 	<summary>
-Control Image1.
+Control btn_Agregar.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="T:Presentacion.DS_Usuario.RolDataTable">
+</member><member name="F:Presentacion.Obra_Consulta.tb_Buscar">
+	<summary>
+Control tb_Buscar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.Btn_buscar">
+	<summary>
+Control Btn_buscar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.DropDownList_obra">
+	<summary>
+Control DropDownList_obra.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.Div_Elim">
+	<summary>
+Control Div_Elim.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.asd">
+	<summary>
+Control asd.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Obra_Consulta.Agregar2">
+	<summary>
+Control Agregar2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_grupo_id">
+	<summary>
+Control Label_grupo_id.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_id">
+	<summary>
+Control Txt_grupo_id.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_grupo_nomb">
+	<summary>
+Control Label_grupo_nomb.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_nomb">
+	<summary>
+Control Txt_grupo_nomb.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_tipo">
+	<summary>
+Control Label_tipo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_tipo">
+	<summary>
+Control Txt_tipo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.RegularExpressionValidator1">
+	<summary>
+Control RegularExpressionValidator1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_tipo1">
+	<summary>
+Control Label_tipo1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_tipo2">
+	<summary>
+Control Label_tipo2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_tipo3">
+	<summary>
+Control Label_tipo3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Labeltipo4">
+	<summary>
+Control Labeltipo4.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_porcentaje">
+	<summary>
+Control Label_porcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_porcentaje">
+	<summary>
+Control Txt_porcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.RegularExpressionValidator2">
+	<summary>
+Control RegularExpressionValidator2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_clieporcentaje">
+	<summary>
+Control Label_clieporcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_clieporcentaje">
+	<summary>
+Control Txt_clieporcentaje.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_codcobro">
+	<summary>
+Control Label_codcobro.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_codcobro">
+	<summary>
+Control Txt_codcobro.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_cobro1">
+	<summary>
+Control Label_cobro1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_cobro2">
+	<summary>
+Control Label_cobro2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_cobro3">
+	<summary>
+Control Label_cobro3.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_cobro4">
+	<summary>
+Control Label_cobro4.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Label_fechaproc">
+	<summary>
+Control Label_fechaproc.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.Txt_fechaproc">
+	<summary>
+Control Txt_fechaproc.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.btn_retroceder">
+	<summary>
+Control btn_retroceder.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.btn_baja">
+	<summary>
+Control btn_baja.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.btn">
+	<summary>
+Control btn.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="P:Presentacion.My.MyWebExtension.Application">
+	<summary>
+ Devuelve información sobre la aplicación actual.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.Computer">
+	<summary>
+ Devuelve información sobre el equipo host.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.User">
+	<summary>
+ Devuelve información del usuario web actual.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.Request">
+	<summary>
+ Devuelve un objeto Request.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.Response">
+	<summary>
+ Devuelve un objeto Response.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.Log">
+	<summary>
+ Devuelve el objeto de registro Asp.
+ </summary>
+</member><member name="P:Presentacion.My.MyWebExtension.WebServices">
+	<summary>
+ Proporciona acceso a los servicios Web agregados a este proyecto.
+ </summary>
+</member><member name="T:Presentacion.My.MyWebExtension">
+	<summary>
+ Módulo usado para definir las propiedades que están disponibles en el espacio de nombres My para proyectos web.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Presentacion.Ds_Obra.Obtener_todoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Presentacion.DS_Usuario.RolRow">
+</member><member name="T:Presentacion.Ds_Obra.Obtener_todoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Presentacion.DS_Usuario.RolRowChangeEvent">
+</member><member name="T:Presentacion.Ds_Obra.Obtener_todoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Presentacion.DS_Usuario">
+</member><member name="T:Presentacion.Ds_Obra">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
