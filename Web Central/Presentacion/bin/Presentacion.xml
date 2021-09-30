@@ -6,7 +6,71 @@ Presentacion
 </name>
 </assembly>
 <members>
-<member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
+<member name="T:Presentacion.DS_grupos.Grupos_todosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Presentacion.DS_grupos.Grupos_todosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Presentacion.DS_grupos.Grupos_todosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Presentacion.DS_grupos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="F:Presentacion.Grupos_abm.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_abm.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_abm.Lb_grupo">
+	<summary>
+Control Lb_grupo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_abm.Txt_grupo_id">
+	<summary>
+Control Txt_grupo_id.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_abm.btn_ir">
+	<summary>
+Control btn_ir.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_abm.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -2254,6 +2318,14 @@ Control UpdatePanel1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Grupos_alta.Panel1">
+	<summary>
+Control Panel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Grupos_alta.Label_grupo_id">
 	<summary>
 Control Label_grupo_id.
@@ -2446,6 +2518,14 @@ Control Txt_fechaproc.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Grupos_alta.Lb_error_validacion">
+	<summary>
+Control Lb_error_validacion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Grupos_alta.btn_retroceder">
 	<summary>
 Control btn_retroceder.
@@ -2454,17 +2534,25 @@ Control btn_retroceder.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Grupos_alta.btn_baja">
+</member><member name="F:Presentacion.Grupos_alta.btn_graba_modal">
 	<summary>
-Control btn_baja.
+Control btn_graba_modal.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Grupos_alta.btn">
+</member><member name="F:Presentacion.Grupos_alta.btn_baja_modal">
 	<summary>
-Control btn.
+Control btn_baja_modal.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.UpdateProgress1">
+	<summary>
+Control UpdateProgress1.
 </summary>
 	<remarks>
 Campo generado automáticamente.

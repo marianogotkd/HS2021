@@ -158,6 +158,10 @@
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Label ID="Lb_error_validacion" runat="server" Font-Bold="True" 
+        ForeColor="Red" Text="Error!" Visible="False"></asp:Label>
 </div>
 
 
@@ -177,9 +181,13 @@
                     
             <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
             &nbsp;
-            <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_baja">F4 = DAR DE BAJA</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-baja">
+                  F4 = DAR DE BAJA
+                </button>
             &nbsp;
-            <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn">F8 = GRABA</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-graba"> <%--data-targe="#modal-primary"--%>
+                  F8 = GRABA
+                </button>
                     
         </div>                  
 
@@ -199,8 +207,120 @@
 </div>
 
 
+<div class="modal fade" id="modal-graba">
+        <div class="modal-dialog">
+          <div class="modal-content bg-primary">
+            <div class="modal-header">
+              <h4 class="modal-title">Graba</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <p>¿Confirma la operación?&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button"    class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+              <button type="button" id="btn_graba_modal" runat="server"  class="btn btn-outline-light" data-dismiss="modal">Confirmar</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
+<div class="modal fade" id="modal-baja">
+        <div class="modal-dialog">
+          <div class="modal-content bg-primary">
+            <div class="modal-header">
+              <h4 class="modal-title">Dar de Baja</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <p>¿Confirma la operación?&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button"    class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+              <button type="button" id="btn_baja_modal" runat="server"  class="btn btn-outline-light" data-dismiss="modal">Confirmar</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
+  <div class="modal fade" id="modal-success">
+        <div class="modal-dialog">
+          <div class="modal-content bg-success">
+            <div class="modal-header">
+              <h4 class="modal-title">Information</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-light">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
 </ContentTemplate> 
 </asp:UpdatePanel>
+
+
+<asp:UpdateProgress ID="UpdateProgress1" runat="server" 
+            AssociatedUpdatePanelID="UpdatePanel1">
+        <ProgressTemplate>
+       
+         <div style="background-color: Gray; filter:alpha(opacity=60); opacity:0.60; width: 100%; top: 0px; left: 0px; position: fixed; height: 100%;"> </div>
+          <div style="margin:auto;
+              font-family:Trebuchet MS;
+              filter: alpha(opacity=100);
+              opacity: 1;
+              font-size:small;
+              vertical-align: middle;
+              top: 40%;
+              position: fixed;
+              right: 40%;
+              color: #275721;
+              text-align: center;
+              background-color: White;
+              height: 100px;
+              ">
+
+
+              <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title">Procesando Solicitud</h3>
+              </div>
+              <div class="card-body">
+                Aguarde un Momento Por Favor...
+              </div>
+              <!-- /.card-body -->
+              <!-- Loading (remove the following to stop the loading)-->
+              <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+              </div>
+              <!-- end loading -->
+            </div>
+                   
+
+        </div>
+
+        
+        </ProgressTemplate>
+        
+        </asp:UpdateProgress>
 
 
 </asp:Content>

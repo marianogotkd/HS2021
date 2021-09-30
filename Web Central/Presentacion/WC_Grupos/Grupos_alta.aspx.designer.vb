@@ -257,6 +257,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_fechaproc As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control Lb_error_validacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Lb_error_validacion As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control btn_retroceder.
     '''</summary>
     '''<remarks>
@@ -266,20 +275,29 @@ Partial Public Class Grupos_alta
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_baja.
+    '''Control btn_graba_modal.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_baja As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_graba_modal As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn.
+    '''Control btn_baja_modal.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control UpdateProgress1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdateProgress1 As Global.System.Web.UI.UpdateProgress
 End Class

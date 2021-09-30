@@ -2029,6 +2029,7 @@
     <Content Include="Vehiculo\Vehiculo_Historico.aspx" />
     <Content Include="Vehiculo\Vehiculo_Nuevo.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
+    <Content Include="WC_Grupos\Grupos_abm.aspx" />
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2198,6 +2199,18 @@
     </Compile>
     <Compile Include="WC_Cliente\Cliente_alta.aspx.vb">
       <DependentUpon>Cliente_alta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Grupos\DS_grupos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_grupos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Grupos\Grupos_abm.aspx.designer.vb">
+      <DependentUpon>Grupos_abm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Grupos\Grupos_abm.aspx.vb">
+      <DependentUpon>Grupos_abm.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WC_Grupos\Grupos_alta.aspx.designer.vb">
@@ -2521,6 +2534,17 @@
     </None>
     <None Include="Vehiculo\DS_Vehiculo.xss">
       <DependentUpon>DS_Vehiculo.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Grupos\DS_grupos.xsc">
+      <DependentUpon>DS_grupos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Grupos\DS_grupos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_grupos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WC_Grupos\DS_grupos.xss">
+      <DependentUpon>DS_grupos.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
