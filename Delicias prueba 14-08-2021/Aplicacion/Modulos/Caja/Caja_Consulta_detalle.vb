@@ -7,6 +7,224 @@
     Dim listo = "no"
     Dim ds_productos As DataSet 'lo uso en el private sub recuperar_prod_categoria
 
+    Private Sub sumar_resumen()
+        txt_resumen_totalefectivo.Text = "0,00"
+
+        Dim i As Integer = 0
+        While i < DG_categoria.Rows.Count
+            txt_resumen_totalefectivo.Text = CDec(txt_resumen_totalefectivo.Text) + CDec(DG_categoria.Rows(i).Cells("TotalDataGridViewTextBoxColumn").Value)
+            i = i + 1
+        End While
+
+    End Sub
+
+
+    Private Sub recuperar_prod_categoria_nuevo()
+        If listo = "si" Then
+
+            Select Case ComboBox_categoria.Text
+                Case "Categoría"
+                    Caja_ds.Tables("Resumen_categoria").Rows.Clear()
+
+                    'If ds_productos.Tables(0).Rows.Count <> 0 And (ds_productos.Tables(1).Rows.Count <> 0) Then
+                    If Caja_ds.Productos_validar1.Rows.Count <> 0 And (ds_productos.Tables(1).Rows.Count <> 0) Then
+                        Dim h As Integer = 0
+                        While h < ds_productos.Tables(1).Rows.Count 'tabla categorias
+                            Dim categoria_desc As String = ds_productos.Tables(1).Rows(h).Item("Categoria_nombre")
+                            Dim contador_productos As Integer = 0
+                            Dim total As Decimal = 0
+                            Dim id_categorias As Integer = CInt(ds_productos.Tables(1).Rows(h).Item("Categoria_cat_id")) 'ESTE ES EL ID DE CADA CATEGORIA, PARA BUSCAR Y VER SI HAY PRODUCTOS VENDIDOS AHI
+                            Dim i As Integer = 0
+                            'While i < ds_productos.Tables(0).Rows.Count
+                            While i < Caja_ds.Productos_validar1.Rows.Count
+                                'Dim nrocat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_nrocat"))
+                                'Dim idcat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_idcat"))
+                                Dim nrocat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_nrocat"))
+                                Dim idcat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_idcat"))
+                                If nrocat = 1 Then
+                                    'busco en categoria
+                                    If id_categorias = idcat Then
+                                        'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                        total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                        contador_productos = contador_productos + 1
+                                    End If
+                                End If
+                                If nrocat = 2 Then
+                                    'busco en rubro
+                                    Dim j As Integer = 0
+                                    While j < ds_productos.Tables(2).Rows.Count
+                                        If idcat = ds_productos.Tables(2).Rows(j).Item("Rubro_cat2_id") Then
+                                            If id_categorias = ds_productos.Tables(2).Rows(j).Item("Categoria_cat_id") Then
+                                                'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                                total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                                contador_productos = contador_productos + 1
+                                                j = ds_productos.Tables(2).Rows.Count
+                                            End If
+                                        End If
+                                        j = j + 1
+                                    End While
+                                End If
+                                If nrocat = 3 Then
+                                    'busco en subrubro then
+                                    Dim j As Integer = 0
+                                    While j < ds_productos.Tables(3).Rows.Count
+                                        If idcat = ds_productos.Tables(3).Rows(j).Item("Subrubro_cat3_id") Then
+                                            If id_categorias = ds_productos.Tables(3).Rows(j).Item("Categoria_cat_id") Then
+                                                'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                                total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                                contador_productos = contador_productos + 1
+                                                j = ds_productos.Tables(3).Rows.Count
+                                            End If
+                                        End If
+                                        j = j + 1
+                                    End While
+                                End If
+                                i = i + 1
+                            End While
+                            If contador_productos <> 0 Then
+                                'entonces lo ingreso al producto en la grilla
+                                Dim row As DataRow = Caja_ds.Tables("Resumen_categoria").NewRow
+                                row("Descripcion") = categoria_desc
+                                row("Total") = CDec(total)
+                                Caja_ds.Tables("Resumen_categoria").Rows.Add(row)
+                            End If
+                            h = h + 1
+                        End While
+                    End If
+                Case "Rubro"
+                    Caja_ds.Tables("Resumen_categoria").Rows.Clear()
+                    'If ds_productos.Tables(0).Rows.Count <> 0 And (ds_productos.Tables(2).Rows.Count <> 0) Then
+                    If Caja_ds.Productos_validar1.Rows.Count <> 0 And (ds_productos.Tables(2).Rows.Count <> 0) Then
+                        Dim h As Integer = 0
+                        While h < ds_productos.Tables(2).Rows.Count 'tabla categorias
+                            Dim rubro_desc As String = ds_productos.Tables(2).Rows(h).Item("Rubro_nombre")
+                            Dim categoria_desc As String = ds_productos.Tables(2).Rows(h).Item("Categoria_nombre")
+                            Dim contador_productos As Integer = 0
+                            Dim total As Decimal = 0
+
+                            Dim id_rubro As Integer = CInt(ds_productos.Tables(2).Rows(h).Item("Rubro_cat2_id"))
+                            Dim i As Integer = 0
+
+                            'While i < ds_productos.Tables(0).Rows.Count
+                            While i < Caja_ds.Productos_validar1.Rows.Count
+                                'Dim nrocat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_nrocat"))
+                                'Dim idcat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_idcat"))
+                                Dim nrocat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_nrocat"))
+                                Dim idcat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_idcat"))
+                                If nrocat = 1 Then
+                                    'no lo pongo
+                                End If
+                                If nrocat = 2 Then
+                                    'busco en rubro
+                                    Dim j As Integer = 0
+                                    While j < ds_productos.Tables(2).Rows.Count
+                                        If idcat = ds_productos.Tables(2).Rows(j).Item("Rubro_cat2_id") Then
+                                            If id_rubro = ds_productos.Tables(2).Rows(j).Item("Rubro_cat2_id") Then
+                                                'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                                total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                                contador_productos = contador_productos + 1
+
+                                                j = ds_productos.Tables(2).Rows.Count
+                                            End If
+                                        End If
+                                        j = j + 1
+                                    End While
+                                End If
+                                If nrocat = 3 Then
+                                    'busco en subrubro then
+                                    Dim j As Integer = 0
+                                    While j < ds_productos.Tables(3).Rows.Count
+                                        If idcat = ds_productos.Tables(3).Rows(j).Item("Subrubro_cat3_id") Then
+                                            If id_rubro = ds_productos.Tables(3).Rows(j).Item("Rubro_cat2_id") Then
+                                                'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                                total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                                contador_productos = contador_productos + 1
+                                                j = ds_productos.Tables(3).Rows.Count
+                                            End If
+                                        End If
+                                        j = j + 1
+                                    End While
+                                End If
+                                i = i + 1
+                            End While
+
+
+
+                            If contador_productos <> 0 Then
+                                'entonces lo ingreso al producto en la grilla
+                                Dim row As DataRow = Caja_ds.Tables("Resumen_categoria").NewRow
+                                row("Descripcion") = categoria_desc + "/" + rubro_desc
+                                row("Total") = CDec(total)
+                                Caja_ds.Tables("Resumen_categoria").Rows.Add(row)
+                            End If
+                            h = h + 1
+                        End While
+                    End If
+
+                Case "Subrubro"
+                    Caja_ds.Tables("Resumen_categoria").Rows.Clear()
+                    'If (ds_productos.Tables(0).Rows.Count <> 0) And (ds_productos.Tables(3).Rows.Count <> 0) Then
+                    If (Caja_ds.Productos_validar1.Rows.Count <> 0) And (ds_productos.Tables(3).Rows.Count <> 0) Then
+                        Dim h As Integer = 0
+                        While h < ds_productos.Tables(3).Rows.Count 'tabla categorias
+                            Dim rubro_desc As String = ds_productos.Tables(3).Rows(h).Item("Rubro_nombre")
+                            Dim categoria_desc As String = ds_productos.Tables(3).Rows(h).Item("Categoria_nombre")
+                            Dim subrubro_desc As String = ds_productos.Tables(3).Rows(h).Item("Subrubro_cat3_nombre")
+                            Dim contador_productos As Integer = 0
+                            Dim total As Decimal = 0
+                            Dim id_subrubro As Integer = CInt(ds_productos.Tables(3).Rows(h).Item("Subrubro_cat3_id"))
+
+
+                            Dim i As Integer = 0
+
+                            'While i < ds_productos.Tables(0).Rows.Count
+                            While i < Caja_ds.Productos_validar1.Rows.Count
+                                'Dim nrocat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_nrocat"))
+                                'Dim idcat As Integer = CInt(ds_productos.Tables(0).Rows(i).Item("prod_idcat"))
+                                Dim nrocat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_nrocat"))
+                                Dim idcat As Integer = CInt(Caja_ds.Productos_validar1.Rows(i).Item("prod_idcat"))
+                                If nrocat = 1 Then
+                                    'no lo pongo
+                                End If
+                                If nrocat = 2 Then
+                                    'busco en rubro
+                                End If
+                                If nrocat = 3 Then
+                                    'busco en subrubro then
+                                    Dim j As Integer = 0
+                                    While j < ds_productos.Tables(3).Rows.Count
+                                        If idcat = ds_productos.Tables(3).Rows(j).Item("Subrubro_cat3_id") Then
+                                            If id_subrubro = ds_productos.Tables(3).Rows(j).Item("Subrubro_cat3_id") Then
+                                                'total = total + ds_productos.Tables(0).Rows(i).Item("ventaprod_subtotal")
+                                                total = total + Caja_ds.Productos_validar1.Rows(i).Item("ventaprod_subtotal")
+                                                contador_productos = contador_productos + 1
+                                                j = ds_productos.Tables(3).Rows.Count
+                                            End If
+                                        End If
+                                        j = j + 1
+                                    End While
+                                End If
+                                i = i + 1
+                            End While
+
+
+                            If contador_productos <> 0 Then
+                                'entonces lo ingreso al producto en la grilla
+                                Dim row As DataRow = Caja_ds.Tables("Resumen_categoria").NewRow
+                                row("Descripcion") = categoria_desc + "/" + rubro_desc + "/" + subrubro_desc
+                                row("Total") = CDec(total)
+                                Caja_ds.Tables("Resumen_categoria").Rows.Add(row)
+                            End If
+                            h = h + 1
+                        End While
+                    End If
+
+            End Select
+            sumar_resumen()
+
+        End If
+    End Sub
+
     Private Sub recuperar_prod_categoria()
         If listo = "si" Then
 
@@ -192,8 +410,37 @@
 
 
 
+
     End Sub
 
+    Private Sub Quitar_facturas_tarjeta()
+        Dim i As Integer = 0
+        While i < DG_caja.Rows.Count
+            If DG_caja.Rows(i).Cells("CajaTipoMovintDataGridViewTextBoxColumn").Value = 4 Then
+                'si es tarjeta lo quito de productos_validar1
+                '-------------------------------------------------------------------------------------------------------------------------
+                '1) obtengo factura_id
+                Dim concepto As String = CStr(DG_caja.Rows(i).Cells("CAJAdetalledescripcionDataGridViewTextBoxColumn").Value)
+                '2)saco la subcadena 
+                'Split con expresión regular
+                Dim regex As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex("º")
+                Dim vectoraux() As String
+                vectoraux = regex.Split(concepto)
+                Dim factura_id As Integer = CInt(vectoraux(1))
+                '-------------------------------------------------------------------------------------------------------------------------
+                Dim j As Integer = 0
+                While j < Caja_ds.Productos_validar1.Rows.Count
+                    If factura_id = Caja_ds.Productos_validar1.Rows(j).Item("factura_id") Then
+                        'lo quito
+                        Caja_ds.Productos_validar1.Rows.RemoveAt(j)
+                        j = 0
+                    End If
+                    j = j + 1
+                End While
+            End If
+            i = i + 1
+        End While
+    End Sub
 
     Private Sub Caja_Consulta_detalle_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then
@@ -208,6 +455,9 @@
         ComboBox_categoria.Text = "Categoría"
 
         ds_productos = DAcaja.Caja_obtener_productos_facturados_X_categoria(caja_id)
+
+        Caja_ds.Productos_validar1.Rows.Clear()
+        Caja_ds.Productos_validar1.Merge(ds_productos.Tables(0))
 
         '/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -251,7 +501,11 @@
         End If
 
         listo = "si"
-        recuperar_prod_categoria() 'esto es para ver en la otra pestaña las ventas organizadas por categoria
+        Quitar_facturas_tarjeta() 'elimina de la tabla productos_validar1 aquellos productos cuyo factura_id sean ventas con tarjeta.
+
+        'recuperar_prod_categoria() 'esto es para ver en la otra pestaña las ventas organizadas por categoria
+        recuperar_prod_categoria_nuevo()
+
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -264,7 +518,8 @@
     End Sub
 
     Private Sub ComboBox_categoria_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox_categoria.SelectedIndexChanged
-        recuperar_prod_categoria()
+        'recuperar_prod_categoria()
+        recuperar_prod_categoria_nuevo()
     End Sub
 
     

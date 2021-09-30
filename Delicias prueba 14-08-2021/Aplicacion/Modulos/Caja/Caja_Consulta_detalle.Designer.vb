@@ -23,8 +23,8 @@ Partial Class Caja_Consulta_detalle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -72,6 +72,8 @@ Partial Class Caja_Consulta_detalle
         Me.Label14 = New System.Windows.Forms.Label()
         Me.LB_fecha_b = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.txt_resumen_totalefectivo = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -138,7 +140,7 @@ Partial Class Caja_Consulta_detalle
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox1.Size = New System.Drawing.Size(1091, 537)
+        Me.GroupBox1.Size = New System.Drawing.Size(1091, 534)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -207,7 +209,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_ingresos_tarjeta.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_ingresos_tarjeta.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_ingresos_tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ingresos_tarjeta.Location = New System.Drawing.Point(195, 493)
+        Me.TextBox_ingresos_tarjeta.Location = New System.Drawing.Point(195, 490)
         Me.TextBox_ingresos_tarjeta.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ingresos_tarjeta.Name = "TextBox_ingresos_tarjeta"
         Me.TextBox_ingresos_tarjeta.ReadOnly = True
@@ -221,7 +223,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(25, 499)
+        Me.Label9.Location = New System.Drawing.Point(25, 496)
         Me.Label9.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(148, 17)
@@ -245,7 +247,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_montoinicial.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_montoinicial.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_montoinicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_montoinicial.Location = New System.Drawing.Point(195, 434)
+        Me.TextBox_montoinicial.Location = New System.Drawing.Point(195, 431)
         Me.TextBox_montoinicial.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_montoinicial.Name = "TextBox_montoinicial"
         Me.TextBox_montoinicial.ReadOnly = True
@@ -271,7 +273,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label11.Location = New System.Drawing.Point(25, 440)
+        Me.Label11.Location = New System.Drawing.Point(25, 437)
         Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(127, 17)
@@ -283,7 +285,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_TOTAL.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_TOTAL.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_TOTAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_TOTAL.Location = New System.Drawing.Point(811, 463)
+        Me.TextBox_TOTAL.Location = New System.Drawing.Point(811, 460)
         Me.TextBox_TOTAL.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_TOTAL.Name = "TextBox_TOTAL"
         Me.TextBox_TOTAL.ReadOnly = True
@@ -296,7 +298,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_egresos_subtotal.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_egresos_subtotal.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_egresos_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_egresos_subtotal.Location = New System.Drawing.Point(561, 434)
+        Me.TextBox_egresos_subtotal.Location = New System.Drawing.Point(561, 431)
         Me.TextBox_egresos_subtotal.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_egresos_subtotal.Name = "TextBox_egresos_subtotal"
         Me.TextBox_egresos_subtotal.ReadOnly = True
@@ -326,12 +328,12 @@ Partial Class Caja_Consulta_detalle
         Me.DG_caja.ReadOnly = True
         Me.DG_caja.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_caja.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_caja.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_caja.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DG_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_caja.Size = New System.Drawing.Size(1071, 296)
+        Me.DG_caja.Size = New System.Drawing.Size(1071, 293)
         Me.DG_caja.StandardTab = True
         Me.DG_caja.TabIndex = 240
         '
@@ -409,7 +411,7 @@ Partial Class Caja_Consulta_detalle
         Me.TextBox_ingresos_efectivo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.TextBox_ingresos_efectivo.BackColor = System.Drawing.SystemColors.Info
         Me.TextBox_ingresos_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_ingresos_efectivo.Location = New System.Drawing.Point(561, 493)
+        Me.TextBox_ingresos_efectivo.Location = New System.Drawing.Point(561, 490)
         Me.TextBox_ingresos_efectivo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ingresos_efectivo.Name = "TextBox_ingresos_efectivo"
         Me.TextBox_ingresos_efectivo.ReadOnly = True
@@ -423,7 +425,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(393, 499)
+        Me.Label1.Location = New System.Drawing.Point(393, 496)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 17)
@@ -436,7 +438,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Green
-        Me.Label8.Location = New System.Drawing.Point(834, 428)
+        Me.Label8.Location = New System.Drawing.Point(834, 425)
         Me.Label8.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(163, 26)
@@ -449,7 +451,7 @@ Partial Class Caja_Consulta_detalle
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(393, 437)
+        Me.Label7.Location = New System.Drawing.Point(393, 434)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(144, 17)
@@ -472,6 +474,8 @@ Partial Class Caja_Consulta_detalle
         Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.txt_resumen_totalefectivo)
+        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.ComboBox_categoria)
         Me.GroupBox2.Controls.Add(Me.DG_categoria)
@@ -486,7 +490,7 @@ Partial Class Caja_Consulta_detalle
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(5)
-        Me.GroupBox2.Size = New System.Drawing.Size(1091, 537)
+        Me.GroupBox2.Size = New System.Drawing.Size(1091, 534)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
@@ -535,12 +539,12 @@ Partial Class Caja_Consulta_detalle
         Me.DG_categoria.ReadOnly = True
         Me.DG_categoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_categoria.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_categoria.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_categoria.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DG_categoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_categoria.Size = New System.Drawing.Size(1068, 357)
+        Me.DG_categoria.Size = New System.Drawing.Size(1068, 354)
         Me.DG_categoria.StandardTab = True
         Me.DG_categoria.TabIndex = 258
         '
@@ -647,6 +651,33 @@ Partial Class Caja_Consulta_detalle
         Me.LB_fecha_b.TabIndex = 1
         Me.LB_fecha_b.Text = "00/00/2014"
         '
+        'txt_resumen_totalefectivo
+        '
+        Me.txt_resumen_totalefectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_resumen_totalefectivo.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_resumen_totalefectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_resumen_totalefectivo.Location = New System.Drawing.Point(164, 499)
+        Me.txt_resumen_totalefectivo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_resumen_totalefectivo.Name = "txt_resumen_totalefectivo"
+        Me.txt_resumen_totalefectivo.ReadOnly = True
+        Me.txt_resumen_totalefectivo.Size = New System.Drawing.Size(175, 23)
+        Me.txt_resumen_totalefectivo.TabIndex = 264
+        Me.txt_resumen_totalefectivo.Text = "0,00"
+        Me.txt_resumen_totalefectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Blue
+        Me.Label5.Location = New System.Drawing.Point(12, 502)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(144, 17)
+        Me.Label5.TabIndex = 263
+        Me.Label5.Text = "TOTAL EFECTIVO:"
+        '
         'Caja_Consulta_detalle
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -721,4 +752,6 @@ Partial Class Caja_Consulta_detalle
     Friend WithEvents Button_volver As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txt_resumen_totalefectivo As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

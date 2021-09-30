@@ -1379,6 +1379,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Aplicacion.Caja_ds.Productos_validar1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Aplicacion.Caja_ds.Caja_consultaRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -1391,6 +1395,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Aplicacion.Caja_ds.Productos_validar1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Aplicacion.Caja_ds.Caja_consultaRowChangeEvent">
 	<summary>
 Row event argument class
@@ -1400,6 +1408,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.Caja_ds.Resumen_categoriaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Caja_ds.Productos_validar1RowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
