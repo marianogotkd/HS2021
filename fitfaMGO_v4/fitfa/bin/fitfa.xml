@@ -4767,6 +4767,14 @@ Control tb_capacidad_max.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Evento_Crear.FilteredTextBoxExtender1">
+	<summary>
+Control FilteredTextBoxExtender1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Evento_Crear.lbl_turnos_error0">
 	<summary>
 Control lbl_turnos_error0.

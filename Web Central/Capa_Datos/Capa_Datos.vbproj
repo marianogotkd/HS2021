@@ -86,6 +86,7 @@
     <Compile Include="Usuario.vb" />
     <Compile Include="Vehiculo.vb" />
     <Compile Include="VehiculoObra.vb" />
+    <Compile Include="WB_clientes.vb" />
     <Compile Include="WB_usuarios.vb" />
     <Compile Include="WC_grupos.vb" />
   </ItemGroup>

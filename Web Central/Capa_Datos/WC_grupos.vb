@@ -90,6 +90,24 @@ Public Class WC_grupos
         Return ds
     End Function
 
+    Public Function Grupos_buscar_id(ByVal Grupo_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Grupos_buscar_id", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Grupo_id", Grupo_id))
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "Grupos")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+
     Public Function Grupos_obtenertodos() As DataSet
         Try
             dbconn.Open()

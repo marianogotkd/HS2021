@@ -41,13 +41,13 @@ Partial Public Class Grupos_alta
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Control Label_grupo_id.
+    '''Control Label_grupo_id0.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label_grupo_id As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label_grupo_id0 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Txt_grupo_id.
@@ -77,6 +77,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_grupo_nomb As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_nombre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Label_tipo.
     '''</summary>
     '''<remarks>
@@ -93,6 +102,15 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Txt_tipo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_tipo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_tipo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control RegularExpressionValidator1.
@@ -158,6 +176,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_porcentaje As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_porcentaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_porcentaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control RegularExpressionValidator2.
     '''</summary>
     '''<remarks>
@@ -185,6 +212,24 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_clieporcentaje As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_clieporcentaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_clieporcentaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator3 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
     '''Control Label_codcobro.
     '''</summary>
     '''<remarks>
@@ -201,6 +246,24 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Txt_codcobro As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_codcobro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_codcobro As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator4.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator4 As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
     '''Control Label_cobro1.
@@ -257,6 +320,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents Txt_fechaproc As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_fecha.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_fecha As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Lb_error_validacion.
     '''</summary>
     '''<remarks>
@@ -291,13 +363,4 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control UpdateProgress1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UpdateProgress1 As Global.System.Web.UI.UpdateProgress
 End Class
