@@ -23,7 +23,7 @@ Public Class Conexion
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.82.201.38")
 
     ' Conexion al ServerOlmedo
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=True;User ID=choco;Initial Catalog=SantaFe;Data Source=25.8.229.91")
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=choco123;Persist Security Info=false;User ID=choco;Initial Catalog=SantaFe;Data Source=25.8.229.91")
 
 
     'mail de hamachi
