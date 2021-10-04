@@ -203,6 +203,15 @@ Partial Public Class Evento_Crear
     Protected WithEvents tb_capacidad_max As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control FilteredTextBoxExtender1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender1 As Global.AjaxControlToolkit.FilteredTextBoxExtender
+
+    '''<summary>
     '''Control lbl_turnos_error0.
     '''</summary>
     '''<remarks>

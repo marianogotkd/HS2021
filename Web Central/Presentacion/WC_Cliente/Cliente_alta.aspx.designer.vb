@@ -68,6 +68,42 @@ Partial Public Class Cliente_alta
     Protected WithEvents Txt_cliente_nomb As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_nombre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label28.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label28 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Txt_dni.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Txt_dni As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_dni.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_dni As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Label_grupo_nomb.
     '''</summary>
     '''<remarks>
@@ -77,13 +113,13 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label_grupo_nomb As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_grupo_nomb.
+    '''Control DropDownList_grupos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_grupo_nomb As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_grupos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control Label1.
@@ -95,13 +131,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control Txt_comision.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_comision As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_comision.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_comision As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator2 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender1 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label2.
@@ -113,13 +176,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control Txt_regalo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_regalo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_regalo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_regalo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator3 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender2 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label3.
@@ -131,13 +221,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox3.
+    '''Control Txt_comision1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_comision1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_comision1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_comision1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator4.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator4 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender3 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label4.
@@ -149,13 +266,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox4.
+    '''Control Txt_regalo1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_regalo1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_regalo1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_regalo1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator5 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender4.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender4 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label5.
@@ -167,13 +311,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox5.
+    '''Control Txt_proceso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_proceso As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_proceso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_proceso As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender5 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label6.
@@ -212,13 +383,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox6.
+    '''Control Txt_calculo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_calculo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_calculo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_calculo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator6.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator6 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender6.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender6 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label10.
@@ -248,13 +446,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox7.
+    '''Control Txt_factor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_factor As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_factor.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_factor As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator8.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator8 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender7.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender7 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label13.
@@ -284,13 +509,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox8.
+    '''Control Txt_imprimecalculo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_imprimecalculo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_imprimecalculo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_imprimecalculo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator7.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator7 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender8.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender8 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label16.
@@ -320,13 +572,31 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox9.
+    '''Control Txt_recorrido.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_recorrido As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_recorrido.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_recorrido As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender11.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender11 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label19.
@@ -338,13 +608,31 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox10.
+    '''Control Txt_orden.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_orden As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_orden.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_orden As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender12.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender12 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label22.
@@ -356,13 +644,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label22 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox11.
+    '''Control Txt_variable.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_variable As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_variable.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_variable As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator9.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator9 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender9.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender9 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label20.
@@ -392,13 +707,22 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label23 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox12.
+    '''Control Txt_leyenda.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_leyenda As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_leyenda.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_leyenda As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Label24.
@@ -410,13 +734,40 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label24 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox13.
+    '''Control Txt_variable1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_variable1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_variable1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_variable1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control RegularExpressionValidator10.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator10 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender10.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender10 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Label25.
@@ -446,13 +797,31 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label27 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox14.
+    '''Control Txt_leyenda1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_leyenda1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_leyenda1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_leyenda1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Lb_error_validacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Lb_error_validacion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control btn_retroceder.
@@ -464,20 +833,20 @@ Partial Public Class Cliente_alta
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_baja.
+    '''Control btn_graba_modal.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_baja As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_graba_modal As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn.
+    '''Control btn_baja_modal.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

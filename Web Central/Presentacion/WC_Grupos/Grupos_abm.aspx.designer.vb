@@ -50,13 +50,22 @@ Partial Public Class Grupos_abm
     Protected WithEvents Txt_grupo_id As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btn_ir.
+    '''Control btn_modificar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ir As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_modificar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_nuevo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control GridView1.
@@ -66,4 +75,13 @@ Partial Public Class Grupos_abm
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control btn_baja_modal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class
