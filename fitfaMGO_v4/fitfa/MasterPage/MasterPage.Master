@@ -80,7 +80,7 @@
     </form>--%>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <%--<ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -257,40 +257,45 @@
                   <p>Miembros</p>                  
                 </a>
               </li>
-              <li class="nav-item">
+
+             <%-- <li class="nav-item" >
                 <a href="../examples/profile.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Instructores</p>
                 </a>
-              </li>
-              <li class="nav-item">
+              </li>--%>
+
+            <%--  <li class="nav-item" visible="false">
               <a href="../Instituciones/Instructor_institucion_b.aspx" class="nav-link">
               <i class="fa fa-circle-o nav-icon"></i>
                   <p>Instituciones</p>
                 </a>
-              </li>
-              <li class="nav-item">
+              </li>--%>
+              <%--<li class="nav-item" visible="false">
                 <a href="../examples/register.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Centros de Enseñanza</p>
                 </a>
-              </li>
-               <li class="nav-item" runat="server" id="Li_Insc">
-                <a href="../Inscripciones/Evento_seleccionar_varios.aspx" class="nav-link">
+              </li>--%>
+
+               <li class="nav-item" runat="server" id="Li_Insc" >
+                <%--<a href="../Inscripciones/Evento_seleccionar_varios.aspx" class="nav-link">--%>
+                <a href="../Error/UnderConstruction.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Inscribir Alumnos</p>
                 </a>
               </li>
 
-              <li class="nav-item" runat="server" id="Li_config_costos">
+             <%-- <li class="nav-item" runat="server" id="Li_config_costos" visible="false">
                 <a href="../Miembros/Config_liquidacion.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Configurar liquidacion.</p>
                 </a>
-              </li>
+              </li>--%>
                            
-              <li class="nav-item" runat="server" id="Li_reporte_inscripts">
-                <a href="../Reportes/Reportes.aspx" class="nav-link">
+              <li class="nav-item" runat="server" id="Li_reporte_inscripts" visible="false">
+                <%--<a href="../Reportes/Reportes.aspx" class="nav-link">--%>
+                <a href="../Error/UnderConstruction.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Reporte inscriptos</p>
                 </a>
@@ -323,15 +328,17 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../Reportes/Reporte_Inscriptos_Categoria.aspx" class="nav-link">
+               <%-- <a href="../Reportes/Reporte_Inscriptos_Categoria.aspx" class="nav-link">--%>
+                 <a href="../Error/UnderConstruction.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Ver Inscriptos</p>
+                  <p>Ver Inscriptos del Evento</p>
                 </a>
               </li>
                  </li>
               
                <li class="nav-item" id="li_ImpComp" runat="server">
-                <a href="../Reportes/inscripcion_persona.aspx" class="nav-link">
+          <%--      <a href="../Reportes/inscripcion_persona.aspx" class="nav-link">--%>
+                 <a href="../Error/UnderConstruction.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Imprimir Mi Comprobante</p>
                 </a>
@@ -462,11 +469,10 @@
 
           <!--Calendario-->
            <li class="nav-item" id="li_Calendar" runat="server">
-            <a href="../calendar.html" class="nav-link">
+            <a href="../Calendario/Calendario.aspx" class="nav-link">
               <i class="nav-icon fa fa-calendar"></i>
               <p>
                Calendario
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
@@ -807,7 +813,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 1.0.0-Beta
     </div>
-    <strong>Copyright &copy; 2018 <a href="wmhamer@gmail.com">Federación ITF de Argentina</a>.</strong> All rights
+    <strong>Copyright &copy; 2018 <a href="wmhamer@gmail.com">Asociacion Norte de Taekwon-Do - HamerSoft </a>.</strong> All rights
     reserved.
   </footer>
 

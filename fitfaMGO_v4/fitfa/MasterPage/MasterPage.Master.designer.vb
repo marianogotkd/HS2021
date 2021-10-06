@@ -86,15 +86,6 @@ Partial Public Class MasterPage
     Protected WithEvents Li_Insc As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Li_config_costos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Li_config_costos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
     '''Control Li_reporte_inscripts.
     '''</summary>
     '''<remarks>

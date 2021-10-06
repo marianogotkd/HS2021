@@ -1259,13 +1259,19 @@
     <Content Include="bootstrap-fileinput-master\examples\index.html" />
     <Content Include="bootstrap-fileinput-master\js\fileinput.js" />
     <Content Include="bootstrap-fileinput-master\js\fileinput.min.js" />
+    <Content Include="Calendario\Calendario.aspx" />
     <Content Include="Carga Competidores\Carga_Manual_Competidores.aspx" />
     <Content Include="Contraseña\contraseña_cambiar.aspx" />
+    <Content Include="Error\UnderConstruction.aspx" />
     <Content Include="Eventos\Evento_Seleccionar_Examen.aspx" />
     <Content Include="Eventos\Examen.aspx" />
     <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
     <Content Include="Eventos\Examen_costos.aspx" />
     <Content Include="img\LOGOANT400x400.png" />
+    <Content Include="img\TKD\243527914_4665109853520755_7456314248849703835_n.jpg" />
+    <Content Include="img\TKD\_hazte_premium_descarga_alta_resolucion_designed_with_EDIT.org %281%29.jpg" />
+    <Content Include="img\TKD\_hazte_premium_descarga_alta_resolucion_designed_with_EDIT.org %282%29 copia.jpg" />
+    <Content Include="img\website_under_construction.jpg" />
     <Content Include="js\table2excel.js" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.min.css" />
@@ -2882,6 +2888,13 @@
       <DependentUpon>Area_asignar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Calendario\Calendario.aspx.designer.vb">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendario\Calendario.aspx.vb">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Carga Competidores\Carga_Manual_Competidores.aspx.designer.vb">
       <DependentUpon>Carga_Manual_Competidores.aspx</DependentUpon>
     </Compile>
@@ -2938,6 +2951,13 @@
     <Compile Include="Datos Personales\Datos_Personales.aspx.vb">
       <DependentUpon>Datos_Personales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\UnderConstruction.aspx.designer.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\UnderConstruction.aspx.vb">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Eventos\Crear_Evento.aspx.designer.vb">
       <DependentUpon>Crear_Evento.aspx</DependentUpon>
