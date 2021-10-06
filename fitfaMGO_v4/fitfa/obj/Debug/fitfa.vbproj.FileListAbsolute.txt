@@ -84,20 +84,6 @@ C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\RdlCompile.compiled
 C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.dll
 C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.xml
 C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.pdb
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.dll
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.pdb
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.xml
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.dll
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.pdb
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.xml
@@ -112,3 +98,17 @@ C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
 C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
