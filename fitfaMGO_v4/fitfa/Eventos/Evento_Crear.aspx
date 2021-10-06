@@ -149,14 +149,15 @@
     <div class="form-group">
         <label>Capacidad máxima de inscriptos por turno: 
         <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
-        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" 
-             CssClass="form-control" runat="server"  
-            ></asp:TextBox>  
-            <%--onkeypress="return justNumbers(event);"--%>
+        Ingrese capacidad máxima.</label></label>
+        <asp:TextBox ID="tb_capacidad_max" CssClass="form-control" 
+            runat="server" onkeypress="return justNumbers(event);" TextMode="Number" 
+            AutoPostBack="True"></asp:TextBox>
+        &nbsp;<%--onkeypress="return justNumbers(event);"--%>
         <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="tb_capacidad_max"
       FilterType="Numbers" >
-        </cc1:FilteredTextBoxExtender>
-        <label>Seleccione los turnos para el examen: </label>
+        </cc1:FilteredTextBoxExtender><label>Seleccione los turnos para el examen:
+        </label>
         &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
         seleccionar al menos un turno</label></div>
  <div class="card-body table-responsive p-0">

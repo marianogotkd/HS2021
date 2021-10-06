@@ -14,9 +14,9 @@
                     Txt_porcentaje.Text = ds_info.Tables(0).Rows(0).Item("Porcentaje")
                     Txt_clieporcentaje.Text = ds_info.Tables(0).Rows(0).Item("Clienteporcentaje")
                     Txt_codcobro.Text = ds_info.Tables(0).Rows(0).Item("Codigocobro")
-                    Txt_fechaproc.Text = CDate(ds_info.Tables(0).Rows(0).Item("Fecha"))
+                    Txt_fechaproc.Text = ds_info.Tables(0).Rows(0).Item("Fecha")
                 End If
-                'recuperar info del grupo
+
             Else
                 Session("grupos_op") = "alta"
                 Dim fecha As Date = Today

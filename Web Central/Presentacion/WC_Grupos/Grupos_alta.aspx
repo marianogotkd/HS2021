@@ -215,7 +215,8 @@
 <div class="form-group">
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date" 
+        TextMode="Date"></asp:TextBox>
     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" 
         Visible="False"></asp:Label>
     <br />
@@ -238,19 +239,28 @@
 
 <div class="card-footer">
 <div class="row justify-content-center" >
-<div class="form-group">
-                    
+        <div class="row align-items-center">
+            <div class="form-group">
             <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
             &nbsp;
+            </div>
+
+            <div class="form-group">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-baja">
                   F4 = DAR DE BAJA
                 </button>
             &nbsp;
+            </div>
+
+            <div class="form-group">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-graba"> <%--data-targe="#modal-primary"--%>
                   F8 = GRABA
                 </button>
-                    
+            </div>
+        
         </div>
+        
+
 </div>
 
 

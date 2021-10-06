@@ -33,7 +33,7 @@
                           Nuevo Grupo
                         </button>
                     </div>
-                    <div class="form-group">
+                    <div class="card-body table-responsive p-0" > <%--class="form-group"--%>
                             <asp:GridView ID="GridView1" runat="server" class="table table-sm" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
                                    BorderColor="Black" GridLines="None" 
                                   EnableSortingAndPagingCallbacks="True" PageSize="20"> <%--class="table table-hover"--%>

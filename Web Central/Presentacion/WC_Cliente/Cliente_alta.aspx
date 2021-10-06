@@ -11,29 +11,17 @@
         {
             width: 301px;
         }
-        .style3
-        {
-            width: 266px;
-        }
         .style4
         {
-            width: 81px;
-        }
-        .style5
-        {
-            width: 97px;
+            width: 63px;
         }
         .style6
         {
             width: 100%;
         }
-        .style7
-        {
-            width: 58px;
-        }
         .style8
         {
-            width: 95px;
+            width: 83px;
         }
         .style9
         {
@@ -46,6 +34,34 @@
         .style11
         {
             width: 217px;
+        }
+        .style12
+        {
+            width: 72px;
+        }
+        .style13
+        {
+            width: 44px;
+        }
+        .style14
+        {
+            width: 187px;
+        }
+        .style15
+        {
+            width: 188px;
+        }
+        .style16
+        {
+            width: 239px;
+        }
+        .style17
+        {
+            width: 184px;
+        }
+        .style18
+        {
+            width: 186px;
         }
         </style>
 </asp:Content>
@@ -184,7 +200,7 @@
                             ForeColor="Red" SetFocusOnError="True" 
                             ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" 
                             ValidationGroup="check_2" xmlns:asp="#unknown2"></asp:RegularExpressionValidator>
-                        <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" TargetControlID="Txt_regalo1" ValidChars="123456789.,">
+                        <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" TargetControlID="Txt_regalo1" ValidChars="0123456789.,">
                         </asp:FilteredTextBoxExtender>
                     </td>
                     <td class="style11">
@@ -202,7 +218,7 @@
         <div class="form-group">
         <table class="w-100">
         <tr>
-            <td class="style3">
+            <td class="style14">
                 <asp:Label ID="Label5" runat="server" Text="Proceso:"></asp:Label>
                 &nbsp;<asp:TextBox ID="Txt_proceso" runat="server" Width="70px" 
                     CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" 
@@ -215,13 +231,13 @@
                 </asp:FilteredTextBoxExtender>
             </td>
             <td class="style4">
-                <asp:Label ID="Label6" runat="server" Text="D= diario."></asp:Label>
+                <asp:Label ID="Label6" runat="server" Text="D= diario." Font-Size="X-Small"></asp:Label>
             </td>
-            <td class="style5">
-                <asp:Label ID="Label7" runat="server" Text="S= semanal."></asp:Label>
+            <td class="style12">
+                <asp:Label ID="Label7" runat="server" Text="S= semanal." Font-Size="X-Small"></asp:Label>
             </td>
             <td>
-                <asp:Label ID="Label8" runat="server" Text="M= mensual."></asp:Label>
+                <asp:Label ID="Label8" runat="server" Text="M= mensual." Font-Size="X-Small"></asp:Label>
             </td>
         </tr>
         </table>
@@ -230,7 +246,7 @@
         <div class="form-group">
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style15">
                         <asp:Label ID="Label9" runat="server" Text="Calculo:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_calculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_calculo" runat="server" ForeColor="Red" Text="*" 
@@ -239,11 +255,11 @@
                         <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" TargetControlID="Txt_calculo" ValidChars="01">
                         </asp:FilteredTextBoxExtender>
                     </td>
-                    <td class="style7">
-                        <asp:Label ID="Label10" runat="server" Text="0= NO."></asp:Label>
+                    <td class="style13">
+                        <asp:Label ID="Label10" runat="server" Text="0= NO." Font-Size="X-Small"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label ID="Label11" runat="server" Text="1= SI."></asp:Label>
+                        <asp:Label ID="Label11" runat="server" Text="1= SI." Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -252,7 +268,7 @@
         
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style15">
                         <asp:Label ID="Label12" runat="server" Text="Factor:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_factor" runat="server" Width="70px" CausesValidation="True" validationgroup="check_6" xmlns:asp="#unknown6" MaxLength="1" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_factor" runat="server" ForeColor="Red" Text="*" 
@@ -263,10 +279,12 @@
                         </asp:FilteredTextBoxExtender>
                     </td>
                     <td class="style8">
-                        <asp:Label ID="Label13" runat="server" Text="0= sin factor."></asp:Label>
+                        <asp:Label ID="Label13" runat="server" Text="0= sin factor." 
+                            Font-Size="X-Small"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label ID="Label14" runat="server" Text="1= con factor."></asp:Label>
+                        <asp:Label ID="Label14" runat="server" Text="1= con factor." 
+                            Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -276,7 +294,7 @@
         
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style16">
                         <asp:Label ID="Label15" runat="server" Text="Imprime calculo:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_imprimecalculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_5" xmlns:asp="#unknown5" MaxLength="1" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_imprimecalculo" runat="server" ForeColor="Red" Text="*" 
@@ -285,11 +303,11 @@
                         <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender8" runat="server" TargetControlID="Txt_imprimecalculo" ValidChars="01">
                         </asp:FilteredTextBoxExtender>
                     </td>
-                    <td class="style7">
-                        <asp:Label ID="Label16" runat="server" Text="0= NO."></asp:Label>
+                    <td class="style13">
+                        <asp:Label ID="Label16" runat="server" Text="0= NO." Font-Size="X-Small"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label ID="Label17" runat="server" Text="1= SI."></asp:Label>
+                        <asp:Label ID="Label17" runat="server" Text="1= SI." Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -299,7 +317,7 @@
         
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style9">
                         <asp:Label ID="Label18" runat="server" Text="Recorrido Nº:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_recorrido" runat="server" Width="70px" MaxLength="2"></asp:TextBox>
                         <asp:Label ID="lb_error_recorrido" runat="server" ForeColor="Red" Text="*" 
@@ -323,7 +341,7 @@
         
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style17">
                         <asp:Label ID="Label22" runat="server" Text="Variable:" ></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_variable" runat="server" Width="70px" CausesValidation="True" validationgroup="check_7" xmlns:asp="#unknown7" MaxLength="1" onkeypress="return justNumbers(event);" ></asp:TextBox>
                         <asp:Label ID="lb_error_variable" runat="server" ForeColor="Red" Text="*" 
@@ -332,11 +350,11 @@
                         <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" TargetControlID="Txt_variable" ValidChars="01">
                         </asp:FilteredTextBoxExtender>
                     </td>
-                    <td class="style7">
-                        <asp:Label ID="Label20" runat="server" Text="0= NO."></asp:Label>
+                    <td class="style13">
+                        <asp:Label ID="Label20" runat="server" Text="0= NO." Font-Size="X-Small"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label ID="Label21" runat="server" Text="1= SI."></asp:Label>
+                        <asp:Label ID="Label21" runat="server" Text="1= SI." Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -359,7 +377,7 @@
         <div class="form-group">
             <table class="style6">
                 <tr>
-                    <td class="style3">
+                    <td class="style18">
                         <asp:Label ID="Label24" runat="server" Text="Variable1:" ></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_variable1" runat="server" Width="70px" CausesValidation="True" validationgroup="check_8" xmlns:asp="#unknown8" MaxLength="1" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_variable1" runat="server" ForeColor="Red" Text="*" 
@@ -368,11 +386,11 @@
                         <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender10" runat="server" TargetControlID="Txt_variable1" ValidChars="01">
                         </asp:FilteredTextBoxExtender>
                     </td>
-                    <td class="style7">
-                        <asp:Label ID="Label25" runat="server" Text="0= NO."></asp:Label>
+                    <td class="style13">
+                        <asp:Label ID="Label25" runat="server" Text="0= NO." Font-Size="X-Small"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label ID="Label26" runat="server" Text="1= SI."></asp:Label>
+                        <asp:Label ID="Label26" runat="server" Text="1= SI." Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -407,15 +425,30 @@
 
 <div class="card-footer">
         <div class="row justify-content-center" >
-        <div class="form-group">
-                    
-            <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
-            &nbsp;
-            <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#modal-baja">F4 = DAR DE BAJA</button>
-            &nbsp;
-            <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#modal-graba">F8 = GRABA</button>
-                    
-        </div>                  
+        
+
+         <div class="row align-items-center">
+            
+                <div class="form-group">
+                  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
+                    &nbsp;</div>
+                      
+                        <div class="form-group">
+                            <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#modal-baja">F4 = DAR DE BAJA</button>
+                            &nbsp;</div>  
+            
+            
+                      <div class="form-group">
+                                <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#modal-graba">F8 = GRABA</button>
+        
+                            </div>
+            
+            
+            
+                  
+            
+         </div>
+
         </div>
         
 

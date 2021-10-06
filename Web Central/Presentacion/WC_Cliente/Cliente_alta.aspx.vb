@@ -5,12 +5,34 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             limpiar_campos()
-            Grupos()
+            Grupos() 'recupero todos los grupos
 
             If Session("clientes_op") = "modificar" Then
-
+                Txt_cliente_id.Text = Session("cliente_id") 'aqui va el id del cliente
+                Dim ds_info As DataSet = daClientes.Clientes_buscar_id(CInt(Session("cliente_id")))
+                If ds_info.Tables(0).Rows.Count <> 0 Then
+                    Txt_cliente_nomb.Text = ds_info.Tables(0).Rows(0).Item("Nombre")
+                    Txt_dni.Text = ds_info.Tables(0).Rows(0).Item("Dni")
+                    'grupo
+                    DropDownList_grupos.SelectedValue = ds_info.Tables(0).Rows(0).Item("Grupo_id")
+                    Txt_comision.Text = ds_info.Tables(0).Rows(0).Item("Comision")
+                    Txt_regalo.Text = ds_info.Tables(0).Rows(0).Item("Regalo")
+                    Txt_comision1.Text = ds_info.Tables(0).Rows(0).Item("Comision1")
+                    Txt_regalo1.Text = ds_info.Tables(0).Rows(0).Item("Regalo1")
+                    Txt_proceso.Text = ds_info.Tables(0).Rows(0).Item("Proceso").ToString.ToUpper
+                    Txt_calculo.Text = CInt(ds_info.Tables(0).Rows(0).Item("Sincalculo"))
+                    Txt_factor.Text = CInt(ds_info.Tables(0).Rows(0).Item("Factor"))
+                    Txt_imprimecalculo.Text = CInt(ds_info.Tables(0).Rows(0).Item("Imprime"))
+                    Txt_recorrido.Text = ds_info.Tables(0).Rows(0).Item("Recorrido")
+                    Txt_orden.Text = ds_info.Tables(0).Rows(0).Item("Orden")
+                    Txt_variable.Text = CInt(ds_info.Tables(0).Rows(0).Item("Variable"))
+                    Txt_leyenda.Text = ds_info.Tables(0).Rows(0).Item("Leyenda1")
+                    Txt_variable1.Text = CInt(ds_info.Tables(0).Rows(0).Item("Variable1"))
+                    Txt_leyenda1.Text = ds_info.Tables(0).Rows(0).Item("Leyenda2")
+                End If
             Else
                 Session("clientes_op") = "alta"
+
             End If
 
         End If
@@ -183,7 +205,7 @@
                                                          CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, "", CDec(0), CDec(0))
 
                                 limpiar_campos()
-                                Response.Redirect("Clientes_abm.aspx")
+                                Response.Redirect("Cliente_abm.aspx")
                             Else
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
@@ -202,6 +224,7 @@
                                     If (CInt(Txt_cliente_id.Text) <> ds_info.Tables(0).Rows(i).Item("Cliente")) And (Txt_dni.Text = ds_info.Tables(0).Rows(i).Item("Dni")) Then
                                         existe = "si"
                                     End If
+                                    i = i + 1
                                 End While
                             Else
                                 'puedo guardar
@@ -215,7 +238,7 @@
                                                          CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text)
                                 limpiar_campos()
                                 'regresar al form que lista clientes.
-                                Response.Redirect("Clientes_abm.aspx")
+                                Response.Redirect("Cliente_abm.aspx")
                             Else
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
@@ -290,10 +313,14 @@
                 limpiar_campos()
                 Txt_cliente_id.Text = ""
                 'redireccionar al form abm clientes.
-                Response.Redirect("Clientes_abm.aspx")
+                Response.Redirect("Cliente_abm.aspx")
             End If
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
+        Response.Redirect("Cliente_abm.aspx")
     End Sub
 End Class

@@ -125,7 +125,6 @@ Public Class WB_clientes
         comando.CommandType = CommandType.StoredProcedure
         comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente", Cliente_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Nombre", Nombre))
-        comando.Parameters.Add(New OleDb.OleDbParameter("@Dni", Dni))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Grupo_id", Grupo_id))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Comision", Comision))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Regalo", Regalo))
@@ -142,6 +141,7 @@ Public Class WB_clientes
         comando.Parameters.Add(New OleDb.OleDbParameter("@Variable1", Variable1))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Leyenda1", Leyenda1))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Leyenda2", Leyenda2))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Dni", Dni))
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Cantidadpc", Cantidadpc))
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Saldo", Saldo))
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Saldoanterior", Saldoanterior))
@@ -153,7 +153,6 @@ Public Class WB_clientes
         dbconn.Close()
         Return ds
     End Function
-
 
     Public Function Clientes_baja(ByVal Clientes_id As Integer) As DataSet
         Try
@@ -172,4 +171,23 @@ Public Class WB_clientes
         dbconn.Close()
         Return ds
     End Function
+
+    Public Function Clientes_obtenertodos() As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Clientes_obtenertodos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@Cliente", Cliente_id))
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "Clientes")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+
 End Class
