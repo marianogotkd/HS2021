@@ -215,8 +215,8 @@
 <div class="form-group">
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date" 
-        TextMode="Date"></asp:TextBox>
+    &nbsp; 
+    <asp:TextBox ID="Txt_fechaproc" runat="server"></asp:TextBox>
     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" 
         Visible="False"></asp:Label>
     <br />
