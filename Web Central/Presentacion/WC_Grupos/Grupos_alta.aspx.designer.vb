@@ -363,4 +363,13 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_grabar_mdl.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_grabar_mdl As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

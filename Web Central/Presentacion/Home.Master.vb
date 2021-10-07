@@ -22,6 +22,7 @@
                 Usuario.Visible = True
                 Grupos.Visible = True
                 CLIENTES.Visible = True
+                RECORRIDOS.Visible = True
 
             Else
                 Dim ds = DAUsuario.Usuario_Modulos(Session("UsuId"))

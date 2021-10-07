@@ -23,16 +23,17 @@
                         <asp:Label ID="Lb_grupo" runat="server" Text="Grupo:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese ID" runat="server" CausesValidation="True" onkeypress="return justNumbers(event);"></asp:TextBox>
                         
-                        &nbsp;
-                        <button type="button" id="btn_modificar" runat="server" class="btn btn-primary">
-                          Modificar
-                        </button>
                     </div>
                     <div class="form-group">
+                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary">
+                          Modificar
+                        </button>
+                        &nbsp;
                     <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary">
                           Nuevo Grupo
                         </button>
                     </div>
+
                     <div class="card-body table-responsive p-0" > <%--class="form-group"--%>
                             <asp:GridView ID="GridView1" runat="server" class="table table-sm" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
                                    BorderColor="Black" GridLines="None" 
@@ -47,26 +48,6 @@
                                         <asp:BoundField DataField="Fecha" HeaderText="Fecha de Proc." >
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
-                                        <asp:TemplateField HeaderText="Modificar">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Button ID="GridBtn_modif" runat="server" CommandName="op_modificar" CommandArgument='<%# Eval("Grupo_id") %>' 
-                                                    Text="Modificar" />
-                                            </ItemTemplate>
-                                            <HeaderStyle ForeColor="#0099FF" />
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Eliminar">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                                            </EditItemTemplate>
-                                            <ItemTemplate>
-                                                <asp:Button ID="GridBtn_eliminar" runat="server" CommandName="op_eliminar" CommandArgument='<%# Eval("Grupo_id") %>' data-toggle="modal" data-target="#modal-baja" 
-                                                    Text="Eliminar" />
-                                            </ItemTemplate>
-                                            <HeaderStyle ForeColor="#0099FF" />
-                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                         </div>

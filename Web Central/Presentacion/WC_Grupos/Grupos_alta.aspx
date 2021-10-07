@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Grupos_alta.aspx.vb" Inherits="Presentacion.Grupos_alta" %>
+
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style2
@@ -215,8 +218,11 @@
 <div class="form-group">
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date" 
-        TextMode="Date"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" type="Date"></asp:TextBox>
+
+    
+
+
     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" 
         Visible="False"></asp:Label>
     <br />
@@ -253,7 +259,7 @@
             </div>
 
             <div class="form-group">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-graba"> <%--data-targe="#modal-primary"--%>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mdl_graba"> <%--data-targe="#modal-primary"--%>
                   F8 = GRABA
                 </button>
             </div>
@@ -348,6 +354,28 @@
         </div>
         <!-- /.modal-dialog -->
       </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="Mdl_graba" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Graba</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Confirma la operación?...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="btn_grabar_mdl" class="btn btn-primary" runat="server" data-dismiss="modal">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </ContentTemplate> 
 </asp:UpdatePanel>

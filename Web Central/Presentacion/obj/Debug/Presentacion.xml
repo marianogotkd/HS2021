@@ -6,87 +6,7 @@ Presentacion
 </name>
 </assembly>
 <members>
-<member name="T:Presentacion.DS_cliente.ClientesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Presentacion.DS_cliente.ClientesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Presentacion.DS_cliente.ClientesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Presentacion.DS_cliente">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:Presentacion.Cliente_abm.ScriptManager1">
-	<summary>
-Control ScriptManager1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.UpdatePanel1">
-	<summary>
-Control UpdatePanel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.Lb_cliente">
-	<summary>
-Control Lb_cliente.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.Txt_cliente_id">
-	<summary>
-Control Txt_cliente_id.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.btn_modificar">
-	<summary>
-Control btn_modificar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.btn_nuevo">
-	<summary>
-Control btn_nuevo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.GridView1">
-	<summary>
-Control GridView1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:Presentacion.Cliente_abm.btn_baja_modal">
-	<summary>
-Control btn_baja_modal.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
+<member name="T:Presentacion.DS_Articulos.ArticulosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -1338,6 +1258,14 @@ Control CLIENTES.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Home.RECORRIDOS">
+	<summary>
+Control RECORRIDOS.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Home.Pedido">
 	<summary>
 Control Pedido.
@@ -1894,6 +1822,70 @@ Control btn_Agregar2.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Cliente_abm.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.Lb_cliente">
+	<summary>
+Control Lb_cliente.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.Txt_cliente_id">
+	<summary>
+Control Txt_cliente_id.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.btn_modificar">
+	<summary>
+Control btn_modificar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.btn_nuevo">
+	<summary>
+Control btn_nuevo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.GridView1">
+	<summary>
+Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.btn_baja_modal">
+	<summary>
+Control btn_baja_modal.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Articulos_x_Obra.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -2113,6 +2105,78 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Presentacion.Permisos.asd">
 	<summary>
 Control asd.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.ScriptManager1">
+	<summary>
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.Lb_dia">
+	<summary>
+Control Lb_dia.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.Txt_dia">
+	<summary>
+Control Txt_dia.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.TextBox1">
+	<summary>
+Control TextBox1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.Button1">
+	<summary>
+Control Button1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.TextBox2">
+	<summary>
+Control TextBox2.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.Label1">
+	<summary>
+Control Label1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Rec_zona_act.Label2">
+	<summary>
+Control Label2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -2662,6 +2726,22 @@ Control Agregar2.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:Presentacion.DS_cliente.ClientesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Presentacion.DS_cliente.ClientesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Presentacion.DS_cliente.ClientesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Presentacion.DS_cliente">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:Presentacion.Grupos_abm.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -3033,6 +3113,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Presentacion.Grupos_alta.btn_baja_modal">
 	<summary>
 Control btn_baja_modal.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.btn_grabar_mdl">
+	<summary>
+Control btn_grabar_mdl.
 </summary>
 	<remarks>
 Campo generado automáticamente.
