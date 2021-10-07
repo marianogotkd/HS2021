@@ -237,6 +237,18 @@
             </a>
            
           </li>
+
+          <li class="nav-item has-treeview"  runat="server" id="RECORRIDOS" visible="false" >
+            <a href="../WC_Recorridos_Zonas/Rec_zona_act.aspx" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>
+                WC_Recorridos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           
+          </li>
+
          
           <li class="nav-item has-treeview"  runat="server" id="Pedido" visible="false">
             <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">

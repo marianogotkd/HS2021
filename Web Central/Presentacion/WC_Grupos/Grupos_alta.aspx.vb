@@ -20,7 +20,7 @@
             Else
                 Session("grupos_op") = "alta"
                 Dim fecha As Date = Today
-                Txt_fechaproc.Text = fecha
+                Txt_fechaproc.Text = fecha.ToString("yyyy-MM-dd")
             End If
             Txt_grupo_nomb.Focus()
             
@@ -29,6 +29,56 @@
     End Sub
 
     Private Sub btn_graba_modal_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_graba_modal.ServerClick
+        
+
+    End Sub
+
+    Private Sub Limpiar_campos()
+        Txt_grupo_id.Enabled = False
+        Txt_grupo_nomb.Text = ""
+        Txt_tipo.Text = 1
+        Txt_porcentaje.Text = CDec(0)
+        Txt_clieporcentaje.Text = CDec(0)
+        Txt_codcobro.Text = 1
+        Dim fecha As Date = Today
+        Txt_fechaproc.Text = fecha
+        Txt_grupo_nomb.Focus()
+        
+        lb_errores_blanqueo()
+    End Sub
+
+    Private Sub lb_errores_blanqueo()
+        '----------lb errores-------
+        Lb_error_validacion.Text = ""
+        Lb_error_validacion.Visible = False
+        lb_error_nombre.Visible = False
+        lb_error_tipo.Visible = False
+        lb_error_porcentaje.Visible = False
+        lb_error_clieporcentaje.Visible = False
+        lb_error_codcobro.Visible = False
+        lb_error_fecha.Visible = False
+    End Sub
+
+    Private Sub btn_baja_modal_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_modal.ServerClick
+        Try
+            If Txt_grupo_id.Text <> "" Then
+                DAgrupos.Grupos_baja(CDec(Txt_grupo_id.Text))
+                Limpiar_campos()
+                Txt_grupo_id.Text = ""
+                'redireccionar a menu de grupos.
+                Response.Redirect("Grupos_abm.aspx")
+            End If
+        Catch ex As Exception
+
+        End Try
+        
+    End Sub
+
+    Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
+        Response.Redirect("Grupos_abm.aspx")
+    End Sub
+
+    Private Sub btn_grabar_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_grabar_mdl.ServerClick
         lb_errores_blanqueo()
         Try
             Dim valido_ingreso As String = "si"
@@ -47,7 +97,7 @@
                 valido_ingreso = "no"
                 lb_error_tipo.Visible = True
             End Try
-            
+
 
             Dim porcentaje As Decimal
             Try
@@ -74,7 +124,9 @@
                 valido_ingreso = "no"
                 lb_error_codcobro.Visible = True
             End Try
-            
+
+            'Dim fecha As String = CDate(Txt_fechaproc.Text.ToString)
+
             If Txt_fechaproc.Text = "" Then
                 valido_ingreso = "no"
                 lb_error_fecha.Visible = True
@@ -138,51 +190,5 @@
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
         End Try
-
-    End Sub
-
-    Private Sub Limpiar_campos()
-        Txt_grupo_id.Enabled = False
-        Txt_grupo_nomb.Text = ""
-        Txt_tipo.Text = 1
-        Txt_porcentaje.Text = CDec(0)
-        Txt_clieporcentaje.Text = CDec(0)
-        Txt_codcobro.Text = 1
-        Dim fecha As Date = Today
-        Txt_fechaproc.Text = fecha
-        Txt_grupo_nomb.Focus()
-        
-        lb_errores_blanqueo()
-    End Sub
-
-    Private Sub lb_errores_blanqueo()
-        '----------lb errores-------
-        Lb_error_validacion.Text = ""
-        Lb_error_validacion.Visible = False
-        lb_error_nombre.Visible = False
-        lb_error_tipo.Visible = False
-        lb_error_porcentaje.Visible = False
-        lb_error_clieporcentaje.Visible = False
-        lb_error_codcobro.Visible = False
-        lb_error_fecha.Visible = False
-    End Sub
-
-    Private Sub btn_baja_modal_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_modal.ServerClick
-        Try
-            If Txt_grupo_id.Text <> "" Then
-                DAgrupos.Grupos_baja(CDec(Txt_grupo_id.Text))
-                Limpiar_campos()
-                Txt_grupo_id.Text = ""
-                'redireccionar a menu de grupos.
-                Response.Redirect("Grupos_abm.aspx")
-            End If
-        Catch ex As Exception
-
-        End Try
-        
-    End Sub
-
-    Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
-        Response.Redirect("Grupos_abm.aspx")
     End Sub
 End Class

@@ -56,21 +56,21 @@
     End Sub
 
     Private Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
-        If (e.CommandName = "op_modificar") Then 'es mostrar info de alumnos
-            ' Retrieve the row index stored in the CommandArgument property.
-            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-            Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
-            Session("grupos_op") = "modificar"
-            'pasar ademas el ID del grupo.
-            Session("grupo_id") = id
-            Response.Redirect("Grupos_alta.aspx")
-        End If
-        If (e.CommandName = "op_eliminar") Then 'es mostrar info de alumnos
-            ' Retrieve the row index stored in the CommandArgument property.
-            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-            Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
-            Session("id_eliminar") = id
-        End If
+        'If (e.CommandName = "op_modificar") Then 'es mostrar info de alumnos
+        '    ' Retrieve the row index stored in the CommandArgument property.
+        '    Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        '    Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
+        '    Session("grupos_op") = "modificar"
+        '    'pasar ademas el ID del grupo.
+        '    Session("grupo_id") = id
+        '    Response.Redirect("Grupos_alta.aspx")
+        'End If
+        'If (e.CommandName = "op_eliminar") Then 'es mostrar info de alumnos
+        '    ' Retrieve the row index stored in the CommandArgument property.
+        '    Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        '    Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
+        '    Session("id_eliminar") = id
+        'End If
     End Sub
 
     Private Sub btn_baja_modal_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_modal.ServerClick
