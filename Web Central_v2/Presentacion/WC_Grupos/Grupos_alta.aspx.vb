@@ -3,6 +3,7 @@
     Dim DAgrupos As New Capa_Datos.WC_grupos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            div_modal_GRABAjOK.Visible = False
             Limpiar_campos()
             If Session("grupos_op") = "modificar" Then
                 Txt_grupo_id.Text = Session("grupo_id") 'aqui va el id del grupo
@@ -61,6 +62,24 @@
     End Sub
 
     Private Sub btn_grabar_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_grabar_mdl.ServerClick
+        
+    End Sub
+
+    Private Sub btn_baja_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl.ServerClick
+        Try
+            If Txt_grupo_id.Text <> "" Then
+                DAgrupos.Grupos_baja(CDec(Txt_grupo_id.Text))
+                Limpiar_campos()
+                Txt_grupo_id.Text = ""
+                'redireccionar a menu de grupos.
+                Response.Redirect("Grupos_abm.aspx")
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub boton_grabar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles boton_grabar.ServerClick
         lb_errores_blanqueo()
         Try
             Dim valido_ingreso As String = "si"
@@ -161,6 +180,10 @@
                                 Limpiar_campos()
                                 'regresar al form que lista grupos.
                                 Response.Redirect("Grupos_abm.aspx")
+
+                                div_modal_GRABAjOK.Visible = True
+                                ModalPopup_msjok.Show()
+
                             Else
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El grupo ya existe, modifique el Nombre ingresados."
@@ -178,20 +201,6 @@
             'aqui mensaje de que cargue todos los paretros solicitados correctamente
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
-        End Try
-    End Sub
-
-    Private Sub btn_baja_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl.ServerClick
-        Try
-            If Txt_grupo_id.Text <> "" Then
-                DAgrupos.Grupos_baja(CDec(Txt_grupo_id.Text))
-                Limpiar_campos()
-                Txt_grupo_id.Text = ""
-                'redireccionar a menu de grupos.
-                Response.Redirect("Grupos_abm.aspx")
-            End If
-        Catch ex As Exception
-
         End Try
     End Sub
 End Class
