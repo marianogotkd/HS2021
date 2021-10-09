@@ -347,6 +347,15 @@ Partial Public Class Grupos_alta
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control boton_grabar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents boton_grabar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control btn_graba_modal.
     '''</summary>
     '''<remarks>
@@ -372,6 +381,42 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_grabar_mdl As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control div_modal_GRABAjOK.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents div_modal_GRABAjOK As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control HiddenField_msj.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HiddenField_msj As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control Button1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control ModalPopup_msjok.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ModalPopup_msjok As Global.AjaxControlToolkit.ModalPopupExtender
 
     '''<summary>
     '''Control btn_baja_mdl.

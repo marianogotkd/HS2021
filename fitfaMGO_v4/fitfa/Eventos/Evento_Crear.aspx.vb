@@ -61,7 +61,53 @@ Public Class Evento_Crear
     Dim ChkTurno As CheckBox
 
 
-    Private Sub btn_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_guardar.ServerClick
+    Private Sub limpiar_textbox_etc()
+        tb_nombre.Value = ""
+        lbl_errNom.Visible = False
+
+        tb_direccion.Value = ""
+
+        tb_fechainicio.Value = Today
+        lbl_errfechaini.Visible = False
+
+        tb_fechaCierre.Value = Today
+        lbl_errFecCier.Visible = False
+
+        lbl_horaCierre.Visible = False
+
+        textbox_Costo.Text = "0"
+        lbl_costo.Visible = False
+
+        tb_capacidad_max.Text = ""
+        lbl_error_cap_max_inscr.Visible = False
+
+        lbl_turnos_error0.Visible = False
+        'limpio check en grilla turnos
+        Dim j As Integer = 0
+        While j < GridView1.Rows.Count
+            'ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
+            CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox).Checked = False
+            j = j + 1
+        End While
+    End Sub
+
+    Private Sub combo_TipoEvento_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_TipoEvento.SelectedIndexChanged
+
+        If combo_TipoEvento.SelectedValue = "Examen" Then
+            Panel_examenes.Visible = True
+            cost_seccion.Visible = False
+        Else
+            Panel_examenes.Visible = False
+            cost_seccion.Visible = True
+        End If
+
+    End Sub
+
+    Private Sub boton_ok_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles boton_ok.Click
+
+    End Sub
+
+    Private Sub Btn_modal_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_modal_guardar.ServerClick
 
         Dim Vacio As Boolean
 
@@ -153,7 +199,7 @@ Public Class Evento_Crear
                         If costo = "" Then
                             costo = "0"
                         End If
-                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(tb_capacidad_max.Text))
+                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value, CInt(tb_capacidad_max.Text))
                         Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
                         Session("evento_id") = evento_id
                         'If costo = "" Then
@@ -173,6 +219,7 @@ Public Class Evento_Crear
                         End While
 
                         'limpiar_textbox_etc()
+                        limpiar_textbox_etc()
                         div_modal_msjOK.Visible = True
                         Modal_msjOK.Show()
 
@@ -191,7 +238,7 @@ Public Class Evento_Crear
                 Else
                     'es un torneo o un curso
                     If costo = "" Then
-                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(0), tb_direccion.Value, CInt(0))
+                        Dim ds_info_evento As DataSet = DAevento.Eventos_Alta(tb_nombre.Value, Session("imagen"), tb_fechainicio.Value, FechaHoraCierre, combo_TipoEvento.SelectedValue, CDec(costo), tb_direccion.Value, CInt(0))
                         Dim evento_id As Integer = ds_info_evento.Tables(0).Rows(0).Item("evento_id")
                         Session("evento_id") = evento_id
                     Else
@@ -200,10 +247,7 @@ Public Class Evento_Crear
                         Session("evento_id") = evento_id
                     End If
 
-
-
-                    'limpiar_textbox_etc()
-
+                    limpiar_textbox_etc()
                     div_modal_msjOK.Visible = True
                     Modal_msjOK.Show()
                 End If
@@ -221,64 +265,14 @@ Public Class Evento_Crear
                 'btn_Examinar.Visible = True
             Else
                 'blanqueo la variable de sesion para poder inscribir otro
+                limpiar_textbox_etc()
                 Session("evento_id") = 0
                 div_modal_msjOK.Visible = True
                 Modal_msjOK.Show()
 
             End If
-           
+
         End If
 
-
-
-    End Sub
-
-    Private Sub limpiar_textbox_etc()
-        tb_nombre.Value = ""
-        lbl_errNom.Visible = False
-
-        tb_direccion.Value = ""
-
-        tb_fechainicio.Value = Today
-        lbl_errfechaini.Visible = False
-
-        tb_fechaCierre.Value = Today
-        lbl_errFecCier.Visible = False
-
-        lbl_horaCierre.Visible = False
-
-        textbox_Costo.Text = "0"
-        lbl_costo.Visible = False
-
-        tb_capacidad_max.Text = ""
-        lbl_error_cap_max_inscr.Visible = False
-
-        lbl_turnos_error0.Visible = False
-        'limpio check en grilla turnos
-        Dim j As Integer = 0
-        While j < GridView1.Rows.Count
-            'ChkTurno = CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox)
-            CType(Me.GridView1.Rows(j).FindControl("chk_turno"), CheckBox).Checked = False
-            j = j + 1
-        End While
-    End Sub
-
-    Private Sub combo_TipoEvento_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_TipoEvento.SelectedIndexChanged
-
-        If combo_TipoEvento.SelectedValue = "Examen" Then
-            Panel_examenes.Visible = True
-            'Div_Costos.Visible = True
-        Else
-            Panel_examenes.Visible = False
-            'Div_Costos.Visible = False
-        End If
-
-    End Sub
-
-   
- 
-
-    Private Sub boton_ok_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles boton_ok.Click
-        limpiar_textbox_etc()
     End Sub
 End Class

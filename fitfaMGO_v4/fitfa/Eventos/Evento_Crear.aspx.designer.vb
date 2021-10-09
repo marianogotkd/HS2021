@@ -131,6 +131,15 @@ Partial Public Class Evento_Crear
     Protected WithEvents tb_horaCierre As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control cost_seccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cost_seccion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control lbl_costo.
     '''</summary>
     '''<remarks>
@@ -147,6 +156,15 @@ Partial Public Class Evento_Crear
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents textbox_Costo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender2 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Image1.
@@ -230,13 +248,13 @@ Partial Public Class Evento_Crear
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control btn_guardar.
+    '''Control BOTON_GRABAR.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents BOTON_GRABAR As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control div_modal_msjOK.
@@ -291,6 +309,15 @@ Partial Public Class Evento_Crear
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Modal_msjOK As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Control Btn_modal_guardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_modal_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control UpdateProgress1.

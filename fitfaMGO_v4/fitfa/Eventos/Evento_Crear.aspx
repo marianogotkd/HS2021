@@ -96,10 +96,14 @@
       </div>
                   <!-- /.form group -->
   </div>
-  <div class="form-group" >
+  <div id="cost_seccion" runat="server" class="form-group" visible=true>
   <label>Costo</label>
   <label id="lbl_costo" class="label label-danger"  runat="server">Debe Completar El Campo</label>
-  <asp:TextBox ID="textbox_Costo" CssClass="form-control"  type="number" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
+  <asp:TextBox ID="textbox_Costo" CssClass="form-control" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
+  <cc1:FilteredTextBoxExtender 
+            ID="FilteredTextBoxExtender2" runat="server" TargetControlID="textbox_Costo"
+      FilterType="Numbers" ValidChars="0123456789" >
+        </cc1:FilteredTextBoxExtender>
   </div>
     
 
@@ -151,12 +155,12 @@
         <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
         Ingrese capacidad máxima.</label></label>
         <asp:TextBox ID="tb_capacidad_max" CssClass="form-control" 
-            runat="server" onkeypress="return justNumbers(event);" TextMode="Number" 
+            runat="server" onkeypress="return justNumbers(event);" 
             AutoPostBack="True"></asp:TextBox>
-        &nbsp;<%--onkeypress="return justNumbers(event);"--%>
-        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="tb_capacidad_max"
-      FilterType="Numbers" >
-        </cc1:FilteredTextBoxExtender><label>Seleccione los turnos para el examen:
+        &nbsp;<%--onkeypress="return justNumbers(event);"--%><cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="tb_capacidad_max"
+      FilterType="Numbers" ValidChars="0123456789" >
+        </cc1:FilteredTextBoxExtender>
+        <label>Seleccione los turnos para el examen:
         </label>
         &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
         seleccionar al menos un turno</label></div>
@@ -202,9 +206,15 @@
   
   </div>
   <div class="card-footer">
-  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_guardar">Guardar</button>
+  
+  <div class="form-group" > 
+  <button type="button" class="btn btn-primary" data-toggle="modal" runat="server" id="BOTON_GRABAR" data-target="#div_guardar_08102021">Guardar</button>    
+  </div>
+  
   </div>
   </span>
+  
+  
   <div id= "div_modal_msjOK" runat="server">
   <asp:HiddenField ID="HiddenField_msj" runat="server" />
   <asp:Panel ID="Panel1" runat="server" >
@@ -234,6 +244,27 @@
       <cc1:ModalPopupExtender ID="Modal_msjOK" runat="server" TargetControlID="HiddenField_msj" PopupControlID="Panel1" CancelControlID="boton_ok" BackgroundCssClass="modalBackground">
       </cc1:ModalPopupExtender>
   </div>
+
+
+
+<div class="modal fade" id="div_guardar_08102021" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="H2">¿Desea guardar?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                                    
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="Btn_modal_guardar" runat="server" data-dismiss="modal" rutitle="Your custom upload logic" >Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
 
   </ContentTemplate>

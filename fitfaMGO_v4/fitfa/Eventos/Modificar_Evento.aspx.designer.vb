@@ -140,6 +140,15 @@ Partial Public Class Modificar_Evento
     Protected WithEvents tb_horaCierre As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control cost_seccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cost_seccion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control lbl_costo.
     '''</summary>
     '''<remarks>
@@ -156,6 +165,15 @@ Partial Public Class Modificar_Evento
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents textbox_Costo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender2 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control Image1.
@@ -237,6 +255,15 @@ Partial Public Class Modificar_Evento
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_capacidad_max As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender1 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
     '''Control lbl_turnos_error0.
@@ -338,13 +365,13 @@ Partial Public Class Modificar_Evento
     Protected WithEvents UpdateProgress1 As Global.System.Web.UI.UpdateProgress
 
     '''<summary>
-    '''Control btn_guardar.
+    '''Control BOTON_GRABAR.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents BOTON_GRABAR As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control Button1.
@@ -363,4 +390,22 @@ Partial Public Class Modificar_Evento
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_eliminar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Btn_modal_guardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_modal_guardar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Button2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

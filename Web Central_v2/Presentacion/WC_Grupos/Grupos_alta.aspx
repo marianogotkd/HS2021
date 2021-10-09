@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Grupos_alta.aspx.vb" Inherits="Presentacion.Grupos_alta" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<style type="text/css">
+    <style type="text/css">
         .style2
         {
             width: 100%;
@@ -24,7 +26,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" 
+    <asp:ScriptManager ID="ScriptManager1" runat="server" 
                         EnableScriptGlobalization="True">
 </asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
@@ -133,7 +135,7 @@
     <asp:Label ID="Label_porcentaje" runat="server" Text="Porcentaje:"></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_porcentaje" runat="server" Width="62px" 
         CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
-        MaxLength="6"></asp:TextBox>
+        MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
         <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" 
         Visible="False"></asp:Label>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
@@ -146,7 +148,7 @@
 
     <asp:Label ID="Label_clieporcentaje" runat="server" Text="Cliente Porcentaje:" ></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_clieporcentaje" runat="server" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" Width="62px" 
-        MaxLength="6"></asp:TextBox>
+        MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
 
         
 
@@ -255,7 +257,7 @@
             </div>
 
             <div class="form-group">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mdl_graba"> <%--data-targe="#modal-primary"--%>
+            <button type="button" id=boton_grabar runat="server" class="btn btn-primary"> <%--data-targe="#modal-primary"--%>
                   F8 = GRABA
                 </button>
             </div>
@@ -363,14 +365,44 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Confirma la operación?...
+        --------
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" id="btn_grabar_mdl" class="btn btn-primary" runat="server" data-dismiss="modal">Confirmar</button>
+        <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>--%>
+        <button type="button" id="btn_grabar_mdl" class="btn btn-primary" runat="server" data-dismiss="modal">OK</button>
       </div>
     </div>
   </div>
+</div>
+
+
+
+<%--MODAL CON MODAL POP UP EXTENDER--%>
+<div id= "div_modal_GRABAjOK" runat="server">
+<asp:HiddenField ID="HiddenField_msj" runat="server" />
+<div class="modal fade" id="Div1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="H2">Graba</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        --------
+      </div>
+      <div class="modal-footer">
+        <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>--%>
+        <button type="button" id="Button1" class="btn btn-primary" runat="server" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <asp:ModalPopupExtender ID="ModalPopup_msjok" runat="server" TargetControlID="HiddenField_msj" PopupControlID="Div1" CancelControlID="Button1" BackgroundCssClass="modalBackground">
+    </asp:ModalPopupExtender>
+
 </div>
 
 <!-- Modal BAJA CENTRADO EN PANTALLA -->

@@ -115,11 +115,16 @@
                 </div>
                 <!-- Hora -->
 
-                  <div class="form-group" >
+                  <div id="cost_seccion" runat="server" class="form-group" visible="true" >
                     <label>Costo</label>
                     <label id="lbl_costo" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <asp:TextBox ID="textbox_Costo" CssClass="form-control"  type="number" onkeypress="return justNumbers(event);" runat="server" ></asp:TextBox>                   
+                    <asp:TextBox ID="textbox_Costo" CssClass="form-control" onkeypress="return justNumbers(event);" runat="server" ></asp:TextBox>                   
                    
+                      <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" TargetControlID="textbox_Costo" FilterType="Numbers" ValidChars="0123456789">
+                      </asp:FilteredTextBoxExtender>
+
+
+
                   </div>
                 
                 </div>
@@ -191,7 +196,11 @@
     <div class="form-group">
         <label>Capacidad máxima de inscriptos por turno: 
         <label ID="lbl_error_cap_max_inscr" runat="server" class="label label-danger">
-        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max"  type="number" onkeypress="return justNumbers(event);" CssClass="form-control" runat="server" ></asp:TextBox>  
+        Ingrese capacidad máxima.</label></label><asp:TextBox ID="tb_capacidad_max" onkeypress="return justNumbers(event);" CssClass="form-control" runat="server" ></asp:TextBox>  
+        <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="tb_capacidad_max" FilterType="Numbers" ValidChars="0123456789">
+        </asp:FilteredTextBoxExtender>
+                
+               
         <label>Seleccione los turnos para el examen: </label>
         &nbsp;<label ID="lbl_turnos_error0" runat="server" class="label label-danger">Debe 
         seleccionar al menos un turno</label><br />
@@ -231,18 +240,7 @@
                 </div>
 
                 </div>
-
-                          
-
-
-
-    
-
-
- 
-
-
-                    
+                        
 
 
 
@@ -289,12 +287,14 @@
                     </asp:Panel>
      </div>
 
+
+
      
                                        
                     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1" >
                     <ProgressTemplate>
 
-         <div style="background-color: Gray; filter:alpha(opacity=60); opacity:0.60; width: 100%; top: 0px; left: 0px; position: fixed; height: 100%;"> </div>
+                     <div style="background-color: Gray; filter:alpha(opacity=60); opacity:0.60; width: 100%; top: 0px; left: 0px; position: fixed; height: 100%;"> </div>
           <div style="margin:auto;
               font-family:Trebuchet MS;
               filter: alpha(opacity=100);
@@ -327,25 +327,43 @@
             </div>
                      
 
-        </div>
+            </div>
                         
-                    </ProgressTemplate>
-                    </asp:UpdateProgress>
+            </ProgressTemplate>
+            </asp:UpdateProgress>
               
                     </form>
             </div>
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary" runat="server" id="btn_guardar">Guarda Cambios</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" runat="server" id="Button1" data-target="#Div1">Eliminar</button>
-                </div>
-                  <div class="form-group" > 
-                  <div>   
+                  <div class="row justify-content-lg-start" >
+                  <div class="row align-items-lg-start">
+                        <div class="form-group" > 
+                        <button type="button" class="btn btn-primary" data-toggle="modal" runat="server" id="BOTON_GRABAR" data-target="#div_guardar_08102021">Guardar Cambios</button>    
+                        &nbsp;
+                        </div>
+
+                        <div class="form-group" > 
+                        <button type="button" class="btn btn-primary" data-toggle="modal" runat="server" id="Button1" data-target="#Div1">Eliminar</button>
+                        </div>
+                  
+                  </div>
+                  
+                  </div>
+
+
+                  
+                    
+                                                      
+
+                
+                
+                  
                  </div> 
         
         
             <!-- Modal -->
-            <div class="modal fade" id="Div1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="Div1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
               <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -362,33 +380,67 @@
                 </div>
               </div>
             </div>
-   
+            
+                            
+
+
+
+
+                
+             
+ 
+ 
  </div>
 
 
 
-                
 
-                
-                <%--<label id="lbl_ok" class="label label-warning" visible="False" runat="server" >Evento Modificado  </label>--%>
-          <%--      <div id="div_registro_guardado" runat="server" visible="false" 
-                style="color: #00CC00; font-style: normal; font-variant: normal;">
-                    Datos actualizados!
-                </div>--%>
+<div class="modal fade" id="div_guardar_08102021" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="H2">¿Desea modificar?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                                    
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="Btn_modal_guardar" runat="server" data-dismiss="modal" rutitle="Your custom upload logic" >Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-     
-     
+<div class="modal fade" id="modal_error_complete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="H3">Error! Verifique la información ingresada.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                                    
+                  <div class="modal-footer">
+                    <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>--%>
+                    <button type="button" class="btn btn-primary" id="Button2" runat="server" data-dismiss="modal" rutitle="Your custom upload logic" >OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      
 
-
-                   </ContentTemplate>
+</ContentTemplate>
 
                           <Triggers>
                             <asp:PostBackTrigger ControlID="Subir_Foto" />
                             <asp:PostBackTrigger ControlID="tb_fechainicio" />
                             <asp:PostBackTrigger ControlID="Button1" />
-                             <asp:PostBackTrigger ControlID="btn_eliminar" />
+                            <asp:PostBackTrigger ControlID="btn_eliminar" />
+                            
+                                                       
                         </Triggers>
        
        
