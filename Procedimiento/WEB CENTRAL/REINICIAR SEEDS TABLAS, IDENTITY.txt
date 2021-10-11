@@ -1,0 +1,6 @@
+delete from Grupos
+delete from Clientes 
+
+DBCC CHECKIDENT (Grupos, RESEED, 0) --grupos es el nombre de la tabla
+DBCC CHECKIDENT (Clientes, RESEED, 0) --clientes es el nombre de la tabla
+
