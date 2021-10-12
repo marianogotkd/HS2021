@@ -109,6 +109,7 @@
 
 
     Private Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
+        Session("SERVER_inscripcion_id") = 0
         If (e.CommandName = "ID") Then
             ' Retrieve the row index stored in the CommandArgument property.
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)

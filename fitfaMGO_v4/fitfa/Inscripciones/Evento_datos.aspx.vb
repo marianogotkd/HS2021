@@ -440,8 +440,10 @@ Public Class Evento_datos
 
             End If
         Else
-            popupMsjError_turno.Visible = True 'choco 19-08-2021
-            ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
+            popupMsjGuardado.Visible = True
+            ModalPopupExtender_guardado.Show()
+            'popupMsjError_turno.Visible = True 'choco 19-08-2021
+            'ModalPopupExtender_error_turno.Show() 'choco 19-08-2021
         End If
     End Sub
 End Class
