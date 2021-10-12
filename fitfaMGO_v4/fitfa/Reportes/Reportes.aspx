@@ -4,9 +4,6 @@
 
 
 
-<%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
-
-
 
 
 
@@ -59,7 +56,7 @@
 
                      
               <div align="center" style="background-color: #C0C0C0">
-              <asp:Label ID="Label2" runat="server" Text="Inscripciones en categorías" Font-Bold="True"></asp:Label>      
+              <asp:Label ID="Label2" runat="server" Text="Alumnos Inscriptos" Font-Bold="True"></asp:Label>      
               </div>
 
               <div align="center">
@@ -99,6 +96,11 @@
                                               </div>
 
                   <br />
+                   <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
+                   
+                   <br />
+                   <br />
+
               <asp:GridView ID="GridView1" class="table table-hover" runat="server" 
                       AutoGenerateColumns="False" AllowSorting="True" BorderColor="Black">
                                               <Columns>

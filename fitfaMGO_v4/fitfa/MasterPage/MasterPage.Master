@@ -171,8 +171,9 @@
           <i class="fa fa-th-large"></i>
         </a>
       </li>--%>
-    </ul>--%>
+    </ul>
   </nav>
+  --%>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
@@ -291,8 +292,8 @@
               </li>--%>
                            
               <li class="nav-item" runat="server" id="Li_reporte_inscripts">
-                <%--<a href="../Reportes/Reportes.aspx" class="nav-link">--%>
-                <a href="../Error/UnderConstruction.aspx" class="nav-link">
+                <a href="../Reportes/Reportes.aspx" class="nav-link">
+                <%--<a href="../Error/UnderConstruction.aspx" class="nav-link">--%>
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Reporte inscriptos</p>
                 </a>
@@ -470,7 +471,7 @@
               <i class="nav-icon fa fa-calendar"></i>
               <p>
                Calendario
-                <span class="badge badge-info right">2</span>
+                <%--<span class="badge badge-info right">2</span>--%>
               </p>
             </a>
           </li>
