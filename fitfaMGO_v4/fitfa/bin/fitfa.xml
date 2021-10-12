@@ -11116,6 +11116,14 @@ Control tb_horaCierre.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Modificar_Evento.cost_seccion">
+	<summary>
+Control cost_seccion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Modificar_Evento.lbl_costo">
 	<summary>
 Control lbl_costo.
@@ -11127,6 +11135,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Modificar_Evento.textbox_Costo">
 	<summary>
 Control textbox_Costo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.FilteredTextBoxExtender2">
+	<summary>
+Control FilteredTextBoxExtender2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -11199,6 +11215,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Modificar_Evento.tb_capacidad_max">
 	<summary>
 Control tb_capacidad_max.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.FilteredTextBoxExtender1">
+	<summary>
+Control FilteredTextBoxExtender1.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -11292,9 +11316,9 @@ Control UpdateProgress1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Modificar_Evento.btn_guardar">
+</member><member name="F:fitfa.Modificar_Evento.BOTON_GRABAR">
 	<summary>
-Control btn_guardar.
+Control BOTON_GRABAR.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -11311,6 +11335,22 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Modificar_Evento.btn_eliminar">
 	<summary>
 Control btn_eliminar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.Btn_modal_guardar">
+	<summary>
+Control Btn_modal_guardar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Modificar_Evento.Button2">
+	<summary>
+Control Button2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -12192,6 +12232,14 @@ Control tb_horaCierre.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.Evento_Crear.cost_seccion">
+	<summary>
+Control cost_seccion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.Evento_Crear.lbl_costo">
 	<summary>
 Control lbl_costo.
@@ -12203,6 +12251,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Evento_Crear.textbox_Costo">
 	<summary>
 Control textbox_Costo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Crear.FilteredTextBoxExtender2">
+	<summary>
+Control FilteredTextBoxExtender2.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -12280,9 +12336,9 @@ Control GridView1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Evento_Crear.btn_guardar">
+</member><member name="F:fitfa.Evento_Crear.BOTON_GRABAR">
 	<summary>
-Control btn_guardar.
+Control BOTON_GRABAR.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -12331,6 +12387,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:fitfa.Evento_Crear.Modal_msjOK">
 	<summary>
 Control Modal_msjOK.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:fitfa.Evento_Crear.Btn_modal_guardar">
+	<summary>
+Control Btn_modal_guardar.
 </summary>
 	<remarks>
 Campo generado automáticamente.

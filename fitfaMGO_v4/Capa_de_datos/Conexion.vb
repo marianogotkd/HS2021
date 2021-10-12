@@ -22,7 +22,7 @@ Public Class Conexion
     ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;workstation id=fitfaBD.mssql.somee.com;packet size=4096;user id=hamerbd;pwd=choco1218;data source=fitfaBD.mssql.somee.com;persist security info=False;initial catalog=fitfaBD")
 
     'Conexion web Donweb
-    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
+    ' Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
 
     'Conexion DON WEB SQL 2012
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=sql2012;User Id=wi181976_fitfabd2;Password=lish5aengeiH;Database=wi181976_fitfabd2; Trusted_Connection=yes")
