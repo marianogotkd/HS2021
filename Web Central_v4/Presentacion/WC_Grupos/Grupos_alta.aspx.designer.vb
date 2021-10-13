@@ -365,6 +365,24 @@ Partial Public Class Grupos_alta
     Protected WithEvents btn_grabar_mdl As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control btn_baja_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_baja_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_baja_mdl_cancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_baja_mdl_cancelar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control btn_baja_mdl.
     '''</summary>
     '''<remarks>
@@ -372,6 +390,15 @@ Partial Public Class Grupos_alta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_baja_mdl As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_graba_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_graba_close As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_ok.

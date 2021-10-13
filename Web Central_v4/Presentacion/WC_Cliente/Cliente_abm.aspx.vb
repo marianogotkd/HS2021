@@ -55,6 +55,7 @@
             End If
         Catch ex As Exception
             'significa q la cadena ingresada no es entera.
+            ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error", "$(document).ready(function () {$('#modal-sm_error').modal();});", True)
         End Try
     End Sub
 
@@ -79,5 +80,13 @@
     Private Sub btn_baja_modal_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_modal.ServerClick
         DAClientes.Clientes_baja(Session("id_eliminar"))
         recuperar_clientes()
+    End Sub
+
+    Private Sub btn_close_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_close_error.ServerClick
+        Txt_cliente_id.Focus()
+    End Sub
+
+    Private Sub btn_ok_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error.ServerClick
+        Txt_cliente_id.Focus()
     End Sub
 End Class
