@@ -57,6 +57,16 @@
                   </div>
                   <!-- /.input group -->
                 </div>
+
+                 <div class="form-group">
+                    <label>DNI</label>
+  <label id="lbl_costo" class="label label-danger"  runat="server">Debe Completar El Campo</label>
+  <asp:TextBox ID="tb_dni" CssClass="form-control" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
+  <cc1:FilteredTextBoxExtender 
+            ID="FilteredTextBoxExtender2" runat="server" TargetControlID="tb_dni"
+      FilterType="Numbers" ValidChars="0123456789" >
+        </cc1:FilteredTextBoxExtender>
+        </div>
                 
                   <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Nacionalidad</label>--%>
@@ -73,18 +83,13 @@
                       <asp:ListItem Value="Mujer">Mujer</asp:ListItem>
                    </asp:DropDownList>
                 </div>
-
-                 <div class="form-group">
-                  <label>Estado Civil:</label>
-                   <asp:DropDownList ID="combo_EstCivil" runat="server" class="form-control">
+                 
+                              <div class="form-group">
+               <%--   <label >Estado Civil:</label>--%>
+                   <asp:DropDownList ID="combo_EstCivil" runat="server" class="form-control" Visible=false>
                    </asp:DropDownList>
                   </div>
 
-                    <div class="form-group">
-                    <%--<label for="exampleInputEmail1">Profesion</label>--%>
-                    <label>Profesión:</label>
-                    <input type="text" class="form-control" id="tb_profesion" runat="server" required="" placeholder="Ingrese profesión..." maxlength="50" />
-                     </div>
 
                      <div class="form-group">
                   <%--  <label for="exampleInputEmail1">Domicilio</label>--%>
@@ -152,7 +157,20 @@
                    </div>
 
                     </div> <%--cierra el col-md-4 col-center--%>
+
+             <%--    /////////  FOTO ///////--%>
+                     <div class="col-md-4 col-center">
+                     
+                     
+                     
+                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Registro/imagen/usuario-registrado.jpg" Width="250" />
+                         <br />           
+                         <asp:FileUpload ID="FileUpload1" runat="server" cssClass="form-control"/>
+                         <br />
+                         <asp:Button ID="Btn_subir" runat="server" Text="Subir Foto"  CssClass="btn btn-success"/>
                   
+                    </div>
+                      
                   
                   </div>
                   
@@ -315,6 +333,9 @@
 
 
      </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="Btn_subir" EventName="Click" />
+        </Triggers>
         </asp:UpdatePanel>
        
 

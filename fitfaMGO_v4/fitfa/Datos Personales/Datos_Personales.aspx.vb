@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Data.OleDb
 Imports System.Data
+Imports System.Drawing
 Imports iTextSharp.text
 Imports iTextSharp.text.html.simpleparser
 Imports iTextSharp.text.pdf
@@ -44,7 +45,7 @@ Public Class Datos_Personales
             End If
 
             combo_EstCivil.SelectedValue = ds_Usuarios.Tables(0).Rows(0).Item(5)
-            tb_profesion.Value = ds_Usuarios.Tables(0).Rows(0).Item(9)
+            'tb_profesion.Value = ds_Usuarios.Tables(0).Rows(0).Item(9)
             tb_dir.Value = ds_Usuarios.Tables(0).Rows(0).Item(8)
             'tb_CP.Value = ds_Usuarios.Tables(0).Rows(0).Item(10)
             textbox_CP.Text = ds_Usuarios.Tables(0).Rows(0).Item(10)
@@ -53,6 +54,7 @@ Public Class Datos_Personales
             tb_tel.Value = ds_Usuarios.Tables(0).Rows(0).Item(11)
             tb_Email.Value = ds_Usuarios.Tables(0).Rows(0).Item(12)
             tb_nrolibreta.Value = ds_Usuarios.Tables(0).Rows(0).Item("usuario_nrolibreta").ToString
+            tb_dni.Text = ds_Usuarios.Tables(0).Rows(0).Item("usuario_doc").ToString
 
             Dim graduacion_id As Integer = ds_Usuarios.Tables(0).Rows(0).Item("graduacion_id")
             'como en el evento init recupero la graduacion, solo tengo que seleccionarla
@@ -183,7 +185,7 @@ Public Class Datos_Personales
         'End If
 
         If Vacio <> True Then
-            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
+            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_nacionalidad.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
             'div_registro_guardado.Visible = True
 
             '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++
@@ -242,4 +244,41 @@ Public Class Datos_Personales
     '    ''pdfDoc.Close()
 
     'End Sub
+
+    Private Sub Btn_subir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_subir.Click
+        If FileUpload1.HasFile Then
+            Dim fileExt As String = System.IO.Path.GetExtension(FileUpload1.FileName)
+            If fileExt = ".jpeg" Or fileExt = ".bmp" Or fileExt = ".png" Or fileExt = ".jpg" Then
+
+
+
+                Dim tamanio = FileUpload1.PostedFile.ContentLength
+                'int Tamanio = fuploadImagen.PostedFile.ContentLength;
+                'choco
+                Dim ImagenOriginal = New Byte(tamanio - 1) {}
+                'byte[] ImagenOriginal = new byte[Tamanio];
+                'choco
+                FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio)
+                'fuploadImagen.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
+                'choco
+                Dim ImagenOriginalBinaria = New Bitmap(FileUpload1.PostedFile.InputStream)
+                'Bitmap ImagenOriginalBinaria = new Bitmap(fuploadImagen.PostedFile.InputStream);
+                'choco
+                Dim ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal)
+                'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
+
+                Session("imagen") = ImagenOriginal
+                Image1.ImageUrl = ImagenDataURL64
+
+                Image1.Visible = True
+                'lbl_errImg.Visible = False
+                'btn_Examinar.Visible = False
+                'btn_quitar.Visible = True
+            Else
+                'lbl_errImg.Visible = True
+                'lbl_errImg.InnerText = "Solo Archivos de Tipo Imagen"
+            End If
+
+        End If
+    End Sub
 End Class
