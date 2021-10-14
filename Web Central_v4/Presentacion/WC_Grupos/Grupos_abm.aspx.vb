@@ -40,12 +40,12 @@
 
     Private Sub btn_modificar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_modificar.ServerClick
         Try
-            Dim grupo_id As Integer = CInt(Txt_grupo_id.Text)
-            Dim ds_info As DataSet = DAgrupos.Grupos_buscar_id(grupo_id)
+            Dim grupo_codigo As Integer = CInt(Txt_grupo_id.Text)
+            Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(grupo_codigo)
             If ds_info.Tables(0).Rows.Count <> 0 Then
                 Session("grupos_op") = "modificar"
                 'pasar ademas el ID del grupo.
-                Session("grupo_id") = CInt(Txt_grupo_id.Text)
+                Session("grupo_codigo") = CInt(Txt_grupo_id.Text)
                 Response.Redirect("Grupos_alta.aspx")
             Else
                 'no existe
@@ -99,5 +99,9 @@
 
     Private Sub btn_close_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_close_error.ServerClick
         Txt_grupo_id.Focus()
+    End Sub
+
+    Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
+        Response.Redirect("~/Inicio.aspx")
     End Sub
 End Class

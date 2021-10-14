@@ -39,8 +39,8 @@
 
     Private Sub btn_modificar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_modificar.ServerClick
         Try
-            Dim cliente_dni As Integer = CInt(Txt_cliente_id.Text)
-            Dim ds_clie As DataSet = DAClientes.Clientes_buscar_dni(cliente_dni)
+            Dim cliente_codigo As Integer = CInt(Txt_cliente_id.Text)
+            Dim ds_clie As DataSet = DAClientes.Clientes_buscar_codigo(cliente_codigo)
 
 
             If ds_clie.Tables(0).Rows.Count <> 0 Then
@@ -88,5 +88,9 @@
 
     Private Sub btn_ok_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error.ServerClick
         Txt_cliente_id.Focus()
+    End Sub
+
+    Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
+        Response.Redirect("~/Inicio.aspx")
     End Sub
 End Class

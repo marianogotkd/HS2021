@@ -163,8 +163,12 @@
                 <tr>
                     <td class="style1">
                         <asp:Label ID="Label_cliente_id" runat="server" Text="Cliente:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_cliente_id" runat="server" Width="50px" 
-                            ReadOnly="True" Enabled="False"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_cliente_codigo" runat="server" Width="50px" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        <asp:Label ID="lb_error_codigo" runat="server" ForeColor="Red" Text="*" 
+                            Visible="False"></asp:Label>
+
+                        <asp:HiddenField ID="HF_cliente_id" runat="server" />
+
                     </td>
                     <td class="style2">
                         <asp:Label ID="Label_cliente_nomb" runat="server" Text="Nombre:"></asp:Label>

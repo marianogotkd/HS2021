@@ -3,7 +3,7 @@
     'Dim DAUsuario As New Capa_Datos.Usuario
     Dim DAusuarios_wc As New Capa_Datos.WB_usuarios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        tb_us.Focus()
     End Sub
 
 

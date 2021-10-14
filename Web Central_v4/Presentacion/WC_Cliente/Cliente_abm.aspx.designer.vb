@@ -77,6 +77,15 @@ Partial Public Class Cliente_abm
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''Control btn_retroceder.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control btn_baja_modal.
     '''</summary>
     '''<remarks>

@@ -23,7 +23,8 @@ Public Class WB_clientes
                                 ByVal Leyenda2 As String,
                                 ByVal Cantidadpc As String,
                                 ByVal Saldo As Decimal,
-                                ByVal Saldoanterior As Decimal) As DataSet
+                                ByVal Saldoanterior As Decimal,
+                                ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -51,6 +52,7 @@ Public Class WB_clientes
         comando.Parameters.Add(New OleDb.OleDbParameter("@Cantidadpc", Cantidadpc))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Saldo", Saldo))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Saldoanterior", Saldoanterior))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
         ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
@@ -60,7 +62,7 @@ Public Class WB_clientes
         Return ds
     End Function
 
-    Public Function Clientes_buscar_dni(ByVal Dni As Integer) As DataSet
+    Public Function Clientes_buscar_dni(ByVal Dni As Integer, ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -68,6 +70,24 @@ Public Class WB_clientes
         Dim comando As New OleDbCommand("Clientes_buscar_dni", dbconn)
         comando.CommandType = CommandType.StoredProcedure
         comando.Parameters.Add(New OleDb.OleDbParameter("@Dni", Dni))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "Clientes")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+    Public Function Clientes_buscar_codigo(ByVal Codigo As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Clientes_buscar_codigo", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
 
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
@@ -113,7 +133,8 @@ Public Class WB_clientes
                                 ByVal Leyenda As String,
                                 ByVal Variable1 As Integer,
                                 ByVal Leyenda1 As String,
-                                ByVal Leyenda2 As String) As DataSet
+                                ByVal Leyenda2 As String,
+                                ByVal Codigo As Integer) As DataSet
         'ByVal Cantidadpc As String) 
         'ByVal Saldo As Decimal,
         'ByVal Saldoanterior As Decimal) As DataSet
@@ -145,6 +166,7 @@ Public Class WB_clientes
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Cantidadpc", Cantidadpc))
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Saldo", Saldo))
         'comando.Parameters.Add(New OleDb.OleDbParameter("@Saldoanterior", Saldoanterior))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
         ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".

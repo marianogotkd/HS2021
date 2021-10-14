@@ -41,13 +41,31 @@ Partial Public Class Cliente_alta
     Protected WithEvents Label_cliente_id As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_cliente_id.
+    '''Control Txt_cliente_codigo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_cliente_id As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_cliente_codigo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_codigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_codigo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control HF_cliente_id.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_cliente_id As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control Label_cliente_nomb.

@@ -54,9 +54,49 @@ Control Button1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Inicio.Image1">
+</member><member name="F:Presentacion.Inicio.ScriptManager1">
 	<summary>
-Control Image1.
+Control ScriptManager1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.UpdatePanel1">
+	<summary>
+Control UpdatePanel1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.txt_opcion">
+	<summary>
+Control txt_opcion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.btn_opcion">
+	<summary>
+Control btn_opcion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.btn_close_error">
+	<summary>
+Control btn_close_error.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Inicio.btn_ok_error">
+	<summary>
+Control btn_ok_error.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -198,6 +238,14 @@ Control GridView1.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Grupos_abm.btn_retroceder">
+	<summary>
+Control btn_retroceder.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Grupos_abm.btn_baja_modal">
 	<summary>
 Control btn_baja_modal.
@@ -254,9 +302,25 @@ Control Label_cliente_id.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Cliente_alta.Txt_cliente_id">
+</member><member name="F:Presentacion.Cliente_alta.Txt_cliente_codigo">
 	<summary>
-Control Txt_cliente_id.
+Control Txt_cliente_codigo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_alta.lb_error_codigo">
+	<summary>
+Control lb_error_codigo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_alta.HF_cliente_id">
+	<summary>
+Control HF_cliente_id.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -974,9 +1038,25 @@ Control Label_grupo_id0.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_id">
+</member><member name="F:Presentacion.Grupos_alta.Txt_grupo_codigo">
 	<summary>
-Control Txt_grupo_id.
+Control Txt_grupo_codigo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.lb_error_codigo">
+	<summary>
+Control lb_error_codigo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Grupos_alta.HF_grupo_id">
+	<summary>
+Control HF_grupo_id.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1345,6 +1425,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Presentacion.Cliente_abm.GridView1">
 	<summary>
 Control GridView1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Cliente_abm.btn_retroceder">
+	<summary>
+Control btn_retroceder.
 </summary>
 	<remarks>
 Campo generado automáticamente.

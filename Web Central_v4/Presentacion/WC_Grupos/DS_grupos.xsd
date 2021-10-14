@@ -12,7 +12,7 @@
   <xs:element name="DS_grupos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_grupos" msprop:Generator_UserDSName="DS_grupos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Grupos_todos" msprop:Generator_TableClassName="Grupos_todosDataTable" msprop:Generator_TableVarName="tableGrupos_todos" msprop:Generator_TablePropName="Grupos_todos" msprop:Generator_RowDeletingName="Grupos_todosRowDeleting" msprop:Generator_RowChangingName="Grupos_todosRowChanging" msprop:Generator_RowEvHandlerName="Grupos_todosRowChangeEventHandler" msprop:Generator_RowDeletedName="Grupos_todosRowDeleted" msprop:Generator_UserTableName="Grupos_todos" msprop:Generator_RowChangedName="Grupos_todosRowChanged" msprop:Generator_RowEvArgName="Grupos_todosRowChangeEvent" msprop:Generator_RowClassName="Grupos_todosRow">
+        <xs:element name="Grupos_todos" msprop:Generator_TableClassName="Grupos_todosDataTable" msprop:Generator_TableVarName="tableGrupos_todos" msprop:Generator_RowChangedName="Grupos_todosRowChanged" msprop:Generator_TablePropName="Grupos_todos" msprop:Generator_RowDeletingName="Grupos_todosRowDeleting" msprop:Generator_RowChangingName="Grupos_todosRowChanging" msprop:Generator_RowEvHandlerName="Grupos_todosRowChangeEventHandler" msprop:Generator_RowDeletedName="Grupos_todosRowDeleted" msprop:Generator_RowClassName="Grupos_todosRow" msprop:Generator_UserTableName="Grupos_todos" msprop:Generator_RowEvArgName="Grupos_todosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Grupos_id" msprop:Generator_ColumnVarNameInTable="columnGrupos_id" msprop:Generator_ColumnPropNameInRow="Grupos_id" msprop:Generator_ColumnPropNameInTable="Grupos_idColumn" msprop:Generator_UserColumnName="Grupos_id" type="xs:int" minOccurs="0" />
@@ -25,6 +25,7 @@
               <xs:element name="Saldo" msprop:Generator_ColumnVarNameInTable="columnSaldo" msprop:Generator_ColumnPropNameInRow="Saldo" msprop:Generator_ColumnPropNameInTable="SaldoColumn" msprop:Generator_UserColumnName="Saldo" type="xs:decimal" minOccurs="0" />
               <xs:element name="Saldoanterior" msprop:Generator_ColumnVarNameInTable="columnSaldoanterior" msprop:Generator_ColumnPropNameInRow="Saldoanterior" msprop:Generator_ColumnPropNameInTable="SaldoanteriorColumn" msprop:Generator_UserColumnName="Saldoanterior" type="xs:decimal" minOccurs="0" />
               <xs:element name="Gastos" msprop:Generator_ColumnVarNameInTable="columnGastos" msprop:Generator_ColumnPropNameInRow="Gastos" msprop:Generator_ColumnPropNameInTable="GastosColumn" msprop:Generator_UserColumnName="Gastos" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

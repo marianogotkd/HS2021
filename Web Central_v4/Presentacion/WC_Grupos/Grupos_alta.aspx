@@ -127,8 +127,11 @@
         <tr>
             <td class="style10">
                 <asp:Label ID="Label_grupo_id0" runat="server" Text="Grupo:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_grupo_id" runat="server" ReadOnly="True" 
-                    Width="62px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_grupo_codigo" runat="server" Visible="true"   
+                    Width="62px" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                <asp:Label ID="lb_error_codigo" runat="server" ForeColor="Red" Text="*" 
+                    Visible="False"></asp:Label>
+                <asp:HiddenField ID="HF_grupo_id" runat="server" />
             </td>
         </tr>
         
