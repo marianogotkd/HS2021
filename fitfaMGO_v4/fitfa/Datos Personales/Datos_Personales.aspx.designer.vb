@@ -86,6 +86,33 @@ Partial Public Class Datos_Personales
     Protected WithEvents tb_fechnacc As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
+    '''Control lbl_costo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_costo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control tb_dni.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_dni As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control FilteredTextBoxExtender2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FilteredTextBoxExtender2 As Global.AjaxControlToolkit.FilteredTextBoxExtender
+
+    '''<summary>
     '''Control lbl_errNac.
     '''</summary>
     '''<remarks>
@@ -120,15 +147,6 @@ Partial Public Class Datos_Personales
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents combo_EstCivil As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control tb_profesion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_profesion As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
     '''Control lbl_errDir.
@@ -264,6 +282,33 @@ Partial Public Class Datos_Personales
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Combo_graduacion As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control Image1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''Control FileUpload1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''Control Btn_subir.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_subir As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btn_guardar.

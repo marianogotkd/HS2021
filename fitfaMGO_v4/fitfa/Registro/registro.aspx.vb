@@ -509,10 +509,34 @@ Public Class registro
 
 
 
+   
+    
+
+    
+
+
+
+    
+
+
+    
+
+    Private Sub btn_Volver_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Volver.ServerClick
+        Response.Redirect("../index.html")
+    End Sub
+
+    Private Sub btn_login_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_login.ServerClick
+        Response.Redirect("../Login2/login2.aspx")
+    End Sub
+
+#Region "Gestion Foto"
+
     Dim tamanio As Integer
     Dim ImagenOriginal As Byte()
     Dim ImagenOriginalBinaria As Bitmap
     Dim ImagenDataURL64 As String
+
+
     Private Sub Button_adjuntar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button_adjuntar.Click
 
         If FileUpload1.HasFile Then
@@ -552,24 +576,8 @@ Public Class registro
 
     End Sub
 
-    
 
 
-
-    
-
-
-    
-
-    Private Sub btn_Volver_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Volver.ServerClick
-        Response.Redirect("../index.html")
-    End Sub
-
-    Private Sub btn_login_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_login.ServerClick
-        Response.Redirect("../Login2/login2.aspx")
-    End Sub
-
-#Region "Gestion Foto"
     Public Function ImageControlToByteArray(ByVal foto)
         Return File.ReadAllBytes(Server.MapPath(foto.ImageUrl))
     End Function
