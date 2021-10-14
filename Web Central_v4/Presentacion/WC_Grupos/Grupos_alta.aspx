@@ -5,10 +5,6 @@
         {
             width: 100%;
         }
-        .style5
-        {
-            width: 224px;
-        }
         .style6
         {
             width: 146px;
@@ -22,6 +18,85 @@
             width: 235px;
         }
     </style>
+
+    <script>
+//        windows.onload = function () {
+
+//            document.getElementsByTagName('button')[0].addEventListener("click", aceptar);
+
+        //        }
+
+
+
+ //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+ function tecla_op(e) {
+    var keycode = e.keyCode;
+    ///ESC RETROCEDE
+    if (keycode == '27') {
+        e.preventDefault();
+        document.getElementsByTagName('button')[0].focus();
+        document.getElementsByTagName('button')[0].click();
+
+    }
+    ///se anula el enter
+    if (keycode == '13') {
+        e.preventDefault();
+    }
+        
+    ///F4 ELIMINA
+    if (keycode == '115') {
+         e.preventDefault();
+         document.getElementsByTagName('button')[1].focus();
+         document.getElementsByTagName('button')[1].click();
+     }
+
+    //F8 GRABA
+     if (keycode == '119') {
+         e.preventDefault();
+         document.getElementsByTagName('button')[2].focus();
+         document.getElementsByTagName('button')[2].click();
+     }
+    }
+
+
+
+    //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+    function tecla_op_botones(e) {
+        var keycode = e.keyCode;
+        ///ESC RETROCEDE
+        if (keycode == '27') {
+            e.preventDefault();
+            document.getElementsByTagName('button')[0].focus();
+            document.getElementsByTagName('button')[0].click();
+
+        }
+//        ///no voy a anular el ENTER
+//        if (keycode == '13') {
+//            e.preventDefault();
+//        }
+
+        ///F4 ELIMINA
+        if (keycode == '115') {
+            e.preventDefault();
+            document.getElementsByTagName('button')[1].focus();
+            document.getElementsByTagName('button')[1].click();
+        }
+
+        //F8 GRABA
+        if (keycode == '119') {
+            e.preventDefault();
+            document.getElementsByTagName('button')[2].focus();
+            document.getElementsByTagName('button')[2].click();
+        }
+    }
+
+
+
+
+
+    </script>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" 
@@ -66,7 +141,7 @@
         <tr>
             <td class="style10">
                 <asp:Label ID="Label_grupo_nomb" runat="server" Text="Nombre:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_grupo_nomb" runat="server"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_grupo_nomb" onkeydown="tecla_op(event);" runat="server"></asp:TextBox>
                 <asp:Label ID="lb_error_nombre" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
             </td>
@@ -83,7 +158,7 @@
             <td class="style6">
                 <asp:Label ID="Label_tipo" runat="server" Text="Tipo:"></asp:Label>
                 &nbsp;<asp:TextBox ID="Txt_tipo" runat="server" CausesValidation="True" 
-                    MaxLength="1" onkeypress="return justNumbers(event);" 
+                    MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" 
                     ToolTip="Ingrese tipo (1,2,3,4)" validationgroup="check" Width="62px" 
                     xmlns:asp="#unknown"></asp:TextBox>
                 <asp:Label ID="lb_error_tipo" runat="server" ForeColor="Red" Text="*" 
@@ -133,7 +208,7 @@
     <asp:Label ID="Label_porcentaje" runat="server" Text="Porcentaje:"></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_porcentaje" runat="server" Width="62px" 
         CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
-        MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+        MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
         <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" 
         Visible="False"></asp:Label>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
@@ -146,7 +221,7 @@
 
     <asp:Label ID="Label_clieporcentaje" runat="server" Text="Cliente Porcentaje:" ></asp:Label>
     &nbsp;<asp:TextBox ID="Txt_clieporcentaje" runat="server" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" Width="62px" 
-        MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+        MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
 
         
 
@@ -173,7 +248,7 @@
         <tr>
             <td class="style11">
                 <asp:Label ID="Label_codcobro" runat="server" Text="Código de Cobro:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_codcobro" runat="server" CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" Width="62px" MaxLength="1" onkeypress="return justNumbers(event);"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_codcobro" runat="server" CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" Width="62px" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
             
                 <asp:Label ID="lb_error_codcobro" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
@@ -214,7 +289,7 @@
 <div class="form-group">
 
     <asp:Label ID="Label_fechaproc" runat="server" Text="Fecha de procesamiento:"></asp:Label>
-    &nbsp;<asp:TextBox ID="Txt_fechaproc" runat="server" TextMode="Date"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="Txt_fechaproc" onkeydown="tecla_op(event);" runat="server" TextMode="Date"></asp:TextBox>
 
     
 
@@ -243,19 +318,20 @@
 <div class="row justify-content-center" >
         <div class="row align-items-center">
             <div class="form-group">
-            <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
+            <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">
+                ESC = RETROCEDE</button>
             &nbsp;
             </div>
 
             <div class="form-group">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mdl_baja">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mdl_baja" onkeydown="tecla_op_botones(event);">
                   F4 = DAR DE BAJA
                 </button>
             &nbsp;
             </div>
 
             <div class="form-group">
-            <button type="button" id="BOTON_GRABAR" runat="server" class="btn btn-primary"> <%--data-targe="#modal-primary"--%>
+            <button type="button" id="BOTON_GRABAR" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);"> <%--data-targe="#modal-primary"--%>
                   F8 = GRABA
                 </button>
             </div>
@@ -333,7 +409,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="H1">Dar de Baja</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="btn_baja_close" class="close" tabindex="-1" runat="server" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -341,7 +417,7 @@
         ¿Confirma la operación?...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="btn_baja_mdl_cancelar" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>
         <button type="button" id="btn_baja_mdl" class="btn btn-primary" runat="server" data-dismiss="modal">Confirmar</button>
       </div>
     </div>
@@ -355,7 +431,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Graba</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id="btn_graba_close" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>

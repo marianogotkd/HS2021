@@ -12,6 +12,64 @@
         }
 
 // ]]>
+    
+    
+    
+    
+    
+    </script>
+
+    <script>
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '112') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            ///se anula el enter
+            if (keycode == '13') {
+                e.preventDefault();
+            }
+
+            ///F4 ELIMINA
+            if (keycode == '113') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+        }
+
+
+
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op_botones(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '112') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            ///no anulo el ENTER
+//            if (keycode == '13') {
+//                e.preventDefault();
+//            }
+
+            ///F4 ELIMINA
+            if (keycode == '113') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+        }
+
     </script>
 
    <%-- <script type="text/javascript">
@@ -41,12 +99,12 @@
                 <div class="card-body">
                     <div class="form-group">
                         <asp:Label ID="Lb_grupo" runat="server" Text="Grupo:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese ID" runat="server" CausesValidation="True" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese ID" runat="server" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         
                     </div>
                     <div class="form-group">
-                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary">
-                          Modificar
+                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                          F1 = Modificar
                         </button>
 
                     <%--    <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
@@ -56,8 +114,8 @@
 
 
                         &nbsp;
-                    <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary">
-                          Nuevo
+                    <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                          F2 = Nuevo
                         </button>
                     </div>
 
@@ -141,7 +199,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Error!</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id="btn_close_error" runat="server" tabindex="-1" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -151,7 +209,7 @@
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>
               <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              <button type="button" id="btn_ok_error" runat="server" tabindex="1"  class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
           </div>
           <!-- /.modal-content -->

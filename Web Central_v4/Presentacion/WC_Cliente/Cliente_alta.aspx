@@ -65,6 +65,78 @@
         }
         </style>
 
+    <script>
+        
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '27') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            ///se anula el enter
+            if (keycode == '13') {
+                e.preventDefault();
+            }
+
+            ///F4 ELIMINA
+            if (keycode == '115') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+            //F8 GRABA
+            if (keycode == '119') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[2].focus();
+                document.getElementsByTagName('button')[2].click();
+            }
+        }
+
+
+
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op_botones(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '27') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            //        ///no voy a anular el ENTER
+            //        if (keycode == '13') {
+            //            e.preventDefault();
+            //        }
+
+            ///F4 ELIMINA
+            if (keycode == '115') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+            //F8 GRABA
+            if (keycode == '119') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[2].focus();
+                document.getElementsByTagName('button')[2].click();
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -96,7 +168,7 @@
                     </td>
                     <td class="style2">
                         <asp:Label ID="Label_cliente_nomb" runat="server" Text="Nombre:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_cliente_nomb" runat="server" MaxLength="50"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_cliente_nomb" runat="server" MaxLength="50" onkeydown="tecla_op(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_nombre" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                     </td>
@@ -111,7 +183,7 @@
             <tr>
                 <td>
                 <asp:Label ID="Label28" runat="server" Text="DNI:"></asp:Label>
-                &nbsp;<asp:TextBox ID="Txt_dni" runat="server" MaxLength="9" CausesValidation="True" onkeypress="return justNumbers(event);"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Txt_dni" runat="server" MaxLength="9" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                     
                     <asp:Label ID="lb_error_dni" runat="server" ForeColor="Red" Text="*" 
                         Visible="False"></asp:Label>
@@ -126,7 +198,7 @@
             <tr>
                 <td>
                 <asp:Label ID="Label_grupo_nomb" runat="server" Text="Grupo:"></asp:Label>
-                        &nbsp;<asp:DropDownList ID="DropDownList_grupos" runat="server">
+                        &nbsp;<asp:DropDownList ID="DropDownList_grupos" runat="server" onkeydown="tecla_op(event);">
                         </asp:DropDownList>
                 </td>
             
@@ -141,7 +213,7 @@
                 <tr>
                     <td class="style9">
                         <asp:Label ID="Label1" runat="server" Text="% Comision: "></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_comision" runat="server" Width="70px" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_comision" runat="server" Width="70px" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                         <asp:Label ID="lb_error_comision" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
@@ -155,7 +227,7 @@
                     </td>
                     <td class="style10">
                         <asp:Label ID="Label2" runat="server" Text="% Regalo: "></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_regalo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_regalo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                         <asp:Label ID="lb_error_regalo" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
@@ -181,7 +253,7 @@
             <td class="style9">
                         <asp:Label ID="Label3" runat="server" Text="% Comision1:"></asp:Label>
                         <asp:TextBox ID="Txt_comision1" runat="server" CausesValidation="True" 
-                            validationgroup="check_2" Width="70px" xmlns:asp="#unknown2" MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                            validationgroup="check_2" Width="70px" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                         <asp:Label ID="lb_error_comision1" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
@@ -195,7 +267,7 @@
                     <td class="style10">
                         <asp:Label ID="Label4" runat="server" Text="% Regalo1:"></asp:Label>
                         <asp:TextBox ID="Txt_regalo1" runat="server" CausesValidation="True" 
-                            validationgroup="check_2" Width="70px" xmlns:asp="#unknown2" MaxLength="6" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                            validationgroup="check_2" Width="70px" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                         <asp:Label ID="lb_error_regalo1" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
@@ -225,7 +297,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Proceso:"></asp:Label>
                 &nbsp;<asp:TextBox ID="Txt_proceso" runat="server" Width="70px" 
                     CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" 
-                    MaxLength="1" onkeypress="return proceso_validation(event);"></asp:TextBox>
+                    MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return proceso_validation(event);"></asp:TextBox>
                 <asp:Label ID="lb_error_proceso" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Txt_proceso" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[DSMdsm]" ValidationGroup="check_3" xmlns:asp="#unknown3"></asp:RegularExpressionValidator>
@@ -250,7 +322,7 @@
                 <tr>
                     <td class="style15">
                         <asp:Label ID="Label9" runat="server" Text="Calculo:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_calculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_calculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_calculo" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="Txt_calculo" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_4" xmlns:asp="#unknown4"></asp:RegularExpressionValidator>
@@ -272,7 +344,7 @@
                 <tr>
                     <td class="style15">
                         <asp:Label ID="Label12" runat="server" Text="Factor:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_factor" runat="server" Width="70px" CausesValidation="True" validationgroup="check_6" xmlns:asp="#unknown6" MaxLength="1" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_factor" runat="server" Width="70px" CausesValidation="True" validationgroup="check_6" xmlns:asp="#unknown6" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_factor" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="Txt_factor" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_6" xmlns:asp="#unknown6"></asp:RegularExpressionValidator>
@@ -297,7 +369,7 @@
                 <tr>
                     <td class="style16">
                         <asp:Label ID="Label15" runat="server" Text="Imprime calculo:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_imprimecalculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_5" xmlns:asp="#unknown5" MaxLength="1" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_imprimecalculo" runat="server" Width="70px" CausesValidation="True" validationgroup="check_5" xmlns:asp="#unknown5" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_imprimecalculo" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="Txt_imprimecalculo" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_5" xmlns:asp="#unknown5"></asp:RegularExpressionValidator>
@@ -320,14 +392,14 @@
                 <tr>
                     <td class="style9">
                         <asp:Label ID="Label18" runat="server" Text="Recorrido Nº:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_recorrido" runat="server" Width="70px" MaxLength="2" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_recorrido" runat="server" Width="70px" MaxLength="2" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_recorrido" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         
                     </td>
                     <td>
                         <asp:Label ID="Label19" runat="server" Text="Orden Nº:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_orden" runat="server" Width="70px" MaxLength="3" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_orden" runat="server" Width="70px" MaxLength="3" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_orden" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         
@@ -342,7 +414,7 @@
                 <tr>
                     <td class="style17">
                         <asp:Label ID="Label22" runat="server" Text="Variable:" ></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_variable" runat="server" Width="70px" CausesValidation="True" validationgroup="check_7" xmlns:asp="#unknown7" MaxLength="1" onkeypress="return solo_ceroyuno_valitation(event);" ></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_variable" runat="server" Width="70px" CausesValidation="True" validationgroup="check_7" xmlns:asp="#unknown7" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);" ></asp:TextBox>
                         <asp:Label ID="lb_error_variable" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="Txt_variable" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_7" xmlns:asp="#unknown7"></asp:RegularExpressionValidator>
@@ -365,7 +437,7 @@
                 <tr>
                     <td>
                         <asp:Label ID="Label23" runat="server" Text="Leyenda:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_leyenda" runat="server" Width="200px" MaxLength="40"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_leyenda" runat="server" Width="200px" MaxLength="40" onkeydown="tecla_op(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_leyenda" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                     </td>
@@ -378,7 +450,7 @@
                 <tr>
                     <td class="style18">
                         <asp:Label ID="Label24" runat="server" Text="Variable1:" ></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_variable1" runat="server" Width="70px" CausesValidation="True" validationgroup="check_8" xmlns:asp="#unknown8" MaxLength="1" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_variable1" runat="server" Width="70px" CausesValidation="True" validationgroup="check_8" xmlns:asp="#unknown8" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_variable1" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="Txt_variable1" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_8" xmlns:asp="#unknown8"></asp:RegularExpressionValidator>
@@ -401,7 +473,7 @@
                 <tr>
                     <td>
                         <asp:Label ID="Label27" runat="server" Text="Leyenda1:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_leyenda1" runat="server" Width="200px" MaxLength="40"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_leyenda1" runat="server" Width="200px" MaxLength="40" onkeydown="tecla_op(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_leyenda1" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         <br />
@@ -430,16 +502,16 @@
          <div class="row align-items-center">
             
                 <div class="form-group">
-                  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder">ESC = RETROCEDE</button>
+                  <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">ESC = RETROCEDE</button>
                     &nbsp;</div>
                       
                         <div class="form-group">
-                            <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#Mdl_baja">F4 = DAR DE BAJA</button>
+                            <button type="button" Class="btn btn-primary" data-toggle="modal" data-target="#Mdl_baja" onkeydown="tecla_op_botones(event);">F4 = DAR DE BAJA</button>
                             &nbsp;</div>  
             
             
                       <div class="form-group">
-                                <button type="button" Class="btn btn-primary" id = "BOTON_GRABA" runat="server">F8 = GRABA</button>
+                                <button type="button" Class="btn btn-primary" id = "BOTON_GRABA" runat="server" onkeydown="tecla_op_botones(event);">F8 = GRABA</button>
         
                             </div>
             
@@ -519,7 +591,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="H1">Dar de Baja</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="btn_baja_close" class="close" runat="server" tabindex="-1" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -527,7 +599,7 @@
         ¿Confirma la operación?...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="btn_baja_mdl_cancelar" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>
         <button type="button" id="btn_baja_mdll" class="btn btn-primary" runat="server" data-dismiss="modal">Confirmar</button>
       </div>
     </div>
@@ -540,7 +612,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Graba</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id="btn_graba_close" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>

@@ -84,4 +84,22 @@ Partial Public Class Cliente_abm
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_close_error.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_close_error As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_ok_error.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ok_error As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

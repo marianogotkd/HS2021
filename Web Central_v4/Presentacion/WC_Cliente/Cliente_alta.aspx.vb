@@ -285,6 +285,7 @@
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
                                 lb_error_dni.Visible = True
+                                Txt_cliente_nomb.Focus()
                             End If
                         End If
                     Case "modificar"
@@ -320,6 +321,7 @@
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
                                 lb_error_dni.Visible = True
+                                Txt_cliente_nomb.Focus()
                             End If
                         End If
                 End Select
@@ -327,12 +329,14 @@
                 'aqui mensaje de que cargue todos los paretros solicitados correctamente
                 Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
                 Lb_error_validacion.Visible = True
+                Txt_cliente_nomb.Focus()
             End If
 
         Catch ex As Exception
             'aqui mensaje de que cargue todos los paretros solicitados correctamente
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
+            Txt_cliente_nomb.Focus()
         End Try
     End Sub
 
@@ -340,6 +344,9 @@
         Response.Redirect("Cliente_abm.aspx")
     End Sub
 
+    Private Sub btn_graba_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_graba_close.ServerClick
+        Response.Redirect("Cliente_abm.aspx")
+    End Sub
     
     Private Sub btn_baja_mdll_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdll.ServerClick
         Try
@@ -354,4 +361,14 @@
 
         End Try
     End Sub
+
+    Private Sub btn_baja_mdl_cancelar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl_cancelar.ServerClick
+        Txt_cliente_nomb.Focus()
+    End Sub
+
+    Private Sub btn_baja_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_close.ServerClick
+        Txt_cliente_nomb.Focus()
+    End Sub
+
+
 End Class

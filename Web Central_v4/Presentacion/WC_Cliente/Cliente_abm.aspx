@@ -1,5 +1,61 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Cliente_abm.aspx.vb" Inherits="Presentacion.Cliente_abm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script>
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '112') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            ///se anula el enter
+            if (keycode == '13') {
+                e.preventDefault();
+            }
+
+            ///F4 ELIMINA
+            if (keycode == '113') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+        }
+
+
+
+        //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
+        function tecla_op_botones(e) {
+            var keycode = e.keyCode;
+            ///ESC RETROCEDE
+            if (keycode == '112') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
+
+            }
+            ///no anulo el ENTER
+            //            if (keycode == '13') {
+            //                e.preventDefault();
+            //            }
+
+            ///F4 ELIMINA
+            if (keycode == '113') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
+            }
+
+        }
+
+    </script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" 
@@ -23,20 +79,20 @@
                     <div class="form-group">
                         <asp:Label ID="Lb_cliente" runat="server" Text="Cliente:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_cliente_id" placeholder="ingrese Dni" runat="server" 
-                            CausesValidation="True" onkeypress="return justNumbers(event);" MaxLength="9"></asp:TextBox>
+                            CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" MaxLength="9"></asp:TextBox>
                         
                         
                         
                     </div>
                     <div class="form-group">
-                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary">
-                          Modificar
+                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                          F1 = Modificar
                         </button>
                     
                         &nbsp;
                     
-                    <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary">
-                          Nuevo
+                    <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                          F2 = Nuevo
                         </button>
                     </div>
                     <div class="card-body table-responsive p-0"> <%--div class="form-group"--%>
@@ -100,7 +156,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Error!</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id="btn_close_error" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -110,7 +166,7 @@
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>
               <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              <button type="button" id="btn_ok_error" runat="server" tabindex="1" class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
           </div>
           <!-- /.modal-content -->
