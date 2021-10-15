@@ -5,9 +5,12 @@
         If Not IsPostBack Then
             Limpiar_campos()
             If Session("grupos_op") = "modificar" Then
-                Txt_grupo_id.Text = Session("grupo_id") 'aqui va el id del grupo
-                Dim ds_info As DataSet = DAgrupos.Grupos_buscar_id(CInt(Session("grupo_id")))
+
+                Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(CInt(Session("grupo_codigo"))) 'traer del otro formulario
                 If ds_info.Tables(0).Rows.Count <> 0 Then
+
+                    HF_grupo_id.Value = ds_info.Tables(0).Rows(0).Item("Grupo_id")
+                    Txt_grupo_codigo.Text = Session("grupo_codigo") 'aqui va el codigo del grupo
                     Txt_grupo_nomb.Text = ds_info.Tables(0).Rows(0).Item("Nombre").ToString
                     Txt_tipo.Text = ds_info.Tables(0).Rows(0).Item("Tipo")
                     Txt_porcentaje.Text = ds_info.Tables(0).Rows(0).Item("Porcentaje")
@@ -17,20 +20,22 @@
                     Txt_fechaproc.Text = FECHA.ToString("yyyy-MM-dd")
                 End If
                 Label_grupo_id0.Visible = True
-                Txt_grupo_id.Visible = True
+                Txt_grupo_codigo.Visible = True
             Else
                 Session("grupos_op") = "alta"
                 Dim fecha As Date = Today
                 Txt_fechaproc.Text = fecha.ToString("yyyy-MM-dd")
-                Label_grupo_id0.Visible = False
-                Txt_grupo_id.Visible = False
+                'Label_grupo_id0.Visible = False
+                'Txt_grupo_id.Visible = False
             End If
-            Txt_grupo_nomb.Focus()
+            Txt_grupo_codigo.Focus()
         End If
 
     End Sub
     Private Sub Limpiar_campos()
-        Txt_grupo_id.Enabled = False
+        HF_grupo_id.Value = 0
+        'Txt_grupo_id.Enabled = False
+        Txt_grupo_codigo.Text = ""
         Txt_grupo_nomb.Text = ""
         Txt_tipo.Text = 1
         Txt_porcentaje.Text = CDec(0)
@@ -39,7 +44,6 @@
         Dim fecha As Date = Today
         Txt_fechaproc.Text = fecha
         Txt_grupo_nomb.Focus()
-
         lb_errores_blanqueo()
     End Sub
 
@@ -47,6 +51,7 @@
         '----------lb errores-------
         Lb_error_validacion.Text = ""
         Lb_error_validacion.Visible = False
+        lb_error_codigo.Visible = False
         lb_error_nombre.Visible = False
         lb_error_tipo.Visible = False
         lb_error_porcentaje.Visible = False
@@ -67,10 +72,10 @@
 
     Private Sub btn_baja_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl.ServerClick
         Try
-            If Txt_grupo_id.Text <> "" Then
-                DAgrupos.Grupos_baja(CDec(Txt_grupo_id.Text))
+            If Txt_grupo_codigo.Text <> "" Then
+                DAgrupos.Grupos_baja(CDec(HF_grupo_id.Value)) 'el hf tiene el id en 0 si es una alta, sino recupera del form grupo_abm
                 Limpiar_campos()
-                Txt_grupo_id.Text = ""
+                Txt_grupo_codigo.Text = ""
                 'redireccionar a menu de grupos.
                 Response.Redirect("Grupos_abm.aspx")
             End If
@@ -83,6 +88,11 @@
         lb_errores_blanqueo()
         Try
             Dim valido_ingreso As String = "si"
+
+            If Txt_grupo_codigo.Text = "" Then
+                valido_ingreso = "no"
+                lb_error_codigo.Visible = True
+            End If
 
             If Txt_grupo_nomb.Text = "" Then
                 valido_ingreso = "no"
@@ -145,10 +155,10 @@
                     Case "alta"
                         If Session("grupos_op") = "alta" Then
                             '1) valido que no exista.
-                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text)
-                            If ds_info.Tables(0).Rows.Count = 0 Then 'no existe
+                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, CInt(Txt_grupo_codigo.Text))
+                            If (ds_info.Tables(0).Rows.Count = 0) And (ds_info.Tables(1).Rows.Count = 0) Then 'no existe
                                 '2) guardo en bd
-                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0))
+                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), CInt(Txt_grupo_codigo.Text))
                                 Limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -158,20 +168,27 @@
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El grupo ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
-                                lb_error_nombre.Visible = True
-                                Txt_grupo_nomb.Focus()
+                                If ds_info.Tables(0).Rows.Count <> 0 Then
+                                    lb_error_nombre.Visible = True
+                                End If
+                                If ds_info.Tables(1).Rows.Count <> 0 Then
+                                    lb_error_codigo.Visible = True
+                                End If
+                                Txt_grupo_codigo.Focus()
                             End If
                         End If
                     Case "modificar"
                         If Session("grupos_op") = "modificar" Then
                             '1) valido que el nombre q ingreso, ya no exista con otro id
-                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text)
+                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, CInt(Txt_grupo_codigo.Text))
                             Dim existe = "no"
+                            Dim existe_nombre = "no"
                             If ds_info.Tables(0).Rows.Count <> 0 Then 'no existe
                                 Dim i As Integer = 0
                                 While i < ds_info.Tables(0).Rows.Count
-                                    If (CInt(Txt_grupo_id.Text) <> ds_info.Tables(0).Rows(i).Item("Grupo_id")) And (Txt_grupo_nomb.Text.ToUpper = ds_info.Tables(0).Rows(i).Item("Nombre").ToString.ToUpper) Then
+                                    If (CInt(HF_grupo_id.Value) <> ds_info.Tables(0).Rows(i).Item("Grupo_id")) And (Txt_grupo_nomb.Text.ToUpper = ds_info.Tables(0).Rows(i).Item("Nombre").ToString.ToUpper) Then
                                         existe = "si"
+                                        existe_nombre = "si"
                                         Exit While
                                     End If
                                     i = i + 1
@@ -179,8 +196,24 @@
                             Else
                                 'puedo guardar.
                             End If
+                            Dim existe_codigo = "no"
+                            If ds_info.Tables(1).Rows.Count <> 0 Then 'no existe
+                                Dim i As Integer = 0
+                                While i < ds_info.Tables(1).Rows.Count
+                                    If (CInt(HF_grupo_id.Value) <> ds_info.Tables(1).Rows(i).Item("Grupo_id")) And (Txt_grupo_codigo.Text.ToUpper = ds_info.Tables(1).Rows(i).Item("Codigo").ToString.ToUpper) Then
+                                        existe = "si"
+                                        existe_codigo = "si"
+                                        Exit While
+                                    End If
+                                    i = i + 1
+                                End While
+                            Else
+                                'puedo guardar.
+                            End If
+
+
                             If existe = "no" Then
-                                DAgrupos.Grupos_modificar(CInt(Txt_grupo_id.Text), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text)
+                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CInt(Txt_grupo_codigo.Text))
                                 Limpiar_campos()
                                 'regresar al form que lista grupos.
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
@@ -189,10 +222,15 @@
                                 'Response.Redirect("Grupos_abm.aspx")
                             Else
                                 'aqui muestro mensaje notificando que existe.
-                                Lb_error_validacion.Text = "Error! El grupo ya existe, modifique el Nombre ingresados."
+                                Lb_error_validacion.Text = "Error! El grupo ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
-                                lb_error_nombre.Visible = True
-                                Txt_grupo_nomb.Focus()
+                                If existe_nombre = "si" Then
+                                    lb_error_nombre.Visible = True
+                                End If
+                                If existe_codigo = "si" Then
+                                    lb_error_codigo.Visible = True
+                                End If
+                                Txt_grupo_codigo.Focus()
                             End If
                         End If
                 End Select
@@ -200,13 +238,13 @@
                 'aqui mensaje de que cargue todos los paretros solicitados correctamente
                 Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
                 Lb_error_validacion.Visible = True
-                Txt_grupo_nomb.Focus()
+                Txt_grupo_codigo.Focus()
             End If
         Catch ex As Exception
             'aqui mensaje de que cargue todos los paretros solicitados correctamente
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
-            Txt_grupo_nomb.Focus()
+            Txt_grupo_codigo.Focus()
         End Try
     End Sub
 
@@ -219,11 +257,11 @@
     End Sub
 
     Private Sub btn_baja_mdl_cancelar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl_cancelar.ServerClick
-        Txt_grupo_nomb.Focus()
+        Txt_grupo_codigo.Focus()
     End Sub
 
     Private Sub btn_baja_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_close.ServerClick
-        Txt_grupo_nomb.Focus()
+        Txt_grupo_codigo.Focus()
     End Sub
 
 

@@ -23,7 +23,7 @@
         //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
         function tecla_op(e) {
             var keycode = e.keyCode;
-            ///ESC RETROCEDE
+            /// F1 
             if (keycode == '112') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[0].focus();
@@ -35,11 +35,20 @@
                 e.preventDefault();
             }
 
-            ///F4 ELIMINA
+            ///F2
             if (keycode == '113') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[1].focus();
                 document.getElementsByTagName('button')[1].click();
+            }
+
+
+            ///ESC RETROCEDE
+            if (keycode == '27') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[2].focus();
+                document.getElementsByTagName('button')[2].click();
+
             }
 
         }
@@ -49,7 +58,7 @@
         //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
         function tecla_op_botones(e) {
             var keycode = e.keyCode;
-            ///ESC RETROCEDE
+            ///F1
             if (keycode == '112') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[0].focus();
@@ -61,11 +70,19 @@
 //                e.preventDefault();
 //            }
 
-            ///F4 ELIMINA
+            ///F2
             if (keycode == '113') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[1].focus();
                 document.getElementsByTagName('button')[1].click();
+            }
+
+            ///ESC RETROCEDE
+            if (keycode == '27') {
+                e.preventDefault();
+                document.getElementsByTagName('button')[2].focus();
+                document.getElementsByTagName('button')[2].click();
+
             }
 
         }
@@ -99,7 +116,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <asp:Label ID="Lb_grupo" runat="server" Text="Grupo:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese ID" runat="server" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese Cód." runat="server" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         
                     </div>
                     <div class="form-group">
@@ -124,7 +141,7 @@
                                    BorderColor="Black" GridLines="None" 
                                   EnableSortingAndPagingCallbacks="True" PageSize="20"> <%--class="table table-hover"--%>
                                     <Columns>
-                                        <asp:BoundField DataField="Grupo_id" HeaderText="ID" >                                                               
+                                        <asp:BoundField DataField="Codigo" HeaderText="Código">
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Nombre" HeaderText="Grupo" >
@@ -146,6 +163,19 @@
 </div>
 </form>
 </div>
+
+<div class="card-footer">
+<div class="row justify-content-center" >
+<div class="row align-items-center">
+<div class="form-group">
+<button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">ESC = RETROCEDE</button>
+</div>
+
+
+</div>
+</div>
+</div>
+
 
 
 <div class="modal fade" id="modal-baja">

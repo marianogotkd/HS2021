@@ -303,6 +303,8 @@ Partial Public Class DS_grupos
         
         Private columnGastos As Global.System.Data.DataColumn
         
+        Private columnCodigo As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -419,6 +421,14 @@ Partial Public Class DS_grupos
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CodigoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCodigo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -455,9 +465,9 @@ Partial Public Class DS_grupos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddGrupos_todosRow(ByVal Grupos_id As Integer, ByVal Nombre As String, ByVal Tipo As String, ByVal Porcentaje As Decimal, ByVal ClientePorcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As String, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal) As Grupos_todosRow
+        Public Overloads Function AddGrupos_todosRow(ByVal Grupos_id As Integer, ByVal Nombre As String, ByVal Tipo As String, ByVal Porcentaje As Decimal, ByVal ClientePorcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As String, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal, ByVal Codigo As Integer) As Grupos_todosRow
             Dim rowGrupos_todosRow As Grupos_todosRow = CType(Me.NewRow,Grupos_todosRow)
-            Dim columnValuesArray() As Object = New Object() {Grupos_id, Nombre, Tipo, Porcentaje, ClientePorcentaje, Codigocobro, Fecha, Saldo, Saldoanterior, Gastos}
+            Dim columnValuesArray() As Object = New Object() {Grupos_id, Nombre, Tipo, Porcentaje, ClientePorcentaje, Codigocobro, Fecha, Saldo, Saldoanterior, Gastos, Codigo}
             rowGrupos_todosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowGrupos_todosRow)
             Return rowGrupos_todosRow
@@ -490,6 +500,7 @@ Partial Public Class DS_grupos
             Me.columnSaldo = MyBase.Columns("Saldo")
             Me.columnSaldoanterior = MyBase.Columns("Saldoanterior")
             Me.columnGastos = MyBase.Columns("Gastos")
+            Me.columnCodigo = MyBase.Columns("Codigo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -515,6 +526,8 @@ Partial Public Class DS_grupos
             MyBase.Columns.Add(Me.columnSaldoanterior)
             Me.columnGastos = New Global.System.Data.DataColumn("Gastos", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGastos)
+            Me.columnCodigo = New Global.System.Data.DataColumn("Codigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigo)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -811,6 +824,21 @@ Partial Public Class DS_grupos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Codigo() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableGrupos_todos.CodigoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Codigo' de la tabla 'Grupos_todos' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGrupos_todos.CodigoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsGrupos_idNull() As Boolean
             Return Me.IsNull(Me.tableGrupos_todos.Grupos_idColumn)
         End Function
@@ -927,6 +955,18 @@ Partial Public Class DS_grupos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetGastosNull()
             Me(Me.tableGrupos_todos.GastosColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCodigoNull() As Boolean
+            Return Me.IsNull(Me.tableGrupos_todos.CodigoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCodigoNull()
+            Me(Me.tableGrupos_todos.CodigoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

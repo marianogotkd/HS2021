@@ -329,6 +329,8 @@ Partial Public Class DS_cliente
         
         Private columnDni As Global.System.Data.DataColumn
         
+        Private columnCodigo As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -549,6 +551,14 @@ Partial Public Class DS_cliente
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CodigoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCodigo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -608,9 +618,10 @@ Partial Public Class DS_cliente
                     ByVal Cantidadpc As String,  _
                     ByVal Saldo As Decimal,  _
                     ByVal Saldoanterior As Decimal,  _
-                    ByVal Dni As Integer) As ClientesRow
+                    ByVal Dni As Integer,  _
+                    ByVal Codigo As Integer) As ClientesRow
             Dim rowClientesRow As ClientesRow = CType(Me.NewRow,ClientesRow)
-            Dim columnValuesArray() As Object = New Object() {ID, Nombre, Grupo_id, Grupo_nombre, Comision, Regalo, Comision1, Regalo1, Proceso, Sincalculo, Factor, Imprime, Recorrido, Orden, Variable, Leyenda, Variable1, Leyenda1, Leyenda2, Cantidadpc, Saldo, Saldoanterior, Dni}
+            Dim columnValuesArray() As Object = New Object() {ID, Nombre, Grupo_id, Grupo_nombre, Comision, Regalo, Comision1, Regalo1, Proceso, Sincalculo, Factor, Imprime, Recorrido, Orden, Variable, Leyenda, Variable1, Leyenda1, Leyenda2, Cantidadpc, Saldo, Saldoanterior, Dni, Codigo}
             rowClientesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowClientesRow)
             Return rowClientesRow
@@ -656,6 +667,7 @@ Partial Public Class DS_cliente
             Me.columnSaldo = MyBase.Columns("Saldo")
             Me.columnSaldoanterior = MyBase.Columns("Saldoanterior")
             Me.columnDni = MyBase.Columns("Dni")
+            Me.columnCodigo = MyBase.Columns("Codigo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -707,6 +719,8 @@ Partial Public Class DS_cliente
             MyBase.Columns.Add(Me.columnSaldoanterior)
             Me.columnDni = New Global.System.Data.DataColumn("Dni", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDni)
+            Me.columnCodigo = New Global.System.Data.DataColumn("Codigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigo)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1198,6 +1212,21 @@ Partial Public Class DS_cliente
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Codigo() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableClientes.CodigoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Codigo' de la tabla 'Clientes' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableClientes.CodigoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsIDNull() As Boolean
             Return Me.IsNull(Me.tableClientes.IDColumn)
         End Function
@@ -1470,6 +1499,18 @@ Partial Public Class DS_cliente
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetDniNull()
             Me(Me.tableClientes.DniColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCodigoNull() As Boolean
+            Return Me.IsNull(Me.tableClientes.CodigoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCodigoNull()
+            Me(Me.tableClientes.CodigoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

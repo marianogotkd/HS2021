@@ -8,9 +8,10 @@
             Grupos() 'recupero todos los grupos
 
             If Session("clientes_op") = "modificar" Then
-                Txt_cliente_id.Text = Session("cliente_id") 'aqui va el id del cliente
+                HF_cliente_id.Value = Session("cliente_id") 'aqui va el id del cliente
                 Dim ds_info As DataSet = daClientes.Clientes_buscar_id(CInt(Session("cliente_id")))
                 If ds_info.Tables(0).Rows.Count <> 0 Then
+                    Txt_cliente_codigo.Text = ds_info.Tables(0).Rows(0).Item("Codigo")
                     Txt_cliente_nomb.Text = ds_info.Tables(0).Rows(0).Item("Nombre")
                     Txt_dni.Text = ds_info.Tables(0).Rows(0).Item("Dni")
                     'grupo
@@ -32,12 +33,11 @@
                     Txt_leyenda1.Text = ds_info.Tables(0).Rows(0).Item("Leyenda2")
                 End If
             Else
+                HF_cliente_id.Value = 0
                 Session("clientes_op") = "alta"
 
             End If
-            Txt_cliente_nomb.Focus()
-
-            Txt_cliente_nomb.Focus()
+            Txt_cliente_codigo.Focus()
 
         End If
     End Sub
@@ -72,6 +72,7 @@
     End Sub
 
     Private Sub limpiar_campos()
+        Txt_cliente_codigo.Text = ""
         Txt_cliente_nomb.Text = ""
         Txt_dni.Text = ""
         Txt_comision.Text = CDec(0)
@@ -90,12 +91,14 @@
         Txt_leyenda1.Text = ""
         Label_cliente_nomb.Focus()
 
+        lb_errores_blanqueo()
     End Sub
 
     Private Sub lb_errores_blanqueo()
         '------lb errores------
         Lb_error_validacion.Text = ""
         Lb_error_validacion.Visible = False
+        lb_error_codigo.Visible = False
         lb_error_nombre.Visible = False
         lb_error_dni.Visible = False
         lb_error_comision.Visible = False
@@ -127,6 +130,12 @@
         lb_errores_blanqueo()
         Try
             Dim valido_ingreso As String = "si"
+
+            If Txt_cliente_codigo.Text = "" Then
+                valido_ingreso = "no"
+                lb_error_codigo.Visible = True
+            End If
+
 
             If Txt_cliente_nomb.Text = "" Then
                 valido_ingreso = "no"
@@ -266,15 +275,15 @@
                     Case "alta"
                         If Session("clientes_op") = "alta" Then
                             '1) valido que no exista.
-                            Dim ds_info As DataSet = daClientes.Clientes_buscar_dni(CInt(Txt_dni.Text))
-                            If ds_info.Tables(0).Rows.Count = 0 Then 'no existe
+                            Dim ds_info As DataSet = daClientes.Clientes_buscar_dni(CInt(Txt_dni.Text), CInt(Txt_cliente_codigo.Text))
+                            If ds_info.Tables(0).Rows.Count = 0 And ds_info.Tables(1).Rows.Count = 0 Then 'no existe
                                 '2) guardo en bd
                                 Dim Leyenda As String = Txt_leyenda.Text + Txt_leyenda1.Text
                                 daClientes.Clientes_alta(Txt_cliente_nomb.Text, CInt(Txt_dni.Text),
                                                          DropDownList_grupos.SelectedValue, comision, regalo,
                                                          comision1, regalo1, Txt_proceso.Text, CInt(Txt_calculo.Text),
                                                          CInt(Txt_factor.Text), CInt(Txt_imprimecalculo.Text), Txt_recorrido.Text, Txt_orden.Text,
-                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, "", CDec(0), CDec(0))
+                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, "", CDec(0), CDec(0), CInt(Txt_cliente_codigo.Text))
 
                                 limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
@@ -284,20 +293,41 @@
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
-                                lb_error_dni.Visible = True
-                                Txt_cliente_nomb.Focus()
+
+                                If ds_info.Tables(0).Rows.Count <> 0 Then
+                                    lb_error_dni.Visible = True
+                                End If
+                                If ds_info.Tables(1).Rows.Count <> 0 Then
+                                    lb_error_codigo.Visible = True
+                                End If
+                                Txt_cliente_codigo.Focus()
                             End If
                         End If
                     Case "modificar"
                         If Session("clientes_op") = "modificar" Then
                             '1) valido que el nombre q ingreso, ya no exista con otro id
-                            Dim ds_info As DataSet = daClientes.Clientes_buscar_dni(CInt(Txt_dni.Text))
+                            Dim ds_info As DataSet = daClientes.Clientes_buscar_dni(CInt(Txt_dni.Text), CInt(Txt_cliente_codigo.Text))
                             Dim existe = "no"
+                            Dim existe_dni = "no"
                             If ds_info.Tables(0).Rows.Count <> 0 Then
                                 Dim i As Integer = 0
                                 While i < ds_info.Tables(0).Rows.Count
-                                    If (CInt(Txt_cliente_id.Text) <> ds_info.Tables(0).Rows(i).Item("Cliente")) And (Txt_dni.Text = ds_info.Tables(0).Rows(i).Item("Dni")) Then
+                                    If (CInt(HF_cliente_id.Value) <> ds_info.Tables(0).Rows(i).Item("Cliente")) And (Txt_dni.Text = ds_info.Tables(0).Rows(i).Item("Dni")) Then
                                         existe = "si"
+                                        existe_dni = "si"
+                                    End If
+                                    i = i + 1
+                                End While
+                            Else
+                                'puedo guardar
+                            End If
+                            Dim existe_codigo = "no"
+                            If ds_info.Tables(1).Rows.Count <> 0 Then
+                                Dim i As Integer = 0
+                                While i < ds_info.Tables(1).Rows.Count
+                                    If (CInt(HF_cliente_id.Value) <> ds_info.Tables(1).Rows(i).Item("Cliente")) And (CInt(Txt_cliente_codigo.Text) = ds_info.Tables(1).Rows(i).Item("Codigo")) Then
+                                        existe = "si"
+                                        existe_codigo = "si"
                                     End If
                                     i = i + 1
                                 End While
@@ -306,11 +336,11 @@
                             End If
                             If existe = "no" Then
                                 Dim Leyenda As String = Txt_leyenda.Text + Txt_leyenda1.Text
-                                daClientes.Clientes_modificar(CInt(Txt_cliente_id.Text), Txt_cliente_nomb.Text, CInt(Txt_dni.Text),
+                                daClientes.Clientes_modificar(CInt(HF_cliente_id.Value), Txt_cliente_nomb.Text, CInt(Txt_dni.Text),
                                                          DropDownList_grupos.SelectedValue, comision, regalo,
                                                          comision1, regalo1, Txt_proceso.Text, CInt(Txt_calculo.Text),
                                                          CInt(Txt_factor.Text), CInt(Txt_imprimecalculo.Text), Txt_recorrido.Text, Txt_orden.Text,
-                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text)
+                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, CInt(Txt_cliente_codigo.Text))
                                 limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -320,8 +350,14 @@
                                 'aqui muestro mensaje notificando que existe.
                                 Lb_error_validacion.Text = "Error! El Cliente ya existe, modifique los datos ingresados."
                                 Lb_error_validacion.Visible = True
-                                lb_error_dni.Visible = True
-                                Txt_cliente_nomb.Focus()
+                                If existe_dni = "si" Then
+                                    lb_error_dni.Visible = True
+                                End If
+
+                                If existe_codigo = "si" Then
+                                    lb_error_codigo.Visible = True
+                                End If
+                                Txt_cliente_codigo.Focus()
                             End If
                         End If
                 End Select
@@ -329,14 +365,14 @@
                 'aqui mensaje de que cargue todos los paretros solicitados correctamente
                 Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
                 Lb_error_validacion.Visible = True
-                Txt_cliente_nomb.Focus()
+                Txt_cliente_codigo.Focus()
             End If
 
         Catch ex As Exception
             'aqui mensaje de que cargue todos los paretros solicitados correctamente
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
-            Txt_cliente_nomb.Focus()
+            Txt_cliente_codigo.Focus()
         End Try
     End Sub
 
@@ -350,10 +386,10 @@
     
     Private Sub btn_baja_mdll_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdll.ServerClick
         Try
-            If Txt_cliente_id.Text <> "" Then
-                daClientes.Clientes_baja(CInt(Txt_cliente_id.Text))
+            If Txt_cliente_codigo.Text <> "" Then
+                daClientes.Clientes_baja(CInt(HF_cliente_id.Value))
                 limpiar_campos()
-                Txt_cliente_id.Text = ""
+                Txt_cliente_codigo.Text = ""
                 'redireccionar al form abm clientes.
                 Response.Redirect("Cliente_abm.aspx")
             End If

@@ -4,7 +4,7 @@ Public Class WC_grupos
     Inherits Capa_Datos.Conexion
 
     Public Function Grupos_alta(ByVal Nombre As String, ByVal Tipo As String,
-                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal) As DataSet
+                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal, ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -20,6 +20,7 @@ Public Class WC_grupos
         comando.Parameters.Add(New OleDb.OleDbParameter("@Saldo", Saldo))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Saldoanterior", Saldoanterior))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Gastos", Gastos))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
         ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
@@ -30,7 +31,8 @@ Public Class WC_grupos
     End Function
 
     Public Function Grupos_modificar(ByVal Grupo_id As Integer, ByVal Nombre As String, ByVal Tipo As String,
-                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date) As DataSet
+                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date,
+                              ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -44,6 +46,7 @@ Public Class WC_grupos
         comando.Parameters.Add(New OleDb.OleDbParameter("@Clienteporcentaje", Clienteporcentaje))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Codigocobro", Codigocobro))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Fecha", Fecha))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
 
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
@@ -72,7 +75,7 @@ Public Class WC_grupos
         Return ds
     End Function
 
-    Public Function Grupos_buscar(ByVal Nombre As String) As DataSet
+    Public Function Grupos_buscar(ByVal Nombre As String, ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -80,6 +83,7 @@ Public Class WC_grupos
         Dim comando As New OleDbCommand("Grupos_buscar", dbconn)
         comando.CommandType = CommandType.StoredProcedure
         comando.Parameters.Add(New OleDb.OleDbParameter("@Nombre", Nombre))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
 
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
@@ -90,14 +94,14 @@ Public Class WC_grupos
         Return ds
     End Function
 
-    Public Function Grupos_buscar_id(ByVal Grupo_id As Integer) As DataSet
+    Public Function Grupos_buscar_codigo(ByVal Codigo As Integer) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
         End Try
-        Dim comando As New OleDbCommand("Grupos_buscar_id", dbconn)
+        Dim comando As New OleDbCommand("Grupos_buscar_codigo", dbconn)
         comando.CommandType = CommandType.StoredProcedure
-        comando.Parameters.Add(New OleDb.OleDbParameter("@Grupo_id", Grupo_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
 
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)

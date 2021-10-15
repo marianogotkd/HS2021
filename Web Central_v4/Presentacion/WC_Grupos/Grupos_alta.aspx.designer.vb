@@ -50,13 +50,31 @@ Partial Public Class Grupos_alta
     Protected WithEvents Label_grupo_id0 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_grupo_id.
+    '''Control Txt_grupo_codigo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_grupo_id As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_grupo_codigo As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_codigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_codigo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control HF_grupo_id.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_grupo_id As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control Label_grupo_nomb.
