@@ -14,6 +14,8 @@
 
 
         Select Case txt_opcion.Text.ToUpper
+            Case "1"
+                Response.Redirect("~/WC_Cliente/Cliente_alta_a.aspx")
             Case "A"
                 Response.Redirect("~/WC_Grupos/Grupos_abm.aspx")
             Case "B"
