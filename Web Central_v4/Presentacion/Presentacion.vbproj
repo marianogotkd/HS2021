@@ -2017,8 +2017,10 @@
     <Content Include="starter.html" />
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
+    <Content Include="WC_Cliente\Cliente_alta_a.aspx" />
     <Content Include="WC_Grupos\Grupos_abm.aspx" />
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
+    <Content Include="WC_Grupos\Grupos_alta_a.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2082,6 +2084,13 @@
       <DependentUpon>Cliente_alta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_Cliente\Cliente_alta_a.aspx.designer.vb">
+      <DependentUpon>Cliente_alta_a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Cliente\Cliente_alta_a.aspx.vb">
+      <DependentUpon>Cliente_alta_a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="WC_Cliente\DS_cliente.xsd.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2104,6 +2113,13 @@
     </Compile>
     <Compile Include="WC_Grupos\Grupos_alta.aspx.vb">
       <DependentUpon>Grupos_alta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Grupos\Grupos_alta_a.aspx.designer.vb">
+      <DependentUpon>Grupos_alta_a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Grupos\Grupos_alta_a.aspx.vb">
+      <DependentUpon>Grupos_alta_a.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

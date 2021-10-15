@@ -34,7 +34,7 @@
 
     Private Sub btn_nuevo_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_nuevo.ServerClick
         Session("clientes_op") = "alta"
-        Response.Redirect("Cliente_alta.aspx")
+        Response.Redirect("Cliente_alta_a.aspx")
     End Sub
 
     Private Sub btn_modificar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_modificar.ServerClick

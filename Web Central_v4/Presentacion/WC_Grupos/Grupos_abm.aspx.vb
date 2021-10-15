@@ -35,7 +35,7 @@
 
     Private Sub btn_nuevo_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_nuevo.ServerClick
         Session("grupos_op") = "alta"
-        Response.Redirect("Grupos_alta.aspx")
+        Response.Redirect("Grupos_alta_a.aspx")
     End Sub
 
     Private Sub btn_modificar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_modificar.ServerClick
