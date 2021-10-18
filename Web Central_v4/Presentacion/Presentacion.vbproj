@@ -2015,6 +2015,8 @@
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
     <Content Include="starter.html" />
+    <Content Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas.aspx" />
+    <Content Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas_activacion.aspx" />
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
     <Content Include="WC_Cliente\Cliente_alta_a.aspx" />
@@ -2069,6 +2071,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas.aspx.designer.vb">
+      <DependentUpon>ab_recorridos_zonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas.aspx.vb">
+      <DependentUpon>ab_recorridos_zonas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas_activacion.aspx.designer.vb">
+      <DependentUpon>ab_recorridos_zonas_activacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas_activacion.aspx.vb">
+      <DependentUpon>ab_recorridos_zonas_activacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WC_Cliente\Cliente_abm.aspx.designer.vb">
       <DependentUpon>Cliente_abm.aspx</DependentUpon>
