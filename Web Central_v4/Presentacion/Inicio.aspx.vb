@@ -20,6 +20,8 @@
                 Response.Redirect("~/WC_Grupos/Grupos_abm.aspx")
             Case "B"
                 Response.Redirect("~/WC_Cliente/Cliente_abm.aspx")
+            Case "E"
+                Response.Redirect("~/WC_AB Recorridos_Zonas/ab_recorridos_zonas.aspx")
             Case Else
                 ''aqui va mensaje de error.
                 'no existe
