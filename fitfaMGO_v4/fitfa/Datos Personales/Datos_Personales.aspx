@@ -158,19 +158,75 @@
 
                     </div> <%--cierra el col-md-4 col-center--%>
 
+
              <%--    /////////  FOTO ///////--%>
                      <div class="col-md-4 col-center">
                      
                      
-                     
-                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Registro/imagen/usuario-registrado.jpg" Width="250" />
-                         <br />           
-                         <asp:FileUpload ID="FileUpload1" runat="server" cssClass="form-control"/>
-                         <br />
-                         <asp:Button ID="Btn_subir" runat="server" Text="Subir Foto"  CssClass="btn btn-success"/>
+                     <div class="r-form-1-top-left">
+                                <h3>
+                                    Foto personal</h3>
+                                    
+                                    
+                                    
+                                    <div>
+                                    <asp:Image ID="Image1" runat="server" Height="221px" Width="256px" 
+                                            ImageUrl="~/Registro/imagen/usuario-registrado.jpg" />
+                                    
+                                    </div>
+                                    </br>
+
+                                    <dix>
+                                        <asp:Button ID="Button_adjuntar" runat="server" Text="Seleccionar" 
+                                            Visible="False"  />
+                                    </dix>
+                                  
+
+                                <asp:Button ID="Button1" runat="server" Text="Examinar" BackColor="#00CC99" 
+                                    Font-Bold="True" ForeColor="White" />
+                                  
+                                &nbsp;
+                                <asp:Button ID="Button2" runat="server" BackColor="#FF6666" Font-Bold="True" 
+                                    ForeColor="White" Text="Quitar" />
+                                  
+                            </div>
+                          <div>
+                            <asp:Panel ID="Panel2" runat="server" CssClass="modalpopup">
+                                            <div>
+                                            
+                                            <div style="color: #FF00FF; "> 
+                                            Foto de perfil
+                                            </div>
+                                                    
+                                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                                                                                
+                                                <asp:Button ID="Btn_aceptar" runat="server" Text="Aceptar" 
+                                                    BackColor="#00CC99" Font-Bold="True" ForeColor="White" />&nbsp;&nbsp;&nbsp;
+                                                <asp:Button ID="Btn_cancelar"
+                                                    runat="server" Text="Cancelar" BackColor="#FF6666" Font-Bold="True" 
+                                                    ForeColor="White" />       
+        
+                                            
+        
+        
+                                            </div>
+                                 </asp:Panel>
+                                <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
+                                    CancelControlID="Btn_cancelar" PopupControlID="Panel1" 
+                                    TargetControlID="Button1" BackgroundCssClass="modalBackground">
+                                </cc1:ModalPopupExtender>  
+
+                            </div>
+
+
                   
                     </div>
                       
+
+                      
+
+
+
                   
                   </div>
                   
@@ -333,9 +389,7 @@
 
 
      </ContentTemplate>
-        <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="Btn_subir" EventName="Click" />
-        </Triggers>
+        
         </asp:UpdatePanel>
        
 
