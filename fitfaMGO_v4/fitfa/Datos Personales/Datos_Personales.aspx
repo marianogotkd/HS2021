@@ -211,11 +211,14 @@
         
                                             </div>
                                  </asp:Panel>
-                                <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
+                                <%--<cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
                                     CancelControlID="Btn_cancelar" PopupControlID="Panel1" 
                                     TargetControlID="Button1" BackgroundCssClass="modalBackground">
-                                </cc1:ModalPopupExtender>  
-
+                                </cc1:ModalPopupExtender>  --%>
+                              <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
+                              CancelControlID="Btn_cancelar" PopupControlID="Panel2" 
+                              TargetControlID="Button1" BackgroundCssClass="modalBackground">
+                              </cc1:ModalPopupExtender>
                             </div>
 
 
