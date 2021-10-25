@@ -46,7 +46,7 @@
                 Session("grupos_op") = "modificar"
                 'pasar ademas el ID del grupo.
                 Session("grupo_codigo") = CInt(Txt_grupo_id.Text)
-                Response.Redirect("Grupos_alta.aspx")
+                Response.Redirect("Grupos_alta_a.aspx")
             Else
                 'no existe
                 'Dim script = "$(function() { showModalExito(); }); "

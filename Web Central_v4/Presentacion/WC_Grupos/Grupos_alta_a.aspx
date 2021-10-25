@@ -79,13 +79,13 @@
 <div class="card-body">
 <div class="container-fluid">
 <div class="row justify-content-center">
-<div class="col-lg-6">
+<div class="col-lg-12">
 <div class="card">
 <div class="card-body">
 
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-md-2">
                     <label for="Label_grupo_id">Grupo:</label>
                     <asp:TextBox ID="Txt_grupo_codigo" runat="server" placeholder="Ingrese código..." class="form-control" Visible="true"   
                     onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
@@ -93,9 +93,10 @@
                     Visible="False"></asp:Label>
                     <asp:HiddenField ID="HF_grupo_id" runat="server" />
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-6">
                     <label for="Label_grupo_nombre">Nombre:</label>
-                    <asp:TextBox ID="Txt_grupo_nomb" placeholder="Ingrese nombre..." class="form-control" onkeydown="tecla_op(event);" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_grupo_nomb" placeholder="Ingrese nombre..." 
+                            class="form-control" onkeydown="tecla_op(event);" runat="server" MaxLength="20"></asp:TextBox>
                     <asp:Label ID="lb_error_nombre" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     </div>
@@ -104,7 +105,7 @@
         </div>
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-8">
+                    <div class="col-md-2">
                     <label for="Label_tipo">Tipo:</label>
                     <asp:TextBox ID="Txt_tipo" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" 
                     MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_1234_valitation(event);" 
@@ -117,13 +118,7 @@
                     <small id="Small3" runat="server" visible=true class="form-text text-muted">3= % del grupo.</small>
                     <small id="Small4" runat="server" visible=true class="form-text text-muted">4= % no tiene calculo.</small>
                     </div>
-            </div>
-        </div>
-
-        
-        <div class="form-group">
-            <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-md-2">
                     <label for="Label_porcentaje">Porcentaje:</label>
                     <asp:TextBox ID="Txt_porcentaje" runat="server" placeholder="0,00 %" class="form-control" 
                     CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
@@ -131,45 +126,48 @@
                     <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-2">
                     <label for="Label_tipo">Ciente Porcentaje:</label>
                     <asp:TextBox ID="Txt_clieporcentaje" runat="server" placeholder="0,00 %" class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
                     MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                     <asp:Label ID="lb_error_clieporcentaje" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row justify-content-center">
-                    <div class="col-8">
+                    <div class="col-md-2">
                     <label for="Label_codcobro">Cód. De Cobro:</label>
                     <asp:TextBox ID="Txt_codcobro" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_1234_valitation(event);"></asp:TextBox>
             
                     <asp:Label ID="lb_error_codcobro" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
-                    <small id="Small5" runat="server" visible=true class="form-text text-muted">1= todo. 2= sin recibos. 3= con computo. 4= solo.</small>
-                    <small id="Small6" runat="server" visible=false class="form-text text-muted">2= sin recibos.</small>
-                    <small id="Small7" runat="server" visible=false class="form-text text-muted">3= con computo.</small>
-                    <small id="Small8" runat="server" visible=false class="form-text text-muted">4= solo.</small>
+                    <small id="Small5" runat="server" visible=true class="form-text text-muted">1= todo.</small>
+                    <small id="Small6" runat="server" visible=true class="form-text text-muted">2= sin recibos.</small>
+                    <small id="Small7" runat="server" visible=true class="form-text text-muted">3= con computo.</small>
+                    <small id="Small8" runat="server" visible=true class="form-text text-muted">4= solo.</small>
 
                     </div>
             </div>
         </div>
+
+        
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-8">
+                    <div class="col-md-2">
                     <label for="Label_fecha">Fecha de procesamiento:</label>
                     <asp:TextBox ID="Txt_fechaproc" onkeydown="tecla_op(event);" class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                     </div>
+                    <div class="col-md-6">
+                    </div>
+
             </div>
         </div>
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-8">
+                    <div class="col-md-4">
                     <asp:Label ID="Lb_error_validacion" runat="server" Font-Bold="True" 
                     ForeColor="Red" Text="Error!" Visible="False"></asp:Label>
+                    </div>
+                    <div class="col-md-4">
                     </div>
             </div>
         </div>

@@ -56,16 +56,14 @@
 
 <form role="form">
 <div class="card-body">
-<div>   <%--align="center"--%>
+<div class="container-fluid">   <%--align="center"--%>
 <div class="row justify-content-center" >   <%--class="row "--%>
-<div class="col-lg-6">
+<div class="col-lg-12">
 <div class="card">
 <div class="card-body">
-
-
-    <div class="container ">
-        <div class="row">
-            <div class="col">  <%--class="col-4"--%>
+    <div class="form-group">
+                <div class="row justify-content-center">
+            <div class="col-md-6">  <%--class="col-4"--%>
               <div class="form-group">
               1 - INICIAR DIA.
               </div>
@@ -98,7 +96,7 @@
               </div>
               
             </div>
-            <div class="col"> <%--class="col-4"--%>
+            <div class="col-md-6"> <%--class="col-4"--%>
               <div class="form-group">
               A - A.B.M. GRUPOS.
               </div>
@@ -133,26 +131,38 @@
         </div>
     </div>
 
-    <div align="center">
+
     <div class="form-group">
+
+            <div class="row justify-content-start">
+            
+            <div class="col-md-6">
+                        <asp:TextBox ID="txt_opcion" runat="server" placeholder="ingrese opción..." 
+            onkeydown="tecla_op_botones(event);" MaxLength="1" Width="150px"></asp:TextBox>
         
-        <asp:TextBox ID="txt_opcion" runat="server" placeholder="ingrese opción..." 
-            Width="120px" onkeydown="tecla_op_botones(event);" MaxLength="1"></asp:TextBox>
-        &nbsp;
-        <button type="button" id="btn_opcion" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                        &nbsp;
+        
+        <button type="button" id="btn_opcion" runat="server" class="btn btn-primary"  onkeydown="tecla_op_botones(event);">
                           IR
-        </button>
+        </button>    
+            </div>
+            
+            </div>
+            <%--class="btn btn-primary"--%>
     </div>
+    <div class="form-group">
+            <div class="row justify-content-center">
+
+            </div>
+    </div>
+
+        
+
     
-    </div>
 
 </div>
 
-<div class="card-footer">
-    <div class="row justify-content-center" >
 
-    </div>
-</div>
 
 
 

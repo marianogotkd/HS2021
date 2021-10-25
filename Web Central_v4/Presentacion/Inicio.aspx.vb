@@ -15,13 +15,20 @@
 
         Select Case txt_opcion.Text.ToUpper
             Case "1"
-                Response.Redirect("~/WC_Cliente/Cliente_alta_a.aspx")
+                Response.Redirect("~/WC_Iniciar Dia/Iniciar_dia.aspx")
+            Case "2"
+                Response.Redirect("~/WC_Carga de Recorridos_Zonas/carga_recorridos_zonas_a.aspx")
             Case "A"
                 Response.Redirect("~/WC_Grupos/Grupos_abm.aspx")
             Case "B"
                 Response.Redirect("~/WC_Cliente/Cliente_abm.aspx")
+            Case "C"
+                Response.Redirect("~/WC_ABML Prestamos_Creditos/abml_prestamoscreditos.aspx")
+            Case "D"
+                Response.Redirect("~/WC_ACL Gastos/acl_gastos.aspx")
             Case "E"
                 Response.Redirect("~/WC_AB Recorridos_Zonas/ab_recorridos_zonas.aspx")
+            
             Case Else
                 ''aqui va mensaje de error.
                 'no existe

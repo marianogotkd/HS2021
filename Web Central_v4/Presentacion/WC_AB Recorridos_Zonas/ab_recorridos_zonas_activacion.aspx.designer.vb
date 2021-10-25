@@ -41,6 +41,15 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label_dia As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control HF_dia_nro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_dia_nro As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control Label1.
     '''</summary>
     '''<remarks>
@@ -266,13 +275,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox1.
+    '''Control txt_2a.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2a As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label16.
@@ -284,13 +293,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox2.
+    '''Control txt_2b.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2b As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label17.
@@ -302,13 +311,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox3.
+    '''Control txt_2c.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2c As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label18.
@@ -320,13 +329,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox4.
+    '''Control txt_2d.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2d As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label19.
@@ -338,13 +347,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox5.
+    '''Control txt_2e.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2e As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label20.
@@ -356,13 +365,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox6.
+    '''Control txt_2f.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2f As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label21.
@@ -374,13 +383,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label21 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox7.
+    '''Control txt_2g.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2g As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label22.
@@ -392,13 +401,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label22 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox8.
+    '''Control txt_2h.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2h As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label23.
@@ -410,13 +419,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label23 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox9.
+    '''Control txt_2i.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2i As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label24.
@@ -428,13 +437,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label24 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox10.
+    '''Control txt_2j.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_2j As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label25.
@@ -455,13 +464,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label26 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox11.
+    '''Control txt_3a.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3a As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label27.
@@ -473,13 +482,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label27 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox12.
+    '''Control txt_3b.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3b As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label28.
@@ -491,13 +500,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label28 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox13.
+    '''Control txt_3c.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3c As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label29.
@@ -509,13 +518,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label29 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox14.
+    '''Control txt_3d.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3d As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label30.
@@ -527,13 +536,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label30 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox15.
+    '''Control txt_3e.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox15 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3e As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label31.
@@ -545,13 +554,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label31 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox16.
+    '''Control txt_3f.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox16 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3f As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label32.
@@ -563,13 +572,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label32 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox17.
+    '''Control txt_3g.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox17 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3g As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label33.
@@ -581,13 +590,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox18.
+    '''Control txt_3h.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox18 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3h As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label34.
@@ -599,13 +608,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label34 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox19.
+    '''Control txt_3i.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox19 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3i As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label35.
@@ -617,13 +626,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label35 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox20.
+    '''Control txt_3j.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox20 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_3j As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label36.
@@ -644,13 +653,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label37 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox21.
+    '''Control txt_4a.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox21 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4a As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label38.
@@ -662,13 +671,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label38 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox22.
+    '''Control txt_4b.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox22 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4b As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label39.
@@ -680,13 +689,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label39 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox23.
+    '''Control txt_4c.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox23 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4c As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label40.
@@ -698,13 +707,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label40 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox24.
+    '''Control txt_4d.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox24 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4d As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label41.
@@ -716,13 +725,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label41 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox25.
+    '''Control txt_4e.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox25 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4e As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label42.
@@ -734,13 +743,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label42 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox26.
+    '''Control txt_4f.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox26 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4f As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label43.
@@ -752,13 +761,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label43 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox27.
+    '''Control txt_4g.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox27 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4g As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label44.
@@ -770,13 +779,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label44 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox28.
+    '''Control txt_4h.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox28 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4h As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label45.
@@ -788,13 +797,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label45 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox29.
+    '''Control txt_4i.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox29 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4i As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control Label46.
@@ -806,13 +815,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label46 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control TextBox30.
+    '''Control txt_4j.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox30 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_4j As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btn_retroceder.
@@ -831,6 +840,24 @@ Partial Public Class ab_recorridos_zonas_activacion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents BOTON_GRABAR As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_graba_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_graba_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_ok.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ok As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_close_error.

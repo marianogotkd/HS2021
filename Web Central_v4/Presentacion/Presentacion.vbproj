@@ -2017,12 +2017,21 @@
     <Content Include="starter.html" />
     <Content Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas.aspx" />
     <Content Include="WC_AB Recorridos_Zonas\ab_recorridos_zonas_activacion.aspx" />
+    <Content Include="WC_ABML Prestamos_Creditos\abml_creditos.aspx" />
+    <Content Include="WC_ABML Prestamos_Creditos\abml_prestamos.aspx" />
+    <Content Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos.aspx" />
+    <Content Include="WC_ACL Gastos\acl_gastos.aspx" />
+    <Content Include="WC_ACL Gastos\acl_gastos_alta.aspx" />
+    <Content Include="WC_ACL Gastos\acl_gastos_carga.aspx" />
+    <Content Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_a.aspx" />
+    <Content Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_b.aspx" />
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
     <Content Include="WC_Cliente\Cliente_alta_a.aspx" />
     <Content Include="WC_Grupos\Grupos_abm.aspx" />
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
     <Content Include="WC_Grupos\Grupos_alta_a.aspx" />
+    <Content Include="WC_Iniciar Dia\Iniciar_dia.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2086,6 +2095,62 @@
       <DependentUpon>ab_recorridos_zonas_activacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_creditos.aspx.designer.vb">
+      <DependentUpon>abml_creditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_creditos.aspx.vb">
+      <DependentUpon>abml_creditos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamos.aspx.designer.vb">
+      <DependentUpon>abml_prestamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamos.aspx.vb">
+      <DependentUpon>abml_prestamos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos.aspx.designer.vb">
+      <DependentUpon>abml_prestamoscreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos.aspx.vb">
+      <DependentUpon>abml_prestamoscreditos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos.aspx.designer.vb">
+      <DependentUpon>acl_gastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos.aspx.vb">
+      <DependentUpon>acl_gastos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_alta.aspx.designer.vb">
+      <DependentUpon>acl_gastos_alta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_alta.aspx.vb">
+      <DependentUpon>acl_gastos_alta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_carga.aspx.designer.vb">
+      <DependentUpon>acl_gastos_carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_carga.aspx.vb">
+      <DependentUpon>acl_gastos_carga.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_a.aspx.designer.vb">
+      <DependentUpon>carga_recorridos_zonas_a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_a.aspx.vb">
+      <DependentUpon>carga_recorridos_zonas_a.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_b.aspx.designer.vb">
+      <DependentUpon>carga_recorridos_zonas_b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_b.aspx.vb">
+      <DependentUpon>carga_recorridos_zonas_b.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="WC_Cliente\Cliente_abm.aspx.designer.vb">
       <DependentUpon>Cliente_abm.aspx</DependentUpon>
     </Compile>
@@ -2136,6 +2201,13 @@
     </Compile>
     <Compile Include="WC_Grupos\Grupos_alta_a.aspx.vb">
       <DependentUpon>Grupos_alta_a.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Iniciar Dia\Iniciar_dia.aspx.designer.vb">
+      <DependentUpon>Iniciar_dia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Iniciar Dia\Iniciar_dia.aspx.vb">
+      <DependentUpon>Iniciar_dia.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

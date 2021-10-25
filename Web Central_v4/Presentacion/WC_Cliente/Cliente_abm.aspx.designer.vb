@@ -68,6 +68,15 @@ Partial Public Class Cliente_abm
     Protected WithEvents btn_nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control txt_buscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_buscar As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
     '''Control GridView1.
     '''</summary>
     '''<remarks>
