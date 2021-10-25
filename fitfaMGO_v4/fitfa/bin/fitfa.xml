@@ -630,41 +630,9 @@ Control tb_fechnacc.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.lbl_errNac">
-	<summary>
-Control lbl_errNac.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_nacionalidad">
-	<summary>
-Control tb_nacionalidad.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Miembros_editar_datospersonales.combo_Sexo">
 	<summary>
 Control combo_Sexo.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.combo_EstCivil">
-	<summary>
-Control combo_EstCivil.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_profesion">
-	<summary>
-Control tb_profesion.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -774,17 +742,17 @@ Control tb_nrolibreta.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.tb_graduacion">
+</member><member name="F:fitfa.Miembros_editar_datospersonales.Combo_graduacion">
 	<summary>
-Control tb_graduacion.
+Control Combo_graduacion.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Miembros_editar_datospersonales.Combo_graduacion">
+</member><member name="F:fitfa.Miembros_editar_datospersonales.cmb_instructor">
 	<summary>
-Control Combo_graduacion.
+Control cmb_instructor.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -3247,22 +3215,6 @@ Control FilteredTextBoxExtender2.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Datos_Personales.lbl_errNac">
-	<summary>
-Control lbl_errNac.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.tb_nacionalidad">
-	<summary>
-Control tb_nacionalidad.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Datos_Personales.combo_Sexo">
 	<summary>
 Control combo_Sexo.
@@ -3383,9 +3335,9 @@ Control tb_nrolibreta.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Datos_Personales.tb_graduacion">
+</member><member name="F:fitfa.Datos_Personales.tb_grad">
 	<summary>
-Control tb_graduacion.
+Control tb_grad.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -3399,73 +3351,17 @@ Control Combo_graduacion.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Datos_Personales.Image1">
+</member><member name="F:fitfa.Datos_Personales.tb_inst">
 	<summary>
-Control Image1.
+Control tb_inst.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Datos_Personales.Button_adjuntar">
+</member><member name="F:fitfa.Datos_Personales.cmb_instructor">
 	<summary>
-Control Button_adjuntar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.Button1">
-	<summary>
-Control Button1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.Button2">
-	<summary>
-Control Button2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.Panel2">
-	<summary>
-Control Panel2.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.FileUpload1">
-	<summary>
-Control FileUpload1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.Btn_aceptar">
-	<summary>
-Control Btn_aceptar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.Btn_cancelar">
-	<summary>
-Control Btn_cancelar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Datos_Personales.ModalPopupExtender1">
-	<summary>
-Control ModalPopupExtender1.
+Control cmb_instructor.
 </summary>
 	<remarks>
 Campo generado automáticamente.

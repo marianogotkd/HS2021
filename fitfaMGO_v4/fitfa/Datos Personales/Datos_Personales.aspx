@@ -60,21 +60,20 @@
 
                  <div class="form-group">
                     <label>DNI</label>
-  <label id="lbl_costo" class="label label-danger"  runat="server">Debe Completar El Campo</label>
+  <label id="lbl_costo" class="label label-danger" visible="false" runat="server">Debe Completar El Campo</label>
   <asp:TextBox ID="tb_dni" CssClass="form-control" runat="server"  onkeypress="return justNumbers(event);"></asp:TextBox>  
   <cc1:FilteredTextBoxExtender 
             ID="FilteredTextBoxExtender2" runat="server" TargetControlID="tb_dni"
       FilterType="Numbers" ValidChars="0123456789" >
         </cc1:FilteredTextBoxExtender>
         </div>
-                
+                <%--
                   <div class="form-group">
-                   <%-- <label for="exampleInputEmail1">Nacionalidad</label>--%>
                     <label id="lbl_errNac" class="label label-danger" runat="server">Debe Completar El Campo</label>
                     <label>Nacionalidad:</label>
                     <input type="text" class="form-control" id="tb_nacionalidad" runat="server" 
-                          required="" placeholder="Ingrese nacionalidad..." maxlength="50">
-                  </div>
+                          required="" placeholder="Ingrese nacionalidad..." maxlength="50"/>
+                  </div>--%>
 
                    <div class="form-group">
                   <label>Sexo:</label>
@@ -98,10 +97,7 @@
                     <input type="text" class="form-control" id="tb_dir" runat="server" required="" 
                              placeholder="Ingrese domicilio..." maxlength="50">
                      </div>
-                     
-                     </div> <%--cierra el col-md-4 col-center--%>
-                    
-                    <div class="col-md-4 col-center">
+
                      
                       <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Codigo Postal</label>--%>
@@ -112,6 +108,11 @@
                           </cc1:FilteredTextBoxExtender>
 
                   </div>
+                     
+                     </div> <%--cierra el col-md-4 col-center--%>
+                    
+                    <div class="col-md-4 col-center">
+                     
 
                   <div class="form-group">
                   <label>Provincia</label>
@@ -144,23 +145,30 @@
                   <div class="form-group">
                   <label>Nro. Libreta:</label>
                     <label id="lbl_err_libreta" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50" readonly="readonly"/>
+                    <input type="text" class="form-control" id="tb_nrolibreta" runat="server" required="" placeholder="Ingrese número de libreta..." maxlength="50"/>
                   </div>
 
                   <div class="form-group">
                   <label>Graduación:</label>
-                  <input type="text" class="form-control" id="tb_graduacion" runat="server" required="" placeholder="" maxlength="50" readonly="readonly"/>
-                  
-                  <asp:DropDownList ID="Combo_graduacion" runat="server" class="form-control" 
-                          Visible="False">
+                  <input type="text" class="form-control" id="tb_grad" runat="server" maxlength="50" readonly="readonly"/>
+                  <asp:DropDownList ID="Combo_graduacion" runat="server" class="form-control" visible="false">
                    </asp:DropDownList>
                    </div>
+
+                       <div class="form-group">
+                  <label>Instructor:</label>
+                   <input type="text" class="form-control" id="tb_inst" runat="server" maxlength="50" readonly="readonly"/>
+                  <asp:DropDownList ID="cmb_instructor" runat="server" class="form-control" visible="false">
+                   </asp:DropDownList>
+                   </div>
+                 
 
                     </div> <%--cierra el col-md-4 col-center--%>
 
 
              <%--    /////////  FOTO ///////--%>
-                     <div class="col-md-4 col-center">
+                     <%--<div class="col-md-4 col-center">
+                     
                      
                      
                      <div class="r-form-1-top-left">
@@ -174,31 +182,27 @@
                                             ImageUrl="~/Registro/imagen/usuario-registrado.jpg" />
                                     
                                     </div>
-                                    </br>
-
-                                    <dix>
-                                        <asp:Button ID="Button_adjuntar" runat="server" Text="Seleccionar" 
-                                            Visible="False"  />
-                                    </dix>
-                                  
-
-                                <asp:Button ID="Button1" runat="server" Text="Examinar" BackColor="#00CC99" 
-                                    Font-Bold="True" ForeColor="White" />
-                                  
+                       
+                                <dix>
+                                    <asp:Button ID="Button_adjuntar" runat="server" Text="Seleccionar" 
+                                        Visible="False" />
+                                </dix>
+                                <asp:Button ID="Button1" runat="server" BackColor="#00CC99" Font-Bold="True" 
+                                    ForeColor="White" Text="Examinar" />
                                 &nbsp;
                                 <asp:Button ID="Button2" runat="server" BackColor="#FF6666" Font-Bold="True" 
                                     ForeColor="White" Text="Quitar" />
-                                  
+
                             </div>
                           <div>
-                            <asp:Panel ID="Panel2" runat="server" CssClass="modalpopup">
+                            <asp:Panel ID="Panel2" runat="server" CssClass="form-control">
                                             <div>
                                             
                                             <div style="color: #FF00FF; "> 
                                             Foto de perfil
                                             </div>
                                                     
-                                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                                    <asp:FileUpload ID="FileUpload1" runat="server"  />
                                                                                                 
                                                 <asp:Button ID="Btn_aceptar" runat="server" Text="Aceptar" 
                                                     BackColor="#00CC99" Font-Bold="True" ForeColor="White" />&nbsp;&nbsp;&nbsp;
@@ -211,17 +215,14 @@
         
                                             </div>
                                  </asp:Panel>
-                                <%--<cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
-                                    CancelControlID="Btn_cancelar" PopupControlID="Panel1" 
-                                    TargetControlID="Button1" BackgroundCssClass="modalBackground">
-                                </cc1:ModalPopupExtender>  --%>
+                               
                               <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
                               CancelControlID="Btn_cancelar" PopupControlID="Panel2" 
                               TargetControlID="Button1" BackgroundCssClass="modalBackground">
                               </cc1:ModalPopupExtender>
                             </div>
 
-
+                             </div>--%>
                   
                     </div>
                       

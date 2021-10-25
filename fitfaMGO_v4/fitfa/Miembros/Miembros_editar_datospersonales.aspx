@@ -48,14 +48,7 @@
                   <!-- /.input group -->
                 </div>
                 
-                  <div class="form-group">
-                   <%-- <label for="exampleInputEmail1">Nacionalidad</label>--%>
-                    <label id="lbl_errNac" class="label label-danger" runat="server">Debe Completar El Campo</label>
-                    <label>Nacionalidad:</label>
-                    <input type="text" class="form-control" id="tb_nacionalidad" runat="server" 
-                          required="" placeholder="Ingrese nacionalidad..." maxlength="50">
-                  </div>
-
+                
                    <div class="form-group">
                   <label>Sexo:</label>
                   <asp:DropDownList ID="combo_Sexo" runat="server" class="form-control">
@@ -64,18 +57,9 @@
                    </asp:DropDownList>
                 </div>
 
-                 <div class="form-group">
-                  <label>Estado Civil:</label>
-                   <asp:DropDownList ID="combo_EstCivil" runat="server" class="form-control">
-                   </asp:DropDownList>
-                  </div>
+                
 
-                    <div class="form-group">
-                    <%--<label for="exampleInputEmail1">Profesion</label>--%>
-                    <label>Profesión:</label>
-                    <input type="text" class="form-control" id="tb_profesion" runat="server" required="" placeholder="Ingrese profesión..." maxlength="50" />
-                     </div>
-
+                   
                      <div class="form-group">
                   <%--  <label for="exampleInputEmail1">Domicilio</label>--%>
                     <label>Domicilio:</label>
@@ -84,11 +68,7 @@
                              placeholder="Ingrese domicilio..." maxlength="50">
                      </div>
                      
-                     </div> <%--cierra el col-md-4 col-center--%>
-                    
-                    <div class="col-md-4 col-center">
-                     
-                      <div class="form-group">
+                          <div class="form-group">
                    <%-- <label for="exampleInputEmail1">Codigo Postal</label>--%>
                     <label>Código Postal (CP):</label>
                     <label id="lbl_errCP" class="label label-danger" runat="server">El Campo debe ser 
@@ -97,12 +77,15 @@
                               required="" placeholder="Codigo Postal" maxlength="10">--%>
                     <asp:TextBox ID="textbox_CP" class="form-control" runat="server" MaxLength="50" 
                               AutoCompleteType="None" AutoPostBack="True" ></asp:TextBox>
-                          
-                          
-
-
-
+                                        
                   </div>
+
+
+                     </div> <%--cierra el col-md-4 col-center--%>
+                    
+                    <div class="col-md-4 col-center">
+                     
+                 
 
                   <div class="form-group">
                   <label>Provincia</label>
@@ -141,15 +124,22 @@
 
                   <div class="form-group">
                   <label>Graduación:</label>
-                  <input type="text" class="form-control" id="tb_graduacion" runat="server" required="" placeholder="" maxlength="50" readonly="readonly"/>
-                  
-                  <asp:DropDownList ID="Combo_graduacion" runat="server" class="form-control" 
-                          Visible="False">
+                  <asp:DropDownList ID="Combo_graduacion" runat="server" class="form-control">
                    </asp:DropDownList>
                    </div>
 
+                      
+
                     </div> <%--cierra el col-md-4 col-center--%>
                   
+                  <div class="col-md-4 col-center">
+                   <div class="form-group">
+                  <label>Instructor:</label>
+                  <asp:DropDownList ID="cmb_instructor" runat="server" class="form-control">
+                   </asp:DropDownList>
+                   </div>
+                  
+                  </div>
                   
                   </div>
                   

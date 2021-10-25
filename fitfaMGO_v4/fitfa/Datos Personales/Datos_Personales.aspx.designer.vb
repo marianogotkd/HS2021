@@ -113,24 +113,6 @@ Partial Public Class Datos_Personales
     Protected WithEvents FilteredTextBoxExtender2 As Global.AjaxControlToolkit.FilteredTextBoxExtender
 
     '''<summary>
-    '''Control lbl_errNac.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_errNac As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control tb_nacionalidad.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_nacionalidad As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control combo_Sexo.
     '''</summary>
     '''<remarks>
@@ -266,13 +248,13 @@ Partial Public Class Datos_Personales
     Protected WithEvents tb_nrolibreta As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control tb_graduacion.
+    '''Control tb_grad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_graduacion As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents tb_grad As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
     '''Control Combo_graduacion.
@@ -284,85 +266,22 @@ Partial Public Class Datos_Personales
     Protected WithEvents Combo_graduacion As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control Image1.
+    '''Control tb_inst.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+    Protected WithEvents tb_inst As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control Button_adjuntar.
+    '''Control cmb_instructor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button_adjuntar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control Button1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control Button2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control Panel2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''Control FileUpload1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
-
-    '''<summary>
-    '''Control Btn_aceptar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Btn_aceptar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control Btn_cancelar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Btn_cancelar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control ModalPopupExtender1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender1 As Global.AjaxControlToolkit.ModalPopupExtender
+    Protected WithEvents cmb_instructor As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btn_guardar.

@@ -15,7 +15,7 @@ Public Class Miembros_editar_datospersonales
         lbl_errCP.Visible = False
         lbl_errDir.Visible = False
         lbl_errFecNac.Visible = False
-        lbl_errNac.Visible = False
+        'lbl_errNac.Visible = False
         lbl_errNom.Visible = False
         lbl_errTel.Visible = False
         lbl_errMail.Visible = False
@@ -35,7 +35,7 @@ Public Class Miembros_editar_datospersonales
             tb_nombre.Value = ds_Usuarios.Tables(0).Rows(0).Item(0)
             tb_apellido.Value = ds_Usuarios.Tables(0).Rows(0).Item(1)
             tb_fechnacc.Value = ds_Usuarios.Tables(0).Rows(0).Item(2)
-            tb_nacionalidad.Value = ds_Usuarios.Tables(0).Rows(0).Item(3)
+            'tb_nacionalidad.Value = ds_Usuarios.Tables(0).Rows(0).Item(3)
 
             If ds_Usuarios.Tables(0).Rows(0).Item(4) = "Hombre" Then
                 combo_Sexo.SelectedValue = "1"
@@ -43,8 +43,8 @@ Public Class Miembros_editar_datospersonales
                 combo_Sexo.SelectedValue = "2"
             End If
 
-            combo_EstCivil.SelectedValue = ds_Usuarios.Tables(0).Rows(0).Item(5)
-            tb_profesion.Value = ds_Usuarios.Tables(0).Rows(0).Item(9)
+            'combo_EstCivil.SelectedValue = ds_Usuarios.Tables(0).Rows(0).Item(5)
+            'tb_profesion.Value = ds_Usuarios.Tables(0).Rows(0).Item(9)
             tb_dir.Value = ds_Usuarios.Tables(0).Rows(0).Item(8)
             'tb_CP.Value = ds_Usuarios.Tables(0).Rows(0).Item(10)
             textbox_CP.Text = ds_Usuarios.Tables(0).Rows(0).Item(10)
@@ -54,10 +54,12 @@ Public Class Miembros_editar_datospersonales
             tb_Email.Value = ds_Usuarios.Tables(0).Rows(0).Item(12)
             tb_nrolibreta.Value = ds_Usuarios.Tables(0).Rows(0).Item("usuario_nrolibreta").ToString
 
+            cmb_instructor.SelectedValue = ds_Usuarios.Tables(3).Rows(0).Item("instructor_id")
+
             Dim graduacion_id As Integer = ds_Usuarios.Tables(0).Rows(0).Item("graduacion_id")
             'como en el evento init recupero la graduacion, solo tengo que seleccionarla
             Combo_graduacion.SelectedValue = graduacion_id
-            tb_graduacion.Value = Combo_graduacion.SelectedItem.Text
+
 
         End If
     End Sub
@@ -70,16 +72,7 @@ Public Class Miembros_editar_datospersonales
             Combo_graduacion.DataBind()
         End If
     End Sub
-    Private Sub obtener_estadocivil()
-        Dim ds_estadocivil As DataSet = DAusuario.Estado_civil_obtener
-        If ds_estadocivil.Tables(0).Rows.Count <> 0 Then
-            combo_EstCivil.DataSource = ds_estadocivil.Tables(0)
-            combo_EstCivil.DataTextField = "estadocivil_desc"
-            combo_EstCivil.DataValueField = "estadocivil_id"
-            combo_EstCivil.DataBind()
-        End If
-
-    End Sub
+    
     Public Sub Obtener_provincias()
         Dim ds_provincias As DataSet = DAusuario.Usuario_ObtenerProvincias()
 
@@ -105,7 +98,24 @@ Public Class Miembros_editar_datospersonales
         End If
     End Sub
 
+    Private Sub Obtener_instructores()
+        'filtrar
+        cmb_instructor.DataSource = ""
+        cmb_instructor.DataBind()
 
+
+        Dim ds_instructor As DataSet = DAusuario.Usuario_ObtenerInstructor(23) '23 es la Institucion ANT
+        If ds_instructor.Tables(0).Rows.Count <> 0 Then
+            cmb_instructor.DataSource = ds_instructor.Tables(0)
+            cmb_instructor.DataTextField = "Nombre"
+            cmb_instructor.DataValueField = "instructor_id"
+            cmb_instructor.DataBind()
+        End If
+    End Sub
+
+    Private Sub cmb_instructor_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmb_instructor.Init
+        Obtener_instructores()
+    End Sub
 
     Private Sub Combo_provincia_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.Init
         Obtener_provincias()
@@ -115,9 +125,7 @@ Public Class Miembros_editar_datospersonales
     End Sub
 
 
-    Private Sub combo_EstCivil_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_EstCivil.Init
-        obtener_estadocivil()
-    End Sub
+    
 
     Private Sub Combo_provincia_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.SelectedIndexChanged
         Obtener_ciudad()
@@ -169,12 +177,6 @@ Public Class Miembros_editar_datospersonales
             Vacio = True
         End If
 
-        If tb_nacionalidad.Value <> "" Then
-
-        Else
-            lbl_errNac.Visible = True
-            Vacio = True
-        End If
 
         If tb_nombre.Value <> "" Then
 
@@ -216,8 +218,11 @@ Public Class Miembros_editar_datospersonales
             End If
 
             If valido = "si" Then
-                DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Alumno_Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_profesion.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
+                DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Alumno_Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, "Argentino", combo_Sexo.SelectedValue, 1, "", tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
                 'div_registro_guardado.Visible = True
+
+                'Actualizo Instructor 19-10-21 -MGO
+                DAusuario.alumuno_x_instructor_Actulizar(cmb_instructor.SelectedValue, Session("Alumno_Us_id"))
 
                 '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++
                 div_modalmsjOK.Visible = True

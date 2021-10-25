@@ -86,24 +86,6 @@ Partial Public Class Miembros_editar_datospersonales
     Protected WithEvents tb_fechnacc As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control lbl_errNac.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_errNac As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''Control tb_nacionalidad.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_nacionalidad As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control combo_Sexo.
     '''</summary>
     '''<remarks>
@@ -111,24 +93,6 @@ Partial Public Class Miembros_editar_datospersonales
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents combo_Sexo As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control combo_EstCivil.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents combo_EstCivil As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control tb_profesion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_profesion As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
     '''Control lbl_errDir.
@@ -248,15 +212,6 @@ Partial Public Class Miembros_editar_datospersonales
     Protected WithEvents tb_nrolibreta As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''Control tb_graduacion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_graduacion As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
     '''Control Combo_graduacion.
     '''</summary>
     '''<remarks>
@@ -264,6 +219,15 @@ Partial Public Class Miembros_editar_datospersonales
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Combo_graduacion As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control cmb_instructor.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmb_instructor As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btn_guardar.

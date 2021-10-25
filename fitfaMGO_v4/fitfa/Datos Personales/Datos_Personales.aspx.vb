@@ -17,7 +17,7 @@ Public Class Datos_Personales
         lbl_errCP.Visible = False
         lbl_errDir.Visible = False
         lbl_errFecNac.Visible = False
-        lbl_errNac.Visible = False
+        'lbl_errNac.Visible = False
         lbl_errNom.Visible = False
         lbl_errTel.Visible = False
         lbl_errMail.Visible = False
@@ -36,7 +36,7 @@ Public Class Datos_Personales
             tb_nombre.Value = ds_Usuarios.Tables(0).Rows(0).Item(0)
             tb_apellido.Value = ds_Usuarios.Tables(0).Rows(0).Item(1)
             tb_fechnacc.Value = ds_Usuarios.Tables(0).Rows(0).Item(2)
-            tb_nacionalidad.Value = ds_Usuarios.Tables(0).Rows(0).Item(3)
+            'tb_nacionalidad.Value = ds_Usuarios.Tables(0).Rows(0).Item(3)
 
             If ds_Usuarios.Tables(0).Rows(0).Item(4) = "Hombre" Then
                 combo_Sexo.SelectedValue = "1"
@@ -55,11 +55,25 @@ Public Class Datos_Personales
             tb_Email.Value = ds_Usuarios.Tables(0).Rows(0).Item(12)
             tb_nrolibreta.Value = ds_Usuarios.Tables(0).Rows(0).Item("usuario_nrolibreta").ToString
             tb_dni.Text = ds_Usuarios.Tables(0).Rows(0).Item("usuario_doc").ToString
+            cmb_instructor.SelectedValue = ds_Usuarios.Tables(3).Rows(0).Item("instructor_id")
 
             Dim graduacion_id As Integer = ds_Usuarios.Tables(0).Rows(0).Item("graduacion_id")
             'como en el evento init recupero la graduacion, solo tengo que seleccionarla
             Combo_graduacion.SelectedValue = graduacion_id
-            tb_graduacion.Value = Combo_graduacion.SelectedItem.Text
+
+            Dim ImagenBD As Byte() = ds_Usuarios.Tables(0).Rows(0).Item("usuario_foto")
+            Dim ImagenDataURL64 As String = "data:image/jpg;base64," + Convert.ToBase64String(ImagenBD)
+            'Image1.ImageUrl = ImagenDataURL64
+
+            tb_grad.Value = Combo_graduacion.SelectedItem.ToString
+            tb_inst.Value = cmb_instructor.SelectedItem.ToString
+
+            'If ds_Usuarios.Tables(0).Rows(0).Item("usuario_tipo").ToString() = "instructor" Then
+            '    Combo_graduacion.Visible = True
+            '    tb_grad.Visible = False
+            '    cmb_instructor.Visible = True
+            '    tb_inst.Visible = False
+            'End If
 
         End If
     End Sub
@@ -72,6 +86,10 @@ Public Class Datos_Personales
             Combo_graduacion.DataBind()
         End If
     End Sub
+#Region "Combos"
+
+
+
     Private Sub obtener_estadocivil()
         Dim ds_estadocivil As DataSet = DAusuario.Estado_civil_obtener
         If ds_estadocivil.Tables(0).Rows.Count <> 0 Then
@@ -106,6 +124,26 @@ Public Class Datos_Personales
             combo_ciudad.DataBind()
         End If
     End Sub
+
+    Private Sub Obtener_instructores()
+        'filtrar
+        cmb_instructor.DataSource = ""
+        cmb_instructor.DataBind()
+
+
+        Dim ds_instructor As DataSet = DAusuario.Usuario_ObtenerInstructor(23) '23 es la Institucion ANT
+        If ds_instructor.Tables(0).Rows.Count <> 0 Then
+            cmb_instructor.DataSource = ds_instructor.Tables(0)
+            cmb_instructor.DataTextField = "Nombre"
+            cmb_instructor.DataValueField = "instructor_id"
+            cmb_instructor.DataBind()
+        End If
+    End Sub
+
+    Private Sub cmb_instructor_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmb_instructor.Init
+        Obtener_instructores()
+    End Sub
+
     Private Sub Combo_provincia_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.Init
         Obtener_provincias()
         Obtener_ciudad()
@@ -120,6 +158,11 @@ Public Class Datos_Personales
     Private Sub Combo_provincia_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.SelectedIndexChanged
         Obtener_ciudad()
     End Sub
+
+
+#End Region
+
+
 
     Private Sub btn_guardar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_guardar.ServerClick
         Dim Vacio As Boolean
@@ -157,12 +200,12 @@ Public Class Datos_Personales
             Vacio = True
         End If
 
-        If tb_nacionalidad.Value <> "" Then
+        'If tb_nacionalidad.Value <> "" Then
 
-        Else
-            lbl_errNac.Visible = True
-            Vacio = True
-        End If
+        'Else
+        '    lbl_errNac.Visible = True
+        '    Vacio = True
+        'End If
 
         If tb_nombre.Value <> "" Then
 
@@ -185,8 +228,12 @@ Public Class Datos_Personales
         'End If
 
         If Vacio <> True Then
-            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, tb_nacionalidad.Value, combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, tb_nacionalidad.Value, tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
+            DAusuario.Datos_Personales_Actualizar_Datos(CInt(Session("Us_id")), tb_nombre.Value, tb_apellido.Value, tb_fechnacc.Value, "Argentino", combo_Sexo.SelectedValue, combo_EstCivil.SelectedValue, "Estudiante", tb_dir.Value, textbox_CP.Text, Combo_provincia.SelectedValue, combo_ciudad.SelectedValue, tb_tel.Value, tb_Email.Value, tb_nrolibreta.Value, Combo_graduacion.SelectedValue)
             'div_registro_guardado.Visible = True
+
+            'Actualizo Instructor 19-10-21 -MGO
+            DAusuario.alumuno_x_instructor_Actulizar(cmb_instructor.SelectedValue, CInt(Session("Us_id")))
+
 
             '++++++++++++++Esto hago para que se haga visible el cartel de "datos actualizados"++++++++++++++
             div_modalmsjOK.Visible = True
@@ -252,99 +299,100 @@ Public Class Datos_Personales
     Dim ImagenDataURL64 As String
 
 
-    Private Sub Button_adjuntar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button_adjuntar.Click
+    'Private Sub Button_adjuntar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button_adjuntar.Click
 
-        If FileUpload1.HasFile Then
-            Dim fileExt As String = System.IO.Path.GetExtension(FileUpload1.FileName)
-            If fileExt = ".jpeg" Or fileExt = ".bmp" Or fileExt = ".png" Or fileExt = ".jpg" Then
-
-
-
-                tamanio = FileUpload1.PostedFile.ContentLength
-                'int Tamanio = fuploadImagen.PostedFile.ContentLength;
-                'choco
-                ImagenOriginal = New Byte(tamanio - 1) {}
-                'byte[] ImagenOriginal = new byte[Tamanio];
-                'choco
-                FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio)
-                'fuploadImagen.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
-                'choco
-                ImagenOriginalBinaria = New Bitmap(FileUpload1.PostedFile.InputStream)
-                'Bitmap ImagenOriginalBinaria = new Bitmap(fuploadImagen.PostedFile.InputStream);
-                'choco
-                ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal)
-                'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
-
-                Session("imagen") = ImagenOriginal
-                Image1.ImageUrl = ImagenDataURL64
-
-                Image1.Visible = True
-                'lbl_errImg.Visible = False
-                'btn_Examinar.Visible = False
-                'btn_quitar.Visible = True
-            Else
-                'lbl_errImg.Visible = True
-                'lbl_errImg.InnerText = "Solo Archivos de Tipo Imagen"
-            End If
-
-        End If
-
-    End Sub
+    '    If FileUpload1.HasFile Then
+    '        Dim fileExt As String = System.IO.Path.GetExtension(FileUpload1.FileName)
+    '        If fileExt = ".jpeg" Or fileExt = ".bmp" Or fileExt = ".png" Or fileExt = ".jpg" Then
 
 
 
-    Public Function ImageControlToByteArray(ByVal foto)
-        Return File.ReadAllBytes(Server.MapPath(foto.ImageUrl))
-    End Function
+    '            tamanio = FileUpload1.PostedFile.ContentLength
+    '            'int Tamanio = fuploadImagen.PostedFile.ContentLength;
+    '            'choco
+    '            ImagenOriginal = New Byte(tamanio - 1) {}
+    '            'byte[] ImagenOriginal = new byte[Tamanio];
+    '            'choco
+    '            FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio)
+    '            'fuploadImagen.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
+    '            'choco
+    '            ImagenOriginalBinaria = New Bitmap(FileUpload1.PostedFile.InputStream)
+    '            'Bitmap ImagenOriginalBinaria = new Bitmap(fuploadImagen.PostedFile.InputStream);
+    '            'choco
+    '            ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal)
+    '            'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
+
+    '            Session("imagen") = ImagenOriginal
+    '            Image1.ImageUrl = ImagenDataURL64
+
+    '            Image1.Visible = True
+    '            'lbl_errImg.Visible = False
+    '            'btn_Examinar.Visible = False
+    '            'btn_quitar.Visible = True
+    '        Else
+    '            'lbl_errImg.Visible = True
+    '            'lbl_errImg.InnerText = "Solo Archivos de Tipo Imagen"
+    '        End If
+
+    '    End If
+
+    'End Sub
+
+
+
+    'Public Function ImageControlToByteArray(ByVal foto)
+    '    Return File.ReadAllBytes(Server.MapPath(foto.ImageUrl))
+    'End Function
 
     Dim foto_cargada As String
-    Private Sub Btn_aceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_aceptar.Click
-        foto_cargada = "no"
-        If FileUpload1.HasFile Then
-            Dim fileExt As String = System.IO.Path.GetExtension(FileUpload1.FileName)
-            If fileExt = ".jpeg" Or fileExt = ".bmp" Or fileExt = ".png" Or fileExt = ".jpg" Then
+    'Private Sub Btn_aceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_aceptar.Click
+    '    foto_cargada = "no"
+    '    If FileUpload1.HasFile Then
+    '        Dim fileExt As String = System.IO.Path.GetExtension(FileUpload1.FileName)
+    '        If fileExt = ".jpeg" Or fileExt = ".bmp" Or fileExt = ".png" Or fileExt = ".jpg" Then
 
-                tamanio = FileUpload1.PostedFile.ContentLength
-                'int Tamanio = fuploadImagen.PostedFile.ContentLength;
-                'choco
-                ImagenOriginal = New Byte(tamanio - 1) {}
-                'byte[] ImagenOriginal = new byte[Tamanio];
-                'choco
-                FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio)
-                'fuploadImagen.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
-                'choco
-                ImagenOriginalBinaria = New Bitmap(FileUpload1.PostedFile.InputStream)
-                'Bitmap ImagenOriginalBinaria = new Bitmap(fuploadImagen.PostedFile.InputStream);
-                'choco
-                ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal)
-                'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
-                Session("imagen") = ImagenOriginal
-                Image1.ImageUrl = ImagenDataURL64
-                'Image1.Visible = True
-                'lbl_errImg.Visible = False
-                'btn_Examinar.Visible = False
-                'btn_quitar.Visible = True
-                foto_cargada = "si"
+    '            tamanio = FileUpload1.PostedFile.ContentLength
+    '            'int Tamanio = fuploadImagen.PostedFile.ContentLength;
+    '            'choco
+    '            ImagenOriginal = New Byte(tamanio - 1) {}
+    '            'byte[] ImagenOriginal = new byte[Tamanio];
+    '            'choco
+    '            FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio)
+    '            'fuploadImagen.PostedFile.InputStream.Read(ImagenOriginal, 0, Tamanio);
+    '            'choco
+    '            ImagenOriginalBinaria = New Bitmap(FileUpload1.PostedFile.InputStream)
+    '            'Bitmap ImagenOriginalBinaria = new Bitmap(fuploadImagen.PostedFile.InputStream);
+    '            'choco
+    '            ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal)
+    '            'string ImagenDataURL64 = "data:image/jpg;base64." + Convert.ToBase64String(ImagenOriginal);
+    '            Session("imagen") = ImagenOriginal
+    '            Image1.ImageUrl = ImagenDataURL64
+    '            'Image1.Visible = True
+    '            'lbl_errImg.Visible = False
+    '            'btn_Examinar.Visible = False
+    '            'btn_quitar.Visible = True
+    '            foto_cargada = "si"
 
-                Session("foto_subido_registro") = "si" 'choco: 23-07-2019
-                Session("imagen_registro") = ImagenOriginal 'choco: 23-07-2019
-            Else
+    '            Session("foto_subido_registro") = "si" 'choco: 23-07-2019
+    '            Session("imagen_registro") = ImagenOriginal 'choco: 23-07-2019
+    '        Else
 
 
-            End If
+    '        End If
 
-        End If
+    '    End If
 
-    End Sub
+    'End Sub
 
-    Protected Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
-        'boton quitar foto
-        Image1.ImageUrl = "~/Registro/imagen/usuario-registrado.jpg"
-        Session("imagen") = ""
-        Session("foto_subido_registro") = "no"
-        Session("foto_subido") = "no"
-        FileUpload1.Attributes.Clear()
-    End Sub
+    'Protected Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
+    '    'boton quitar foto
+    '    Image1.ImageUrl = "~/Registro/imagen/usuario-registrado.jpg"
+    '    Session("imagen") = ""
+    '    Session("foto_subido_registro") = "no"
+    '    Session("foto_subido") = "no"
+    '    FileUpload1.Attributes.Clear()
+    'End Sub
 #End Region
-    
+
+   
 End Class
