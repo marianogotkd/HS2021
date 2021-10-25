@@ -507,6 +507,20 @@
 
 
     }
+
+    function solo_123_valitation(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        //                acepta solo (1,2,3,4). el caracter || es un OR
+
+
+        if ((charCode == 49) || (charCode == 50) || (charCode == 51))
+            return true;
+        else
+            return false;
+
+
+
+    }
     
 
 

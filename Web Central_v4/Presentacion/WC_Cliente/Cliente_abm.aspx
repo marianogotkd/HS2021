@@ -12,9 +12,11 @@
                 document.getElementsByTagName('button')[0].click();
 
             }
-            ///se anula el enter
+            ///se anula el enter y va al boton de modificar
             if (keycode == '13') {
                 e.preventDefault();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
             }
 
             ///F2 
@@ -27,8 +29,8 @@
             ///ESC RETROCEDE
             if (keycode == '27') {
                 e.preventDefault();
-                document.getElementsByTagName('button')[2].focus();
-                document.getElementsByTagName('button')[2].click();
+                document.getElementsByTagName('button')[3].focus();
+                document.getElementsByTagName('button')[3].click();
 
             }
         
@@ -62,8 +64,8 @@
             ///ESC RETROCEDE
             if (keycode == '27') {
                 e.preventDefault();
-                document.getElementsByTagName('button')[2].focus();
-                document.getElementsByTagName('button')[2].click();
+                document.getElementsByTagName('button')[3].focus();
+                document.getElementsByTagName('button')[3].click();
 
             }
 
@@ -90,7 +92,7 @@
 <div class="card-body">
     <div align="center">
     <div class="row justify-content-center" >   <%--class="row"--%>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
@@ -112,10 +114,27 @@
                           F2 = Nuevo
                         </button>
                     </div>
-                    <div class="card-body table-responsive p-0"> <%--div class="form-group"--%>
-                            <asp:GridView ID="GridView1" runat="server" class="table table-sm" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+                    <div class="row justify-content-center">
+                    <div class="col-md-8">
+                    <div class="card">
+                    <div class="card-header">
+                              <h3 class="card-title">Listado de Clientes.</h3>
+
+                              <div class="card-tools">
+                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" id="txt_buscar" runat="server" onkeydown="tecla_op(event);" name="table_search" class="form-control float-right" placeholder="Buscar...">
+
+                                    <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default" onkeydown="tecla_op_botones(event);"><i class="fas fa-search"></i></button>
+                                    </div>
+                                    </div>
+                            </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0" style="height: 200px" onkeydown="tecla_op_botones(event);"> <%--div class="form-group"--%>
+                            <asp:GridView ID="GridView1" runat="server" class="table table-head-fixed text-nowrap" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
                                    BorderColor="Black" GridLines="None" 
-                                  EnableSortingAndPagingCallbacks="True" PageSize="20"> 
+                                  EnableSortingAndPagingCallbacks="True"> 
                                     <Columns>
                                         <asp:BoundField DataField="Codigo" HeaderText="Código" >                                                               
                                         <HeaderStyle ForeColor="#0099FF" />
@@ -133,6 +152,13 @@
                                     </Columns>
                                 </asp:GridView>
                         </div>
+
+
+                    </div>
+                    </div>
+                    </div>
+
+
                                         
                 </div>
             </div>

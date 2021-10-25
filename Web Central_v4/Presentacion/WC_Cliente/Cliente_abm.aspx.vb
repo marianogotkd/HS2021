@@ -47,7 +47,7 @@
                 Session("clientes_op") = "modificar"
                 'pasar ademas el ID del grupo.
                 Session("cliente_id") = CInt(ds_clie.Tables(0).Rows(0).Item("Cliente"))
-                Response.Redirect("Cliente_alta.aspx")
+                Response.Redirect("Cliente_alta_a.aspx")
             Else
                 'no existe
                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error", "$(document).ready(function () {$('#modal-sm_error').modal();});", True)

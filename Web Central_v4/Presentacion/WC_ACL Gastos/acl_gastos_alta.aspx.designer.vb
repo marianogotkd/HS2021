@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Cliente_abm
+Partial Public Class acl_gastos_alta
 
     '''<summary>
     '''Control ScriptManager1.
@@ -32,58 +32,22 @@ Partial Public Class Cliente_abm
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control Lb_cliente.
+    '''Control Txt_motivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Lb_cliente As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Txt_motivo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Txt_cliente_id.
+    '''Control lb_error_motivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_cliente_id As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control btn_modificar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_modificar As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control btn_nuevo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control txt_buscar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txt_buscar As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
-    '''Control GridView1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents lb_error_motivo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control btn_retroceder.
@@ -95,13 +59,40 @@ Partial Public Class Cliente_abm
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_baja_modal.
+    '''Control BOTON_GRABAR.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_baja_modal As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents BOTON_GRABAR As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_graba_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_graba_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_graba_mdl_cancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_graba_mdl_cancelar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_graba_mdll.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_graba_mdll As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_close_error.

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ab_recorridos_zonas_activacion
+Partial Public Class carga_recorridos_zonas_a
 
     '''<summary>
     '''Control ScriptManager1.
@@ -32,6 +32,33 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
+    '''Control HF_parametro_id.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_parametro_id As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control LABEL_FECHA.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents LABEL_FECHA As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Txt_fecha.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Txt_fecha As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Control Label_dia.
     '''</summary>
     '''<remarks>
@@ -41,13 +68,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label_dia As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control HF_dia_nro.
+    '''Control HF_dia_id.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents HF_dia_nro As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents HF_dia_id As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control Label1.
@@ -59,15 +86,6 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Control Label3.
     '''</summary>
     '''<remarks>
@@ -77,184 +95,184 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label4.
+    '''Control Div_1A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1A As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1a.
+    '''Control Lb_1A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1a As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1A As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label5.
+    '''Control Div_1B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1B As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1b.
+    '''Control Lb_1B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1b As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1B As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label6.
+    '''Control Div_1C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1C As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1c.
+    '''Control Lb_1C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1c As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1C As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label7.
+    '''Control Div_1D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1D As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1d.
+    '''Control Lb_1D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1d As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1D As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label8.
+    '''Control Div_1E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1E As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1e.
+    '''Control Lb_1E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1e As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1E As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label9.
+    '''Control Div_1F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1F As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1f.
+    '''Control Lb_1F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1f As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1F As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label10.
+    '''Control Div_1G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1G As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1g.
+    '''Control Lb_1G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1g As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1G As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label11.
+    '''Control Div_1H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1H As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1h.
+    '''Control Lb_1H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1h As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1H As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label12.
+    '''Control Div_1I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1I As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1i.
+    '''Control Lb_1I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1i As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1I As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label13.
+    '''Control Div_1J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_1J As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_1j.
+    '''Control Lb_1J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_1j As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_1J As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Label14.
@@ -266,184 +284,184 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label15.
+    '''Control Div_2A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2A As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2a.
+    '''Control Lb_2A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2a As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2A As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label16.
+    '''Control Div_2B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2B As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2b.
+    '''Control Lb_2B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2b As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2B As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label17.
+    '''Control Div_2C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2C As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2c.
+    '''Control Lb_2C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2c As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2C As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label18.
+    '''Control Div_2D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2D As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2d.
+    '''Control Lb_2D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2d As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2D As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label19.
+    '''Control Div_2E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2E As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2e.
+    '''Control Lb_2E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2e As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2E As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label20.
+    '''Control Div_2F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2F As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2f.
+    '''Control Lb_2F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2f As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2F As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label21.
+    '''Control Div_2G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label21 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2G As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2g.
+    '''Control Lb_2G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2g As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2G As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label22.
+    '''Control Div_2H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label22 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2H As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2h.
+    '''Control Lb_2H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2h As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2H As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label23.
+    '''Control Div_2I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label23 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2I As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2i.
+    '''Control Lb_2I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2i As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2I As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label24.
+    '''Control Div_2J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label24 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_2J As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_2j.
+    '''Control Lb_2J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_2j As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_2J As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Label25.
@@ -455,184 +473,184 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label25 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label26.
+    '''Control Div_3A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label26 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3A As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3a.
+    '''Control Lb_3A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3a As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3A As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label27.
+    '''Control Div_3B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label27 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3B As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3b.
+    '''Control Lb_3B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3b As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3B As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label28.
+    '''Control Div_3C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label28 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3C As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3c.
+    '''Control Lb_3C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3c As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3C As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label29.
+    '''Control Div_3D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label29 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3D As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3d.
+    '''Control Lb_3D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3d As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3D As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label30.
+    '''Control Div_3E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label30 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3E As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3e.
+    '''Control Lb_3E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3e As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3E As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label31.
+    '''Control Div_3F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label31 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3F As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3f.
+    '''Control Lb_3F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3f As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3F As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label32.
+    '''Control Div_3G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label32 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3G As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3g.
+    '''Control Lb_3G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3g As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3G As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label33.
+    '''Control Div_3H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3H As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3h.
+    '''Control Lb_3H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3h As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3H As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label34.
+    '''Control Div_3I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label34 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3I As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3i.
+    '''Control Lb_3I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3i As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3I As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label35.
+    '''Control Div_3J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label35 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_3J As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_3j.
+    '''Control Lb_3J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_3j As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_3J As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Label36.
@@ -644,184 +662,202 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents Label36 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label37.
+    '''Control Div_4A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label37 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4A As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4a.
+    '''Control Lb_4A.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4a As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4A As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label38.
+    '''Control Div_4B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label38 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4B As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4b.
+    '''Control Lb_4B.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4b As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4B As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label39.
+    '''Control Div_4C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label39 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4C As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4c.
+    '''Control Lb_4C.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4c As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4C As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label40.
+    '''Control Div_4D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label40 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4D As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4d.
+    '''Control Lb_4D.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4d As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4D As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label41.
+    '''Control Div_4E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label41 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4E As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4e.
+    '''Control Lb_4E.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4e As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4E As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label42.
+    '''Control Div_4F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label42 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4F As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4f.
+    '''Control Lb_4F.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4f As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4F As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label43.
+    '''Control Div_4G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label43 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4G As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4g.
+    '''Control Lb_4G.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4g As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4G As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label44.
+    '''Control Div_4H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label44 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4H As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4h.
+    '''Control Lb_4H.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4h As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4H As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label45.
+    '''Control Div_4I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label45 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4I As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4i.
+    '''Control Lb_4I.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4i As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4I As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label46.
+    '''Control Div_4J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label46 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Div_4J As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control txt_4j.
+    '''Control Lb_4J.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_4j As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lb_4J As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Label2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txt_zona.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_zona As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btn_retroceder.
@@ -842,31 +878,13 @@ Partial Public Class ab_recorridos_zonas_activacion
     Protected WithEvents BOTON_GRABAR As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_graba_close.
+    '''Control btn_error_close.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_graba_close As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control btn_ok.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_ok As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control btn_close_error.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_close_error As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_error_close As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_ok_error.
@@ -876,4 +894,22 @@ Partial Public Class ab_recorridos_zonas_activacion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_ok_error As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_error_op_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_error_op_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_ok_error_op.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ok_error_op As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

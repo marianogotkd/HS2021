@@ -16,6 +16,7 @@
         ///se anula el enter
         if (keycode == '13') {
             e.preventDefault();
+            
         }
 
         ///F4 ELIMINA
@@ -90,13 +91,13 @@
     <div class="card-body">
     <div class="container-fluid">
     <div class="row justify-content-center">
-    <div class="col-lg-6">
+    <div class="col-lg-12">
     <div class="card">
 
     <div class="card-body">
         <div class="form-group">
                 <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-md-4">
                             <asp:HiddenField ID="HF_cliente_id" runat="server" />
                             <label for="Label_cliente_id">Cliente:</label>
                             <asp:TextBox ID="Txt_cliente_codigo" runat="server" placeholder="Ingrese código..." class="form-control" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
@@ -104,7 +105,7 @@
                             Visible="false"></asp:Label>
                             <small id="emailHelp" runat="server" visible=false  class="form-text text-muted">Error, ingrese el dato solicitado.</small>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                             <label for="Label_cliente_id">DNI:</label>
                             <asp:TextBox ID="Txt_dni" runat="server" MaxLength="9" placeholder="Ingrese DNI..." class="form-control" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                             <asp:Label ID="lb_error_dni" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
@@ -118,14 +119,14 @@
         
         <div class="form-group">
         <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-md-4">
                 <label for="Label_cliente_nomb">Nombre:</label>
                 <asp:TextBox ID="Txt_cliente_nomb" runat="server" placeholder="Ingrese nombre..." class="form-control" MaxLength="50" onkeydown="tecla_op(event);"></asp:TextBox>
                 <asp:Label ID="lb_error_nombre" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                 <small id="Small1" runat="server" visible=false class="form-text text-muted">Error, ingrese el dato solicitado.</small>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
                 <label for="Label_cliente_id">Grupo:</label>
                 <asp:DropDownList ID="DropDownList_grupos" runat="server" class="form-control" onkeydown="tecla_op(event);"></asp:DropDownList>
         </div>
@@ -135,7 +136,7 @@
               
         <div class="form-group">
                 <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-md-2">
                             <label for="Label_comision">% Comision:</label>
                             <asp:TextBox ID="Txt_comision" runat="server" class="form-control" placeholder="0,00 %" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                             <asp:Label ID="lb_error_comision" runat="server" ForeColor="Red" Text="*" 
@@ -147,7 +148,7 @@
                             ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" 
                             ValidationGroup="check_2" xmlns:asp="#unknown2"></asp:RegularExpressionValidator>--%>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-2">
                             <label for="Label_regalo">% Regalo:</label>
                             <asp:TextBox ID="Txt_regalo" runat="server" class="form-control" placeholder="0,00 %" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                             <small id="Small4" runat="server" visible=false class="form-text text-muted">Error, ingrese el dato solicitado.</small>
@@ -159,13 +160,7 @@
                             ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" 
                             ValidationGroup="check_2" xmlns:asp="#unknown2"></asp:RegularExpressionValidator>--%>
                     </div>
-                </div>
-
-        </div>
-
-        <div class="form-group">
-                    <div class="row justify-content-center">
-                            <div class="col-4">
+                    <div class="col-md-2">
                                     <label for="Label_comision">% Comision1:</label>
                                     <asp:TextBox ID="Txt_comision1" runat="server" CausesValidation="True" 
                                     validationgroup="check_2" class="form-control" placeholder="0,00 %" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
@@ -177,9 +172,9 @@
                                     ForeColor="Red" SetFocusOnError="True" 
                                     ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" 
                                     ValidationGroup="check_2" xmlns:asp="#unknown2"></asp:RegularExpressionValidator>--%>
-                            </div>
+                    </div>
 
-                            <div class="col-4">
+                    <div class="col-md-2">
                             <label for="Label_comision">% Regalo1:</label>
                             <asp:TextBox ID="Txt_regalo1" runat="server" CausesValidation="True" 
                             validationgroup="check_2" class="form-control" placeholder="0,00 %" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
@@ -191,13 +186,13 @@
                             ForeColor="Red" SetFocusOnError="True" 
                             ValidationExpression="^\d+\.\d{1,2}$|^\d+\,\d{1,2}$|^\d+$" 
                             ValidationGroup="check_2" xmlns:asp="#unknown2"></asp:RegularExpressionValidator>--%>
-                            </div>
                     </div>
-        </div>
+                </div>
 
+        </div>
         <div class="form-group">
                 <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_proceso">Proceso:</label>
                         <asp:TextBox ID="Txt_proceso" runat="server" class="form-control" placeholder="ingrese opción"
                          
@@ -210,7 +205,7 @@
                         
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_proceso">Calculo:</label>
                         <asp:TextBox ID="Txt_calculo" runat="server" class="form-control" placeholder="ingrese opción" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <small id="Small6" class="form-text text-muted">0 = NO. 1 = SI.</small>
@@ -220,13 +215,7 @@
                         
                         </div>
 
-                </div>
-
-        </div>
-
-        <div class="form-group">
-                <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_factor">Factor:</label>
                         <asp:TextBox ID="Txt_factor" runat="server" class="form-control" placeholder="ingrese opción" CausesValidation="True" validationgroup="check_6" xmlns:asp="#unknown6" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <small id="Small7" class="form-text text-muted">0 = sin factor. 1 = con factor.</small>
@@ -235,7 +224,7 @@
                         <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="Txt_factor" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_6" xmlns:asp="#unknown6"></asp:RegularExpressionValidator>--%>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_factor">Imprime calculo:</label>
                         <asp:TextBox ID="Txt_imprimecalculo" runat="server" class="form-control" placeholder="ingrese opción" CausesValidation="True" validationgroup="check_5" xmlns:asp="#unknown5" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <small id="Small8" class="form-text text-muted">0 = NO. 1 = SI.</small>
@@ -243,11 +232,15 @@
                             Visible="False"></asp:Label>
                         <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="Txt_imprimecalculo" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_5" xmlns:asp="#unknown5"></asp:RegularExpressionValidator>--%>
                         </div>
+
                 </div>
+
         </div>
+
+
         <div class="form-group">
                 <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-4">
                         <label for="Label_factor">Recorrido Nº:</label>
                         <asp:TextBox ID="Txt_recorrido" runat="server" class="form-control" placeholder="Ingrese Nº..." MaxLength="2" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_recorrido" runat="server" ForeColor="Red" Text="*" 
@@ -255,7 +248,7 @@
                         <small id="Small9" runat="server" visible=false class="form-text text-muted">Error, ingrese el dato solicitado.</small>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-4">
                         <label for="Label_orden">Orden Nº:</label>
                         <asp:TextBox ID="Txt_orden" runat="server" class="form-control" placeholder="Ingrese Nº..." MaxLength="3" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_orden" runat="server" ForeColor="Red" Text="*" 
@@ -267,7 +260,7 @@
 
         <div class="form-group">
                <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_variable">Variable:</label>
                         <asp:TextBox ID="Txt_variable" runat="server" class="form-control" placeholder="Ingrese opción..." CausesValidation="True" validationgroup="check_7" xmlns:asp="#unknown7" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);" ></asp:TextBox>
                         <small id="Small11" class="form-text text-muted">0 = NO. 1 = SI.</small>
@@ -276,7 +269,7 @@
                         <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="Txt_variable" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_7" xmlns:asp="#unknown7"></asp:RegularExpressionValidator>--%>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-6">
                         <label for="Label_leyenda">Leyenda:</label>
                         <asp:TextBox ID="Txt_leyenda" runat="server" class="form-control" placeholder="" MaxLength="40" onkeydown="tecla_op(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_leyenda" runat="server" ForeColor="Red" Text="*" 
@@ -287,7 +280,7 @@
 
         <div class="form-group">
                <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-2">
                         <label for="Label_variable1">Variable1:</label>
                         <asp:TextBox ID="Txt_variable1" runat="server" class="form-control" placeholder="Ingrese opción..." CausesValidation="True" validationgroup="check_8" xmlns:asp="#unknown8" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
                         <small id="Small12" class="form-text text-muted">0 = NO. 1 = SI.</small>
@@ -296,18 +289,18 @@
                         <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="Txt_variable1" ErrorMessage="Error!" Font-Size="X-Small" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[01]" ValidationGroup="check_8" xmlns:asp="#unknown8"></asp:RegularExpressionValidator>--%>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-6">
                         <label for="Label_leyenda1">Leyenda1:</label>
                         <asp:TextBox ID="Txt_leyenda1" runat="server" class="form-control" placeholder="" MaxLength="40" onkeydown="tecla_op(event);"></asp:TextBox>
                         <asp:Label ID="lb_error_leyenda1" runat="server" ForeColor="Red" Text="*" 
                             Visible="False"></asp:Label>
                         </div>
-               </div>
+               </div>               
         </div>
 
         <div class="form-group">
         <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-md-8">
         <asp:Label ID="Lb_error_validacion" runat="server" Font-Bold="True" 
                            ForeColor="Red" Text="Error!" Visible="False"></asp:Label>
         </div>
