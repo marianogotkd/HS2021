@@ -2027,10 +2027,11 @@
     <Content Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_b.aspx" />
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
-    <Content Include="WC_Cliente\Cliente_alta_a.aspx" />
+    <Content Include="WC_Cliente\Cliente_alta_b.aspx" />
     <Content Include="WC_Grupos\Grupos_abm.aspx" />
+    <Content Include="WC_Grupos\Grupos_agregar.aspx" />
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
-    <Content Include="WC_Grupos\Grupos_alta_a.aspx" />
+    <Content Include="WC_Grupos\Grupos_alta_b.aspx" />
     <Content Include="WC_Iniciar Dia\Iniciar_dia.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2165,12 +2166,12 @@
       <DependentUpon>Cliente_alta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="WC_Cliente\Cliente_alta_a.aspx.designer.vb">
-      <DependentUpon>Cliente_alta_a.aspx</DependentUpon>
+    <Compile Include="WC_Cliente\Cliente_alta_b.aspx.designer.vb">
+      <DependentUpon>Cliente_alta_b.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WC_Cliente\Cliente_alta_a.aspx.vb">
-      <DependentUpon>Cliente_alta_a.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="WC_Cliente\Cliente_alta_b.aspx.vb">
+      <DependentUpon>Cliente_alta_b.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WC_Cliente\DS_cliente.xsd.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -2189,6 +2190,13 @@
       <DependentUpon>Grupos_abm.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_Grupos\Grupos_agregar.aspx.designer.vb">
+      <DependentUpon>Grupos_agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Grupos\Grupos_agregar.aspx.vb">
+      <DependentUpon>Grupos_agregar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="WC_Grupos\Grupos_alta.aspx.designer.vb">
       <DependentUpon>Grupos_alta.aspx</DependentUpon>
     </Compile>
@@ -2196,11 +2204,11 @@
       <DependentUpon>Grupos_alta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="WC_Grupos\Grupos_alta_a.aspx.designer.vb">
-      <DependentUpon>Grupos_alta_a.aspx</DependentUpon>
+    <Compile Include="WC_Grupos\Grupos_alta_b.aspx.designer.vb">
+      <DependentUpon>Grupos_alta_b.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WC_Grupos\Grupos_alta_a.aspx.vb">
-      <DependentUpon>Grupos_alta_a.aspx</DependentUpon>
+    <Compile Include="WC_Grupos\Grupos_alta_b.aspx.vb">
+      <DependentUpon>Grupos_alta_b.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WC_Iniciar Dia\Iniciar_dia.aspx.designer.vb">

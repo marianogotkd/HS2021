@@ -58,15 +58,3 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.dll
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.xml
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.pdb
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Presentacion.dll
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Presentacion.pdb
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Presentacion.xml
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Capa_Datos.dll
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Capa_Datos.pdb
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\bin\Capa_Datos.xml
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.vbprojResolveAssemblyReference.cache
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.Resources.resources
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.Cache
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.dll
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.xml
-C:\Repositorio HS2021\HS2021\Web Central_v4\Presentacion\obj\Debug\Presentacion.pdb
