@@ -85,6 +85,7 @@
     <Compile Include="WC_gastos.vb" />
     <Compile Include="WC_grupos.vb" />
     <Compile Include="WC_parametro.vb" />
+    <Compile Include="WC_prestamoscreditos.vb" />
     <Compile Include="WC_puntos.vb" />
     <Compile Include="WC_recorridos_zonas.vb" />
   </ItemGroup>

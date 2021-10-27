@@ -5,22 +5,16 @@
         //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
         function tecla_op(e) {
             var keycode = e.keyCode;
-            ///F1
-            if (keycode == '112') {
-                e.preventDefault();
-                document.getElementsByTagName('button')[0].focus();
-                document.getElementsByTagName('button')[0].click();
-
-            }
+            
             ///se anula el enter y va al boton de modificar
             if (keycode == '13') {
                 e.preventDefault();
-                document.getElementsByTagName('button')[0].focus();
-                document.getElementsByTagName('button')[0].click();
+                document.getElementsByTagName('button')[1].focus();
+                document.getElementsByTagName('button')[1].click();
             }
 
-            ///F2 
-            if (keycode == '113') {
+            ///F8 continuar 
+            if (keycode == '119') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[1].focus();
                 document.getElementsByTagName('button')[1].click();
@@ -29,8 +23,8 @@
             ///ESC RETROCEDE
             if (keycode == '27') {
                 e.preventDefault();
-                document.getElementsByTagName('button')[3].focus();
-                document.getElementsByTagName('button')[3].click();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
 
             }
         
@@ -42,20 +36,14 @@
         //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
         function tecla_op_botones(e) {
             var keycode = e.keyCode;
-            ///F1
-            if (keycode == '112') {
-                e.preventDefault();
-                document.getElementsByTagName('button')[0].focus();
-                document.getElementsByTagName('button')[0].click();
-
-            }
+            
             ///no anulo el ENTER
             //            if (keycode == '13') {
             //                e.preventDefault();
             //            }
 
-            ///F2
-            if (keycode == '113') {
+            ///F8
+            if (keycode == '119') {
                 e.preventDefault();
                 document.getElementsByTagName('button')[1].focus();
                 document.getElementsByTagName('button')[1].click();
@@ -64,13 +52,19 @@
             ///ESC RETROCEDE
             if (keycode == '27') {
                 e.preventDefault();
-                document.getElementsByTagName('button')[3].focus();
-                document.getElementsByTagName('button')[3].click();
+                document.getElementsByTagName('button')[0].focus();
+                document.getElementsByTagName('button')[0].click();
 
             }
 
         }
 
+        //funcion para seleccionar todo le contenido de un textbox cuando se pone el foco sobre el control. se agrega como atributo en el codebehind
+        function seleccionarTexto(obj) {
+            if (obj != null) {
+                obj.select();
+            }
+        }
     </script>
 
 
@@ -98,23 +92,13 @@
                     <div class="form-group">
                         <asp:Label ID="Lb_cliente" runat="server" Text="Cliente:"></asp:Label>
                         &nbsp;<asp:TextBox ID="Txt_cliente_id" placeholder="ingrese Cód." runat="server" 
-                            CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" MaxLength="9"></asp:TextBox>
+                            CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" MaxLength="0"></asp:TextBox>
                         
                         
                         
                     </div>
-                    <div class="form-group">
-                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
-                          F1 = Modificar
-                        </button>
                     
-                        &nbsp;
-                    
-                    <button type="button" id="btn_nuevo" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
-                          F2 = Nuevo
-                        </button>
-                    </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" visible="false" runat="server">
                     <div class="col-md-8">
                     <div class="card">
                     <div class="card-header">
@@ -175,6 +159,12 @@
 <div class="row align-items-center">
 <div class="form-group">
 <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">ESC = RETROCEDE</button>
+    &nbsp;</div>
+<div class="form-group">
+                    <button type="button" id="btn_modificar" runat="server" class="btn btn-primary" onkeydown="tecla_op_botones(event);">
+                          F8 = CONTINUAR
+                        </button>
+                    
 </div>
 
 

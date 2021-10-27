@@ -50,24 +50,6 @@ Partial Public Class Grupos_abm
     Protected WithEvents Txt_grupo_id As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btn_modificar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_modificar As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control btn_nuevo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_nuevo As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
     '''Control txt_buscar.
     '''</summary>
     '''<remarks>
@@ -93,6 +75,15 @@ Partial Public Class Grupos_abm
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_modificar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_modificar As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_baja_modal.
