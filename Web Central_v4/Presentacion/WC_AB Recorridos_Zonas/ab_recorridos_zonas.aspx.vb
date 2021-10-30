@@ -36,4 +36,10 @@
     Private Sub btn_ok_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error.ServerClick
         txt_dia.Focus()
     End Sub
+
+
+    'AQUI agrego el atributo onfocus y asocio a la rutina js seleccionartexto para que cuando se ponga el foco en un textbox se seleccione todo el contenido
+    Private Sub txt_dia_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_dia.Init
+        txt_dia.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
 End Class

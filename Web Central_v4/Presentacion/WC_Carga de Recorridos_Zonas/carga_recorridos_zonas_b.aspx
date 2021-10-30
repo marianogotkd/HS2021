@@ -48,7 +48,15 @@
             document.getElementsByTagName('button')[1].click();
         }
     }
-    
+
+
+    //funcion para seleccionar todo le contenido de un textbox cuando se pone el foco sobre el control. se agrega como atributo en el codebehind
+    function seleccionarTexto(obj) {
+        if (obj != null) {
+            obj.select();
+        }
+    }
+
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -221,7 +229,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Confirma la operación? Los datos se guardarán...
+        ¿Confirma la operación?
       </div>
       <div class="modal-footer">
         <button type="button" id="btn_grabar_cancelar_modal" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>
@@ -242,7 +250,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>los datose se guardaron correctamente!&hellip;</p>
+              <p>Se guardó correctamente!&hellip;</p>
             </div>
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>

@@ -80,6 +80,7 @@
     <Compile Include="Historia_Clinica.vb" />
     <Compile Include="Lista.vb" />
     <Compile Include="Lote.vb" />
+    <Compile Include="Mantenimiento.vb" />
     <Compile Include="Marca.vb" />
     <Compile Include="Medico.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

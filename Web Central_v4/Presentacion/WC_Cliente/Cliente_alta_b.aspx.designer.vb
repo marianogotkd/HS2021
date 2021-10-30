@@ -68,33 +68,6 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents emailHelp As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Txt_dni.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Txt_dni As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control lb_error_dni.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lb_error_dni As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control Small2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Small2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
     '''Control Txt_cliente_nomb.
     '''</summary>
     '''<remarks>

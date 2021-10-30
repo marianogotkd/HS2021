@@ -51,6 +51,14 @@
         }
     }
 
+    //funcion para seleccionar todo le contenido de un textbox cuando se pone el foco sobre el control. se agrega como atributo en el codebehind
+    function seleccionarTexto(obj) {
+        if (obj != null) {
+            obj.select();
+        }
+    }
+
+
 
 
 </script>

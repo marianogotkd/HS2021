@@ -12,9 +12,11 @@
             document.getElementsByTagName('button')[0].click();
 
         }
-        ///se anula el enter
+        ///se anula el enter y voy al boton de grabar
         if (keycode == '13') {
             e.preventDefault();
+            document.getElementsByTagName('button')[1].focus();
+            document.getElementsByTagName('button')[1].click();
         }
 
         
@@ -67,6 +69,15 @@
 
 
     }
+
+
+    //funcion para seleccionar todo le contenido de un textbox cuando se pone el foco sobre el control. se agrega como atributo en el codebehind
+    function seleccionarTexto(obj) {
+        if (obj != null) {
+            obj.select();
+        }
+    }
+
 
 
 </script>

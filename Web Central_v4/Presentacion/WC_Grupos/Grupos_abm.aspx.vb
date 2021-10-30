@@ -11,9 +11,9 @@
             GridView1.DataSource = ""
             'GridView1.DataBind()
             If ds_grup.Tables(0).Rows.Count <> 0 Then
-                DS_grupos.Grupos_todos.Merge(ds_grup.Tables(0))
-                GridView1.DataSource = DS_grupos.Grupos_todos
-                GridView1.DataBind()
+                'DS_grupos.Grupos_todos.Merge(ds_grup.Tables(0))
+                'GridView1.DataSource = DS_grupos.Grupos_todos
+                'GridView1.DataBind()
             End If
             Txt_grupo_id.Focus()
         End If
@@ -33,18 +33,19 @@
 
     Private Sub btn_modificar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_modificar.ServerClick
         If Txt_grupo_id.Text <> "" Then
-            Dim grupo_codigo As Integer = CInt(Txt_grupo_id.Text)
+            Dim grupo_codigo As String = Txt_grupo_id.Text
             Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(grupo_codigo)
             If ds_info.Tables(0).Rows.Count <> 0 Then
                 Session("grupos_op") = "modificar"
                 'pasar ademas el ID del grupo.
-                Session("grupo_codigo") = CInt(Txt_grupo_id.Text)
+                Session("grupo_codigo") = Txt_grupo_id.Text
                 Response.Redirect("Grupos_alta_b.aspx")
             Else
                 'no existe
                 'ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error", "$(document).ready(function () {$('#modal-sm_error').modal();});", True)
                 'btn_ok_error.Focus()
                 Session("grupos_op") = "alta"
+                Session("codigo_nuevo") = Txt_grupo_id.Text
                 Response.Redirect("Grupos_alta_b.aspx")
             End If
         Else

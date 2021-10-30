@@ -107,8 +107,8 @@
                                     <div class="col-md-4">
                                         <label for="Label_cliente_id">OPCION 1: CARGA DEL PRESTAMO.</label> 
                                     </div>
-                                    <div class="col-md-4">
-                                    </div>
+                                    <%--<div class="col-md-4">
+                                    </div>--%>
                             </div>
                     </div>
                         
@@ -139,13 +139,13 @@
 
                                                 
                                         </div>
-                                        <div class="col-md-2">
+                                        <%--<div class="col-md-2">
                                         
                                         
                                         </div>
                                         <div class="col-md-2">
                                         
-                                        </div>
+                                        </div>--%>
                                 </div>
                         </div>
                         
@@ -156,22 +156,22 @@
                                                 <label for="Label_cliente_nomb" id="lb_cliente_nomb" runat="server">Nombre:</label>
 
                                         </div>
-                                        <div class="col-md-4">
+                                        <%--<div class="col-md-4">
                                         
-                                        </div>
+                                        </div>--%>
                                         
                                 </div>
                         </div>
                         
                         <div class="form-group">       
                         <div class="row justify-content-center">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                                 <label for="Label_importe">Importe del Prestamo:</label>
                                                 <asp:TextBox ID="Txt_importe" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                                                 <asp:Label ID="lb_error_importe" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
 
                                     </div>
                         
@@ -182,7 +182,7 @@
                         
                         <div class="form-group">       
                                 <div class="row justify-content-center">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                                 <label for="Label_formadecobro">Forma de Cobro:</label>
                                         <asp:TextBox ID="Txt_tipo" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" 
                                         MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_123_valitation(event);" 
@@ -193,24 +193,27 @@
                                 
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                                 <small id="Small1" runat="server" visible=true class="form-text text-muted">1= % Comision.</small>
                                                 <small id="Small2" runat="server" visible=true class="form-text text-muted">2= % Regalo.</small>
                                                 <small id="Small3" runat="server" visible=true class="form-text text-muted">3= A descontar manual.</small>       
                                         </div>
+                                        <%--<div class="col-md-4">
+                                        
+                                        </div>--%>
                                 
                                 </div>
                         </div>
                         <div class="form-group">       
                                 <div class="row justify-content-center">
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
                                                 <label for="Label_porcentaje">Porcentaje %:</label>
                                                 <asp:TextBox ID="Txt_porcentaje" runat="server" class="form-control" placeholder="0,00 %" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
                                                 <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                             
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-2">
 
                                         </div>
                                 </div>
@@ -257,7 +260,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>Se alcanzó el limite de prestamos!&hellip;</p>
+              <p>Se alcanzó el limite de préstamos!&hellip;</p>
             </div>
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>
@@ -360,7 +363,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Desea guardar el prestamo?...
+        ¿Desea guardar el préstamo?...
       </div>
       <div class="modal-footer">
         <button type="button" id="btn_graba_alta_cancelar" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>
@@ -382,7 +385,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Desea modificar el prestamo?...
+        ¿Desea modificar el préstamo?...
       </div>
       <div class="modal-footer">
         <button type="button" id="btn_graba_modif_cancelar" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>

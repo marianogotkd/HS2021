@@ -100,10 +100,10 @@
                             <small id="emailHelp" runat="server" visible=false  class="form-text text-muted">Error, ingrese el dato solicitado.</small>
                     </div>
                     <div class="col-md-4">
-                            <label for="Label_cliente_id">DNI:</label>
+                            <%--<label for="Label_cliente_id">DNI:</label>
                             <asp:TextBox ID="Txt_dni" runat="server" MaxLength="9" placeholder="Ingrese DNI..." class="form-control" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                             <asp:Label ID="lb_error_dni" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
-                            <small id="Small2" runat="server" visible=false class="form-text text-muted">Error, ingrese el dato solicitado.</small>
+                            <small id="Small2" runat="server" visible=false class="form-text text-muted">Error, ingrese el dato solicitado.</small>--%>
                     </div>
                 </div>
 

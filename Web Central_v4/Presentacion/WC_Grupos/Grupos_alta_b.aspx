@@ -160,10 +160,12 @@
                     <asp:TextBox ID="Txt_fechaproc" onkeydown="tecla_op(event);" class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                     </div>
-                    <div class="col-md-6">
-                    <label for="Label_fecha">Fecha de procesamiento:</label>
+                    <div class="col-md-2">
+                    <label for="Label_importe">Importe de procesamiento:</label>
                     <asp:TextBox ID="Txt_importe_fecha" runat="server" placeholder="0,00" class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
                     MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                    </div>
+                    <div class="col-md-4">
                     </div>
 
             </div>
@@ -309,6 +311,33 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+
+<%--Modal MENSAJE OK GRABADO--%>
+<div class="modal fade" id="modal-sm_error_eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error</h4>
+              <button type="button" id="btn_erroreliminar_close" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>El grupo tiene clientes asignados!&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-center ">
+            <%--<div class="modal-footer justify-content-between">--%>
+              <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+              <button type="button" id="btn_erroreliminar_ok" runat="server" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
 
 
 </ContentTemplate>

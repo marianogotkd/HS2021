@@ -36,8 +36,10 @@
                     Txt_leyenda1.Text = ds_info.Tables(0).Rows(0).Item("Leyenda2")
                 End If
             Else
+
                 HF_cliente_id.Value = 0
                 Session("clientes_op") = "alta"
+                Txt_cliente_codigo.Text = Session("codigo_nuevo")
 
             End If
             Txt_cliente_codigo.Focus()
@@ -140,38 +142,42 @@
             Try
                 comision = CDec(Txt_comision.Text.Replace(".", ","))
             Catch ex As Exception
-                valido_ingreso = "no"
-                lb_error_comision.Visible = True
+                comision = CDec(0)
+                'valido_ingreso = "no"
+                'lb_error_comision.Visible = True
             End Try
 
             Dim regalo As Decimal
             Try
                 regalo = CDec(Txt_regalo.Text.Replace(".", ","))
             Catch ex As Exception
-                lb_error_regalo.Visible = True
-                valido_ingreso = "no"
+                regalo = CDec(0)
+                'lb_error_regalo.Visible = True
+                'valido_ingreso = "no"
             End Try
 
             Dim comision1 As Decimal
             Try
                 comision1 = CDec(Txt_comision1.Text.Replace(".", ","))
             Catch ex As Exception
-                lb_error_comision1.Visible = True
-                valido_ingreso = "no"
+                comision1 = CDec(0)
+                'lb_error_comision1.Visible = True
+                'valido_ingreso = "no"
             End Try
 
             Dim regalo1 As Decimal
             Try
                 regalo1 = CDec(Txt_regalo1.Text.Replace(".", ","))
             Catch ex As Exception
-                lb_error_regalo1.Visible = True
-                valido_ingreso = "no"
+                regalo1 = CDec(0)
+                'lb_error_regalo1.Visible = True
+                'valido_ingreso = "no"
             End Try
 
 
             If Txt_proceso.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_proceso.Visible = True
+                'valido_ingreso = "no"
+                'lb_error_proceso.Visible = True
             Else
                 If Txt_proceso.Text.ToString.ToUpper = "D" Or Txt_proceso.Text.ToString.ToUpper = "S" Or Txt_proceso.Text.ToString.ToUpper = "M" Then
                     'valido
@@ -182,8 +188,9 @@
             End If
 
             If Txt_calculo.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_calculo.Visible = True
+                Txt_calculo.Text = "0"
+                'valido_ingreso = "no"
+                'lb_error_calculo.Visible = True
             Else
                 If Txt_calculo.Text = 0 Or Txt_calculo.Text = 1 Then
                 Else
@@ -193,8 +200,9 @@
             End If
 
             If Txt_factor.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_factor.Visible = True
+                Txt_factor.Text = "0"
+                'valido_ingreso = "no"
+                'lb_error_factor.Visible = True
             Else
                 If Txt_factor.Text = 0 Or Txt_factor.Text = 1 Then
                     'valido
@@ -205,8 +213,9 @@
             End If
 
             If Txt_imprimecalculo.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_imprimecalculo.Visible = True
+                Txt_imprimecalculo.Text = "0"
+                'valido_ingreso = "no"
+                'lb_error_imprimecalculo.Visible = True
             Else
                 If Txt_imprimecalculo.Text = 0 Or Txt_imprimecalculo.Text = 1 Then
                 Else
@@ -216,18 +225,20 @@
             End If
 
             If Txt_recorrido.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_recorrido.Visible = True
+
+                'valido_ingreso = "no"
+                'lb_error_recorrido.Visible = True
             End If
 
             If Txt_orden.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_orden.Visible = True
+                'valido_ingreso = "no"
+                'lb_error_orden.Visible = True
             End If
 
             If Txt_variable.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_variable.Visible = True
+                Txt_variable.Text = "0"
+                'valido_ingreso = "no"
+                'lb_error_variable.Visible = True
             Else
                 If Txt_variable.Text = 0 Or Txt_variable.Text = 1 Then
                 Else
@@ -237,13 +248,14 @@
             End If
 
             If Txt_leyenda.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_leyenda.Visible = True
+                'valido_ingreso = "no"
+                'lb_error_leyenda.Visible = True
             End If
 
             If Txt_variable1.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_variable1.Visible = True
+                Txt_variable1.Text = "0"
+                'valido_ingreso = "no"
+                'lb_error_variable1.Visible = True
             Else
                 If Txt_variable1.Text = 0 Or Txt_variable1.Text = 1 Then
                 Else
@@ -253,8 +265,8 @@
             End If
 
             If Txt_leyenda1.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_leyenda1.Visible = True
+                'valido_ingreso = "no"
+                'lb_error_leyenda1.Visible = True
             End If
 
             If valido_ingreso = "si" Then
