@@ -19,7 +19,7 @@
             Case "2"
                 Response.Redirect("~/WC_ABML Prestamos_Creditos/abml_creditos.aspx")
             Case "3"
-
+                Response.Redirect("~/WC_ABML Prestamos_Creditos/abml_prestamoscreditos_resumen.aspx")
 
             Case Else
                 ''aqui va mensaje de error.
@@ -35,5 +35,10 @@
 
     Private Sub btn_ok_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error.ServerClick
         txt_opcion.Focus()
+    End Sub
+
+    'AQUI agrego el atributo onfocus y asocio a la rutina js seleccionartexto para que cuando se ponga el foco en un textbox se seleccione todo el contenido
+    Private Sub txt_opcion_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_opcion.Init
+        txt_opcion.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 End Class

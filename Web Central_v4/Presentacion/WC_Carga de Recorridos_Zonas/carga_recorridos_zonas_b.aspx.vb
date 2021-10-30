@@ -83,4 +83,96 @@
     Private Sub btn_ok_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok.ServerClick
         Response.Redirect("~/WC_Carga de Recorridos_Zonas/carga_recorridos_zonas_a.aspx")
     End Sub
+
+
+#Region "init"
+    'AQUI agrego el atributo onfocus y asocio a la rutina js seleccionartexto para que cuando se ponga el foco en un textbox se seleccione todo el contenido
+    Private Sub txt_zona_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_zona.Init
+        txt_zona.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_01_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_01.Init
+        txt_01.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_02_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_02.Init
+        txt_02.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_03_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_03.Init
+        txt_03.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_04_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_04.Init
+        txt_04.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_05_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_05.Init
+        txt_05.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_06_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_06.Init
+        txt_06.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_07_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_07.Init
+        txt_07.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_08_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_08.Init
+        txt_08.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_09_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_09.Init
+        txt_09.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_10_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_10.Init
+        txt_10.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_11_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_11.Init
+        txt_11.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_12_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_12.Init
+        txt_12.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_13_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_13.Init
+        txt_13.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_14_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_14.Init
+        txt_14.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_15_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_15.Init
+        txt_15.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_16_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_16.Init
+        txt_16.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_17_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_17.Init
+        txt_17.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_18_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_18.Init
+        txt_18.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_19_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_19.Init
+        txt_19.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_20_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_20.Init
+        txt_20.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+
+#End Region
+
+    
 End Class

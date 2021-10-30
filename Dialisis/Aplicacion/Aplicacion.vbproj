@@ -138,6 +138,12 @@
       <DependentUpon>Informe_Mostrar.vb</DependentUpon>
     </Compile>
     <Compile Include="Informe\Informe_Mostrar.vb" />
+    <Compile Include="Mantenimiento\Form1_verificarduplicado.Designer.vb">
+      <DependentUpon>Form1_verificarduplicado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Form1_verificarduplicado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Menu 2020\Menu_2020.Designer.vb">
       <DependentUpon>Menu_2020.vb</DependentUpon>
     </Compile>
@@ -1714,6 +1720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Informe\Informe_Mostrar.resx">
       <DependentUpon>Informe_Mostrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Form1_verificarduplicado.resx">
+      <DependentUpon>Form1_verificarduplicado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu 2020\Menu_2020.resx">
       <DependentUpon>Menu_2020.vb</DependentUpon>

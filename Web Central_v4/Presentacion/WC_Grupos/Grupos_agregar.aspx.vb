@@ -163,7 +163,7 @@
                             Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, CInt(Txt_grupo_codigo.Text))
                             If (ds_info.Tables(0).Rows.Count = 0) And (ds_info.Tables(1).Rows.Count = 0) Then 'no existe
                                 '2) guardo en bd
-                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), CInt(Txt_grupo_codigo.Text))
+                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), CInt(Txt_grupo_codigo.Text), CDec(0))
                                 Limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -218,7 +218,7 @@
 
 
                             If existe = "no" Then
-                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CInt(Txt_grupo_codigo.Text))
+                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CInt(Txt_grupo_codigo.Text), CDec(0))
                                 Limpiar_campos()
                                 'regresar al form que lista grupos.
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)

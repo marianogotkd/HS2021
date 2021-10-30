@@ -43,6 +43,8 @@
         TB_USU_usu.TextAlign = HorizontalAlignment.Center
         TB_USU_cont.TextAlign = HorizontalAlignment.Center
 
+
+
     End Sub
 
     Private Sub InitializeMyControl()

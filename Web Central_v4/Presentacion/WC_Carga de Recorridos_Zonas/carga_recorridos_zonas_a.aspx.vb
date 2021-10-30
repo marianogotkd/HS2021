@@ -280,4 +280,18 @@
     Private Sub btn_ok_error_op_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error_op.ServerClick
         txt_zona.Focus()
     End Sub
+
+
+#Region "INIT"
+    'AQUI agrego el atributo onfocus y asocio a la rutina js seleccionartexto para que cuando se ponga el foco en un textbox se seleccione todo el contenido
+    Private Sub Txt_fecha_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_fecha.Init
+        Txt_fecha.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+
+    Private Sub txt_zona_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_zona.Init
+        txt_zona.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    End Sub
+#End Region
+
+    
 End Class

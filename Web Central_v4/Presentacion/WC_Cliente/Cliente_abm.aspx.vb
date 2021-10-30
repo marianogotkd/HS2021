@@ -5,15 +5,15 @@
     Dim DS_cliente As New DS_cliente
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            Dim ds_clie As DataSet = DAClientes.Clientes_obtenertodos
-            DS_cliente.Clientes.Rows.Clear()
-            GridView1.DataSource = ""
+            'Dim ds_clie As DataSet = DAClientes.Clientes_obtenertodos
+            'DS_cliente.Clientes.Rows.Clear()
+            'GridView1.DataSource = ""
             'GridView1.DataBind()
-            If ds_clie.Tables(0).Rows.Count <> 0 Then
-                'DS_cliente.Clientes.Merge(ds_clie.Tables(0))
-                'GridView1.DataSource = DS_cliente.Clientes
-                'GridView1.DataBind()
-            End If
+            'If ds_clie.Tables(0).Rows.Count <> 0 Then
+            'DS_cliente.Clientes.Merge(ds_clie.Tables(0))
+            'GridView1.DataSource = DS_cliente.Clientes
+            'GridView1.DataBind()
+            'End If
             Txt_cliente_id.Focus()
         End If
     End Sub
@@ -51,6 +51,7 @@
                 'ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error", "$(document).ready(function () {$('#modal-sm_error').modal();});", True)
                 'se redirecciona al modulo de alta
                 Session("clientes_op") = "alta"
+                Session("codigo_nuevo") = Txt_cliente_id.Text
                 Response.Redirect("Cliente_alta_b.aspx")
             End If
         Else

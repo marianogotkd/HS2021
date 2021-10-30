@@ -49,6 +49,12 @@
         }
     }
 
+    //funcion para seleccionar todo le contenido de un textbox cuando se pone el foco sobre el control. se agrega como atributo en el codebehind
+    function seleccionarTexto(obj) {
+        if (obj != null) {
+            obj.select();
+        }
+    }
 
 
 </script>
@@ -88,7 +94,7 @@
                                     <label for="Label_gruponº">Grupo Nº:</label>
                                     <asp:TextBox ID="Txt_grupo_codigo" runat="server" placeholder="Ingrese código..." class="form-control" Visible="true"   
                                     onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
-                                    <asp:Label ID="lb_error_codigo" runat="server" ForeColor="Red" Text="*" 
+                                    <asp:Label ID="lb_error_grupocodigo" runat="server" ForeColor="Red" Text="*" 
                                     Visible="False"></asp:Label>
                                 </div>
                     </div>
@@ -149,6 +155,99 @@
 </div>
 </div>
 
+<!-- Modal GRABAR ALTA CENTRADO EN PANTALLA -->
+<div class="modal fade" id="Mdl_graba" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="H1">Graba</h5>
+        <button type="button" id="btn_graba_close" class="close" tabindex="-1" runat="server" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Desea registrar el gasto?...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn_graba_cancelar" class="btn btn-secondary" runat="server" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="btn_graba_confirmar" class="btn btn-primary" runat="server" data-dismiss="modal">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-sm_error_ingreso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error!</h4>
+              <button type="button" id="btn_close_error_ingreso" runat="server" tabindex="-1" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Ingrese los datos solicitados!&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-center ">
+            <%--<div class="modal-footer justify-content-between">--%>
+              <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+              <button type="button" id="btn_ok_error_ingreso" runat="server" tabindex="1"  class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+<div class="modal fade" id="modal-sm_error_grupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error!</h4>
+              <button type="button" id="btn_close_error_grupo" runat="server" tabindex="-1" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>El grupo ingresado no existe!&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-center ">
+            <%--<div class="modal-footer justify-content-between">--%>
+              <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+              <button type="button" id="btn_ok_error_grupo" runat="server" tabindex="1"  class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+<%--Modal MENSAJE OK GRABADO--%>
+<div class="modal fade" id="modal-sm_OKGRABADO" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Graba</h4>
+              <button type="button" id="btn_ok_close" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Se guardo correctamente!&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-center ">
+            <%--<div class="modal-footer justify-content-between">--%>
+              <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+              <button type="button" id="btn_ok" runat="server" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
 
 </ContentTemplate>

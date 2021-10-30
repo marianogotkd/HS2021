@@ -111,6 +111,10 @@
         lb_error_tipo.Visible = False
         lb_error_porcentaje.Visible = False
     End Sub
+
+    Private Sub BOTON_GRABA_DataBinding(ByVal sender As Object, ByVal e As System.EventArgs) Handles BOTON_GRABA.DataBinding
+
+    End Sub
     
     Private Sub BOTON_GRABA_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles BOTON_GRABA.ServerClick
         limpiar_label_error()

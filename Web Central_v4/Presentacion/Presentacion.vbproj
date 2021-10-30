@@ -2020,9 +2020,11 @@
     <Content Include="WC_ABML Prestamos_Creditos\abml_creditos.aspx" />
     <Content Include="WC_ABML Prestamos_Creditos\abml_prestamos.aspx" />
     <Content Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos.aspx" />
+    <Content Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos_resumen.aspx" />
     <Content Include="WC_ACL Gastos\acl_gastos.aspx" />
     <Content Include="WC_ACL Gastos\acl_gastos_alta.aspx" />
     <Content Include="WC_ACL Gastos\acl_gastos_carga.aspx" />
+    <Content Include="WC_ACL Gastos\acl_gastos_resumen.aspx" />
     <Content Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_a.aspx" />
     <Content Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_b.aspx" />
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
@@ -2033,6 +2035,13 @@
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
     <Content Include="WC_Grupos\Grupos_alta_b.aspx" />
     <Content Include="WC_Iniciar Dia\Iniciar_dia.aspx" />
+    <Content Include="WC_Modificar Saldos\Modificar_saldos.aspx" />
+    <Content Include="WC_Modificar Saldos\Modificar_saldos_detalle.aspx" />
+    <Content Include="WC_Pagos Cobros Reclamos\Cobro.aspx" />
+    <Content Include="WC_Pagos Cobros Reclamos\Pago.aspx" />
+    <Content Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos.aspx" />
+    <Content Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos_resumen.aspx" />
+    <Content Include="WC_Pagos Cobros Reclamos\Reclamo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2117,6 +2126,18 @@
       <DependentUpon>abml_prestamoscreditos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos_resumen.aspx.designer.vb">
+      <DependentUpon>abml_prestamoscreditos_resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\abml_prestamoscreditos_resumen.aspx.vb">
+      <DependentUpon>abml_prestamoscreditos_resumen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ABML Prestamos_Creditos\DS_prestamoscreditos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_prestamoscreditos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WC_ACL Gastos\acl_gastos.aspx.designer.vb">
       <DependentUpon>acl_gastos.aspx</DependentUpon>
     </Compile>
@@ -2137,6 +2158,18 @@
     <Compile Include="WC_ACL Gastos\acl_gastos_carga.aspx.vb">
       <DependentUpon>acl_gastos_carga.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_resumen.aspx.designer.vb">
+      <DependentUpon>acl_gastos_resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\acl_gastos_resumen.aspx.vb">
+      <DependentUpon>acl_gastos_resumen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_ACL Gastos\DS_gastos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_gastos.xsd</DependentUpon>
     </Compile>
     <Compile Include="WC_Carga de Recorridos_Zonas\carga_recorridos_zonas_a.aspx.designer.vb">
       <DependentUpon>carga_recorridos_zonas_a.aspx</DependentUpon>
@@ -2216,6 +2249,55 @@
     </Compile>
     <Compile Include="WC_Iniciar Dia\Iniciar_dia.aspx.vb">
       <DependentUpon>Iniciar_dia.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Modificar Saldos\Modificar_saldos.aspx.designer.vb">
+      <DependentUpon>Modificar_saldos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Modificar Saldos\Modificar_saldos.aspx.vb">
+      <DependentUpon>Modificar_saldos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Modificar Saldos\Modificar_saldos_detalle.aspx.designer.vb">
+      <DependentUpon>Modificar_saldos_detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Modificar Saldos\Modificar_saldos_detalle.aspx.vb">
+      <DependentUpon>Modificar_saldos_detalle.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Cobro.aspx.designer.vb">
+      <DependentUpon>Cobro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Cobro.aspx.vb">
+      <DependentUpon>Cobro.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Pago.aspx.designer.vb">
+      <DependentUpon>Pago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Pago.aspx.vb">
+      <DependentUpon>Pago.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos.aspx.designer.vb">
+      <DependentUpon>PagosCobrosReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos.aspx.vb">
+      <DependentUpon>PagosCobrosReclamos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos_resumen.aspx.designer.vb">
+      <DependentUpon>PagosCobrosReclamos_resumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\PagosCobrosReclamos_resumen.aspx.vb">
+      <DependentUpon>PagosCobrosReclamos_resumen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Reclamo.aspx.designer.vb">
+      <DependentUpon>Reclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\Reclamo.aspx.vb">
+      <DependentUpon>Reclamo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
@@ -2489,6 +2571,28 @@
     <None Include="plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <None Include="plugins\toastr\toastr.js.map" />
     <None Include="README.md" />
+    <None Include="WC_ABML Prestamos_Creditos\DS_prestamoscreditos.xsc">
+      <DependentUpon>DS_prestamoscreditos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_ABML Prestamos_Creditos\DS_prestamoscreditos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_prestamoscreditos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WC_ABML Prestamos_Creditos\DS_prestamoscreditos.xss">
+      <DependentUpon>DS_prestamoscreditos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_ACL Gastos\DS_gastos.xsc">
+      <DependentUpon>DS_gastos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_ACL Gastos\DS_gastos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_gastos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WC_ACL Gastos\DS_gastos.xss">
+      <DependentUpon>DS_gastos.xsd</DependentUpon>
+    </None>
     <None Include="WC_Cliente\DS_cliente.xsd.xsc">
       <DependentUpon>DS_cliente.xsd.xsd</DependentUpon>
     </None>

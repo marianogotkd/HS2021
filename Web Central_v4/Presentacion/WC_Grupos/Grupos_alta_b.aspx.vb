@@ -8,7 +8,7 @@
             Limpiar_campos()
             If Session("grupos_op") = "modificar" Then
 
-                Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(CInt(Session("grupo_codigo"))) 'traer del otro formulario
+                Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(Session("grupo_codigo")) 'traer del otro formulario
                 If ds_info.Tables(0).Rows.Count <> 0 Then
 
                     HF_grupo_id.Value = ds_info.Tables(0).Rows(0).Item("Grupo_id")
@@ -18,6 +18,7 @@
                     Txt_porcentaje.Text = ds_info.Tables(0).Rows(0).Item("Porcentaje")
                     Txt_clieporcentaje.Text = ds_info.Tables(0).Rows(0).Item("Clienteporcentaje")
                     Txt_codcobro.Text = ds_info.Tables(0).Rows(0).Item("Codigocobro")
+                    Txt_importe_fecha.Text = ds_info.Tables(0).Rows(0).Item("Importe").ToString
                     Dim FECHA As Date = CDate(ds_info.Tables(0).Rows(0).Item("Fecha"))
                     Txt_fechaproc.Text = FECHA.ToString("yyyy-MM-dd")
                 End If
@@ -26,6 +27,8 @@
             Else
                 Txt_grupo_codigo.ReadOnly = False
                 Session("grupos_op") = "alta"
+                Txt_grupo_codigo.Text = Session("codigo_nuevo")
+
                 'Dim fecha As Date = Today
                 'Txt_fechaproc.Text = fecha.ToString("yyyy-MM-dd")
                 'Label_grupo_id0.Visible = False
@@ -69,11 +72,19 @@
     Private Sub btn_baja_mdl_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl.ServerClick
         Try
             If Txt_grupo_codigo.Text <> "" Then
-                DAgrupos.Grupos_baja(CDec(HF_grupo_id.Value)) 'el hf tiene el id en 0 si es una alta, sino recupera del form grupo_abm
-                Limpiar_campos()
-                Txt_grupo_codigo.Text = ""
-                'redireccionar a menu de grupos.
-                Response.Redirect("Grupos_abm.aspx")
+                Dim ds_clientes As DataSet = DAgrupos.Grupos_obtener_clientes(HF_grupo_id.Value)
+                If ds_clientes.Tables(0).Rows.Count = 0 Then
+                    DAgrupos.Grupos_baja(CDec(HF_grupo_id.Value)) 'el hf tiene el id en 0 si es una alta, sino recupera del form grupo_abm
+                    Limpiar_campos()
+                    Txt_grupo_codigo.Text = ""
+                    'redireccionar a menu de grupos.
+                    Response.Redirect("Grupos_abm.aspx")
+                Else
+                    'mensaje: Error, el grupo tiene clientes asignados.
+                    ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error_eliminar", "$(document).ready(function () {$('#modal-sm_error_eliminar').modal();});", True)
+                End If
+
+                
             End If
         Catch ex As Exception
             Txt_grupo_nomb.Focus()
@@ -154,15 +165,24 @@
                 End Try
             End If
 
+            Dim importe_procesamiento As Decimal
+            Try
+                importe_procesamiento = CDec(Txt_importe_fecha.Text.Replace(".", ","))
+            Catch ex As Exception
+                importe_procesamiento = CDec(0)
+                'lb_error_porcentaje.Visible = True
+                'valido_ingreso = "no"
+            End Try
+
             If valido_ingreso = "si" Then
                 Select Case Session("grupos_op")
                     Case "alta"
                         If Session("grupos_op") = "alta" Then
                             '1) valido que no exista.
-                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, CInt(Txt_grupo_codigo.Text))
+                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, Txt_grupo_codigo.Text)
                             If (ds_info.Tables(0).Rows.Count = 0) And (ds_info.Tables(1).Rows.Count = 0) Then 'no existe
                                 '2) guardo en bd
-                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), CInt(Txt_grupo_codigo.Text))
+                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), Txt_grupo_codigo.Text, importe_procesamiento)
                                 Limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -184,7 +204,7 @@
                     Case "modificar"
                         If Session("grupos_op") = "modificar" Then
                             '1) valido que el nombre q ingreso, ya no exista con otro id
-                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, CInt(Txt_grupo_codigo.Text))
+                            Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, Txt_grupo_codigo.Text)
                             Dim existe = "no"
                             Dim existe_nombre = "no"
                             If ds_info.Tables(0).Rows.Count <> 0 Then 'no existe
@@ -217,7 +237,7 @@
 
 
                             If existe = "no" Then
-                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CInt(Txt_grupo_codigo.Text))
+                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, Txt_grupo_codigo.Text, importe_procesamiento)
                                 Limpiar_campos()
                                 'regresar al form que lista grupos.
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
@@ -303,4 +323,17 @@
     Private Sub Txt_importe_fecha_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_importe_fecha.Init
         Txt_importe_fecha.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
+
+
+#Region "modal-sm_error_eliminar"
+    Private Sub btn_erroreliminar_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_erroreliminar_close.ServerClick
+        Txt_grupo_nomb.Focus()
+    End Sub
+
+    Private Sub btn_erroreliminar_ok_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_erroreliminar_ok.ServerClick
+        Txt_grupo_nomb.Focus()
+    End Sub
+#End Region
+
+    
 End Class
