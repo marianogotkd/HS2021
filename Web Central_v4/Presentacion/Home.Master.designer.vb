@@ -32,58 +32,76 @@ Partial Public Class Home
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control GRUPOS.
+    '''Control INICIAR_DIA.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GRUPOS As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents INICIAR_DIA As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control CLIENTES.
+    '''Control CARGAR_ECORRIDOS.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents CLIENTES As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents CARGAR_ECORRIDOS As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Obra.
+    '''Control Carga_PaCoRE.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Obra As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Carga_PaCoRE As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Vehiculo.
+    '''Control ABM_GRUPOS.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Vehiculo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents ABM_GRUPOS As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Articulo.
+    '''Control ABM_CLIENTES.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Articulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents ABM_CLIENTES As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Pedido.
+    '''Control ABML_PesCred.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Pedido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents ABML_PesCred As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control AB_Rec_Zon.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents AB_Rec_Zon As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control MODIFICA_SALDOS.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents MODIFICA_SALDOS As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''Control Usuario.

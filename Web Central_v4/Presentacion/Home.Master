@@ -21,7 +21,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="hold-transition sidebar-mini">
-<
+
     
 
     <form id="form1" runat="server">
@@ -154,12 +154,13 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
-      <img src="../../dist/img/AdminLTELogo.png"
+    <%--<a href="../../index3.html" class="brand-link">--%>
+     <a class="brand-link">
+     <%-- <img src="../../dist/img/AdminLTELogo.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">WEB CENTRAL</span>
+           style="opacity: .8">--%>
+      <span>WEB CENTRAL</span>
     </a>
 
     <!-- Sidebar -->
@@ -179,70 +180,91 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview"  runat="server" id="GRUPOS" visible="false" >
+          <li class="nav-item has-treeview"  runat="server" id="INICIAR_DIA">
             <a href="../WC_Grupos/Grupos_abm.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Grupos
+                INICIAR DIA
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            
           </li>
           
-          <li class="nav-item has-treeview"  runat="server" id="CLIENTES" visible="false" >
+          <li class="nav-item has-treeview"  runat="server" id="CARGAR_ECORRIDOS">
             <a href="../WC_Cliente/Cliente_abm.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Clientes
+              RECORRIDOS/ZONAS
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            
           </li>
           
-          <li class="nav-item has-treeview" runat="server" id="Obra" visible="false">
+          <li class="nav-item has-treeview" runat="server" id="Carga_PaCoRE">
             <a href="../Obra/Obra_Consulta.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Obra
+                PAGOS/COBROS/REC.
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
           </li>
-         
+          
+          <br />
 
-          <li class="nav-item has-treeview" runat="server" id="Vehiculo" visible="false">
+
+          <li class="nav-item has-treeview" runat="server" id="ABM_GRUPOS" >
             <a href="../Vehiculo/Vehiculo_Consulta.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Vehiculo
+               A.B.M. GRUPOS
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            
           </li>
 
-           <li class="nav-item has-treeview"  runat="server" id="Articulo" visible="false" >
+           <li class="nav-item has-treeview"  runat="server" id="ABM_CLIENTES">
             <a href="../Articulos/Articulos.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Articulo
+                 A.B.M. CLIENTES
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            
           </li>
          
-          <li class="nav-item has-treeview"  runat="server" id="Pedido" visible="false">
+          <li class="nav-item has-treeview"  runat="server" id="ABML_PesCred">
             <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
-                Pedidos
+                A.B.M.L. PRES/CRED
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </a>
-           
+            </a>           
+          </li>
+
+          <li class="nav-item has-treeview"  runat="server" id="AB_Rec_Zon">
+            <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>
+                 A.B. REC./ZONAS
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>           
+          </li>
+
+           <li class="nav-item has-treeview"  runat="server" id="MODIFICA_SALDOS">
+            <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>
+                MODIFICA SALDOS
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>           
           </li>
           
          
@@ -365,6 +387,16 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
 <!-- Page script -->
 <script>
     $(function () {
