@@ -20,8 +20,8 @@
                 'Articulo.Visible = True
                 'Pedido.Visible = True
                 'Usuario.Visible = True
-                Grupos.Visible = True
-                Clientes.Visible = True
+                'Grupos.Visible = True
+                'Clientes.Visible = True
             Else
                 'Dim ds = DAUsuario.Usuario_Modulos(Session("UsuId"))
                 'Dim i = 0
