@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="acl_gastos_resumen.aspx.vb" Inherits="Presentacion.acl_gastos_resumen" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<script>
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -90,7 +90,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
 <div class="card card-primary">
@@ -160,7 +160,7 @@
                                             </EditItemTemplate>
                                             <ItemTemplate>
                                                 <asp:Button ID="Button1" runat="server" Font-Bold="True" ForeColor="Red" 
-                                                    Text="-" Width="40px" CommandName="ID" CommandArgument='<%# Eval("ID") %>' />
+                                                    Text="Eliminar" Width="70px" CommandName="ID" CommandArgument='<%# Eval("ID") %>' />
                                             </ItemTemplate>
                                             <HeaderStyle ForeColor="#0099FF" />
                                         </asp:TemplateField>

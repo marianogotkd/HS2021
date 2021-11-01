@@ -131,22 +131,22 @@ Partial Public Class Cobro
     Protected WithEvents btn_ok_error_limite As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_close_error_ingreso.
+    '''Control btn_erroringreso_close.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_close_error_ingreso As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_erroringreso_close As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_ok_error_ingreso.
+    '''Control btn_erroringreso_ok.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ok_error_ingreso As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_erroringreso_ok As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_close_error_noexiste.

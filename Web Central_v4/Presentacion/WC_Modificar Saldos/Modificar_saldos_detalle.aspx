@@ -91,13 +91,11 @@
 
         </div>
         
-        
-        
         <div class="form-group">
         <div class="row justify-content-center">
         <div class="col-md-4">
                 <label for="Label_saldo">Saldo $:</label>
-                <asp:TextBox ID="Txt_Saldos" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                <asp:TextBox ID="Txt_Saldos" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal_negativo(event, this);"></asp:TextBox>
                 
         </div>
         <div class="col-md-4">
