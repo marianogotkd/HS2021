@@ -181,7 +181,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview"  runat="server" id="INICIAR_DIA">
-            <a href="../WC_Grupos/Grupos_abm.aspx" class="nav-link">
+            <a href="../WC_Iniciar Dia/Iniciar_dia.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                 INICIAR DIA
@@ -192,7 +192,7 @@
           </li>
           
           <li class="nav-item has-treeview"  runat="server" id="CARGAR_ECORRIDOS">
-            <a href="../WC_Cliente/Cliente_abm.aspx" class="nav-link">
+            <a href="../WC_Carga de Recorridos_Zonas/carga_recorridos_zonas_a.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
               RECORRIDOS/ZONAS
@@ -203,7 +203,7 @@
           </li>
           
           <li class="nav-item has-treeview" runat="server" id="Carga_PaCoRE">
-            <a href="../Obra/Obra_Consulta.aspx" class="nav-link">
+            <a href="../WC_Pagos Cobros Reclamos/PagosCobrosReclamos.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                 PAGOS/COBROS/REC.
@@ -216,7 +216,7 @@
 
 
           <li class="nav-item has-treeview" runat="server" id="ABM_GRUPOS" >
-            <a href="../Vehiculo/Vehiculo_Consulta.aspx" class="nav-link">
+            <a href="../WC_Grupos/Grupos_abm.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                A.B.M. GRUPOS
@@ -227,7 +227,7 @@
           </li>
 
            <li class="nav-item has-treeview"  runat="server" id="ABM_CLIENTES">
-            <a href="../Articulos/Articulos.aspx" class="nav-link">
+            <a href="../WC_Cliente/Cliente_abm.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                  A.B.M. CLIENTES
@@ -238,7 +238,7 @@
           </li>
          
           <li class="nav-item has-treeview"  runat="server" id="ABML_PesCred">
-            <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
+            <a href="../WC_ABML Prestamos_Creditos/abml_prestamoscreditos.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                 A.B.M.L. PRES/CRED
@@ -248,7 +248,7 @@
           </li>
 
           <li class="nav-item has-treeview"  runat="server" id="AB_Rec_Zon">
-            <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
+            <a href="../WC_AB Recorridos_Zonas/ab_recorridos_zonas.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                  A.B. REC./ZONAS
@@ -258,7 +258,7 @@
           </li>
 
            <li class="nav-item has-treeview"  runat="server" id="MODIFICA_SALDOS">
-            <a href="../Pedido/Pedido_Consulta.aspx" class="nav-link">
+            <a href="../WC_Modificar Saldos/Modificar_saldos.aspx" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>
                 MODIFICA SALDOS
