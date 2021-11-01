@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="WB_clientes.vb" />
     <Compile Include="WB_usuarios.vb" />
+    <Compile Include="WC_anticipados.vb" />
     <Compile Include="WC_gastos.vb" />
     <Compile Include="WC_grupos.vb" />
     <Compile Include="WC_parametro.vb" />

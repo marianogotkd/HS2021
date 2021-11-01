@@ -473,6 +473,7 @@
 
     function onKeyDecimal(e, thix) {
         var keynum = window.event ? window.event.keyCode : e.which;
+        if ($(thix).val() > 100)
         if (document.getElementById(thix.id).value.indexOf('.') != -1 && keynum == 46)
             return false;
         if ((keynum == 8 || keynum == 48 || keynum == 46))
@@ -480,6 +481,21 @@
         if (keynum <= 47 || keynum >= 58) return false;
         return /\d/.test(String.fromCharCode(keynum));
     }
+
+
+    //acepta decimales negativos.
+    function onKeyDecimal_negativo(e, thix) {
+        var keynum = window.event ? window.event.keyCode : e.which;
+        if (document.getElementById(thix.id).value.indexOf('-') != -1 && keynum == 45)
+            return false;
+        if (document.getElementById(thix.id).value.indexOf('.') != -1 && keynum == 46)
+            return false;
+        if ((keynum == 8 || keynum == 48 || keynum == 46 || keynum == 45))
+            return true;
+        if (keynum <= 47 || keynum >= 58) return false;
+        return /\d/.test(String.fromCharCode(keynum));
+    }
+
 
     function justNumbers(e) {
         var keynum = window.event ? window.event.keyCode : e.which;

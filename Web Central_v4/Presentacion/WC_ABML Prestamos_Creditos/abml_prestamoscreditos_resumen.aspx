@@ -165,7 +165,7 @@
                                             </EditItemTemplate>
                                             <ItemTemplate>
                                                 <asp:Button ID="Button1" runat="server" Font-Bold="True" ForeColor="Red" 
-                                                    Text="-" Width="40px" CommandName="ID" CommandArgument='<%# Eval("ID") %>' />
+                                                    Text="Eliminar" Width="70px" CommandName="ID" CommandArgument='<%# Eval("ID") %>' />
                                             </ItemTemplate>
                                             <HeaderStyle ForeColor="#0099FF" />
                                         </asp:TemplateField>

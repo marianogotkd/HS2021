@@ -159,7 +159,8 @@
                                         <div class="col-md-2">
                                                 <label for="Label_sincalculo">Sin Calculo:</label>
                                                 <asp:TextBox ID="Txt_calculo" runat="server" class="form-control" placeholder="ingrese opción" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
-                                                <small id="Small6" class="form-text text-muted">0 = NO. 1 = SI.</small>
+                                                <small id="smalllabel_calculo" class="form-text text-muted">0 = NO. 1 = SI.</small>
+                                                <asp:Label ID="lb_error_sincalculo" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                                         </div>
 
                                         <div class="col-md-6">
@@ -174,7 +175,8 @@
                                         <div class="col-md-2">
                                                 <label for="Label_prestamocredito">Préstamo/Crédito:</label>
                                                 <asp:TextBox ID="Txt_prestamocredito" runat="server" class="form-control" placeholder="ingrese opción" CausesValidation="True" validationgroup="check_4" xmlns:asp="#unknown4" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_ceroyuno_valitation(event);"></asp:TextBox>
-                                                <small id="Small1" class="form-text text-muted">0 = NO. 1 = SI.</small>
+                                                <small id="Small1" class="form-text text-muted">0 = PRESTAMO. 1 = CREDITO.</small>
+                                                <asp:Label ID="lb_error_prestamocredito" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                                         </div>
 
                                         <div class="col-md-6">
@@ -188,6 +190,7 @@
                                         <div class="col-md-6">
                                                 <label for="Label_descripcion">Descripción:</label>
                                                 <asp:TextBox ID="Txt_descripcion" runat="server" class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" onkeydown="tecla_op(event);"></asp:TextBox>              
+                                                <asp:Label ID="lb_error_descripcion" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                                         </div>
 
                                         <div class="col-md-2">
@@ -270,7 +273,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Error!</h4>
-              <button type="button" id="btn_close_error_ingreso" runat="server" tabindex="-1" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" id="btn_erroringreso_close" runat="server" tabindex="-1" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -280,7 +283,7 @@
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>
               <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-              <button type="button" id="btn_ok_error_ingreso" runat="server" tabindex="1"  class="btn btn-primary" data-dismiss="modal">OK</button>
+              <button type="button" id="btn_erroringreso_ok" runat="server" tabindex="1"  class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
           </div>
           <!-- /.modal-content -->

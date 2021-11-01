@@ -2272,6 +2272,11 @@
       <DependentUpon>Cobro.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_Pagos Cobros Reclamos\DS_pagoscobrosreclamos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_pagoscobrosreclamos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WC_Pagos Cobros Reclamos\Pago.aspx.designer.vb">
       <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
@@ -2614,6 +2619,17 @@
     </None>
     <None Include="WC_Grupos\DS_grupos.xss">
       <DependentUpon>DS_grupos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Pagos Cobros Reclamos\DS_pagoscobrosreclamos.xsc">
+      <DependentUpon>DS_pagoscobrosreclamos.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Pagos Cobros Reclamos\DS_pagoscobrosreclamos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_pagoscobrosreclamos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WC_Pagos Cobros Reclamos\DS_pagoscobrosreclamos.xss">
+      <DependentUpon>DS_pagoscobrosreclamos.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="PagosCobrosReclamos_resumen.aspx.vb" Inherits="Presentacion.PagosCobrosReclamos_resumen" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script>
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -89,7 +89,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
 <div class="card card-primary">
@@ -135,13 +135,13 @@
                                    BorderColor="Black" GridLines="None" 
                                   EnableSortingAndPagingCallbacks="True"> 
                                     <Columns>
-                                        <asp:BoundField DataField="ID" HeaderText="ID" >                                                               
+                                        <asp:BoundField DataField="Anticipados_id" HeaderText="ID" >                                                               
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Tipo" HeaderText="Tipo" >                                                               
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente" HeaderText="Cliente" >                                                               
+                                        <asp:BoundField DataField="Codigo" HeaderText="Cliente" >                                                               
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" >
@@ -150,10 +150,13 @@
                                         <asp:BoundField DataField="Importe" HeaderText="Importe" >
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Porcentaje" HeaderText="%">
+                                        <asp:BoundField DataField="Sincalculo" HeaderText="S.Calculo">
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cobro" HeaderText="Cobro" >
+                                        <asp:BoundField DataField="Pres/Cred" HeaderText="Pres/Cred" >
+                                        <HeaderStyle ForeColor="#0099FF" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripción" >
                                         <HeaderStyle ForeColor="#0099FF" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Fecha" HeaderText="Fecha" >
@@ -165,7 +168,8 @@
                                             </EditItemTemplate>
                                             <ItemTemplate>
                                                 <asp:Button ID="Button1" runat="server" Font-Bold="True" ForeColor="Red" 
-                                                    Text="-" Width="40px" CommandName="ID" CommandArgument='<%# Eval("ID") %>' />
+                                                    Text="Eliminar" Width="70px" CommandName="ID" 
+                                                    CommandArgument='<%# Eval("Anticipados_id") %>' />
                                             </ItemTemplate>
                                             <HeaderStyle ForeColor="#0099FF" />
                                         </asp:TemplateField>

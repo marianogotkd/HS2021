@@ -110,17 +110,17 @@ Control btn_ok_error_limite.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Cobro.btn_close_error_ingreso">
+</member><member name="F:Presentacion.Cobro.btn_erroringreso_close">
 	<summary>
-Control btn_close_error_ingreso.
+Control btn_erroringreso_close.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Cobro.btn_ok_error_ingreso">
+</member><member name="F:Presentacion.Cobro.btn_erroringreso_ok">
 	<summary>
-Control btn_ok_error_ingreso.
+Control btn_erroringreso_ok.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -430,6 +430,14 @@ Control Txt_calculo.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Reclamo.lb_error_sincalculo">
+	<summary>
+Control lb_error_sincalculo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Reclamo.Txt_prestamocredito">
 	<summary>
 Control Txt_prestamocredito.
@@ -438,9 +446,25 @@ Control Txt_prestamocredito.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Presentacion.Reclamo.lb_error_prestamocredito">
+	<summary>
+Control lb_error_prestamocredito.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Presentacion.Reclamo.Txt_descripcion">
 	<summary>
 Control Txt_descripcion.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Presentacion.Reclamo.lb_error_descripcion">
+	<summary>
+Control lb_error_descripcion.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -494,17 +518,17 @@ Control btn_ok_error_limite.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Reclamo.btn_close_error_ingreso">
+</member><member name="F:Presentacion.Reclamo.btn_erroringreso_close">
 	<summary>
-Control btn_close_error_ingreso.
+Control btn_erroringreso_close.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Reclamo.btn_ok_error_ingreso">
+</member><member name="F:Presentacion.Reclamo.btn_erroringreso_ok">
 	<summary>
-Control btn_ok_error_ingreso.
+Control btn_erroringreso_ok.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -1086,6 +1110,22 @@ Control btn_ok_error_busqueda.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:Presentacion.DS_pagoscobrosreclamos.Tabla1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Presentacion.DS_pagoscobrosreclamos.Tabla1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Presentacion.DS_pagoscobrosreclamos.Tabla1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Presentacion.DS_pagoscobrosreclamos">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:Presentacion.Inicio.ScriptManager1">
 	<summary>
 Control ScriptManager1.
@@ -4838,17 +4878,17 @@ Control btn_ok_error_limite.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pago.btn_close_error_ingreso">
+</member><member name="F:Presentacion.Pago.btn_erroringreso_close">
 	<summary>
-Control btn_close_error_ingreso.
+Control btn_erroringreso_close.
 </summary>
 	<remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Presentacion.Pago.btn_ok_error_ingreso">
+</member><member name="F:Presentacion.Pago.btn_erroringreso_ok">
 	<summary>
-Control btn_ok_error_ingreso.
+Control btn_erroringreso_ok.
 </summary>
 	<remarks>
 Campo generado automáticamente.

@@ -104,6 +104,15 @@ Partial Public Class Reclamo
     Protected WithEvents Txt_calculo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_sincalculo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_sincalculo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Txt_prestamocredito.
     '''</summary>
     '''<remarks>
@@ -113,6 +122,15 @@ Partial Public Class Reclamo
     Protected WithEvents Txt_prestamocredito As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lb_error_prestamocredito.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_prestamocredito As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Txt_descripcion.
     '''</summary>
     '''<remarks>
@@ -120,6 +138,15 @@ Partial Public Class Reclamo
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Txt_descripcion As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lb_error_descripcion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_descripcion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control Txt_fecha.
@@ -176,22 +203,22 @@ Partial Public Class Reclamo
     Protected WithEvents btn_ok_error_limite As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_close_error_ingreso.
+    '''Control btn_erroringreso_close.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_close_error_ingreso As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_erroringreso_close As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_ok_error_ingreso.
+    '''Control btn_erroringreso_ok.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ok_error_ingreso As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_erroringreso_ok As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_close_error_noexiste.
