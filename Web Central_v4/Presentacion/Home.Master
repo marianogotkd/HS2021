@@ -397,6 +397,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
+
+    <script src="../../dist/js/table2excel.js" type="text/javascript"></script>
+
 <!-- Page script -->
 <script>
     $(function () {
@@ -574,6 +577,14 @@
 
 </script>
   
+  <%--Exportar a Excel --%>
+ <script type="text/javascript">
+     $("body").on("click", "#btnExport_Examen", function () {
+         $("[id*=GridView1]").table2excel({
+             filename: "Table.xls"
+         });
+     });
+</script>
   
   
   

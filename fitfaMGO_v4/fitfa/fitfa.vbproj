@@ -2548,6 +2548,17 @@
     <Content Include="Reportes\inscripcion_persona.aspx" />
     <Content Include="Reportes\Llaves\Visor_ejemplo.aspx" />
     <None Include="bin\vs30FE.tmp" />
+    <None Include="Eventos\Curso_DS.xsc">
+      <DependentUpon>Curso_DS.xsd</DependentUpon>
+    </None>
+    <None Include="Eventos\Curso_DS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Curso_DS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Eventos\Curso_DS.xss">
+      <DependentUpon>Curso_DS.xsd</DependentUpon>
+    </None>
     <None Include="Eventos\ds_eventos.xsc">
       <DependentUpon>ds_eventos.xsd</DependentUpon>
     </None>
@@ -2977,6 +2988,14 @@
     <Compile Include="Eventos\Curso.aspx.vb">
       <DependentUpon>Curso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Curso_DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Curso_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Curso_DS.vb">
+      <DependentUpon>Curso_DS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Eventos\ds_eventos.Designer.vb">
       <AutoGen>True</AutoGen>
