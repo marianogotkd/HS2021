@@ -1263,6 +1263,8 @@
     <Content Include="Carga Competidores\Carga_Manual_Competidores.aspx" />
     <Content Include="Contraseña\contraseña_cambiar.aspx" />
     <Content Include="Error\UnderConstruction.aspx" />
+    <Content Include="Eventos\Curso.aspx" />
+    <Content Include="Eventos\Evento_Seleccionar_Curso.aspx" />
     <Content Include="Eventos\Evento_Seleccionar_Examen.aspx" />
     <Content Include="Eventos\Examen.aspx" />
     <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
@@ -2969,6 +2971,13 @@
       <DependentUpon>Crear_Evento.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Eventos\Curso.aspx.designer.vb">
+      <DependentUpon>Curso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Curso.aspx.vb">
+      <DependentUpon>Curso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Eventos\ds_eventos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2979,6 +2988,13 @@
     </Compile>
     <Compile Include="Eventos\Evento_Crear.aspx.vb">
       <DependentUpon>Evento_Crear.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Evento_Seleccionar_Curso.aspx.designer.vb">
+      <DependentUpon>Evento_Seleccionar_Curso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Evento_Seleccionar_Curso.aspx.vb">
+      <DependentUpon>Evento_Seleccionar_Curso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Eventos\Evento_Seleccionar_Examen.aspx.designer.vb">

@@ -297,7 +297,39 @@ Public Class Eventos
         dbconn.Close()
         Return ds_JE
     End Function
+#Region "Curso"
+    Public Function Evento_Seleccionar_Curso() As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
 
+        Dim comando As New OleDbCommand("Evento_Seleccionar_Curso", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        Dim ds_usu As New DataSet()
+        Dim da_usu As New OleDbDataAdapter(comando)
+        da_usu.Fill(ds_usu, "  Evento_Seleccionar_Curso")
+        dbconn.Close()
+        Return ds_usu
+    End Function
+
+    Public Function Curso_recuperar_inscriptos(ByVal evento_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Curso_recuperar_inscriptos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Inscriptos")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+#End Region
 
 #Region "Usuarios del evento" 'lo uso en el form Torneo_usuario_add y el login
 
@@ -408,5 +440,8 @@ Public Class Eventos
 
 
 #End Region
+
+
+
 
 End Class
