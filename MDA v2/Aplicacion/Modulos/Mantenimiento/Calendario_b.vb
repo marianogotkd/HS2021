@@ -53,21 +53,29 @@
     Dim nuevo_mes As String = ""
     Private Sub validad_dias(ByRef dia As Label, ByVal totaldiasenelmes As Integer, ByVal valor As Integer, ByVal operacion As String)
         If operacion = "sumar" Then
+            Dim suma As Date = currentDate.AddDays(valor)
+            
+
+
             If currentDate.Day + valor <= totaldiasenelmes Then
-                dia.Text = currentDate.Day + valor
+                dia.Text = suma.Day
 
             Else
                 'en una variable aviso que se termino el mes. asi el mes siguiente empieza bien el conteo.
                 nuevo_mes = "si"
+                dia.Text = suma.Day 'choco 01-11-2021
             End If
         End If
         If operacion = "restar" Then
+            Dim resta As Date = currentDate.AddDays(-valor)
             If currentDate.Day - valor <= totaldiasenelmes And ((currentDate.Day - valor) > 0) Then
-                dia.Text = currentDate.Day - valor
+                dia.Text = resta.Day
             Else
                 nuevo_mes = "si"
+                dia.Text = resta.Day  'choco 01-11-2021
             End If
         End If
+
 
     End Sub
 
@@ -98,7 +106,13 @@
                 'dia_viernes_nro.Text = currentDate.Day + 5
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 6, "sumar")
                 'dia_sabado_nro.Text = currentDate.Day + 6
+
+
+                
+
             Case DayOfWeek.Monday  'es lunes
+                
+                '-----original
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 1, "restar")
                 dia_lunes_nro.Text = currentDate.Day
                 dia_lunes_nro.ForeColor = Color.Blue
@@ -107,6 +121,10 @@
                 validad_dias(dia_jueves_numero, totalDaysInMonth, 3, "sumar")
                 validad_dias(dia_viernes_nro, totalDaysInMonth, 4, "sumar")
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 5, "sumar")
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-1)
+
             Case DayOfWeek.Tuesday   'es martes
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 2, "restar")
                 validad_dias(dia_lunes_nro, totalDaysInMonth, 1, "restar")
@@ -116,6 +134,9 @@
                 validad_dias(dia_jueves_numero, totalDaysInMonth, 2, "sumar")
                 validad_dias(dia_viernes_nro, totalDaysInMonth, 3, "sumar")
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 4, "sumar")
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-2)
             Case DayOfWeek.Wednesday    'es miercoles
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 3, "restar")
                 validad_dias(dia_lunes_nro, totalDaysInMonth, 2, "restar")
@@ -125,6 +146,9 @@
                 validad_dias(dia_jueves_numero, totalDaysInMonth, 1, "sumar")
                 validad_dias(dia_viernes_nro, totalDaysInMonth, 2, "sumar")
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 3, "sumar")
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-3)
             Case DayOfWeek.Thursday     'es jueves
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 4, "restar")
                 validad_dias(dia_lunes_nro, totalDaysInMonth, 3, "restar")
@@ -134,6 +158,9 @@
                 dia_jueves_numero.ForeColor = Color.Blue
                 validad_dias(dia_viernes_nro, totalDaysInMonth, 1, "sumar")
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 2, "sumar")
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-4)
             Case DayOfWeek.Friday      'es viernes
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 5, "restar")
                 validad_dias(dia_lunes_nro, totalDaysInMonth, 4, "restar")
@@ -143,6 +170,10 @@
                 dia_viernes_nro.Text = currentDate.Day
                 dia_viernes_nro.ForeColor = Color.Blue
                 validad_dias(dia_sabado_nro, totalDaysInMonth, 1, "sumar")
+
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-5)
             Case DayOfWeek.Saturday       'es sabado
                 validad_dias(dia_domingo_nro, totalDaysInMonth, 6, "restar")
                 validad_dias(dia_lunes_nro, totalDaysInMonth, 5, "restar")
@@ -152,7 +183,12 @@
                 validad_dias(dia_viernes_nro, totalDaysInMonth, 1, "restar")
                 dia_sabado_nro.Text = currentDate.Day
                 dia_sabado_nro.ForeColor = Color.Blue
+
+                '----choco 01-11-2021
+                currentDate = currentDate.AddDays(-6)
         End Select
+
+
 
 
 
@@ -252,6 +288,15 @@
             Dim ultimo_dia As Integer = currentDate.AddDays(-1).Day
             currentDate = currentDate.AddMonths(-1)
             currentDate = New Date(currentDate.Year, currentDate.Month, ultimo_dia)
+
+            'choco: 01-11-2021
+            Select Case fecha_calculada.DayOfWeek
+                Case DayOfWeek.Saturday
+                    currentDate = fecha_calculada.AddDays(-6)
+            End Select
+
+
+
             nuevo_mes = ""
         Else
             currentDate = fecha_calculada
@@ -262,41 +307,64 @@
         DisplayCurrentDate()
 
         '////////////////////////////////////////////////////////
-        Dim dia_DEL_sistema As DateTime = Today
+        Dim dia_DEL_sistema As Date = Today
+
         Dim rango_a As DateTime
         Dim rango_b As DateTime
         Select Case currentDate.DayOfWeek
             Case DayOfWeek.Sunday
                 rango_a = currentDate
                 rango_b = currentDate.AddDays(6)
-                If currentDate <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(6) Then
-                    currentDate = DateTime.Today
-                End If
-            Case DayOfWeek.Monday
-                If currentDate.AddDays(-1) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(5) Then
-                    currentDate = DateTime.Today
-                End If
-            Case DayOfWeek.Tuesday
-                If currentDate.AddDays(-2) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(4) Then
-                    currentDate = DateTime.Today
-                End If
 
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(6) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+
+
+            Case DayOfWeek.Monday
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-1) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(5) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-1)
+            Case DayOfWeek.Tuesday
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-2) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(4) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-2)
             Case DayOfWeek.Wednesday
-                If currentDate.AddDays(-3) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(3) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-3) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(3) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-3)
             Case DayOfWeek.Thursday
-                If currentDate.AddDays(-4) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(2) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-4) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(2) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-4)
             Case DayOfWeek.Friday
-                If currentDate.AddDays(-5) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(1) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-5) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(1) Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-5)
             Case DayOfWeek.Saturday
-                If currentDate.AddDays(-6) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.Month = dia_DEL_sistema.Month Then
+                '    If currentDate.AddDays(-6) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate Then
+                '        currentDate = DateTime.Today
+                '    End If
+                'End If
+                currentDate = currentDate.AddDays(-6)
         End Select
 
         limpiar_nro_dias()
@@ -342,13 +410,13 @@
             Case DayOfWeek.Saturday       'es sabado
                 fecha_calculada = currentDate.AddDays(1)
         End Select
-        If nuevo_mes = "si" And fecha_calculada.Month <> currentDate.Month Then
-            currentDate = currentDate.AddMonths(1)
-            currentDate = New Date(currentDate.Year, currentDate.Month, 1)
-            nuevo_mes = ""
-        Else
-            currentDate = fecha_calculada
-        End If
+        'If nuevo_mes = "si" And fecha_calculada.Month <> currentDate.Month Then
+        '    currentDate = currentDate.AddMonths(1)
+        '    currentDate = New Date(currentDate.Year, currentDate.Month, 1)
+        '    nuevo_mes = ""
+        'Else
+        '    currentDate = fecha_calculada
+        'End If
 
 
         'currentDate = currentDate.AddMonths(1)
@@ -362,34 +430,43 @@
             Case DayOfWeek.Sunday
                 rango_a = currentDate
                 rango_b = currentDate.AddDays(6)
-                If currentDate <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(6) Then
-                    currentDate = DateTime.Today
-                End If
-            Case DayOfWeek.Monday
-                If currentDate.AddDays(-1) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(5) Then
-                    currentDate = DateTime.Today
-                End If
-            Case DayOfWeek.Tuesday
-                If currentDate.AddDays(-2) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(4) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(6) Then
+                '    currentDate = DateTime.Today
+                'End If
 
+                currentDate = currentDate.AddDays(7)
+
+            Case DayOfWeek.Monday
+                'If currentDate.AddDays(-1) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(5) Then
+                '    currentDate = DateTime.Today
+                'End If
+
+                currentDate = currentDate.AddDays(6)
+            Case DayOfWeek.Tuesday
+                'If currentDate.AddDays(-2) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(4) Then
+                '    currentDate = DateTime.Today
+                'End If
+                currentDate = currentDate.AddDays(5)
             Case DayOfWeek.Wednesday
-                If currentDate.AddDays(-3) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(3) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.AddDays(-3) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(3) Then
+                '    currentDate = DateTime.Today
+                'End If
+                currentDate = currentDate.AddDays(4)
             Case DayOfWeek.Thursday
-                If currentDate.AddDays(-4) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(2) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.AddDays(-4) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(2) Then
+                '    currentDate = DateTime.Today
+                'End If
+                currentDate = currentDate.AddDays(3)
             Case DayOfWeek.Friday
-                If currentDate.AddDays(-5) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(1) Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.AddDays(-5) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate.AddDays(1) Then
+                '    currentDate = DateTime.Today
+                'End If
+                currentDate = currentDate.AddDays(2)
             Case DayOfWeek.Saturday
-                If currentDate.AddDays(-6) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate Then
-                    currentDate = DateTime.Today
-                End If
+                'If currentDate.AddDays(-6) <= dia_DEL_sistema And dia_DEL_sistema <= currentDate Then
+                '    currentDate = DateTime.Today
+                'End If
+                currentDate = currentDate.AddDays(1)
         End Select
 
         limpiar_nro_dias()
@@ -401,8 +478,12 @@
 
 
     Private Sub cargar_citas()
-        Dim startDate As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
-        Dim endDate As DateTime = startDate.AddMonths(1).AddDays(-1)
+        Dim startDate As DateTime = New Date(currentDate.Year, 1, 1)
+        Dim fecha_inicio As DateTime = New Date(currentDate.Year, currentDate.Month, 1)
+
+        Dim endDate As DateTime = startDate.AddMonths(12).AddDays(-1)
+        Dim fecha_final As DateTime = startDate.AddMonths(1).AddDays(-1)
+
         'STARTDATE ES EL PRIMER DIA DEL MES
         'ENDDATE ES EL ULTIMO DIA DEL MES
         'CON ESTE INTERVALO TENGO QUE VALIDAR LOS MANTENIMIENTOS INICIALES.
@@ -434,26 +515,30 @@
                 Dim valido As String = "si"
                 If dias <> 0 Then
                     While valido = "si"
+
+
                         If fecha <= endDate.ToShortDateString Then
                             'aplico el calculo de los dias
                             fecha = fecha.AddDays(dias)
                             'si la fecha cuando le agrego los dias cae un sabado o domingo lo paso para el siguiente dia laboral.
+                            '//////////////////comente el 01-11-2021---choco/////////////////////////////////////////////////
                             If (fecha.DayOfWeek = DayOfWeek.Saturday) Then
                                 If fecha.AddDays(2) <= endDate.ToShortDateString Then
                                     fecha = fecha.AddDays(2) 'sabado le sumo 2 'le sumo 2 si y solo si es el fin de semana previo a la fecha q se selecciono en el calendario
                                 Else
                                     'si es mayor a la fecha limite, entonces no lo agrego
-                                    Exit While
+                                    'Exit While
                                 End If
                             Else
                                 If fecha.DayOfWeek = DayOfWeek.Sunday Then
                                     If fecha.AddDays(1) <= endDate.ToShortDateString Then
                                         fecha = fecha.AddDays(1) 'domingo le sumo 1, sumo 1 si y solo si es el fin de semana previ a la fecha q se selecciono en el calendario
                                     Else
-                                        Exit While 'no lo agrego
+                                        'Exit While 'no lo agrego
                                     End If
                                 End If
                             End If
+                            '//////////////////comente el 01-11-2021---choco//////////////////////fin///////////////////////////
                             'ahora: si la fecha calculada esta dentro del mes actua, lo agrego. sino sigo ciclando
                             If (startDate.ToShortDateString <= fecha) And (fecha <= endDate.ToShortDateString) Then
                                 Dim fila As DataRow = Mantenimiento_ds.Tables("MANTENIMIENTOS1").NewRow
@@ -471,6 +556,12 @@
                     End While
                     '********************************************************************
                 End If
+
+                '****************prueba choco, agrego todos los mantenimientos programados
+
+
+
+
                 ii = ii + 1
             End While
         End If
@@ -555,13 +646,17 @@
             End If
 
             Dim ultimo_dia_semana As Date
-            'si el sabado esta en vacio, tengo que recuperar el ultimo dia del mes.
-            If dia_sabado_nro.Text = "" Then
-                Dim ultimo_dia As Integer = currentDate.AddDays(-1).Day
-                ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, ultimo_dia) 'ultimo dia del mes vigente.
-            Else
-                ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, CInt(dia_sabado_nro.Text))
-            End If
+
+            ultimo_dia_semana = primer_dia_semana.AddDays(6)
+            
+
+
+            'If dia_sabado_nro.Text = "" Then
+            '    Dim ultimo_dia As Integer = currentDate.AddDays(-1).Day
+            '    ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, ultimo_dia) 'ultimo dia del mes vigente.
+            'Else
+            '    ultimo_dia_semana = New Date(currentDate.Year, currentDate.Month, CInt(dia_sabado_nro.Text))
+            'End If
 
             Dim i As Integer = 0
             While i < Mantenimiento_ds.Tables("MANTENIMIENTOS1").Rows.Count
