@@ -204,9 +204,12 @@
                   <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">ESC = RETROCEDE</button>
                     &nbsp;
                     
-                         <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
+                         
         
                     
+                    </div>
+                    <div class="form-group">
+                    <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="EXPORTAR A EXCEL" onkeydown="tecla_op_botones(event);" />
                     </div>
                  
          </div>
