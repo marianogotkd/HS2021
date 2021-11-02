@@ -32,61 +32,35 @@
                               <asp:BoundField DataField="Nro." HeaderText="Nro." >
                               <HeaderStyle ForeColor="#0099FF" />
                               </asp:BoundField>
-                              <asp:BoundField DataField="ApeyNom" HeaderText="Alumno" >
+                              <asp:BoundField DataField="Alumno" HeaderText="Alumno" >
                               <HeaderStyle ForeColor="#0099FF" />
                               </asp:BoundField>
-                              <asp:BoundField DataField="Dni" HeaderText="Dni" >
+                              <asp:BoundField DataField="usuario_doc" HeaderText="Dni" >
                               <HeaderStyle ForeColor="#0099FF" />
                               </asp:BoundField>
-                              <asp:BoundField DataField="Libreta" HeaderText="Libreta" >
-                              <HeaderStyle ForeColor="#0099FF" />
+                              <asp:BoundField DataField="graduacion_desc" HeaderText="Graduacion" >
                               </asp:BoundField>
-                              <asp:BoundField DataField="Grad.Rendir" HeaderText="Grad.Rendir" >
-                              <HeaderStyle ForeColor="#0099FF" />
+                              <asp:BoundField DataField="instructor" HeaderText="Instructor" >
                               </asp:BoundField>
-                              <asp:BoundField DataField="Edad" HeaderText="Edad" >
-                              <HeaderStyle ForeColor="#0099FF" />
-                              </asp:BoundField>
-                              <asp:BoundField DataField="Exam.Anterior" HeaderText="Exam.Anterior" 
-                                  Visible="False" >
-                              <HeaderStyle ForeColor="#0099FF" />
-                              </asp:BoundField>
-                              <asp:BoundField DataField="Instructor" HeaderText="Instructor" >
-                              <HeaderStyle ForeColor="#0099FF" />
-                              </asp:BoundField>
-                              <asp:BoundField DataField="usuario_id" HeaderText="usuario_id" 
-                                  Visible="False" />
-                              <asp:BoundField DataField="Graduacion" HeaderText="Graduacion" 
-                                  Visible="False" />
-                              <asp:BoundField DataField="graduacion_id" HeaderText="graduacion_id" 
-                                  Visible="False" />
-                              <asp:BoundField DataField="instructor_id" HeaderText="instructor_id" 
-                                  Visible="False" />
-                              <asp:BoundField DataField="evento_id" HeaderText="evento_id" Visible="False" />
-                              <asp:BoundField DataField="Turno" HeaderText="Turno" >
-                              <HeaderStyle ForeColor="#0099FF" />
-                              </asp:BoundField>
-                              <asp:BoundField DataField="Inscexamen_id" HeaderText="Inscexamen_id" 
-                                  Visible="False" />
-                              <asp:TemplateField HeaderText="Mover">
-                                  <EditItemTemplate>
-                                      <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                                  </EditItemTemplate>
-                                  <ItemTemplate>
-                                      <asp:CheckBox ID="chk_mover" runat="server" style="text-align: center" />
-                                  </ItemTemplate>
-                                  <HeaderStyle ForeColor="#00CC99" />
-                              </asp:TemplateField>
                               <asp:TemplateField HeaderText="Eliminar">
                                   <EditItemTemplate>
                                       <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                                   </EditItemTemplate>
                                   <ItemTemplate>
-                                      <asp:Button ID="Button1" runat="server" CommandName="op_eliminar" CommandArgument='<%# Eval("Inscexamen_id") %>' 
+                                      <asp:Button ID="Button1" runat="server" CommandName="op_eliminar" CommandArgument='<%# Eval("inscripcion_id") %>' 
                                           Text="Eliminar" />
                                   </ItemTemplate>
                                   <HeaderStyle ForeColor="#FF5050" />
                               </asp:TemplateField>
+                              <asp:BoundField DataField="usuario_id" HeaderText="usuario_id" 
+                                  Visible="False" >
+                              </asp:BoundField>
+                              <asp:BoundField DataField="inscripcion_id" HeaderText="inscripcion_id" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
+                              <asp:BoundField DataField="evento_id" HeaderText="evento_id" Visible="False" >
+                              <HeaderStyle ForeColor="#0099FF" />
+                              </asp:BoundField>
                           </Columns>
                       </asp:GridView>
 

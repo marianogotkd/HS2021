@@ -157,6 +157,7 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="dist\js\table2excel.js" />
     <Content Include="docs\404.html" />
     <Content Include="docs\assets\css\adminlte.css" />
     <Content Include="docs\assets\css\adminlte.min.css" />
