@@ -76,9 +76,18 @@
                 btn_guardar.Image = My.Resources.floppy_disk30x30
             Else
                 If estado_sesion = "Finalizado" Then
-                    btn_finalizar.Enabled = False
+
+                    'btn_finalizar.Enabled = False
+                    btn_finalizar.Enabled = True
                     btn_guardar.Enabled = False
-                    GroupBox7.Enabled = False
+                    'GroupBox7.Enabled = False
+                    '-----deshabilito las opciones que tienen que ver con el stock---
+                    tb_AV.Enabled = False
+                    btn_NAV.Enabled = False
+                    GroupBox2.Enabled = False
+
+
+
                     GroupBox_insumos.Enabled = False
 
                 Else
@@ -1263,7 +1272,9 @@
     End Sub
 
 
-    Private Sub btn_finalizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_finalizar.Click
+    Private Sub estadoConectado_Finalizado()
+        'guarda los datos, pasa del estado conectado a finalizado
+
         Dim valido_peso As String = "no"
         Dim vPesoI As Decimal = (Math.Round(CDec(tb_PesoI.Text), 2).ToString("N2"))
         Dim vPesoE As Decimal = (Math.Round(CDec(tb_PesoE.Text), 2).ToString("N2"))
@@ -1488,11 +1499,109 @@
             lbl_err5.Visible = True 'tension arterial
             'lbl_err6.Visible = True 'observacion
             lbl_err7.Visible = True 'tipo acceso vascular
-
-
-
             MessageBox.Show("Complete los Campos Obligatorios. ", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
+    End Sub
+
+    Private Sub estadoFinalizado_actualizar()
+        'se actualizan los datos, solo aquellos que no afecten al stock
+        Dim validar_ingreso = "si"
+
+        Dim valido_peso As String = "si"
+        Dim vPesoI As Decimal = (Math.Round(CDec(tb_PesoI.Text), 2).ToString("N2"))
+        Dim vPesoE As Decimal = (Math.Round(CDec(tb_PesoE.Text), 2).ToString("N2"))
+
+        If vPesoI > CDec(0) And vPesoE > CDec(0) Then
+        Else
+            valido_peso = "no"
+            validar_ingreso = "no"
+        End If
+
+        If tb_PesoS.Text = "" Then
+            tb_PesoS.Text = CDec(0)
+        End If
+        If tb_talla.Text = "" Then
+            tb_talla.Text = CDec(0)
+        End If
+
+
+        Dim valido_tension As String = "no"
+        Dim vTAI As Decimal = (Math.Round(CDec(tb_TAI.Text), 2).ToString("N2"))
+        Dim vTAE As Decimal = (Math.Round(CDec(tb_TAE.Text), 2).ToString("N2"))
+
+        If vTAI > CDec(0) And vTAE > CDec(0) Then
+            valido_tension = "si"
+        Else
+            valido_tension = "no"
+            validar_ingreso = "no"
+        End If
+
+        If tb_HI.Text = "" Or tb_HE.Text = "" Or tb_tiempoHD.Text = "" Then
+            validar_ingreso = "no"
+        End If
+
+        If validar_ingreso = "si" Then
+
+            'Dim concepto As String
+            'concepto = "Insumo consumido en Enfermeria"
+            ''''Alta en tabla Movimiento_Mercaderia''''''''''
+            tb_Filtro.Text = 0
+            Dim result As Integer = MessageBox.Show("¿Esta seguro que desea actualizar la información de la sesión Finalizada?", "Sistema de Gestión", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = DialogResult.Yes Then
+
+                '///////////////////////////le doy el formado correcto a los textbox q deben ser si o si decimales con 2 digitos despues de la coma
+                Dim PesoS As Decimal = (Math.Round(CDec(tb_PesoS.Text), 2).ToString("N2"))
+                Dim talla As Decimal = (Math.Round(CDec(tb_talla.Text), 2).ToString("N2"))
+                Dim PesoI As Decimal = (Math.Round(CDec(tb_PesoI.Text), 2).ToString("N2"))
+                Dim PesoE As Decimal = (Math.Round(CDec(tb_PesoE.Text), 2).ToString("N2"))
+                Dim TAI As Decimal = (Math.Round(CDec(tb_TAI.Text), 2).ToString("N2"))
+                Dim TAE As Decimal = (Math.Round(CDec(tb_TAE.Text), 2).ToString("N2"))
+                '/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                DaEnfermeria.Dialisis_modificar(fecha_registrar, modificar_sesiones_id, PesoS, talla, tb_HI.Text, tb_HE.Text, tb_tiempoHD.Text, PesoI, PesoE, TAI, TAE, cb_filtro.Text, tb_Obs.Text, tb_AV.Text)
+
+                'registro actividad usuario///////////////////////////////////////////////////////
+                Dim usuario_id As String
+                usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado
+
+                'registro actividad del usuario
+                DAusuario.UsuarioActividad_registrar_sesiones_dialisis(usuario_id, sucursal_id, modificar_sesiones_id, Now, "")
+                
+                '////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                MessageBox.Show("La información se registró correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lbl_err.Visible = False
+                lbl_err1.Visible = False
+                lbl_err2.Visible = False
+                lbl_err3.Visible = False
+                lbl_err4.Visible = False
+                lbl_err5.Visible = False
+                lbl_err6.Visible = False
+                lbl_err7.Visible = False
+                limpiar()
+            Else
+
+            End If
+        Else
+            lbl_err4.Visible = True 'peso
+            lbl_err3.Visible = True 'horarios
+            lbl_err5.Visible = True 'tension arterial
+
+            'lbl_err.Visible = True 'peso seco
+            'lbl_err1.Visible = True 'talla
+            'lbl_err2.Visible = True 'tipo filtro
+            'lbl_err6.Visible = True 'observacion
+            'lbl_err7.Visible = True 'tipo acceso vascular
+            MessageBox.Show("Complete los Campos Obligatorios. ", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub btn_finalizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_finalizar.Click
+        Select Case estado_sesion
+            Case "Conectado"
+                estadoConectado_Finalizado()
+            Case "Finalizado"
+                estadoFinalizado_actualizar()
+        End Select
     End Sub
 
     Private Sub tb_PesoS_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles tb_PesoS.LostFocus
