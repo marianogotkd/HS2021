@@ -37,6 +37,10 @@
             document.getElementsByTagName('button')[1].click();
 
         }
+
+        
+
+
         //        ///no voy a anular el ENTER
         //        if (keycode == '13') {
         //            e.preventDefault();
@@ -69,6 +73,9 @@
             document.getElementsByTagName('button')[0].focus();
             document.getElementsByTagName('button')[0].click();
         }
+
+
+        
 
 
         //F8 GRABA
@@ -195,9 +202,12 @@
                   <button type="submit" UseSubmitBehavior="false" class="btn btn-primary" runat="server" id="btn_retroceder" onkeydown="tecla_op_botones(event);">ESC = RETROCEDE</button>
                     &nbsp;
                     
-                         <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
+                         
         
                     
+                    </div>
+                    <div class="form-group">
+                    <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="EXPORTAR A EXCEL" onkeydown="tecla_op_botones(event);"/>
                     </div>
                  
          </div>
