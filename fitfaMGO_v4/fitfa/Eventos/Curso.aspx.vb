@@ -30,10 +30,42 @@
             GridView2.DataSource = Curso_DS.Curso_recuperar_inscriptos
             GridView2.DataBind()
 
+            Dim i As Integer = 0
+            While i < GridView2.Rows.Count
+                GridView2.Rows(i).Cells(0).Text = i + 1 'Nro.
+                i = i + 1
+            End While
+            Label_evento_cant_inscriptos_b.Text = ds_inscriptos.Tables(0).Rows.Count
+            Label_evento_b.Text = CStr(ds_inscriptos.Tables(0).Rows(0).Item("evento_descripcion"))
+            Label_evento_fecha_b.Text = CStr(ds_inscriptos.Tables(0).Rows(0).Item("evento_fecha"))
+            Label_evento_direccion_b.Text = CStr(ds_inscriptos.Tables(0).Rows(0).Item("evento_direccion"))
+
+
+        Else
+            div_msj_error_eliminar.Visible = True
         End If
 
+     
 
 
+    End Sub
+
+    Private Sub GridView2_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView2.RowCommand
+        If (e.CommandName = "op_eliminar") Then
+            'If Not IsPostBack Then
+            ' Retrieve the row index stored in the CommandArgument property.
+            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+            Dim id As Integer = Integer.Parse(e.CommandArgument.ToString()) 'este es el id de la inscripcion = Inscexamen_id
+            Session("Inscexamen_id") = id
+            'solo se elimina si aun no está calificado.
+            'luego de eliminar debo volver a cargar todas las grillas.
+            DAinscripciones.inscripciones_CURSO_eliminar(CInt(Session("Inscexamen_id")))
+            Carga_inicial_LOAD()
+            '---deshabilito el modal para confirmar eliminacion
+            'div_Modal_ELIMINAR_inscripto.Visible = True
+            'Modal_ELIMINAR_inscripto.Show()
+            'End If
+        End If
     End Sub
 
 End Class

@@ -13,8 +13,13 @@
             Session("popup") = "si"
             'popup = "no"
             choco.Visible = False
+            If Session("ConDni") = True Then
+                Master.FindControl("Menu_Web").Visible = False
+            End If
+
 
         End If
+
     End Sub
 
     Private Sub obtener_eventos_disponibles()

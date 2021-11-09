@@ -23,7 +23,8 @@
                       
 
                        
-                 
+                     <div id="Div1" >
+
                       <asp:GridView ID="GridView2" class="table table-hover" runat="server" 
                 AllowSorting="True" AutoGenerateColumns="False" 
                            BorderColor="Black" 
@@ -63,36 +64,23 @@
                               </asp:BoundField>
                           </Columns>
                       </asp:GridView>
+                      <br />
+                      
+                           <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
 
-
-
-                        <div id="div_msj_error_eliminar" runat="server">
-            <asp:HiddenField ID="HiddenField_msj" runat="server" />
-            <asp:Panel ID="Panel1" runat="server" >
+                       
+            </div   
+            
+            <div id="div_msj_error_eliminar" runat="server" visible=false>
+          
+                <asp:Panel ID="Panel1" runat="server" >
                           <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Advertencia</h3>
+                                <div class="card-header">
+                                  <h3 class="card-title">NO HAY INSCRIPTOS PARA EL EVENTO</h3>
+                                </div>         
+                          </div>
+               </asp:Panel>
             </div>
-            <form role="form">
-              <div class="card-body"> 
-              <div class="row">
-              <div align="center">
-                    <asp:Label ID="Label12" runat="server" Text="No puede eliminar. El alumno ya fue evaluado!"></asp:Label>
-                    &nbsp;
-              </div>
-              <div align="center">
-                    <asp:Button ID="Btb_msj_no_eliminar" runat="server" Text="OK" />
-              </div>  
-              </div>
-              </div>
-            </form>              
-            </div> 
-        </asp:Panel>
-                           <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="HiddenField_msj" PopupControlID="Panel1" CancelControlID="Btb_msj_no_eliminar" BackgroundCssClass="modalBackground">
-                            </asp:ModalPopupExtender>
-            </div>
-
-
 
  </ContentTemplate>
 

@@ -41,6 +41,15 @@ Partial Public Class MasterPage
     Protected WithEvents lbl_torneo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control Menu_Web.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Menu_Web As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control imgusu.
     '''</summary>
     '''<remarks>
