@@ -292,6 +292,8 @@ Public Class Inscripciones
         Return ds
     End Function
 
+
+
     Public Function inscripciones_x_examen_alta(ByVal inscripcion_id As Integer, ByVal ExamenTurno_id As Integer, ByVal graduacion_actual_id As Integer) As DataSet
         Try
             dbconn.Open()
@@ -401,11 +403,30 @@ Public Class Inscripciones
         Return ds
     End Function
 
-
-
-
-
-
 #End Region
+
+
+#Region "Curso"
+    Public Function inscripciones_CURSO_eliminar(ByVal inscripcion_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("inscripciones_CURSO_eliminar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_id", inscripcion_id))
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "INSCRIPCIONES")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+#End Region
+
 
 End Class

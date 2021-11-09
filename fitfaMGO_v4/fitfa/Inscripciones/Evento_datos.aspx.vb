@@ -49,6 +49,9 @@ Public Class Evento_datos
 
             End If
 
+            If Session("ConDni") = True Then
+                Master.FindControl("Menu_Web").Visible = False
+            End If
 
 
         End If

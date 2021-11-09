@@ -6,23 +6,7 @@ fitfa
 </name>
 </assembly>
 <members>
-<member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:fitfa.Curso_DS">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="F:fitfa.Llave_selecc_evento.ScriptManager1">
+<member name="F:fitfa.Llave_selecc_evento.ScriptManager1">
 	<summary>
 Control ScriptManager1.
 </summary>
@@ -2863,6 +2847,14 @@ Control lbl_torneo.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:fitfa.MasterPage.Menu_Web">
+	<summary>
+Control Menu_Web.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:fitfa.MasterPage.imgusu">
 	<summary>
 Control imgusu.
@@ -5039,6 +5031,22 @@ Control RadioButton_tecnica_no.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:fitfa.Curso_DS.Curso_recuperar_inscriptosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:fitfa.Curso_DS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member><member name="F:fitfa.Inicio_Blanco.div_area">
 	<summary>
 Control div_area.
@@ -8868,41 +8876,9 @@ Control div_msj_error_eliminar.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:fitfa.Curso.HiddenField_msj">
-	<summary>
-Control HiddenField_msj.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
 </member><member name="F:fitfa.Curso.Panel1">
 	<summary>
 Control Panel1.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Curso.Label12">
-	<summary>
-Control Label12.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Curso.Btb_msj_no_eliminar">
-	<summary>
-Control Btb_msj_no_eliminar.
-</summary>
-	<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member><member name="F:fitfa.Curso.ModalPopupExtender1">
-	<summary>
-Control ModalPopupExtender1.
 </summary>
 	<remarks>
 Campo generado automáticamente.

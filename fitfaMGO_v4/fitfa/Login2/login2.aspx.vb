@@ -25,7 +25,7 @@ Public Class login2
 
                     Dim Ds_torneo As DataSet = DATorneo.UsuarioEvento_Obtener(Session("Us_id"))
                     Session("evento_id") = Ds_torneo.Tables(0).Rows(0).Item(1).ToString
-
+                    Session("ConDni") = False
                     Response.Redirect("../Torneo/Seleccion_Area.aspx")
                 Else
                     Response.Redirect("../Inicio_Blanco.aspx")
