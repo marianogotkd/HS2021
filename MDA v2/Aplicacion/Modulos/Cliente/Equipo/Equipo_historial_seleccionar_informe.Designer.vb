@@ -23,11 +23,11 @@ Partial Class Equipo_historial_seleccionar_informe
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RB_informe_simple = New System.Windows.Forms.RadioButton()
         Me.RB_informe_detallado = New System.Windows.Forms.RadioButton()
+        Me.RB_informe_simple = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RB_solo_seleccion = New System.Windows.Forms.RadioButton()
         Me.RB_todo = New System.Windows.Forms.RadioButton()
+        Me.RB_solo_seleccion = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -37,12 +37,23 @@ Partial Class Equipo_historial_seleccionar_informe
         '
         Me.GroupBox1.Controls.Add(Me.RB_informe_detallado)
         Me.GroupBox1.Controls.Add(Me.RB_informe_simple)
-        Me.GroupBox1.Location = New System.Drawing.Point(21, 21)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 140)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(187, 80)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccione tipo de informe"
+        Me.GroupBox1.Visible = False
+        '
+        'RB_informe_detallado
+        '
+        Me.RB_informe_detallado.AutoSize = True
+        Me.RB_informe_detallado.Location = New System.Drawing.Point(28, 50)
+        Me.RB_informe_detallado.Name = "RB_informe_detallado"
+        Me.RB_informe_detallado.Size = New System.Drawing.Size(109, 17)
+        Me.RB_informe_detallado.TabIndex = 1
+        Me.RB_informe_detallado.Text = "Informe detallado."
+        Me.RB_informe_detallado.UseVisualStyleBackColor = True
         '
         'RB_informe_simple
         '
@@ -57,25 +68,25 @@ Partial Class Equipo_historial_seleccionar_informe
         Me.RB_informe_simple.Text = "Informe Simple"
         Me.RB_informe_simple.UseVisualStyleBackColor = True
         '
-        'RB_informe_detallado
-        '
-        Me.RB_informe_detallado.AutoSize = True
-        Me.RB_informe_detallado.Location = New System.Drawing.Point(28, 50)
-        Me.RB_informe_detallado.Name = "RB_informe_detallado"
-        Me.RB_informe_detallado.Size = New System.Drawing.Size(109, 17)
-        Me.RB_informe_detallado.TabIndex = 1
-        Me.RB_informe_detallado.Text = "Informe detallado."
-        Me.RB_informe_detallado.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.RB_todo)
         Me.GroupBox2.Controls.Add(Me.RB_solo_seleccion)
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 112)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(187, 75)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'RB_todo
+        '
+        Me.RB_todo.AutoSize = True
+        Me.RB_todo.Location = New System.Drawing.Point(28, 42)
+        Me.RB_todo.Name = "RB_todo"
+        Me.RB_todo.Size = New System.Drawing.Size(104, 17)
+        Me.RB_todo.TabIndex = 1
+        Me.RB_todo.Text = "Toda la consulta"
+        Me.RB_todo.UseVisualStyleBackColor = True
         '
         'RB_solo_seleccion
         '
@@ -89,21 +100,11 @@ Partial Class Equipo_historial_seleccionar_informe
         Me.RB_solo_seleccion.Text = "Solo items seleccionados"
         Me.RB_solo_seleccion.UseVisualStyleBackColor = True
         '
-        'RB_todo
-        '
-        Me.RB_todo.AutoSize = True
-        Me.RB_todo.Location = New System.Drawing.Point(28, 42)
-        Me.RB_todo.Name = "RB_todo"
-        Me.RB_todo.Size = New System.Drawing.Size(104, 17)
-        Me.RB_todo.TabIndex = 1
-        Me.RB_todo.Text = "Toda la consulta"
-        Me.RB_todo.UseVisualStyleBackColor = True
-        '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Blue
-        Me.Button1.Location = New System.Drawing.Point(50, 193)
+        Me.Button1.Location = New System.Drawing.Point(41, 93)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(108, 41)
         Me.Button1.TabIndex = 2
@@ -116,7 +117,7 @@ Partial Class Equipo_historial_seleccionar_informe
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(228, 244)
+        Me.ClientSize = New System.Drawing.Size(210, 143)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
