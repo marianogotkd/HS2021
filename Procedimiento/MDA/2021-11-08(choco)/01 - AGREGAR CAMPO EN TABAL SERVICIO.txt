@@ -1,0 +1,53 @@
+AGREGAR CAMPO Equipo_id int
+
+
+USE [SantaFe]
+GO
+
+/****** Object:  Table [dbo].[Servicio]    Script Date: 11/08/2021 23:32:32 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Servicio](
+	[Servicio_id] [int] IDENTITY(1,1) NOT NULL,
+	[CLI_id] [int] NULL,
+	[Servicio_fecha] [datetime] NULL,
+	[sucursal_id] [int] NULL,
+	[USU_id] [int] NULL,
+	[Servicio_Diagnostico] [varchar](max) NULL,
+	[Servicio_Sucursal] [varchar](50) NULL,
+	[Servicio_Equipo] [varchar](50) NULL,
+	[Servicio_FechaRev] [datetime] NULL,
+	[Servicio_FechaRep] [datetime] NULL,
+	[Servicio_imei] [varchar](50) NULL,
+	[Servicio_Marca] [varchar](50) NULL,
+	[Servicio_Modelo] [varchar](50) NULL,
+	[Servicio_Color] [varchar](50) NULL,
+	[Servicio_bat] [varchar](50) NULL,
+	[Servicio_Obs] [varchar](50) NULL,
+	[Servicio_ManoObra] [decimal](32, 2) NULL,
+	[Servicio_Anticipo] [decimal](32, 2) NULL,
+	[Servicio_Nombre] [varchar](50) NULL,
+	[Servicio_dni] [int] NULL,
+	[Servicio_dir] [varchar](50) NULL,
+	[Servicio_tel] [varchar](50) NULL,
+	[Servicio_Estado] [varchar](50) NULL,
+	[SucxClie_id] [int] NULL,
+	[Servicio_Desc_peso] [decimal](32, 2) NULL,
+	[Servicio_Desc_porc] [decimal](32, 2) NULL,
+	[Servicio_IVA] [decimal](32, 2) NULL,
+	[Equipo_id] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

@@ -23,12 +23,12 @@ Partial Class Servicio_nuevo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton_generar = New System.Windows.Forms.ToolStripButton()
@@ -50,6 +50,15 @@ Partial Class Servicio_nuevo
         Me.btn_eliminar_seleccion = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Cod_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProdxSuc_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prod_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.ServicioProdDSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Servicio_DS = New Aplicacion.Servicio_DS()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -107,15 +116,7 @@ Partial Class Servicio_nuevo
         Me.txt_equipo = New System.Windows.Forms.TextBox()
         Me.lb_error_nombre = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Cod_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProdxSuc_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prod_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.cb_equipos = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel_costos.SuspendLayout()
@@ -395,12 +396,95 @@ Partial Class Servicio_nuevo
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridView1.Size = New System.Drawing.Size(736, 143)
         Me.DataGridView1.TabIndex = 1
+        '
+        'Cod_prod
+        '
+        Me.Cod_prod.DataPropertyName = "Cod_prod"
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Info
+        Me.Cod_prod.DefaultCellStyle = DataGridViewCellStyle13
+        Me.Cod_prod.FillWeight = 76.39836!
+        Me.Cod_prod.HeaderText = "Codigo"
+        Me.Cod_prod.Name = "Cod_prod"
+        Me.Cod_prod.ReadOnly = True
+        Me.Cod_prod.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Cod_prod.Width = 80
+        '
+        'ProdxSuc_ID
+        '
+        Me.ProdxSuc_ID.DataPropertyName = "ProdxSuc_ID"
+        Me.ProdxSuc_ID.HeaderText = "ProdxSuc_ID"
+        Me.ProdxSuc_ID.Name = "ProdxSuc_ID"
+        Me.ProdxSuc_ID.Visible = False
+        '
+        'Descripcion
+        '
+        Me.Descripcion.DataPropertyName = "Descripcion"
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Info
+        Me.Descripcion.DefaultCellStyle = DataGridViewCellStyle14
+        Me.Descripcion.FillWeight = 194.224!
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 203
+        '
+        'Stock
+        '
+        Me.Stock.DataPropertyName = "Stock"
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Info
+        Me.Stock.DefaultCellStyle = DataGridViewCellStyle15
+        Me.Stock.FillWeight = 83.94859!
+        Me.Stock.HeaderText = "Stock"
+        Me.Stock.Name = "Stock"
+        Me.Stock.ReadOnly = True
+        Me.Stock.Width = 70
+        '
+        'Cantidad
+        '
+        Me.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Cantidad.DataPropertyName = "Cantidad"
+        Me.Cantidad.FillWeight = 78.17754!
+        Me.Cantidad.HeaderText = "Cant."
+        Me.Cantidad.Name = "Cantidad"
+        '
+        'Costo
+        '
+        Me.Costo.DataPropertyName = "Costo"
+        Me.Costo.FillWeight = 104.2252!
+        Me.Costo.HeaderText = "Costo"
+        Me.Costo.Name = "Costo"
+        Me.Costo.Width = 109
+        '
+        'subtotal
+        '
+        Me.subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.subtotal.DataPropertyName = "subtotal"
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Info
+        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle16
+        Me.subtotal.FillWeight = 139.8219!
+        Me.subtotal.HeaderText = "SubTotal"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
+        '
+        'prod_id
+        '
+        Me.prod_id.DataPropertyName = "prod_id"
+        Me.prod_id.HeaderText = "prod_id"
+        Me.prod_id.Name = "prod_id"
+        Me.prod_id.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.FillWeight = 23.20432!
+        Me.Column1.HeaderText = ""
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 50
         '
         'ServicioProdDSBindingSource
         '
@@ -667,10 +751,10 @@ Partial Class Servicio_nuevo
         Me.DG_empleados.ReadOnly = True
         Me.DG_empleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_empleados.RowHeadersVisible = False
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_empleados.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_empleados.RowsDefaultCellStyle = DataGridViewCellStyle18
         Me.DG_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DG_empleados.Size = New System.Drawing.Size(330, 190)
         Me.DG_empleados.StandardTab = True
@@ -958,6 +1042,7 @@ Partial Class Servicio_nuevo
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cb_equipos)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.txt_diag)
         Me.GroupBox3.Controls.Add(Me.lb_error_modelo)
@@ -975,7 +1060,7 @@ Partial Class Servicio_nuevo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(313, 25)
+        Me.Label2.Location = New System.Drawing.Point(419, 26)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 16)
         Me.Label2.TabIndex = 19
@@ -984,10 +1069,10 @@ Partial Class Servicio_nuevo
         'txt_diag
         '
         Me.txt_diag.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_diag.Location = New System.Drawing.Point(400, 14)
+        Me.txt_diag.Location = New System.Drawing.Point(505, 14)
         Me.txt_diag.Multiline = True
         Me.txt_diag.Name = "txt_diag"
-        Me.txt_diag.Size = New System.Drawing.Size(674, 48)
+        Me.txt_diag.Size = New System.Drawing.Size(569, 48)
         Me.txt_diag.TabIndex = 0
         '
         'lb_error_modelo
@@ -1015,17 +1100,18 @@ Partial Class Servicio_nuevo
         'txt_equipo
         '
         Me.txt_equipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_equipo.Location = New System.Drawing.Point(63, 25)
+        Me.txt_equipo.Location = New System.Drawing.Point(382, 23)
         Me.txt_equipo.Name = "txt_equipo"
-        Me.txt_equipo.Size = New System.Drawing.Size(210, 22)
+        Me.txt_equipo.Size = New System.Drawing.Size(15, 22)
         Me.txt_equipo.TabIndex = 0
+        Me.txt_equipo.Visible = False
         '
         'lb_error_nombre
         '
         Me.lb_error_nombre.AutoSize = True
         Me.lb_error_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_error_nombre.ForeColor = System.Drawing.Color.Red
-        Me.lb_error_nombre.Location = New System.Drawing.Point(280, 15)
+        Me.lb_error_nombre.Location = New System.Drawing.Point(349, 20)
         Me.lb_error_nombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_error_nombre.Name = "lb_error_nombre"
         Me.lb_error_nombre.Size = New System.Drawing.Size(26, 31)
@@ -1033,88 +1119,18 @@ Partial Class Servicio_nuevo
         Me.lb_error_nombre.Text = "*"
         Me.lb_error_nombre.Visible = False
         '
-        'Cod_prod
+        'cb_equipos
         '
-        Me.Cod_prod.DataPropertyName = "Cod_prod"
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Info
-        Me.Cod_prod.DefaultCellStyle = DataGridViewCellStyle7
-        Me.Cod_prod.FillWeight = 76.39836!
-        Me.Cod_prod.HeaderText = "Codigo"
-        Me.Cod_prod.Name = "Cod_prod"
-        Me.Cod_prod.ReadOnly = True
-        Me.Cod_prod.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Cod_prod.Width = 80
-        '
-        'ProdxSuc_ID
-        '
-        Me.ProdxSuc_ID.DataPropertyName = "ProdxSuc_ID"
-        Me.ProdxSuc_ID.HeaderText = "ProdxSuc_ID"
-        Me.ProdxSuc_ID.Name = "ProdxSuc_ID"
-        Me.ProdxSuc_ID.Visible = False
-        '
-        'Descripcion
-        '
-        Me.Descripcion.DataPropertyName = "Descripcion"
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info
-        Me.Descripcion.DefaultCellStyle = DataGridViewCellStyle8
-        Me.Descripcion.FillWeight = 194.224!
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 203
-        '
-        'Stock
-        '
-        Me.Stock.DataPropertyName = "Stock"
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info
-        Me.Stock.DefaultCellStyle = DataGridViewCellStyle9
-        Me.Stock.FillWeight = 83.94859!
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        Me.Stock.ReadOnly = True
-        Me.Stock.Width = 70
-        '
-        'Cantidad
-        '
-        Me.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cantidad.DataPropertyName = "Cantidad"
-        Me.Cantidad.FillWeight = 78.17754!
-        Me.Cantidad.HeaderText = "Cant."
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'Costo
-        '
-        Me.Costo.DataPropertyName = "Costo"
-        Me.Costo.FillWeight = 104.2252!
-        Me.Costo.HeaderText = "Costo"
-        Me.Costo.Name = "Costo"
-        Me.Costo.Width = 109
-        '
-        'subtotal
-        '
-        Me.subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.subtotal.DataPropertyName = "subtotal"
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info
-        Me.subtotal.DefaultCellStyle = DataGridViewCellStyle10
-        Me.subtotal.FillWeight = 139.8219!
-        Me.subtotal.HeaderText = "SubTotal"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        '
-        'prod_id
-        '
-        Me.prod_id.DataPropertyName = "prod_id"
-        Me.prod_id.HeaderText = "prod_id"
-        Me.prod_id.Name = "prod_id"
-        Me.prod_id.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.FillWeight = 23.20432!
-        Me.Column1.HeaderText = ""
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 50
+        Me.cb_equipos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_equipos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.cb_equipos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cb_equipos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cb_equipos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.cb_equipos.FormattingEnabled = True
+        Me.cb_equipos.Location = New System.Drawing.Point(63, 20)
+        Me.cb_equipos.Name = "cb_equipos"
+        Me.cb_equipos.Size = New System.Drawing.Size(271, 24)
+        Me.cb_equipos.TabIndex = 245
         '
         'Servicio_nuevo
         '
@@ -1241,4 +1257,5 @@ Partial Class Servicio_nuevo
     Friend WithEvents subtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents prod_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents cb_equipos As System.Windows.Forms.ComboBox
 End Class

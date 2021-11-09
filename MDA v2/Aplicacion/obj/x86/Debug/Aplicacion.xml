@@ -1751,6 +1751,34 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Aplicacion.Equipos_ds.mant_listadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historialDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historial_detalleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_ordentrabajoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_cuadrillaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_productoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_mantenimientoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Aplicacion.Equipos_ds.EquipoRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -1771,6 +1799,34 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Aplicacion.Equipos_ds.mant_listadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historialRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historial_detalleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_ordentrabajoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_cuadrillaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_productoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_mantenimientoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Aplicacion.Equipos_ds.EquipoRowChangeEvent">
 	<summary>
 Row event argument class
@@ -1788,6 +1844,34 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Aplicacion.Equipos_ds.EmpresaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.mant_listadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historialRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.Equipo_historial_detalleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_ordentrabajoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_cuadrillaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.ordentrabajo_productoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Aplicacion.Equipos_ds.historial_mantenimientoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

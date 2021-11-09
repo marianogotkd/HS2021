@@ -18,6 +18,7 @@
     Dim combo_cuadrilla_listo As String = "no"
     Dim estado_de_orden As String
     Dim orden_trabajo_id As Integer
+    Public Equipo_id As Integer
     Public procedencia As String 'este parametro viene del form Ordeb_trabajo_selec_cliente
     Dim guardado As String = "no"
     Private Sub recuperar_cuadrillas()
@@ -164,6 +165,12 @@
             Label_Cod.Text = Ds_servicio.Tables(0).Rows(i).Item("Servicio_id").ToString
             Cliente_ID = Ds_servicio.Tables(0).Rows(i).Item("CLI_id").ToString
             SucxClie_id = Ds_servicio.Tables(0).Rows(i).Item("SucxClie_id").ToString
+            Try
+                Equipo_id = Ds_servicio.Tables(0).Rows(i).Item("Equipo_id")
+            Catch ex As Exception
+                Equipo_id = 0 'hago esto porque el cliente ya tiene cargado en Null algunas ordenes
+            End Try
+
             TextBox_Nombre.Text = Ds_servicio.Tables(0).Rows(i).Item("CLI_Fan").ToString
             TextBox_dni.Text = Ds_servicio.Tables(0).Rows(i).Item("CLI_dni").ToString
             TextBox_dir.Text = Ds_servicio.Tables(0).Rows(i).Item("SucxClie_dir").ToString 'esta direccion que se muestra es la de la sucursal. choco 22-12-2020
@@ -203,6 +210,8 @@
                 'Button_finalizar.Enabled = False
                 ToolStripButton_finalizar.Enabled = False
                 ToolStripButton_presupuesto.Enabled = False 'si no tiene orden generado no lo habilito
+            Else
+                cb_equipos.Enabled = False 'deshabilito el equipo, no puede cambiarse en los demas estados.
             End If
             If estado_de_orden = "ASIGNADO" Then
                 'Button_finalizar.Enabled = True
@@ -260,6 +269,27 @@
 
         Calcular_Totales()
         aplicar_iva()
+
+
+
+        'cargo equipos de la sucursal.
+        Dim ds_equipos As DataSet = DAservicio.Servicio_obtener_Equipo_sucursal(SucxClie_id)
+        cb_equipos.DataSource = ds_equipos.Tables(0)
+        cb_equipos.DisplayMember = "etiqueta"
+        cb_equipos.ValueMember = "Equipo_id"
+        'intento seleccionar el equipo_id
+        Try
+            cb_equipos.SelectedValue = Equipo_id
+        Catch ex As Exception
+            cb_equipos.SelectedValue = 0
+
+        End Try
+
+        If Equipo_id = 0 Then
+            cb_equipos.Text = txt_equipo.Text
+        End If
+
+
     End Sub
     Private Sub Bloquar_grupBox(ByVal Estado As String)
         If Estado = "FINALIZADO" Or Estado = "ANULADO" Then 'Or Estado = "REPARADO" Then SI EL ESTADO ES REPARADO VOY A DEJAR DE MOMENTO QUE SE PUEDA INCLUIR ALGUN CAMBIO MAS, PARA GUARDAR SE TIENE Q DARLE CLICK NUEVAMENTE AL BOTON DE REPARADO
@@ -460,14 +490,14 @@
     Dim servicio_id_recuperado As Integer = 0
     'Dim procedencia As String = ""
     Public Sub Guardar_BD(ByVal form_de_donde_vengo As String)
-
-        If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" And DataGridView1.Rows.Count <> 0 Then
+        'txt_equipo.Text <> "" antes validaba el ingreso en un textbox
+        If txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" And DataGridView1.Rows.Count <> 0 And cb_equipos.SelectedValue <> 0 Then
             If serv_id = 0 Then 'es alta
                 ''Alta'''
                 Dim ds_SevicioGuardar As DataSet = DAservicio.Servicio_alta_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                 sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                 txt_equipo.Text, DateTimePicker_REP.Value, DateTimePicker_Rev.Value,
-                                                                                0, "PENDIENTE", SucxClie_id, txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) ' el 0 es txt anticipo que se borro 
+                                                                                0, "PENDIENTE", SucxClie_id, txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, cb_equipos.SelectedValue) ' el 0 es txt anticipo que se borro 
 
 
                 ''Detalle''''
@@ -517,7 +547,7 @@
                                                                                 sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                0,
-                                                                            serv_id, "ASIGNADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en ASIGNADO ------El 0 es txt anticipo//26-1-21
+                                                                            serv_id, "ASIGNADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, cb_equipos.SelectedValue) 'pongo el estado en ASIGNADO ------El 0 es txt anticipo//26-1-21
 
                 'primero elimino el detalle
                 DAservicio.Servicio_eliminar_Detalle(serv_id)
@@ -594,10 +624,20 @@
 
         Else
             MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-            lbl_errNOM.Visible = True
-            lb_error_marca.Visible = True
-            lb_error_modelo.Visible = True
-            lb_error_nombre.Visible = True
+
+
+            'lbl_errNOM.Visible = True
+            If txt_sucursal.Text = "" Then
+                lb_error_marca.Visible = True
+            End If
+
+            If txt_diag.Text = "" Then
+                lb_error_modelo.Visible = True
+            End If
+            If cb_equipos.SelectedValue = 0 Then
+                lb_error_nombre.Visible = True
+            End If
+
             Label_error_grilla.Visible = True
             ' lb_error_observacion.Visible = True
         End If
@@ -675,7 +715,7 @@
         fila("direccion") = ds_clie.Tables(0).Rows(0).Item("SucxClie_dir").ToString  'esta direccion es la de la sucursal del cliente. choco 22-12-2020
         fila("fecha") = DateTimePicker_REP.Value.Date
         fila("diagnostico_previo") = txt_diag.Text
-        fila("Equipo") = txt_equipo.Text
+        fila("Equipo") = cb_equipos.Text
         fila("Sucursal") = txt_sucursal.Text
         ds_revision_reporte.Tables("Revision").Rows.Add(fila)
 
@@ -1147,17 +1187,21 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        lb_error_marca.Visible = False
+        lb_error_modelo.Visible = False
+        lb_error_nombre.Visible = False
+        Label_error_grilla.Visible = False
         If estado_de_orden = "ASIGNADO" Then
             Dim result As Integer = MessageBox.Show("¿Está seguro que desea cambiar el estado de la orden a REPARADO?", "Sistema de Gestión", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
+                If cb_equipos.SelectedValue <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
                     'solo actualizo el estado a reparado
                     ''Actualizacion Servicio'''''
                     Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                     sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                    txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                   0,
-                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, cb_equipos.SelectedValue) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
 
                     'primero elimino el detalle
                     DAservicio.Servicio_eliminar_Detalle(serv_id)
@@ -1191,10 +1235,16 @@
 
                 Else
                     MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-                    lbl_errNOM.Visible = True
-                    lb_error_marca.Visible = True
-                    lb_error_modelo.Visible = True
-                    lb_error_nombre.Visible = True
+                    If txt_sucursal.Text = "" Then
+                        lb_error_marca.Visible = True
+                    End If
+
+                    If txt_diag.Text = "" Then
+                        lb_error_modelo.Visible = True
+                    End If
+                    If cb_equipos.SelectedValue = 0 Then
+                        lb_error_nombre.Visible = True
+                    End If
                 End If
             End If
         Else
@@ -1410,6 +1460,12 @@
     End Sub
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton_generar.Click
+
+        lb_error_marca.Visible = False
+        lb_error_modelo.Visible = False
+        lb_error_nombre.Visible = False
+        Label_error_grilla.Visible = False
+
         If estado_de_orden <> "REPARADO" Then
             Dim result As Integer = MessageBox.Show("¿Está seguro que desea guardar los cambios y generar la ORDEN DE TRABAJO?", "Sistema de Gestión", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
@@ -1553,6 +1609,11 @@
 
 
     Private Sub ToolStripButton_presupuesto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton_presupuesto.Click
+        lb_error_marca.Visible = False
+        lb_error_modelo.Visible = False
+        lb_error_nombre.Visible = False
+        Label_error_grilla.Visible = False
+
         If estado_de_orden = "ANULADO" Then
             Exit Sub 'salgo no quiero q haga nada
         End If
@@ -1561,14 +1622,20 @@
             Dim result As Integer = MessageBox.Show("¿Desea guardar los cambios antes de generar el Presupuesto?", "Sistema de Gestión", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 'si dice que si guardo en bd
-                If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
+                If txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
                     'solo actualizo el estado a reparado
                     ''Actualizacion Servicio'''''
+                    Dim parametro_Equipo_id As Integer
+                    Try
+                        parametro_Equipo_id = cb_equipos.SelectedValue
+                    Catch ex As Exception
+                        parametro_Equipo_id = 0
+                    End Try
                     Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                     sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                    txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                   0,
-                                                                                serv_id, estado_de_orden, txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+                                                                                serv_id, estado_de_orden, txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, parametro_Equipo_id) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
 
                     'primero elimino el detalle
                     DAservicio.Servicio_eliminar_Detalle(serv_id)
@@ -1594,10 +1661,18 @@
 
                 Else
                     MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-                    lbl_errNOM.Visible = True
-                    lb_error_marca.Visible = True
-                    lb_error_modelo.Visible = True
-                    lb_error_nombre.Visible = True
+                    If txt_sucursal.Text = "" Then
+                        lb_error_marca.Visible = True
+                    End If
+
+                    If txt_diag.Text = "" Then
+                        lb_error_modelo.Visible = True
+                    End If
+                    If cb_equipos.SelectedValue = 0 Then
+                        lb_error_nombre.Visible = True
+                    End If
+
+
                 End If
             Else
                 'aqui genero el presupuesto
@@ -1614,17 +1689,29 @@
     End Sub
 
     Private Sub ToolStripButton_reparar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton_reparar.Click
+        lb_error_marca.Visible = False
+        lb_error_modelo.Visible = False
+        lb_error_nombre.Visible = False
+        Label_error_grilla.Visible = False
+
         If estado_de_orden = "ASIGNADO" Then
             Dim result As Integer = MessageBox.Show("¿Está seguro que desea cambiar el estado de la orden a REPARADO?", "Sistema de Gestión", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
+                If txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
                     'solo actualizo el estado a reparado
                     ''Actualizacion Servicio'''''
+                    Dim parametro_Equipo_id As Integer
+                    Try
+                        parametro_Equipo_id = cb_equipos.SelectedValue
+                    Catch ex As Exception
+                        parametro_Equipo_id = 0
+                    End Try
+
                     Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                     sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                    txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                   0,
-                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, parametro_Equipo_id) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
 
                     'primero elimino el detalle
                     DAservicio.Servicio_eliminar_Detalle(serv_id)
@@ -1661,24 +1748,41 @@
 
                 Else
                     MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-                    lbl_errNOM.Visible = True
-                    lb_error_marca.Visible = True
-                    lb_error_modelo.Visible = True
-                    lb_error_nombre.Visible = True
+                    'lbl_errNOM.Visible = True
+                    If txt_sucursal.Text = "" Then
+                        lb_error_marca.Visible = True
+                    End If
+
+                    If txt_diag.Text = "" Then
+                        lb_error_modelo.Visible = True
+                    End If
+                    If cb_equipos.SelectedValue = 0 Then
+                        lb_error_nombre.Visible = True
+                    End If
+
+
+
                 End If
             End If
         Else
             If estado_de_orden = "REPARADO" Then
                 Dim result As Integer = MessageBox.Show("¿Desea guardar los datos de la orden?", "Sistema de Gestión", MessageBoxButtons.YesNo)
                 If result = DialogResult.Yes Then
-                    If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
+                    If txt_sucursal.Text <> "" And txt_diag.Text <> "" And TextBox_Nombre.Text <> "" Then
                         'solo actualizo el estado a reparado
                         ''Actualizacion Servicio'''''
+                        Dim parametro_Equipo_id As Integer
+                        Try
+                            parametro_Equipo_id = cb_equipos.SelectedValue
+                        Catch ex As Exception
+                            parametro_Equipo_id = 0
+                        End Try
+
                         Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                         sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                        txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                       0,
-                                                                                    serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+                                                                                    serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, parametro_Equipo_id) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
 
                         'primero elimino el detalle
                         DAservicio.Servicio_eliminar_Detalle(serv_id)
@@ -1710,10 +1814,17 @@
                         Me.Close()
                     Else
                         MessageBox.Show("Debe Completar los campos Obligatorios", "Sistema de Gestion.")
-                        lbl_errNOM.Visible = True
-                        lb_error_marca.Visible = True
-                        lb_error_modelo.Visible = True
-                        lb_error_nombre.Visible = True
+                        'lbl_errNOM.Visible = True
+                        If txt_sucursal.Text = "" Then
+                            lb_error_marca.Visible = True
+                        End If
+
+                        If txt_diag.Text = "" Then
+                            lb_error_modelo.Visible = True
+                        End If
+                        If cb_equipos.SelectedValue = 0 Then
+                            lb_error_nombre.Visible = True
+                        End If
                     End If
                 End If
             Else
@@ -1728,11 +1839,16 @@
     End Sub
 
     Private Sub ToolStripButton_finalizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton_finalizar.Click
+        lb_error_marca.Visible = False
+        lb_error_modelo.Visible = False
+        lb_error_nombre.Visible = False
+        Label_error_grilla.Visible = False
+
         If estado_de_orden = "PENDIENTE" Then
             MessageBox.Show("Error, debe generar la orden de trabajo para poder finalizar y cobrar.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
 
-            If txt_equipo.Text <> "" And txt_sucursal.Text <> "" And txt_diag.Text <> "" Then
+            If txt_sucursal.Text <> "" And txt_diag.Text <> "" Then
                 Dim result As Integer = MessageBox.Show("¿Está seguro que desea finalizar? No podrá realizar más cambios en el mismo.", "Sistema de Gestión", MessageBoxButtons.YesNo)
                 If result = DialogResult.Yes Then
                     'AQUI VA LA VALIDACION QUE ESTE ABIERTA LA CAJA.
@@ -1747,11 +1863,18 @@
 
                         'guardo todo los datos del servicio, ya que se puede modificar en todo momento.
                         '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        Dim parametro_Equipo_id As Integer
+                        Try
+                            parametro_Equipo_id = cb_equipos.SelectedValue
+                        Catch ex As Exception
+                            parametro_Equipo_id = 0
+                        End Try
+
                         Dim ds_SevicioActualizar As DataSet = DAservicio.Servicio_Modificar_MDA(Cliente_ID, DateTimePicker1.Value,
                                                                                     sucursal_id, usuario_id, txt_diag.Text, txt_sucursal.Text,
                                                                                    txt_equipo.Text, DateTimePicker_Rev.Value, DateTimePicker_REP.Value,
                                                                                   0,
-                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
+                                                                                serv_id, "REPARADO", txt_desc_pesos.Text, txt_desc_porc.Text, ComboBox_iva.Text, parametro_Equipo_id) 'pongo el estado en REPARADO ----- el 0 es el txt anticipo
 
                         'primero elimino el detalle
                         DAservicio.Servicio_eliminar_Detalle(serv_id)

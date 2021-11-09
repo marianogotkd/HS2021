@@ -77,7 +77,8 @@ Public Class Servicio
                               ByVal estado As String,
                               ByVal Servicio_Desc_peso As Decimal,
                               ByVal Servicio_Desc_porc As Decimal,
-                              ByVal Servicio_IVA As Decimal)
+                              ByVal Servicio_IVA As Decimal,
+                              ByVal Equipo_id As Integer)
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -100,6 +101,7 @@ Public Class Servicio
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_Desc_peso", Servicio_Desc_peso))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_Desc_porc", Servicio_Desc_porc))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_IVA", Servicio_IVA))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
 
 
 
@@ -126,7 +128,8 @@ Public Class Servicio
                               ByVal SucxClie_id As Integer,
                               ByVal Servicio_Desc_peso As Decimal,
                               ByVal Servicio_Desc_porc As Decimal,
-                              ByVal Servicio_IVA As Decimal)
+                              ByVal Servicio_IVA As Decimal,
+                              ByVal Equipo_id As Integer)
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -149,6 +152,7 @@ Public Class Servicio
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_Desc_peso", Servicio_Desc_peso))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_Desc_porc", Servicio_Desc_porc))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Servicio_IVA", Servicio_IVA))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
 
         Dim ds_JE As New DataSet()
         Dim da_JE As New OleDbDataAdapter(comando)
@@ -508,5 +512,25 @@ Public Class Servicio
 
 
 
+#End Region
+
+#Region "servicio nuevo"
+    Public Function Servicio_obtener_Equipo_sucursal(ByVal SucxClie_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Servicio_obtener_Equipo_sucursal", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@SucxClie_id", SucxClie_id))
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipos")
+        dbconn.Close()
+        Return ds_JE
+    End Function
 #End Region
 End Class

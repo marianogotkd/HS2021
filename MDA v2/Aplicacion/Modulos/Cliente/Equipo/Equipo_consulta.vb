@@ -421,4 +421,20 @@ Public Class Equipo_consulta
 
         Equipo_reportes_selec.Show()
     End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+
+        If DG_clientes.Rows.Count <> 0 Then
+            Dim equipo_id As Integer = CInt(DG_clientes.CurrentRow.Cells("EquipoidDataGridViewTextBoxColumn").Value)
+            Equipo_historial.Close()
+            Equipo_historial.equipo_id = equipo_id
+            Equipo_historial.Show()
+        End If
+
+
+
+
+
+
+    End Sub
 End Class

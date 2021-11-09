@@ -23,7 +23,7 @@ Partial Class Equipo_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.tb_idcli = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,17 +36,10 @@ Partial Class Equipo_consulta
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
-        Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EquipodescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EquipodenominacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cliente_suc_sector_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EtiquetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cliente_suc_sector_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.EquipoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Equipos_ds = New Aplicacion.Equipos_ds()
         Me.BO_equipo_nuevo = New System.Windows.Forms.Button()
         Me.BO_equipo_editar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -54,6 +47,14 @@ Partial Class Equipo_consulta
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.EquipoidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EquipodescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EquipodenominacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EtiquetaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EquipoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Equipos_ds = New Aplicacion.Equipos_ds()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -207,46 +208,14 @@ Partial Class Equipo_consulta
         Me.DG_clientes.Name = "DG_clientes"
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(1079, 273)
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 239
-        '
-        'EquipoidDataGridViewTextBoxColumn
-        '
-        Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
-        Me.EquipoidDataGridViewTextBoxColumn.HeaderText = "ID del Equipo"
-        Me.EquipoidDataGridViewTextBoxColumn.Name = "EquipoidDataGridViewTextBoxColumn"
-        Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EquipoidDataGridViewTextBoxColumn.Visible = False
-        '
-        'EquipodescripcionDataGridViewTextBoxColumn
-        '
-        Me.EquipodescripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.EquipodescripcionDataGridViewTextBoxColumn.DataPropertyName = "Equipo_descripcion"
-        Me.EquipodescripcionDataGridViewTextBoxColumn.HeaderText = "Equipo"
-        Me.EquipodescripcionDataGridViewTextBoxColumn.Name = "EquipodescripcionDataGridViewTextBoxColumn"
-        Me.EquipodescripcionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EquipodenominacionDataGridViewTextBoxColumn
-        '
-        Me.EquipodenominacionDataGridViewTextBoxColumn.DataPropertyName = "Equipo_denominacion"
-        Me.EquipodenominacionDataGridViewTextBoxColumn.HeaderText = "Equipo_denominacion"
-        Me.EquipodenominacionDataGridViewTextBoxColumn.Name = "EquipodenominacionDataGridViewTextBoxColumn"
-        Me.EquipodenominacionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EquipodenominacionDataGridViewTextBoxColumn.Visible = False
-        '
-        'ClientesucsectordenominacionDataGridViewTextBoxColumn
-        '
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.DataPropertyName = "Cliente_suc_sector_denominacion"
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.HeaderText = "Cliente_suc_sector_denominacion"
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.Name = "ClientesucsectordenominacionDataGridViewTextBoxColumn"
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.Visible = False
         '
         'Cliente_suc_sector_descripcion
         '
@@ -255,14 +224,6 @@ Partial Class Equipo_consulta
         Me.Cliente_suc_sector_descripcion.HeaderText = "Sector"
         Me.Cliente_suc_sector_descripcion.Name = "Cliente_suc_sector_descripcion"
         Me.Cliente_suc_sector_descripcion.ReadOnly = True
-        '
-        'EtiquetaDataGridViewTextBoxColumn
-        '
-        Me.EtiquetaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.EtiquetaDataGridViewTextBoxColumn.DataPropertyName = "etiqueta"
-        Me.EtiquetaDataGridViewTextBoxColumn.HeaderText = "Etiqueta"
-        Me.EtiquetaDataGridViewTextBoxColumn.Name = "EtiquetaDataGridViewTextBoxColumn"
-        Me.EtiquetaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'Categoria
         '
@@ -288,16 +249,6 @@ Partial Class Equipo_consulta
         Me.item.HeaderText = "item"
         Me.item.Name = "item"
         Me.item.Width = 30
-        '
-        'EquipoBindingSource
-        '
-        Me.EquipoBindingSource.DataMember = "Equipo"
-        Me.EquipoBindingSource.DataSource = Me.Equipos_ds
-        '
-        'Equipos_ds
-        '
-        Me.Equipos_ds.DataSetName = "Equipos_ds"
-        Me.Equipos_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BO_equipo_nuevo
         '
@@ -383,6 +334,71 @@ Partial Class Equipo_consulta
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'Button6
+        '
+        Me.Button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.Button6.Image = Global.Aplicacion.My.Resources.Resources.facturacion1
+        Me.Button6.Location = New System.Drawing.Point(570, 455)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(132, 50)
+        Me.Button6.TabIndex = 256
+        Me.Button6.Text = "Historial equipo"
+        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'EquipoidDataGridViewTextBoxColumn
+        '
+        Me.EquipoidDataGridViewTextBoxColumn.DataPropertyName = "Equipo_id"
+        Me.EquipoidDataGridViewTextBoxColumn.HeaderText = "ID del Equipo"
+        Me.EquipoidDataGridViewTextBoxColumn.Name = "EquipoidDataGridViewTextBoxColumn"
+        Me.EquipoidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EquipoidDataGridViewTextBoxColumn.Visible = False
+        '
+        'EquipodescripcionDataGridViewTextBoxColumn
+        '
+        Me.EquipodescripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.EquipodescripcionDataGridViewTextBoxColumn.DataPropertyName = "Equipo_descripcion"
+        Me.EquipodescripcionDataGridViewTextBoxColumn.HeaderText = "Equipo"
+        Me.EquipodescripcionDataGridViewTextBoxColumn.Name = "EquipodescripcionDataGridViewTextBoxColumn"
+        Me.EquipodescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EquipodenominacionDataGridViewTextBoxColumn
+        '
+        Me.EquipodenominacionDataGridViewTextBoxColumn.DataPropertyName = "Equipo_denominacion"
+        Me.EquipodenominacionDataGridViewTextBoxColumn.HeaderText = "Equipo_denominacion"
+        Me.EquipodenominacionDataGridViewTextBoxColumn.Name = "EquipodenominacionDataGridViewTextBoxColumn"
+        Me.EquipodenominacionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EquipodenominacionDataGridViewTextBoxColumn.Visible = False
+        '
+        'ClientesucsectordenominacionDataGridViewTextBoxColumn
+        '
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.DataPropertyName = "Cliente_suc_sector_denominacion"
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.HeaderText = "Cliente_suc_sector_denominacion"
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.Name = "ClientesucsectordenominacionDataGridViewTextBoxColumn"
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClientesucsectordenominacionDataGridViewTextBoxColumn.Visible = False
+        '
+        'EtiquetaDataGridViewTextBoxColumn
+        '
+        Me.EtiquetaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.EtiquetaDataGridViewTextBoxColumn.DataPropertyName = "etiqueta"
+        Me.EtiquetaDataGridViewTextBoxColumn.HeaderText = "Etiqueta"
+        Me.EtiquetaDataGridViewTextBoxColumn.Name = "EtiquetaDataGridViewTextBoxColumn"
+        Me.EtiquetaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EquipoBindingSource
+        '
+        Me.EquipoBindingSource.DataMember = "Equipo"
+        Me.EquipoBindingSource.DataSource = Me.Equipos_ds
+        '
+        'Equipos_ds
+        '
+        Me.Equipos_ds.DataSetName = "Equipos_ds"
+        Me.Equipos_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Equipo_consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,6 +406,7 @@ Partial Class Equipo_consulta
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1130, 512)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -444,4 +461,5 @@ Partial Class Equipo_consulta
     Friend WithEvents Cliente_suc_sector_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class

@@ -314,6 +314,49 @@ Public Class Equipo
     End Function
 
 
+#Region "historial"
+    Public Function Equipo_historial_recuperar(ByVal Equipo_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_historial_recuperar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+        
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+    Public Function Equipo_historial_buscar_rango_fecha(ByVal Equipo_id As Integer, ByVal fecha_desde As DateTime, ByVal fecha_hasta As DateTime) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Equipo_historial_buscar_rango_fecha", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Equipo_id", Equipo_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@fecha_desde", fecha_desde))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@fecha_hasta", fecha_hasta))
+
+
+        Dim ds_JE As New DataSet()
+        Dim da_JE As New OleDbDataAdapter(comando)
+        da_JE.Fill(ds_JE, "Equipo")
+        dbconn.Close()
+        Return ds_JE
+    End Function
+
+#End Region
+
 
 
 End Class

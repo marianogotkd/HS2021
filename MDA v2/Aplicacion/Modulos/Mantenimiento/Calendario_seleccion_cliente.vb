@@ -80,7 +80,7 @@ Public Class Calendario_seleccion_cliente
                 Mantenimientos_realizados_consulta.txt_sucursal.Text = CStr(DG_sucursales.CurrentRow.Cells("SucxClienombreDataGridViewTextBoxColumn").Value)
                 Mantenimientos_realizados_consulta.SucxClie_id = DG_sucursales.CurrentRow.Cells("SucxClieidDataGridViewTextBoxColumn").Value
                 Mantenimientos_realizados_consulta.Show()
-                Me.Close()
+                Me.Hide()
             Else
                 MessageBox.Show("Error, debe seleccionar una sucursal del listado.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If

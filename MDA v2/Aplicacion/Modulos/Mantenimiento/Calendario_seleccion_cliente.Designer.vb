@@ -32,6 +32,15 @@ Partial Class Calendario_seleccion_cliente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DG_clientes = New System.Windows.Forms.DataGridView()
+        Me.Cliente1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Cliente_ds = New Aplicacion.Cliente_ds()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DG_sucursales = New System.Windows.Forms.DataGridView()
+        Me.SucursalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CLIidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CLIFanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CLIdniDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,15 +51,6 @@ Partial Class Calendario_seleccion_cliente
         Me.CLImailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CLIobservacionesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cliente1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Cliente_ds = New Aplicacion.Cliente_ds()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.DG_sucursales = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.SucursalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SucxClieidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SucxClienombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SucxClieProvDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -183,13 +183,127 @@ Partial Class Calendario_seleccion_cliente
         Me.DG_clientes.StandardTab = True
         Me.DG_clientes.TabIndex = 239
         '
+        'Cliente1BindingSource
+        '
+        Me.Cliente1BindingSource.DataMember = "Cliente1"
+        Me.Cliente1BindingSource.DataSource = Me.Cliente_ds
+        '
+        'Cliente_ds
+        '
+        Me.Cliente_ds.DataSetName = "Cliente_ds"
+        Me.Cliente_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.GroupBox2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(850, 474)
+        Me.TabPage2.TabIndex = 2
+        Me.TabPage2.Text = "Selección de sucursal"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button2.Location = New System.Drawing.Point(577, 415)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(124, 43)
+        Me.Button2.TabIndex = 251
+        Me.Button2.Text = "Atras"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button1.Location = New System.Drawing.Point(709, 415)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(124, 43)
+        Me.Button1.TabIndex = 250
+        Me.Button1.Text = "Siguiente"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.DG_sucursales)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkSlateGray
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 10)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Size = New System.Drawing.Size(833, 391)
+        Me.GroupBox2.TabIndex = 247
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Sucursales disponibles del cliente: "
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Blue
+        Me.Label2.Location = New System.Drawing.Point(9, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(310, 16)
+        Me.Label2.TabIndex = 241
+        Me.Label2.Text = "* Seleccione un sucursal del listado para continuar."
+        '
+        'DG_sucursales
+        '
+        Me.DG_sucursales.AllowUserToAddRows = False
+        Me.DG_sucursales.AllowUserToDeleteRows = False
+        Me.DG_sucursales.AllowUserToResizeRows = False
+        Me.DG_sucursales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DG_sucursales.AutoGenerateColumns = False
+        Me.DG_sucursales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DG_sucursales.BackgroundColor = System.Drawing.Color.White
+        Me.DG_sucursales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DG_sucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DG_sucursales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SucxClieidDataGridViewTextBoxColumn, Me.SucxClienombreDataGridViewTextBoxColumn, Me.SucxClieProvDataGridViewTextBoxColumn, Me.SucxClieLocDataGridViewTextBoxColumn, Me.EnBDDataGridViewTextBoxColumn, Me.ProvinciaDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.SucxClietelDataGridViewTextBoxColumn, Me.SucxCliemailDataGridViewTextBoxColumn, Me.SucxCliedirDataGridViewTextBoxColumn, Me.SucxClieCPDataGridViewTextBoxColumn})
+        Me.DG_sucursales.DataSource = Me.SucursalesBindingSource
+        Me.DG_sucursales.Location = New System.Drawing.Point(12, 57)
+        Me.DG_sucursales.Margin = New System.Windows.Forms.Padding(4)
+        Me.DG_sucursales.MultiSelect = False
+        Me.DG_sucursales.Name = "DG_sucursales"
+        Me.DG_sucursales.ReadOnly = True
+        Me.DG_sucursales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DG_sucursales.RowHeadersVisible = False
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_sucursales.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.DG_sucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DG_sucursales.Size = New System.Drawing.Size(807, 312)
+        Me.DG_sucursales.StandardTab = True
+        Me.DG_sucursales.TabIndex = 239
+        '
+        'SucursalesBindingSource
+        '
+        Me.SucursalesBindingSource.DataMember = "Sucursales"
+        Me.SucursalesBindingSource.DataSource = Me.Cliente_ds
+        '
         'CLIidDataGridViewTextBoxColumn
         '
+        Me.CLIidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.CLIidDataGridViewTextBoxColumn.DataPropertyName = "CLI_id"
-        Me.CLIidDataGridViewTextBoxColumn.HeaderText = "CLI_id"
+        Me.CLIidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.CLIidDataGridViewTextBoxColumn.Name = "CLIidDataGridViewTextBoxColumn"
         Me.CLIidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CLIidDataGridViewTextBoxColumn.Visible = False
         '
         'CLIFanDataGridViewTextBoxColumn
         '
@@ -263,127 +377,13 @@ Partial Class Calendario_seleccion_cliente
         Me.DireccionDataGridViewTextBoxColumn.ReadOnly = True
         Me.DireccionDataGridViewTextBoxColumn.Visible = False
         '
-        'Cliente1BindingSource
-        '
-        Me.Cliente1BindingSource.DataMember = "Cliente1"
-        Me.Cliente1BindingSource.DataSource = Me.Cliente_ds
-        '
-        'Cliente_ds
-        '
-        Me.Cliente_ds.DataSetName = "Cliente_ds"
-        Me.Cliente_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage2.Controls.Add(Me.Button2)
-        Me.TabPage2.Controls.Add(Me.Button1)
-        Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(850, 474)
-        Me.TabPage2.TabIndex = 2
-        Me.TabPage2.Text = "Selección de sucursal"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.DG_sucursales)
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 10)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(833, 391)
-        Me.GroupBox2.TabIndex = 247
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Sucursales disponibles del cliente: "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(9, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(310, 16)
-        Me.Label2.TabIndex = 241
-        Me.Label2.Text = "* Seleccione un sucursal del listado para continuar."
-        '
-        'DG_sucursales
-        '
-        Me.DG_sucursales.AllowUserToAddRows = False
-        Me.DG_sucursales.AllowUserToDeleteRows = False
-        Me.DG_sucursales.AllowUserToResizeRows = False
-        Me.DG_sucursales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DG_sucursales.AutoGenerateColumns = False
-        Me.DG_sucursales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DG_sucursales.BackgroundColor = System.Drawing.Color.White
-        Me.DG_sucursales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DG_sucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DG_sucursales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SucxClieidDataGridViewTextBoxColumn, Me.SucxClienombreDataGridViewTextBoxColumn, Me.SucxClieProvDataGridViewTextBoxColumn, Me.SucxClieLocDataGridViewTextBoxColumn, Me.EnBDDataGridViewTextBoxColumn, Me.ProvinciaDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.SucxClietelDataGridViewTextBoxColumn, Me.SucxCliemailDataGridViewTextBoxColumn, Me.SucxCliedirDataGridViewTextBoxColumn, Me.SucxClieCPDataGridViewTextBoxColumn})
-        Me.DG_sucursales.DataSource = Me.SucursalesBindingSource
-        Me.DG_sucursales.Location = New System.Drawing.Point(12, 57)
-        Me.DG_sucursales.Margin = New System.Windows.Forms.Padding(4)
-        Me.DG_sucursales.MultiSelect = False
-        Me.DG_sucursales.Name = "DG_sucursales"
-        Me.DG_sucursales.ReadOnly = True
-        Me.DG_sucursales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.DG_sucursales.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_sucursales.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DG_sucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_sucursales.Size = New System.Drawing.Size(807, 312)
-        Me.DG_sucursales.StandardTab = True
-        Me.DG_sucursales.TabIndex = 239
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(709, 415)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 43)
-        Me.Button1.TabIndex = 250
-        Me.Button1.Text = "Siguiente"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(577, 415)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(124, 43)
-        Me.Button2.TabIndex = 251
-        Me.Button2.Text = "Atras"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'SucursalesBindingSource
-        '
-        Me.SucursalesBindingSource.DataMember = "Sucursales"
-        Me.SucursalesBindingSource.DataSource = Me.Cliente_ds
-        '
         'SucxClieidDataGridViewTextBoxColumn
         '
+        Me.SucxClieidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SucxClieidDataGridViewTextBoxColumn.DataPropertyName = "SucxClie_id"
-        Me.SucxClieidDataGridViewTextBoxColumn.HeaderText = "SucxClie_id"
+        Me.SucxClieidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.SucxClieidDataGridViewTextBoxColumn.Name = "SucxClieidDataGridViewTextBoxColumn"
         Me.SucxClieidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SucxClieidDataGridViewTextBoxColumn.Visible = False
         '
         'SucxClienombreDataGridViewTextBoxColumn
         '
@@ -501,6 +501,13 @@ Partial Class Calendario_seleccion_cliente
     Friend WithEvents DG_clientes As System.Windows.Forms.DataGridView
     Friend WithEvents Cliente1BindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Cliente_ds As Aplicacion.Cliente_ds
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents DG_sucursales As System.Windows.Forms.DataGridView
+    Friend WithEvents SucursalesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents CLIidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CLIFanDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CLIdniDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -511,13 +518,6 @@ Partial Class Calendario_seleccion_cliente
     Friend WithEvents CLImailDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CLIobservacionesDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DireccionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DG_sucursales As System.Windows.Forms.DataGridView
-    Friend WithEvents SucursalesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SucxClieidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SucxClienombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SucxClieProvDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

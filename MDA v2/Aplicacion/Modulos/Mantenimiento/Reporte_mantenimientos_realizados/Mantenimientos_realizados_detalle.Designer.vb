@@ -361,7 +361,7 @@ Partial Class Mantenimientos_realizados_detalle
         Me.MaximizeBox = False
         Me.Name = "Mantenimientos_realizados_detalle"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mantenimientos_realizados_detalle"
+        Me.Text = "Mantenimiento realizado. Detalle"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

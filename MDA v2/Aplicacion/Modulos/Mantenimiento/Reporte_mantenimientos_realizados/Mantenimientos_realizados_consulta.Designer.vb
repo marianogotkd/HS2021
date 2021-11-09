@@ -23,7 +23,7 @@ Partial Class Mantenimientos_realizados_consulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mantenimientos_realizados_consulta))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -58,6 +58,7 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DG_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MantlistadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ds_mant_realizados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,10 +124,10 @@ Partial Class Mantenimientos_realizados_consulta
         Me.DG_clientes.Name = "DG_clientes"
         Me.DG_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DG_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.DG_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DG_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG_clientes.Size = New System.Drawing.Size(839, 244)
         Me.DG_clientes.StandardTab = True
@@ -352,7 +353,7 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.Button3.Location = New System.Drawing.Point(239, 380)
+        Me.Button3.Location = New System.Drawing.Point(309, 381)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(124, 43)
         Me.Button3.TabIndex = 246
@@ -365,7 +366,7 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button2.Location = New System.Drawing.Point(369, 380)
+        Me.Button2.Location = New System.Drawing.Point(439, 381)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(124, 43)
         Me.Button2.TabIndex = 245
@@ -378,7 +379,7 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button1.Location = New System.Drawing.Point(499, 380)
+        Me.Button1.Location = New System.Drawing.Point(569, 381)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 43)
         Me.Button1.TabIndex = 244
@@ -386,11 +387,26 @@ Partial Class Mantenimientos_realizados_consulta
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button4.Location = New System.Drawing.Point(178, 381)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(124, 43)
+        Me.Button4.TabIndex = 252
+        Me.Button4.Text = "Atras"
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Mantenimientos_realizados_consulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(900, 435)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -450,4 +466,5 @@ Partial Class Mantenimientos_realizados_consulta
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents item As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

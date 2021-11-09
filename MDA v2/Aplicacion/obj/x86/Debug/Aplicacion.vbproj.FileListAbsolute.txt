@@ -3291,3 +3291,5 @@ C:\Repositorio HS2021\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.US_Pedid
 C:\Repositorio HS2021\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.vbproj.GenerateResource.Cache
 C:\Repositorio HS2021\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.Equipo_reportes_selec.resources
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.Equipo_reportes_selec.resources
+C:\Repositorio HS2021\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.Equipo_historial.resources
+C:\Repositorio HS2021\HS2021\MDA v2\Aplicacion\obj\x86\Debug\Aplicacion.Equipo_historial_seleccionar_informe.resources

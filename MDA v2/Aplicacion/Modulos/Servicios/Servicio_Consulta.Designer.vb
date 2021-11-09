@@ -133,7 +133,7 @@ Partial Class Servicio_Consulta
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
         Me.DG_Servicio.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DG_Servicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_Servicio.Size = New System.Drawing.Size(856, 468)
+        Me.DG_Servicio.Size = New System.Drawing.Size(856, 462)
         Me.DG_Servicio.StandardTab = True
         Me.DG_Servicio.TabIndex = 9
         '
@@ -390,7 +390,7 @@ Partial Class Servicio_Consulta
         Me.Button_Detalle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button_Detalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button_Detalle.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button_Detalle.Location = New System.Drawing.Point(746, 515)
+        Me.Button_Detalle.Location = New System.Drawing.Point(746, 509)
         Me.Button_Detalle.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_Detalle.Name = "Button_Detalle"
         Me.Button_Detalle.Size = New System.Drawing.Size(124, 43)
@@ -404,7 +404,7 @@ Partial Class Servicio_Consulta
         Me.btn_Anular.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Anular.Image = Global.Aplicacion.My.Resources.Resources.Limpiar1
-        Me.btn_Anular.Location = New System.Drawing.Point(614, 515)
+        Me.btn_Anular.Location = New System.Drawing.Point(614, 509)
         Me.btn_Anular.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_Anular.Name = "btn_Anular"
         Me.btn_Anular.Size = New System.Drawing.Size(124, 43)
@@ -496,7 +496,7 @@ Partial Class Servicio_Consulta
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Limpiar1
-        Me.Button1.Location = New System.Drawing.Point(614, 515)
+        Me.Button1.Location = New System.Drawing.Point(614, 509)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 43)
@@ -510,7 +510,7 @@ Partial Class Servicio_Consulta
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Aplicacion.My.Resources.Resources.Pasar
-        Me.Button2.Location = New System.Drawing.Point(746, 515)
+        Me.Button2.Location = New System.Drawing.Point(746, 509)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(124, 43)
@@ -545,7 +545,7 @@ Partial Class Servicio_Consulta
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         Me.DG_OrdenTrabajo.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DG_OrdenTrabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DG_OrdenTrabajo.Size = New System.Drawing.Size(856, 468)
+        Me.DG_OrdenTrabajo.Size = New System.Drawing.Size(856, 462)
         Me.DG_OrdenTrabajo.StandardTab = True
         Me.DG_OrdenTrabajo.TabIndex = 20
         '

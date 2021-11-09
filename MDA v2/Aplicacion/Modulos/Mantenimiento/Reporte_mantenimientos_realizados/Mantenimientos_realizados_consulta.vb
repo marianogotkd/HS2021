@@ -350,4 +350,9 @@
             'End If
         End If
     End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Calendario_seleccion_cliente.Show()
+        Me.Close()
+    End Sub
 End Class
