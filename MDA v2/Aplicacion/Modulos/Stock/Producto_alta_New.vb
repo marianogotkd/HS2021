@@ -881,14 +881,14 @@ Public Class Producto_alta_New
     
     Private Sub Combo_tipo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Combo_tipo.SelectedIndexChanged
         If Combo_tipo.SelectedIndex = 0 Then
-            tx_unimedida.Text = "KG"
-            tx_unimedida.Visible = True
-            Combo_tipo.Width = 138
+            'tx_unimedida.Text = "KG"
+            tx_unimedida.Enabled = True
+            'Combo_tipo.Width = 138
 
         Else
-            tx_unimedida.Text = ""
-            tx_unimedida.Visible = False
-            Combo_tipo.Width = 269
+            'tx_unimedida.Text = ""
+            tx_unimedida.Enabled = False
+            'Combo_tipo.Width = 269
         End If
     End Sub
 End Class

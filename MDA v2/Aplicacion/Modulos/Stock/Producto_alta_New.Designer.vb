@@ -220,7 +220,7 @@ Partial Class Producto_alta_New
         Me.Combo_tipo.Location = New System.Drawing.Point(62, 76)
         Me.Combo_tipo.Margin = New System.Windows.Forms.Padding(4)
         Me.Combo_tipo.Name = "Combo_tipo"
-        Me.Combo_tipo.Size = New System.Drawing.Size(221, 28)
+        Me.Combo_tipo.Size = New System.Drawing.Size(138, 24)
         Me.Combo_tipo.TabIndex = 1
         '
         'Label1
@@ -230,7 +230,7 @@ Partial Class Producto_alta_New
         Me.Label1.Location = New System.Drawing.Point(213, 84)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 20)
+        Me.Label1.Size = New System.Drawing.Size(70, 16)
         Me.Label1.TabIndex = 314
         Me.Label1.Text = "U. medida"
         '
@@ -253,7 +253,7 @@ Partial Class Producto_alta_New
         Me.lb_tel.Location = New System.Drawing.Point(481, 181)
         Me.lb_tel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_tel.Name = "lb_tel"
-        Me.lb_tel.Size = New System.Drawing.Size(157, 20)
+        Me.lb_tel.Size = New System.Drawing.Size(127, 16)
         Me.lb_tel.TabIndex = 278
         Me.lb_tel.Text = "Punto de reposición"
         '
@@ -264,7 +264,7 @@ Partial Class Producto_alta_New
         Me.tx_ptorepo.Location = New System.Drawing.Point(646, 175)
         Me.tx_ptorepo.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_ptorepo.Name = "tx_ptorepo"
-        Me.tx_ptorepo.Size = New System.Drawing.Size(119, 26)
+        Me.tx_ptorepo.Size = New System.Drawing.Size(119, 22)
         Me.tx_ptorepo.TabIndex = 6
         Me.tx_ptorepo.Text = "0"
         Me.tx_ptorepo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -276,7 +276,7 @@ Partial Class Producto_alta_New
         Me.Label12.Location = New System.Drawing.Point(22, 181)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(183, 20)
+        Me.Label12.Size = New System.Drawing.Size(147, 16)
         Me.Label12.TabIndex = 311
         Me.Label12.Text = "Precio Venta Mayorista"
         '
@@ -287,7 +287,7 @@ Partial Class Producto_alta_New
         Me.tb_PrecMay.Location = New System.Drawing.Point(214, 175)
         Me.tb_PrecMay.Margin = New System.Windows.Forms.Padding(4)
         Me.tb_PrecMay.Name = "tb_PrecMay"
-        Me.tb_PrecMay.Size = New System.Drawing.Size(123, 26)
+        Me.tb_PrecMay.Size = New System.Drawing.Size(123, 22)
         Me.tb_PrecMay.TabIndex = 5
         Me.tb_PrecMay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -310,7 +310,7 @@ Partial Class Producto_alta_New
         Me.lb_mail.Location = New System.Drawing.Point(481, 226)
         Me.lb_mail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_mail.Name = "lb_mail"
-        Me.lb_mail.Size = New System.Drawing.Size(99, 20)
+        Me.lb_mail.Size = New System.Drawing.Size(79, 16)
         Me.lb_mail.TabIndex = 277
         Me.lb_mail.Text = "Stock inicial"
         Me.lb_mail.Visible = False
@@ -322,7 +322,7 @@ Partial Class Producto_alta_New
         Me.tx_stock.Location = New System.Drawing.Point(646, 219)
         Me.tx_stock.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_stock.Name = "tx_stock"
-        Me.tx_stock.Size = New System.Drawing.Size(119, 26)
+        Me.tx_stock.Size = New System.Drawing.Size(119, 22)
         Me.tx_stock.TabIndex = 8
         Me.tx_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tx_stock.Visible = False
@@ -346,7 +346,7 @@ Partial Class Producto_alta_New
         Me.Label9.Location = New System.Drawing.Point(22, 131)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(179, 20)
+        Me.Label9.Size = New System.Drawing.Size(142, 16)
         Me.Label9.TabIndex = 308
         Me.Label9.Text = "Precio Venta Minorista"
         '
@@ -357,7 +357,7 @@ Partial Class Producto_alta_New
         Me.Tb_PrecMin.Location = New System.Drawing.Point(214, 125)
         Me.Tb_PrecMin.Margin = New System.Windows.Forms.Padding(4)
         Me.Tb_PrecMin.Name = "Tb_PrecMin"
-        Me.Tb_PrecMin.Size = New System.Drawing.Size(123, 26)
+        Me.Tb_PrecMin.Size = New System.Drawing.Size(123, 22)
         Me.Tb_PrecMin.TabIndex = 3
         Me.Tb_PrecMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -368,7 +368,7 @@ Partial Class Producto_alta_New
         Me.lb_dni.Location = New System.Drawing.Point(481, 37)
         Me.lb_dni.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_dni.Name = "lb_dni"
-        Me.lb_dni.Size = New System.Drawing.Size(99, 20)
+        Me.lb_dni.Size = New System.Drawing.Size(80, 16)
         Me.lb_dni.TabIndex = 250
         Me.lb_dni.Text = "Descripcion"
         '
@@ -379,7 +379,7 @@ Partial Class Producto_alta_New
         Me.tx_descripcion.Location = New System.Drawing.Point(646, 34)
         Me.tx_descripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_descripcion.Name = "tx_descripcion"
-        Me.tx_descripcion.Size = New System.Drawing.Size(235, 26)
+        Me.tx_descripcion.Size = New System.Drawing.Size(235, 22)
         Me.tx_descripcion.TabIndex = 0
         Me.tx_descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -438,7 +438,7 @@ Partial Class Producto_alta_New
         Me.tx_unimedida.Location = New System.Drawing.Point(291, 76)
         Me.tx_unimedida.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_unimedida.Name = "tx_unimedida"
-        Me.tx_unimedida.Size = New System.Drawing.Size(46, 26)
+        Me.tx_unimedida.Size = New System.Drawing.Size(46, 22)
         Me.tx_unimedida.TabIndex = 1
         Me.tx_unimedida.TabStop = False
         Me.tx_unimedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -465,7 +465,7 @@ Partial Class Producto_alta_New
         Me.cb_marca.Location = New System.Drawing.Point(99, 223)
         Me.cb_marca.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_marca.Name = "cb_marca"
-        Me.cb_marca.Size = New System.Drawing.Size(221, 28)
+        Me.cb_marca.Size = New System.Drawing.Size(221, 24)
         Me.cb_marca.TabIndex = 7
         '
         'Label10
@@ -475,7 +475,7 @@ Partial Class Producto_alta_New
         Me.Label10.Location = New System.Drawing.Point(22, 226)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(56, 20)
+        Me.Label10.Size = New System.Drawing.Size(46, 16)
         Me.Label10.TabIndex = 282
         Me.Label10.Text = "Marca"
         '
@@ -486,7 +486,7 @@ Partial Class Producto_alta_New
         Me.tx_codbarra.Location = New System.Drawing.Point(646, 78)
         Me.tx_codbarra.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_codbarra.Name = "tx_codbarra"
-        Me.tx_codbarra.Size = New System.Drawing.Size(235, 26)
+        Me.tx_codbarra.Size = New System.Drawing.Size(235, 22)
         Me.tx_codbarra.TabIndex = 2
         Me.tx_codbarra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -498,7 +498,7 @@ Partial Class Producto_alta_New
         Me.tx_codinterno.Location = New System.Drawing.Point(147, 31)
         Me.tx_codinterno.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_codinterno.Name = "tx_codinterno"
-        Me.tx_codinterno.Size = New System.Drawing.Size(190, 26)
+        Me.tx_codinterno.Size = New System.Drawing.Size(190, 22)
         Me.tx_codinterno.TabIndex = 0
         Me.tx_codinterno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -509,7 +509,7 @@ Partial Class Producto_alta_New
         Me.tx_descrilarga.Location = New System.Drawing.Point(646, 125)
         Me.tx_descrilarga.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_descrilarga.Name = "tx_descrilarga"
-        Me.tx_descrilarga.Size = New System.Drawing.Size(235, 26)
+        Me.tx_descrilarga.Size = New System.Drawing.Size(235, 22)
         Me.tx_descrilarga.TabIndex = 4
         Me.tx_descrilarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -520,7 +520,7 @@ Partial Class Producto_alta_New
         Me.Label3.Location = New System.Drawing.Point(481, 84)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 20)
+        Me.Label3.Size = New System.Drawing.Size(113, 16)
         Me.Label3.TabIndex = 266
         Me.Label3.Text = "Código de barras"
         '
@@ -531,7 +531,7 @@ Partial Class Producto_alta_New
         Me.Label2.Location = New System.Drawing.Point(22, 37)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 20)
+        Me.Label2.Size = New System.Drawing.Size(95, 16)
         Me.Label2.TabIndex = 265
         Me.Label2.Text = "Código interno"
         '
@@ -542,7 +542,7 @@ Partial Class Producto_alta_New
         Me.lb_fechanac.Location = New System.Drawing.Point(22, 84)
         Me.lb_fechanac.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_fechanac.Name = "lb_fechanac"
-        Me.lb_fechanac.Size = New System.Drawing.Size(46, 20)
+        Me.lb_fechanac.Size = New System.Drawing.Size(39, 16)
         Me.lb_fechanac.TabIndex = 259
         Me.lb_fechanac.Text = "Tipo "
         '
@@ -553,7 +553,7 @@ Partial Class Producto_alta_New
         Me.lb_ape.Location = New System.Drawing.Point(481, 131)
         Me.lb_ape.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_ape.Name = "lb_ape"
-        Me.lb_ape.Size = New System.Drawing.Size(141, 20)
+        Me.lb_ape.Size = New System.Drawing.Size(114, 16)
         Me.lb_ape.TabIndex = 12
         Me.lb_ape.Text = "Descripción larga"
         '
@@ -600,7 +600,7 @@ Partial Class Producto_alta_New
         Me.check_subrubro.Location = New System.Drawing.Point(803, 86)
         Me.check_subrubro.Margin = New System.Windows.Forms.Padding(4)
         Me.check_subrubro.Name = "check_subrubro"
-        Me.check_subrubro.Size = New System.Drawing.Size(18, 17)
+        Me.check_subrubro.Size = New System.Drawing.Size(15, 14)
         Me.check_subrubro.TabIndex = 5
         Me.check_subrubro.UseVisualStyleBackColor = True
         '
@@ -612,7 +612,7 @@ Partial Class Producto_alta_New
         Me.cb_subrubro.Location = New System.Drawing.Point(563, 81)
         Me.cb_subrubro.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_subrubro.Name = "cb_subrubro"
-        Me.cb_subrubro.Size = New System.Drawing.Size(231, 28)
+        Me.cb_subrubro.Size = New System.Drawing.Size(231, 24)
         Me.cb_subrubro.TabIndex = 2
         '
         'cb_rubro
@@ -623,7 +623,7 @@ Partial Class Producto_alta_New
         Me.cb_rubro.Location = New System.Drawing.Point(563, 41)
         Me.cb_rubro.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_rubro.Name = "cb_rubro"
-        Me.cb_rubro.Size = New System.Drawing.Size(231, 28)
+        Me.cb_rubro.Size = New System.Drawing.Size(231, 24)
         Me.cb_rubro.TabIndex = 1
         '
         'check_rubro
@@ -632,7 +632,7 @@ Partial Class Producto_alta_New
         Me.check_rubro.Location = New System.Drawing.Point(803, 49)
         Me.check_rubro.Margin = New System.Windows.Forms.Padding(4)
         Me.check_rubro.Name = "check_rubro"
-        Me.check_rubro.Size = New System.Drawing.Size(18, 17)
+        Me.check_rubro.Size = New System.Drawing.Size(15, 14)
         Me.check_rubro.TabIndex = 3
         Me.check_rubro.UseVisualStyleBackColor = True
         '
@@ -644,7 +644,7 @@ Partial Class Producto_alta_New
         Me.cb_categoria.Location = New System.Drawing.Point(115, 36)
         Me.cb_categoria.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_categoria.Name = "cb_categoria"
-        Me.cb_categoria.Size = New System.Drawing.Size(231, 28)
+        Me.cb_categoria.Size = New System.Drawing.Size(231, 24)
         Me.cb_categoria.TabIndex = 0
         '
         'Label8
@@ -654,7 +654,7 @@ Partial Class Producto_alta_New
         Me.Label8.Location = New System.Drawing.Point(477, 84)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 20)
+        Me.Label8.Size = New System.Drawing.Size(63, 16)
         Me.Label8.TabIndex = 270
         Me.Label8.Text = "Subrubro"
         '
@@ -677,7 +677,7 @@ Partial Class Producto_alta_New
         Me.Label7.Location = New System.Drawing.Point(481, 44)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 20)
+        Me.Label7.Size = New System.Drawing.Size(45, 16)
         Me.Label7.TabIndex = 272
         Me.Label7.Text = "Rubro"
         '
@@ -687,7 +687,7 @@ Partial Class Producto_alta_New
         Me.Label6.Location = New System.Drawing.Point(8, 65)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(0, 20)
+        Me.Label6.Size = New System.Drawing.Size(0, 16)
         Me.Label6.TabIndex = 271
         '
         'Label5
@@ -697,7 +697,7 @@ Partial Class Producto_alta_New
         Me.Label5.Location = New System.Drawing.Point(26, 41)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 20)
+        Me.Label5.Size = New System.Drawing.Size(67, 16)
         Me.Label5.TabIndex = 270
         Me.Label5.Text = "Categoría"
         '
@@ -728,7 +728,7 @@ Partial Class Producto_alta_New
         Me.DataGridView_Prod_Prov.Cursor = System.Windows.Forms.Cursors.Default
         Me.DataGridView_Prod_Prov.DataSource = Me.ProveedorProductoBindingSource
         Me.DataGridView_Prod_Prov.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView_Prod_Prov.Location = New System.Drawing.Point(4, 23)
+        Me.DataGridView_Prod_Prov.Location = New System.Drawing.Point(4, 19)
         Me.DataGridView_Prod_Prov.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView_Prod_Prov.MaximumSize = New System.Drawing.Size(616, 99)
         Me.DataGridView_Prod_Prov.MinimumSize = New System.Drawing.Size(616, 99)
@@ -795,7 +795,7 @@ Partial Class Producto_alta_New
         Me.Label11.Location = New System.Drawing.Point(8, 65)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(0, 20)
+        Me.Label11.Size = New System.Drawing.Size(0, 16)
         Me.Label11.TabIndex = 271
         '
         'OpenFileDialog1
