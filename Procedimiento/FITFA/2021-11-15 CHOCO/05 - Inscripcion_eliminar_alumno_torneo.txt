@@ -1,0 +1,8 @@
+create procedure Inscripcion_eliminar_alumno_torneo
+@inscripcion_id int,
+@categoria_id int
+
+as
+delete from inscripciones_x_torneo where inscripcion_id = @inscripcion_id and categoria_id = @categoria_id  
+
+go
