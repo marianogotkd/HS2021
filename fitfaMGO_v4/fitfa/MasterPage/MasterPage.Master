@@ -382,23 +382,93 @@
                 </a>
               </li>
 
-                  <li class="nav-item">
-                <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
-                <a href="../Eventos/Evento_Seleccionar_Examen.aspx" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Examen</p>
-                </a>
-              </li>
+               
 
                    <li class="nav-item">
                 <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
                 <a href="../Eventos/Evento_Seleccionar_Curso.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Curso</p>
+                  <p>Ver Inscriptos</p>
                 </a>
               </li>
 
+           
+              
+
+            </ul>
+
+            </li>
+            <!--FINEventosADM-->
+              <!--TORNEO-->
+             <li class="nav-item has-treeview" >
+                 <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                TORNEO
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+                 <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                <a href="../Llaves/Llave_selecc_evento.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Administrar Llaves</p>
+                </a>
+              </li>
               <li class="nav-item">
+                <a href="../Areas/Area_asignar.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Crear Areas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../Torneo/Torneo_usuario_add.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Crear Usuario para Evento</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../tables/data.html" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Consultar Miembros</p>
+                </a>
+              </li>
+
+                  <!--Generar LLaves-->         
+              <li class="nav-item" id="li_Gen_llaves" runat="server">
+                <a href="../Llaves/Llave_generar.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Generar LLaves</p>
+                </a>
+              </li>
+         <!--Generar LLavesFIN-->
+
+           <!--Ver LLaves Generadass-->         
+              <li class="nav-item" id="li_Ver_llav_Gen" runat="server">
+                <a href="../Llaves/Llave_disponibles.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Ver LLaves Generadas</p>
+                </a>
+              </li>
+         <!--Ver LLaves Generadas-->
+         
+                 </ul>
+               </li>
+
+
+                 <li class="nav-item has-treeview" >
+                 <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-th"></i>
+              <p>
+                EXAMEN
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+                 <ul class="nav nav-treeview">
+
+
+                    <li class="nav-item">
                 <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
                 <a href="../Eventos/Examen_costos.aspx" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
@@ -406,12 +476,18 @@
                 </a>
               </li>
 
-              
+                 <li class="nav-item">
+                <%--<a href="../Inscripciones/Evento_seleccionar.aspx" class="nav-link">--%>
+                <a href="../Eventos/Evento_Seleccionar_Examen.aspx" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Examen</p>
+                </a>
+              </li>
 
-            </ul>
 
-            </li>
-            <!--FINEventosADM-->
+     </ul>
+               </li>
+
 
              <!--INSTITUCIONES ADM-->
              <li class="nav-item has-treeview" >
@@ -445,30 +521,7 @@
             <!--FIN INSTITUCIONES ADM-->
             
                         
-              <li class="nav-item">
-                <a href="../Llaves/Llave_selecc_evento.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Administrar Llaves</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../Areas/Area_asignar.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Crear Areas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../Torneo/Torneo_usuario_add.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Crear Usuario para Evento</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../tables/data.html" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Consultar Miembros</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
           <!--AdministradorFIN-->
@@ -500,23 +553,7 @@
           </li>
           <!--MensajesFIN-->
 
-         <!--Generar LLaves-->         
-              <li class="nav-item" id="li_Gen_llaves" runat="server">
-                <a href="../Llaves/Llave_generar.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Generar LLaves</p>
-                </a>
-              </li>
-         <!--Generar LLavesFIN-->
-
-           <!--Ver LLaves Generadass-->         
-              <li class="nav-item" id="li_Ver_llav_Gen" runat="server">
-                <a href="../Llaves/Llave_disponibles.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Ver LLaves Generadas</p>
-                </a>
-              </li>
-         <!--Ver LLaves Generadas-->
+     
 
 
          
