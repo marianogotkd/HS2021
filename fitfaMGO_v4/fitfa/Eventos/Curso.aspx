@@ -68,8 +68,8 @@
                       
                            <input type="button" class="btn btn btn-success" id="btnExport_Examen" value="Exportar a Excel" />
 
-                       
-            </div   
+           <%--            
+            </div   --%>
             
             <div id="div_msj_error_eliminar" runat="server" visible=false>
           
