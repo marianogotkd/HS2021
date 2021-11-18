@@ -429,29 +429,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../tables/data.html" class="nav-link">
+                <a href="../Eventos/Evento_Seleccionar_Torneo.aspx" class="nav-link">
                   <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Consultar Miembros</p>
+                  <p>Consultar Inscriptos</p>
                 </a>
               </li>
 
-                  <!--Generar LLaves-->         
-              <li class="nav-item" id="li_Gen_llaves" runat="server">
-                <a href="../Llaves/Llave_generar.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Generar LLaves</p>
-                </a>
-              </li>
-         <!--Generar LLavesFIN-->
-
-           <!--Ver LLaves Generadass-->         
-              <li class="nav-item" id="li_Ver_llav_Gen" runat="server">
-                <a href="../Llaves/Llave_disponibles.aspx" class="nav-link">
-                  <i class="nav-icon fa fa-circle-o text-info"></i>
-                  <p>Ver LLaves Generadas</p>
-                </a>
-              </li>
-         <!--Ver LLaves Generadas-->
+                  
          
                  </ul>
                </li>
@@ -553,7 +537,25 @@
           </li>
           <!--MensajesFIN-->
 
-     
+          <!--Generar LLaves-->         
+              <li class="nav-item" id="li_Gen_llaves" runat="server">
+                <a href="../Llaves/Llave_generar.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Generar LLaves</p>
+                </a>
+              </li>
+         <!--Generar LLavesFIN-->
+
+           <!--Ver LLaves Generadass-->         
+              <li class="nav-item" id="li_Ver_llav_Gen" runat="server">
+                <a href="../Llaves/Llave_disponibles.aspx" class="nav-link">
+                  <i class="nav-icon fa fa-circle-o text-info"></i>
+                  <p>Ver LLaves Generadas</p>
+                </a>
+              </li>
+         <!--Ver LLaves Generadas-->
+          
+             
 
 
          
