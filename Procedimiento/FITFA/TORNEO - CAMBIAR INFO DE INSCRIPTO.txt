@@ -1,0 +1,16 @@
+
+  ---1)con esto consulto las CATEGORIAS' --opciones 'Lucha', 'Forma'
+  select  categoria_tipo,  categoria.categoria_id,   graduacion.graduacion_desc as 'graduacion inicial', 
+  categoria_sexo, categoria_gradinicial, categoria_gradfinal, categoria_edadinicial, categoria_edadfinal, categoria_peso_inical, categoria_peso_Final       
+  from categoria inner join graduacion on categoria.categoria_gradinicial = graduacion.graduacion_id where categoria_tipo='Lucha' order by graduacion.graduacion_desc, categoria.categoria_sexo asc  
+  --2)con esto consulto el alumno inscripto. BUSCAR POR Dni
+  select inscripcion.inscripcion_id, inscripciones_x_torneo.categoria_id, usuario.usuario_id, usuario.usuario_doc, usuario_apellido +','+usuario_nombre, inscripcion.inscripcion_peso as 'Usuario' from inscripcion inner join usuario on inscripcion.usuario_id=usuario.usuario_id 
+		inner join evento on inscripcion.evento_id = evento.evento_id inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id  
+		where usuario.usuario_doc = 'ingreso DNI'  
+  --3) con el PESO, inscripcion_id y categoria_id puedo modificar datos del competidor.
+  -----3a)---modificar PESO
+	update inscripcion set inscripcion_peso= 'aqui peso variable decimal' where inscripcion.inscripcion_id = 'aqui inscripcion_id'
+  -----3b) --modifico la categoria, ELIGE UNA CATEGORIA ACORDE A EL PESO Y EDAD...EN DONDE CORRESPONDA	
+	update inscripciones_x_torneo set categoria_id = 'aqui categoria_id nueva' 
+				where inscripciones_x_torneo.inscripcion_id= 'aqui inscripcion_id' and inscripciones_x_torneo.categoria_id = 'aqui categoria consultada'--me refiero a la actual 'OJO'  		
+				
