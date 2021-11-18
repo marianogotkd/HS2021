@@ -95,11 +95,11 @@
         Label_evento_fecha_b.Text = "Fecha: " + CStr(ds_info.Tables(0).Rows(0).Item("evento_fecha"))
         Dim cant_inscriptos As Integer = 0
         Dim ii As Integer = 0
-        While ii < Torneo_ds.Torneo_resumen.Rows.Count
-            cant_inscriptos = cant_inscriptos + CInt(Torneo_ds.Torneo_resumen.Rows(ii).Item("Cantidad"))
-            ii = ii + 1
-        End While
-        Label_evento_cant_inscriptos_b.Text = "Cantidad de inscriptos: " + CStr(cant_inscriptos)
+        'While ii < Torneo_ds.Torneo_resumen.Rows.Count
+        '    cant_inscriptos = cant_inscriptos + CInt(Torneo_ds.Torneo_resumen.Rows(ii).Item("Cantidad"))
+        '    ii = ii + 1
+        'End While
+        Label_evento_cant_inscriptos_b.Text = "Cantidad de inscriptos: " + CStr(ds_info.Tables(3).Rows.Count)
 
 
         ii = 0

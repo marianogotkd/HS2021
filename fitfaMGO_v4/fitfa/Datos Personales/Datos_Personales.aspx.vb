@@ -129,8 +129,6 @@ Public Class Datos_Personales
         'filtrar
         cmb_instructor.DataSource = ""
         cmb_instructor.DataBind()
-
-
         Dim ds_instructor As DataSet = DAusuario.Usuario_ObtenerInstructor(23) '23 es la Institucion ANT
         If ds_instructor.Tables(0).Rows.Count <> 0 Then
             cmb_instructor.DataSource = ds_instructor.Tables(0)
@@ -152,7 +150,6 @@ Public Class Datos_Personales
     End Sub
     Private Sub combo_EstCivil_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles combo_EstCivil.Init
         obtener_estadocivil()
-
     End Sub
 
     Private Sub Combo_provincia_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Combo_provincia.SelectedIndexChanged

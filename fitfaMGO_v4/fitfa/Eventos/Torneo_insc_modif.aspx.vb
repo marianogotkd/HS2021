@@ -2850,28 +2850,28 @@
                                         Case 1 '12 a 13 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 40 kg"
-                                            fila1("valor") = "0 a 40 kg"
+                                            fila1("descripcion") = "0 a 35 kg"
+                                            fila1("valor") = "0 a 35 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "40 a 45 kg"
-                                            fila2("valor") = "40 a 45 kg"
+                                            fila2("descripcion") = "35 a 40 kg"
+                                            fila2("valor") = "35 a 40 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "45 a 50 kg"
-                                            fila3("valor") = "45 a 50 kg"
+                                            fila3("descripcion") = "40 a 45 kg"
+                                            fila3("valor") = "40 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "50 a 55 kg"
-                                            fila4("valor") = "50 a 55 kg"
+                                            fila4("descripcion") = "45 a 50 kg"
+                                            fila4("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "55 a 999 kg"
-                                            fila5("valor") = "55 a 999 kg"
+                                            fila5("descripcion") = "50 a 999 kg"
+                                            fila5("valor") = "50 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -2881,33 +2881,33 @@
                                         Case 2 '14 a 15 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 50 kg"
-                                            fila1("valor") = "0 a 50 kg"
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "50 a 55 kg"
-                                            fila2("valor") = "50 a 55 kg"
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "55 a 60 kg"
-                                            fila3("valor") = "55 a 60 kg"
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "60 a 65 kg"
-                                            fila4("valor") = "60 a 65 kg"
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "65 a 70 kg"
-                                            fila5("valor") = "65 a 70 kg"
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "70 a 999 kg"
-                                            fila6("valor") = "70 a 999 kg"
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -2917,6 +2917,42 @@
                                         Case 3 '16 a 17 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
+                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila2("nro") = 2
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
+                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila3("nro") = 3
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
+                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila4("nro") = 4
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
+                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila5("nro") = 5
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
+                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila6("nro") = 6
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
+
+                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
+                                            DropDownList_peso.DataTextField = "descripcion"
+                                            DropDownList_peso.DataValueField = "nro"
+                                            DropDownList_peso.DataBind()
+                                        Case 4 '18 a 35 años
+                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila1("nro") = 1
                                             fila1("descripcion") = "0 a 50 kg"
                                             fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
@@ -2944,42 +2980,6 @@
                                             fila6("nro") = 6
                                             fila6("descripcion") = "70 a 999 kg"
                                             fila6("valor") = "70 a 999 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
-
-                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
-                                            DropDownList_peso.DataTextField = "descripcion"
-                                            DropDownList_peso.DataValueField = "nro"
-                                            DropDownList_peso.DataBind()
-                                        Case 4 '18 a 35 años
-                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
-                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
-                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
-                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
-                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
-                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -2990,33 +2990,33 @@
                                         Case 5 '36 a 45 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3026,33 +3026,33 @@
                                         Case 6 '46 a 55
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3062,33 +3062,33 @@
                                         Case 7 '56 a 99 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3101,28 +3101,28 @@
                                         Case 1 '12 a 13 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 40 kg"
-                                            fila1("valor") = "0 a 40 kg"
+                                            fila1("descripcion") = "0 a 35 kg"
+                                            fila1("valor") = "0 a 35 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "40 a 45 kg"
-                                            fila2("valor") = "40 a 45 kg"
+                                            fila2("descripcion") = "35 a 40 kg"
+                                            fila2("valor") = "35 a 40 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "45 a 50 kg"
-                                            fila3("valor") = "45 a 50 kg"
+                                            fila3("descripcion") = "40 a 45 kg"
+                                            fila3("valor") = "40 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "50 a 55 kg"
-                                            fila4("valor") = "50 a 55 kg"
+                                            fila4("descripcion") = "45 a 50 kg"
+                                            fila4("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "55 a 999 kg"
-                                            fila5("valor") = "55 a 999 kg"
+                                            fila5("descripcion") = "50 a 999 kg"
+                                            fila5("valor") = "50 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3132,33 +3132,33 @@
                                         Case 2 '14 a 15 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 50 kg"
-                                            fila1("valor") = "0 a 50 kg"
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "50 a 55 kg"
-                                            fila2("valor") = "50 a 55 kg"
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "55 a 60 kg"
-                                            fila3("valor") = "55 a 60 kg"
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "60 a 65 kg"
-                                            fila4("valor") = "60 a 65 kg"
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "65 a 70 kg"
-                                            fila5("valor") = "65 a 70 kg"
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "70 a 999 kg"
-                                            fila6("valor") = "70 a 999 kg"
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3168,6 +3168,42 @@
                                         Case 3 '16 a 17 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
+                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila2("nro") = 2
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
+                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila3("nro") = 3
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
+                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila4("nro") = 4
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
+                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila5("nro") = 5
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
+                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila6("nro") = 6
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
+
+                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
+                                            DropDownList_peso.DataTextField = "descripcion"
+                                            DropDownList_peso.DataValueField = "nro"
+                                            DropDownList_peso.DataBind()
+                                        Case 4 '18 a 35 años
+                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila1("nro") = 1
                                             fila1("descripcion") = "0 a 50 kg"
                                             fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
@@ -3195,42 +3231,6 @@
                                             fila6("nro") = 6
                                             fila6("descripcion") = "70 a 999 kg"
                                             fila6("valor") = "70 a 999 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
-
-                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
-                                            DropDownList_peso.DataTextField = "descripcion"
-                                            DropDownList_peso.DataValueField = "nro"
-                                            DropDownList_peso.DataBind()
-                                        Case 4 '18 a 35 años
-                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
-                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
-                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
-                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
-                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
-                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3241,33 +3241,33 @@
                                         Case 5 '36 a 45 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3277,33 +3277,33 @@
                                         Case 6 '46 a 55
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3313,33 +3313,33 @@
                                         Case 7 '56 a 99 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3352,28 +3352,28 @@
                                         Case 1 '12 a 13 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 40 kg"
-                                            fila1("valor") = "0 a 40 kg"
+                                            fila1("descripcion") = "0 a 35 kg"
+                                            fila1("valor") = "0 a 35 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "40 a 45 kg"
-                                            fila2("valor") = "40 a 45 kg"
+                                            fila2("descripcion") = "35 a 40 kg"
+                                            fila2("valor") = "35 a 40 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "45 a 50 kg"
-                                            fila3("valor") = "45 a 50 kg"
+                                            fila3("descripcion") = "40 a 45 kg"
+                                            fila3("valor") = "40 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "50 a 55 kg"
-                                            fila4("valor") = "50 a 55 kg"
+                                            fila4("descripcion") = "45 a 50 kg"
+                                            fila4("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "55 a 999 kg"
-                                            fila5("valor") = "55 a 999 kg"
+                                            fila5("descripcion") = "50 a 999 kg"
+                                            fila5("valor") = "50 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3383,33 +3383,33 @@
                                         Case 2 '14 a 15 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 50 kg"
-                                            fila1("valor") = "0 a 50 kg"
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "50 a 55 kg"
-                                            fila2("valor") = "50 a 55 kg"
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "55 a 60 kg"
-                                            fila3("valor") = "55 a 60 kg"
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "60 a 65 kg"
-                                            fila4("valor") = "60 a 65 kg"
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "65 a 70 kg"
-                                            fila5("valor") = "65 a 70 kg"
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "70 a 999 kg"
-                                            fila6("valor") = "70 a 999 kg"
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3419,6 +3419,42 @@
                                         Case 3 '16 a 17 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
+                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila2("nro") = 2
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
+                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila3("nro") = 3
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
+                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila4("nro") = 4
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
+                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila5("nro") = 5
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
+                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila6("nro") = 6
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
+
+                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
+                                            DropDownList_peso.DataTextField = "descripcion"
+                                            DropDownList_peso.DataValueField = "nro"
+                                            DropDownList_peso.DataBind()
+                                        Case 4 '18 a 35 años
+                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila1("nro") = 1
                                             fila1("descripcion") = "0 a 50 kg"
                                             fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
@@ -3446,42 +3482,6 @@
                                             fila6("nro") = 6
                                             fila6("descripcion") = "70 a 999 kg"
                                             fila6("valor") = "70 a 999 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
-
-                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
-                                            DropDownList_peso.DataTextField = "descripcion"
-                                            DropDownList_peso.DataValueField = "nro"
-                                            DropDownList_peso.DataBind()
-                                        Case 4 '18 a 35 años
-                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
-                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
-                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
-                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
-                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
-                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3492,33 +3492,33 @@
                                         Case 5 '36 a 45 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3528,33 +3528,33 @@
                                         Case 6 '46 a 55
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3564,33 +3564,33 @@
                                         Case 7 '56 a 99 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3603,28 +3603,28 @@
                                         Case 1 '12 a 13 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 40 kg"
-                                            fila1("valor") = "0 a 40 kg"
+                                            fila1("descripcion") = "0 a 35 kg"
+                                            fila1("valor") = "0 a 35 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "40 a 45 kg"
-                                            fila2("valor") = "40 a 45 kg"
+                                            fila2("descripcion") = "35 a 40 kg"
+                                            fila2("valor") = "35 a 40 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "45 a 50 kg"
-                                            fila3("valor") = "45 a 50 kg"
+                                            fila3("descripcion") = "40 a 45 kg"
+                                            fila3("valor") = "40 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "50 a 55 kg"
-                                            fila4("valor") = "50 a 55 kg"
+                                            fila4("descripcion") = "45 a 50 kg"
+                                            fila4("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "55 a 999 kg"
-                                            fila5("valor") = "55 a 999 kg"
+                                            fila5("descripcion") = "50 a 999 kg"
+                                            fila5("valor") = "50 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3634,33 +3634,33 @@
                                         Case 2 '14 a 15 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 50 kg"
-                                            fila1("valor") = "0 a 50 kg"
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "50 a 55 kg"
-                                            fila2("valor") = "50 a 55 kg"
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "55 a 60 kg"
-                                            fila3("valor") = "55 a 60 kg"
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "60 a 65 kg"
-                                            fila4("valor") = "60 a 65 kg"
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "65 a 70 kg"
-                                            fila5("valor") = "65 a 70 kg"
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "70 a 999 kg"
-                                            fila6("valor") = "70 a 999 kg"
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3670,6 +3670,42 @@
                                         Case 3 '16 a 17 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
+                                            fila1("descripcion") = "0 a 45 kg"
+                                            fila1("valor") = "0 a 45 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
+                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila2("nro") = 2
+                                            fila2("descripcion") = "45 a 50 kg"
+                                            fila2("valor") = "45 a 50 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
+                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila3("nro") = 3
+                                            fila3("descripcion") = "50 a 55 kg"
+                                            fila3("valor") = "50 a 55 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
+                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila4("nro") = 4
+                                            fila4("descripcion") = "55 a 60 kg"
+                                            fila4("valor") = "55 a 60 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
+                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila5("nro") = 5
+                                            fila5("descripcion") = "60 a 65 kg"
+                                            fila5("valor") = "60 a 65 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
+                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila6("nro") = 6
+                                            fila6("descripcion") = "65 a 999 kg"
+                                            fila6("valor") = "65 a 999 kg"
+                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
+
+                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
+                                            DropDownList_peso.DataTextField = "descripcion"
+                                            DropDownList_peso.DataValueField = "nro"
+                                            DropDownList_peso.DataBind()
+                                        Case 4 '18 a 35 años
+                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
+                                            fila1("nro") = 1
                                             fila1("descripcion") = "0 a 50 kg"
                                             fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
@@ -3697,42 +3733,6 @@
                                             fila6("nro") = 6
                                             fila6("descripcion") = "70 a 999 kg"
                                             fila6("valor") = "70 a 999 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila6)
-
-                                            DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
-                                            DropDownList_peso.DataTextField = "descripcion"
-                                            DropDownList_peso.DataValueField = "nro"
-                                            DropDownList_peso.DataBind()
-                                        Case 4 '18 a 35 años
-                                            Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila1)
-                                            Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila2)
-                                            Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila3)
-                                            Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila4)
-                                            Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
-                                            Peso_Ds.Combo_Peso.Rows.Add(fila5)
-                                            Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
-                                            fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3743,33 +3743,33 @@
                                         Case 5 '36 a 45 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3779,33 +3779,33 @@
                                         Case 6 '46 a 55
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3815,33 +3815,33 @@
                                         Case 7 '56 a 99 años
                                             Dim fila1 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila1("nro") = 1
-                                            fila1("descripcion") = "0 a 58 kg"
-                                            fila1("valor") = "0 a 58 kg"
+                                            fila1("descripcion") = "0 a 50 kg"
+                                            fila1("valor") = "0 a 50 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila1)
                                             Dim fila2 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila2("nro") = 2
-                                            fila2("descripcion") = "58 a 64 kg"
-                                            fila2("valor") = "58 a 64 kg"
+                                            fila2("descripcion") = "50 a 55 kg"
+                                            fila2("valor") = "50 a 55 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila2)
                                             Dim fila3 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila3("nro") = 3
-                                            fila3("descripcion") = "64 a 70 kg"
-                                            fila3("valor") = "64 a 70 kg"
+                                            fila3("descripcion") = "55 a 60 kg"
+                                            fila3("valor") = "55 a 60 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila3)
                                             Dim fila4 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila4("nro") = 4
-                                            fila4("descripcion") = "70 a 76 kg"
-                                            fila4("valor") = "70 a 76 kg"
+                                            fila4("descripcion") = "60 a 65 kg"
+                                            fila4("valor") = "60 a 65 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila4)
                                             Dim fila5 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila5("nro") = 5
-                                            fila5("descripcion") = "76 a 82 kg"
-                                            fila5("valor") = "76 a 82 kg"
+                                            fila5("descripcion") = "65 a 70 kg"
+                                            fila5("valor") = "65 a 70 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila5)
                                             Dim fila6 As DataRow = Peso_Ds.Combo_Peso.NewRow
                                             fila6("nro") = 6
-                                            fila6("descripcion") = "82 a 999 kg"
-                                            fila6("valor") = "82 a 999 kg"
+                                            fila6("descripcion") = "70 a 999 kg"
+                                            fila6("valor") = "70 a 999 kg"
                                             Peso_Ds.Combo_Peso.Rows.Add(fila6)
 
                                             DropDownList_peso.DataSource = Peso_Ds.Combo_Peso
@@ -3907,9 +3907,9 @@
         Edad_Ds.Combo_Edad.Rows.Add(fila6)
         'aqui cargo edad.
         Dim fila7 As DataRow = Edad_Ds.Combo_Edad.NewRow
-        fila1("nro") = 7
-        fila1("descripcion") = "56 a 99 años"
-        fila1("valor") = "56 a 99 años"
+        fila7("nro") = 7
+        fila7("descripcion") = "56 a 99 años"
+        fila7("valor") = "56 a 99 años"
         Edad_Ds.Combo_Edad.Rows.Add(fila7)
         DropDownList_edad.DataSource = Edad_Ds.Combo_Edad
         DropDownList_edad.DataTextField = "descripcion"
@@ -5354,40 +5354,43 @@
                                         categoria_edadinicial = 12
                                         categoria_edadfinal = 13
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 40 kg
+                                            Case 1 '0 a 35 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 35
+                                            Case 2 '35 a 40 kg
+                                                categoria_peso_inicial = 35
                                                 categoria_peso_Final = 40
-                                            Case 2 '40 a 45 kg
+                                            Case 3 '40 a 45 kg
                                                 categoria_peso_inicial = 40
                                                 categoria_peso_Final = 45
-                                            Case 3 '45 a 50 kg
+                                            Case 4 '45 a 50 kg
                                                 categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 4 '55 a 999 kg
-                                                categoria_peso_inicial = 55
+                                            Case 5 '50 a 999 kg
+                                                categoria_peso_inicial = 50
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 2 '14 a 15 años
                                         categoria_edadinicial = 14
                                         categoria_edadfinal = 15
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 50 kg
+                                            Case 1 '0 a 45 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 2 '50 a 55 kg
+                                            Case 3 '50 a 55 kg
                                                 categoria_peso_inicial = 50
                                                 categoria_peso_Final = 55
-                                            Case 3 '55 a 60 kg
+                                            Case 4 '55 a 60 kg
                                                 categoria_peso_inicial = 55
                                                 categoria_peso_Final = 60
-                                            Case 4 '60 a 65 kg
+                                            Case 5 '60 a 65 kg
                                                 categoria_peso_inicial = 60
                                                 categoria_peso_Final = 65
-                                            Case 5 '65 a 70 kg
+                                            Case 6 '65 a 999 kg
                                                 categoria_peso_inicial = 65
-                                                categoria_peso_Final = 70
-                                            Case 6 '70 a 999 kg
-                                                categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
 
                                         End Select
@@ -5395,6 +5398,30 @@
                                         categoria_edadinicial = 16
                                         categoria_edadfinal = 17
                                         Select Case DropDownList_peso.SelectedValue
+                                            Case 1 '0 a 45 kg
+                                                categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
+                                                categoria_peso_Final = 50
+                                            Case 3 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 4 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 5 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 6 '65 a 999 kg
+                                                categoria_peso_inicial = 65
+                                                categoria_peso_Final = 999
+
+                                        End Select
+                                    Case 4 '18 a 35 años
+                                        categoria_edadinicial = 18
+                                        categoria_edadfinal = 35
+                                        Select Case DropDownList_peso.SelectedValue
                                             Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
                                                 categoria_peso_Final = 50
@@ -5413,98 +5440,74 @@
                                             Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
-
-                                        End Select
-                                    Case 4 '18 a 35 años
-                                        categoria_edadinicial = 18
-                                        categoria_edadfinal = 35
-                                        Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
-                                                categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
-                                                categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
-                                                categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
-                                                categoria_peso_Final = 999
                                         End Select
                                     Case 5 '36 a 45 años
                                         categoria_edadinicial = 36
                                         categoria_edadfinal = 45
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 6 '46 a 55 años
                                         categoria_edadinicial = 46
                                         categoria_edadfinal = 55
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 7 '56 a 99 años
                                         categoria_edadinicial = 56
                                         categoria_edadfinal = 99
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                 End Select
@@ -5514,40 +5517,43 @@
                                         categoria_edadinicial = 12
                                         categoria_edadfinal = 13
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 40 kg
+                                            Case 1 '0 a 35 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 35
+                                            Case 2 '35 a 40 kg
+                                                categoria_peso_inicial = 35
                                                 categoria_peso_Final = 40
-                                            Case 2 '40 a 45 kg
+                                            Case 3 '40 a 45 kg
                                                 categoria_peso_inicial = 40
                                                 categoria_peso_Final = 45
-                                            Case 3 '45 a 50 kg
+                                            Case 4 '45 a 50 kg
                                                 categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 4 '55 a 999 kg
-                                                categoria_peso_inicial = 55
+                                            Case 5 '50 a 999 kg
+                                                categoria_peso_inicial = 50
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 2 '14 a 15 años
                                         categoria_edadinicial = 14
                                         categoria_edadfinal = 15
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 50 kg
+                                            Case 1 '0 a 45 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 2 '50 a 55 kg
+                                            Case 3 '50 a 55 kg
                                                 categoria_peso_inicial = 50
                                                 categoria_peso_Final = 55
-                                            Case 3 '55 a 60 kg
+                                            Case 4 '55 a 60 kg
                                                 categoria_peso_inicial = 55
                                                 categoria_peso_Final = 60
-                                            Case 4 '60 a 65 kg
+                                            Case 5 '60 a 65 kg
                                                 categoria_peso_inicial = 60
                                                 categoria_peso_Final = 65
-                                            Case 5 '65 a 70 kg
+                                            Case 6 '65 a 999 kg
                                                 categoria_peso_inicial = 65
-                                                categoria_peso_Final = 70
-                                            Case 6 '70 a 999 kg
-                                                categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
 
                                         End Select
@@ -5555,6 +5561,30 @@
                                         categoria_edadinicial = 16
                                         categoria_edadfinal = 17
                                         Select Case DropDownList_peso.SelectedValue
+                                            Case 1 '0 a 45 kg
+                                                categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
+                                                categoria_peso_Final = 50
+                                            Case 3 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 4 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 5 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 6 '65 a 999 kg
+                                                categoria_peso_inicial = 65
+                                                categoria_peso_Final = 999
+
+                                        End Select
+                                    Case 4 '18 a 35 años
+                                        categoria_edadinicial = 18
+                                        categoria_edadfinal = 35
+                                        Select Case DropDownList_peso.SelectedValue
                                             Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
                                                 categoria_peso_Final = 50
@@ -5573,98 +5603,74 @@
                                             Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
-
-                                        End Select
-                                    Case 4 '18 a 35 años
-                                        categoria_edadinicial = 18
-                                        categoria_edadfinal = 35
-                                        Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
-                                                categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
-                                                categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
-                                                categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
-                                                categoria_peso_Final = 999
                                         End Select
                                     Case 5 '36 a 45 años
                                         categoria_edadinicial = 36
                                         categoria_edadfinal = 45
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 6 '46 a 55 años
                                         categoria_edadinicial = 46
                                         categoria_edadfinal = 55
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 7 '56 a 99 años
                                         categoria_edadinicial = 56
                                         categoria_edadfinal = 99
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                 End Select
@@ -5674,40 +5680,43 @@
                                         categoria_edadinicial = 12
                                         categoria_edadfinal = 13
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 40 kg
+                                            Case 1 '0 a 35 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 35
+                                            Case 2 '35 a 40 kg
+                                                categoria_peso_inicial = 35
                                                 categoria_peso_Final = 40
-                                            Case 2 '40 a 45 kg
+                                            Case 3 '40 a 45 kg
                                                 categoria_peso_inicial = 40
                                                 categoria_peso_Final = 45
-                                            Case 3 '45 a 50 kg
+                                            Case 4 '45 a 50 kg
                                                 categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 4 '55 a 999 kg
-                                                categoria_peso_inicial = 55
+                                            Case 5 '50 a 999 kg
+                                                categoria_peso_inicial = 50
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 2 '14 a 15 años
                                         categoria_edadinicial = 14
                                         categoria_edadfinal = 15
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 50 kg
+                                            Case 1 '0 a 45 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 2 '50 a 55 kg
+                                            Case 3 '50 a 55 kg
                                                 categoria_peso_inicial = 50
                                                 categoria_peso_Final = 55
-                                            Case 3 '55 a 60 kg
+                                            Case 4 '55 a 60 kg
                                                 categoria_peso_inicial = 55
                                                 categoria_peso_Final = 60
-                                            Case 4 '60 a 65 kg
+                                            Case 5 '60 a 65 kg
                                                 categoria_peso_inicial = 60
                                                 categoria_peso_Final = 65
-                                            Case 5 '65 a 70 kg
+                                            Case 6 '65 a 999 kg
                                                 categoria_peso_inicial = 65
-                                                categoria_peso_Final = 70
-                                            Case 6 '70 a 999 kg
-                                                categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
 
                                         End Select
@@ -5715,6 +5724,30 @@
                                         categoria_edadinicial = 16
                                         categoria_edadfinal = 17
                                         Select Case DropDownList_peso.SelectedValue
+                                            Case 1 '0 a 45 kg
+                                                categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
+                                                categoria_peso_Final = 50
+                                            Case 3 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 4 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 5 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 6 '65 a 999 kg
+                                                categoria_peso_inicial = 65
+                                                categoria_peso_Final = 999
+
+                                        End Select
+                                    Case 4 '18 a 35 años
+                                        categoria_edadinicial = 18
+                                        categoria_edadfinal = 35
+                                        Select Case DropDownList_peso.SelectedValue
                                             Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
                                                 categoria_peso_Final = 50
@@ -5733,98 +5766,74 @@
                                             Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
-
-                                        End Select
-                                    Case 4 '18 a 35 años
-                                        categoria_edadinicial = 18
-                                        categoria_edadfinal = 35
-                                        Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
-                                                categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
-                                                categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
-                                                categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
-                                                categoria_peso_Final = 999
                                         End Select
                                     Case 5 '36 a 45 años
                                         categoria_edadinicial = 36
                                         categoria_edadfinal = 45
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 6 '46 a 55 años
                                         categoria_edadinicial = 46
                                         categoria_edadfinal = 55
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 7 '56 a 99 años
                                         categoria_edadinicial = 56
                                         categoria_edadfinal = 99
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                 End Select
@@ -5834,40 +5843,43 @@
                                         categoria_edadinicial = 12
                                         categoria_edadfinal = 13
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 40 kg
+                                            Case 1 '0 a 35 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 35
+                                            Case 2 '35 a 40 kg
+                                                categoria_peso_inicial = 35
                                                 categoria_peso_Final = 40
-                                            Case 2 '40 a 45 kg
+                                            Case 3 '40 a 45 kg
                                                 categoria_peso_inicial = 40
                                                 categoria_peso_Final = 45
-                                            Case 3 '45 a 50 kg
+                                            Case 4 '45 a 50 kg
                                                 categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 4 '55 a 999 kg
-                                                categoria_peso_inicial = 55
+                                            Case 5 '50 a 999 kg
+                                                categoria_peso_inicial = 50
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 2 '14 a 15 años
                                         categoria_edadinicial = 14
                                         categoria_edadfinal = 15
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 50 kg
+                                            Case 1 '0 a 45 kg
                                                 categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
                                                 categoria_peso_Final = 50
-                                            Case 2 '50 a 55 kg
+                                            Case 3 '50 a 55 kg
                                                 categoria_peso_inicial = 50
                                                 categoria_peso_Final = 55
-                                            Case 3 '55 a 60 kg
+                                            Case 4 '55 a 60 kg
                                                 categoria_peso_inicial = 55
                                                 categoria_peso_Final = 60
-                                            Case 4 '60 a 65 kg
+                                            Case 5 '60 a 65 kg
                                                 categoria_peso_inicial = 60
                                                 categoria_peso_Final = 65
-                                            Case 5 '65 a 70 kg
+                                            Case 6 '65 a 999 kg
                                                 categoria_peso_inicial = 65
-                                                categoria_peso_Final = 70
-                                            Case 6 '70 a 999 kg
-                                                categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
 
                                         End Select
@@ -5875,6 +5887,30 @@
                                         categoria_edadinicial = 16
                                         categoria_edadfinal = 17
                                         Select Case DropDownList_peso.SelectedValue
+                                            Case 1 '0 a 45 kg
+                                                categoria_peso_inicial = 0
+                                                categoria_peso_Final = 45
+                                            Case 2 '45 a 50 kg
+                                                categoria_peso_inicial = 45
+                                                categoria_peso_Final = 50
+                                            Case 3 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 4 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 5 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 6 '65 a 999 kg
+                                                categoria_peso_inicial = 65
+                                                categoria_peso_Final = 999
+
+                                        End Select
+                                    Case 4 '18 a 35 años
+                                        categoria_edadinicial = 18
+                                        categoria_edadfinal = 35
+                                        Select Case DropDownList_peso.SelectedValue
                                             Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
                                                 categoria_peso_Final = 50
@@ -5893,98 +5929,74 @@
                                             Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
                                                 categoria_peso_Final = 999
-
-                                        End Select
-                                    Case 4 '18 a 35 años
-                                        categoria_edadinicial = 18
-                                        categoria_edadfinal = 35
-                                        Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
-                                                categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
-                                                categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
-                                                categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
-                                                categoria_peso_Final = 999
                                         End Select
                                     Case 5 '36 a 45 años
                                         categoria_edadinicial = 36
                                         categoria_edadfinal = 45
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 6 '46 a 55 años
                                         categoria_edadinicial = 46
                                         categoria_edadfinal = 55
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                     Case 7 '56 a 99 años
                                         categoria_edadinicial = 56
                                         categoria_edadfinal = 99
                                         Select Case DropDownList_peso.SelectedValue
-                                            Case 1 '0 a 58 kg
+                                            Case 1 '0 a 50 kg
                                                 categoria_peso_inicial = 0
-                                                categoria_peso_Final = 58
-                                            Case 2 '58 a 64 kg
-                                                categoria_peso_inicial = 58
-                                                categoria_peso_Final = 64
-                                            Case 3 '64 a 70 kg
-                                                categoria_peso_inicial = 64
+                                                categoria_peso_Final = 50
+                                            Case 2 '50 a 55 kg
+                                                categoria_peso_inicial = 50
+                                                categoria_peso_Final = 55
+                                            Case 3 '55 a 60 kg
+                                                categoria_peso_inicial = 55
+                                                categoria_peso_Final = 60
+                                            Case 4 '60 a 65 kg
+                                                categoria_peso_inicial = 60
+                                                categoria_peso_Final = 65
+                                            Case 5 '65 a 70 kg
+                                                categoria_peso_inicial = 65
                                                 categoria_peso_Final = 70
-                                            Case 4 '70 a 76 kg
+                                            Case 6 '70 a 999 kg
                                                 categoria_peso_inicial = 70
-                                                categoria_peso_Final = 76
-                                            Case 5 '76 a 82 kg
-                                                categoria_peso_inicial = 76
-                                                categoria_peso_Final = 82
-                                            Case 6 '82 a 999 kg
-                                                categoria_peso_inicial = 82
                                                 categoria_peso_Final = 999
                                         End Select
                                 End Select
