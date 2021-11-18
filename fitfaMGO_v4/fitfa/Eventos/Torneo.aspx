@@ -33,16 +33,17 @@
                       <div class="col-lg-12">
                       
                       <div id="Div1_grilla" class="row justify-content-center" runat="server" visible="true">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                         <div class="card">
                         
 
                         <!-- /.card-header -->
                             <div class="card-body table-responsive p-0" style="height: 300px"> <%--class="form-group"--%>
                                     <%--class="table table-head-fixed text-nowrap"--%>
-                                    <asp:GridView ID="GridView1" runat="server" class="table table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
-                                           BorderColor="Black" GridLines="None" 
-                                          EnableSortingAndPagingCallbacks="True"> <%--class="table table-hover" PageSize="20" --%>
+                                    <asp:GridView ID="GridView1" class="table table-hover" runat="server" 
+                                        AllowSorting="True" AutoGenerateColumns="False" 
+                                                BorderColor="Black" 
+                                        EnableSortingAndPagingCallbacks="True"> <%--class="table table-hover" PageSize="20" --%>
                                             <Columns>
                                                 <asp:BoundField DataField="categoria_id" HeaderText="ID" />
                                                 <asp:BoundField DataField="Modalidad" HeaderText="Modalidad">
@@ -93,16 +94,17 @@
                       <div class="col-lg-12">
                       
                       <div id="Div1_grilla_solouno" class="row justify-content-center" runat="server" visible="true">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                         <div class="card">
                         
 
                         <!-- /.card-header -->
                             <div class="card-body table-responsive p-0" style="height: 300px"> <%--class="form-group"--%>
                                     <%--class="table table-head-fixed text-nowrap"--%>
-                                    <asp:GridView ID="GridView2" runat="server" class="table table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
-                                           BorderColor="Black" GridLines="None" 
-                                          EnableSortingAndPagingCallbacks="True"> <%--class="table table-hover" PageSize="20" --%>
+                                    <asp:GridView ID="GridView2" class="table table-hover" runat="server" 
+                                        AllowSorting="True" AutoGenerateColumns="False" 
+                                                BorderColor="Black" 
+                                        EnableSortingAndPagingCallbacks="True"> <%--class="table table-hover" PageSize="20" --%>
                                             <Columns>
                                                 <asp:BoundField DataField="categoria_id" HeaderText="ID" />
                                                 <asp:BoundField DataField="Modalidad" HeaderText="Modalidad">
