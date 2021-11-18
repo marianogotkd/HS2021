@@ -268,6 +268,50 @@ Public Class Inscripciones
         Return ds
     End Function
 
+    Public Function Inscripcion_eliminar_alumno_torneo(ByVal inscripcion_id As Integer, ByVal categoria_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Inscripcion_eliminar_alumno_torneo", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_id", inscripcion_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@categoria_id", categoria_id))
+
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "inscripciones")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
+    Public Function Inscripcion_eliminar_masivo(ByVal inscripcion_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Inscripcion_eliminar_masivo", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_id", inscripcion_id))
+        'comando.Parameters.Add(New OleDb.OleDbParameter("@categoria_id", categoria_id))
+
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "inscripciones")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
 
 #Region "EXAMENES"
     Public Function inscripciones_x_examen_eliminar(ByVal Inscexamen_id As Integer) As DataSet
@@ -427,6 +471,58 @@ Public Class Inscripciones
         Return ds
     End Function
 #End Region
+
+#Region "TORNEO"
+    Public Function Inscripciones_categoria_consultar(ByVal evento_id As Integer, ByVal categoria_id As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Inscripciones_categoria_consultar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@evento_id", evento_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@categoria_id", categoria_id))
+        
+
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "inscripciones")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
+
+
+
+#End Region
+
+    Public Function Inscripcion_modificar(ByVal inscripcion_id As Integer, ByVal inscripcion_peso As Decimal, ByVal categoria_id_vieja As Integer, ByVal categoria_id_nueva As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim comando As New OleDbCommand("Inscripcion_modificar", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_id", inscripcion_id))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@inscripcion_peso", inscripcion_peso))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@categoria_id_vieja", categoria_id_vieja))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@categoria_id_nueva", categoria_id_nueva))
+
+        ' crear dataset que sirve de contenedor para todos los datatables
+        ''el dataset es un contenedor, repositorio
+        Dim ds As New DataSet() 'System.Data.DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Producto".
+        DA.Fill(ds, "inscripciones")
+        ''Cierro la conexión
+        dbconn.Close()
+        ''Como toda función debe retornar al uso RETURN
+        Return ds
+    End Function
 
 
 End Class

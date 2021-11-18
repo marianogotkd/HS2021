@@ -78,10 +78,12 @@
                     
                     </div>
 
-                    <div class="form-group">
-                        <asp:GridView ID="GridView1" runat="server" class="table table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+                    <div class="col-md-8">
+                    <div class="card">
+                    <div class="card-body table-responsive p-0" style="height: 500px"> <%--class="form-group"--%>
+                    <asp:GridView ID="GridView1" runat="server" class="table table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
                            BorderColor="Black" GridLines="None" 
-                          EnableSortingAndPagingCallbacks="True" PageSize="20">
+                          EnableSortingAndPagingCallbacks="True">
                             <Columns>
                                 <asp:BoundField DataField="id" HeaderText="ID" >                                                               
                                 <HeaderStyle ForeColor="#0099FF" />
@@ -110,7 +112,14 @@
                               </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
+
+
+
                     </div>
+                    </div>
+                    </div>
+                    
+                    
     
                 </div>
               

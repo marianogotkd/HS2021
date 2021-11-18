@@ -1266,9 +1266,13 @@
     <Content Include="Eventos\Curso.aspx" />
     <Content Include="Eventos\Evento_Seleccionar_Curso.aspx" />
     <Content Include="Eventos\Evento_Seleccionar_Examen.aspx" />
+    <Content Include="Eventos\Evento_Seleccionar_Torneo.aspx" />
     <Content Include="Eventos\Examen.aspx" />
     <Content Include="Eventos\Examenes_turnos_agregar.aspx" />
     <Content Include="Eventos\Examen_costos.aspx" />
+    <Content Include="Eventos\Torneo.aspx" />
+    <Content Include="Eventos\Torneo_insc.aspx" />
+    <Content Include="Eventos\Torneo_insc_modif.aspx" />
     <Content Include="img\LOGOANT400x400.png" />
     <Content Include="img\TKD\Prov21200x300 .png" />
     <Content Include="img\TKD\Prov21200x300 CLIC.png" />
@@ -2584,6 +2588,17 @@
     <None Include="Eventos\Examen_ds.xss">
       <DependentUpon>Examen_ds.xsd</DependentUpon>
     </None>
+    <None Include="Eventos\Torneo_ds.xsc">
+      <DependentUpon>Torneo_ds.xsd</DependentUpon>
+    </None>
+    <None Include="Eventos\Torneo_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Torneo_ds.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Eventos\Torneo_ds.xss">
+      <DependentUpon>Torneo_ds.xsd</DependentUpon>
+    </None>
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap-theme.css.map" />
     <None Include="LoginDNI\assets\bootstrap\css\bootstrap.css.map" />
     <None Include="LoginDNI\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -3026,6 +3041,13 @@
       <DependentUpon>Evento_Seleccionar_Examen.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Eventos\Evento_Seleccionar_Torneo.aspx.designer.vb">
+      <DependentUpon>Evento_Seleccionar_Torneo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Evento_Seleccionar_Torneo.aspx.vb">
+      <DependentUpon>Evento_Seleccionar_Torneo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Eventos\Examen.aspx.designer.vb">
       <DependentUpon>Examen.aspx</DependentUpon>
     </Compile>
@@ -3057,6 +3079,32 @@
     </Compile>
     <Compile Include="Eventos\Modificar_Evento.aspx.vb">
       <DependentUpon>Modificar_Evento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Torneo.aspx.designer.vb">
+      <DependentUpon>Torneo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Torneo.aspx.vb">
+      <DependentUpon>Torneo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Torneo_ds.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Torneo_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Torneo_insc.aspx.designer.vb">
+      <DependentUpon>Torneo_insc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Torneo_insc.aspx.vb">
+      <DependentUpon>Torneo_insc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Torneo_insc_modif.aspx.designer.vb">
+      <DependentUpon>Torneo_insc_modif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Torneo_insc_modif.aspx.vb">
+      <DependentUpon>Torneo_insc_modif.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Inicio_Blanco.aspx.designer.vb">
@@ -3820,7 +3868,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10176</DevelopmentServerPort>
+          <DevelopmentServerPort>17765</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
