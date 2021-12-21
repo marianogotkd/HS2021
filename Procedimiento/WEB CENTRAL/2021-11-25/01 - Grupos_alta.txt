@@ -1,0 +1,44 @@
+USE [WebCentral]
+GO
+/****** Object:  StoredProcedure [dbo].[Grupos_alta]    Script Date: 11/25/2021 14:50:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Grupos_alta]
+@Nombre varchar(20), 
+@Tipo char(1), 
+@Porcentaje decimal(5,2), 
+@Clienteporcentaje int, 
+@Codigocobro char(1), 
+@Fecha date, 
+@Saldo decimal(38,2),
+@Saldoanterior decimal(38,2), 
+@Gastos decimal(38,2),
+@Codigo varchar(max),
+@Importe decimal(38,2)
+
+as
+
+insert Grupos (Nombre, 
+				Tipo, 
+				Porcentaje, 
+				Clienteporcentaje, 
+				Codigocobro, 
+				Fecha, 
+				Saldo, 
+				Saldoanterior, 
+				Gastos, 
+				Codigo,
+				Importe) 
+				values (@Nombre, 
+				@Tipo, 
+				@Porcentaje, 
+				@Clienteporcentaje, 
+				@Codigocobro, 
+				@Fecha, 
+				@Saldo, 
+				@Saldoanterior, 
+				@Gastos,
+				@Codigo,
+				@Importe)

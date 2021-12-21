@@ -104,6 +104,24 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents DropDownList_grupos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Control lb_error_grupo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_error_grupo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control Small2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Small2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control Txt_comision.
     '''</summary>
     '''<remarks>
@@ -212,13 +230,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents lb_error_regalo1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_proceso.
+    '''Control DropDownList_proceso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_proceso As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_proceso As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_proceso.
@@ -230,13 +248,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents lb_error_proceso As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_calculo.
+    '''Control DropDownList_calculo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_calculo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_calculo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_calculo.
@@ -248,13 +266,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents lb_error_calculo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_factor.
+    '''Control DropDownList_factor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_factor As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_factor As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_factor.
@@ -266,13 +284,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents lb_error_factor As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_imprimecalculo.
+    '''Control DropDownList_imprimecalculo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_imprimecalculo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_imprimecalculo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_imprimecalculo.
@@ -338,13 +356,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents Small10 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control Txt_variable.
+    '''Control DropDownList_variable.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_variable As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_variable As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_variable.
@@ -374,13 +392,13 @@ Partial Public Class Cliente_alta_b
     Protected WithEvents lb_error_leyenda As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_variable1.
+    '''Control DropDownList_variable1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_variable1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_variable1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_variable1.

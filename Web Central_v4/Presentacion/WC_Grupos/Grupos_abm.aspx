@@ -93,7 +93,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" 
+    <asp:ScriptManager ID="ScriptManager1" runat="server" 
                             EnableScriptGlobalization="True">
     </asp:ScriptManager>
 
@@ -112,7 +112,9 @@
                 <div class="card-body">
                     <div class="form-group">
                         <asp:Label ID="Lb_grupo" runat="server" Text="Grupos:"></asp:Label>
-                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese Cód." runat="server" CausesValidation="True" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="Txt_grupo_id" placeholder="ingrese Cód." runat="server" 
+                            CausesValidation="True" onkeydown="tecla_op(event);" 
+                            onkeypress="return justNumbers(event);" MaxLength="3"></asp:TextBox>
                         
                     </div>
                     

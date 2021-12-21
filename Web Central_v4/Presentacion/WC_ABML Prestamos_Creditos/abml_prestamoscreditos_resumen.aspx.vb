@@ -24,6 +24,11 @@
     Dim DS_prestamoscreditos As New DS_prestamoscreditos
     Private Sub obtener_resumen(ByVal Fecha As Date)
         DS_prestamoscreditos.Tabla1.Rows.Clear()
+
+        GridView1.Columns(0).Visible = True 'columna ID
+        GridView1.Columns(10).Visible = True 'columna ID
+        GridView1.Columns(10).Visible = True 'columna ID
+
         Dim ds_info As DataSet = DAprestamoscreditos.PrestamosCreditos_resumen(Fecha)
         If ds_info.Tables(0).Rows.Count <> 0 Then
             Dim i As Integer = 0
@@ -51,9 +56,15 @@
                     Case "3"
                         fila("Cobro") = "A descontar manual"
                     Case Else
-                        fila("Cobro") = ""
+                        'mostrar cantidad de dias en los cuales se cobrará el credito
+                        fila("Cobro") = CStr(ds_info.Tables(0).Rows(i).Item("Dias")) + " dias"
                 End Select
+
                 fila("Fecha") = ds_info.Tables(0).Rows(i).Item("Fecha")
+
+                fila("Saldo") = ds_info.Tables(0).Rows(i).Item("Saldo")
+
+                fila("Estado") = ds_info.Tables(0).Rows(i).Item("Estado")
 
                 DS_prestamoscreditos.Tabla1.Rows.Add(fila)
                 i = i + 1
@@ -64,6 +75,20 @@
         End If
         GridView1.DataSource = DS_prestamoscreditos.Tabla1
         GridView1.DataBind()
+
+        GridView1.Columns(0).Visible = False '0 es columna ID
+
+        Try
+            If CDate(Hf_FECHA.Value) <> CDate(txt_fecha.Text) Then
+                GridView1.Columns(10).Visible = False '10 es columna eliminar
+            End If
+
+            If CDate(txt_fecha.Text) >= CDate(Hf_FECHA.Value) Then
+                GridView1.Columns(11).Visible = False '11 es columna dar de baja
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
@@ -80,20 +105,30 @@
             Session("ID") = id
 
             'aqui pregunto si estoy seguro de eliminar.
-            ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "Mdl_baja", "$(document).ready(function () {$('#Mdl_baja').modal();});", True)
+            ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "Mdl_eliminar", "$(document).ready(function () {$('#Mdl_eliminar').modal();});", True)
+        Else
+            If (e.CommandName = "ID_baja") Then
+                ' Retrieve the row index stored in the CommandArgument property.
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                Dim id As Integer = Integer.Parse(e.CommandArgument.ToString())
+                'Session("usuario_id") = id
+                'Response.Redirect("Mensaje_Datos_Personales.aspx")
+                Session("ID") = id
 
+                'aqui pregunto si estoy seguro de eliminar.
+                ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "Mdl_baja", "$(document).ready(function () {$('#Mdl_baja').modal();});", True)
+            End If
         End If
     End Sub
-
-    Private Sub btn_baja_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_close.ServerClick
+    
+#Region "BOTON ELIMINAR"
+    Private Sub btn_eliminar1_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_eliminar1_close.ServerClick
         'nada
     End Sub
-
-    Private Sub btn_baja_mdl_cancelar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdl_cancelar.ServerClick
+    Private Sub btn_eliminar_mdl_cancelar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_eliminar_mdl_cancelar.ServerClick
         'nada
     End Sub
-
-    Private Sub btn_baja_mdll_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdll.ServerClick
+    Private Sub btn_eliminar_mdll_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_eliminar_mdll.ServerClick
         Try
             'aqui codigo para eliminar.
             DAprestamoscreditos.PrestamosCreditos_eliminar(Session("ID"))
@@ -103,24 +138,76 @@
         Catch ex As Exception
 
         End Try
-        
     End Sub
-
     Private Sub btn_ELIMINAR_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ELIMINAR_close.ServerClick
-        'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
 
+        End Try
     End Sub
 
     Private Sub btn_ok_elimnar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_elimnar.ServerClick
-        'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
-        txt_fecha.Focus()
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
 
+        End Try
     End Sub
+#End Region
+
+#Region "BOTON DAR DE BAJA"
+
+    Private Sub btn_baja_mdll_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_baja_mdll.ServerClick
+        Try
+            'aqui codigo para eliminar.
+            DAprestamoscreditos.PrestamosCreditos_baja(Session("ID"), 3, CDate(txt_fecha.Text))
+            Session("ID") = ""
+            ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKBAJA", "$(document).ready(function () {$('#modal-sm_OKBAJA').modal();});", True)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btn_ok_baja_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_baja.ServerClick
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
+
+        End Try
+        
+    End Sub
+    Private Sub btn_BAJA_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_BAJA_close.ServerClick
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
+
+        End Try
+        
+    End Sub
+
+#End Region
+
 
     Private Sub btn_buscar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_buscar.ServerClick
         Try
+            'habilito la columan ID.
+            'habilito la columna Eliminar
+            'habilitio la columna dar de baja
+            GridView1.Columns(0).Visible = True '0 es columna ID
+            GridView1.Columns(10).Visible = True '10 es columna eliminar
+            GridView1.Columns(11).Visible = True '11 es columna dar de baja
+
+
             DS_prestamoscreditos.Tabla1.Rows.Clear()
             GridView1.DataSource = ""
             Dim ds_info As DataSet = DAprestamoscreditos.PrestamosCreditos_resumen(txt_fecha.Text)
@@ -150,9 +237,14 @@
                         Case "3"
                             fila("Cobro") = "A descontar manual"
                         Case Else
-                            fila("Cobro") = ""
+                            'mostrar cantidad de dias en los cuales se cobrará el credito
+                            fila("Cobro") = CStr(ds_info.Tables(0).Rows(i).Item("Dias")) + " dias"
                     End Select
                     fila("Fecha") = ds_info.Tables(0).Rows(i).Item("Fecha")
+
+                    fila("Saldo") = ds_info.Tables(0).Rows(i).Item("Saldo")
+
+                    fila("Estado") = ds_info.Tables(0).Rows(i).Item("Estado")
 
                     DS_prestamoscreditos.Tabla1.Rows.Add(fila)
                     i = i + 1
@@ -160,10 +252,30 @@
 
                 GridView1.DataSource = DS_prestamoscreditos.Tabla1
                 GridView1.DataBind()
+
+                GridView1.Columns(0).Visible = False '10 es columna eliminar
+                Try
+                    If CDate(Hf_FECHA.Value) <> CDate(txt_fecha.Text) Then
+                        GridView1.Columns(10).Visible = False '10 es columna eliminar
+                    End If
+
+                    If CDate(txt_fecha.Text) >= CDate(Hf_FECHA.Value) Then
+                        GridView1.Columns(11).Visible = False '11 es columna dar de baja
+                    End If
+                Catch ex As Exception
+                End Try
+
+
                 GridView1.Focus()
 
 
             Else
+                GridView1.DataSource = DS_prestamoscreditos.Tabla1
+                GridView1.DataBind()
+                GridView1.Columns(0).Visible = False '0 es columna ID
+                GridView1.Columns(10).Visible = False '10 es columna eliminar
+                GridView1.Columns(11).Visible = False '11 es columna dar de baja
+
                 'la busqueda no arrojo resultados.
                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
             End If
@@ -191,4 +303,9 @@
     End Sub
 #End Region
     
+
+
+
+
+
 End Class

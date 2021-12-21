@@ -1,11 +1,47 @@
 ﻿Public Class Grupos_alta_b
     Inherits System.Web.UI.Page
     Dim DAgrupos As New Capa_Datos.WC_grupos
+    Dim DAclientes As New Capa_Datos.WB_clientes
+    Dim Ds_grupos As New DS_grupos
+    Private Sub Cargar_combos()
+        'COMBO TIPO
+        Ds_grupos.Combo_tipo.Rows.Clear()
+        Dim f_tipo0 As DataRow = Ds_grupos.Combo_tipo.NewRow
+        f_tipo0("Tipo") = ""
+        f_tipo0("Valor") = 0
+        Ds_grupos.Combo_tipo.Rows.Add(f_tipo0)
 
-    
+        Dim f_tipo1 As DataRow = Ds_grupos.Combo_tipo.NewRow
+        f_tipo1("Tipo") = "1"
+        f_tipo1("Valor") = 1
+        Ds_grupos.Combo_tipo.Rows.Add(f_tipo1)
+
+        Dim f_tipo2 As DataRow = Ds_grupos.Combo_tipo.NewRow
+        f_tipo2("Tipo") = "2"
+        f_tipo2("Valor") = 2
+        Ds_grupos.Combo_tipo.Rows.Add(f_tipo2)
+
+        Dim f_tipo3 As DataRow = Ds_grupos.Combo_tipo.NewRow
+        f_tipo3("Tipo") = "3"
+        f_tipo3("Valor") = 3
+        Ds_grupos.Combo_tipo.Rows.Add(f_tipo3)
+
+        Dim f_tipo4 As DataRow = Ds_grupos.Combo_tipo.NewRow
+        f_tipo4("Tipo") = "4"
+        f_tipo4("Valor") = 4
+        Ds_grupos.Combo_tipo.Rows.Add(f_tipo4)
+
+        DropDownList_tipo.DataSource = Ds_grupos.Combo_tipo
+        DropDownList_tipo.DataTextField = "Tipo"
+        DropDownList_tipo.DataValueField = "Valor"
+        DropDownList_tipo.DataBind()
+    End Sub
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             Limpiar_campos()
+            Cargar_combos()
             If Session("grupos_op") = "modificar" Then
 
                 Dim ds_info As DataSet = DAgrupos.Grupos_buscar_codigo(Session("grupo_codigo")) 'traer del otro formulario
@@ -14,10 +50,13 @@
                     HF_grupo_id.Value = ds_info.Tables(0).Rows(0).Item("Grupo_id")
                     Txt_grupo_codigo.Text = Session("grupo_codigo") 'aqui va el codigo del grupo
                     Txt_grupo_nomb.Text = ds_info.Tables(0).Rows(0).Item("Nombre").ToString
-                    Txt_tipo.Text = ds_info.Tables(0).Rows(0).Item("Tipo")
+                    'Txt_tipo.Text = ds_info.Tables(0).Rows(0).Item("Tipo")
+                    DropDownList_tipo.SelectedValue = CInt(ds_info.Tables(0).Rows(0).Item("Tipo"))
+
                     Txt_porcentaje.Text = ds_info.Tables(0).Rows(0).Item("Porcentaje")
                     Txt_clieporcentaje.Text = ds_info.Tables(0).Rows(0).Item("Clienteporcentaje")
-                    Txt_codcobro.Text = ds_info.Tables(0).Rows(0).Item("Codigocobro")
+                    'Txt_codcobro.Text = ds_info.Tables(0).Rows(0).Item("Codigocobro")
+                    DropDownList_codcobro.SelectedValue = ds_info.Tables(0).Rows(0).Item("Codigocobro")
                     Txt_importe_fecha.Text = ds_info.Tables(0).Rows(0).Item("Importe").ToString
                     Dim FECHA As Date = CDate(ds_info.Tables(0).Rows(0).Item("Fecha"))
                     Txt_fechaproc.Text = FECHA.ToString("yyyy-MM-dd")
@@ -25,7 +64,9 @@
                 'Label_grupo_id0.Visible = True
                 Txt_grupo_codigo.ReadOnly = True
             Else
-                Txt_grupo_codigo.ReadOnly = False
+                DropDownList_tipo.SelectedValue = 0
+                DropDownList_codcobro.SelectedValue = 1
+                Txt_grupo_codigo.ReadOnly = True
                 Session("grupos_op") = "alta"
                 Txt_grupo_codigo.Text = Session("codigo_nuevo")
 
@@ -34,7 +75,10 @@
                 'Label_grupo_id0.Visible = False
                 'Txt_grupo_id.Visible = False
             End If
-            Txt_grupo_codigo.Focus()
+            Txt_grupo_nomb.Focus()
+
+
+
         End If
     End Sub
     Private Sub Limpiar_campos()
@@ -42,10 +86,10 @@
         'Txt_grupo_id.Enabled = False
         Txt_grupo_codigo.Text = ""
         Txt_grupo_nomb.Text = ""
-        Txt_tipo.Text = 0
+        'Txt_tipo.Text = 0
         Txt_porcentaje.Text = CDec(0)
         Txt_clieporcentaje.Text = CDec(0)
-        Txt_codcobro.Text = 1
+        'Txt_codcobro.Text = 1
         'Dim fecha As Date = Today
         'Txt_fechaproc.Text = fecha
         Txt_grupo_nomb.Focus()
@@ -101,23 +145,28 @@
                 lb_error_codigo.Visible = True
             End If
 
-            If Txt_grupo_nomb.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_nombre.Visible = True
-            End If
+            'If Txt_grupo_nomb.Text = "" Then
+            '    valido_ingreso = "no"
+            '    lb_error_nombre.Visible = True
+            'End If
 
             Try
-                If Txt_tipo.Text = "" Or Txt_tipo.Text = "0" Or Txt_tipo.Text > 4 Then
-                    If Txt_tipo.Text = "" Then
-                        Txt_tipo.Text = 0
-                    End If
-                    'valido_ingreso = "no"
-                    'lb_error_tipo.Visible = True
+                If DropDownList_tipo.SelectedValue = 0 Then
+                    valido_ingreso = "no"
+                    lb_error_tipo.Visible = True
                 End If
+
+                'If Txt_tipo.Text = "" Or Txt_tipo.Text = "0" Or Txt_tipo.Text > 4 Then
+                '    If Txt_tipo.Text = "" Then
+                '        Txt_tipo.Text = 0
+                '    End If
+                '    valido_ingreso = "no"
+                '    lb_error_tipo.Visible = True
+                'End If
             Catch ex As Exception
-                Txt_tipo.Text = 0
-                'valido_ingreso = "no"
-                'lb_error_tipo.Visible = True
+                'Txt_tipo.Text = 0
+                valido_ingreso = "no"
+                lb_error_tipo.Visible = True
             End Try
 
 
@@ -130,35 +179,50 @@
                 'valido_ingreso = "no"
             End Try
 
-            Dim clieporcentaje As Decimal
+            Dim clieporcentaje As Integer
             Try
-                clieporcentaje = CDec(Txt_clieporcentaje.Text.Replace(".", ","))
+                clieporcentaje = CInt(Txt_clieporcentaje.Text)
+
+                If clieporcentaje <> 0 Then
+                    'lo busco y valido
+                    Dim ds_clie As DataSet = DAclientes.Clientes_buscar_codigo(clieporcentaje)
+                    If ds_clie.Tables(0).Rows.Count = 0 Then
+                        'aqui msj error.
+                        lb_error_clieporcentaje.Visible = True
+                        valido_ingreso = "no"
+                    End If
+                End If
+
+
+
             Catch ex As Exception
-                clieporcentaje = CDec(0)
+                clieporcentaje = CInt(0)
                 'lb_error_clieporcentaje.Visible = True
                 'valido_ingreso = "no"
             End Try
 
-            Try
-                If Txt_codcobro.Text = "" Or Txt_codcobro.Text = "0" Or CInt(Txt_codcobro.Text) > 4 Then
-                    Txt_codcobro.Text = "1"
-                    'valido_ingreso = "no"
-                    'lb_error_codcobro.Visible = True
-                End If
-            Catch ex As Exception
-                Txt_codcobro.Text = "1"
-                'valido_ingreso = "no"
-                'lb_error_codcobro.Visible = True
-            End Try
+            'Try
+            '    If Txt_codcobro.Text = "" Or Txt_codcobro.Text = "0" Or CInt(Txt_codcobro.Text) > 4 Then
+            '        Txt_codcobro.Text = "1"
+            '        'valido_ingreso = "no"
+            '        'lb_error_codcobro.Visible = True
+            '    End If
+            'Catch ex As Exception
+            '    Txt_codcobro.Text = "1"
+            '    'valido_ingreso = "no"
+            '    'lb_error_codcobro.Visible = True
+            'End Try
 
             'Dim fecha As String = CDate(Txt_fechaproc.Text.ToString)
 
+            Dim fecha As Date
             If Txt_fechaproc.Text = "" Then
-                valido_ingreso = "no"
-                lb_error_fecha.Visible = True
+                fecha = Today
+                'valido_ingreso = "no"
+                'lb_error_fecha.Visible = True
             Else
                 Try
-                    Dim fecha As Date = CDate(Txt_fechaproc.Text)
+                    fecha = CDate(Txt_fechaproc.Text)
                 Catch ex As Exception
                     valido_ingreso = "no"
                     lb_error_fecha.Visible = True
@@ -180,9 +244,9 @@
                         If Session("grupos_op") = "alta" Then
                             '1) valido que no exista.
                             Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, Txt_grupo_codigo.Text)
-                            If (ds_info.Tables(0).Rows.Count = 0) And (ds_info.Tables(1).Rows.Count = 0) Then 'no existe
+                            If (ds_info.Tables(1).Rows.Count = 0) Then 'no existe
                                 '2) guardo en bd
-                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, CDec(0), CDec(0), CDec(0), Txt_grupo_codigo.Text, importe_procesamiento)
+                                DAgrupos.Grupos_alta(Txt_grupo_nomb.Text, CStr(DropDownList_tipo.SelectedValue), porcentaje, clieporcentaje, CStr(DropDownList_codcobro.SelectedValue), fecha, CDec(0), CDec(0), CDec(0), Txt_grupo_codigo.Text, importe_procesamiento)
                                 Limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -207,19 +271,19 @@
                             Dim ds_info As DataSet = DAgrupos.Grupos_buscar(Txt_grupo_nomb.Text, Txt_grupo_codigo.Text)
                             Dim existe = "no"
                             Dim existe_nombre = "no"
-                            If ds_info.Tables(0).Rows.Count <> 0 Then 'no existe
-                                Dim i As Integer = 0
-                                While i < ds_info.Tables(0).Rows.Count
-                                    If (CInt(HF_grupo_id.Value) <> ds_info.Tables(0).Rows(i).Item("Grupo_id")) And (Txt_grupo_nomb.Text.ToUpper = ds_info.Tables(0).Rows(i).Item("Nombre").ToString.ToUpper) Then
-                                        existe = "si"
-                                        existe_nombre = "si"
-                                        Exit While
-                                    End If
-                                    i = i + 1
-                                End While
-                            Else
-                                'puedo guardar.
-                            End If
+                            'If ds_info.Tables(0).Rows.Count <> 0 Then 'existe
+                            '    Dim i As Integer = 0
+                            '    While i < ds_info.Tables(0).Rows.Count
+                            '        If (CInt(HF_grupo_id.Value) <> ds_info.Tables(0).Rows(i).Item("Grupo_id")) And (Txt_grupo_nomb.Text.ToUpper = ds_info.Tables(0).Rows(i).Item("Nombre").ToString.ToUpper) Then
+                            '            existe = "si"
+                            '            existe_nombre = "si"
+                            '            Exit While
+                            '        End If
+                            '        i = i + 1
+                            '    End While
+                            'Else
+                            '    'puedo guardar.
+                            'End If
                             Dim existe_codigo = "no"
                             If ds_info.Tables(1).Rows.Count <> 0 Then 'no existe
                                 Dim i As Integer = 0
@@ -237,7 +301,7 @@
 
 
                             If existe = "no" Then
-                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, Txt_tipo.Text, porcentaje, clieporcentaje, Txt_codcobro.Text, Txt_fechaproc.Text, Txt_grupo_codigo.Text, importe_procesamiento)
+                                DAgrupos.Grupos_modificar(CInt(HF_grupo_id.Value), Txt_grupo_nomb.Text, CStr(DropDownList_tipo.SelectedValue), porcentaje, clieporcentaje, CStr(DropDownList_codcobro.SelectedValue), fecha, Txt_grupo_codigo.Text, importe_procesamiento)
                                 Limpiar_campos()
                                 'regresar al form que lista grupos.
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
@@ -300,9 +364,9 @@
         Txt_grupo_nomb.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_tipo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_tipo.Init
-        Txt_tipo.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_tipo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_tipo.Init
+    '    Txt_tipo.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_porcentaje_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_porcentaje.Init
         Txt_porcentaje.Attributes.Add("onfocus", "seleccionarTexto(this);")
@@ -312,9 +376,9 @@
         Txt_clieporcentaje.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_codcobro_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_codcobro.Init
-        Txt_codcobro.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_codcobro_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_codcobro.Init
+    '    Txt_codcobro.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_fechaproc_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_fechaproc.Init
         Txt_fechaproc.Attributes.Add("onfocus", "seleccionarTexto(this);")

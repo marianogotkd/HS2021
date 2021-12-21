@@ -1,0 +1,21 @@
+ALTER procedure [dbo].[PrestamosCreditos_resumen]
+@Fecha date
+
+as
+
+select PrestamosCreditos.Idprestamocredito as 'ID'
+
+,PrestamosCreditos.Tipo as 'Tipo',
+Clientes.Cliente ,
+Clientes.Nombre,
+  PrestamosCreditos.Importe,
+  PrestamosCreditos.Porcentaje as '%',
+  PrestamosCreditos.Tipocobro as 'Tipocobro',
+  Clientes.Codigo, 
+  CONVERT(Varchar,Fecha, 103) as 'Fecha', --con el cod 103, me lista con el formato: dd/mm/yyyy,
+ Dias,
+ PrestamosCreditos_Estados.Estado_descripcion as 'Estado',
+ PrestamosCreditos.Saldo  
+from PrestamosCreditos inner join Clientes on PrestamosCreditos.Cliente = Clientes.Cliente
+inner join PrestamosCreditos_Estados on PrestamosCreditos.Estado_id = PrestamosCreditos_Estados.Estado_id 
+ where Fecha = @Fecha order by PrestamosCreditos.Idprestamocredito asc

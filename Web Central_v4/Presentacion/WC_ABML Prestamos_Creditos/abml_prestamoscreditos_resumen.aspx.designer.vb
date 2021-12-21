@@ -86,13 +86,58 @@ Partial Public Class abml_prestamoscreditos_resumen
     Protected WithEvents btn_retroceder As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_baja_close.
+    '''Control btn_eliminar1_close.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_baja_close As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_eliminar1_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_eliminar_mdl_cancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_eliminar_mdl_cancelar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_eliminar_mdll.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_eliminar_mdll As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_ELIMINAR_close.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ELIMINAR_close As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control btn_ok_elimnar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ok_elimnar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Button3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button3 As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_baja_mdl_cancelar.
@@ -113,22 +158,22 @@ Partial Public Class abml_prestamoscreditos_resumen
     Protected WithEvents btn_baja_mdll As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_ELIMINAR_close.
+    '''Control btn_BAJA_close.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ELIMINAR_close As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_BAJA_close As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control btn_ok_elimnar.
+    '''Control btn_ok_baja.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ok_elimnar As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btn_ok_baja As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_close_error_busqueda.

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="acl_gastos_carga.aspx.vb" Inherits="Presentacion.acl_gastos_carga" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script>
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -60,7 +60,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
 <div class="card card-primary">
@@ -76,7 +76,7 @@
 <div class="card-body">
         <div class="form-group">
                     <div class="row justify-content-center">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                             <label for="Label_cliente_id">OPCION 2: CARGA DE GASTOS.</label> 
                     </div>
                     </div>
@@ -85,17 +85,21 @@
 
         <div class="form-group">
                     <div class="row justify-content-center">
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <label for="Label_fecha">Fecha:</label>
                                     <asp:TextBox ID="Txt_fecha" onkeydown="tecla_op(event);" class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                                     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="Label_gruponº">Grupo Nº:</label>
-                                    <asp:TextBox ID="Txt_grupo_codigo" runat="server" placeholder="Ingrese código..." class="form-control" Visible="true"   
-                                    onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                                    <asp:TextBox ID="Txt_grupo_codigo" runat="server" 
+                                        placeholder="Ingrese código..." class="form-control" Visible="true"   
+                                    onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" 
+                                        MaxLength="3"></asp:TextBox>
                                     <asp:Label ID="lb_error_grupocodigo" runat="server" ForeColor="Red" Text="*" 
                                     Visible="False"></asp:Label>
+                                </div>
+                                <div class="col-md-2">
                                 </div>
                     </div>
         </div>
@@ -106,13 +110,9 @@
                                     <label for="Label_gruponº">Motivo:</label>
                                     <asp:DropDownList ID="DropDownList_motivo" runat="server" class="form-control" onkeydown="tecla_op(event);"></asp:DropDownList>
                                 </div>
-                    </div>
-        </div>
-        <div class="form-group">
-                    <div class="row justify-content-center">
                                 <div class="col-md-2">
                                     <label for="Label_gruponº">Importe: $</label>
-                                    <asp:TextBox ID="Txt_importe" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                                    <asp:TextBox ID="Txt_importe" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="17" onkeydown="tecla_op(event);" onkeypress="return validateDecimalKeyPress(this, event);"></asp:TextBox>
                                     <asp:Label ID="lb_error_importe" runat="server" ForeColor="Red" Text="*" 
                                         Visible="False"></asp:Label>
                                 </div>
@@ -120,6 +120,7 @@
                                 </div>
                     </div>
         </div>
+        
 
 
 

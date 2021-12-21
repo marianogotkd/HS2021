@@ -14,7 +14,7 @@
             Txt_cliente_codigo.Focus()
             Txt_nombre.ReadOnly = True
             Txt_saldo.ReadOnly = True
-
+            Txt_fecha.ReadOnly = True
 
 
         End If
@@ -78,13 +78,13 @@
         Txt_importe.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_calculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_calculo.Init
-        Txt_calculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_calculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_calculo.Init
+    '    Txt_calculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
-    Private Sub Txt_prestamocredito_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_prestamocredito.Init
-        Txt_prestamocredito.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_prestamocredito_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_prestamocredito.Init
+    '    Txt_prestamocredito.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_descripcion_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_descripcion.Init
         Txt_descripcion.Attributes.Add("onfocus", "seleccionarTexto(this);")
@@ -139,26 +139,26 @@
             valido_ingreso = "no"
         End Try
 
-        Dim sincalculo As Integer
-        If Txt_calculo.Text = "" Then
-            lb_error_sincalculo.Visible = True
-            valido_ingreso = "no"
-        Else
-            sincalculo = Txt_calculo.Text
-        End If
+        'Dim sincalculo As Integer
+        'If Txt_calculo.Text = "" Then
+        '    lb_error_sincalculo.Visible = True
+        '    valido_ingreso = "no"
+        'Else
+        '    sincalculo = Txt_calculo.Text
+        'End If
 
-        Dim prestamo_credito As Integer
-        If Txt_prestamocredito.Text = "" Then
-            lb_error_prestamocredito.Visible = True
-            valido_ingreso = "no"
-        Else
-            prestamo_credito = Txt_prestamocredito.Text
-        End If
+        'Dim prestamo_credito As Integer
+        'If Txt_prestamocredito.Text = "" Then
+        '    lb_error_prestamocredito.Visible = True
+        '    valido_ingreso = "no"
+        'Else
+        '    prestamo_credito = Txt_prestamocredito.Text
+        'End If
 
-        If Txt_descripcion.Text = "" Then
-            lb_error_descripcion.Visible = True
-            valido_ingreso = "no"
-        End If
+        'If Txt_descripcion.Text = "" Then
+        '    lb_error_descripcion.Visible = True
+        '    valido_ingreso = "no"
+        'End If
 
 
         If Txt_fecha.Text = "" Then
@@ -174,7 +174,7 @@
         End If
 
         If valido_ingreso = "si" Then
-            DAanticipados.Anticipados_reclamo_alta(Txt_fecha.Text, cliente, 1, importe, sincalculo, prestamo_credito, Txt_descripcion.Text, 0)
+            DAanticipados.Anticipados_reclamo_alta(Txt_fecha.Text, cliente, 1, importe, CInt(DropDownList_sincalculo.SelectedValue), CInt(DropDownList_prestamocredito.SelectedValue), Txt_descripcion.Text, 0)
             ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
         Else
             'aqui va mensaje: "error, ingrese info solicitada"
@@ -207,10 +207,10 @@
                 Txt_importe.Focus()
             Else
                 If lb_error_sincalculo.Visible = True Then
-                    Txt_calculo.Focus()
+                    DropDownList_sincalculo.Focus()
                 Else
                     If lb_error_prestamocredito.Visible = True Then
-                        Txt_prestamocredito.Focus()
+                        DropDownList_prestamocredito.Focus()
                     Else
                         If lb_error_descripcion.Visible = True Then
                             Txt_descripcion.Focus()

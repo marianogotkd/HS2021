@@ -2,12 +2,42 @@
     Inherits System.Web.UI.Page
     Dim daGrupos As New Capa_Datos.WC_grupos
     Dim daClientes As New Capa_Datos.WB_clientes
+    Dim DS_cliente As New DS_cliente
+    Private Sub Cargar_combos()
+        DS_cliente.Combo_proceso.Rows.Clear()
+        Dim fila0 As DataRow = DS_cliente.Combo_proceso.NewRow
+        fila0("Proceso") = ""
+        fila0("Valor") = "0"
+        DS_cliente.Combo_proceso.Rows.Add(fila0)
+
+        Dim fila1 As DataRow = DS_cliente.Combo_proceso.NewRow
+        fila1("Proceso") = "D"
+        fila1("Valor") = "D"
+        DS_cliente.Combo_proceso.Rows.Add(fila1)
+
+        Dim fila2 As DataRow = DS_cliente.Combo_proceso.NewRow
+        fila2("Proceso") = "S"
+        fila2("Valor") = "S"
+        DS_cliente.Combo_proceso.Rows.Add(fila2)
+
+        Dim fila3 As DataRow = DS_cliente.Combo_proceso.NewRow
+        fila3("Proceso") = "M"
+        fila3("Valor") = "M"
+        DS_cliente.Combo_proceso.Rows.Add(fila3)
+
+        DropDownList_proceso.DataSource = DS_cliente.Combo_proceso
+        DropDownList_proceso.DataTextField = "Proceso"
+        DropDownList_proceso.DataValueField = "Valor"
+        DropDownList_proceso.DataBind()
+
+    End Sub
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             limpiar_campos()
             Grupos() 'recupero todos los grupos
+            Cargar_combos()
 
             If Session("clientes_op") = "modificar" Then
                 HF_cliente_id.Value = Session("cliente_id") 'aqui va el id del cliente
@@ -23,26 +53,46 @@
                     Txt_regalo.Text = ds_info.Tables(0).Rows(0).Item("Regalo")
                     Txt_comision1.Text = ds_info.Tables(0).Rows(0).Item("Comision1")
                     Txt_regalo1.Text = ds_info.Tables(0).Rows(0).Item("Regalo1")
-                    Txt_proceso.Text = ds_info.Tables(0).Rows(0).Item("Proceso").ToString.ToUpper
+                    'Txt_proceso.Text = ds_info.Tables(0).Rows(0).Item("Proceso").ToString.ToUpper
+                    If ds_info.Tables(0).Rows(0).Item("Proceso").ToString.ToUpper = "" Then
+                        DropDownList_proceso.SelectedValue = 0
+                    Else
+                        DropDownList_proceso.SelectedValue = ds_info.Tables(0).Rows(0).Item("Proceso").ToString.ToUpper
+                    End If
 
-                    Txt_calculo.Text = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Sincalculo")))
-                    Txt_factor.Text = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Factor")))
-                    Txt_imprimecalculo.Text = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Imprime")))
+                    Dim calculo As Integer = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Sincalculo")))
+                    DropDownList_calculo.SelectedValue = calculo
+
+                    Dim factor As Integer = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Factor")))
+                    DropDownList_factor.SelectedValue = factor
+
+                    Dim imprimecalculo As Integer = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Imprime")))
+                    DropDownList_imprimecalculo.SelectedValue = imprimecalculo
+
                     Txt_recorrido.Text = ds_info.Tables(0).Rows(0).Item("Recorrido")
                     Txt_orden.Text = ds_info.Tables(0).Rows(0).Item("Orden")
-                    Txt_variable.Text = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Variable")))
+                    Dim variable As Integer = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Variable")))
+                    DropDownList_variable.SelectedValue = variable
                     Txt_leyenda.Text = ds_info.Tables(0).Rows(0).Item("Leyenda1")
-                    Txt_variable1.Text = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Variable1")))
+
+                    Dim variable1 As Integer = conv_bit(CInt(ds_info.Tables(0).Rows(0).Item("Variable1")))
+                    DropDownList_variable1.SelectedValue = variable1
+
                     Txt_leyenda1.Text = ds_info.Tables(0).Rows(0).Item("Leyenda2")
                 End If
             Else
-
+                DropDownList_grupos.SelectedValue = 0
+                DropDownList_proceso.SelectedValue = 0
                 HF_cliente_id.Value = 0
                 Session("clientes_op") = "alta"
                 Txt_cliente_codigo.Text = Session("codigo_nuevo")
 
             End If
-            Txt_cliente_codigo.Focus()
+
+            Txt_cliente_codigo.ReadOnly = True
+            Txt_cliente_nomb.Focus()
+
+
 
         End If
     End Sub
@@ -60,7 +110,16 @@
     Private Sub Grupos()
         Try
             Dim ds_grupos As DataSet = daGrupos.Grupos_obtenertodos
-            DropDownList_grupos.DataSource = ds_grupos.Tables(0)
+
+            Dim TABLA_COPIADA As DataTable
+            TABLA_COPIADA = ds_grupos.Tables(0).Copy
+            TABLA_COPIADA.Rows.Clear()
+            Dim fila As DataRow = TABLA_COPIADA.NewRow
+            fila("CodigoNombre") = " "
+            fila("Grupo_id") = 0
+            TABLA_COPIADA.Rows.Add(fila)
+            TABLA_COPIADA.Merge(ds_grupos.Tables(0))
+            DropDownList_grupos.DataSource = TABLA_COPIADA
             DropDownList_grupos.DataTextField = "CodigoNombre"
             DropDownList_grupos.DataValueField = "Grupo_id"
             DropDownList_grupos.DataBind()
@@ -78,15 +137,15 @@
         Txt_regalo.Text = CDec(0)
         Txt_comision1.Text = CDec(0)
         Txt_regalo1.Text = CDec(0)
-        Txt_proceso.Text = ""
-        Txt_calculo.Text = 0
-        Txt_factor.Text = 0
-        Txt_imprimecalculo.Text = 0
+        'Txt_proceso.Text = ""
+        'Txt_calculo.Text = 0
+        'Txt_factor.Text = 0
+        'Txt_imprimecalculo.Text = 0
         Txt_recorrido.Text = ""
         Txt_orden.Text = ""
-        Txt_variable.Text = 0
+        'Txt_variable.Text = 0
         Txt_leyenda.Text = ""
-        Txt_variable1.Text = 0
+        'Txt_variable1.Text = 0
         Txt_leyenda1.Text = ""
         'Label_cliente_nomb.Focus()
 
@@ -99,6 +158,7 @@
         Lb_error_validacion.Visible = False
         lb_error_codigo.Visible = False
         lb_error_nombre.Visible = False
+        lb_error_grupo.Visible = False
 
         lb_error_comision.Visible = False
         lb_error_regalo.Visible = False
@@ -133,10 +193,22 @@
             End If
 
 
-            If Txt_cliente_nomb.Text = "" Then
+            'If Txt_cliente_nomb.Text = "" Then
+            '    valido_ingreso = "no"
+            '    lb_error_nombre.Visible = True
+            'End If
+
+            If DropDownList_grupos.Items.Count <> 0 Then
+                If DropDownList_grupos.SelectedValue = 0 Then
+                    'error no se selecciono nada
+                    valido_ingreso = "no"
+                    lb_error_grupo.Visible = True
+                End If
+            Else
                 valido_ingreso = "no"
-                lb_error_nombre.Visible = True
+                lb_error_grupo.Visible = True
             End If
+
 
             Dim comision As Decimal
             Try
@@ -175,54 +247,55 @@
             End Try
 
 
-            If Txt_proceso.Text = "" Then
-                'valido_ingreso = "no"
-                'lb_error_proceso.Visible = True
-            Else
-                If Txt_proceso.Text.ToString.ToUpper = "D" Or Txt_proceso.Text.ToString.ToUpper = "S" Or Txt_proceso.Text.ToString.ToUpper = "M" Then
-                    'valido
-                Else
-                    valido_ingreso = "no"
-                    lb_error_proceso.Visible = True
-                End If
-            End If
+            'If Txt_proceso.Text = "" Then
+            '    'valido_ingreso = "no"
+            '    'lb_error_proceso.Visible = True
+            'Else
+            '    If Txt_proceso.Text.ToString.ToUpper = "D" Or Txt_proceso.Text.ToString.ToUpper = "S" Or Txt_proceso.Text.ToString.ToUpper = "M" Then
+            '        'valido
+            '    Else
+            '        'valido_ingreso = "no"
+            '        'lb_error_proceso.Visible = True
+            '        Txt_proceso.Text = ""
+            '    End If
+            'End If
 
-            If Txt_calculo.Text = "" Then
-                Txt_calculo.Text = "0"
-                'valido_ingreso = "no"
-                'lb_error_calculo.Visible = True
-            Else
-                If Txt_calculo.Text = 0 Or Txt_calculo.Text = 1 Then
-                Else
-                    valido_ingreso = "no"
-                    lb_error_calculo.Visible = True
-                End If
-            End If
+            'If Txt_calculo.Text = "" Then
+            '    Txt_calculo.Text = "0"
+            '    'valido_ingreso = "no"
+            '    'lb_error_calculo.Visible = True
+            'Else
+            '    If Txt_calculo.Text = 0 Or Txt_calculo.Text = 1 Then
+            '    Else
+            '        valido_ingreso = "no"
+            '        lb_error_calculo.Visible = True
+            '    End If
+            'End If
 
-            If Txt_factor.Text = "" Then
-                Txt_factor.Text = "0"
-                'valido_ingreso = "no"
-                'lb_error_factor.Visible = True
-            Else
-                If Txt_factor.Text = 0 Or Txt_factor.Text = 1 Then
-                    'valido
-                Else
-                    valido_ingreso = "no"
-                    lb_error_factor.Visible = True
-                End If
-            End If
+            'If Txt_factor.Text = "" Then
+            '    Txt_factor.Text = "0"
+            '    'valido_ingreso = "no"
+            '    'lb_error_factor.Visible = True
+            'Else
+            '    If Txt_factor.Text = 0 Or Txt_factor.Text = 1 Then
+            '        'valido
+            '    Else
+            '        valido_ingreso = "no"
+            '        lb_error_factor.Visible = True
+            '    End If
+            'End If
 
-            If Txt_imprimecalculo.Text = "" Then
-                Txt_imprimecalculo.Text = "0"
-                'valido_ingreso = "no"
-                'lb_error_imprimecalculo.Visible = True
-            Else
-                If Txt_imprimecalculo.Text = 0 Or Txt_imprimecalculo.Text = 1 Then
-                Else
-                    valido_ingreso = "no"
-                    lb_error_imprimecalculo.Visible = True
-                End If
-            End If
+            'If Txt_imprimecalculo.Text = "" Then
+            '    Txt_imprimecalculo.Text = "0"
+            '    'valido_ingreso = "no"
+            '    'lb_error_imprimecalculo.Visible = True
+            'Else
+            '    If Txt_imprimecalculo.Text = 0 Or Txt_imprimecalculo.Text = 1 Then
+            '    Else
+            '        valido_ingreso = "no"
+            '        lb_error_imprimecalculo.Visible = True
+            '    End If
+            'End If
 
             If Txt_recorrido.Text = "" Then
 
@@ -235,34 +308,34 @@
                 'lb_error_orden.Visible = True
             End If
 
-            If Txt_variable.Text = "" Then
-                Txt_variable.Text = "0"
-                'valido_ingreso = "no"
-                'lb_error_variable.Visible = True
-            Else
-                If Txt_variable.Text = 0 Or Txt_variable.Text = 1 Then
-                Else
-                    valido_ingreso = "no"
-                    lb_error_variable.Visible = True
-                End If
-            End If
+            'If Txt_variable.Text = "" Then
+            '    Txt_variable.Text = "0"
+            '    'valido_ingreso = "no"
+            '    'lb_error_variable.Visible = True
+            'Else
+            '    If Txt_variable.Text = 0 Or Txt_variable.Text = 1 Then
+            '    Else
+            '        valido_ingreso = "no"
+            '        lb_error_variable.Visible = True
+            '    End If
+            'End If
 
             If Txt_leyenda.Text = "" Then
                 'valido_ingreso = "no"
                 'lb_error_leyenda.Visible = True
             End If
 
-            If Txt_variable1.Text = "" Then
-                Txt_variable1.Text = "0"
-                'valido_ingreso = "no"
-                'lb_error_variable1.Visible = True
-            Else
-                If Txt_variable1.Text = 0 Or Txt_variable1.Text = 1 Then
-                Else
-                    valido_ingreso = "no"
-                    lb_error_variable1.Visible = True
-                End If
-            End If
+            'If Txt_variable1.Text = "" Then
+            '    Txt_variable1.Text = "0"
+            '    'valido_ingreso = "no"
+            '    'lb_error_variable1.Visible = True
+            'Else
+            '    If Txt_variable1.Text = 0 Or Txt_variable1.Text = 1 Then
+            '    Else
+            '        valido_ingreso = "no"
+            '        lb_error_variable1.Visible = True
+            '    End If
+            'End If
 
             If Txt_leyenda1.Text = "" Then
                 'valido_ingreso = "no"
@@ -279,9 +352,9 @@
                                 '2) guardo en bd
                                 Dim Leyenda As String = Txt_leyenda.Text + Txt_leyenda1.Text
                                 daClientes.Clientes_alta(Txt_cliente_nomb.Text, DropDownList_grupos.SelectedValue, comision, regalo,
-                                                         comision1, regalo1, Txt_proceso.Text, CInt(Txt_calculo.Text),
-                                                         CInt(Txt_factor.Text), CInt(Txt_imprimecalculo.Text), Txt_recorrido.Text, Txt_orden.Text,
-                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, "2", CDec(0), CDec(0), Txt_cliente_codigo.Text, CDec(0))
+                                                         comision1, regalo1, DropDownList_proceso.SelectedValue, CInt(DropDownList_calculo.SelectedValue),
+                                                         CInt(DropDownList_factor.SelectedValue), CInt(DropDownList_imprimecalculo.SelectedValue), Txt_recorrido.Text, Txt_orden.Text,
+                                                         CInt(DropDownList_variable.SelectedValue), Leyenda, CInt(DropDownList_variable1.SelectedValue), Txt_leyenda.Text, Txt_leyenda1.Text, "2", CDec(0), CDec(0), Txt_cliente_codigo.Text, CDec(0))
 
                                 limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
@@ -322,9 +395,9 @@
                                 Dim Leyenda As String = Txt_leyenda.Text + Txt_leyenda1.Text
                                 daClientes.Clientes_modificar(CInt(HF_cliente_id.Value), Txt_cliente_nomb.Text,
                                                          DropDownList_grupos.SelectedValue, comision, regalo,
-                                                         comision1, regalo1, Txt_proceso.Text, CInt(Txt_calculo.Text),
-                                                         CInt(Txt_factor.Text), CInt(Txt_imprimecalculo.Text), Txt_recorrido.Text, Txt_orden.Text,
-                                                         CInt(Txt_variable.Text), Leyenda, CInt(Txt_variable1.Text), Txt_leyenda.Text, Txt_leyenda1.Text, Txt_cliente_codigo.Text)
+                                                         comision1, regalo1, DropDownList_proceso.SelectedValue, CInt(DropDownList_calculo.SelectedValue),
+                                                         CInt(DropDownList_factor.SelectedValue), CInt(DropDownList_imprimecalculo.SelectedValue), Txt_recorrido.Text, Txt_orden.Text,
+                                                         CInt(DropDownList_variable.SelectedValue), Leyenda, CInt(DropDownList_variable1.SelectedValue), Txt_leyenda.Text, Txt_leyenda1.Text, Txt_cliente_codigo.Text)
                                 limpiar_campos()
                                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
 
@@ -338,7 +411,7 @@
                                 If existe_codigo = "si" Then
                                     lb_error_codigo.Visible = True
                                 End If
-                                Txt_cliente_codigo.Focus()
+                                Txt_cliente_nomb.Focus()
                             End If
                         End If
                 End Select
@@ -346,14 +419,14 @@
                 'aqui mensaje de que cargue todos los paretros solicitados correctamente
                 Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
                 Lb_error_validacion.Visible = True
-                Txt_cliente_codigo.Focus()
+                Txt_cliente_nomb.Focus()
             End If
 
         Catch ex As Exception
             'aqui mensaje de que cargue todos los paretros solicitados correctamente
             Lb_error_validacion.Text = "Error! Ingrese los datos solicitados correctamente."
             Lb_error_validacion.Visible = True
-            Txt_cliente_codigo.Focus()
+            Txt_cliente_nomb.Focus()
         End Try
     End Sub
 
@@ -439,21 +512,21 @@
         Txt_regalo1.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_proceso_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_proceso.Init
-        Txt_proceso.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_proceso_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_proceso.Init
+    '    Txt_proceso.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
-    Private Sub Txt_calculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_calculo.Init
-        Txt_calculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_calculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_calculo.Init
+    '    Txt_calculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
-    Private Sub Txt_factor_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_factor.Init
-        Txt_factor.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_factor_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_factor.Init
+    '    Txt_factor.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
-    Private Sub Txt_imprimecalculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_imprimecalculo.Init
-        Txt_imprimecalculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_imprimecalculo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_imprimecalculo.Init
+    '    Txt_imprimecalculo.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_recorrido_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_recorrido.Init
         Txt_recorrido.Attributes.Add("onfocus", "seleccionarTexto(this);")
@@ -463,13 +536,13 @@
         Txt_orden.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_variable_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_variable.Init
-        Txt_variable.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_variable_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_variable.Init
+    '    Txt_variable.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
-    Private Sub Txt_variable1_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_variable1.Init
-        Txt_variable1.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_variable1_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_variable1.Init
+    '    Txt_variable1.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_leyenda_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_leyenda.Init
         Txt_leyenda.Attributes.Add("onfocus", "seleccionarTexto(this);")

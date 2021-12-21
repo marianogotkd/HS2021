@@ -152,10 +152,17 @@
             valido_ingreso = "no"
         End Try
 
-        If Txt_diasacobrar.Text = "" Then
+        Dim dias As Integer = 0
+        If Txt_diasacobrar.Text = "" Or Txt_diasacobrar.Text = "0" Then
             valido_ingreso = "no"
             lb_error_dias.Visible = True
         End If
+        Try
+            dias = CInt(Txt_diasacobrar.Text)
+        Catch ex As Exception
+            valido_ingreso = "no"
+            lb_error_dias.Visible = True
+        End Try
 
         If valido_ingreso = "si" Then
             Try
@@ -222,7 +229,9 @@
             porcentaje = CDec(0)
         End Try
 
-        DAprestamoscreditos.Creditos_alta(CInt(Session("Cliente")), txt_fecha.Text, importe, porcentaje, Txt_diasacobrar.Text)
+        Dim Saldo As Decimal = CDec(importe) * CDec(porcentaje)
+        Dim Cuota_valor As Decimal = (importe * porcentaje) / CInt(Txt_diasacobrar.Text)
+        DAprestamoscreditos.Creditos_alta(CInt(Session("Cliente")), txt_fecha.Text, importe, porcentaje, Txt_diasacobrar.Text, Saldo, Cuota_valor)
 
         ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
     End Sub
@@ -273,7 +282,9 @@
         Catch ex As Exception
             porcentaje = CDec(0)
         End Try
-        DAprestamoscreditos.Creditos_modificar(CInt(Session("Cliente")), txt_fecha.Text, importe, porcentaje, Txt_diasacobrar.Text)
+        Dim Saldo As Decimal = CDec(importe) * CDec(porcentaje)
+        Dim Cuota_valor As Decimal = (importe * porcentaje) / CInt(Txt_diasacobrar.Text)
+        DAprestamoscreditos.Creditos_modificar(CInt(Session("Cliente")), txt_fecha.Text, importe, porcentaje, Txt_diasacobrar.Text, Saldo, 1, Cuota_valor)
         ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
     End Sub
 #End Region

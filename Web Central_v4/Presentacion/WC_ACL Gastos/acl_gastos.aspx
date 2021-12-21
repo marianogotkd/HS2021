@@ -83,13 +83,14 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-4">
-                            <asp:Label ID="Label1" runat="server" Text="1 - ALTA DE GASTOS."></asp:Label>
+                            <asp:LinkButton ID="LinkButton_alta" runat="server">1 - ALTA DE GASTOS.</asp:LinkButton>
                         </div>
                         <div class="col-md-4">
-                            <asp:Label ID="Label2" runat="server" Text="2 - CARGA DE GASTOS."></asp:Label>
+                            <asp:LinkButton ID="LinkButton_carga" runat="server">2 - CARGA DE GASTOS.</asp:LinkButton>
+                            
                         </div>
                         <div class="col-md-4">
-                            <asp:Label ID="Label3" runat="server" Text="3 - RESUMEN."></asp:Label>
+                            <asp:LinkButton ID="LinkButton_resumen" runat="server">3 - RESUMEN.</asp:LinkButton>
                         </div>
                     </div>    
                 </div>

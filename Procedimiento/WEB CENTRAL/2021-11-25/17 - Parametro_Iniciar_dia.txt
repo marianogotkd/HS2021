@@ -1,0 +1,16 @@
+
+/****** Object:  StoredProcedure [dbo].[Parametro_Iniciar_dia]    Script Date: 12/08/2021 18:26:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Parametro_Iniciar_dia]
+
+@Fecha date,
+@Dia tinyint,
+@Recorrido varchar(80)
+
+as
+
+insert Parametro (Fecha, Dia, Recorrido, Estado) values (@Fecha, @Dia, @Recorrido, 'Activo')
+

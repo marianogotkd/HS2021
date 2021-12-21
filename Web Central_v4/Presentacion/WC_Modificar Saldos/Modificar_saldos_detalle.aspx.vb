@@ -8,7 +8,7 @@
             HF_cliente_id.Value = Session("cliente_id")
             Dim ds_info As DataSet = DAcliente.Clientes_buscar_id(Session("cliente_id"))
             If ds_info.Tables(0).Rows.Count <> 0 Then
-                Txt_cliente_codigo.Text = ds_info.Tables(0).Rows(0).Item("Cliente")
+                Txt_cliente_codigo.Text = ds_info.Tables(0).Rows(0).Item("Codigo")
                 Txt_cliente_nomb.Text = ds_info.Tables(0).Rows(0).Item("Nombre")
                 Txt_Saldos.Text = CDec(ds_info.Tables(0).Rows(0).Item("Saldo"))
                 Txt_regalo.Text = CDec(ds_info.Tables(0).Rows(0).Item("SaldoRegalo"))

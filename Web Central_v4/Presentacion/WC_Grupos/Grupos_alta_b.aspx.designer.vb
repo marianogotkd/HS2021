@@ -77,13 +77,13 @@ Partial Public Class Grupos_alta_b
     Protected WithEvents lb_error_nombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_tipo.
+    '''Control DropDownList_tipo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_tipo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_tipo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_tipo.
@@ -167,13 +167,13 @@ Partial Public Class Grupos_alta_b
     Protected WithEvents lb_error_clieporcentaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_codcobro.
+    '''Control DropDownList_codcobro.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_codcobro As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_codcobro As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_codcobro.

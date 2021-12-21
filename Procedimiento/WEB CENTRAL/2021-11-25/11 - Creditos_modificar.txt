@@ -1,0 +1,14 @@
+ALTER procedure [dbo].[Creditos_modificar]
+@Cliente smallint,
+@Fecha Date,
+@Importe decimal(38,2),
+@Dias char(3),
+@Porcentaje decimal(5,2),
+@Tipo char(1),
+@Saldo decimal(38,2),
+@Estado_id int,
+@Cuota_valor decimal(38,2)
+as
+update PrestamosCreditos set Importe=@Importe, Dias = @Dias, Porcentaje = @Porcentaje,Saldo = @Saldo, Estado_id = @Estado_id , Cuota_valor=@Cuota_valor   
+		where Cliente = @Cliente and Fecha = @Fecha and Tipo =@Tipo     
+

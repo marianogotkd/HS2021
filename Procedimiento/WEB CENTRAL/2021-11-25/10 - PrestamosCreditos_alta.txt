@@ -1,0 +1,31 @@
+ALTER procedure [dbo].[PrestamosCreditos_alta]
+@Cliente smallint,
+@Fecha Date,
+@Importe decimal(38,2),
+@Tipo char(1),
+@Tipocobro char(1),
+@Porcentaje decimal (5,2),
+@Dias char(3),
+@Saldo decimal(38,2),
+@Cuota_valor decimal(38,2)
+
+
+as
+insert PrestamosCreditos (Cliente, 
+							Fecha, 
+							Importe, 
+							Tipo, 
+							Tipocobro, 
+							Porcentaje,
+							Dias,
+							Saldo, Estado_id, Cuota_valor) values (
+							@Cliente, 
+							@Fecha, 
+							@Importe, 
+							@Tipo, 
+							@Tipocobro, 
+							@Porcentaje,
+							@Dias,
+							@Saldo, '1',
+							@Cuota_valor )
+

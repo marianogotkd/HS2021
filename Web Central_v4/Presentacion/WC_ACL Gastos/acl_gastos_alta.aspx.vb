@@ -3,12 +3,19 @@
     Dim DAgastos As New Capa_Datos.WC_gastos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            obtener_gastos_tipo()
             Txt_motivo.Text = ""
             limpiar()
             Txt_motivo.Focus()
         End If
 
 
+    End Sub
+
+    Private Sub obtener_gastos_tipo()
+        Dim dataset1 As DataSet = DAgastos.GastosTipo_obtener_todos
+        GridView1.DataSource = dataset1.Tables(0)
+        GridView1.DataBind()
     End Sub
 
     Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick

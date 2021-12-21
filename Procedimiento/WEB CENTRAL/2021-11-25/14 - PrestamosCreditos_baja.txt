@@ -1,0 +1,10 @@
+create procedure PrestamosCreditos_baja
+@ID int,
+@Estado_id int,
+@Fecha_baja date
+
+
+as
+update PrestamosCreditos set Estado_id = @Estado_id , Fecha_baja = @Fecha_baja where Idprestamocredito = @ID  
+
+go

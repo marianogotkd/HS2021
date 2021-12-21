@@ -95,13 +95,13 @@ Partial Public Class Reclamo
     Protected WithEvents lb_error_importe As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_calculo.
+    '''Control DropDownList_sincalculo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_calculo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_sincalculo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_sincalculo.
@@ -113,13 +113,13 @@ Partial Public Class Reclamo
     Protected WithEvents lb_error_sincalculo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_prestamocredito.
+    '''Control DropDownList_prestamocredito.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_prestamocredito As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_prestamocredito As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_prestamocredito.

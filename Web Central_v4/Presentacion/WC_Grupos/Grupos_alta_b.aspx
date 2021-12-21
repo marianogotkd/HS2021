@@ -1,6 +1,45 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Grupos_alta_b.aspx.vb" Inherits="Presentacion.Grupos_alta_b" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script>
+    
+    <script type="text/javascript" language="javascript">
+
+        //var count = 0;
+        function isDecimalNumber(evt, c) {
+            var count = c.value.lenght;
+            ///count = count + 1;
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            var dot1 = c.value.indexOf('.');
+            var dot2 = c.value.lastIndexOf('.');
+            var keynum = window.event ? window.event.keyCode : evt.which;
+              
+
+
+
+            if (count > 15 && dot1 == -1) {
+                c.value = "";
+                count = 0;
+                return false;///choco
+
+            }
+
+//            if (dot1 > 4) {
+//                c.value = "";
+//                
+//            }
+              if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+                  return false;
+              else if (charCode == 46 && (dot1 == dot2) && dot1 != -1 && dot2 != -1)
+                  return false;
+
+              return true;
+        }
+</script>
+    
+    
+    
+    
+    
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -69,10 +108,18 @@
             obj.select();
         }
     }
+
+
+
+    
+
+    
+
+
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
 <div class="card card-primary">
@@ -91,8 +138,9 @@
             <div class="row justify-content-center">
                     <div class="col-md-2">
                     <label for="Label_grupo_id">Grupo:</label>
-                    <asp:TextBox ID="Txt_grupo_codigo" runat="server" placeholder="Ingrese código..." class="form-control" Visible="true"   
-                    onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                    <asp:TextBox ID="Txt_grupo_codigo" runat="server" placeholder="Ingrese código..." 
+                            class="form-control" Visible="true"   
+                    onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" MaxLength="3"></asp:TextBox>
                     <asp:Label ID="lb_error_codigo" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     <asp:HiddenField ID="HF_grupo_id" runat="server" />
@@ -109,12 +157,14 @@
         </div>
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                     <label for="Label_tipo">Tipo:</label>
-                    <asp:TextBox ID="Txt_tipo" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" 
+                    <asp:DropDownList ID="DropDownList_tipo" runat="server" class="form-control" onkeydown="tecla_op(event);"></asp:DropDownList>
+                
+                    <%--<asp:TextBox ID="Txt_tipo" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" 
                     MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_1234_valitation(event);" 
                     ToolTip="Ingrese tipo (1,2,3,4)" validationgroup="check" 
-                    xmlns:asp="#unknown"></asp:TextBox>
+                    xmlns:asp="#unknown"></asp:TextBox>--%>
                     <asp:Label ID="lb_error_tipo" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     <small id="Small1" runat="server" visible=true class="form-text text-muted">1= % del grupo y descuento de los pagados por prestamos.</small>
@@ -124,22 +174,37 @@
                     </div>
                     <div class="col-md-2">
                     <label for="Label_porcentaje">Porcentaje:</label>
-                    <asp:TextBox ID="Txt_porcentaje" runat="server" placeholder="0,00 %" class="form-control" 
+                    <asp:TextBox ID="Txt_porcentaje" runat="server" placeholder="0 %" class="form-control" 
                     CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
-                    MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                    MaxLength="3" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                     <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
                     </div>
                     <div class="col-md-2">
-                    <label for="Label_tipo">Ciente Porcentaje:</label>
-                    <asp:TextBox ID="Txt_clieporcentaje" runat="server" placeholder="0,00 %" class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
-                    MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
-                    <asp:Label ID="lb_error_clieporcentaje" runat="server" ForeColor="Red" Text="*" 
+                    <label for="Label_tipo">Cliente Porc:</label>
+                    <asp:TextBox ID="Txt_clieporcentaje" runat="server" placeholder="0" 
+                            class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
+                    MaxLength="4" onkeydown="tecla_op(event);" 
+                            onkeypress="return justNumbers(event);"></asp:TextBox>
+                    <asp:Label ID="lb_error_clieporcentaje" runat="server" ForeColor="Red" Text="* El cliente no existe" 
                     Visible="False"></asp:Label>
                     </div>
-                    <div class="col-md-2">
-                    <label for="Label_codcobro">Cód. De Cobro:</label>
-                    <asp:TextBox ID="Txt_codcobro" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_1234_valitation(event);"></asp:TextBox>
+                    
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="row justify-content-center">
+                    <div class="col-md-4">
+                    <label for="Label_codcobro">Cód.Cobro:</label>
+                    <asp:DropDownList ID="DropDownList_codcobro" runat="server" class="form-control" onkeydown="tecla_op(event);">
+                        <asp:ListItem Selected="True" Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                        <asp:ListItem Value="3">3</asp:ListItem>
+                        <asp:ListItem Value="4">4</asp:ListItem>
+                        </asp:DropDownList>
+                    <%--<asp:TextBox ID="Txt_codcobro" runat="server" placeholder="Ingrese opción..." class="form-control" CausesValidation="True" validationgroup="check_3" xmlns:asp="#unknown3" MaxLength="1" onkeydown="tecla_op(event);" onkeypress="return solo_1234_valitation(event);"></asp:TextBox>--%>
             
                     <asp:Label ID="lb_error_codcobro" runat="server" ForeColor="Red" Text="*" 
                     Visible="False"></asp:Label>
@@ -149,24 +214,26 @@
                     <small id="Small8" runat="server" visible=true class="form-text text-muted">4= solo.</small>
 
                     </div>
+                    <div class="col-md-4">
+                    
+                    </div>
             </div>
         </div>
-
         
         <div class="form-group">
             <div class="row justify-content-center">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                     <label for="Label_fecha">Fecha de procesamiento:</label>
                     <asp:TextBox ID="Txt_fechaproc" onkeydown="tecla_op(event);" class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                     <label for="Label_importe">Importe de procesamiento:</label>
                     <asp:TextBox ID="Txt_importe_fecha" runat="server" placeholder="0,00" class="form-control" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" 
-                    MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                    MaxLength="17" onkeydown="tecla_op(event);" onkeypress="return validateDecimalKeyPress(this, event);"></asp:TextBox>
                     </div>
-                    <div class="col-md-4">
-                    </div>
+                    <%--<div class="col-md-4">
+                    </div>--%>
 
             </div>
         </div>

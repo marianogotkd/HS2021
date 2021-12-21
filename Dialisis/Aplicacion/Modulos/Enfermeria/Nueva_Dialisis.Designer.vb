@@ -937,6 +937,7 @@ Partial Class Nueva_Dialisis
         'tb_Obs
         '
         Me.tb_Obs.Location = New System.Drawing.Point(608, 158)
+        Me.tb_Obs.MaxLength = 0
         Me.tb_Obs.Multiline = True
         Me.tb_Obs.Name = "tb_Obs"
         Me.tb_Obs.Size = New System.Drawing.Size(559, 38)

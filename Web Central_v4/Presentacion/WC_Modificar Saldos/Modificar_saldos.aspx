@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Modificar_saldos.aspx.vb" Inherits="Presentacion.Modificar_saldos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script>
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -67,7 +67,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" 
+    <asp:ScriptManager ID="ScriptManager1" runat="server" 
                             EnableScriptGlobalization="True">
     </asp:ScriptManager>
 
@@ -76,7 +76,7 @@
 
 <div class="card card-primary">
 <div class="card-header">
-                <h3 class="card-title">A.B.M. CLIENTES</h3>
+                <h3 class="card-title">MODIFICAR SALDOS.</h3>
 </div>
 <form role="form">
 <div class="card-body">
@@ -98,10 +98,10 @@
                     <div class="col-md-8">
                     <div class="card">
                     <div class="card-header">
-                              <h3 class="card-title">MODIFICAR SALDOS.</h3>
+                              <%--<h3 class="card-title">MODIFICAR SALDOS.</h3>--%>
 
                               <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                    <div class="input-group input-group-sm" style="width: 200px;">
                                     <input type="text" id="txt_buscar" runat="server" onkeydown="tecla_op(event);" name="table_search" class="form-control float-right" placeholder="Buscar...">
 
                                     <div class="input-group-append">

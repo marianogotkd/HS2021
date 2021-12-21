@@ -92,6 +92,47 @@
                     </div>
 
                 </div>
+
+                <div id="Div1" class="row justify-content-center" runat="server" visible="true">
+                    <div class="col-md-8">
+                    <div class="card">
+                    <div class="card-header">
+                              <h3 class="card-title">Listado de Gastos.</h3>
+
+                              <%--<div class="card-tools">
+                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" id="txt_buscar" runat="server" onkeydown="tecla_op(event);" name="table_search" class="form-control float-right" placeholder="Buscar...">
+
+                                    <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default" onkeydown="tecla_op_botones(event);"><i class="fas fa-search"></i></button>
+                                    </div>
+                                    </div>
+                            </div>--%>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0" style="height: 200px" onkeydown="tecla_op_botones(event);" > <%--class="form-group"--%>
+                            <asp:GridView ID="GridView1" runat="server" 
+                            class="table table-head-fixed text-nowrap" AllowSorting="True" AutoGenerateColumns="False" 
+                                   BorderColor="Black" GridLines="None" 
+                                  EnableSortingAndPagingCallbacks="True"> <%--class="table table-hover" PageSize="20" --%>
+                                    <Columns>
+                                        <asp:BoundField DataField="Gastotipo_id" HeaderText="ID" Visible="False">
+                                        <HeaderStyle ForeColor="#0099FF" />
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="Motivo" HeaderText="Gasto" >
+                                        <HeaderStyle ForeColor="#0099FF" />
+                                        </asp:BoundField>
+                                        
+                                    </Columns>
+                                </asp:GridView>
+                        </div>
+
+
+                    </div>
+                    </div>
+                    </div>
+
+
         </div>
 
 </div>

@@ -1,0 +1,13 @@
+USE [WebCentral]
+GO
+/****** Object:  StoredProcedure [dbo].[Parametro_obtener_dia]    Script Date: 12/08/2021 17:51:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Parametro_obtener_dia]
+
+---SOLO RECUPERA 1 REGISTRO, EL QUE TENGA LA FECHA MAS RECIENTE.
+as
+select TOP 1 * from Parametro where Parametro.Estado='Activo' order by Parametro.Fecha desc
+

@@ -22,7 +22,7 @@
     Private Sub btn_buscar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_buscar.ServerClick
         lb_cliente_nomb.InnerText = "Nombre:"
         Txt_importe.Text = ""
-        Txt_tipo.Text = ""
+        'Txt_tipo.Text = ""
         Txt_porcentaje.Text = ""
 
         Try
@@ -34,7 +34,10 @@
                     'cargo la info del credito que se recupero para esa fecha.
                     lb_cliente_nomb.InnerText = "Nombre: " + ds_info.Tables(2).Rows(0).Item("Nombre")
                     Txt_importe.Text = CDec(ds_info.Tables(2).Rows(0).Item("Importe"))
-                    Txt_tipo.Text = ds_info.Tables(2).Rows(0).Item("Tipocobro")
+                    'Txt_tipo.Text = ds_info.Tables(2).Rows(0).Item("Tipocobro")
+
+                    DropDownList_tipo.SelectedValue = ds_info.Tables(2).Rows(0).Item("Tipocobro")
+
                     Txt_porcentaje.Text = CDec(ds_info.Tables(2).Rows(0).Item("Porcentaje"))
                     Txt_importe.Focus()
                 Else
@@ -73,9 +76,9 @@
         txt_fecha.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
 
-    Private Sub Txt_tipo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_tipo.Init
-        Txt_tipo.Attributes.Add("onfocus", "seleccionarTexto(this);")
-    End Sub
+    'Private Sub Txt_tipo_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_tipo.Init
+    '    Txt_tipo.Attributes.Add("onfocus", "seleccionarTexto(this);")
+    'End Sub
 
     Private Sub Txt_porcentaje_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Txt_porcentaje.Init
         Txt_porcentaje.Attributes.Add("onfocus", "seleccionarTexto(this);")
@@ -145,10 +148,10 @@
             lb_error_importe.Visible = True
         End Try
 
-        If Txt_tipo.Text = "" Then
-            valido_ingreso = "no"
-            lb_error_tipo.Visible = True
-        End If
+        'If Txt_tipo.Text = "" Then
+        '    valido_ingreso = "no"
+        '    lb_error_tipo.Visible = True
+        'End If
 
         Dim porcentaje As Decimal
         Try
@@ -223,7 +226,7 @@
             porcentaje = CDec(0)
         End Try
 
-        DAprestamoscreditos.Prestamos_alta(CInt(Session("Cliente")), txt_fecha.Text, importe, Txt_tipo.Text, porcentaje)
+        DAprestamoscreditos.Prestamos_alta(CInt(Session("Cliente")), txt_fecha.Text, importe, CStr(DropDownList_tipo.SelectedValue), porcentaje)
 
         ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
     End Sub
@@ -273,7 +276,7 @@
         Catch ex As Exception
             porcentaje = CDec(0)
         End Try
-        DAprestamoscreditos.Prestamos_modificar(CInt(Session("Cliente")), txt_fecha.Text, importe, Txt_tipo.Text, porcentaje)
+        DAprestamoscreditos.Prestamos_modificar(CInt(Session("Cliente")), txt_fecha.Text, importe, CStr(DropDownList_tipo.SelectedValue), porcentaje, 1)
         ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_OKGRABADO", "$(document).ready(function () {$('#modal-sm_OKGRABADO').modal();});", True)
     End Sub
 #End Region

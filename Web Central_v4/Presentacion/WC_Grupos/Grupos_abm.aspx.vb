@@ -50,8 +50,10 @@
             End If
         Else
             'si es vacio redirecciono al form de alta
-            Session("grupos_op") = "alta"
-            Response.Redirect("Grupos_alta_b.aspx")
+            'Session("grupos_op") = "alta"
+            'Response.Redirect("Grupos_alta_b.aspx")
+
+            Txt_grupo_id.Focus()
         End If
     End Sub
 
