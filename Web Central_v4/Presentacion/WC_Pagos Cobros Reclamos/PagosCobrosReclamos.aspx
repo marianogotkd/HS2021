@@ -81,16 +81,20 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-2">
-                            <asp:Label ID="Label1" runat="server" Text="1 - RECLAMO."></asp:Label>
+                            <%--<asp:Label ID="Label1" runat="server" Text="1 - RECLAMO."></asp:Label>--%>
+                            <asp:LinkButton ID="LinkButton_reclamo" runat="server">1 - RECLAMO.</asp:LinkButton>
                         </div>
                         <div class="col-md-2">
-                            <asp:Label ID="Label2" runat="server" Text="2 - COBRO."></asp:Label>
+                            <asp:LinkButton ID="LinkButton_cobro" runat="server">2 - COBRO.</asp:LinkButton>
+                            <%--<asp:Label ID="Label2" runat="server" Text="2 - COBRO."></asp:Label>--%>
                         </div>
                         <div class="col-md-2">
-                            <asp:Label ID="Label3" runat="server" Text="3 - PAGO."></asp:Label>
+                            <%--<asp:Label ID="Label3" runat="server" Text="3 - PAGO."></asp:Label>--%>
+                            <asp:LinkButton ID="LinkButton_pago" runat="server">3 - PAGO.</asp:LinkButton>
                         </div>
                         <div class="col-md-2">
-                            <asp:Label ID="Label5" runat="server" Text="4 - RESUMEN."></asp:Label>
+                            <%--<asp:Label ID="Label5" runat="server" Text="4 - RESUMEN."></asp:Label>--%>
+                            <asp:LinkButton ID="LinkButton_resumen" runat="server">4 - RESUMEN.</asp:LinkButton>
                         </div>
                     </div>    
                 </div>

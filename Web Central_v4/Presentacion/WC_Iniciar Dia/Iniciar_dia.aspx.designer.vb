@@ -59,6 +59,15 @@ Partial Public Class Iniciar_dia
     Protected WithEvents lb_error_fecha As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control HF_fecha.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_fecha As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control Label_dia.
     '''</summary>
     '''<remarks>
@@ -66,6 +75,15 @@ Partial Public Class Iniciar_dia
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Label_dia As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control DIA_recuperado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents DIA_recuperado As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txt_dia.
@@ -77,67 +95,67 @@ Partial Public Class Iniciar_dia
     Protected WithEvents txt_dia As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control Label1.
+    '''Control LinkButton_Domingo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Domingo As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label2.
+    '''Control LinkButton_Lunes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Lunes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label3.
+    '''Control LinkButton_Martes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Martes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label4.
+    '''Control LinkButton_Miercoles.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Miercoles As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label5.
+    '''Control LinkButton_Jueves.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Jueves As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label6.
+    '''Control LinkButton_Viernes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Viernes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label7.
+    '''Control LinkButton_Sabado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_Sabado As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control btn_retroceder.
@@ -174,6 +192,24 @@ Partial Public Class Iniciar_dia
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_ok_error As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Button1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Button2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Control btn_grabar_close.

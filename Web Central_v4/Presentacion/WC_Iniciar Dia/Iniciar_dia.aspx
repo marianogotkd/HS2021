@@ -92,6 +92,7 @@
                                     <asp:Label ID="Label8" runat="server" Text="Iniciar dia:"></asp:Label>
                                     <asp:TextBox ID="Txt_fecha" onkeydown="tecla_op(event);" runat="server" TextMode="Date"></asp:TextBox>
                                     <asp:Label ID="lb_error_fecha" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
+                                    <asp:HiddenField ID="HF_fecha" runat="server" />
                                 </div>
                                 <div class="col-4">
                                 </div>
@@ -101,22 +102,31 @@
                         <div class="row justify-content-center">
                                 <div class="col-4">
                                     <asp:Label ID="Label_dia" runat="server" Text="DIA:"></asp:Label>
-                                    &nbsp;<asp:TextBox ID="txt_dia" runat="server" MaxLength="1" Width="35px" onkeydown="tecla_op(event);" onkeypress="return dias_valitation(event);"></asp:TextBox>
+                                    &nbsp;<asp:Label ID="DIA_recuperado" runat="server" ForeColor="#3333FF" 
+                                        Visible="False"></asp:Label>
+                                    <asp:TextBox ID="txt_dia" runat="server" MaxLength="1" Width="50px" onkeydown="tecla_op(event);" onkeypress="return dias_valitation(event);"></asp:TextBox>
                                 </div>
                                 <div class="col-4">
-                                    <asp:Label ID="Label1" runat="server" Text="1. Domingo."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Domingo" runat="server">1. Domingo</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label2" runat="server" Text="2. Lunes."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Lunes" runat="server">2. Lunes</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label3" runat="server" Text="3. Martes."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Martes" runat="server">3. Martes</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label4" runat="server" Text="4. Miercoles."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Miercoles" runat="server">4. Miercoles</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label5" runat="server" Text="5. Jueves."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Jueves" runat="server">5. Jueves</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label6" runat="server" Text="6. Viernes."></asp:Label>
+                                    
+                                    <asp:LinkButton ID="LinkButton_Viernes" runat="server">6. Viernes</asp:LinkButton>
                                     <br />
-                                    <asp:Label ID="Label7" runat="server" Text="7. Sabado."></asp:Label>   
+                                    
+                                    <asp:LinkButton ID="LinkButton_Sabado" runat="server">7. Sabado.</asp:LinkButton>
                                 </div>
                         </div>
                 </div>
@@ -166,12 +176,38 @@
             </div>
             <div class="modal-body">
               <p>OPCION INCORRECTA!.
-              Ingrese fecha y dia váido.&hellip;</p>
+              Ingrese fecha y dia válido.&hellip;</p>
             </div>
             <div class="modal-footer justify-content-center ">
             <%--<div class="modal-footer justify-content-between">--%>
               <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
               <button type="button" id="btn_ok_error" runat="server" tabindex="1" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+<%--MODAL MSJ CENTRADO - ERROR OPCION--%>
+<div class="modal fade" id="modal_sm_error_iniciodia" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error!</h4>
+              <button type="button" id="Button1" runat="server" class="close" tabindex="-1" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>El día de trabajo ya se inició!
+              &hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-center ">
+            <%--<div class="modal-footer justify-content-between">--%>
+              <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
+              <button type="button" id="Button2" runat="server" tabindex="1" class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
           </div>
           <!-- /.modal-content -->

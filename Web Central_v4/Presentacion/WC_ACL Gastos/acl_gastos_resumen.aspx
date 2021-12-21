@@ -125,10 +125,10 @@
                     <div class="col-md-12">
                     <div class="card">
                     <div class="card-header">
-                              <h3 class="card-title">RESUMEN A LA FECHA:</h3>
+                              <%--<h3 class="card-title">RESUMEN A LA FECHA:</h3>--%>
 
                               <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                    <div class="input-group input-group-sm" style="width: 200px;">
                                     <%--<input type="text" id="txt_buscar" runat="server" onkeydown="tecla_op(event);" name="table_search" class="form-control float-right" placeholder="Buscar...">--%>
                                     <asp:TextBox ID="txt_fecha" runat="server" onkeydown="tecla_op_BUSQUEDA(event);" name="table_search" class="form-control float-right" TextMode="Date" ></asp:TextBox>
                                     <div class="input-group-append">

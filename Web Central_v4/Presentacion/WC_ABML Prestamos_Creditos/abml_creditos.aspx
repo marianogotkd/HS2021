@@ -105,7 +105,7 @@
             <div class="card-body">
                     <div class="form-group">
                             <div class="row justify-content-center">
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <label for="Label_cliente_id">OPCION 2: CARGA DEL CREDITO.</label> 
                                     </div>
                                     <%--<div class="col-md-4">
@@ -116,11 +116,14 @@
                                 <div class="row justify-content-center">
                                         <div class="col-md-2">
                                                 <label for="Label_cliente_id">Cliente:</label>
-                                                <asp:TextBox ID="Txt_cliente_codigo" runat="server" placeholder="Ingrese código..." class="form-control" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                                                <asp:TextBox ID="Txt_cliente_codigo" runat="server" 
+                                                    placeholder="Ingrese código..." class="form-control" 
+                                                    onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" 
+                                                    MaxLength="4"></asp:TextBox>
                                                 <asp:Label ID="lb_error_codigo" runat="server" ForeColor="Red" Text="*" Visible="false"></asp:Label>
                                                 
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                                 <label for="Label_fecha">Fecha:</label>
                                                 <div class="input-group" >
                                                     <asp:TextBox ID="txt_fecha" onkeydown="tecla_op_BUSQUEDA(event);" runat="server" name="table_search" class="form-control float-right" TextMode="Date" ></asp:TextBox>
@@ -134,18 +137,14 @@
                                                 
                                                 
                                         </div>
-                                        <%--<div class="col-md-2">
-                                        
-                                        
-                                        </div>
                                         <div class="col-md-2">
-                                        
-                                        </div>--%>
+                                        </div>
+
                                 </div>
                      </div>
                      <div class="form-group">       
                                 <div class="row justify-content-center">
-                                        <div class="col-md-4">
+                                        <div class="col-md-8">
                                                <label for="Label_cliente_nomb" id="lb_cliente_nomb" runat="server">Nombre:</label> 
                                                 
                                         </div>
@@ -158,16 +157,18 @@
                                 <div class="row justify-content-center">
                                         <div class="col-md-2">
                                                 <label for="Label_importedelcredito">Importe del crédito $:</label>
-                                                <asp:TextBox ID="Txt_importe" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                                                <asp:TextBox ID="Txt_importe" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="17" onkeydown="tecla_op(event);" onkeypress="return validateDecimalKeyPress(this, event);"></asp:TextBox>
                                                 <asp:Label ID="lb_error_importe" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                             
                                         </div>
 
                                         <div class="col-md-2">
                                                 <label for="Label_porcentaje">Porcentaje %:</label>
-                                                <asp:TextBox ID="Txt_porcentaje" runat="server" class="form-control" placeholder="0,00 %" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="6" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                                                <asp:TextBox ID="Txt_porcentaje" runat="server" class="form-control" placeholder="0 %" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="3" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
                                                 <asp:Label ID="lb_error_porcentaje" runat="server" ForeColor="Red" Text="*" Visible="False"></asp:Label>
                             
+                                        </div>
+                                        <div class="col-md-4">
                                         </div>
                                 </div>
                         </div>
@@ -181,7 +182,7 @@
                             
                                         </div>
 
-                                        <div class="col-md-2">
+                                        <div class="col-md-6">
 
                                         </div>
                                 </div>

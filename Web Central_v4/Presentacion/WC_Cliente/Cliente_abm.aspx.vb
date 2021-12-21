@@ -56,8 +56,9 @@
             End If
         Else
             'se redirecciona al modulo de alta
-            Session("clientes_op") = "alta"
-            Response.Redirect("Cliente_alta_b.aspx")
+            'Session("clientes_op") = "alta"
+            'Response.Redirect("Cliente_alta_b.aspx")
+            Txt_cliente_id.Focus()
         End If
     End Sub
 

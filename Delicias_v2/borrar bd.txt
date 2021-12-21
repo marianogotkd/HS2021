@@ -1,0 +1,39 @@
+este script se hizo el 20-12-2021
+
+delete from Caja
+delete from CajaDetalle 
+--select * from CajaTipoMov 
+--delete from Categoria_1 ---------ELIMINAR CATEGORIAS DESDE LA SOLUCION.
+DELETE FROM Cliente 
+DELETE FROM Cliente_Fijos_Pagos 
+DELETE FROM CuentaCorriente
+DELETE FROM Egresos 
+---SELECT * FROM Empresa -----MODIFICAR NOMBRE...PONER UNO GENERICO
+DELETE FROM Factura
+DELETE FROM Movimiento_Mercaderia 
+DELETE FROM Movimiento_Mercaderia_Detalle 
+DELETE FROM MovimientosCtaCte 
+DELETE FROM Pedidos 
+DELETE FROM Pedidos_Detalle 
+DELETE FROM Producto 
+DELETE FROM Producto_x_sucursal 
+DELETE FROM ProductoCombo
+DELETE FROM ProductoCombo_x_Sucursal
+DELETE FROM ProductoCombo_x_Sucursal_Detalle
+DELETE FROM ProductoComboDetalle
+SELECT * FROM Proveedor ---ELIMINAR A MANO, DEJAR SOLO DEFECTO
+DELETE FROM ProveedorProducto
+DELETE FROM ProveedorProductoCompra
+DELETE FROM Recibo
+DELETE FROM Remito
+---SELECT * FROM Sucursal ----MODIFICAR NOMBRES....PONER UNO GENERICO
+SELECT * FROM Terminal ----CERRAR TERMINAR DESDE LA APP.
+---select * from Usuario ----dejar solo el usuario admin ...cambiar datos y poner algo generico.
+select * from Usuario_x_Terminal ---no borrar.
+delete from Venta 
+delete from Venta_CtaCte 
+delete from Venta_Producto
+delete from Venta_Producto_detalle
+delete from Venta_x_tarjeta
+
+

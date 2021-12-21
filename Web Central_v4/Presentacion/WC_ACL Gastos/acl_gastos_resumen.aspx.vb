@@ -23,6 +23,8 @@
 
     Private Sub obtener_resumen(ByVal Fecha As Date)
         DS_gastos.Tabla1.Rows.Clear()
+
+        GridView1.Columns(0).Visible = True
         'GridView1.DataSource = ""
         Dim ds_info As DataSet = Dagastos.Gastos_resumen(Fecha)
         If ds_info.Tables(0).Rows.Count <> 0 Then
@@ -34,7 +36,7 @@
             GridView1.DataSource = DS_gastos.Tabla1
             GridView1.DataBind()
         End If
-
+        GridView1.Columns(0).Visible = False 'oculto la columna ID
 
     End Sub
 
@@ -78,20 +80,34 @@
     End Sub
 
     Private Sub btn_ELIMINAR_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ELIMINAR_close.ServerClick
-        'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(Hf_FECHA.Value)
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
     Private Sub btn_ok_elimnar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_elimnar.ServerClick
         'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
-        txt_fecha.Focus()
+        Try
+            obtener_resumen(Hf_FECHA.Value)
+            txt_fecha.Focus()
+        Catch ex As Exception
+        End Try
+        
 
     End Sub
 
     Private Sub btn_buscar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_buscar.ServerClick
         Try
+            'habilito la columan ID.
+            'habilito la columna Eliminar
+            GridView1.Columns(0).Visible = True '0 es columna ID
+            GridView1.Columns(6).Visible = True '6 es columna eliminar
+
+
             DS_gastos.Tabla1.Rows.Clear()
             GridView1.DataSource = ""
             Dim ds_info As DataSet = Dagastos.Gastos_resumen(txt_fecha.Text)
@@ -99,14 +115,30 @@
                 DS_gastos.Tabla1.Merge(ds_info.Tables(0))
                 GridView1.DataSource = DS_gastos.Tabla1
                 GridView1.DataBind()
+                GridView1.Columns(0).Visible = False '0 es columna ID
+
+                Try
+                    If CDate(Hf_FECHA.Value) <> CDate(txt_fecha.Text) Then
+                        GridView1.Columns(6).Visible = False '6 es columna eliminar
+                    End If
+                Catch ex As Exception
+
+                End Try
                 GridView1.Focus()
+
             Else
+                GridView1.DataSource = DS_gastos.Tabla1
+                GridView1.DataBind()
+                GridView1.Columns(0).Visible = False '0 es columna ID
+                GridView1.Columns(6).Visible = False '6 es columna eliminar
                 'la busqueda no arrojo resultados.
                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
             End If
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
+            GridView1.Columns(0).Visible = False '0 es columna ID
+            GridView1.Columns(6).Visible = False '6 es columna eliminar
         End Try
     End Sub
 

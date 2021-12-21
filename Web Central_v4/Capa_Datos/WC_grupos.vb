@@ -4,7 +4,7 @@ Public Class WC_grupos
     Inherits Capa_Datos.Conexion
 
     Public Function Grupos_alta(ByVal Nombre As String, ByVal Tipo As String,
-                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal, ByVal Codigo As String, ByVal Importe As Decimal) As DataSet
+                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Integer, ByVal Codigocobro As String, ByVal Fecha As Date, ByVal Saldo As Decimal, ByVal Saldoanterior As Decimal, ByVal Gastos As Decimal, ByVal Codigo As String, ByVal Importe As Decimal) As DataSet
         Try
             dbconn.Open()
         Catch ex As Exception
@@ -32,7 +32,7 @@ Public Class WC_grupos
     End Function
 
     Public Function Grupos_modificar(ByVal Grupo_id As Integer, ByVal Nombre As String, ByVal Tipo As String,
-                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Decimal, ByVal Codigocobro As String, ByVal Fecha As Date,
+                              ByVal Porcentaje As Decimal, ByVal Clienteporcentaje As Integer, ByVal Codigocobro As String, ByVal Fecha As Date,
                               ByVal Codigo As String, ByVal Importe As Decimal) As DataSet
         Try
             dbconn.Open()

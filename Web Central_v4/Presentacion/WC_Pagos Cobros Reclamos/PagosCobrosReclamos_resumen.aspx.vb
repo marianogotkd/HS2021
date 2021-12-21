@@ -25,6 +25,9 @@
     Private Sub obtener_resumen(ByVal Fecha As Date)
         DS_pagoscobrosreclamos.Tabla1.Rows.Clear()
 
+        GridView1.Columns(0).Visible = True 'columna ID
+
+
         Dim ds_info As DataSet = DAanticipados.Anticipados_resumen(Fecha)
         If ds_info.Tables(0).Rows.Count <> 0 Then
             Dim i As Integer = 0
@@ -67,6 +70,15 @@
         GridView1.DataSource = DS_pagoscobrosreclamos.Tabla1
         GridView1.DataBind()
 
+        GridView1.Columns(0).Visible = False '0 es columna ID
+
+        Try
+            If CDate(Hf_FECHA.Value) <> CDate(txt_fecha.Text) Then
+                GridView1.Columns(9).Visible = False '10 es columna eliminar
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
@@ -109,15 +121,23 @@
     End Sub
 
     Private Sub btn_ELIMINAR_close_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ELIMINAR_close.ServerClick
-        'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
 
+        End Try
     End Sub
 
     Private Sub btn_ok_elimnar_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_elimnar.ServerClick
-        'cargo la grilla nuevamente con la info actualizada.
-        obtener_resumen(Hf_FECHA.Value)
-        txt_fecha.Focus()
+        Try
+            'cargo la grilla nuevamente con la info actualizada.
+            obtener_resumen(txt_fecha.Text)
+            txt_fecha.Focus()
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -129,6 +149,9 @@
         Try
             DS_pagoscobrosreclamos.Tabla1.Rows.Clear()
             GridView1.DataSource = ""
+            GridView1.Columns(0).Visible = True '0 es columna ID
+            GridView1.Columns(9).Visible = True '9 es columna eliminar
+
             Dim ds_info As DataSet = DAanticipados.Anticipados_resumen(txt_fecha.Text)
             If ds_info.Tables(0).Rows.Count <> 0 Then
                 Dim i As Integer = 0
@@ -169,8 +192,22 @@
                 End While
                 GridView1.DataSource = DS_pagoscobrosreclamos.Tabla1
                 GridView1.DataBind()
+                GridView1.Columns(0).Visible = False '10 es columna eliminar
+                Try
+                    If CDate(Hf_FECHA.Value) <> CDate(txt_fecha.Text) Then
+                        GridView1.Columns(9).Visible = False '10 es columna eliminar
+                    End If
+                Catch ex As Exception
+
+                End Try
+
                 GridView1.Focus()
             Else
+                GridView1.DataSource = DS_pagoscobrosreclamos.Tabla1
+                GridView1.DataBind()
+                GridView1.Columns(0).Visible = False '0 es columna ID
+                GridView1.Columns(9).Visible = False '9 es columna eliminar
+
                 'la busqueda no arrojo resultados.
                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
             End If

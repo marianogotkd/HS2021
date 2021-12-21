@@ -1,0 +1,5 @@
+en la tabla PrestamosCreditos
+
+agregar este campo:
+
+[Cuota_valor] [decimal](38, 2) NULL,

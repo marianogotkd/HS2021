@@ -32,40 +32,40 @@ Partial Public Class PagosCobrosReclamos
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control Label1.
+    '''Control LinkButton_reclamo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_reclamo As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label2.
+    '''Control LinkButton_cobro.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_cobro As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label3.
+    '''Control LinkButton_pago.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_pago As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Label5.
+    '''Control LinkButton_resumen.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LinkButton_resumen As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control Label4.

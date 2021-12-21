@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Home.Master" CodeBehind="Modificar_saldos_detalle.aspx.vb" Inherits="Presentacion.Modificar_saldos_detalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script>
+    <script>
     //funcion que reconoce teclas para ir a los botones retroceso, baja y graba
     function tecla_op(e) {
         var keycode = e.keyCode;
@@ -60,7 +60,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
     <div class="card card-primary">
@@ -80,7 +80,10 @@
                     <div class="col-md-4">
                             <asp:HiddenField ID="HF_cliente_id" runat="server" />
                             <label for="Label_cliente_id">Cliente:</label>
-                            <asp:TextBox ID="Txt_cliente_codigo" runat="server" placeholder="Ingrese código..." class="form-control" onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);"></asp:TextBox>
+                            <asp:TextBox ID="Txt_cliente_codigo" runat="server" 
+                                placeholder="Ingrese código..." class="form-control" 
+                                onkeydown="tecla_op(event);" onkeypress="return justNumbers(event);" 
+                                MaxLength="4"></asp:TextBox>
                             
                     </div>
                     <div class="col-md-4">
@@ -95,7 +98,7 @@
         <div class="row justify-content-center">
         <div class="col-md-4">
                 <label for="Label_saldo">Saldo $:</label>
-                <asp:TextBox ID="Txt_Saldos" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal_negativo(event, this);"></asp:TextBox>
+                <asp:TextBox ID="Txt_Saldos" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="17" onkeydown="tecla_op(event);" onkeypress="return validateDecimalNegativoKeyPress(this, event);"></asp:TextBox>
                 
         </div>
         <div class="col-md-4">
@@ -108,7 +111,7 @@
         <div class="row justify-content-center">
         <div class="col-md-4">
                 <label for="Label_regalo">Regalo $:</label>
-                <asp:TextBox ID="Txt_regalo" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="0" onkeydown="tecla_op(event);" onkeypress="return onKeyDecimal(event, this);"></asp:TextBox>
+                <asp:TextBox ID="Txt_regalo" runat="server" class="form-control" placeholder="0,00" CausesValidation="True" validationgroup="check_2" xmlns:asp="#unknown2" MaxLength="17" onkeydown="tecla_op(event);" onkeypress="return validateDecimalNegativoKeyPress(this, event);"></asp:TextBox>
         </div>
         <div class="col-md-4">
         </div>

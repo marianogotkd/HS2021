@@ -58,4 +58,23 @@
     Private Sub txt_opcion_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_opcion.Init
         txt_opcion.Attributes.Add("onfocus", "seleccionarTexto(this);")
     End Sub
+
+    Private Sub LinkButton_alta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_alta.Click
+        Response.Redirect("~/WC_ACL Gastos/acl_gastos_alta.aspx")
+    End Sub
+
+    Private Sub LinkButton_carga_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_carga.Click
+        'primero verifico que exista al menos 1 grupo_tipo
+        Dim ds_validar As DataSet = DAgastos.GastosTipo_obtener_todos
+        If ds_validar.Tables(0).Rows.Count <> 0 Then
+            Response.Redirect("~/WC_ACL Gastos/acl_gastos_carga.aspx")
+
+        Else
+            ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_sm_error2", "$(document).ready(function () {$('#modal_sm_error2').modal();});", True)
+        End If
+    End Sub
+
+    Private Sub LinkButton_resumen_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_resumen.Click
+        Response.Redirect("~/WC_ACL Gastos/acl_gastos_resumen.aspx")
+    End Sub
 End Class

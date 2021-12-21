@@ -104,13 +104,13 @@ Partial Public Class abml_prestamos
     Protected WithEvents lb_error_importe As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Txt_tipo.
+    '''Control DropDownList_tipo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Txt_tipo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList_tipo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lb_error_tipo.

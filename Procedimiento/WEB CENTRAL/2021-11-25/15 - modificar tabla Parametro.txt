@@ -1,0 +1,5 @@
+agregar este campo
+	[Estado] [varchar](50) NULL,
+
+
+todos van a tener el estado = Inactivo, con excepcion del dia del trabajo actual, es decir el ultimo registro.

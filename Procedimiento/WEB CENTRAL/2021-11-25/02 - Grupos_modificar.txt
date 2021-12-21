@@ -1,0 +1,28 @@
+USE [WebCentral]
+GO
+/****** Object:  StoredProcedure [dbo].[Grupos_modificar]    Script Date: 11/25/2021 14:50:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Grupos_modificar]
+@Grupo_id int,
+@Nombre varchar(20), 
+@Tipo char(1), 
+@Porcentaje decimal(5,2), 
+@Clienteporcentaje int, 
+@Codigocobro char(1), 
+@Fecha date,
+@Codigo varchar(max),
+@Importe decimal(38,2)
+as
+
+update Grupos set Nombre=@Nombre , 
+					Tipo=@Tipo, 
+					Porcentaje=@Porcentaje, 
+					Clienteporcentaje=@Clienteporcentaje, 
+					Codigocobro=@Codigocobro, 
+					Fecha=@Fecha,
+					Codigo=@Codigo,
+					Importe=@Importe 
+where Grupos.Grupo_id = @Grupo_id 					
