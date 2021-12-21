@@ -410,6 +410,8 @@ Public Class Modificar_Evento
         lbl_turnos_error0.Visible = False
         lbl_no_turnos.Visible = False
     End Sub
+
+   
 End Class
 
 
