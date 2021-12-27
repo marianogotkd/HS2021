@@ -116,14 +116,14 @@
         End If
     End Sub
 
-    Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
-        Mov_DS.Tables("Mov").Rows.Clear()
-        DataGridView1.DataSource = Mov_DS.Tables("Mov")
-        cb_Movimiento.Enabled = True
-        'desbloqueo origen y destino combos en form gestion_mercaderia
-        cb_origen.Enabled = True
-        cb_destino.Enabled = True
-    End Sub
+    'Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    Mov_DS.Tables("Mov").Rows.Clear()
+    '    DataGridView1.DataSource = Mov_DS.Tables("Mov")
+    '    cb_Movimiento.Enabled = True
+    '    'desbloqueo origen y destino combos en form gestion_mercaderia
+    '    cb_origen.Enabled = True
+    '    cb_destino.Enabled = True
+    'End Sub
 
     Public Sub GUARDAR_CLICK()
         Dim concepto As String
@@ -450,6 +450,16 @@
                 'DataGridView1.Rows.Add()
                 'DataGridView1.Focus()
                 'DataGridView1.Rows(0).Cells("prod_codinterno").Selected = True
+
+                'tambien habilio el origen y destino por si el op quiere cambiar.
+                Mov_DS.Tables("Mov").Rows.Clear()
+                DataGridView1.DataSource = Mov_DS.Tables("Mov")
+                cb_Movimiento.Enabled = True
+                'desbloqueo origen y destino combos en form gestion_mercaderia
+                cb_origen.Enabled = True
+                cb_destino.Enabled = True
+
+
             End If
         Else
             MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
