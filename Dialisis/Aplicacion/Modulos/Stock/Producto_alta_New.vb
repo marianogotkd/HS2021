@@ -18,7 +18,30 @@ Public Class Producto_alta_New
 
     Dim contenido As Decimal 'esto lo uso para saber si realmente se cambio, y aplicar el recalculo de stock
 
-    Public reflejar_cambios As String = "no" 'esto me sirve para saber si muestro los cambios en el form "producto_modificar"
+    Public reflejar_cambios As String = "no"
+
+    Private Sub Producto_alta_New_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            Select Case form_procedencia
+                Case "alta"
+                    producto_alta()
+                Case "modificar"
+                    Rutina_Producto_modificar()
+            End Select
+        End If
+
+
+    End Sub 'esto me sirve para saber si muestro los cambios en el form "producto_modificar"
     Private Sub Producto_alta_New_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         If form_procedencia = "modificar" Then

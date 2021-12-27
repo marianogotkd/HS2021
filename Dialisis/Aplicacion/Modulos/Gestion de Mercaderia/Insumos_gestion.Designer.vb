@@ -23,7 +23,7 @@ Partial Class Insumos_gestion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Insumos_gestion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -31,20 +31,6 @@ Partial Class Insumos_gestion
         Me.btn_limpiar = New System.Windows.Forms.Button()
         Me.btn_eliminar_seleccion = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MovBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Mov_DS = New Aplicacion.Mov_DS()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.btn_guardar = New System.Windows.Forms.Button()
-        Me.Bo_codbarra = New System.Windows.Forms.Button()
-        Me.btn_Agregar_Prod = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.tb_concepto = New System.Windows.Forms.TextBox()
-        Me.cb_origen = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.NDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodprodDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,6 +43,20 @@ Partial Class Insumos_gestion
         Me.Vence = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Prov_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MovBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Mov_DS = New Aplicacion.Mov_DS()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btn_guardar = New System.Windows.Forms.Button()
+        Me.Bo_codbarra = New System.Windows.Forms.Button()
+        Me.btn_Agregar_Prod = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tb_concepto = New System.Windows.Forms.TextBox()
+        Me.cb_origen = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,11 +101,11 @@ Partial Class Insumos_gestion
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.btn_limpiar)
         Me.Panel1.Controls.Add(Me.btn_eliminar_seleccion)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.btn_cancelar)
         Me.Panel1.Controls.Add(Me.btn_guardar)
         Me.Panel1.Location = New System.Drawing.Point(17, 172)
         Me.Panel1.Name = "Panel1"
@@ -116,7 +116,7 @@ Partial Class Insumos_gestion
         '
         Me.btn_limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_limpiar.Image = Global.Aplicacion.My.Resources.Resources.Borrar
-        Me.btn_limpiar.Location = New System.Drawing.Point(412, 359)
+        Me.btn_limpiar.Location = New System.Drawing.Point(484, 359)
         Me.btn_limpiar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_limpiar.MinimumSize = New System.Drawing.Size(124, 43)
         Me.btn_limpiar.Name = "btn_limpiar"
@@ -131,7 +131,7 @@ Partial Class Insumos_gestion
         '
         Me.btn_eliminar_seleccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_eliminar_seleccion.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(280, 359)
+        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(352, 359)
         Me.btn_eliminar_seleccion.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_eliminar_seleccion.MinimumSize = New System.Drawing.Size(124, 43)
         Me.btn_eliminar_seleccion.Name = "btn_eliminar_seleccion"
@@ -158,167 +158,19 @@ Partial Class Insumos_gestion
         Me.DataGridView1.MinimumSize = New System.Drawing.Size(766, 326)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1058, 326)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 16
-        '
-        'MovBindingSource
-        '
-        Me.MovBindingSource.DataMember = "Mov"
-        Me.MovBindingSource.DataSource = Me.Mov_DS
-        '
-        'Mov_DS
-        '
-        Me.Mov_DS.DataSetName = "Mov_DS"
-        Me.Mov_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Blue
-        Me.Label6.Location = New System.Drawing.Point(7, 4)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(234, 13)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Listado de producto que se consumirán:"
-        '
-        'btn_cancelar
-        '
-        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar
-        Me.btn_cancelar.Location = New System.Drawing.Point(544, 359)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_cancelar.MaximumSize = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.MinimumSize = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.TabIndex = 2
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_cancelar, "Cancelar consumos")
-        Me.btn_cancelar.UseVisualStyleBackColor = True
-        '
-        'btn_guardar
-        '
-        Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_guardar.Location = New System.Drawing.Point(676, 359)
-        Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_guardar.MaximumSize = New System.Drawing.Size(124, 43)
-        Me.btn_guardar.MinimumSize = New System.Drawing.Size(124, 43)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(124, 43)
-        Me.btn_guardar.TabIndex = 1
-        Me.btn_guardar.Text = "Guardar"
-        Me.btn_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_guardar, "Registrar consumos")
-        Me.btn_guardar.UseVisualStyleBackColor = True
-        '
-        'Bo_codbarra
-        '
-        Me.Bo_codbarra.Image = CType(resources.GetObject("Bo_codbarra.Image"), System.Drawing.Image)
-        Me.Bo_codbarra.Location = New System.Drawing.Point(17, 122)
-        Me.Bo_codbarra.Margin = New System.Windows.Forms.Padding(4)
-        Me.Bo_codbarra.Name = "Bo_codbarra"
-        Me.Bo_codbarra.Size = New System.Drawing.Size(94, 43)
-        Me.Bo_codbarra.TabIndex = 24
-        Me.Bo_codbarra.Text = "Ver Stock"
-        Me.Bo_codbarra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.Bo_codbarra, "Ver stock en sucursal")
-        Me.Bo_codbarra.UseVisualStyleBackColor = True
-        '
-        'btn_Agregar_Prod
-        '
-        Me.btn_Agregar_Prod.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Agregar_Prod.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
-        Me.btn_Agregar_Prod.Location = New System.Drawing.Point(123, 122)
-        Me.btn_Agregar_Prod.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_Agregar_Prod.MinimumSize = New System.Drawing.Size(124, 43)
-        Me.btn_Agregar_Prod.Name = "btn_Agregar_Prod"
-        Me.btn_Agregar_Prod.Size = New System.Drawing.Size(169, 43)
-        Me.btn_Agregar_Prod.TabIndex = 23
-        Me.btn_Agregar_Prod.Text = "Agregar Productos"
-        Me.btn_Agregar_Prod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_Agregar_Prod, "Agregar productos al listado")
-        Me.btn_Agregar_Prod.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(13, 80)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 17)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Concepto:"
-        '
-        'tb_concepto
-        '
-        Me.tb_concepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_concepto.Location = New System.Drawing.Point(115, 80)
-        Me.tb_concepto.Margin = New System.Windows.Forms.Padding(4)
-        Me.tb_concepto.MaximumSize = New System.Drawing.Size(265, 23)
-        Me.tb_concepto.MinimumSize = New System.Drawing.Size(265, 23)
-        Me.tb_concepto.Name = "tb_concepto"
-        Me.tb_concepto.Size = New System.Drawing.Size(265, 23)
-        Me.tb_concepto.TabIndex = 21
-        '
-        'cb_origen
-        '
-        Me.cb_origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cb_origen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cb_origen.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_origen.FormattingEnabled = True
-        Me.cb_origen.ItemHeight = 17
-        Me.cb_origen.Location = New System.Drawing.Point(115, 30)
-        Me.cb_origen.Margin = New System.Windows.Forms.Padding(4)
-        Me.cb_origen.MaximumSize = New System.Drawing.Size(265, 0)
-        Me.cb_origen.MinimumSize = New System.Drawing.Size(265, 0)
-        Me.cb_origen.Name = "cb_origen"
-        Me.cb_origen.Size = New System.Drawing.Size(265, 25)
-        Me.cb_origen.TabIndex = 19
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 33)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 17)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Sucursal:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(890, 17)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Fecha"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(944, 12)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(140, 20)
-        Me.DateTimePicker1.TabIndex = 18
         '
         'NDataGridViewTextBoxColumn
         '
@@ -435,12 +287,156 @@ Partial Class Insumos_gestion
         Me.Prov_id.Name = "Prov_id"
         Me.Prov_id.Visible = False
         '
+        'MovBindingSource
+        '
+        Me.MovBindingSource.DataMember = "Mov"
+        Me.MovBindingSource.DataSource = Me.Mov_DS
+        '
+        'Mov_DS
+        '
+        Me.Mov_DS.DataSetName = "Mov_DS"
+        Me.Mov_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Blue
+        Me.Label6.Location = New System.Drawing.Point(7, 4)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(234, 13)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Listado de producto que se consumirán:"
+        '
+        'btn_guardar
+        '
+        Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
+        Me.btn_guardar.Location = New System.Drawing.Point(616, 359)
+        Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_guardar.MaximumSize = New System.Drawing.Size(124, 43)
+        Me.btn_guardar.MinimumSize = New System.Drawing.Size(124, 43)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(124, 43)
+        Me.btn_guardar.TabIndex = 1
+        Me.btn_guardar.Text = "Guardar (F2)"
+        Me.btn_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.btn_guardar, "Registrar consumos")
+        Me.btn_guardar.UseVisualStyleBackColor = True
+        '
+        'Bo_codbarra
+        '
+        Me.Bo_codbarra.Image = CType(resources.GetObject("Bo_codbarra.Image"), System.Drawing.Image)
+        Me.Bo_codbarra.Location = New System.Drawing.Point(17, 122)
+        Me.Bo_codbarra.Margin = New System.Windows.Forms.Padding(4)
+        Me.Bo_codbarra.Name = "Bo_codbarra"
+        Me.Bo_codbarra.Size = New System.Drawing.Size(94, 43)
+        Me.Bo_codbarra.TabIndex = 24
+        Me.Bo_codbarra.Text = "Ver Stock"
+        Me.Bo_codbarra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.Bo_codbarra, "Ver stock en sucursal")
+        Me.Bo_codbarra.UseVisualStyleBackColor = True
+        '
+        'btn_Agregar_Prod
+        '
+        Me.btn_Agregar_Prod.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Agregar_Prod.Image = Global.Aplicacion.My.Resources.Resources.mas30x30
+        Me.btn_Agregar_Prod.Location = New System.Drawing.Point(123, 122)
+        Me.btn_Agregar_Prod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_Agregar_Prod.MinimumSize = New System.Drawing.Size(124, 43)
+        Me.btn_Agregar_Prod.Name = "btn_Agregar_Prod"
+        Me.btn_Agregar_Prod.Size = New System.Drawing.Size(169, 43)
+        Me.btn_Agregar_Prod.TabIndex = 23
+        Me.btn_Agregar_Prod.Text = "Agregar Productos"
+        Me.btn_Agregar_Prod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.btn_Agregar_Prod, "Agregar productos al listado")
+        Me.btn_Agregar_Prod.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(13, 80)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 17)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Concepto:"
+        '
+        'tb_concepto
+        '
+        Me.tb_concepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_concepto.Location = New System.Drawing.Point(115, 80)
+        Me.tb_concepto.Margin = New System.Windows.Forms.Padding(4)
+        Me.tb_concepto.MaximumSize = New System.Drawing.Size(265, 23)
+        Me.tb_concepto.MinimumSize = New System.Drawing.Size(265, 23)
+        Me.tb_concepto.Name = "tb_concepto"
+        Me.tb_concepto.Size = New System.Drawing.Size(265, 23)
+        Me.tb_concepto.TabIndex = 21
+        '
+        'cb_origen
+        '
+        Me.cb_origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb_origen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cb_origen.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb_origen.FormattingEnabled = True
+        Me.cb_origen.ItemHeight = 17
+        Me.cb_origen.Location = New System.Drawing.Point(115, 30)
+        Me.cb_origen.Margin = New System.Windows.Forms.Padding(4)
+        Me.cb_origen.MaximumSize = New System.Drawing.Size(265, 0)
+        Me.cb_origen.MinimumSize = New System.Drawing.Size(265, 0)
+        Me.cb_origen.Name = "cb_origen"
+        Me.cb_origen.Size = New System.Drawing.Size(265, 25)
+        Me.cb_origen.TabIndex = 19
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(13, 33)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 17)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Sucursal:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(890, 17)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "Fecha"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(944, 12)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(140, 20)
+        Me.DateTimePicker1.TabIndex = 18
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(7, 389)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(122, 13)
+        Me.Label7.TabIndex = 27
+        Me.Label7.Text = "ESC: Salir - F2: Guardar."
+        '
         'Insumos_gestion
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.ClientSize = New System.Drawing.Size(1119, 611)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "Insumos_gestion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -469,7 +465,6 @@ Partial Class Insumos_gestion
     Friend WithEvents btn_eliminar_seleccion As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_guardar As System.Windows.Forms.Button
     Friend WithEvents MovBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Mov_DS As Aplicacion.Mov_DS
@@ -487,4 +482,5 @@ Partial Class Insumos_gestion
     Friend WithEvents Vence As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Prov_id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

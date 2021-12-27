@@ -5,6 +5,22 @@
     Dim ds_PROD As DataSet
     Dim DAlote As New Datos.Lote
     Public procedencia
+
+    Private Sub Insumos_gestion_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            guardar()
+        End If
+    End Sub
     Private Sub Insumos_gestion_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Sucursales_Obtener_Origen()
 
@@ -97,43 +113,51 @@
     End Sub
 
     Private Sub btn_limpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_limpiar.Click
-        If DataGridView1.Rows.Count <> 0 Then
-            Dim result As DialogResult
-            result = MessageBox.Show("¿Desea quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
-            If result = DialogResult.OK Then
-                Mov_DS.Tables("Mov").Rows.Clear() 'no uso el datagridview rows clear...x q me tira error x el dataset q esta asociado
-                'DataGridView1.Rows.clear 
-                'DataGridView1.Rows.Add()
-                'DataGridView1.Focus()
-                'DataGridView1.Rows(0).Cells("prod_codinterno").Selected = True
+        Dim result As DialogResult
+        result = MessageBox.Show("¿Desea cancelar y quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+        If result = DialogResult.OK Then
+            Mov_DS.Tables("Mov").Rows.Clear()
+            DataGridView1.DataSource = Mov_DS.Tables("Mov")
+            'cb_Movimiento.Enabled = True
+            'desbloqueo origen y destino combos en form gestion_mercaderia
+
+            'AQUI HABilito el combo de sucursal
+            cb_origen.Enabled = True
+            Dim sucursal_id As Integer = Inicio.suc_id
+            Dim UT_id As Integer = Inicio.UT_id
+            If UT_id <> 1 Then 'deshabilito si no soy admin.
+                cb_origen.SelectedValue = sucursal_id
+                cb_origen.Enabled = False
             End If
-        Else
-            MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
+            If DataGridView1.Rows.Count <> 0 Then
+
+                Mov_DS.Tables("Mov").Rows.Clear() 'no uso el datagridview rows clear...x q me tira error x el dataset q esta asociado
+            End If
+
         End If
     End Sub
 
-    Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
-        Mov_DS.Tables("Mov").Rows.Clear()
-        DataGridView1.DataSource = Mov_DS.Tables("Mov")
-        'cb_Movimiento.Enabled = True
-        'desbloqueo origen y destino combos en form gestion_mercaderia
+    'Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
+    '    Mov_DS.Tables("Mov").Rows.Clear()
+    '    DataGridView1.DataSource = Mov_DS.Tables("Mov")
+    '    'cb_Movimiento.Enabled = True
+    '    'desbloqueo origen y destino combos en form gestion_mercaderia
 
-        'AQUI HABilito el combo de sucursal
-        cb_origen.Enabled = True
-        Dim sucursal_id As Integer = Inicio.suc_id
-        Dim UT_id As Integer = Inicio.UT_id
-        If UT_id <> 1 Then 'deshabilito si no soy admin.
-            cb_origen.SelectedValue = sucursal_id
-            cb_origen.Enabled = False
-        End If
-
-
-        'cb_destino.Enabled = True
-    End Sub
+    '    'AQUI HABilito el combo de sucursal
+    '    cb_origen.Enabled = True
+    '    Dim sucursal_id As Integer = Inicio.suc_id
+    '    Dim UT_id As Integer = Inicio.UT_id
+    '    If UT_id <> 1 Then 'deshabilito si no soy admin.
+    '        cb_origen.SelectedValue = sucursal_id
+    '        cb_origen.Enabled = False
+    '    End If
 
 
+    '    'cb_destino.Enabled = True
+    'End Sub
 
-    Private Sub btn_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_guardar.Click
+
+    Private Sub guardar()
         Dim concepto As String
         concepto = "Insumo consumido" + ", " + tb_concepto.Text
         ''''Alta en tabla Movimiento_Mercaderia''''''''''
@@ -199,6 +223,9 @@
         Else
             MessageBox.Show("Debe agregar al menos un producto.", "Sistema de Gestión.")
         End If
+    End Sub
+    Private Sub btn_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_guardar.Click
+        guardar()
     End Sub
 
     Public Sub Limpiar()

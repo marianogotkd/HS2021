@@ -40,9 +40,10 @@ Partial Class Proveedor_alta
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btn_Aceptar = New System.Windows.Forms.Button()
+        Me.tx_direccion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tx_direccion = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.ERROR_tx_nombre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -65,7 +66,7 @@ Partial Class Proveedor_alta
         Me.tx_obs.Location = New System.Drawing.Point(305, 362)
         Me.tx_obs.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_obs.Name = "tx_obs"
-        Me.tx_obs.Size = New System.Drawing.Size(329, 34)
+        Me.tx_obs.Size = New System.Drawing.Size(329, 29)
         Me.tx_obs.TabIndex = 6
         Me.tx_obs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -75,7 +76,7 @@ Partial Class Proveedor_alta
         Me.tx_mail.Location = New System.Drawing.Point(305, 310)
         Me.tx_mail.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_mail.Name = "tx_mail"
-        Me.tx_mail.Size = New System.Drawing.Size(329, 34)
+        Me.tx_mail.Size = New System.Drawing.Size(329, 29)
         Me.tx_mail.TabIndex = 5
         Me.tx_mail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -85,7 +86,7 @@ Partial Class Proveedor_alta
         Me.tx_celular.Location = New System.Drawing.Point(305, 262)
         Me.tx_celular.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_celular.Name = "tx_celular"
-        Me.tx_celular.Size = New System.Drawing.Size(329, 34)
+        Me.tx_celular.Size = New System.Drawing.Size(329, 29)
         Me.tx_celular.TabIndex = 4
         Me.tx_celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -95,7 +96,7 @@ Partial Class Proveedor_alta
         Me.tx_telefono.Location = New System.Drawing.Point(305, 212)
         Me.tx_telefono.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_telefono.Name = "tx_telefono"
-        Me.tx_telefono.Size = New System.Drawing.Size(329, 34)
+        Me.tx_telefono.Size = New System.Drawing.Size(329, 29)
         Me.tx_telefono.TabIndex = 3
         Me.tx_telefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -107,7 +108,7 @@ Partial Class Proveedor_alta
         Me.Label8.Location = New System.Drawing.Point(90, 365)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(181, 29)
+        Me.Label8.Size = New System.Drawing.Size(142, 24)
         Me.Label8.TabIndex = 281
         Me.Label8.Text = "Observaciones:"
         '
@@ -119,7 +120,7 @@ Partial Class Proveedor_alta
         Me.Label7.Location = New System.Drawing.Point(70, 313)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(229, 29)
+        Me.Label7.Size = New System.Drawing.Size(178, 24)
         Me.Label7.TabIndex = 280
         Me.Label7.Text = "Mail / Co.Eletrónico:"
         '
@@ -131,7 +132,7 @@ Partial Class Proveedor_alta
         Me.Label6.Location = New System.Drawing.Point(116, 264)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 29)
+        Me.Label6.Size = New System.Drawing.Size(74, 24)
         Me.Label6.TabIndex = 279
         Me.Label6.Text = "Celular:"
         '
@@ -143,7 +144,7 @@ Partial Class Proveedor_alta
         Me.Label5.Location = New System.Drawing.Point(104, 215)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(116, 29)
+        Me.Label5.Size = New System.Drawing.Size(90, 24)
         Me.Label5.TabIndex = 278
         Me.Label5.Text = "Teléfono:"
         '
@@ -155,7 +156,7 @@ Partial Class Proveedor_alta
         Me.Label4.Location = New System.Drawing.Point(102, 166)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(121, 29)
+        Me.Label4.Size = New System.Drawing.Size(95, 24)
         Me.Label4.TabIndex = 277
         Me.Label4.Text = "Dirección:"
         '
@@ -165,7 +166,7 @@ Partial Class Proveedor_alta
         Me.tx_responsable.Location = New System.Drawing.Point(305, 112)
         Me.tx_responsable.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_responsable.Name = "tx_responsable"
-        Me.tx_responsable.Size = New System.Drawing.Size(329, 34)
+        Me.tx_responsable.Size = New System.Drawing.Size(329, 29)
         Me.tx_responsable.TabIndex = 1
         Me.tx_responsable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -177,7 +178,7 @@ Partial Class Proveedor_alta
         Me.Label3.Location = New System.Drawing.Point(92, 115)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(149, 29)
+        Me.Label3.Size = New System.Drawing.Size(115, 24)
         Me.Label3.TabIndex = 275
         Me.Label3.Text = "Resposable:"
         '
@@ -187,13 +188,14 @@ Partial Class Proveedor_alta
         Me.tx_nombre.Location = New System.Drawing.Point(305, 62)
         Me.tx_nombre.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_nombre.Name = "tx_nombre"
-        Me.tx_nombre.Size = New System.Drawing.Size(329, 34)
+        Me.tx_nombre.Size = New System.Drawing.Size(329, 29)
         Me.tx_nombre.TabIndex = 0
         Me.tx_nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btn_Cancelar)
         Me.GroupBox1.Controls.Add(Me.btn_Aceptar)
         Me.GroupBox1.Controls.Add(Me.ERROR_tx_nombre)
@@ -243,10 +245,20 @@ Partial Class Proveedor_alta
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 11
-        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.Text = "Guardar (F2)"
         Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btn_Aceptar, "Guardar")
         Me.btn_Aceptar.UseVisualStyleBackColor = True
+        '
+        'tx_direccion
+        '
+        Me.tx_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tx_direccion.Location = New System.Drawing.Point(305, 163)
+        Me.tx_direccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.tx_direccion.Name = "tx_direccion"
+        Me.tx_direccion.Size = New System.Drawing.Size(329, 29)
+        Me.tx_direccion.TabIndex = 2
+        Me.tx_direccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -256,19 +268,20 @@ Partial Class Proveedor_alta
         Me.Label1.Location = New System.Drawing.Point(106, 65)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 29)
+        Me.Label1.Size = New System.Drawing.Size(84, 24)
         Me.Label1.TabIndex = 273
         Me.Label1.Text = "Nombre:"
         '
-        'tx_direccion
+        'Label2
         '
-        Me.tx_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tx_direccion.Location = New System.Drawing.Point(305, 163)
-        Me.tx_direccion.Margin = New System.Windows.Forms.Padding(4)
-        Me.tx_direccion.Name = "tx_direccion"
-        Me.tx_direccion.Size = New System.Drawing.Size(329, 34)
-        Me.tx_direccion.TabIndex = 2
-        Me.tx_direccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(8, 451)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(122, 13)
+        Me.Label2.TabIndex = 289
+        Me.Label2.Text = "ESC: Salir - F2: Guardar."
         '
         'Proveedor_alta
         '
@@ -278,6 +291,7 @@ Partial Class Proveedor_alta
         Me.ClientSize = New System.Drawing.Size(769, 491)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Proveedor_alta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -307,4 +321,5 @@ Partial Class Proveedor_alta
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_Aceptar As System.Windows.Forms.Button
     Friend WithEvents tx_direccion As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

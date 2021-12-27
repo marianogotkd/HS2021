@@ -23,18 +23,18 @@ Partial Class ObraSocial_actualizar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ObrasocialidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObrasocialnombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObrasocialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Ds_obrasocial = New Aplicacion.ds_obrasocial()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_Anular = New System.Windows.Forms.Button()
         Me.Button_Detalle = New System.Windows.Forms.Button()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ObrasocialidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObrasocialnombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObrasocialBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,15 +70,45 @@ Partial Class ObraSocial_actualizar
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(673, 246)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 10
+        '
+        'Column1
+        '
+        Me.Column1.FillWeight = 101.5228!
+        Me.Column1.HeaderText = ""
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        Me.Column1.Width = 50
+        '
+        'ObrasocialidDataGridViewTextBoxColumn
+        '
+        Me.ObrasocialidDataGridViewTextBoxColumn.DataPropertyName = "Obrasocial_id"
+        Me.ObrasocialidDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.ObrasocialidDataGridViewTextBoxColumn.Name = "ObrasocialidDataGridViewTextBoxColumn"
+        Me.ObrasocialidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ObrasocialnombreDataGridViewTextBoxColumn
+        '
+        Me.ObrasocialnombreDataGridViewTextBoxColumn.DataPropertyName = "Obrasocial_nombre"
+        Me.ObrasocialnombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.ObrasocialnombreDataGridViewTextBoxColumn.Name = "ObrasocialnombreDataGridViewTextBoxColumn"
+        Me.ObrasocialnombreDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObrasocialnombreDataGridViewTextBoxColumn.Width = 500
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = ""
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
         'ObrasocialBindingSource
         '
@@ -129,36 +159,6 @@ Partial Class ObraSocial_actualizar
         Me.Button_Detalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button_Detalle.UseVisualStyleBackColor = True
         '
-        'Column1
-        '
-        Me.Column1.FillWeight = 101.5228!
-        Me.Column1.HeaderText = ""
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        Me.Column1.Width = 50
-        '
-        'ObrasocialidDataGridViewTextBoxColumn
-        '
-        Me.ObrasocialidDataGridViewTextBoxColumn.DataPropertyName = "Obrasocial_id"
-        Me.ObrasocialidDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.ObrasocialidDataGridViewTextBoxColumn.Name = "ObrasocialidDataGridViewTextBoxColumn"
-        Me.ObrasocialidDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ObrasocialnombreDataGridViewTextBoxColumn
-        '
-        Me.ObrasocialnombreDataGridViewTextBoxColumn.DataPropertyName = "Obrasocial_nombre"
-        Me.ObrasocialnombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.ObrasocialnombreDataGridViewTextBoxColumn.Name = "ObrasocialnombreDataGridViewTextBoxColumn"
-        Me.ObrasocialnombreDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ObrasocialnombreDataGridViewTextBoxColumn.Width = 500
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = ""
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
         'ObraSocial_actualizar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -170,6 +170,7 @@ Partial Class ObraSocial_actualizar
         Me.Controls.Add(Me.btn_Anular)
         Me.Controls.Add(Me.Button_Detalle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ObraSocial_actualizar"

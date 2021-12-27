@@ -194,6 +194,7 @@ Partial Class Categoria_Actualizar
         Me.Controls.Add(Me.btn_Anular)
         Me.Controls.Add(Me.Button_Detalle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "Categoria_Actualizar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

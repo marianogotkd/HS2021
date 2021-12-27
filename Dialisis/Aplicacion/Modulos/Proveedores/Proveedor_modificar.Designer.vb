@@ -78,7 +78,7 @@ Partial Class Proveedor_modificar
         Me.tx_nombre_modif.Location = New System.Drawing.Point(16, 68)
         Me.tx_nombre_modif.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_nombre_modif.Name = "tx_nombre_modif"
-        Me.tx_nombre_modif.Size = New System.Drawing.Size(1043, 26)
+        Me.tx_nombre_modif.Size = New System.Drawing.Size(1043, 22)
         Me.tx_nombre_modif.TabIndex = 4
         Me.tx_nombre_modif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -99,7 +99,7 @@ Partial Class Proveedor_modificar
         Me.tx_cod_modif.Location = New System.Drawing.Point(325, 507)
         Me.tx_cod_modif.Margin = New System.Windows.Forms.Padding(4)
         Me.tx_cod_modif.Name = "tx_cod_modif"
-        Me.tx_cod_modif.Size = New System.Drawing.Size(164, 26)
+        Me.tx_cod_modif.Size = New System.Drawing.Size(164, 22)
         Me.tx_cod_modif.TabIndex = 1
         Me.tx_cod_modif.Visible = False
         '
@@ -123,11 +123,11 @@ Partial Class Proveedor_modificar
         Me.TabPage1.Controls.Add(Me.tx_cod_modif)
         Me.TabPage1.Controls.Add(Me.BO_Buscar_Cod)
         Me.TabPage1.Controls.Add(Me.lb_dni_modif)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(1125, 556)
+        Me.TabPage1.Size = New System.Drawing.Size(1125, 560)
         Me.TabPage1.TabIndex = 1
         Me.TabPage1.Text = "Proveedores registrados"
         '
@@ -183,7 +183,7 @@ Partial Class Proveedor_modificar
         Me.RadioButton_responsable.AutoSize = True
         Me.RadioButton_responsable.Location = New System.Drawing.Point(118, 33)
         Me.RadioButton_responsable.Name = "RadioButton_responsable"
-        Me.RadioButton_responsable.Size = New System.Drawing.Size(127, 24)
+        Me.RadioButton_responsable.Size = New System.Drawing.Size(108, 20)
         Me.RadioButton_responsable.TabIndex = 10
         Me.RadioButton_responsable.Text = "Responsable"
         Me.RadioButton_responsable.UseVisualStyleBackColor = True
@@ -194,7 +194,7 @@ Partial Class Proveedor_modificar
         Me.RadioButton_nombre.Checked = True
         Me.RadioButton_nombre.Location = New System.Drawing.Point(16, 33)
         Me.RadioButton_nombre.Name = "RadioButton_nombre"
-        Me.RadioButton_nombre.Size = New System.Drawing.Size(89, 24)
+        Me.RadioButton_nombre.Size = New System.Drawing.Size(75, 20)
         Me.RadioButton_nombre.TabIndex = 9
         Me.RadioButton_nombre.TabStop = True
         Me.RadioButton_nombre.Text = "Nombre"
@@ -311,7 +311,7 @@ Partial Class Proveedor_modificar
         Me.lb_dni_modif.Location = New System.Drawing.Point(221, 510)
         Me.lb_dni_modif.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_dni_modif.Name = "lb_dni_modif"
-        Me.lb_dni_modif.Size = New System.Drawing.Size(89, 18)
+        Me.lb_dni_modif.Size = New System.Drawing.Size(73, 15)
         Me.lb_dni_modif.TabIndex = 0
         Me.lb_dni_modif.Text = "Cód. Interno"
         Me.lb_dni_modif.Visible = False
@@ -347,11 +347,12 @@ Partial Class Proveedor_modificar
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
-        Me.ClientSize = New System.Drawing.Size(1170, 629)
+        Me.ClientSize = New System.Drawing.Size(1170, 635)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Bo_cancelar)
         Me.Controls.Add(Me.Bo_guardar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1176, 664)

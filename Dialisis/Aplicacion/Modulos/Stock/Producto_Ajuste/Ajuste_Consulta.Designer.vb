@@ -38,8 +38,6 @@ Partial Class Ajuste_Consulta
         Me.tx_Buscar = New System.Windows.Forms.TextBox()
         Me.BO_ver = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Ajuste_DS = New Aplicacion.Ajuste_DS()
         Me.prod_codinterno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.prod_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MovMerConceptoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +46,8 @@ Partial Class Ajuste_Consulta
         Me.MovMeridDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Origen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ajuste_DS = New Aplicacion.Ajuste_DS()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +57,9 @@ Partial Class Ajuste_Consulta
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
@@ -198,6 +201,9 @@ Partial Class Ajuste_Consulta
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -221,16 +227,6 @@ Partial Class Ajuste_Consulta
         Me.DataGridView1.Size = New System.Drawing.Size(986, 315)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 17
-        '
-        'MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource
-        '
-        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource.DataMember = "Movimiento_Mercaderia_Alta_obtener_detalle_Ajustes"
-        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource.DataSource = Me.Ajuste_DS
-        '
-        'Ajuste_DS
-        '
-        Me.Ajuste_DS.DataSetName = "Ajuste_DS"
-        Me.Ajuste_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'prod_codinterno
         '
@@ -296,13 +292,22 @@ Partial Class Ajuste_Consulta
         Me.Origen.Name = "Origen"
         Me.Origen.ReadOnly = True
         '
+        'MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource
+        '
+        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource.DataMember = "Movimiento_Mercaderia_Alta_obtener_detalle_Ajustes"
+        Me.MovimientoMercaderiaAltaobtenerdetalleAjustesBindingSource.DataSource = Me.Ajuste_DS
+        '
+        'Ajuste_DS
+        '
+        Me.Ajuste_DS.DataSetName = "Ajuste_DS"
+        Me.Ajuste_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Ajuste_Consulta
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1027, 414)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
+        Me.KeyPreview = True
         Me.Name = "Ajuste_Consulta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta de Ajustes de Stock "

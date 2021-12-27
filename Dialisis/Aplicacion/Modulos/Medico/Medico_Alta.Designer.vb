@@ -37,12 +37,14 @@ Partial Class Medico_Alta
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tx_nom_ape = New System.Windows.Forms.TextBox()
         Me.lb_dni = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.tb_mat)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.err_mat)
@@ -183,7 +185,7 @@ Partial Class Medico_Alta
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 4
-        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.Text = "Guardar (F2)"
         Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_Aceptar.UseVisualStyleBackColor = True
         '
@@ -217,6 +219,18 @@ Partial Class Medico_Alta
         Me.lb_dni.TabIndex = 237
         Me.lb_dni.Text = "DNI / N° CUIT:"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(9, 255)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(122, 13)
+        Me.Label7.TabIndex = 271
+        Me.Label7.Text = "ESC: Salir - F2: Guardar."
+        '
         'Medico_Alta
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -224,6 +238,7 @@ Partial Class Medico_Alta
         Me.ClientSize = New System.Drawing.Size(645, 287)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Medico_Alta"
@@ -250,4 +265,5 @@ Partial Class Medico_Alta
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents tx_nom_ape As System.Windows.Forms.TextBox
     Friend WithEvents lb_dni As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

@@ -99,6 +99,7 @@ Partial Class Producto_alta_New
         Me.Bo_cancelar = New System.Windows.Forms.Button()
         Me.Bo_guardar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -1036,7 +1037,7 @@ Partial Class Producto_alta_New
         Me.Bo_guardar.Name = "Bo_guardar"
         Me.Bo_guardar.Size = New System.Drawing.Size(140, 53)
         Me.Bo_guardar.TabIndex = 5
-        Me.Bo_guardar.Text = "Guardar"
+        Me.Bo_guardar.Text = "Guardar(F2)"
         Me.Bo_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.Bo_guardar, "Guardar")
         Me.Bo_guardar.UseVisualStyleBackColor = True
@@ -1045,11 +1046,24 @@ Partial Class Producto_alta_New
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(12, 530)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(122, 13)
+        Me.Label15.TabIndex = 19
+        Me.Label15.Text = "ESC: Salir - F2: Guardar."
+        '
         'Producto_alta_New
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
         Me.ClientSize = New System.Drawing.Size(1128, 556)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Bo_agregarcat)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox5)
@@ -1059,6 +1073,7 @@ Partial Class Producto_alta_New
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Producto_alta_New"
@@ -1089,6 +1104,7 @@ Partial Class Producto_alta_New
         Me.GroupBox3.PerformLayout()
         CType(Me.ERROR_tx_categoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Bo_cancelar As System.Windows.Forms.Button
@@ -1166,4 +1182,5 @@ Partial Class Producto_alta_New
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents RB_filtro_si As System.Windows.Forms.RadioButton
     Friend WithEvents RB_filtro_no As System.Windows.Forms.RadioButton
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

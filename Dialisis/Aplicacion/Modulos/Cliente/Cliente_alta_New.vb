@@ -14,6 +14,24 @@ Public Class Cliente_alta_New
     Public apertura As String = "menu_alta" 'esta variable me sirve para saber desde donde lo abro, si lo abro a la "Alta" desde el menu...el boton cancelar...solo borra lo q se escribe en los textbox.
     Public turnodialisis_id As Integer
 
+    Private Sub Cliente_alta_New_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            msj_esperar_sesiones.procedencia = "Cliente_Alta_btn_acepta_click"
+            msj_esperar_sesiones.Show()
+        End If
+
+    End Sub
+
     Private Sub Cliente_alta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         
 

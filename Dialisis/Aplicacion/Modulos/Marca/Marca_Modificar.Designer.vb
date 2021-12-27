@@ -163,6 +163,7 @@ Partial Class Marca_Modificar
         Me.Controls.Add(Me.btn_guardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Marca_Modificar"

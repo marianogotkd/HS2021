@@ -407,6 +407,7 @@ Partial Class Cliente_modificar
         Me.Controls.Add(Me.BO_Cancelar)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

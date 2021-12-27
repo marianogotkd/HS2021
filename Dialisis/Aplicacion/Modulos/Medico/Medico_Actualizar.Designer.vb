@@ -33,6 +33,7 @@ Partial Class Medico_Actualizar
         Me.BO_Guardar = New System.Windows.Forms.Button()
         Me.BO_Cancelar = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_Anular = New System.Windows.Forms.Button()
         Me.BO_cliente_nuevo = New System.Windows.Forms.Button()
         Me.BO_cliente_modificar = New System.Windows.Forms.Button()
@@ -49,7 +50,6 @@ Partial Class Medico_Actualizar
         Me.Medico_ds = New Aplicacion.Medico_ds()
         Me.BO_Cargar = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGrid_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -149,6 +149,19 @@ Partial Class Medico_Actualizar
         Me.TabPage1.Size = New System.Drawing.Size(1121, 546)
         Me.TabPage1.TabIndex = 1
         Me.TabPage1.Text = "Medicos Registrados"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.icono_reporte_medico_30x30
+        Me.Button1.Location = New System.Drawing.Point(624, 490)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(124, 43)
+        Me.Button1.TabIndex = 252
+        Me.Button1.Text = "Generar reporte"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_Anular
         '
@@ -310,19 +323,6 @@ Partial Class Medico_Actualizar
         Me.TabControl1.Size = New System.Drawing.Size(1129, 575)
         Me.TabControl1.TabIndex = 9
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.icono_reporte_medico_30x30
-        Me.Button1.Location = New System.Drawing.Point(624, 490)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 43)
-        Me.Button1.TabIndex = 252
-        Me.Button1.Text = "Generar reporte"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Medico_Actualizar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -333,6 +333,7 @@ Partial Class Medico_Actualizar
         Me.Controls.Add(Me.BO_Eliminar)
         Me.Controls.Add(Me.BO_Guardar)
         Me.Controls.Add(Me.BO_Cancelar)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1164, 646)
         Me.MinimizeBox = False
