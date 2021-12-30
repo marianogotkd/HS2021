@@ -562,6 +562,7 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.exe
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.xml
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.Form1_verificarduplicado.resources
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\bin\Debug\Aplicacion.exe.config
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\bin\Debug\Aplicacion.exe
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\bin\Debug\Aplicacion.pdb
@@ -751,4 +752,3 @@ C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.vbproj
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.exe
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.xml
 C:\Repositorio HS2021\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.pdb
-C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Dialisis\Aplicacion\obj\x86\Debug\Aplicacion.Form1_verificarduplicado.resources

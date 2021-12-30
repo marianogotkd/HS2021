@@ -30,6 +30,7 @@ Partial Class Marca_alta
         Me.Lb_nombre_marca = New System.Windows.Forms.Label()
         Me.Bo_guardar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -79,15 +80,27 @@ Partial Class Marca_alta
         'Bo_guardar
         '
         Me.Bo_guardar.Image = CType(resources.GetObject("Bo_guardar.Image"), System.Drawing.Image)
-        Me.Bo_guardar.Location = New System.Drawing.Point(397, 136)
+        Me.Bo_guardar.Location = New System.Drawing.Point(358, 136)
         Me.Bo_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.Bo_guardar.Name = "Bo_guardar"
-        Me.Bo_guardar.Size = New System.Drawing.Size(93, 37)
+        Me.Bo_guardar.Size = New System.Drawing.Size(132, 37)
         Me.Bo_guardar.TabIndex = 1
-        Me.Bo_guardar.Text = "Guardar"
+        Me.Bo_guardar.Text = "Guardar (F2)"
         Me.Bo_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.Bo_guardar, "Guardar")
         Me.Bo_guardar.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(14, 160)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(122, 13)
+        Me.Label15.TabIndex = 20
+        Me.Label15.Text = "ESC: Salir - F2: Guardar."
         '
         'Marca_alta
         '
@@ -95,10 +108,12 @@ Partial Class Marca_alta
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(523, 188)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Bo_guardar)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(529, 217)
@@ -112,6 +127,7 @@ Partial Class Marca_alta
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -120,4 +136,5 @@ Partial Class Marca_alta
     Friend WithEvents Lb_nombre_marca As System.Windows.Forms.Label
     Friend WithEvents Bo_guardar As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

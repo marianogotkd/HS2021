@@ -66,9 +66,9 @@ Partial Class Gestion_Mercaderia
         Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MovBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Mov_DS = New Aplicacion.Mov_DS()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_guardar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -279,9 +279,10 @@ Partial Class Gestion_Mercaderia
         '
         'Button1
         '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Aplicacion.My.Resources.Resources.Informe
-        Me.Button1.Location = New System.Drawing.Point(532, 359)
+        Me.Button1.Location = New System.Drawing.Point(654, 359)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.MinimumSize = New System.Drawing.Size(124, 43)
         Me.Button1.Name = "Button1"
@@ -313,7 +314,6 @@ Partial Class Gestion_Mercaderia
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.btn_cancelar)
         Me.Panel1.Controls.Add(Me.btn_guardar)
         Me.Panel1.Location = New System.Drawing.Point(12, 190)
         Me.Panel1.Name = "Panel1"
@@ -325,7 +325,7 @@ Partial Class Gestion_Mercaderia
         Me.btn_limpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_limpiar.Image = Global.Aplicacion.My.Resources.Resources.Borrar
-        Me.btn_limpiar.Location = New System.Drawing.Point(136, 359)
+        Me.btn_limpiar.Location = New System.Drawing.Point(390, 359)
         Me.btn_limpiar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_limpiar.MinimumSize = New System.Drawing.Size(124, 43)
         Me.btn_limpiar.Name = "btn_limpiar"
@@ -341,7 +341,7 @@ Partial Class Gestion_Mercaderia
         Me.btn_eliminar_seleccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar_seleccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_eliminar_seleccion.Image = Global.Aplicacion.My.Resources.Resources.menos
-        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(4, 359)
+        Me.btn_eliminar_seleccion.Location = New System.Drawing.Point(258, 359)
         Me.btn_eliminar_seleccion.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_eliminar_seleccion.MinimumSize = New System.Drawing.Size(124, 43)
         Me.btn_eliminar_seleccion.Name = "btn_eliminar_seleccion"
@@ -500,29 +500,12 @@ Partial Class Gestion_Mercaderia
         Me.Mov_DS.DataSetName = "Mov_DS"
         Me.Mov_DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'btn_cancelar
-        '
-        Me.btn_cancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.Image = Global.Aplicacion.My.Resources.Resources.Limpiar
-        Me.btn_cancelar.Location = New System.Drawing.Point(268, 359)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_cancelar.MaximumSize = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.MinimumSize = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(124, 43)
-        Me.btn_cancelar.TabIndex = 2
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.btn_cancelar, "Cancelar Movimiento")
-        Me.btn_cancelar.UseVisualStyleBackColor = True
-        '
         'btn_guardar
         '
         Me.btn_guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_guardar.Image = Global.Aplicacion.My.Resources.Resources.Guardar
-        Me.btn_guardar.Location = New System.Drawing.Point(400, 359)
+        Me.btn_guardar.Location = New System.Drawing.Point(522, 359)
         Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_guardar.MaximumSize = New System.Drawing.Size(124, 43)
         Me.btn_guardar.MinimumSize = New System.Drawing.Size(124, 43)
@@ -537,13 +520,26 @@ Partial Class Gestion_Mercaderia
         'ToolTip1
         '
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(13, 601)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(122, 13)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "ESC: Salir - F2: Guardar."
+        '
         'Gestion_Mercaderia
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
-        Me.ClientSize = New System.Drawing.Size(1098, 602)
+        Me.ClientSize = New System.Drawing.Size(1098, 621)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MinimumSize = New System.Drawing.Size(800, 600)
         Me.Name = "Gestion_Mercaderia"
@@ -557,6 +553,7 @@ Partial Class Gestion_Mercaderia
         CType(Me.MovBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Mov_DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cb_Movimiento As System.Windows.Forms.ComboBox
@@ -570,7 +567,6 @@ Partial Class Gestion_Mercaderia
     Friend WithEvents MovBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Mov_DS As Aplicacion.Mov_DS
     Friend WithEvents btn_guardar As System.Windows.Forms.Button
-    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
@@ -597,4 +593,5 @@ Partial Class Gestion_Mercaderia
     Friend WithEvents Vence As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Prov_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

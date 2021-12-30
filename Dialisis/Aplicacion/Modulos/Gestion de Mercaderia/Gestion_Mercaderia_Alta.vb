@@ -17,6 +17,23 @@
         cb_proveedor.SelectedValue = ds_proveedor.Tables(0).Rows(0).Item("Prov_id")
     End Sub
 
+    Private Sub Gestion_Mercaderia_Alta_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            msj_esperar_sesiones.procedencia = "Gestion_Mercaderia_Alta_btn_guardad_click"
+            msj_esperar_sesiones.Show()
+        End If
+    End Sub
+
     Private Sub Gestion_Mercaderia_Alta_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Cargarcombo_proveedor()
         Sucursales_Obtener_Origen()
@@ -317,40 +334,58 @@
     End Sub
 
     Private Sub btn_limpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_limpiar.Click
-        If DataGridView1.Rows.Count <> 0 Then
-            Dim result As DialogResult
-            result = MessageBox.Show("¿Desea quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
-            If result = DialogResult.OK Then
+        Dim result As DialogResult
+        result = MessageBox.Show("¿Desea cancelar y quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+        If result = DialogResult.OK Then
+            'agrego el codigo del cancelar
+            Mov_DS.Tables("Mov").Rows.Clear()
+            DataGridView1.DataSource = Mov_DS.Tables("Mov")
+            cb_proveedor.Enabled = True
+            'cb_Movimiento.Enabled = True
+            'desbloqueo origen y destino combos en form gestion_mercaderia
+            'cb_origen.Enabled = True
+            'cb_destino.Enabled = True
+            'limpiar encabezado
+            tb_concepto.Clear()
+            nro_factura.Clear()
+            nro_remito.Clear()
+            fecha_factura.Value = Today
+            fecha_remito.Value = Today
+            calcular_total()
+
+            limpiar_seccion_agregar()
+
+            If DataGridView1.Rows.Count <> 0 Then
                 Mov_DS.Tables("Mov").Rows.Clear() 'no uso el datagridview rows clear...x q me tira error x el dataset q esta asociado
                 calcular_total()
                 'DataGridView1.Rows.clear 
                 'DataGridView1.Rows.Add()
                 'DataGridView1.Focus()
                 'DataGridView1.Rows(0).Cells("prod_codinterno").Selected = True
+            Else
+                MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
             End If
-        Else
-            MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
         End If
     End Sub
 
-    Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
-        Mov_DS.Tables("Mov").Rows.Clear()
-        DataGridView1.DataSource = Mov_DS.Tables("Mov")
-        cb_proveedor.Enabled = True
-        'cb_Movimiento.Enabled = True
-        'desbloqueo origen y destino combos en form gestion_mercaderia
-        'cb_origen.Enabled = True
-        'cb_destino.Enabled = True
-        'limpiar encabezado
-        tb_concepto.Clear()
-        nro_factura.Clear()
-        nro_remito.Clear()
-        fecha_factura.Value = Today
-        fecha_remito.Value = Today
-        calcular_total()
+    'Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
+    '    Mov_DS.Tables("Mov").Rows.Clear()
+    '    DataGridView1.DataSource = Mov_DS.Tables("Mov")
+    '    cb_proveedor.Enabled = True
+    '    'cb_Movimiento.Enabled = True
+    '    'desbloqueo origen y destino combos en form gestion_mercaderia
+    '    'cb_origen.Enabled = True
+    '    'cb_destino.Enabled = True
+    '    'limpiar encabezado
+    '    tb_concepto.Clear()
+    '    nro_factura.Clear()
+    '    nro_remito.Clear()
+    '    fecha_factura.Value = Today
+    '    fecha_remito.Value = Today
+    '    calcular_total()
 
-        limpiar_seccion_agregar()
-    End Sub
+    '    limpiar_seccion_agregar()
+    'End Sub
 
     Private Sub Bo_codbarra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bo_codbarra.Click
         GM_Consultar_Stock.Close()

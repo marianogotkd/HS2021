@@ -296,6 +296,15 @@ Public Class Producto_modificar
     End Sub
 
     Private Sub Producto_modificar_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+
         If e.KeyCode = Keys.F5 Then 'F5
             Me.Hide()
             msj_esperar_sesiones.procedencia = "Producto_modificar_load"

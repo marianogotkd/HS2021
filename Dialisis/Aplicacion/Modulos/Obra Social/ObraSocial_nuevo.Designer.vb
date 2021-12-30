@@ -32,6 +32,7 @@ Partial Class ObraSocial_nuevo
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_id = New System.Windows.Forms.TextBox()
         Me.lb_dni = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -95,7 +96,7 @@ Partial Class ObraSocial_nuevo
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 4
-        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.Text = "Guardar (F2)"
         Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_Aceptar.UseVisualStyleBackColor = True
         '
@@ -130,14 +131,28 @@ Partial Class ObraSocial_nuevo
         Me.lb_dni.TabIndex = 237
         Me.lb_dni.Text = "Nombre:"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(13, 195)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(122, 13)
+        Me.Label15.TabIndex = 265
+        Me.Label15.Text = "ESC: Salir - F2: Guardar."
+        '
         'ObraSocial_nuevo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
-        Me.ClientSize = New System.Drawing.Size(484, 199)
+        Me.ClientSize = New System.Drawing.Size(484, 213)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ObraSocial_nuevo"
@@ -146,6 +161,7 @@ Partial Class ObraSocial_nuevo
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
@@ -157,4 +173,5 @@ Partial Class ObraSocial_nuevo
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_id As System.Windows.Forms.TextBox
     Friend WithEvents lb_dni As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

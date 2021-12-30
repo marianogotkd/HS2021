@@ -128,8 +128,7 @@ Public Class Categorias
 
     End Sub
 
-
-    Private Sub bo_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bo_guardar.Click
+    Private Sub guardar()
         If transaccion = "nuevo" Then
             'validacion 1
             If txt_categoria.Text <> "" Then
@@ -262,6 +261,9 @@ Public Class Categorias
             Producto_alta.Cargar_categorias()
             Me.Close()
         End If
+    End Sub
+    Private Sub bo_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bo_guardar.Click
+        guardar()
     End Sub
 
     Dim form_inicio As String = ""
@@ -517,6 +519,22 @@ Public Class Categorias
         BO_delete.Enabled = False
 
         txt_categoria.Select()
+    End Sub
+
+    Private Sub Categorias_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            guardar()
+        End If
     End Sub
     Private Sub Categorias_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         cargar_deporte_y_categorias()

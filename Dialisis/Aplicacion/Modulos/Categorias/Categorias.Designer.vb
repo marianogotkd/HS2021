@@ -53,6 +53,7 @@ Partial Class Categorias
         Me.Categorias_DS = New Aplicacion.Categorias_DS()
         Me.BO_edit_selec = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -93,6 +94,7 @@ Partial Class Categorias
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox1.BackgroundImage = Global.Aplicacion.My.Resources.Resources.silver_3
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.ForeColor = System.Drawing.Color.DarkSlateGray
         Me.GroupBox1.Location = New System.Drawing.Point(12, 8)
@@ -139,7 +141,7 @@ Partial Class Categorias
         Me.bo_guardar.Name = "bo_guardar"
         Me.bo_guardar.Size = New System.Drawing.Size(131, 49)
         Me.bo_guardar.TabIndex = 6
-        Me.bo_guardar.Text = "Guardar"
+        Me.bo_guardar.Text = "Guardar (F2)"
         Me.bo_guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.bo_guardar, "Guardar nueva categoría")
         Me.bo_guardar.UseVisualStyleBackColor = True
@@ -422,6 +424,18 @@ Partial Class Categorias
         Me.BO_edit_selec.UseVisualStyleBackColor = True
         Me.BO_edit_selec.Visible = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(8, 525)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(122, 13)
+        Me.Label7.TabIndex = 268
+        Me.Label7.Text = "ESC: Salir - F2: Guardar."
+        '
         'Categorias
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -430,6 +444,7 @@ Partial Class Categorias
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -439,6 +454,7 @@ Partial Class Categorias
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -482,4 +498,5 @@ Partial Class Categorias
     Friend WithEvents CatidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cat1_nom As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

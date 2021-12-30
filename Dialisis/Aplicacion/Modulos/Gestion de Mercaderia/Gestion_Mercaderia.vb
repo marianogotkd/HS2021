@@ -5,6 +5,24 @@
     Dim ds_PROD As DataSet
     Dim DAprod As New Datos.Producto
     Public procedencia As String
+
+    Private Sub Gestion_Mercaderia_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+
+        If e.KeyCode = Keys.F2 Then 'F2 EJECUTA CODIGO DE GUARDAR
+            msj_esperar_sesiones.procedencia = "Gestion_Mercaderia_GUARDAR"
+            msj_esperar_sesiones.Show()
+        End If
+
+    End Sub
     
 
     Private Sub Gestion_Mercaderia_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -116,14 +134,14 @@
         End If
     End Sub
 
-    Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
-        Mov_DS.Tables("Mov").Rows.Clear()
-        DataGridView1.DataSource = Mov_DS.Tables("Mov")
-        cb_Movimiento.Enabled = True
-        'desbloqueo origen y destino combos en form gestion_mercaderia
-        cb_origen.Enabled = True
-        cb_destino.Enabled = True
-    End Sub
+    'Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    Mov_DS.Tables("Mov").Rows.Clear()
+    '    DataGridView1.DataSource = Mov_DS.Tables("Mov")
+    '    cb_Movimiento.Enabled = True
+    '    'desbloqueo origen y destino combos en form gestion_mercaderia
+    '    cb_origen.Enabled = True
+    '    cb_destino.Enabled = True
+    'End Sub
 
     Public Sub GUARDAR_CLICK()
         Dim concepto As String
@@ -441,20 +459,27 @@
     End Sub
 
     Private Sub btn_limpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_limpiar.Click
-        If DataGridView1.Rows.Count <> 0 Then
-            Dim result As DialogResult
-            result = MessageBox.Show("¿Desea quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
-            If result = DialogResult.OK Then
+        Dim result As DialogResult
+        result = MessageBox.Show("¿Desea cancelar y quitar todos los productos del listado?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+        If result = DialogResult.OK Then
+            'tambien habilio el origen y destino por si el op quiere cambiar.
+            Mov_DS.Tables("Mov").Rows.Clear()
+            DataGridView1.DataSource = Mov_DS.Tables("Mov")
+            cb_Movimiento.Enabled = True
+            'desbloqueo origen y destino combos en form gestion_mercaderia
+            cb_origen.Enabled = True
+            cb_destino.Enabled = True
+
+            If DataGridView1.Rows.Count <> 0 Then
                 Mov_DS.Tables("Mov").Rows.Clear() 'no uso el datagridview rows clear...x q me tira error x el dataset q esta asociado
                 'DataGridView1.Rows.clear 
                 'DataGridView1.Rows.Add()
                 'DataGridView1.Focus()
                 'DataGridView1.Rows(0).Cells("prod_codinterno").Selected = True
+            Else
+                MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
             End If
-        Else
-            MessageBox.Show("No hay productos en el listado.", "Sistema de Gestión.")
         End If
-
 
     End Sub
 

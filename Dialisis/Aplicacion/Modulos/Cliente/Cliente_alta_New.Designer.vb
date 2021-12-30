@@ -28,6 +28,7 @@ Partial Class Cliente_alta_New
         Me.btn_Aceptar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tx_ape = New System.Windows.Forms.TextBox()
@@ -136,7 +137,7 @@ Partial Class Cliente_alta_New
         Me.btn_Aceptar.Name = "btn_Aceptar"
         Me.btn_Aceptar.Size = New System.Drawing.Size(124, 43)
         Me.btn_Aceptar.TabIndex = 0
-        Me.btn_Aceptar.Text = "Guardar"
+        Me.btn_Aceptar.Text = "Guardar (F2)"
         Me.btn_Aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip1.SetToolTip(Me.btn_Aceptar, "Guardar")
         Me.btn_Aceptar.UseVisualStyleBackColor = True
@@ -154,6 +155,7 @@ Partial Class Cliente_alta_New
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Panel5)
         Me.GroupBox1.Controls.Add(Me.Panel4)
         Me.GroupBox1.Controls.Add(Me.Panel2)
@@ -173,6 +175,18 @@ Partial Class Cliente_alta_New
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Complete la siguiente información:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(15, 511)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(122, 13)
+        Me.Label15.TabIndex = 20
+        Me.Label15.Text = "ESC: Salir - F2: Guardar."
         '
         'Panel5
         '
@@ -958,6 +972,7 @@ Partial Class Cliente_alta_New
         Me.ClientSize = New System.Drawing.Size(1244, 533)
         Me.Controls.Add(Me.Panel3)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.KeyPreview = True
         Me.Name = "Cliente_alta_New"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1064,4 +1079,5 @@ Partial Class Cliente_alta_New
     Friend WithEvents CheckBox_turno As System.Windows.Forms.CheckBox
     Friend WithEvents cb_turnos As System.Windows.Forms.ComboBox
     Friend WithEvents error_afiliado As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

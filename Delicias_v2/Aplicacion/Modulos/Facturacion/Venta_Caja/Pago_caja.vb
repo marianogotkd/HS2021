@@ -12,6 +12,8 @@ Public Class Pago_caja
 
 #Region "VENTA EN CAJA: PAGO EFECTIVO"
     Private Sub EFECTIVO_CAJA_TRANSACCION() 'AQUI LLAMO A UNA RITUNA DE LA CAPA DE DATOS CON EL ROLLBACK INCLUIDO
+        error_reporte = "no"
+
         Try
             If tx_parcial.Text = "" Then
                 tx_parcial.Text = (Math.Round(CDec(0), 2).ToString("N2"))
@@ -75,8 +77,9 @@ Public Class Pago_caja
 
 
                         If validar_op_tabla.Rows(0).Item(0) = "GUARDADO" Then
-                            'aqui llamo a la rutina que me muestra el reporte.
 
+
+                            'aqui llamo a la rutina que me muestra el reporte.
                             Dim factura_id As Integer = CInt(validar_op_tabla.Rows(0).Item(1))
                             crear_reporte(ds_usuario, factura_id)
 
@@ -109,6 +112,9 @@ Public Class Pago_caja
         Catch ex As Exception
             MessageBox.Show("ERROR, la transacción no se pudo realizar correctamente. Intente nuevamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        
+
     End Sub
     Private Sub EFECTIVO_CAJA()
         Try
@@ -568,7 +574,10 @@ Public Class Pago_caja
     End Sub
     Dim DAcliente As New Datos.Cliente
     Dim facturacion_ds_report As New Facturacion_ds_report
+
+    Public error_reporte As String = "no"
     Private Sub crear_reporte(ByVal ds_usuario As DataSet, ByVal numerofactura As Integer)
+        error_reporte = "no"
         Try
             'pregunto si quiero ver el reporte 
             'Dim result As DialogResult
@@ -698,6 +707,8 @@ Public Class Pago_caja
             'End If
         Catch ex As Exception
             'todavia no le pongo msj.
+            error_reporte = "si"
+
         End Try
     End Sub
 

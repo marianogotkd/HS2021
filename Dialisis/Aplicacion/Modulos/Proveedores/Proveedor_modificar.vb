@@ -336,6 +336,18 @@
         End If
     End Sub
 
+    Private Sub Proveedor_modificar_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        'NOTA: DEBE ESTAR LA PROPIEDAD DEL FORM "KEYPREVIEW = TRUE" para q se ejecute el evento keydown.
+
+        If e.KeyCode = Keys.Escape Then 'ESC
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Desea salir del formulario?.", "Sistema de Gestión.", MessageBoxButtons.OKCancel)
+            If result = DialogResult.OK Then
+                Me.Close()
+            End If
+        End If
+    End Sub
+
     Private Sub Proveedor_modificar_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         BO_Buscar_Cod.Enabled = False
         ' buscar_nombre() 'me recupera todos los proveedores
