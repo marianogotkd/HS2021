@@ -1,0 +1,15 @@
+USE [WebCentral]
+GO
+/****** Object:  StoredProcedure [dbo].[recorridos_zonas_obtener_habilitados_x_dia]    Script Date: 01/10/2022 11:46:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[recorridos_zonas_obtener_habilitados_x_dia]
+
+@Dia int
+as
+select * from Recorridos where Recorridos.Dia_id = @Dia and Recorridos.Habilitada = 1 order by Recorridos.Codigo asc
+
+select * from Recorridos where Recorridos.Dia_id = @Dia order by Idrecorrido asc  
+

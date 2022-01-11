@@ -1,0 +1,17 @@
+USE [WebCentral]
+GO
+/****** Object:  StoredProcedure [dbo].[recorridos_zonas_consultar_dia]    Script Date: 01/10/2022 09:14:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+  ALTER procedure [dbo].[recorridos_zonas_consultar_dia]
+  
+  @Dia_id int
+  as
+  
+  select * from Recorridos where Dia_id = @Dia_id order by Idrecorrido asc  
+  
+  
+  
+  
