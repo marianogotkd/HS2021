@@ -267,11 +267,11 @@ C:\Repositorio HS2021\HS2021\Delicias prueba 14-08-2021\Datos\obj\Debug\Datos.vb
 C:\Repositorio HS2021\HS2021\Delicias prueba 14-08-2021\Datos\obj\Debug\Datos.dll
 C:\Repositorio HS2021\HS2021\Delicias prueba 14-08-2021\Datos\obj\Debug\Datos.xml
 C:\Repositorio HS2021\HS2021\Delicias prueba 14-08-2021\Datos\obj\Debug\Datos.pdb
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\obj\Debug\Datos.Resources.resources
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\obj\Debug\Datos.dll
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\obj\Debug\Datos.xml
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\obj\Debug\Datos.pdb
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\bin\Debug\Datos.dll
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\bin\Debug\Datos.pdb
-C:\Repositorio HS2021\HS2021\Delicias_v2\Datos\bin\Debug\Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\bin\Debug\Datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\bin\Debug\Datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\bin\Debug\Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\obj\Debug\Datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\obj\Debug\Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Delicias_v2\Datos\obj\Debug\Datos.pdb
