@@ -26,6 +26,8 @@ Partial Class Cliente_alta
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cliente_alta))
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tx_obser = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,8 +49,6 @@ Partial Class Cliente_alta
         Me.Bo_cancelar = New System.Windows.Forms.Button()
         Me.Bo_guardar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ERROR_tx_dni_clie, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +96,26 @@ Partial Class Cliente_alta
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Personales"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.DarkSlateGray
+        Me.Label3.Location = New System.Drawing.Point(366, 158)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 15)
+        Me.Label3.TabIndex = 251
+        Me.Label3.Text = "Tipo de Cliente"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Normal", "Fijo"})
+        Me.ComboBox1.Location = New System.Drawing.Point(460, 157)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(190, 21)
+        Me.ComboBox1.TabIndex = 250
         '
         'Label2
         '
@@ -176,7 +196,7 @@ Partial Class Cliente_alta
         '
         'tx_mail_clie
         '
-        Me.tx_mail_clie.Location = New System.Drawing.Point(100, 120)
+        Me.tx_mail_clie.Location = New System.Drawing.Point(126, 119)
         Me.tx_mail_clie.Name = "tx_mail_clie"
         Me.tx_mail_clie.Size = New System.Drawing.Size(207, 20)
         Me.tx_mail_clie.TabIndex = 4
@@ -289,33 +309,13 @@ Partial Class Cliente_alta
         Me.ToolTip1.SetToolTip(Me.Bo_guardar, "Guardar")
         Me.Bo_guardar.UseVisualStyleBackColor = True
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Normal", "Fijo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(460, 157)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(190, 21)
-        Me.ComboBox1.TabIndex = 250
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label3.Location = New System.Drawing.Point(366, 158)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 15)
-        Me.Label3.TabIndex = 251
-        Me.Label3.Text = "Tipo de Cliente"
-        '
         'Cliente_alta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(879, 338)
+        Me.ClientSize = New System.Drawing.Size(879, 337)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Bo_guardar)
         Me.Controls.Add(Me.Bo_cancelar)
