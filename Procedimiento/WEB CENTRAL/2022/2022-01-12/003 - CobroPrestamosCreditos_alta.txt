@@ -1,0 +1,10 @@
+create procedure CobroPrestamosCreditos_alta
+@IdPrestamoCredito int, 
+@Fecha date, 
+@Importe decimal(38,2), 
+@Cuota decimal(38,2)
+
+as
+insert CobroPrestamosCreditos (IdPrestamoCredito, Fecha, Importe, Cuota) values (@IdPrestamoCredito, @Fecha, @Importe, @Cuota)
+
+go

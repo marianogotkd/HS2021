@@ -85,8 +85,30 @@
             obj.select();
         }
     }
-    
+
+
+//    /* Sets focus on the first element of the form */
+//    $(document).ready(function () {
+
+//        
+
+//        $("#modal_error_busqueda").on('shown.bs.modal', function (event) {
+//            // not setting focus to submit button
+//            $("#btn_ok_error_busqueda").focus();
+//        });
+//    });
+
+
+
+
+
+
 </script>
+
+
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>

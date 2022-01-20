@@ -1,0 +1,25 @@
+USE [WebCentral]
+GO
+
+/****** Object:  Table [dbo].[CobroPrestamosCreditos]    Script Date: 01/12/2022 23:10:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CobroPrestamosCreditos](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[IdPrestamoCredito] [int] NULL,
+	[Fecha] [date] NULL,
+	[Importe] [decimal](38, 2) NULL,
+	[Cuota] [decimal](38, 2) NULL,
+ CONSTRAINT [PK_CobroPrestamosCreditos] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

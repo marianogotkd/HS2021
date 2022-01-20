@@ -1,0 +1,14 @@
+create procedure Prestamos_buscar_x_id
+@Idprestamocredito int
+as
+--obtene toda la info del prestamo + datos del cliente.
+
+select Clientes.Codigo , Clientes.Nombre, 
+Idprestamocredito,
+CONVERT(Varchar,PrestamosCreditos.Fecha, 103) as 'Fecha', --con el cod 103, me lista con el formato: dd/mm/yyyy
+PrestamosCreditos.Importe,
+PrestamosCreditos.Saldo 
+from PrestamosCreditos inner join Clientes on PrestamosCreditos.Cliente = Clientes.Cliente 
+		where PrestamosCreditos.Tipo = 'P' and PrestamosCreditos.Idprestamocredito = @Idprestamocredito
+		
+go

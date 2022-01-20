@@ -217,4 +217,73 @@ Public Class WC_prestamoscreditos
 
 #End Region
 
+#Region "COBRO PRESTAMOS MANUALES"
+    Public Function Prestamos_cliente_buscar_activos(ByVal Codigo As String) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Prestamos_cliente_buscar_activos", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Codigo", Codigo))
+        
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "Prestamos_Activos")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+    Public Function Prestamos_buscar_x_id(ByVal Idprestamocredito As Integer) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("Prestamos_buscar_x_id", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Idprestamocredito", Idprestamocredito))
+
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "Prestamos_Activos")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+
+    Public Function CobroPrestamosCreditos_alta(ByVal IdPrestamoCredito As Integer,
+                                                ByVal Fecha As Date,
+                                                ByVal Importe As Decimal) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+
+        Dim comando As New OleDbCommand("CobroPrestamosCreditos_alta", dbconn)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.Add(New OleDb.OleDbParameter("@IdPrestamoCredito", IdPrestamoCredito))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Fecha", Fecha))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Importe", Importe))
+        comando.Parameters.Add(New OleDb.OleDbParameter("@Cuota", CDec(0)))
+
+
+        Dim ds As New DataSet()
+        Dim DA As New OleDbDataAdapter(comando)
+        ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".
+        DA.Fill(ds, "CobroPrestamosCreditos")
+        ''Cierro la conexión
+        dbconn.Close()
+        Return ds
+    End Function
+
+
+
+#End Region
+
 End Class

@@ -79,25 +79,25 @@
               3 - CARGA PAGOS/COBROS/RECLAMOS.
               </div>
               <div class="form-group">
-              4
+              4 - LIQUIDACION PARCIAL.
               </div>
               <div class="form-group">
-              5
+              5 - CONSULTAS.
               </div>
               <div class="form-group">
-              6
+              6 - COBRO PRESTAMOS MANUALES.
               </div>
               <div class="form-group">
-              7
+              7 - LIQUIDACION FINAL.
               </div>
               <div class="form-group">
-              8
+              8 - LIQUIDACION DE REGALOS.
               </div>
               <div class="form-group">
-              9
+              9 - COBRO PRESTAMOS X REGALOS.
               </div>
               <div class="form-group">
-              10
+              10 - LIQUIDACION DE GRUPOS.
               </div>
               
             </div>
@@ -121,13 +121,13 @@
               F - MODIFICA SALDOS.
               </div>
               <div class="form-group">
-              G
+              G - TICKETS CLIENTES.
               </div>
               <div class="form-group">
-              H
+              H - TICKETS GENERAL.
               </div>
               <div class="form-group">
-              I
+              I - LISTADOS.
               </div>
               <div class="form-group">
               J

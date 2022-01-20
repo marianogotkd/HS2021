@@ -20,6 +20,8 @@
                 Response.Redirect("~/WC_Carga de Recorridos_Zonas/carga_recorridos_zonas_a.aspx")
             Case "3"
                 Response.Redirect("~/WC_Pagos Cobros Reclamos/PagosCobrosReclamos.aspx")
+            Case "6"
+                Response.Redirect("~/WC_Cobro Prestamos Manuales/Cobro_prestamos_manuales.aspx")
             Case "A"
                 Response.Redirect("~/WC_Grupos/Grupos_abm.aspx")
             Case "B"

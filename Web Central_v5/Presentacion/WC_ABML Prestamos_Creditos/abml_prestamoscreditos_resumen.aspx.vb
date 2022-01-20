@@ -278,14 +278,22 @@
 
                 'la busqueda no arrojo resultados.
                 ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
+                'System.Web.UI.ScriptManager.GetCurrent(Me.Page).SetFocus(Me.btn_ok_error_busqueda)
+                'System.Web.UI.ScriptManager.GetCurrent(Me).SetFocus(Me.btn_ok_error_busqueda)
+
             End If
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_error_busqueda", "$(document).ready(function () {$('#modal_error_busqueda').modal();});", True)
+            'System.Web.UI.ScriptManager.GetCurrent(Me).SetFocus(Me.btn_ok_error_busqueda)
+            'System.Web.UI.ScriptManager.GetCurrent(Me.Page).SetFocus(Me.btn_ok_error_busqueda)
         End Try
     End Sub
 
 #Region "modal_error_busqueda"
+
+    
+
     Private Sub btn_ok_error_busqueda_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error_busqueda.ServerClick
         txt_fecha.Focus()
     End Sub

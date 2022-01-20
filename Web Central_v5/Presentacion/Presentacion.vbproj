@@ -2031,6 +2031,8 @@
     <Content Include="WC_Cliente\Cliente_abm.aspx" />
     <Content Include="WC_Cliente\Cliente_alta.aspx" />
     <Content Include="WC_Cliente\Cliente_alta_b.aspx" />
+    <Content Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales.aspx" />
+    <Content Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales_det.aspx" />
     <Content Include="WC_Grupos\Grupos_abm.aspx" />
     <Content Include="WC_Grupos\Grupos_agregar.aspx" />
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
@@ -2211,6 +2213,25 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_cliente.xsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales.aspx.designer.vb">
+      <DependentUpon>Cobro_prestamos_manuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales.aspx.vb">
+      <DependentUpon>Cobro_prestamos_manuales.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales_det.aspx.designer.vb">
+      <DependentUpon>Cobro_prestamos_manuales_det.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Cobro Prestamos Manuales\Cobro_prestamos_manuales_det.aspx.vb">
+      <DependentUpon>Cobro_prestamos_manuales_det.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Cobro Prestamos Manuales\DS_cobro_prestamos_manuales.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_cobro_prestamos_manuales.xsd</DependentUpon>
     </Compile>
     <Compile Include="WC_Grupos\DS_grupos.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -2609,6 +2630,17 @@
     </None>
     <None Include="WC_Cliente\DS_cliente.xsd.xss">
       <DependentUpon>DS_cliente.xsd.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Cobro Prestamos Manuales\DS_cobro_prestamos_manuales.xsc">
+      <DependentUpon>DS_cobro_prestamos_manuales.xsd</DependentUpon>
+    </None>
+    <None Include="WC_Cobro Prestamos Manuales\DS_cobro_prestamos_manuales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_cobro_prestamos_manuales.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WC_Cobro Prestamos Manuales\DS_cobro_prestamos_manuales.xss">
+      <DependentUpon>DS_cobro_prestamos_manuales.xsd</DependentUpon>
     </None>
     <None Include="WC_Grupos\DS_grupos.xsc">
       <DependentUpon>DS_grupos.xsd</DependentUpon>

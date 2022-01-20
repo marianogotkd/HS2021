@@ -1,0 +1,16 @@
+create procedure Prestamos_cliente_buscar_activos
+@Codigo varchar(max)
+as
+--table 0 . solo info del cliente
+select * from Clientes where Clientes.Codigo = @Codigo
+
+--table 1 todos los prestamos ACTIVOS del cliente, estado_id=1 para activos..
+select
+Idprestamocredito,
+CONVERT(Varchar,PrestamosCreditos.Fecha, 103) as 'Fecha', --con el cod 103, me lista con el formato: dd/mm/yyyy
+PrestamosCreditos.Importe,
+PrestamosCreditos.Saldo 
+from PrestamosCreditos inner join Clientes on PrestamosCreditos.Cliente = Clientes.Cliente 
+		where PrestamosCreditos.Tipo = 'P' and Clientes.Codigo = @Codigo and PrestamosCreditos.Estado_id = '1'
+		
+go
