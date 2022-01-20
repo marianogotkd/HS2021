@@ -82,3 +82,15 @@ C:\Repositorio HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.vbproj.
 C:\Repositorio HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.dll
 C:\Repositorio HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.xml
 C:\Repositorio HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Presentacion.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Presentacion.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Presentacion.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Capa_Datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Capa_Datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\bin\Capa_Datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Presentacion\obj\Debug\Presentacion.pdb
