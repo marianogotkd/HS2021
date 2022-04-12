@@ -1,0 +1,21 @@
+------1 - OBTENER ID DE INSTRUCTOR A ELIMINAR
+
+	SELECT instructor.instructor_id, usuario.usuario_id, usuario.usuario_apellido, usuario.usuario_nombre FROM usuario INNER JOIN instructor ON usuario.usuario_id = instructor.usuario_id 
+			where usuario.usuario_id = 'inserte usuario_id'
+
+------2 - OBTENER ID DE INSTRUCTOR AL CUAL QUIERE MOVER LOS ALUMNOS
+	SELECT instructor.instructor_id, usuario.usuario_id, usuario.usuario_apellido, usuario.usuario_nombre FROM usuario INNER JOIN instructor ON usuario.usuario_id = instructor.usuario_id 
+			where usuario.usuario_id = 'inserte usuario_id'
+
+-----3 - paso todos los alumnos a otro instructor.
+	update alumnos_x_instructor set instructor_id = 'inserte id instructor nuevo OBTENIDO EN 2)' 
+			WHERE alumnos_x_instructor.instructor_id = 'inserte id instructor OBTENIDO EN 1)'
+			
+----4 ELIMINAR INSTRUCTOR VIEJO, SE LO ELIMINA DE TODOS LADOS, INCLUIDO AL USUARIO.
+
+				delete alumnos_x_instructor where instructor_id = 'inserte instructor_id OBTENIDO EN 1)' --esta op deberia devolverte 0 porque ya cambiaste de id
+				delete institucion_x_instructor where instructor_id = 'inserte instructor_id OBTENIDO EN 1)'
+				delete from instructor where instructor_id = 'inserte instructor_id OBTENIDO EN 1)'
+				delete from usuario where usuario.usuario_id = 'inserte usuario_id'
+								
+				

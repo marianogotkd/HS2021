@@ -62,3 +62,13 @@ C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.xml
 C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.pdb
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\bin\Debug\Capa_Datos.xml
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.vbproj.AssemblyReference.cache
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.Resources.resources
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.vbproj.GenerateResource.cache
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.vbproj.CoreCompileInputs.cache
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.xml
+C:\Repositorio HS2021\HS2021\Web Central_v5\Capa_Datos\obj\Debug\Capa_Datos.pdb

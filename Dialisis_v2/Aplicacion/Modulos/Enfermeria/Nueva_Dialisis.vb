@@ -410,9 +410,14 @@
                 tb_CantRe.Text = FiltroDS.Tables(0).Rows(0).Item("Filtro_cant_reuso") + 1
             End If
 
-            Dim sesionDS As DataSet = DAsesiones.Dialisis_Obtener_Filtro_X_Pac(PAC_id)
-            tb_Filtro.Text = sesionDS.Tables(0).Rows(0).Item("Dialisis_Filtro")
+            Try
+
+            Catch ex As Exception
+                Dim sesionDS As DataSet = DAsesiones.Dialisis_Obtener_Filtro_X_Pac(PAC_id)
+                tb_Filtro.Text = sesionDS.Tables(0).Rows(0).Item("Dialisis_Filtro")
+            End Try
             tb_Filtro.Enabled = False
+            
 
             'choco 20-02-2021
             cb_filtro.Enabled = False
@@ -593,7 +598,7 @@
 
 
         'Alta en Tabla Dialisis
-        DaEnfermeria.Dialisis_alta(sesiones_id, PesoS, talla, tb_HI.Text, tb_HE.Text, tb_tiempoHD.Text, PesoI, PesoE, TAI, TAE, tb_Filtro.Text, tb_Obs.Text, tb_AV.Text)
+        DaEnfermeria.Dialisis_alta(sesiones_id, PesoS, talla, tb_HI.Text, tb_HE.Text, tb_tiempoHD.Text, PesoI, PesoE, TAI, TAE, cb_filtro.Text, tb_Obs.Text, tb_AV.Text)
 
         MessageBox.Show("La información se registró correctamente.", "Sistema de Gestión.", MessageBoxButtons.OK, MessageBoxIcon.Information)
         lbl_err.Visible = False
@@ -737,7 +742,7 @@
                 Dim TAE As Decimal = (Math.Round(CDec(tb_TAE.Text), 2).ToString("N2"))
                 '/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                DaEnfermeria.Dialisis_modificar(fecha_registrar, modificar_sesiones_id, PesoS, talla, tb_HI.Text, tb_HE.Text, tb_tiempoHD.Text, PesoI, PesoE, TAI, TAE, tb_Filtro.Text, tb_Obs.Text, tb_AV.Text)
+                DaEnfermeria.Dialisis_modificar(fecha_registrar, modificar_sesiones_id, PesoS, talla, tb_HI.Text, tb_HE.Text, tb_tiempoHD.Text, PesoI, PesoE, TAI, TAE, cb_filtro.Text, tb_Obs.Text, tb_AV.Text)
                 'registro actividad usuario///////////////////////////////////////////////////////
                 Dim usuario_id As String
                 usuario_id = Inicio.USU_id  'obtengo del formulario inicio el id del usuario logueado

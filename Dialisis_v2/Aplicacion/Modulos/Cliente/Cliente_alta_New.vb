@@ -447,6 +447,8 @@ Public Class Cliente_alta_New
                     turnoasignado = "no"
                     turnodialisis_id = 0
                 End If
+
+                Dim fecha_nacimiento As Date = CDate(FechaNac.Text)
                 DApaciente.Paciente_Modificar(PAC_id, tx_ape.Text, Tb_nombre.Text, tb_Dni_Cuit.Text, FechaNac.Value, ComboBox_Sexo.Text, ComboBox_obrasocial.SelectedValue,
                                                                                     tx_NumAfi.Text, tx_tel.Text, tx_dir.Text, CInt(tx_Cp.Text), combo_Prov.SelectedValue, Combo_Loc.SelectedValue,
                                                                                     tx_mail.Text, estado, ComboBox_estadocivil.SelectedValue, DateTimePicker_fechaingreso.Value,

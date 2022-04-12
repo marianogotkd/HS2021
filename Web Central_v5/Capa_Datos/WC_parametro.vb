@@ -13,7 +13,7 @@ Public Class WC_parametro
         comando.Parameters.Add(New OleDb.OleDbParameter("@Fecha", Fecha))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Dia", Dia))
         comando.Parameters.Add(New OleDb.OleDbParameter("@Recorrido", Recorrido))
-        
+
         Dim ds As New DataSet()
         Dim DA As New OleDbDataAdapter(comando)
         ''Fill= Método que Agrega filas al objeto DataSet y crea un objeto DataTable denominado "Tabla", en nuestro caso "Grupos".

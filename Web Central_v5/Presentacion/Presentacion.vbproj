@@ -14,6 +14,13 @@
     <AssemblyName>Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +53,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -2038,6 +2049,9 @@
     <Content Include="WC_Grupos\Grupos_alta.aspx" />
     <Content Include="WC_Grupos\Grupos_alta_b.aspx" />
     <Content Include="WC_Iniciar Dia\Iniciar_dia.aspx" />
+    <Content Include="WC_Liquidacion Parcial\LiquidacionParcial_recorridos.aspx" />
+    <Content Include="WC_Liquidacion Parcial\LiquidacionParcial_TotalesParciales.aspx" />
+    <Content Include="WC_Liquidacion Parcial\Liquidacion_reporte1.aspx" />
     <Content Include="WC_Modificar Saldos\Modificar_saldos.aspx" />
     <Content Include="WC_Modificar Saldos\Modificar_saldos_detalle.aspx" />
     <Content Include="WC_Pagos Cobros Reclamos\Cobro.aspx" />
@@ -2273,6 +2287,38 @@
       <DependentUpon>Iniciar_dia.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WC_Liquidacion Parcial\DS_liqparcial.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_liqparcial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\LiquidacionParcial_recorridos.aspx.designer.vb">
+      <DependentUpon>LiquidacionParcial_recorridos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\LiquidacionParcial_recorridos.aspx.vb">
+      <DependentUpon>LiquidacionParcial_recorridos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\LiquidacionParcial_TotalesParciales.aspx.designer.vb">
+      <DependentUpon>LiquidacionParcial_TotalesParciales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\LiquidacionParcial_TotalesParciales.aspx.vb">
+      <DependentUpon>LiquidacionParcial_TotalesParciales.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\Liquidacion_reporte1.aspx.designer.vb">
+      <DependentUpon>Liquidacion_reporte1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\Liquidacion_reporte1.aspx.vb">
+      <DependentUpon>Liquidacion_reporte1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WC_Liquidacion Parcial\Reportes\CR_liqparcial1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_liqparcial1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WC_Modificar Saldos\Modificar_saldos.aspx.designer.vb">
       <DependentUpon>Modificar_saldos.aspx</DependentUpon>
     </Compile>
@@ -2334,6 +2380,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC_Liquidacion Parcial\Reportes\CR_liqparcial1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_liqparcial1.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -2653,6 +2703,17 @@
     <None Include="WC_Grupos\DS_grupos.xss">
       <DependentUpon>DS_grupos.xsd</DependentUpon>
     </None>
+    <Content Include="WC_Liquidacion Parcial\DS_liqparcial.xsc">
+      <DependentUpon>DS_liqparcial.xsd</DependentUpon>
+    </Content>
+    <None Include="WC_Liquidacion Parcial\DS_liqparcial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_liqparcial.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="WC_Liquidacion Parcial\DS_liqparcial.xss">
+      <DependentUpon>DS_liqparcial.xsd</DependentUpon>
+    </Content>
     <None Include="WC_Pagos Cobros Reclamos\DS_pagoscobrosreclamos.xsc">
       <DependentUpon>DS_pagoscobrosreclamos.xsd</DependentUpon>
     </None>
@@ -2671,7 +2732,9 @@
       <Name>Capa_Datos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
